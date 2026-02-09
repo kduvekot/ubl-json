@@ -140,6 +140,32 @@ def run_saxon(input_xml, output_html):
     return result.returncode == 0
 
 
+def fix_encoding(output_html):
+    """Re-encode HTML from ISO-8859-1 to UTF-8.
+
+    The OASIS DocBook XSL stylesheet declares ISO-8859-1 encoding.
+    GitHub Pages (and most modern servers) serve files as UTF-8,
+    causing mojibake for non-ASCII characters.  We convert the file
+    to UTF-8 and update the meta charset declaration.
+    """
+    with open(output_html, "rb") as f:
+        raw = f.read()
+
+    # Detect if it's ISO-8859-1 by checking the meta tag
+    if b'charset=ISO-8859-1' in raw or b'charset=iso-8859-1' in raw:
+        text = raw.decode("iso-8859-1")
+        text = text.replace(
+            'charset=ISO-8859-1', 'charset=UTF-8'
+        ).replace(
+            'charset=iso-8859-1', 'charset=UTF-8'
+        )
+        with open(output_html, "w", encoding="utf-8") as f:
+            f.write(text)
+        print(f"  Re-encoded from ISO-8859-1 to UTF-8")
+    else:
+        print(f"  Encoding: already UTF-8 (no conversion needed)")
+
+
 def validate_output(output_html):
     """Basic validation of the generated HTML."""
     if not os.path.isfile(output_html):
@@ -150,17 +176,8 @@ def validate_output(output_html):
     if size < 1000:
         print(f"WARNING: Output file is suspiciously small: {size} bytes", file=sys.stderr)
 
-    # The OASIS stylesheet may output ISO-8859-1 encoding; try both
-    for enc in ("utf-8", "iso-8859-1", "latin-1"):
-        try:
-            with open(output_html, "r", encoding=enc) as f:
-                content = f.read()
-            break
-        except (UnicodeDecodeError, ValueError):
-            continue
-    else:
-        print(f"ERROR: Could not decode output file", file=sys.stderr)
-        sys.exit(1)
+    with open(output_html, "r", encoding="utf-8") as f:
+        content = f.read()
 
     checks = {
         "Contains <html": "<html" in content,
@@ -198,6 +215,7 @@ def main():
 
     check_prerequisites(input_xml)
     run_saxon(input_xml, output_html)
+    fix_encoding(output_html)
     success = validate_output(output_html)
 
     if success:
