@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/install-gh-with-version-check.sh",
+            "timeout": 90,
+            "description": "Install GitHub CLI with security verification and version checking"
+          }
+        ]
+      }
+    ]
+  }
+}
