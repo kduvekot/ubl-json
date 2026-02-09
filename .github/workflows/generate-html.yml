@@ -1,0 +1,66 @@
+name: Generate HTML & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'UBL-2.5-JSON-Syntax-Binding.xml'
+      - 'convert_to_html.py'
+      - 'db/**'
+      - '.github/workflows/generate-html.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download Saxon HE
+        run: |
+          mkdir -p utilities/saxon9he
+          curl -fsSL -o utilities/saxon9he/saxon9he.jar \
+            "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-15/Saxon-HE-9.8.0-15.jar"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate HTML from DocBook XML
+        run: python convert_to_html.py
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp UBL-2.5-JSON-Syntax-Binding.html _site/index.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
