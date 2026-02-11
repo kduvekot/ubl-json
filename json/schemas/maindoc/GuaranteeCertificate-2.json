@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/GuaranteeCertificate-2",
+  "description": "A document to notify the deposit of a Guarantee, such as a bid bond.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/GuaranteeCertificate-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "ContractFolderID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ContractFolderID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "GuaranteeTypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/GuaranteeTypeCode"
+    },
+    "Purpose": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Purpose"
+    },
+    "LiabilityAmount": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/LiabilityAmount"
+    },
+    "ConstitutionCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ConstitutionCode"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "ApplicablePeriod": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+    },
+    "ApplicableRegulation": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/RegulationType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/RegulationType"
+          }
+        }
+      ]
+    },
+    "GuaranteeDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "ImmobilizedSecurity": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/ImmobilizedSecurityType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/ImmobilizedSecurityType"
+          }
+        }
+      ]
+    },
+    "GuarantorParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "InterestedParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "BeneficiaryParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    }
+  },
+  "required": [
+    "$schema",
+    "ContractFolderID",
+    "IssueDate",
+    "LiabilityAmount",
+    "GuarantorParty",
+    "InterestedParty"
+  ],
+  "additionalProperties": false
+}

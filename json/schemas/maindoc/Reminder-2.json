@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/Reminder-2",
+  "description": "A document used to remind a customer of payments past due.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/Reminder-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "ReminderTypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ReminderTypeCode"
+    },
+    "ReminderSequenceNumeric": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ReminderSequenceNumeric"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "TaxPointDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/TaxPointDate"
+    },
+    "DocumentCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/DocumentCurrencyCode"
+    },
+    "TaxCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/TaxCurrencyCode"
+    },
+    "PricingCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/PricingCurrencyCode"
+    },
+    "PaymentCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/PaymentCurrencyCode"
+    },
+    "PaymentAlternativeCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/PaymentAlternativeCurrencyCode"
+    },
+    "AccountingCostCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/AccountingCostCode"
+    },
+    "AccountingCost": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/AccountingCost"
+    },
+    "LineCountNumeric": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/LineCountNumeric"
+    },
+    "ReminderPeriod": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+          }
+        }
+      ]
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "AccountingSupplierParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/SupplierPartyType"
+    },
+    "AccountingCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "PayeeParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "TaxRepresentativeParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "PaymentMeans": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentMeansType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentMeansType"
+          }
+        }
+      ]
+    },
+    "PaymentTerms": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentTermsType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentTermsType"
+          }
+        }
+      ]
+    },
+    "PrepaidPayment": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentType"
+          }
+        }
+      ]
+    },
+    "AllowanceCharge": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/AllowanceChargeType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/AllowanceChargeType"
+          }
+        }
+      ]
+    },
+    "TaxExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "PricingExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "PaymentExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "PaymentAlternativeExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "TaxTotal": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/TaxTotalType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/TaxTotalType"
+          }
+        }
+      ]
+    },
+    "LegalMonetaryTotal": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/MonetaryTotalType"
+    },
+    "ReminderLine": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/ReminderLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/ReminderLineType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "IssueDate",
+    "AccountingSupplierParty",
+    "AccountingCustomerParty",
+    "LegalMonetaryTotal",
+    "ReminderLine"
+  ],
+  "additionalProperties": false
+}

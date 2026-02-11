@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/ContractAwardNotice-2",
+  "description": "A document published by a Contracting Party to announce the awarding of a procurement project.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/ContractAwardNotice-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "ContractFolderID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ContractFolderID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "VersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/VersionID"
+    },
+    "PreviousVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/PreviousVersionID"
+    },
+    "RequestedPublicationDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/RequestedPublicationDate"
+    },
+    "RegulatoryDomain": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/RegulatoryDomain"
+    },
+    "NoticeTypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/NoticeTypeCode"
+    },
+    "PublishAwardIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/PublishAwardIndicator"
+    },
+    "NoticeLanguageCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/NoticeLanguageCode"
+    },
+    "AdditionalNoticeLanguage": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/LanguageType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/LanguageType"
+          }
+        }
+      ]
+    },
+    "PreviousDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "MinutesDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "ContractingParty": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/ContractingPartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/ContractingPartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "OriginatorCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "BeneficiaryParty": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+          }
+        }
+      ]
+    },
+    "ReceiverParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "TenderingTerms": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/TenderingTermsType"
+    },
+    "TenderingProcess": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/TenderingProcessType"
+    },
+    "ProcurementProject": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ProcurementProjectType"
+    },
+    "ProcurementProjectLot": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/ProcurementProjectLotType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/ProcurementProjectLotType"
+          }
+        }
+      ]
+    },
+    "TenderResult": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/TenderResultType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/TenderResultType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ContractFolderID",
+    "IssueDate",
+    "ContractingParty",
+    "TenderResult"
+  ],
+  "additionalProperties": false
+}

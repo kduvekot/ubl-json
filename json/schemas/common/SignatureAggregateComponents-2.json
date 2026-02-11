@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2",
+  "description": "UBL 2.5 Signature Aggregate Components",
+  "$defs": {
+    "SignatureInformationType": {
+      "$anchor": "SignatureInformationType",
+      "type": "object",
+      "description": "This class captures a single signature and optionally associates to a signature in the document with the corresponding identifier.",
+      "properties": {
+        "ID": {
+          "$ref": "SignatureBasicComponents-2.json#/$defs/ID"
+        },
+        "ReferencedSignatureID": {
+          "$ref": "SignatureBasicComponents-2.json#/$defs/ReferencedSignatureID"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UBLDocumentSignaturesType": {
+      "$anchor": "UBLDocumentSignaturesType",
+      "type": "object",
+      "description": "This class collects all signature information for a document.",
+      "properties": {
+        "SignatureInformation": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/SignatureInformationType"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/SignatureInformationType"
+              },
+              "minItems": 1
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "SignatureInformation"
+      ]
+    }
+  }
+}
