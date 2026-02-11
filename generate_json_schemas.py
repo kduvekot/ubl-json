@@ -618,7 +618,7 @@ def generate_common_aggregate_components(output_dir, registry):
     # Write the schema to file
     output_file = output_dir / 'CommonAggregateComponents-2.json'
     with open(output_file, 'w') as f:
-        json.dump(schema, f, indent=2, sort_keys=True)
+        json.dump(schema, f, indent=2)
         f.write('\n')
 
     print(f"  Written CommonAggregateComponents-2.json with {len(defs)} ABIE types")
