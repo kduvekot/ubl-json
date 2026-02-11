@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/AttachedDocument-2",
+  "description": "(Deprecated) A wrapper that allows a document of any kind to be packaged with the UBL document that references it.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/AttachedDocument-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "DocumentTypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/DocumentTypeCode"
+    },
+    "DocumentType": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/DocumentType"
+    },
+    "ParentDocumentID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ParentDocumentID"
+    },
+    "ParentDocumentTypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ParentDocumentTypeCode"
+    },
+    "ParentDocumentVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ParentDocumentVersionID"
+    },
+    "SenderParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "Attachment": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/AttachmentType"
+    },
+    "ParentDocumentLineReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/LineReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/LineReferenceType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "IssueDate",
+    "ParentDocumentID",
+    "SenderParty",
+    "ReceiverParty",
+    "Attachment"
+  ],
+  "additionalProperties": false
+}

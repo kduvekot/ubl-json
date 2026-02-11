@@ -941,9 +941,159 @@ def generate_document_schemas(output_dir, registry):
         output_dir: Output directory for schemas
         registry: Built registry from build_registry()
 
-    TODO: Implement this step.
+    Generates ~101 document JSON schemas in the output directory.
+    Each document has a root ABIE with children (BBIEs and ASBIEs).
     """
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Models to skip
+    SKIP_MODELS = {
+        'UBL-CommonLibrary-2.5',
+        'UBL-CommonSignatureComponents-2.5',
+        'UBL-SignatureLibrary-2.5',
+        'UBL-CommonExtensionComponents-2.5',
+    }
+
+    # Build object_class_to_type lookup from CommonLibrary ABIEs
+    common_library_abies = registry['models'].get('UBL-CommonLibrary-2.5', {}).get('abies', {})
+    object_class_to_type = {}
+    for object_class, abie in common_library_abies.items():
+        component_name = abie['component_name']
+        type_name = component_name + 'Type'
+        object_class_to_type[object_class] = type_name
+
+    count = 0
+
+    # Process each document model
+    for model_name in sorted(registry['models'].keys()):
+        if model_name in SKIP_MODELS:
+            continue
+
+        model_data = registry['models'][model_name]
+        abies = model_data.get('abies', {})
+
+        # Each document model should have exactly one root ABIE
+        if not abies:
+            continue
+
+        # Get the root ABIE (typically the first or only one)
+        root_abie = None
+        root_abie_name = None
+        for object_class, abie in abies.items():
+            root_abie = abie
+            root_abie_name = object_class
+            break  # Take the first one as root
+
+        if not root_abie:
+            continue
+
+        # Extract document name from model name
+        # Pattern: UBL-DocName-2.5 -> DocName
+        doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
+
+        # Build the schema
+        schema_id = f"https://docs.oasis-open.org/ubl/2/json/schemas/{doc_name}-2"
+        definition = root_abie.get('definition', '')
+        children = root_abie.get('children', [])
+
+        # Build properties dictionary
+        properties = {}
+        required = []
+
+        # 1. Add $schema property
+        properties['$schema'] = {
+            'const': schema_id,
+            'description': 'The JSON Schema identifier for this document type.'
+        }
+        required.append('$schema')
+
+        # 2. Add UBLExtensions (optional)
+        properties['UBLExtensions'] = {
+            '$ref': 'common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType'
+        }
+
+        # 3. Add Signature (optional, 0..n via oneOf)
+        properties['Signature'] = {
+            'oneOf': [
+                {'$ref': 'common/CommonAggregateComponents-2.json#/$defs/SignatureType'},
+                {
+                    'type': 'array',
+                    'items': {'$ref': 'common/CommonAggregateComponents-2.json#/$defs/SignatureType'}
+                }
+            ]
+        }
+
+        # 4. Add children (BBIEs and ASBIEs)
+        for child in children:
+            child_component_name = child['component_name']
+            component_type = child['component_type']
+            cardinality = child['cardinality']
+
+            if component_type == 'BBIE':
+                # BBIE: reference to CommonBasicComponents
+                properties[child_component_name] = {
+                    '$ref': f'common/CommonBasicComponents-2.json#/$defs/{child_component_name}'
+                }
+
+            elif component_type == 'ASBIE':
+                # ASBIE: reference to another ABIE (in CommonAggregateComponents)
+                associated_object_class = child.get('associated_object_class', '')
+
+                # Resolve the type name
+                if associated_object_class in object_class_to_type:
+                    target_type = object_class_to_type[associated_object_class]
+                else:
+                    # Fallback
+                    target_type = associated_object_class.replace(' ', '') + 'Type'
+
+                ref_schema = {'$ref': f'common/CommonAggregateComponents-2.json#/$defs/{target_type}'}
+
+                if cardinality in ('0..1', '1'):
+                    # Single value
+                    properties[child_component_name] = ref_schema
+                elif cardinality in ('0..n', '1..n'):
+                    # Array (single or array)
+                    properties[child_component_name] = {
+                        'oneOf': [
+                            ref_schema,
+                            {
+                                'type': 'array',
+                                'items': ref_schema
+                            }
+                        ]
+                    }
+                    # For 1..n, add minItems constraint
+                    if cardinality == '1..n':
+                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
+                else:
+                    # Fallback for unknown cardinality
+                    properties[child_component_name] = ref_schema
+
+            # Add to required list if cardinality is 1 or 1..n
+            if cardinality in ('1', '1..n'):
+                required.append(child_component_name)
+
+        # Build the document schema
+        schema = {
+            '$schema': 'https://json-schema.org/draft/2020-12/schema',
+            '$id': schema_id,
+            'description': definition,
+            'type': 'object',
+            'properties': properties,
+            'required': required,
+            'additionalProperties': False
+        }
+
+        # Write the schema to file
+        filename = f"{doc_name}-2.json"
+        output_file = output_dir / filename
+        with open(output_file, 'w') as f:
+            json.dump(schema, f, indent=2)
+            f.write('\n')
+
+        count += 1
+
+    print(f"  Written {count} document schemas")
 
 
 # ============================================================================
