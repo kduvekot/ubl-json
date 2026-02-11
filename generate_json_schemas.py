@@ -509,9 +509,119 @@ def generate_common_aggregate_components(output_dir, registry):
         output_dir: Output directory for schemas
         registry: Built registry from build_registry()
 
-    TODO: Implement this step.
+    Generates the ABIE type database containing all 310+ ABIEs from the
+    UBL-CommonLibrary-2.5 model in the registry.
     """
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Get the CommonLibrary ABIEs
+    common_library_abies = registry['models'].get('UBL-CommonLibrary-2.5', {}).get('abies', {})
+
+    if not common_library_abies:
+        print(f"  No ABIEs found in UBL-CommonLibrary-2.5 model")
+        return
+
+    # Build ObjectClass -> TypeName lookup for all ABIEs in CommonLibrary
+    object_class_to_type = {}
+    for object_class, abie in common_library_abies.items():
+        component_name = abie['component_name']
+        type_name = component_name + 'Type'
+        object_class_to_type[object_class] = type_name
+
+    # Build $defs entries for each ABIE
+    defs = {}
+
+    for object_class in sorted(common_library_abies.keys()):
+        abie = common_library_abies[object_class]
+        component_name = abie['component_name']
+        definition = abie.get('definition', '')
+        children = abie.get('children', [])
+
+        type_name = component_name + 'Type'
+
+        # Build properties and required list
+        properties = {}
+        required = []
+
+        for child in children:
+            child_component_name = child['component_name']
+            component_type = child['component_type']
+            cardinality = child['cardinality']
+
+            if component_type == 'BBIE':
+                # BBIE: reference to CommonBasicComponents
+                properties[child_component_name] = {
+                    '$ref': f'CommonBasicComponents-2.json#/$defs/{child_component_name}'
+                }
+
+            elif component_type == 'ASBIE':
+                # ASBIE: reference to another ABIE (in this schema)
+                associated_object_class = child.get('associated_object_class', '')
+
+                # Look up the type name from the object_class_to_type mapping
+                if associated_object_class in object_class_to_type:
+                    target_type = object_class_to_type[associated_object_class]
+                else:
+                    # Fallback: replace spaces with empty string and append Type
+                    target_type = associated_object_class.replace(' ', '') + 'Type'
+
+                ref_schema = {'$ref': f'#/$defs/{target_type}'}
+
+                if cardinality in ('0..1', '1'):
+                    # Single value
+                    properties[child_component_name] = ref_schema
+                elif cardinality in ('0..n', '1..n'):
+                    # Array (single or array)
+                    properties[child_component_name] = {
+                        'oneOf': [
+                            ref_schema,
+                            {
+                                'type': 'array',
+                                'items': ref_schema
+                            }
+                        ]
+                    }
+                    # For 1..n, add minItems constraint
+                    if cardinality == '1..n':
+                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
+                else:
+                    # Fallback for unknown cardinality
+                    properties[child_component_name] = ref_schema
+
+            # Add to required list if cardinality is 1 or 1..n
+            if cardinality in ('1', '1..n'):
+                required.append(child_component_name)
+
+        # Build the ABIE definition
+        abie_def = {
+            '$anchor': type_name,
+            'type': 'object',
+            'description': definition,
+            'properties': properties,
+            'additionalProperties': False
+        }
+
+        # Add required only if there are required properties
+        if required:
+            abie_def['required'] = required
+
+        defs[type_name] = abie_def
+
+    # Build the complete schema
+    schema = {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2',
+        'description': 'UBL 2.5 Common Aggregate Components',
+        '$defs': defs
+    }
+
+    # Write the schema to file
+    output_file = output_dir / 'CommonAggregateComponents-2.json'
+    with open(output_file, 'w') as f:
+        json.dump(schema, f, indent=2, sort_keys=True)
+        f.write('\n')
+
+    print(f"  Written CommonAggregateComponents-2.json with {len(defs)} ABIE types")
 
 
 # ============================================================================
