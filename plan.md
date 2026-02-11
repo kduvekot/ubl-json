@@ -112,12 +112,13 @@ For types with mandatory supplementary components (Amount, BinaryObject, Measure
   - Set `additionalProperties: false`
 
 ### Step 7: Generate `CommonExtensionComponents-2.json`
-- Define the UBLExtensions structure per Section 6.3:
-  - Array of extension objects with `ExtensionURI` (string, required), `ExtensionContent` (object, required), optional metadata fields
+- Parse `gc/UBL-Extension-Entities-2.5.gc` (derived once from XSD; see `PROVENANCE.md`)
+- Build the UBLExtension ABIE and its 10 BBIEs from GC rows, same logic as other schemas
 
 ### Step 8: Generate Signature schemas
-- `SignatureAggregateComponents-2.json` — Signature ABIE definition
-- `SignatureBasicComponents-2.json` — Signature-related BBIEs
+- Parse `gc/UBL-Signature-Entities-2.5.gc`
+- `SignatureAggregateComponents-2.json` — from `UBL-CommonSignatureComponents-2.5` and `UBL-SignatureLibrary-2.5` models
+- `SignatureBasicComponents-2.json` — Signature-related BBIEs from the same GC
 - These will reference CommonBasicComponents for standard BBIEs
 
 ### Step 9: Generate document schemas
@@ -208,7 +209,7 @@ jobs:
 
 3. **`$anchor` for standalone ABIEs**: Each ABIE in CommonAggregateComponents gets a `$anchor` so standalone payloads can reference it as `CommonAggregateComponents-2#PartyType` (Section 12.3).
 
-4. **Extension and Signature schemas**: The GC file does not contain rows for `UBL-CommonExtensionComponents` or `UBL-SignatureComponents` models. These schemas will be generated from hard-coded definitions based on the specification text (Sections 6.3 and 11).
+4. **Extension and Signature schemas**: All models are now covered by GC files. `gc/UBL-Extension-Entities-2.5.gc` was derived once from the CSD03 XSDs (see `PROVENANCE.md`). `gc/UBL-Signature-Entities-2.5.gc` is from the official CSD03 distribution. No hardcoding or XSD parsing is needed at runtime.
 
 5. **No external dependencies**: The generator script uses only Python stdlib (`xml.etree.ElementTree`, `json`, `os`, `pathlib`, `re`, `collections`). No pip install needed for generation.
 
@@ -244,7 +245,13 @@ ubl-json/
 ├── gc/
 │   ├── UBL-Entities-2.5.gc              # main entities input
 │   ├── UBL-Signature-Entities-2.5.gc    # signature entities input
-│   └── UBL-Endorsed-Entities-2.5.gc     # endorsed entities input
+│   ├── UBL-Endorsed-Entities-2.5.gc     # endorsed entities input
+│   └── UBL-Extension-Entities-2.5.gc   # extension entities (derived from XSD)
+├── history/
+│   ├── UBL-CommonExtensionComponents-2.5.xsd    # source XSD for Extension GC
+│   ├── UBL-ExtensionContentDataType-2.5.xsd     # source XSD for Extension GC
+│   └── UBL-CommonSignatureComponents-2.5.xsd    # source XSD (reference)
+├── PROVENANCE.md                        # documents origin of all input files
 ├── UBL-2.5-JSON-Syntax-Binding.xml  # existing spec
 └── ...
 ```
@@ -264,9 +271,9 @@ ubl-json/
 
 1. **Should generated schemas be committed to the repo, or only produced as CI artifacts?** The plan above commits them so they are available in the repository directly.
 
-2. **Extension schema details**: The GC file has no rows for extension components. Should we model the full extension structure from Section 6.3, or keep it minimal (just the scaffolding)?
+2. **Extension schema details**: RESOLVED — `gc/UBL-Extension-Entities-2.5.gc` was derived from the CSD03 XSDs and covers the full extension structure (1 ABIE + 10 BBIEs including ExtensionContent).
 
-3. **Signature schemas**: Similarly, the GC has no dedicated Signature model. The spec mentions a `Signature` ABIE exists in `CommonAggregateComponents`. Should `SignatureAggregateComponents-2.json` and `SignatureBasicComponents-2.json` be separate files, or is it sufficient to include signature support within the main CommonAggregateComponents schema?
+3. **Signature schemas**: RESOLVED — `gc/UBL-Signature-Entities-2.5.gc` from the official CSD03 distribution covers both `UBL-CommonSignatureComponents-2.5` and `UBL-SignatureLibrary-2.5` models. These generate into separate `SignatureAggregateComponents-2.json` and `SignatureBasicComponents-2.json` files.
 
 4. **`BusinessInformation` model**: The GC contains a `UBL-BusinessInformation-2.5` model that doesn't appear in the spec's document schema list. Should this be treated as a document schema or skipped?
 
