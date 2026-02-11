@@ -1,0 +1,43 @@
+name: Generate & Validate JSON Schemas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'gc/*.gc'
+      - 'generate_json_schemas.py'
+      - '.github/workflows/generate-json-schemas.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Generate JSON Schemas
+        run: uv run python generate_json_schemas.py
+
+      - name: Validate all schemas against JSON Schema 2020-12
+        run: |
+          uv pip install check-jsonschema
+          for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
+            uv run check-jsonschema --check-metaschema "$f"
+          done
+
+      - name: Commit generated schemas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add json/schemas/
+          git diff --cached --quiet || git commit -m "Regenerate JSON schemas from GC files"
+          git push
