@@ -1,0 +1,281 @@
+# Plan: JSON Schema Generator for UBL 2.5
+
+## Goal
+
+Build a Python script (`generate_json_schemas.py`) and a GitHub Actions workflow that reads the Genericode files in `gc/` and generates all normative JSON Schemas defined in the specification (Section 12.4).
+
+---
+
+## 1. Understand the inputs and outputs
+
+### Input
+- **`gc/UBL-Entities-2.5.gc`** — Genericode XML with 5,854 rows, each describing a BIE:
+  - `ModelName` — identifies which model/document the row belongs to (e.g. `UBL-Invoice-2.5`, `UBL-CommonLibrary-2.5`)
+  - `ComponentName` — the JSON property name (e.g. `ID`, `BuyerCustomerParty`, `Invoice`)
+  - `ComponentType` — one of `ABIE` (411), `BBIE` (3,194), `ASBIE` (2,249)
+  - `Cardinality` — `1`, `0..1`, `0..n`, `1..n`
+  - `RepresentationTerm` — the data type family (e.g. `Identifier`, `Code`, `Amount`, `Text`, `Date`, `Indicator`)
+  - `DataType` — the CCTS data type (e.g. `Identifier. Type`, `Code. Type`, `Amount. Type`)
+  - `AssociatedObjectClass` — for ASBIEs, the target ABIE name (e.g. `Customer Party`, `Monetary Total`)
+  - `ObjectClass` — the owning ABIE name (e.g. `Invoice`, `Activity Data Line`)
+  - `Definition` — human-readable description
+
+### Outputs — directory `json/schemas/`
+
+**Common schemas** (`json/schemas/common/`):
+| File | Contents |
+|------|----------|
+| `UnqualifiedDataTypes-2.json` | Base CCTS data types (AmountType, CodeType, DateType, etc.) with scalar/object forms and supplementary components |
+| `QualifiedDataTypes-2.json` | UBL-qualified data type aliases (references UnqualifiedDataTypes) |
+| `CommonBasicComponents-2.json` | Every distinct BBIE name mapped to its qualified/unqualified data type |
+| `CommonAggregateComponents-2.json` | Every ABIE from `UBL-CommonLibrary-2.5` with its BBIEs and ASBIEs; each ABIE also has an `$anchor` for standalone use |
+| `CommonExtensionComponents-2.json` | UBLExtensions array schema with ExtensionURI, ExtensionContent, etc. |
+| `SignatureAggregateComponents-2.json` | Signature-related ABIEs (Signature ABIE) |
+| `SignatureBasicComponents-2.json` | Signature-related BBIEs |
+
+**Document schemas** (`json/schemas/maindoc/`):
+One schema per document type (≈100 files), e.g.:
+- `Invoice-2.json`
+- `Order-2.json`
+- `CreditNote-2.json`
+- `WorkReport-2.json`
+- etc.
+
+Each document schema has:
+- `$schema: "https://json-schema.org/draft/2020-12/schema"`
+- `$id: "https://docs.oasis-open.org/ubl/2/json/schemas/<DocumentName>-2"` (major-version-pinned)
+- A root `type: "object"` with `properties` listing `$schema` + all BBIEs and ASBIEs for that document
+- `$ref` links to CommonBasicComponents and CommonAggregateComponents for the property definitions
+- `required` array for cardinality `1` and `1..n` properties
+- `additionalProperties: false`
+
+---
+
+## 2. Data type mapping (Section 10)
+
+The spec defines 14 unqualified data types. The script needs a mapping table:
+
+| RepresentationTerm | JSON scalar form | Object form properties | Mandatory supplementary |
+|---|---|---|---|
+| Amount | `number` | `{ value: number, currencyID: string }` | `currencyID` |
+| BinaryObject | _(always object)_ | `{ value: string (base64), mimeCode: string }` | `mimeCode` |
+| Code | `string` | `{ value: string, listID: string }` | — |
+| Date | `string` (pattern: `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`) | — | — |
+| Time | `string` (pattern: `^[0-9]{2}:[0-9]{2}:[0-9]{2}(Z\|[+-][0-9]{2}:[0-9]{2})?$`) | — | — |
+| Identifier | `string` | `{ value: string, schemeID: string }` | — |
+| Indicator | `boolean` | — | — |
+| Measure | `number` | `{ value: number, unitCode: string }` | `unitCode` |
+| Numeric | `number` | — | — |
+| Percent | `number` | — | — |
+| Rate | `number` | — | — |
+| Quantity | `number` | `{ value: number, unitCode: string }` | — |
+| Text | `string` | `{ value: string, languageID: string }` | — |
+| Name | `string` | `{ value: string, languageID: string }` | — |
+
+For types with mandatory supplementary components (Amount, BinaryObject, Measure), the schema must **always** use the object form. For optional supplementary types, the schema uses `oneOf` to allow either scalar or object form.
+
+---
+
+## 3. Script architecture — `generate_json_schemas.py`
+
+### Step 1: Parse the GC file
+- Use `xml.etree.ElementTree` (stdlib, no dependencies needed)
+- Parse all `<Row>` elements into a list of dicts keyed by `ColumnRef`
+- Group rows by `ModelName`
+
+### Step 2: Build the ABIE registry
+- From `UBL-CommonLibrary-2.5` rows, build a dict of ABIEs:
+  - Key: the ABIE's `ObjectClass` (e.g. `"Activity Data Line"`)
+  - Value: list of child BBIEs and ASBIEs (their ComponentName, ComponentType, Cardinality, RepresentationTerm, DataType, AssociatedObjectClass)
+- Derive the JSON property name from `ComponentName` (already in Title Case per the GC file)
+
+### Step 3: Generate `UnqualifiedDataTypes-2.json`
+- Hard-coded definitions for the 14 base types from the mapping table
+- Each type defined as a `$defs` entry with scalar and object form variants
+
+### Step 4: Generate `QualifiedDataTypes-2.json`
+- Inspect all distinct `DataType` values across the GC (e.g. `"Amount. Type"`, `"Code. Type"`)
+- Map each to its corresponding unqualified base via `$ref`
+
+### Step 5: Generate `CommonBasicComponents-2.json`
+- Collect all distinct BBIE `ComponentName` values across the entire GC
+- For each, determine the data type from `RepresentationTerm` / `DataType`
+- Emit a `$defs` entry that `$ref`s the appropriate type in QualifiedDataTypes or UnqualifiedDataTypes
+
+### Step 6: Generate `CommonAggregateComponents-2.json`
+- For each ABIE in `UBL-CommonLibrary-2.5`:
+  - Create a `$defs/<ABIEName>` definition
+  - Add `$anchor: "<ABIEName>"` for standalone ABIE use (Section 12.3)
+  - List `properties` from its child BBIEs (→ `$ref` to CommonBasicComponents) and ASBIEs (→ `$ref` to self `$defs`)
+  - Build `required` from cardinality `1` / `1..n`
+  - Handle cardinality `0..n` / `1..n` using `oneOf: [single, array]` pattern per Section 7.1
+  - Set `additionalProperties: false`
+
+### Step 7: Generate `CommonExtensionComponents-2.json`
+- Parse `gc/UBL-Extension-Entities-2.5.gc` (derived once from XSD; see `PROVENANCE.md`)
+- Build the UBLExtension ABIE and its 10 BBIEs from GC rows, same logic as other schemas
+
+### Step 8: Generate Signature schemas
+- Parse `gc/UBL-Signature-Entities-2.5.gc`
+- `SignatureAggregateComponents-2.json` — from `UBL-CommonSignatureComponents-2.5` and `UBL-SignatureLibrary-2.5` models
+- `SignatureBasicComponents-2.json` — Signature-related BBIEs from the same GC
+- These will reference CommonBasicComponents for standard BBIEs
+
+### Step 9: Generate document schemas
+- For each `ModelName` that is NOT `UBL-CommonLibrary-2.5`:
+  - Extract the document name (e.g. `UBL-Invoice-2.5` → `Invoice`)
+  - Find the root ABIE row (ComponentType=ABIE) and its children
+  - Generate `json/schemas/maindoc/<DocName>-2.json` with:
+    - `$id`: `https://docs.oasis-open.org/ubl/2/json/schemas/<DocName>-2`
+    - `properties.$schema`: const with the `$id` value
+    - `properties.UBLExtensions`: `$ref` to CommonExtensionComponents
+    - All BBIEs → `$ref` to CommonBasicComponents
+    - All ASBIEs → `$ref` to CommonAggregateComponents
+    - `required` array
+    - `additionalProperties: false`
+
+### Step 10: Validate generated schemas
+- After generation, validate that every generated `.json` file is a valid JSON Schema (meta-validation)
+- Use `check-jsonschema --check-metaschema` or equivalent to verify each schema against the JSON Schema 2020-12 meta-schema
+- This step is mandatory and must pass before committing
+
+---
+
+## 4. Cardinality handling in JSON Schema
+
+Per Section 7.1 of the specification:
+
+| Cardinality | Schema representation |
+|---|---|
+| `1` (meaning `1..1`) | Property in `required`, single value type |
+| `0..1` | Not in `required`, single value type |
+| `0..n` | Not in `required`, `oneOf: [single-type, array-of-type]` |
+| `1..n` | In `required`, `oneOf: [single-type, array-of-type]` with `minItems: 1` on array |
+
+The `oneOf` pattern allows both `"Description": "text"` and `"Description": ["text1", "text2"]`.
+
+---
+
+## 5. GitHub Actions workflow — `.github/workflows/generate-json-schemas.yml`
+
+```yaml
+name: Generate JSON Schemas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'gc/*.gc'
+      - 'generate_json_schemas.py'
+      - '.github/workflows/generate-json-schemas.yml'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate JSON Schemas
+        run: python generate_json_schemas.py
+
+      - name: Validate generated schemas
+        run: |
+          pip install check-jsonschema
+          # Validate that each generated schema is valid JSON Schema
+          for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
+            python -c "import json; json.load(open('$f'))" || exit 1
+          done
+
+      - name: Commit generated schemas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add json/schemas/
+          git diff --cached --quiet || git commit -m "Regenerate JSON schemas from GC file"
+          git push
+```
+
+---
+
+## 6. Key design decisions to discuss
+
+1. **JSON Schema dialect**: Use `https://json-schema.org/draft/2020-12/schema` (the latest stable draft, which supports `$anchor`, `$dynamicRef`, and prefixItems). This aligns with RFC 8927 referenced in the spec.
+
+2. **Cardinality `oneOf` pattern**: The spec says `0..n`/`1..n` properties accept either a single value or an array. The schema will use `oneOf: [{single}, {type: "array", items: {single}}]`. This is the most accurate representation per Section 7.1.
+
+3. **`$anchor` for standalone ABIEs**: Each ABIE in CommonAggregateComponents gets a `$anchor` so standalone payloads can reference it as `CommonAggregateComponents-2#PartyType` (Section 12.3).
+
+4. **Extension and Signature schemas**: All models are now covered by GC files. `gc/UBL-Extension-Entities-2.5.gc` was derived once from the CSD03 XSDs (see `PROVENANCE.md`). `gc/UBL-Signature-Entities-2.5.gc` is from the official CSD03 distribution. No hardcoding or XSD parsing is needed at runtime.
+
+5. **No external dependencies**: The generator script uses only Python stdlib (`xml.etree.ElementTree`, `json`, `os`, `pathlib`, `re`, `collections`). No pip install needed for generation.
+
+6. **Schema file naming**: Uses major-version-pinned names per spec (e.g. `Invoice-2.json`, not `Invoice-2.5.json`).
+
+---
+
+## 7. File tree after implementation
+
+```
+ubl-json/
+├── generate_json_schemas.py          # NEW — the generator script
+├── json/
+│   └── schemas/
+│       ├── common/
+│       │   ├── UnqualifiedDataTypes-2.json
+│       │   ├── QualifiedDataTypes-2.json
+│       │   ├── CommonBasicComponents-2.json
+│       │   ├── CommonAggregateComponents-2.json
+│       │   ├── CommonExtensionComponents-2.json
+│       │   ├── SignatureAggregateComponents-2.json
+│       │   └── SignatureBasicComponents-2.json
+│       └── maindoc/
+│           ├── ApplicationResponse-2.json
+│           ├── AwardedNotification-2.json
+│           ├── BillOfLading-2.json
+│           ├── ... (~100 document schemas)
+│           └── WorkReport-2.json
+├── .github/
+│   └── workflows/
+│       ├── generate-html.yml         # existing
+│       └── generate-json-schemas.yml # NEW
+├── gc/
+│   ├── UBL-Entities-2.5.gc              # main entities input
+│   ├── UBL-Signature-Entities-2.5.gc    # signature entities input
+│   ├── UBL-Endorsed-Entities-2.5.gc     # endorsed entities input
+│   └── UBL-Extension-Entities-2.5.gc   # extension entities (derived from XSD)
+├── history/
+│   ├── UBL-CommonExtensionComponents-2.5.xsd    # source XSD for Extension GC
+│   ├── UBL-ExtensionContentDataType-2.5.xsd     # source XSD for Extension GC
+│   └── UBL-CommonSignatureComponents-2.5.xsd    # source XSD (reference)
+├── PROVENANCE.md                        # documents origin of all input files
+├── UBL-2.5-JSON-Syntax-Binding.xml  # existing spec
+└── ...
+```
+
+---
+
+## 8. Implementation order
+
+1. **`generate_json_schemas.py`** — the core script (Steps 1–9 above)
+2. **Manual verification** — run locally, spot-check Invoice schema against the XSD
+3. **`.github/workflows/generate-json-schemas.yml`** — CI workflow
+4. **Update `.gitignore`** if needed (generated schemas should be committed)
+
+---
+
+## 9. Open questions for discussion
+
+1. **Should generated schemas be committed to the repo, or only produced as CI artifacts?** The plan above commits them so they are available in the repository directly.
+
+2. **Extension schema details**: RESOLVED — `gc/UBL-Extension-Entities-2.5.gc` was derived from the CSD03 XSDs and covers the full extension structure (1 ABIE + 10 BBIEs including ExtensionContent).
+
+3. **Signature schemas**: RESOLVED — `gc/UBL-Signature-Entities-2.5.gc` from the official CSD03 distribution covers both `UBL-CommonSignatureComponents-2.5` and `UBL-SignatureLibrary-2.5` models. These generate into separate `SignatureAggregateComponents-2.json` and `SignatureBasicComponents-2.json` files.
+
+4. **`BusinessInformation` model**: The GC contains a `UBL-BusinessInformation-2.5` model that doesn't appear in the spec's document schema list. Should this be treated as a document schema or skipped?
+
+5. **Validation tooling**: RESOLVED — meta-validation of generated schemas is mandatory (Step 10). Sample instance validation is out of scope for now.

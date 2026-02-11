@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/ExceptionCriteria-2",
+  "description": "A document used to specify the thresholds for forecast variance, product activity, and performance history beyond which exceptions will be triggered.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/ExceptionCriteria-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "VersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/VersionID"
+    },
+    "ValidityPeriod": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "BuyerCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "SellerSupplierParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/SupplierPartyType"
+    },
+    "ExceptionCriteriaLine": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExceptionCriteriaLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExceptionCriteriaLineType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "IssueDate",
+    "ValidityPeriod",
+    "SenderParty",
+    "ReceiverParty",
+    "ExceptionCriteriaLine"
+  ],
+  "additionalProperties": false
+}

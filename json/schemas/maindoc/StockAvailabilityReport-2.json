@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/StockAvailabilityReport-2",
+  "description": "(Deprecated) A report on the quantities of each item that are, or will be, in stock. This document is sent by a Seller (for example a producer) to a Buyer (for example a retailer).",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/StockAvailabilityReport-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "DocumentCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/DocumentCurrencyCode"
+    },
+    "InventoryPeriod": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "SellerSupplierParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/SupplierPartyType"
+    },
+    "RetailerCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "InventoryReportingParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "StockAvailabilityReportLine": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/StockAvailabilityReportLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/StockAvailabilityReportLineType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "IssueDate",
+    "SellerSupplierParty",
+    "InventoryReportingParty",
+    "StockAvailabilityReportLine"
+  ],
+  "additionalProperties": false
+}

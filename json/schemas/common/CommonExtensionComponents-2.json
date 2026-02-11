@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2",
+  "description": "UBL 2.5 Common Extension Components",
+  "$defs": {
+    "UBLExtensionsType": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/UBLExtensionType"
+      },
+      "minItems": 1
+    },
+    "UBLExtensionType": {
+      "type": "object",
+      "description": "A single extension for private use.",
+      "properties": {
+        "ID": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ID"
+        },
+        "Name": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/Name"
+        },
+        "ExtensionAgencyID": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionAgencyID"
+        },
+        "ExtensionAgencyName": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionAgencyName"
+        },
+        "ExtensionVersionID": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionVersionID"
+        },
+        "ExtensionAgencyURI": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionAgencyURI"
+        },
+        "ExtensionURI": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionURI"
+        },
+        "ExtensionReasonCode": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionReasonCode"
+        },
+        "ExtensionReason": {
+          "$ref": "CommonBasicComponents-2.json#/$defs/ExtensionReason"
+        },
+        "ExtensionContent": {
+          "$ref": "UnqualifiedDataTypes-2.json#/$defs/ContentType"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ExtensionContent"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+name: Generate & Validate JSON Schemas
+
+on:
+  pull_request:
+    paths:
+      - 'gc/*.gc'
+      - 'generate_json_schemas.py'
+      - '.github/workflows/generate-json-schemas.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'gc/*.gc'
+      - 'generate_json_schemas.py'
+      - '.github/workflows/generate-json-schemas.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Generate JSON Schemas
+        run: uv run python generate_json_schemas.py
+
+      - name: Validate all schemas against JSON Schema 2020-12
+        run: |
+          uv pip install check-jsonschema
+          for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
+            uv run check-jsonschema --check-metaschema "$f"
+          done
+
+      - name: Upload schemas as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: json-schemas
+          path: json/schemas/

@@ -1,0 +1,12 @@
+[project]
+name = "ubl-json"
+version = "0.1.0"
+description = "UBL 2.5 JSON Schema generator"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["check-jsonschema"]
+
+[project.scripts]
+generate = "generate_json_schemas:main"

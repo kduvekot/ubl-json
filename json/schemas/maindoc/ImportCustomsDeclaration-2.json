@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/ImportCustomsDeclaration-2",
+  "description": "A customs declaration document for importing goods.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/ImportCustomsDeclaration-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "TypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/TypeCode"
+    },
+    "SubTypeCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/SubTypeCode"
+    },
+    "NatureOfTransactionCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/NatureOfTransactionCode"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "VersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/VersionID"
+    },
+    "ValidityPeriod": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+    },
+    "CustomsExitOfficeLocation": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/LocationType"
+    },
+    "JurisdictionRegionAddress": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/AddressType"
+    },
+    "ImporterParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ConsignorParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ConsigneeParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "FreightForwarderParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "CustomsParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "NotifierParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "Shipment": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ShipmentType"
+    },
+    "PreviousCustomsDeclaration": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomsDeclarationType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "Shipment"
+  ],
+  "additionalProperties": false
+}

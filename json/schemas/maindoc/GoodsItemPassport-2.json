@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/GoodsItemPassport-2",
+  "description": "A document providing a temporary export license, also knowned as an ATA Carnet",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/GoodsItemPassport-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "StatusCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/StatusCode"
+    },
+    "Status": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Status"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "VersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/VersionID"
+    },
+    "ExportReasonCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ExportReasonCode"
+    },
+    "ExportReason": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ExportReason"
+    },
+    "ValidityPeriod": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+    },
+    "IssuerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "HolderParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "RepresentativeParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ExportingGuarantorParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ImportingGuarantorParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ExportingCustomsParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "ImportingCustomsParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "Shipment": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ShipmentType"
+    },
+    "GoodsItemPassportCounterfoil": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/GoodsItemPassportCounterfoilType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/GoodsItemPassportCounterfoilType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "IssuerEndorsement": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/EndorsementType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "DocumentDistribution": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentDistributionType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentDistributionType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "HolderParty",
+    "Shipment",
+    "GoodsItemPassportCounterfoil"
+  ],
+  "additionalProperties": false
+}

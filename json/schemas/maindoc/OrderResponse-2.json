@@ -1,0 +1,324 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/OrderResponse-2",
+  "description": "A document used to indicate detailed acceptance or rejection of an Order or to make a counter-offer.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/OrderResponse-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/ID"
+    },
+    "SalesOrderID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/SalesOrderID"
+    },
+    "CopyIndicator": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/IssueTime"
+    },
+    "OrderResponseCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/OrderResponseCode"
+    },
+    "Note": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/Note"
+    },
+    "DocumentCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/DocumentCurrencyCode"
+    },
+    "PricingCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/PricingCurrencyCode"
+    },
+    "TaxCurrencyCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/TaxCurrencyCode"
+    },
+    "TotalPackagesQuantity": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/TotalPackagesQuantity"
+    },
+    "GrossWeightMeasure": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/GrossWeightMeasure"
+    },
+    "NetWeightMeasure": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/NetWeightMeasure"
+    },
+    "NetNetWeightMeasure": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/NetNetWeightMeasure"
+    },
+    "GrossVolumeMeasure": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/GrossVolumeMeasure"
+    },
+    "NetVolumeMeasure": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/NetVolumeMeasure"
+    },
+    "CustomerReference": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/CustomerReference"
+    },
+    "AccountingCostCode": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/AccountingCostCode"
+    },
+    "AccountingCost": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/AccountingCost"
+    },
+    "LineCountNumeric": {
+      "$ref": "common/CommonBasicComponents-2.json#/$defs/LineCountNumeric"
+    },
+    "ValidityPeriod": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PeriodType"
+          }
+        }
+      ]
+    },
+    "OrderReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/OrderReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/OrderReferenceType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "OrderDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "OrderChangeDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "OriginatorDocumentReference": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "Contract": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/ContractType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/ContractType"
+          }
+        }
+      ]
+    },
+    "SellerSupplierParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/SupplierPartyType"
+    },
+    "BuyerCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "OriginatorCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "BeneficiaryParty": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+          }
+        }
+      ]
+    },
+    "FreightForwarderParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/PartyType"
+    },
+    "AccountingSupplierParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/SupplierPartyType"
+    },
+    "AccountingCustomerParty": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CustomerPartyType"
+    },
+    "Delivery": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/DeliveryType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/DeliveryType"
+          }
+        }
+      ]
+    },
+    "DeliveryTerms": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/DeliveryTermsType"
+    },
+    "PaymentMeans": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentMeansType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentMeansType"
+          }
+        }
+      ]
+    },
+    "PaymentTerms": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentTermsType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/PaymentTermsType"
+          }
+        }
+      ]
+    },
+    "AllowanceCharge": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/AllowanceChargeType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/AllowanceChargeType"
+          }
+        }
+      ]
+    },
+    "TransactionConditions": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/TransactionConditionsType"
+    },
+    "TaxExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "PricingExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "PaymentExchangeRate": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/ExchangeRateType"
+    },
+    "DestinationCountry": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/CountryType"
+    },
+    "TaxTotal": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/TaxTotalType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/TaxTotalType"
+          }
+        }
+      ]
+    },
+    "LegalMonetaryTotal": {
+      "$ref": "common/CommonAggregateComponents-2.json#/$defs/MonetaryTotalType"
+    },
+    "OrderLine": {
+      "oneOf": [
+        {
+          "$ref": "common/CommonAggregateComponents-2.json#/$defs/OrderLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "common/CommonAggregateComponents-2.json#/$defs/OrderLineType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ID",
+    "IssueDate",
+    "OrderReference",
+    "SellerSupplierParty",
+    "BuyerCustomerParty"
+  ],
+  "additionalProperties": false
+}
