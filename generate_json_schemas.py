@@ -422,9 +422,79 @@ def generate_common_basic_components(output_dir, registry):
         output_dir: Output directory for schemas
         registry: Built registry from build_registry()
 
-    TODO: Implement this step.
+    Generates a schema that defines every distinct BBIE (Basic Business Information Entity)
+    name used across all UBL models, serving as a BBIE type database for constructing documents.
     """
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Collect all unique BBIEs across all models
+    bbies = {}  # component_name -> data_type
+
+    for model_name, model_data in registry['models'].items():
+        for abie_name, abie_info in model_data['abies'].items():
+            # Iterate through children of this ABIE
+            for child in abie_info.get('children', []):
+                # Only process BBIEs, skip ASBIEs
+                if child.get('component_type') != 'BBIE':
+                    continue
+
+                component_name = child.get('component_name')
+                data_type = child.get('data_type')
+
+                # Skip if component_name or data_type is missing
+                if not component_name or not data_type:
+                    continue
+
+                # Store the first occurrence (they should all be the same)
+                if component_name not in bbies:
+                    bbies[component_name] = data_type
+
+    # Build $defs entries
+    defs = {}
+
+    for component_name in sorted(bbies.keys()):
+        data_type = bbies[component_name]
+
+        # Convert data_type to qualified type key
+        # Same logic as Step 4:
+        # - Remove ". Type" suffix
+        # - Split by "_ " and take the last part
+        # - Remove all spaces except underscores
+        # - Append "Type"
+
+        # Remove ". Type" suffix
+        without_suffix = data_type.replace('. Type', '')
+
+        # Split by "_ " to get the last part (after underscore-space)
+        parts = without_suffix.split('_ ')
+        base_name = parts[-1] if parts else without_suffix
+
+        # Derive the key name by removing spaces and handling underscores
+        # "Binary Object" -> "BinaryObject"
+        # "Allowance Charge Reason_ Code" -> "AllowanceChargeReasonCode"
+        key_name = without_suffix.replace('_ ', '_').replace(' ', '')
+        qualified_type_key = key_name + 'Type'
+
+        # Create the $ref entry
+        defs[component_name] = {
+            '$ref': f'QualifiedDataTypes-2.json#/$defs/{qualified_type_key}'
+        }
+
+    # Build the complete schema
+    schema = {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2',
+        'description': 'UBL 2.5 Common Basic Components',
+        '$defs': defs
+    }
+
+    # Write the schema to file
+    output_file = output_dir / 'CommonBasicComponents-2.json'
+    with open(output_file, 'w') as f:
+        json.dump(schema, f, indent=2)
+        f.write('\n')
+
+    print(f"  Written CommonBasicComponents-2.json")
 
 
 # ============================================================================
