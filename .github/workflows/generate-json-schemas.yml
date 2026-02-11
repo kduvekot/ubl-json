@@ -1,6 +1,11 @@
 name: Generate & Validate JSON Schemas
 
 on:
+  pull_request:
+    paths:
+      - 'gc/*.gc'
+      - 'generate_json_schemas.py'
+      - '.github/workflows/generate-json-schemas.yml'
   push:
     branches: [main]
     paths:
@@ -13,7 +18,7 @@ permissions:
   contents: write
 
 jobs:
-  generate:
+  generate-and-validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +39,15 @@ jobs:
             uv run check-jsonschema --check-metaschema "$f"
           done
 
+      - name: Upload schemas as artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: json-schemas
+          path: json/schemas/
+
       - name: Commit generated schemas
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
