@@ -636,9 +636,95 @@ def generate_common_extension_components(output_dir, registry):
         output_dir: Output directory for schemas
         registry: Built registry from build_registry()
 
-    TODO: Implement this step.
+    Generates the CommonExtensionComponents-2.json schema defining UBLExtensions
+    as an array of extension objects that can be used for private extensions.
     """
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Get the extension ABIEs from the registry
+    extension_model = registry['models'].get('UBL-CommonExtensionComponents-2.5', {})
+    extension_abies = extension_model.get('abies', {})
+
+    if not extension_abies:
+        print(f"  No ABIEs found in UBL-CommonExtensionComponents-2.5 model")
+        return
+
+    # Find the UBL Extension ABIE
+    ubl_extension_abie = None
+    for object_class, abie in extension_abies.items():
+        if abie.get('component_name') == 'UBLExtension':
+            ubl_extension_abie = abie
+            break
+
+    if not ubl_extension_abie:
+        print(f"  UBLExtension ABIE not found in registry")
+        return
+
+    children = ubl_extension_abie.get('children', [])
+    definition = ubl_extension_abie.get('definition', '')
+
+    # Build properties and required list for UBLExtensionType
+    extension_properties = {}
+    extension_required = []
+
+    for child in children:
+        child_component_name = child['component_name']
+        cardinality = child['cardinality']
+
+        if child_component_name == 'ExtensionContent':
+            # ExtensionContent is special: reference to ContentType in UnqualifiedDataTypes
+            extension_properties[child_component_name] = {
+                '$ref': 'UnqualifiedDataTypes-2.json#/$defs/ContentType'
+            }
+        else:
+            # All other BBIEs reference CommonBasicComponents
+            extension_properties[child_component_name] = {
+                '$ref': f'CommonBasicComponents-2.json#/$defs/{child_component_name}'
+            }
+
+        # Add to required list if cardinality is 1
+        if cardinality == '1':
+            extension_required.append(child_component_name)
+
+    # Build $defs
+    defs = {}
+
+    # UBLExtensionsType: array of extension objects
+    defs['UBLExtensionsType'] = {
+        'type': 'array',
+        'items': {'$ref': '#/$defs/UBLExtensionType'},
+        'minItems': 1
+    }
+
+    # UBLExtensionType: single extension object
+    ubl_extension_type_def = {
+        'type': 'object',
+        'description': definition,
+        'properties': extension_properties,
+        'additionalProperties': False
+    }
+
+    # Add required only if there are required properties
+    if extension_required:
+        ubl_extension_type_def['required'] = extension_required
+
+    defs['UBLExtensionType'] = ubl_extension_type_def
+
+    # Build the complete schema
+    schema = {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2',
+        'description': 'UBL 2.5 Common Extension Components',
+        '$defs': defs
+    }
+
+    # Write the schema to file
+    output_file = output_dir / 'CommonExtensionComponents-2.json'
+    with open(output_file, 'w') as f:
+        json.dump(schema, f, indent=2)
+        f.write('\n')
+
+    print(f"  Written CommonExtensionComponents-2.json")
 
 
 # ============================================================================
@@ -653,9 +739,194 @@ def generate_signature_schemas(output_dir, registry):
         output_dir: Output directory for schemas
         registry: Built registry from build_registry()
 
-    TODO: Implement this step.
+    Generates two schemas:
+    - SignatureBasicComponents-2.json: BBIEs for signature components
+    - SignatureAggregateComponents-2.json: ABIEs for signature structures
     """
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Step 1: Generate SignatureBasicComponents-2.json
+    # Collect all BBIEs from signature models
+    signature_bbies = {}  # component_name -> data_type
+
+    signature_models = ['UBL-CommonSignatureComponents-2.5', 'UBL-SignatureLibrary-2.5']
+
+    for model_name in signature_models:
+        model_data = registry['models'].get(model_name, {})
+        abies = model_data.get('abies', {})
+
+        for abie_name, abie_info in abies.items():
+            children = abie_info.get('children', [])
+
+            for child in children:
+                if child.get('component_type') != 'BBIE':
+                    continue
+
+                component_name = child.get('component_name')
+                data_type = child.get('data_type')
+
+                if not component_name or not data_type:
+                    continue
+
+                # Store the first occurrence
+                if component_name not in signature_bbies:
+                    signature_bbies[component_name] = data_type
+
+    # Build $defs for SignatureBasicComponents
+    sig_basic_defs = {}
+
+    for component_name in sorted(signature_bbies.keys()):
+        data_type = signature_bbies[component_name]
+
+        # Convert data_type to qualified type key using the same logic as Step 4
+        without_suffix = data_type.replace('. Type', '')
+        parts = without_suffix.split('_ ')
+        base_name = parts[-1] if parts else without_suffix
+        key_name = without_suffix.replace('_ ', '_').replace(' ', '')
+        qualified_type_key = key_name + 'Type'
+
+        # Create the $ref entry to QualifiedDataTypes
+        sig_basic_defs[component_name] = {
+            '$ref': f'QualifiedDataTypes-2.json#/$defs/{qualified_type_key}'
+        }
+
+    # Build SignatureBasicComponents schema
+    sig_basic_schema = {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/SignatureBasicComponents-2',
+        'description': 'UBL 2.5 Signature Basic Components',
+        '$defs': sig_basic_defs
+    }
+
+    # Write SignatureBasicComponents-2.json
+    sig_basic_file = output_dir / 'SignatureBasicComponents-2.json'
+    with open(sig_basic_file, 'w') as f:
+        json.dump(sig_basic_schema, f, indent=2)
+        f.write('\n')
+
+    print(f"  Written SignatureBasicComponents-2.json")
+
+    # Step 2: Generate SignatureAggregateComponents-2.json
+    # Get ABIEs from signature models
+    sig_agg_defs = {}
+
+    # Process UBL-CommonSignatureComponents-2.5 for UBLDocumentSignatures
+    common_sig_model = registry['models'].get('UBL-CommonSignatureComponents-2.5', {})
+    common_sig_abies = common_sig_model.get('abies', {})
+
+    for object_class, abie in common_sig_abies.items():
+        component_name = abie.get('component_name')
+        definition = abie.get('definition', '')
+        children = abie.get('children', [])
+
+        if component_name == 'UBLDocumentSignatures':
+            type_name = component_name + 'Type'
+            properties = {}
+            required = []
+
+            for child in children:
+                child_component_name = child['component_name']
+                component_type = child.get('component_type')
+                cardinality = child.get('cardinality')
+
+                if component_type == 'ASBIE':
+                    # Reference to SignatureInformationType
+                    ref_schema = {'$ref': '#/$defs/SignatureInformationType'}
+
+                    if cardinality in ('0..1', '1'):
+                        # Single value
+                        properties[child_component_name] = ref_schema
+                    elif cardinality in ('0..n', '1..n'):
+                        # Array (single or array)
+                        properties[child_component_name] = {
+                            'oneOf': [
+                                ref_schema,
+                                {
+                                    'type': 'array',
+                                    'items': ref_schema
+                                }
+                            ]
+                        }
+                        # For 1..n, add minItems constraint
+                        if cardinality == '1..n':
+                            properties[child_component_name]['oneOf'][1]['minItems'] = 1
+
+                # Add to required list if cardinality is 1 or 1..n
+                if cardinality in ('1', '1..n'):
+                    required.append(child_component_name)
+
+            # Build the ABIE definition
+            abie_def = {
+                '$anchor': type_name,
+                'type': 'object',
+                'description': definition,
+                'properties': properties,
+                'additionalProperties': False
+            }
+
+            if required:
+                abie_def['required'] = required
+
+            sig_agg_defs[type_name] = abie_def
+
+    # Process UBL-SignatureLibrary-2.5 for SignatureInformation
+    sig_lib_model = registry['models'].get('UBL-SignatureLibrary-2.5', {})
+    sig_lib_abies = sig_lib_model.get('abies', {})
+
+    for object_class, abie in sig_lib_abies.items():
+        component_name = abie.get('component_name')
+        definition = abie.get('definition', '')
+        children = abie.get('children', [])
+
+        if component_name == 'SignatureInformation':
+            type_name = component_name + 'Type'
+            properties = {}
+            required = []
+
+            for child in children:
+                child_component_name = child['component_name']
+                component_type = child.get('component_type')
+                cardinality = child.get('cardinality')
+
+                if component_type == 'BBIE':
+                    # Reference to SignatureBasicComponents
+                    properties[child_component_name] = {
+                        '$ref': f'SignatureBasicComponents-2.json#/$defs/{child_component_name}'
+                    }
+
+                # Add to required list if cardinality is 1 or 1..n
+                if cardinality in ('1', '1..n'):
+                    required.append(child_component_name)
+
+            # Build the ABIE definition
+            abie_def = {
+                '$anchor': type_name,
+                'type': 'object',
+                'description': definition,
+                'properties': properties,
+                'additionalProperties': False
+            }
+
+            if required:
+                abie_def['required'] = required
+
+            sig_agg_defs[type_name] = abie_def
+
+    # Build SignatureAggregateComponents schema with sorted $defs
+    sig_agg_schema = {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2',
+        'description': 'UBL 2.5 Signature Aggregate Components',
+        '$defs': dict(sorted(sig_agg_defs.items()))
+    }
+
+    # Write SignatureAggregateComponents-2.json
+    sig_agg_file = output_dir / 'SignatureAggregateComponents-2.json'
+    with open(sig_agg_file, 'w') as f:
+        json.dump(sig_agg_schema, f, indent=2)
+        f.write('\n')
+
+    print(f"  Written SignatureAggregateComponents-2.json")
 
 
 # ============================================================================
