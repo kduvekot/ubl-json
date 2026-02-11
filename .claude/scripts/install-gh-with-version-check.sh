@@ -17,7 +17,7 @@ set -u  # Exit on undefined variable
 set -o pipefail  # Exit on pipe failures
 
 # Configuration
-GH_VERSION_CONFIG="${GH_SETUP_VERSION:-2.83.2}"
+GH_VERSION_CONFIG="${GH_SETUP_VERSION:-AUTO}"
 
 # Support AUTO for automatic latest version
 if [ "$GH_VERSION_CONFIG" = "AUTO" ]; then
