@@ -2,10 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: ['**']        # All branches: main deploys root, others deploy previews
   pull_request:
-    types: [opened, synchronize, reopened, closed]
-  delete:
+    types: [closed]          # Cleanup when PR is closed/merged
+  delete:                    # Cleanup when branch is deleted
   workflow_dispatch:
 
 permissions:
@@ -146,17 +146,22 @@ jobs:
 
   # ─────────────────────────────────────────────────────────
   # Deploy branch preview: schemas → gh-pages/<short-sha>/
+  # Triggers on push to ANY non-main branch
   # ─────────────────────────────────────────────────────────
   deploy-branch:
-    if: |
-      github.event_name == 'pull_request' &&
-      github.event.action != 'closed'
+    if: github.event_name == 'push' && github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout PR source
+      - name: Checkout branch source
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Extract branch name
+        id: branch-info
+        run: |
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          echo "sha_short=${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
 
       # ── Generate JSON schemas ──
       - name: Install uv
@@ -178,8 +183,29 @@ jobs:
       - name: Upload schemas artifact
         uses: actions/upload-artifact@v4
         with:
-          name: json-schemas-${{ github.event.pull_request.head.sha }}
+          name: json-schemas-${{ steps.branch-info.outputs.sha_short }}
           path: json/schemas/
+
+      # ── Look up associated PR (if any) ──
+      - name: Find associated pull request
+        id: find-pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = '${{ steps.branch-info.outputs.branch }}';
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branch}`,
+              state: 'open',
+            });
+            if (prs.length > 0) {
+              core.setOutput('pr_number', prs[0].number);
+              core.setOutput('has_pr', 'true');
+            } else {
+              core.setOutput('pr_number', '');
+              core.setOutput('has_pr', 'false');
+            }
 
       # ── Deploy preview to gh-pages ──
       - name: Checkout gh-pages branch
@@ -202,14 +228,18 @@ jobs:
 
       - name: Deploy branch preview
         run: |
+          PR_ARG=""
+          if [ "${{ steps.find-pr.outputs.has_pr }}" = "true" ]; then
+            PR_ARG="--pr ${{ steps.find-pr.outputs.pr_number }}"
+          fi
           python build_pages.py deploy-branch \
             --pages-dir gh-pages \
             --schemas-dir json/schemas \
-            --branch "${{ github.event.pull_request.head.ref }}" \
-            --sha "${{ github.event.pull_request.head.sha }}" \
+            --branch "${{ steps.branch-info.outputs.branch }}" \
+            --sha "${{ steps.branch-info.outputs.sha }}" \
             --repo "${{ github.repository }}" \
-            --pr "${{ github.event.pull_request.number }}" \
-            --run-id "${{ github.run_id }}"
+            --run-id "${{ github.run_id }}" \
+            $PR_ARG
 
       - name: Push to gh-pages
         run: |
@@ -217,17 +247,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Deploy preview: ${{ github.event.pull_request.head.ref }} (${{ github.event.pull_request.head.sha }})"
+          git diff --cached --quiet || git commit -m "Deploy preview: ${{ steps.branch-info.outputs.branch }} (${{ steps.branch-info.outputs.sha_short }})"
           git push origin gh-pages
 
+      # ── Comment on PR (if one exists) ──
       - name: Comment on PR with preview link
+        if: steps.find-pr.outputs.has_pr == 'true'
         uses: actions/github-script@v7
         with:
           script: |
-            const sha = '${{ github.event.pull_request.head.sha }}';
-            const shaShort = sha.substring(0, 7);
+            const sha = '${{ steps.branch-info.outputs.sha }}';
+            const shaShort = '${{ steps.branch-info.outputs.sha_short }}';
             const owner = context.repo.owner;
             const repo = context.repo.repo;
+            const prNumber = parseInt('${{ steps.find-pr.outputs.pr_number }}');
             const pagesUrl = `https://${owner}.github.io/${repo}`;
             const previewUrl = `${pagesUrl}/${shaShort}/`;
             const artifactUrl = `https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}`;
@@ -247,9 +280,8 @@ jobs:
 
             // Find existing bot comment to update
             const comments = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
+              owner, repo,
+              issue_number: prNumber,
             });
             const botComment = comments.data.find(
               c => c.user.type === 'Bot' && c.body.includes('Branch Preview Deployed')
@@ -257,22 +289,21 @@ jobs:
 
             if (botComment) {
               await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
+                owner, repo,
                 comment_id: botComment.id,
                 body,
               });
             } else {
               await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
+                owner, repo,
+                issue_number: prNumber,
                 body,
               });
             }
 
   # ─────────────────────────────────────────────────────────
-  # Cleanup: remove branch preview when PR is closed
+  # Cleanup: remove branch preview when PR is closed or
+  # branch is deleted
   # ─────────────────────────────────────────────────────────
   cleanup-branch:
     if: |
