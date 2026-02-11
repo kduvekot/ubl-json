@@ -1,0 +1,323 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  delete:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  # ─────────────────────────────────────────────────────────
+  # Deploy main branch: spec HTML + schemas → gh-pages root
+  # ─────────────────────────────────────────────────────────
+  deploy-main:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      # ── Generate HTML spec ──
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download Saxon HE
+        run: |
+          mkdir -p utilities/saxon9he
+          curl -fsSL -o utilities/saxon9he/saxon9he.jar \
+            "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-15/Saxon-HE-9.8.0-15.jar"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate HTML from DocBook XML
+        run: python convert_to_html.py
+
+      # ── Generate JSON schemas ──
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python (uv)
+        run: uv python install
+
+      - name: Generate JSON schemas
+        run: uv run python generate_json_schemas.py
+
+      - name: Validate schemas
+        run: |
+          uv pip install check-jsonschema
+          for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
+            uv run check-jsonschema --check-metaschema "$f"
+          done
+
+      - name: Upload schemas artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: json-schemas-main
+          path: json/schemas/
+
+      # ── Build and deploy gh-pages ──
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Initialize gh-pages directory
+        run: |
+          if [ ! -d gh-pages/.git ]; then
+            mkdir -p gh-pages
+          fi
+
+      - name: Preserve branch previews
+        run: |
+          # Save branches.json and all SHA directories before overwriting
+          if [ -f gh-pages/branches.json ]; then
+            cp gh-pages/branches.json /tmp/branches.json
+          fi
+          # Save branch preview directories (7-char hex names)
+          mkdir -p /tmp/branch-previews
+          for dir in gh-pages/*/; do
+            dirname=$(basename "$dir")
+            # Match 7-character hex strings (short SHAs)
+            if echo "$dirname" | grep -qE '^[0-9a-f]{7}$'; then
+              cp -r "$dir" "/tmp/branch-previews/$dirname"
+            fi
+          done
+          # Save branches index
+          if [ -d gh-pages/branches ]; then
+            cp -r gh-pages/branches /tmp/branch-previews/_branches
+          fi
+
+      - name: Deploy main content
+        run: |
+          python build_pages.py deploy-main \
+            --pages-dir gh-pages \
+            --spec-html UBL-2.5-JSON-Syntax-Binding.html \
+            --schemas-dir json/schemas \
+            --repo ${{ github.repository }}
+
+      - name: Restore branch previews
+        run: |
+          # Restore branches.json
+          if [ -f /tmp/branches.json ]; then
+            cp /tmp/branches.json gh-pages/branches.json
+          fi
+          # Restore branch preview directories
+          for dir in /tmp/branch-previews/*/; do
+            dirname=$(basename "$dir")
+            if [ "$dirname" = "_branches" ]; then
+              cp -r "$dir" gh-pages/branches
+            else
+              cp -r "$dir" "gh-pages/$dirname"
+            fi
+          done
+          # Rebuild banner and index with correct branch data
+          python build_pages.py deploy-main \
+            --pages-dir gh-pages \
+            --spec-html UBL-2.5-JSON-Syntax-Binding.html \
+            --schemas-dir json/schemas \
+            --repo ${{ github.repository }}
+
+      - name: Push to gh-pages
+        run: |
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Deploy main: spec + schemas ($(date -u +%Y-%m-%dT%H:%M))"
+          git push origin gh-pages
+
+  # ─────────────────────────────────────────────────────────
+  # Deploy branch preview: schemas → gh-pages/<short-sha>/
+  # ─────────────────────────────────────────────────────────
+  deploy-branch:
+    if: |
+      github.event_name == 'pull_request' &&
+      github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      # ── Generate JSON schemas ──
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Generate JSON schemas
+        run: uv run python generate_json_schemas.py
+
+      - name: Validate schemas
+        run: |
+          uv pip install check-jsonschema
+          for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
+            uv run check-jsonschema --check-metaschema "$f"
+          done
+
+      - name: Upload schemas artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: json-schemas-${{ github.event.pull_request.head.sha }}
+          path: json/schemas/
+
+      # ── Deploy preview to gh-pages ──
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Initialize gh-pages directory
+        run: |
+          if [ ! -d gh-pages/.git ]; then
+            mkdir -p gh-pages
+            cd gh-pages
+            git init
+            git checkout -b gh-pages
+            git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+            touch .nojekyll
+          fi
+
+      - name: Deploy branch preview
+        run: |
+          python build_pages.py deploy-branch \
+            --pages-dir gh-pages \
+            --schemas-dir json/schemas \
+            --branch "${{ github.event.pull_request.head.ref }}" \
+            --sha "${{ github.event.pull_request.head.sha }}" \
+            --repo "${{ github.repository }}" \
+            --pr "${{ github.event.pull_request.number }}" \
+            --run-id "${{ github.run_id }}"
+
+      - name: Push to gh-pages
+        run: |
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Deploy preview: ${{ github.event.pull_request.head.ref }} (${{ github.event.pull_request.head.sha }})"
+          git push origin gh-pages
+
+      - name: Comment on PR with preview link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const sha = '${{ github.event.pull_request.head.sha }}';
+            const shaShort = sha.substring(0, 7);
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pagesUrl = `https://${owner}.github.io/${repo}`;
+            const previewUrl = `${pagesUrl}/${shaShort}/`;
+            const artifactUrl = `https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}`;
+
+            const body = [
+              `### 📄 Branch Preview Deployed`,
+              ``,
+              `| | |`,
+              `|---|---|`,
+              `| **Preview** | [${previewUrl}](${previewUrl}) |`,
+              `| **Commit** | \`${shaShort}\` |`,
+              `| **Artifacts** | [Download schemas](${artifactUrl}) |`,
+              ``,
+              `> Schemas from this branch are published for review. ` +
+              `This preview will be updated on each push and removed when the PR is closed.`,
+            ].join('\n');
+
+            // Find existing bot comment to update
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const botComment = comments.data.find(
+              c => c.user.type === 'Bot' && c.body.includes('Branch Preview Deployed')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  # ─────────────────────────────────────────────────────────
+  # Cleanup: remove branch preview when PR is closed
+  # ─────────────────────────────────────────────────────────
+  cleanup-branch:
+    if: |
+      (github.event_name == 'pull_request' && github.event.action == 'closed') ||
+      (github.event_name == 'delete' && github.event.ref_type == 'branch')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source (for build_pages.py)
+        uses: actions/checkout@v4
+
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Determine branch name
+        id: branch-name
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "branch=${{ github.event.pull_request.head.ref }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "branch=${{ github.event.ref }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Clean up branch preview
+        if: ${{ hashFiles('gh-pages/branches.json') != '' }}
+        run: |
+          python build_pages.py cleanup-branch \
+            --pages-dir gh-pages \
+            --branch "${{ steps.branch-name.outputs.branch }}" \
+            --repo "${{ github.repository }}"
+
+      - name: Push to gh-pages
+        if: ${{ hashFiles('gh-pages/branches.json') != '' }}
+        run: |
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Cleanup: remove preview for ${{ steps.branch-name.outputs.branch }}"
+          git push origin gh-pages

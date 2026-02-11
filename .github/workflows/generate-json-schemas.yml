@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   generate-and-validate:
@@ -40,17 +40,7 @@ jobs:
           done
 
       - name: Upload schemas as artifact
-        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: json-schemas
           path: json/schemas/
-
-      - name: Commit generated schemas
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add json/schemas/
-          git diff --cached --quiet || git commit -m "Regenerate JSON schemas from GC files"
-          git push
