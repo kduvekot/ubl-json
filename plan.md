@@ -134,9 +134,10 @@ For types with mandatory supplementary components (Amount, BinaryObject, Measure
     - `required` array
     - `additionalProperties: false`
 
-### Step 10: Validation (optional but recommended)
-- After generation, validate a sample of generated schemas using `jsonschema` or `check-jsonschema`
-- Optionally generate and validate a minimal sample Invoice instance
+### Step 10: Validate generated schemas
+- After generation, validate that every generated `.json` file is a valid JSON Schema (meta-validation)
+- Use `check-jsonschema --check-metaschema` or equivalent to verify each schema against the JSON Schema 2020-12 meta-schema
+- This step is mandatory and must pass before committing
 
 ---
 
@@ -277,4 +278,4 @@ ubl-json/
 
 4. **`BusinessInformation` model**: The GC contains a `UBL-BusinessInformation-2.5` model that doesn't appear in the spec's document schema list. Should this be treated as a document schema or skipped?
 
-5. **Validation tooling**: Should we add a validation step that creates a sample JSON instance (e.g. minimal Invoice) and validates it against the generated schema?
+5. **Validation tooling**: RESOLVED — meta-validation of generated schemas is mandatory (Step 10). Sample instance validation is out of scope for now.
