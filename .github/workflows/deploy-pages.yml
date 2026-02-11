@@ -159,8 +159,9 @@ jobs:
           echo "Push failed after 4 attempts" && exit 1
 
   # ─────────────────────────────────────────────────────────
-  # Deploy branch preview: schemas → gh-pages/<short-sha>/
-  # Triggers on push to ANY non-main branch.
+  # Deploy branch preview: spec HTML + schemas → gh-pages/<short-sha>/
+  # Each preview is self-contained — relative links from the spec
+  # to json/schemas/ resolve within the preview directory.
   # Rapid pushes to the same branch cancel the previous run.
   # ─────────────────────────────────────────────────────────
   deploy-branch:
@@ -181,11 +182,32 @@ jobs:
           echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
           echo "sha_short=${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
 
+      # ── Generate HTML spec ──
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download Saxon HE
+        run: |
+          mkdir -p utilities/saxon9he
+          curl -fsSL -o utilities/saxon9he/saxon9he.jar \
+            "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-15/Saxon-HE-9.8.0-15.jar"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate HTML from DocBook XML
+        run: python convert_to_html.py
+
       # ── Generate JSON schemas ──
       - name: Install uv
         uses: astral-sh/setup-uv@v6
 
-      - name: Set up Python
+      - name: Set up Python (uv)
         run: uv python install
 
       - name: Generate JSON schemas
@@ -252,6 +274,7 @@ jobs:
           fi
           python build_pages.py deploy-branch \
             --pages-dir gh-pages \
+            --spec-html UBL-2.5-JSON-Syntax-Binding.html \
             --schemas-dir json/schemas \
             --branch "${{ steps.branch-info.outputs.branch }}" \
             --sha "${{ steps.branch-info.outputs.sha }}" \
@@ -299,12 +322,13 @@ jobs:
               ``,
               `| | |`,
               `|---|---|`,
-              `| **Preview** | [${previewUrl}](${previewUrl}) |`,
+              `| **Spec + Schemas** | [${previewUrl}](${previewUrl}) |`,
               `| **Commit** | \`${shaShort}\` |`,
               `| **Artifacts** | [Download schemas](${artifactUrl}) |`,
               ``,
-              `> Schemas from this branch are published for review. ` +
-              `This preview will be updated on each push and removed when the PR is closed.`,
+              `> Full preview of the specification with generated JSON schemas. ` +
+              `Links from the spec to schemas resolve within the preview. ` +
+              `Updated on each push, removed when the PR is closed.`,
             ].join('\n');
 
             // Find existing bot comment to update

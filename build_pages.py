@@ -4,12 +4,12 @@
 This script manages the gh-pages directory structure:
 
     /index.html              ← spec document with banner (main branch)
-    /schemas/                ← JSON schemas (main branch)
+    /json/schemas/           ← JSON schemas (main branch, matches spec links)
     /branches.json           ← metadata for active branch previews
     /branches/index.html     ← human-readable branch index
     /<short-sha>/            ← branch preview directory
-        index.html           ← preview page with schema listing
-        schemas/             ← generated schemas for that branch
+        index.html           ← spec document with branch preview banner
+        json/schemas/        ← generated schemas (relative links from spec work)
 
 Usage:
     # Deploy main branch (spec + schemas)
@@ -18,9 +18,10 @@ Usage:
         --spec-html UBL-2.5-JSON-Syntax-Binding.html \\
         --schemas-dir json/schemas
 
-    # Deploy branch preview
+    # Deploy branch preview (spec + schemas)
     python build_pages.py deploy-branch \\
         --pages-dir ./gh-pages \\
+        --spec-html UBL-2.5-JSON-Syntax-Binding.html \\
         --schemas-dir json/schemas \\
         --branch feature/my-branch \\
         --sha abc1234def \\
@@ -75,8 +76,8 @@ def generate_banner_html(branches_data: dict, repo: str) -> str:
 <div id="ubl-pages-banner" style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:12px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <strong style="font-size:16px;">UBL 2.5 JSON</strong>
-    <a href="schemas/common/" style="color:#6ec6ff;text-decoration:none;">Common Schemas</a>
-    <a href="schemas/maindoc/" style="color:#6ec6ff;text-decoration:none;">Document Schemas</a>
+    <a href="json/schemas/common/" style="color:#6ec6ff;text-decoration:none;">Common Schemas</a>
+    <a href="json/schemas/maindoc/" style="color:#6ec6ff;text-decoration:none;">Document Schemas</a>
     <a href="branches/index.html" style="color:#6ec6ff;text-decoration:none;">Active Branches{badge}</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
@@ -114,7 +115,45 @@ def inject_banner(spec_html_path: Path, banner_html: str):
         f.write(content)
 
 
-def generate_schema_listing(schemas_dir: Path, path_prefix: str = "") -> str:
+def generate_branch_banner_html(
+    branch_name: str,
+    sha: str,
+    repo: str,
+    pr_num: int | None = None,
+    run_id: str | None = None,
+) -> str:
+    """Generate the banner HTML for a branch preview page."""
+    sha_short = sha[:7]
+    commit_url = f"https://github.com/{html.escape(repo)}/commit/{sha}"
+    pr_html = ""
+    if pr_num:
+        pr_url = f"https://github.com/{html.escape(repo)}/pull/{pr_num}"
+        pr_html = f' &middot; <a href="{pr_url}" style="color:#fff;text-decoration:underline;">PR #{pr_num}</a>'
+    artifact_html = ""
+    if run_id:
+        artifact_url = f"https://github.com/{html.escape(repo)}/actions/runs/{run_id}"
+        artifact_html = f' &middot; <a href="{artifact_url}" style="color:#aaa;text-decoration:none;font-size:12px;">Artifacts</a>'
+
+    return f"""<!-- UBL JSON Pages Banner -->
+<div id="ubl-pages-banner" style="background:linear-gradient(135deg,#5c2d00,#8b4513);color:#fff;padding:12px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <strong style="font-size:16px;">&#9888; Branch Preview</strong>
+    <span style="color:#ffd799;">{html.escape(branch_name)}</span>
+    <span style="color:#ccc;">@</span>
+    <a href="{commit_url}" style="color:#6ec6ff;text-decoration:none;font-family:monospace;">{html.escape(sha_short)}</a>{pr_html}
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="json/schemas/common/" style="color:#6ec6ff;text-decoration:none;">Common Schemas</a>
+    <a href="json/schemas/maindoc/" style="color:#6ec6ff;text-decoration:none;">Document Schemas</a>
+    <a href="../branches/" style="color:#6ec6ff;text-decoration:none;">All Branches</a>
+    <a href="../" style="color:#6ec6ff;text-decoration:none;">Main</a>{artifact_html}
+  </div>
+</div>
+<!-- End UBL JSON Pages Banner -->
+"""
+
+
+def generate_schema_listing(schemas_dir: Path, path_prefix: str = "", url_prefix: str = "json/schemas/") -> str:
     """Generate HTML list of schemas from a directory."""
     common_dir = schemas_dir / "common"
     maindoc_dir = schemas_dir / "maindoc"
@@ -128,7 +167,7 @@ def generate_schema_listing(schemas_dir: Path, path_prefix: str = "") -> str:
             lines.append("<ul>")
             for f in files:
                 name = f.stem
-                url = f"{path_prefix}schemas/common/{f.name}"
+                url = f"{path_prefix}{url_prefix}common/{f.name}"
                 lines.append(f'  <li><a href="{url}">{html.escape(name)}</a></li>')
             lines.append("</ul>")
 
@@ -139,7 +178,7 @@ def generate_schema_listing(schemas_dir: Path, path_prefix: str = "") -> str:
             lines.append("<ul>")
             for f in files:
                 name = f.stem
-                url = f"{path_prefix}schemas/maindoc/{f.name}"
+                url = f"{path_prefix}{url_prefix}maindoc/{f.name}"
                 lines.append(f'  <li><a href="{url}">{html.escape(name)}</a></li>')
             lines.append("</ul>")
 
@@ -279,9 +318,10 @@ def generate_branch_preview_page(
     pr_num: int | None = None,
     run_id: str | None = None,
 ):
-    """Generate the index.html for a branch preview directory."""
+    """Generate the index.html for a branch preview directory (fallback when spec HTML unavailable)."""
     sha_short = sha[:7]
-    schema_listing = generate_schema_listing(sha_dir)
+    schemas_path = sha_dir / "json" / "schemas"
+    schema_listing = generate_schema_listing(schemas_path) if schemas_path.is_dir() else ""
 
     pr_link = f' &middot; <a href="https://github.com/{html.escape(repo)}/pull/{pr_num}">PR #{pr_num}</a>' if pr_num else ""
     artifact_link = f' &middot; <a href="https://github.com/{html.escape(repo)}/actions/runs/{run_id}">Download Artifacts</a>' if run_id else ""
@@ -343,9 +383,10 @@ def cmd_deploy_main(args):
         shutil.copy2(args.spec_html, pages_dir / "index.html")
         print(f"Copied spec HTML to {pages_dir / 'index.html'}")
 
-    # Copy schemas
+    # Copy schemas to json/schemas/ (matches relative links in spec HTML)
     if args.schemas_dir and os.path.isdir(args.schemas_dir):
-        dest = pages_dir / "schemas"
+        dest = pages_dir / "json" / "schemas"
+        dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
             shutil.rmtree(dest)
         shutil.copytree(args.schemas_dir, dest)
@@ -395,9 +436,33 @@ def cmd_deploy_branch(args):
     sha_dir = pages_dir / sha_short
     sha_dir.mkdir(parents=True, exist_ok=True)
 
-    # Copy schemas
+    pr_num = int(args.pr) if args.pr else None
+
+    # Copy spec HTML as index.html (the main page for the preview)
+    spec_html = getattr(args, "spec_html", None)
+    if spec_html and os.path.isfile(spec_html):
+        shutil.copy2(spec_html, sha_dir / "index.html")
+        print(f"Copied spec HTML to {sha_dir / 'index.html'}")
+
+        # Inject branch preview banner
+        banner = generate_branch_banner_html(
+            branch_name, args.sha, args.repo,
+            pr_num=pr_num, run_id=args.run_id,
+        )
+        inject_banner(sha_dir / "index.html", banner)
+        print("Injected branch preview banner into spec HTML")
+    else:
+        # Fallback: generate a simple preview page if spec HTML unavailable
+        generate_branch_preview_page(
+            sha_dir, branch_name, args.sha, args.repo,
+            pr_num=pr_num, run_id=args.run_id,
+        )
+        print(f"Generated fallback preview page at {sha_dir / 'index.html'}")
+
+    # Copy schemas to json/schemas/ (matches relative links in spec HTML)
     if args.schemas_dir and os.path.isdir(args.schemas_dir):
-        dest = sha_dir / "schemas"
+        dest = sha_dir / "json" / "schemas"
+        dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
             shutil.rmtree(dest)
         shutil.copytree(args.schemas_dir, dest)
@@ -408,18 +473,6 @@ def cmd_deploy_branch(args):
         for subdir in dest.iterdir():
             if subdir.is_dir():
                 generate_directory_index(subdir, f"Schemas — {branch_name} — {subdir.name}")
-
-    # Generate preview page
-    pr_num = int(args.pr) if args.pr else None
-    generate_branch_preview_page(
-        sha_dir,
-        branch_name,
-        args.sha,
-        args.repo,
-        pr_num=pr_num,
-        run_id=args.run_id,
-    )
-    print(f"Generated preview page at {sha_dir / 'index.html'}")
 
     # Update branches.json
     branches[branch_name] = {
@@ -494,6 +547,7 @@ def main():
     # deploy-branch
     p_branch = subparsers.add_parser("deploy-branch", help="Deploy branch preview")
     p_branch.add_argument("--pages-dir", required=True, help="Path to gh-pages directory")
+    p_branch.add_argument("--spec-html", help="Path to generated spec HTML file")
     p_branch.add_argument("--schemas-dir", required=True, help="Path to generated schemas directory")
     p_branch.add_argument("--branch", required=True, help="Branch name")
     p_branch.add_argument("--sha", required=True, help="Full commit SHA")
