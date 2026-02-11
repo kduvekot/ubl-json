@@ -2,14 +2,14 @@
 
 ## Goal
 
-Build a Python script (`generate_json_schemas.py`) and a GitHub Actions workflow that reads `UBL-Entities-2.5.gc` (the Genericode file) and generates all normative JSON Schemas defined in the specification (Section 12.4).
+Build a Python script (`generate_json_schemas.py`) and a GitHub Actions workflow that reads the Genericode files in `gc/` and generates all normative JSON Schemas defined in the specification (Section 12.4).
 
 ---
 
 ## 1. Understand the inputs and outputs
 
 ### Input
-- **`UBL-Entities-2.5.gc`** — Genericode XML with 5,854 rows, each describing a BIE:
+- **`gc/UBL-Entities-2.5.gc`** — Genericode XML with 5,854 rows, each describing a BIE:
   - `ModelName` — identifies which model/document the row belongs to (e.g. `UBL-Invoice-2.5`, `UBL-CommonLibrary-2.5`)
   - `ComponentName` — the JSON property name (e.g. `ID`, `BuyerCustomerParty`, `Invoice`)
   - `ComponentType` — one of `ABIE` (411), `BBIE` (3,194), `ASBIE` (2,249)
@@ -163,7 +163,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'UBL-Entities-2.5.gc'
+      - 'gc/*.gc'
       - 'generate_json_schemas.py'
       - '.github/workflows/generate-json-schemas.yml'
   workflow_dispatch:
@@ -241,7 +241,10 @@ ubl-json/
 │   └── workflows/
 │       ├── generate-html.yml         # existing
 │       └── generate-json-schemas.yml # NEW
-├── UBL-Entities-2.5.gc              # existing input
+├── gc/
+│   ├── UBL-Entities-2.5.gc              # main entities input
+│   ├── UBL-Signature-Entities-2.5.gc    # signature entities input
+│   └── UBL-Endorsed-Entities-2.5.gc     # endorsed entities input
 ├── UBL-2.5-JSON-Syntax-Binding.xml  # existing spec
 └── ...
 ```
