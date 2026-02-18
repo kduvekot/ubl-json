@@ -1,0 +1,23 @@
+Thanks, Kees - great work with the schemas, fantastic to see the spec come alive! 😊
+
+I’ve made some very minor changes to the attached schemas:
+
+Changed “$schema” to “UBLEntity” for the schema identify element. It’s one of the changes we decided in Milan ($schema has special meaning in the JSON schemas, so we thought it best to give our “namespace”-like feature a different name.
+Renamed filenames to *-2.5.json as they’re named in the XML specification (this was an error from my earlier draft I think).
+Removed the $id elements - this is why you received the 404 error you mentioned last week. The $id is for schema resolution, but you already have that in the $ref’s.
+
+In the attached I only the UBLEntity property to AddressType, just to test with anchor validation:
+
+        "UBLEntity": {
+          "const": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#AddressType",
+          "description": "The UBL entity type identifier."
+        },
+
+
+It needs to be added automatically to all ABIEs.
+
+That’s it I think! And attached a simple proof of concept based on UBL 2.1 invoice example. It shows both document validation and that the anchor validation works for standalone ABIE payloads 😊
+
+I’m progressing with the specification and will be done, probably this week.
+
+/Kenneth
