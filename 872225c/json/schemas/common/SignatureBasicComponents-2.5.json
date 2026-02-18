@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "UBL 2.5 Signature Basic Components",
+  "$defs": {
+    "ID": {
+      "$ref": "QualifiedDataTypes-2.5.json#/$defs/IdentifierType"
+    },
+    "ReferencedSignatureID": {
+      "$ref": "QualifiedDataTypes-2.5.json#/$defs/IdentifierType"
+    }
+  }
+}

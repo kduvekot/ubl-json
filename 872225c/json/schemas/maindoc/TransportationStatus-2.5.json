@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document to circulate reports of transportation status or changes in status (events) among a group of participants.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/TransportationStatus-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "CarrierAssignedID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CarrierAssignedID"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "Name": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Name"
+    },
+    "Description": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Description"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "ShippingOrderID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ShippingOrderID"
+    },
+    "OtherInstruction": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/OtherInstruction"
+    },
+    "TransportationStatusTypeCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TransportationStatusTypeCode"
+    },
+    "TransportExecutionStatusCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TransportExecutionStatusCode"
+    },
+    "Consignment": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ConsignmentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ConsignmentType"
+          }
+        }
+      ]
+    },
+    "TransportEvent": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportEventType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportEventType"
+          }
+        }
+      ]
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "TransportationStatusRequestDocumentReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+    },
+    "TransportExecutionPlanDocumentReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+    },
+    "UpdatedPickupTransportEvent": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportEventType"
+    },
+    "UpdatedDeliveryTransportEvent": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportEventType"
+    },
+    "StatusLocation": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/LocationType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/LocationType"
+          }
+        }
+      ]
+    },
+    "StatusPeriod": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID"
+  ],
+  "additionalProperties": false
+}

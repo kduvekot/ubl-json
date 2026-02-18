@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document describing how goods are packed.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/PackingList-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "Name": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Name"
+    },
+    "Description": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Description"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "VersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+    },
+    "OtherInstruction": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/OtherInstruction"
+    },
+    "ConsignorParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "CarrierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "FreightForwarderParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "Shipment": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ShipmentType"
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "DocumentDistribution": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentDistributionType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentDistributionType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "Shipment"
+  ],
+  "additionalProperties": false
+}

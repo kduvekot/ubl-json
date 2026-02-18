@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document sent by a transport user to request a transport service from a transport service provider.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/TransportExecutionPlanRequest-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "VersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+    },
+    "CopyIndicator": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "DocumentStatusCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/DocumentStatusCode"
+    },
+    "DocumentStatusReasonCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/DocumentStatusReasonCode"
+    },
+    "DocumentStatusReasonDescription": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/DocumentStatusReasonDescription"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "TransportUserRemarks": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TransportUserRemarks"
+    },
+    "SenderParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "TransportUserParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "TransportServiceProviderParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "PayeeParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "BillToParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "TransportExecutionPlanDocumentReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+    },
+    "TransportServiceDescriptionDocumentReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "TransportContract": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractType"
+    },
+    "TransportServiceProviderResponseDeadlinePeriod": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+          }
+        }
+      ]
+    },
+    "MainTransportationService": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportationServiceType"
+    },
+    "AdditionalTransportationService": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportationServiceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportationServiceType"
+          }
+        }
+      ]
+    },
+    "ServiceStartTimePeriod": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+    },
+    "ServiceEndTimePeriod": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+    },
+    "FromLocation": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/LocationType"
+    },
+    "ToLocation": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/LocationType"
+    },
+    "AtLocation": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/LocationType"
+    },
+    "TransportExecutionTerms": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransportExecutionTermsType"
+    },
+    "Consignment": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ConsignmentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ConsignmentType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "TransportServiceProviderParty",
+    "Consignment"
+  ],
+  "additionalProperties": false
+}

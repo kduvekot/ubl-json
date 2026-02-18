@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "(Deprecated) A document used to indicate simple acceptance or rejection of an entire Order.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/OrderResponseSimple-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "AcceptedIndicator": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/AcceptedIndicator"
+    },
+    "RejectionNote": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/RejectionNote"
+    },
+    "CustomerReference": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomerReference"
+    },
+    "AccountingCostCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/AccountingCostCode"
+    },
+    "AccountingCost": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/AccountingCost"
+    },
+    "OrderReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/OrderReferenceType"
+    },
+    "OrderChangeDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "SellerSupplierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+    },
+    "BuyerCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    },
+    "OriginatorCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    },
+    "BeneficiaryParty": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+          }
+        }
+      ]
+    },
+    "AccountingSupplierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+    },
+    "AccountingCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "AcceptedIndicator",
+    "OrderReference",
+    "SellerSupplierParty",
+    "BuyerCustomerParty"
+  ],
+  "additionalProperties": false
+}

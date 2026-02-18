@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document used to quote for the provision of goods and services.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/Quotation-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "PricingCurrencyCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/PricingCurrencyCode"
+    },
+    "LineCountNumeric": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/LineCountNumeric"
+    },
+    "ValidityPeriod": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+    },
+    "RequestForQuotationDocumentReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "Contract": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractType"
+          }
+        }
+      ]
+    },
+    "SellerSupplierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+    },
+    "BuyerCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    },
+    "OriginatorCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    },
+    "BeneficiaryParty": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+          }
+        }
+      ]
+    },
+    "Delivery": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DeliveryType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DeliveryType"
+          }
+        }
+      ]
+    },
+    "DeliveryTerms": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DeliveryTermsType"
+    },
+    "PaymentMeans": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PaymentMeansType"
+    },
+    "TransactionConditions": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TransactionConditionsType"
+    },
+    "AllowanceCharge": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AllowanceChargeType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AllowanceChargeType"
+          }
+        }
+      ]
+    },
+    "DestinationCountry": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CountryType"
+    },
+    "TaxTotal": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TaxTotalType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TaxTotalType"
+          }
+        }
+      ]
+    },
+    "QuotedMonetaryTotal": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/MonetaryTotalType"
+    },
+    "QuotationLine": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/QuotationLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/QuotationLineType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "IssueDate",
+    "SellerSupplierParty",
+    "QuotedMonetaryTotal",
+    "QuotationLine"
+  ],
+  "additionalProperties": false
+}

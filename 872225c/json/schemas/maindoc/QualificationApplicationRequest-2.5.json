@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document issued by a buyer defining how the Exclusion Grounds and the Selection Criteria should be addressed in a Single Procurement Document for a specific procurement.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/QualificationApplicationRequest-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "ContractFolderID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ContractFolderID"
+    },
+    "ContractName": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ContractName"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "VersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+    },
+    "PreviousVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/PreviousVersionID"
+    },
+    "ProcedureCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProcedureCode"
+    },
+    "QualificationApplicationTypeCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/QualificationApplicationTypeCode"
+    },
+    "WeightScoringMethodologyNote": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/WeightScoringMethodologyNote"
+    },
+    "WeightingTypeCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/WeightingTypeCode"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "ContractingParty": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractingPartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractingPartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "EconomicOperatorParty": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EconomicOperatorPartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EconomicOperatorPartyType"
+          }
+        }
+      ]
+    },
+    "ProcurementProject": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProcurementProjectType"
+    },
+    "ProcurementProjectLot": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProcurementProjectLotType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProcurementProjectLotType"
+          }
+        }
+      ]
+    },
+    "TenderingCriterion": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TenderingCriterionType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TenderingCriterionType"
+          }
+        }
+      ]
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ContractFolderID",
+    "IssueDate",
+    "ContractingParty"
+  ],
+  "additionalProperties": false
+}

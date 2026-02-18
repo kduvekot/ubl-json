@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document used to notify the competent authorities of planned movements of waste.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/WasteNotification-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "WasteNotificationTypeCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/WasteNotificationTypeCode"
+    },
+    "ConsignmentQuantity": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ConsignmentQuantity"
+    },
+    "SenderParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "NotifierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "CustomsParty": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "DisposalFacilityParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "RecoveryFacilityParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "WasteProducerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "Shipment": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ShipmentType"
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "SenderParty",
+    "ReceiverParty",
+    "NotifierParty",
+    "CustomsParty",
+    "WasteProducerParty",
+    "Shipment"
+  ],
+  "additionalProperties": false
+}

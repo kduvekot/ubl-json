@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document used to report work performed.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/WorkReport-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "VersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "AccountingCostCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/AccountingCostCode"
+    },
+    "AccountingCost": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/AccountingCost"
+    },
+    "WorkQuantityTotal": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/WorkQuantityTotalType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/WorkQuantityTotalType"
+          }
+        }
+      ]
+    },
+    "ReportedPeriod": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+    },
+    "OrderReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/OrderReferenceType"
+    },
+    "ProjectReference": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProjectReferenceType"
+    },
+    "BillingReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/BillingReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/BillingReferenceType"
+          }
+        }
+      ]
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "SellerSupplierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+    },
+    "BuyerCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    },
+    "ApproverParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "AllowanceCharge": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AllowanceChargeType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AllowanceChargeType"
+          }
+        }
+      ]
+    },
+    "TaxTotal": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TaxTotalType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TaxTotalType"
+          }
+        }
+      ]
+    },
+    "StatementMonetaryTotal": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/MonetaryTotalType"
+    },
+    "WorkReportLine": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/WorkReportLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/WorkReportLineType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "SellerSupplierParty",
+    "BuyerCustomerParty",
+    "WorkReportLine"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A document used to specify basic information about retail events (such as promotions, product introductions, and community or environmental events) that affect supply or demand.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/RetailEvent-2",
+      "description": "The JSON Schema identifier for this document type."
+    },
+    "UBLExtensions": {
+      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+    },
+    "Note": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+    },
+    "RetailEventName": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/RetailEventName"
+    },
+    "RetailEventStatusCode": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/RetailEventStatusCode"
+    },
+    "SellerEventID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/SellerEventID"
+    },
+    "BuyerEventID": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/BuyerEventID"
+    },
+    "Description": {
+      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Description"
+    },
+    "Period": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+    },
+    "OriginalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+    },
+    "BuyerCustomerParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+    },
+    "SellerSupplierParty": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+    },
+    "EventComment": {
+      "oneOf": [
+        {
+          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EventCommentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EventCommentType"
+          }
+        }
+      ]
+    },
+    "PromotionalEvent": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PromotionalEventType"
+    },
+    "MiscellaneousEvent": {
+      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/MiscellaneousEventType"
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "RetailEventStatusCode",
+    "Period",
+    "SenderParty",
+    "ReceiverParty"
+  ],
+  "additionalProperties": false
+}
