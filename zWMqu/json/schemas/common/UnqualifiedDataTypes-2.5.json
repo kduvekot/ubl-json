@@ -10,7 +10,7 @@
     },
     "TimeType": {
       "type": "string",
-      "pattern": "^[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|[+-][0-9]{2}:[0-9]{2})?$",
+      "pattern": "^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$",
       "description": "A specific point in time recurring every day."
     },
     "IndicatorType": {
@@ -37,6 +37,9 @@
         },
         "currencyID": {
           "type": "string"
+        },
+        "currencyCodeListVersionID": {
+          "type": "string"
         }
       },
       "required": [
@@ -54,11 +57,25 @@
         },
         "mimeCode": {
           "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "encodingCode": {
+          "type": "string"
+        },
+        "characterSetCode": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
         }
       },
       "required": [
-        "value",
-        "mimeCode"
+        "value"
       ],
       "additionalProperties": false,
       "description": "A set of finite-length sequences of binary octets."
@@ -70,6 +87,9 @@
           "type": "number"
         },
         "unitCode": {
+          "type": "string"
+        },
+        "unitCodeListVersionID": {
           "type": "string"
         }
       },
@@ -92,6 +112,30 @@
               "type": "string"
             },
             "listID": {
+              "type": "string"
+            },
+            "listAgencyID": {
+              "type": "string"
+            },
+            "listAgencyName": {
+              "type": "string"
+            },
+            "listName": {
+              "type": "string"
+            },
+            "listVersionID": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "languageID": {
+              "type": "string"
+            },
+            "listURI": {
+              "type": "string"
+            },
+            "listSchemeURI": {
               "type": "string"
             }
           },
@@ -116,6 +160,24 @@
             },
             "schemeID": {
               "type": "string"
+            },
+            "schemeName": {
+              "type": "string"
+            },
+            "schemeAgencyID": {
+              "type": "string"
+            },
+            "schemeAgencyName": {
+              "type": "string"
+            },
+            "schemeVersionID": {
+              "type": "string"
+            },
+            "schemeDataURI": {
+              "type": "string"
+            },
+            "schemeURI": {
+              "type": "string"
             }
           },
           "required": [
@@ -138,6 +200,15 @@
               "type": "number"
             },
             "unitCode": {
+              "type": "string"
+            },
+            "unitCodeListID": {
+              "type": "string"
+            },
+            "unitCodeListAgencyID": {
+              "type": "string"
+            },
+            "unitCodeListAgencyName": {
               "type": "string"
             }
           },
@@ -162,6 +233,9 @@
             },
             "languageID": {
               "type": "string"
+            },
+            "languageLocaleID": {
+              "type": "string"
             }
           },
           "required": [
@@ -184,6 +258,9 @@
               "type": "string"
             },
             "languageID": {
+              "type": "string"
+            },
+            "languageLocaleID": {
               "type": "string"
             }
           },
