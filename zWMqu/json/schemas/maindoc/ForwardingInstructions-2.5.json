@@ -134,5 +134,6 @@
     "ID",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Forwarding Instructions. Details"
 }

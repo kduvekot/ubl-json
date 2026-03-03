@@ -89,5 +89,6 @@
     "ImportingGuarantorParty",
     "ExportingGuarantorParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Proof Of Reexportation Request. Details"
 }

@@ -156,5 +156,6 @@
     "IssueDate",
     "CancellationNote"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Fulfilment Cancellation. Details"
 }

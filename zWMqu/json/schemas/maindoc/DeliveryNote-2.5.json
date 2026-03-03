@@ -155,5 +155,6 @@
     "DeliveryCustomerParty",
     "DespatchLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Delivery Note. Details"
 }

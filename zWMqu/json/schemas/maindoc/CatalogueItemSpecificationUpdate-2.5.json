@@ -149,5 +149,6 @@
     "ReceiverParty",
     "CatalogueItemSpecificationUpdateLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Catalogue Item Specification Update. Details"
 }

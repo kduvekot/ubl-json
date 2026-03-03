@@ -106,5 +106,6 @@
     "ID",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Packing List. Details"
 }

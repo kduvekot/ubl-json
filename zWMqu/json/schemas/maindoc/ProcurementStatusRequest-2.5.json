@@ -99,5 +99,6 @@
     "ContractingParty",
     "EconomicOperatorParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Procurement Status Request. Details"
 }

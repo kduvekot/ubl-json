@@ -112,5 +112,6 @@
     "ContractingParty",
     "TendererParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tender Withdrawal. Details"
 }

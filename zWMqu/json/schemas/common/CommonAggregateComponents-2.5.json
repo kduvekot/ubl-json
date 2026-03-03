@@ -48,6 +48,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Activity Data Line. Details",
       "required": [
         "ID",
         "SupplyChainActivityTypeCode",
@@ -72,6 +73,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Activity Property. Details",
       "required": [
         "Name",
         "Value"
@@ -191,7 +193,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Address. Details"
     },
     "AddressLineType": {
       "$anchor": "AddressLineType",
@@ -207,6 +210,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Address Line. Details",
       "required": [
         "Line"
       ]
@@ -225,6 +229,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Air Transport. Details",
       "required": [
         "AircraftID"
       ]
@@ -308,6 +313,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Allowance Charge. Details",
       "required": [
         "ChargeIndicator",
         "Amount"
@@ -333,6 +339,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Annotation. Details",
       "required": [
         "AnnotationContent"
       ]
@@ -362,7 +369,8 @@
           "$ref": "#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Appeal Terms. Details"
     },
     "AttachmentType": {
       "$anchor": "AttachmentType",
@@ -386,7 +394,8 @@
           "$ref": "#/$defs/ExternalReferenceType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Attachment. Details"
     },
     "AttestationType": {
       "$anchor": "AttestationType",
@@ -434,6 +443,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Attestation. Details",
       "required": [
         "AttestationLine"
       ]
@@ -483,7 +493,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Attestation Line. Details"
     },
     "AuctionTermsType": {
       "$anchor": "AuctionTermsType",
@@ -516,7 +527,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/AuctionURI"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Auction Terms. Details"
     },
     "AuthorizationType": {
       "$anchor": "AuthorizationType",
@@ -550,7 +562,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Authorization. Details"
     },
     "AwardingCriterionType": {
       "$anchor": "AwardingCriterionType",
@@ -614,7 +627,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Awarding Criterion. Details"
     },
     "AwardingCriterionResponseType": {
       "$anchor": "AwardingCriterionResponseType",
@@ -657,7 +671,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Awarding Criterion Response. Details"
     },
     "AwardingTermsType": {
       "$anchor": "AwardingTermsType",
@@ -738,7 +753,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Awarding Terms. Details"
     },
     "BallastWaterSummaryType": {
       "$anchor": "BallastWaterSummaryType",
@@ -828,7 +844,8 @@
           "$ref": "#/$defs/PersonType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Ballast Water Summary. Details"
     },
     "BallastWaterTransactionType": {
       "$anchor": "BallastWaterTransactionType",
@@ -870,7 +887,8 @@
           "$ref": "#/$defs/TemperatureType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Ballast Water Transaction. Details"
     },
     "BillingReferenceType": {
       "$anchor": "BillingReferenceType",
@@ -916,7 +934,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Billing Reference. Details"
     },
     "BillingReferenceLineType": {
       "$anchor": "BillingReferenceLineType",
@@ -948,6 +967,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Billing Reference Line. Details",
       "required": [
         "ID"
       ]
@@ -974,7 +994,8 @@
           "$ref": "#/$defs/AddressType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Branch. Details"
     },
     "BudgetAccountType": {
       "$anchor": "BudgetAccountType",
@@ -995,7 +1016,8 @@
           "$ref": "#/$defs/ClassificationSchemeType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Budget Account. Details"
     },
     "BudgetAccountLineType": {
       "$anchor": "BudgetAccountLineType",
@@ -1026,7 +1048,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Budget Account Line. Details"
     },
     "BuyerAssignedReferenceType": {
       "$anchor": "BuyerAssignedReferenceType",
@@ -1044,7 +1067,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/BuyerReference"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Buyer Assigned Reference. Details"
     },
     "CapabilityType": {
       "$anchor": "CapabilityType",
@@ -1103,7 +1127,8 @@
           "$ref": "#/$defs/WebSiteType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Capability. Details"
     },
     "CardAccountType": {
       "$anchor": "CardAccountType",
@@ -1152,6 +1177,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Card Account. Details",
       "required": [
         "PrimaryAccountNumberID"
       ]
@@ -1173,6 +1199,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Cash Register. Details",
       "required": [
         "ID"
       ]
@@ -1200,6 +1227,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Catalogue Item Specification Update Line. Details",
       "required": [
         "ID",
         "Item"
@@ -1419,6 +1447,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Catalogue Line. Details",
       "required": [
         "ID",
         "Item"
@@ -1457,6 +1486,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Catalogue Pricing Update Line. Details",
       "required": [
         "ID"
       ]
@@ -1502,6 +1532,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Catalogue Reference. Details",
       "required": [
         "ID"
       ]
@@ -1545,6 +1576,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Catalogue Request Line. Details",
       "required": [
         "ID",
         "Item"
@@ -1617,6 +1649,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Certificate. Details",
       "required": [
         "ID"
       ]
@@ -1721,6 +1754,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Certificate Of Origin Application. Details",
       "required": [
         "ReferenceID",
         "CertificateType",
@@ -1812,7 +1846,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Circularity Profile. Details"
     },
     "ClassificationCategoryType": {
       "$anchor": "ClassificationCategoryType",
@@ -1846,7 +1881,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Classification Category. Details"
     },
     "ClassificationSchemeType": {
       "$anchor": "ClassificationSchemeType",
@@ -1912,6 +1948,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Classification Scheme. Details",
       "required": [
         "ID",
         "ClassificationCategory"
@@ -1933,7 +1970,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Content"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Clause. Details"
     },
     "CommodityClassificationType": {
       "$anchor": "CommodityClassificationType",
@@ -1957,7 +1995,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/ItemClassificationCode"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Commodity Classification. Details"
     },
     "CommunicationType": {
       "$anchor": "CommunicationType",
@@ -1978,7 +2017,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Value"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Communication. Details"
     },
     "CompletedTaskType": {
       "$anchor": "CompletedTaskType",
@@ -2034,7 +2074,8 @@
           "$ref": "#/$defs/CustomerPartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Completed Task. Details"
     },
     "ConditionType": {
       "$anchor": "ConditionType",
@@ -2062,6 +2103,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Condition. Details",
       "required": [
         "AttributeID"
       ]
@@ -2576,6 +2618,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consignment. Details",
       "required": [
         "ID"
       ]
@@ -2632,6 +2675,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consumption. Details",
       "required": [
         "LegalMonetaryTotal"
       ]
@@ -2652,7 +2696,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Consumption Average. Details"
     },
     "ConsumptionCorrectionType": {
       "$anchor": "ConsumptionCorrectionType",
@@ -2700,7 +2745,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/CorrectionAmount"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Consumption Correction. Details"
     },
     "ConsumptionHistoryType": {
       "$anchor": "ConsumptionHistoryType",
@@ -2734,6 +2780,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consumption History. Details",
       "required": [
         "Quantity",
         "Period"
@@ -2816,6 +2863,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consumption Line. Details",
       "required": [
         "ID",
         "InvoicedQuantity",
@@ -2871,6 +2919,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consumption Point. Details",
       "required": [
         "ID"
       ]
@@ -2960,6 +3009,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consumption Report. Details",
       "required": [
         "ID"
       ]
@@ -2990,6 +3040,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Consumption Report Reference. Details",
       "required": [
         "ConsumptionReportID",
         "TotalConsumedQuantity",
@@ -3043,7 +3094,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contact. Details"
     },
     "ContractType": {
       "$anchor": "ContractType",
@@ -3113,7 +3165,8 @@
           "$ref": "#/$defs/DeliveryType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contract. Details"
     },
     "ContractExecutionRequirementType": {
       "$anchor": "ContractExecutionRequirementType",
@@ -3134,7 +3187,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contract Execution Requirement. Details"
     },
     "ContractExtensionType": {
       "$anchor": "ContractExtensionType",
@@ -3174,7 +3228,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contract Extension. Details"
     },
     "ContractingActivityType": {
       "$anchor": "ContractingActivityType",
@@ -3192,7 +3247,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/ActivityType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contracting Activity. Details"
     },
     "ContractingPartyType": {
       "$anchor": "ContractingPartyType",
@@ -3240,6 +3296,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Contracting Party. Details",
       "required": [
         "Party"
       ]
@@ -3260,7 +3317,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contracting Party Type. Details"
     },
     "ContractingRepresentationTypeType": {
       "$anchor": "ContractingRepresentationTypeType",
@@ -3278,7 +3336,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/RepresentationType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contracting Representation Type. Details"
     },
     "ContractingSystemType": {
       "$anchor": "ContractingSystemType",
@@ -3299,7 +3358,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Contracting System. Details"
     },
     "CorporateRegistrationSchemeType": {
       "$anchor": "CorporateRegistrationSchemeType",
@@ -3333,7 +3393,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Corporate Registration Scheme. Details"
     },
     "CountryType": {
       "$anchor": "CountryType",
@@ -3351,7 +3412,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Name"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Country. Details"
     },
     "CreditAccountType": {
       "$anchor": "CreditAccountType",
@@ -3367,6 +3429,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Credit Account. Details",
       "required": [
         "AccountID"
       ]
@@ -3644,6 +3707,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Credit Note Line. Details",
       "required": [
         "ID"
       ]
@@ -3665,6 +3729,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Crew Person Effect. Details",
       "required": [
         "EffectDescription"
       ]
@@ -3692,6 +3757,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Criterion Item. Details",
       "required": [
         "CriterionDescription",
         "DeclaredPropertyItem"
@@ -3728,7 +3794,8 @@
           "$ref": "#/$defs/ContactType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Customer Party. Details"
     },
     "CustomsDeclarationType": {
       "$anchor": "CustomsDeclarationType",
@@ -3790,6 +3857,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Customs Declaration. Details",
       "required": [
         "ID"
       ]
@@ -4064,6 +4132,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Debit Note Line. Details",
       "required": [
         "ID",
         "LineExtensionAmount"
@@ -4117,7 +4186,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Declaration. Details"
     },
     "DeliveryType": {
       "$anchor": "DeliveryType",
@@ -4260,7 +4330,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Delivery. Details"
     },
     "DeliveryChannelType": {
       "$anchor": "DeliveryChannelType",
@@ -4287,7 +4358,8 @@
           "$ref": "#/$defs/MessageDeliveryType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Delivery Channel. Details"
     },
     "DeliveryTermsType": {
       "$anchor": "DeliveryTermsType",
@@ -4320,7 +4392,8 @@
           "$ref": "#/$defs/AllowanceChargeType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Delivery Terms. Details"
     },
     "DeliveryUnitType": {
       "$anchor": "DeliveryUnitType",
@@ -4342,6 +4415,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Delivery Unit. Details",
       "required": [
         "BatchQuantity"
       ]
@@ -4365,7 +4439,8 @@
           "$ref": "#/$defs/LineReferenceType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Dependent Price Reference. Details"
     },
     "DespatchType": {
       "$anchor": "DespatchType",
@@ -4447,7 +4522,8 @@
           "$ref": "#/$defs/PeriodType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Despatch. Details"
     },
     "DespatchLineType": {
       "$anchor": "DespatchLineType",
@@ -4552,6 +4628,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Despatch Line. Details",
       "required": [
         "ID",
         "OrderLineReference",
@@ -4591,6 +4668,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Digital Agreement Terms. Details",
       "required": [
         "Description"
       ]
@@ -4614,7 +4692,8 @@
           "$ref": "#/$defs/DigitalServiceType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Digital Collaboration. Details"
     },
     "DigitalProcessType": {
       "$anchor": "DigitalProcessType",
@@ -4661,7 +4740,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Digital Process. Details"
     },
     "DigitalServiceType": {
       "$anchor": "DigitalServiceType",
@@ -4720,6 +4800,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Digital Service. Details",
       "required": [
         "DigitalDocumentMetadata"
       ]
@@ -4750,6 +4831,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Dimension. Details",
       "required": [
         "AttributeID"
       ]
@@ -4795,6 +4877,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Document Distribution. Details",
       "required": [
         "Party"
       ]
@@ -4825,6 +4908,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Document Metadata. Details",
       "required": [
         "FormatID",
         "VersionID"
@@ -4895,6 +4979,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Document Reference. Details",
       "required": [
         "ID"
       ]
@@ -4946,6 +5031,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Document Response. Details",
       "required": [
         "Response",
         "DocumentReference"
@@ -4974,6 +5060,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Duty. Details",
       "required": [
         "Amount"
       ]
@@ -5018,6 +5105,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Economic Operator Party. Details",
       "required": [
         "Party"
       ]
@@ -5038,7 +5126,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/RoleDescription"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Economic Operator Role. Details"
     },
     "EconomicOperatorShortListType": {
       "$anchor": "EconomicOperatorShortListType",
@@ -5075,7 +5164,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Economic Operator Short List. Details"
     },
     "ElectronicAddressType": {
       "$anchor": "ElectronicAddressType",
@@ -5094,6 +5184,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Electronic Address. Details",
       "required": [
         "ElectronicAddressID"
       ]
@@ -5149,7 +5240,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Emission Calculation Method. Details"
     },
     "EncryptionCertificatePathChainType": {
       "$anchor": "EncryptionCertificatePathChainType",
@@ -5167,7 +5259,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/URI"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Encryption Certificate Path Chain. Details"
     },
     "EncryptionDataType": {
       "$anchor": "EncryptionDataType",
@@ -5212,6 +5305,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Encryption Data. Details",
       "required": [
         "MessageFormat"
       ]
@@ -5232,7 +5326,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/OID"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Encryption Symmetric Algorithm. Details"
     },
     "EndOfLifeTreatmentType": {
       "$anchor": "EndOfLifeTreatmentType",
@@ -5256,7 +5351,8 @@
           "$ref": "#/$defs/LocationType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "End Of Life Treatment. Details"
     },
     "EndorsementType": {
       "$anchor": "EndorsementType",
@@ -5294,6 +5390,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Endorsement. Details",
       "required": [
         "DocumentID",
         "ApprovalStatus",
@@ -5323,6 +5420,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Endorser Party. Details",
       "required": [
         "RoleCode",
         "SequenceNumeric",
@@ -5360,6 +5458,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Energy Consumption Allocation. Details",
       "required": [
         "EnergySourceTypeCode",
         "AllocatedEnergyMeasure"
@@ -5388,6 +5487,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Energy Tax Report. Details",
       "required": [
         "TaxScheme"
       ]
@@ -5454,7 +5554,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Energy Water Supply. Details"
     },
     "EnvironmentalEmissionType": {
       "$anchor": "EnvironmentalEmissionType",
@@ -5507,6 +5608,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Environmental Emission. Details",
       "required": [
         "EnvironmentalEmissionTypeCode",
         "ValueMeasure"
@@ -5556,7 +5658,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Evaluation Criterion. Details"
     },
     "EventType": {
       "$anchor": "EventType",
@@ -5618,7 +5721,8 @@
           "$ref": "#/$defs/LocationType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Event. Details"
     },
     "EventCommentType": {
       "$anchor": "EventCommentType",
@@ -5640,6 +5744,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Event Comment. Details",
       "required": [
         "Comment"
       ]
@@ -5677,6 +5782,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Event Line Item. Details",
       "required": [
         "SupplyItem"
       ]
@@ -5704,6 +5810,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Event Tactic. Details",
       "required": [
         "EventTacticEnumeration"
       ]
@@ -5730,7 +5837,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/TradeItemPackingLabelingTypeCode"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Event Tactic Enumeration. Details"
     },
     "EvidenceType": {
       "$anchor": "EvidenceType",
@@ -5779,7 +5887,8 @@
           "$ref": "#/$defs/LanguageType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Evidence. Details"
     },
     "EvidenceSuppliedType": {
       "$anchor": "EvidenceSuppliedType",
@@ -5795,6 +5904,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Evidence Supplied. Details",
       "required": [
         "ID"
       ]
@@ -5857,6 +5967,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Exception Criteria Line. Details",
       "required": [
         "ID",
         "ThresholdValueComparisonCode",
@@ -5930,6 +6041,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Exception Notification Line. Details",
       "required": [
         "ID",
         "ComparedValueMeasure",
@@ -5975,6 +6087,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Exchange Rate. Details",
       "required": [
         "SourceCurrencyCode",
         "TargetCurrencyCode"
@@ -6023,7 +6136,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "External Reference. Details"
     },
     "FeeType": {
       "$anchor": "FeeType",
@@ -6044,7 +6158,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/FeeDescription"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Fee. Details"
     },
     "FinancialAccountType": {
       "$anchor": "FinancialAccountType",
@@ -6086,7 +6201,8 @@
           "$ref": "#/$defs/CountryType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Financial Account. Details"
     },
     "FinancialGuaranteeType": {
       "$anchor": "FinancialGuaranteeType",
@@ -6114,6 +6230,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Financial Guarantee. Details",
       "required": [
         "GuaranteeTypeCode"
       ]
@@ -6137,7 +6254,8 @@
           "$ref": "#/$defs/AddressType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Financial Institution. Details"
     },
     "ForecastExceptionType": {
       "$anchor": "ForecastExceptionType",
@@ -6174,6 +6292,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Forecast Exception. Details",
       "required": [
         "ForecastPurposeCode",
         "ForecastTypeCode",
@@ -6207,6 +6326,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Forecast Exception Criterion Line. Details",
       "required": [
         "ForecastPurposeCode",
         "ForecastTypeCode",
@@ -6242,6 +6362,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Forecast Line. Details",
       "required": [
         "ID",
         "ForecastTypeCode"
@@ -6285,6 +6406,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Forecast Revision Line. Details",
       "required": [
         "ID",
         "RevisedForecastLineID",
@@ -6336,7 +6458,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Framework Agreement. Details"
     },
     "FuelConsumptionType": {
       "$anchor": "FuelConsumptionType",
@@ -6402,7 +6525,8 @@
           "$ref": "#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Fuel Consumption. Details"
     },
     "FuelMeteringType": {
       "$anchor": "FuelMeteringType",
@@ -6421,6 +6545,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Fuel Metering. Details",
       "required": [
         "TypeID",
         "Value"
@@ -6443,6 +6568,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Fuel Property. Details",
       "required": [
         "TypeID",
         "Value"
@@ -6722,7 +6848,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Goods Item. Details"
     },
     "GoodsItemContainerType": {
       "$anchor": "GoodsItemContainerType",
@@ -6754,6 +6881,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Goods Item Container. Details",
       "required": [
         "ID"
       ]
@@ -6852,6 +6980,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Goods Item Passport Counterfoil. Details",
       "required": [
         "ID"
       ]
@@ -6910,7 +7039,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Goods Processing. Details"
     },
     "HazardousGoodsTransitType": {
       "$anchor": "HazardousGoodsTransitType",
@@ -6946,7 +7076,8 @@
           "$ref": "#/$defs/TemperatureType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Hazardous Goods Transit. Details"
     },
     "HazardousItemType": {
       "$anchor": "HazardousItemType",
@@ -7100,7 +7231,8 @@
           "$ref": "#/$defs/PackageType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Hazardous Item. Details"
     },
     "ISPSRequirementsType": {
       "$anchor": "ISPSRequirementsType",
@@ -7185,6 +7317,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "ISPS Requirements. Details",
       "required": [
         "ID"
       ]
@@ -7220,7 +7353,8 @@
           "$ref": "#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Immobilized Security. Details"
     },
     "InstructionForReturnsLineType": {
       "$anchor": "InstructionForReturnsLineType",
@@ -7248,6 +7382,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Instruction For Returns Line. Details",
       "required": [
         "ID",
         "Quantity",
@@ -7310,7 +7445,8 @@
           "$ref": "#/$defs/DocumentReferenceType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Insurance Policy. Details"
     },
     "InterestRateType": {
       "$anchor": "InterestRateType",
@@ -7332,6 +7468,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Interest Rate. Details",
       "required": [
         "InterestRatePercent"
       ]
@@ -7371,6 +7508,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Inventory Report Line. Details",
       "required": [
         "ID",
         "Quantity",
@@ -7627,6 +7765,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Invoice Line. Details",
       "required": [
         "ID",
         "Item"
@@ -7903,7 +8042,8 @@
           "$ref": "#/$defs/CircularityProfileType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Item. Details"
     },
     "ItemComparisonType": {
       "$anchor": "ItemComparisonType",
@@ -7921,7 +8061,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Quantity"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Item Comparison. Details"
     },
     "ItemIdentificationType": {
       "$anchor": "ItemIdentificationType",
@@ -7975,6 +8116,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Item Identification. Details",
       "required": [
         "ID"
       ]
@@ -8030,6 +8172,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Item Information Request Line. Details",
       "required": [
         "Period",
         "SalesItem"
@@ -8079,7 +8222,8 @@
           "$ref": "#/$defs/LotIdentificationType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Item Instance. Details"
     },
     "ItemLocationQuantityType": {
       "$anchor": "ItemLocationQuantityType",
@@ -8170,7 +8314,8 @@
           "$ref": "#/$defs/PeriodType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Item Location Quantity. Details"
     },
     "ItemManagementProfileType": {
       "$anchor": "ItemManagementProfileType",
@@ -8213,6 +8358,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Item Management Profile. Details",
       "required": [
         "EffectivePeriod",
         "Item"
@@ -8294,6 +8440,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Item Property. Details",
       "required": [
         "Name"
       ]
@@ -8318,6 +8465,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Item Property Group. Details",
       "required": [
         "ID"
       ]
@@ -8338,7 +8486,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/MaximumValue"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Item Property Range. Details"
     },
     "LanguageType": {
       "$anchor": "LanguageType",
@@ -8359,7 +8508,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/LocaleCode"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Language. Details"
     },
     "LegislationType": {
       "$anchor": "LegislationType",
@@ -8415,7 +8565,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Legislation. Details"
     },
     "LineItemType": {
       "$anchor": "LineItemType",
@@ -8600,6 +8751,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Line Item. Details",
       "required": [
         "ID",
         "Item"
@@ -8628,6 +8780,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Line Reference. Details",
       "required": [
         "LineID"
       ]
@@ -8660,6 +8813,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Line Response. Details",
       "required": [
         "LineReference",
         "Response"
@@ -8744,7 +8898,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Location. Details"
     },
     "LocationCoordinateType": {
       "$anchor": "LocationCoordinateType",
@@ -8780,7 +8935,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/AltitudeMeasure"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Location Coordinate. Details"
     },
     "LotDistributionType": {
       "$anchor": "LotDistributionType",
@@ -8814,7 +8970,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Lot Distribution. Details"
     },
     "LotIdentificationType": {
       "$anchor": "LotIdentificationType",
@@ -8845,7 +9002,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Lot Identification. Details"
     },
     "LotsGroupType": {
       "$anchor": "LotsGroupType",
@@ -8875,6 +9033,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Lots Group. Details",
       "required": [
         "LotsGroupID",
         "ProcurementProjectLotReference"
@@ -8996,7 +9155,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Maritime Health Declaration. Details"
     },
     "MaritimeTransportType": {
       "$anchor": "MaritimeTransportType",
@@ -9050,7 +9210,8 @@
           "$ref": "#/$defs/VesselDynamicsType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Maritime Transport. Details"
     },
     "MaritimeWasteType": {
       "$anchor": "MaritimeWasteType",
@@ -9096,7 +9257,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Maritime Waste. Details"
     },
     "MessageDeliveryType": {
       "$anchor": "MessageDeliveryType",
@@ -9117,7 +9279,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/EndpointURI"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Message Delivery. Details"
     },
     "MeterType": {
       "$anchor": "MeterType",
@@ -9170,7 +9333,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Meter. Details"
     },
     "MeterPropertyType": {
       "$anchor": "MeterPropertyType",
@@ -9197,7 +9361,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/ValueQualifier"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Meter Property. Details"
     },
     "MeterReadingType": {
       "$anchor": "MeterReadingType",
@@ -9249,6 +9414,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Meter Reading. Details",
       "required": [
         "PreviousMeterReadingDate",
         "PreviousMeterQuantity",
@@ -9285,6 +9451,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Miscellaneous Event. Details",
       "required": [
         "MiscellaneousEventTypeCode",
         "EventLineItem"
@@ -9337,6 +9504,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Monetary Total. Details",
       "required": [
         "PayableAmount"
       ]
@@ -9357,7 +9525,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/SubTypeDescription"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Notice Sub Type. Details"
     },
     "NotificationRequirementType": {
       "$anchor": "NotificationRequirementType",
@@ -9418,6 +9587,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Notification Requirement. Details",
       "required": [
         "NotificationTypeCode"
       ]
@@ -9453,6 +9623,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "On Account Payment. Details",
       "required": [
         "EstimatedConsumedQuantity",
         "PaymentTerms"
@@ -9474,7 +9645,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Operation Type. Details"
     },
     "OrderLineType": {
       "$anchor": "OrderLineType",
@@ -9567,6 +9739,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Order Line. Details",
       "required": [
         "LineItem"
       ]
@@ -9597,6 +9770,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Order Line Reference. Details",
       "required": [
         "LineID"
       ]
@@ -9639,6 +9813,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Order Reference. Details",
       "required": [
         "ID"
       ]
@@ -9670,6 +9845,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Ordered Shipment. Details",
       "required": [
         "Shipment"
       ]
@@ -9785,7 +9961,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Package. Details"
     },
     "ParticipantPartyType": {
       "$anchor": "ParticipantPartyType",
@@ -9825,6 +10002,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Participant Party. Details",
       "required": [
         "Party"
       ]
@@ -10044,7 +10222,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Party. Details"
     },
     "PartyGroupType": {
       "$anchor": "PartyGroupType",
@@ -10077,6 +10256,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Party Group. Details",
       "required": [
         "Party"
       ]
@@ -10095,6 +10275,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Party Identification. Details",
       "required": [
         "ID"
       ]
@@ -10177,7 +10358,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Party Legal Entity. Details"
     },
     "PartyNameType": {
       "$anchor": "PartyNameType",
@@ -10193,6 +10375,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Party Name. Details",
       "required": [
         "Name"
       ]
@@ -10229,6 +10412,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Party Tax Scheme. Details",
       "required": [
         "TaxScheme"
       ]
@@ -10301,7 +10485,8 @@
           "$ref": "#/$defs/DocumentReferenceType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Payment. Details"
     },
     "PaymentMandateType": {
       "$anchor": "PaymentMandateType",
@@ -10353,7 +10538,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Payment Mandate. Details"
     },
     "PaymentMeansType": {
       "$anchor": "PaymentMeansType",
@@ -10446,6 +10632,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Payment Means. Details",
       "required": [
         "PaymentMeansCode"
       ]
@@ -10520,7 +10707,8 @@
           "$ref": "#/$defs/PeriodType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Payment Terms. Details"
     },
     "PerformanceDataLineType": {
       "$anchor": "PerformanceDataLineType",
@@ -10551,6 +10739,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Performance Data Line. Details",
       "required": [
         "ID",
         "PerformanceValueQuantity",
@@ -10588,7 +10777,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Period. Details"
     },
     "PersonType": {
       "$anchor": "PersonType",
@@ -10686,7 +10876,8 @@
           "$ref": "#/$defs/AddressType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Person. Details"
     },
     "PersonnelHealthIncidentType": {
       "$anchor": "PersonnelHealthIncidentType",
@@ -10738,6 +10929,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Personnel Health Incident. Details",
       "required": [
         "ID",
         "NatureOfIllnessDescription"
@@ -10766,6 +10958,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Physical Attribute. Details",
       "required": [
         "AttributeID"
       ]
@@ -10807,7 +11000,8 @@
           "$ref": "#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Pickup. Details"
     },
     "PortCallType": {
       "$anchor": "PortCallType",
@@ -10872,7 +11066,8 @@
           "$ref": "#/$defs/EventType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Port Call. Details"
     },
     "PortCallPurposeType": {
       "$anchor": "PortCallPurposeType",
@@ -10893,7 +11088,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Port Call Purpose. Details"
     },
     "PortCallRecordType": {
       "$anchor": "PortCallRecordType",
@@ -10930,7 +11126,8 @@
           "$ref": "#/$defs/PeriodType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Port Call Record. Details"
     },
     "PostAwardProcessType": {
       "$anchor": "PostAwardProcessType",
@@ -10954,7 +11151,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/ElectronicPaymentUsageIndicator"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Post Award Process. Details"
     },
     "PowerOfAttorneyType": {
       "$anchor": "PowerOfAttorneyType",
@@ -11011,6 +11209,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Power Of Attorney. Details",
       "required": [
         "AgentParty"
       ]
@@ -11092,6 +11291,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Price. Details",
       "required": [
         "PriceAmount"
       ]
@@ -11126,6 +11326,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Price Extension. Details",
       "required": [
         "Amount"
       ]
@@ -11162,7 +11363,8 @@
           "$ref": "#/$defs/PriceListType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Price List. Details"
     },
     "PricingReferenceType": {
       "$anchor": "PricingReferenceType",
@@ -11190,7 +11392,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Pricing Reference. Details"
     },
     "PrizeType": {
       "$anchor": "PrizeType",
@@ -11212,6 +11415,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Prize. Details",
       "required": [
         "RankCode"
       ]
@@ -11238,7 +11442,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Process Justification. Details"
     },
     "ProcurementAdditionalTypeType": {
       "$anchor": "ProcurementAdditionalTypeType",
@@ -11256,7 +11461,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/ProcurementType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Procurement Additional Type. Details"
     },
     "ProcurementProjectType": {
       "$anchor": "ProcurementProjectType",
@@ -11378,7 +11584,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Procurement Project. Details"
     },
     "ProcurementProjectLotType": {
       "$anchor": "ProcurementProjectLotType",
@@ -11468,6 +11675,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Procurement Project Lot. Details",
       "required": [
         "ID"
       ]
@@ -11486,6 +11694,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Procurement Project Lot Reference. Details",
       "required": [
         "ID"
       ]
@@ -11523,6 +11732,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Project Reference. Details",
       "required": [
         "ID"
       ]
@@ -11567,6 +11777,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Promotional Event. Details",
       "required": [
         "PromotionalEventTypeCode",
         "PromotionalSpecification"
@@ -11589,6 +11800,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Promotional Event Line Item. Details",
       "required": [
         "Amount",
         "EventLineItem"
@@ -11635,6 +11847,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Promotional Specification. Details",
       "required": [
         "PromotionalEventLineItem"
       ]
@@ -11659,6 +11872,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Property Identification. Details",
       "required": [
         "ID"
       ]
@@ -11730,6 +11944,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Purchase Receipt Line. Details",
       "required": [
         "ID",
         "Item"
@@ -11752,6 +11967,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Purchase Reference. Details",
       "required": [
         "ID"
       ]
@@ -11785,6 +12001,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Qualification Resolution. Details",
       "required": [
         "AdmissionCode",
         "ResolutionDate"
@@ -11882,7 +12099,8 @@
           "$ref": "#/$defs/EconomicOperatorRoleType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Qualifying Party. Details"
     },
     "QuotationLineType": {
       "$anchor": "QuotationLineType",
@@ -11961,6 +12179,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Quotation Line. Details",
       "required": [
         "LineItem"
       ]
@@ -11982,6 +12201,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Radioactive Isotope. Details",
       "required": [
         "Name",
         "ActivityLevelMeasure"
@@ -12013,6 +12233,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Radioactive Material. Details",
       "required": [
         "Name"
       ]
@@ -12034,6 +12255,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Rail Transport. Details",
       "required": [
         "TrainID"
       ]
@@ -12152,6 +12374,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Receipt Line. Details",
       "required": [
         "ID"
       ]
@@ -12176,6 +12399,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Regulation. Details",
       "required": [
         "Name"
       ]
@@ -12199,7 +12423,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Related Item. Details"
     },
     "ReminderLineType": {
       "$anchor": "ReminderLineType",
@@ -12274,6 +12499,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Reminder Line. Details",
       "required": [
         "ID"
       ]
@@ -12386,6 +12612,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Remittance Advice Line. Details",
       "required": [
         "ID"
       ]
@@ -12406,7 +12633,8 @@
           "$ref": "#/$defs/PeriodType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Renewal. Details"
     },
     "RequestForQuotationLineType": {
       "$anchor": "RequestForQuotationLineType",
@@ -12453,6 +12681,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Request For Quotation Line. Details",
       "required": [
         "LineItem"
       ]
@@ -12556,6 +12785,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Request For Tender Line. Details",
       "required": [
         "Item"
       ]
@@ -12607,7 +12837,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Requested Tender Total. Details"
     },
     "ResourceConsumptionType": {
       "$anchor": "ResourceConsumptionType",
@@ -12632,6 +12863,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Resource Consumption. Details",
       "required": [
         "ResourceTypeCode",
         "ConsumptionMeasure"
@@ -12675,7 +12907,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Response. Details"
     },
     "ResponseValueType": {
       "$anchor": "ResponseValueType",
@@ -12729,7 +12962,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/ResponseURI"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Response Value. Details"
     },
     "ResultOfVerificationType": {
       "$anchor": "ResultOfVerificationType",
@@ -12765,7 +12999,8 @@
           "$ref": "#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Result Of Verification. Details"
     },
     "RetailPlannedImpactType": {
       "$anchor": "RetailPlannedImpactType",
@@ -12790,6 +13025,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Retail Planned Impact. Details",
       "required": [
         "Amount",
         "ForecastPurposeCode",
@@ -12813,6 +13049,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Road Transport. Details",
       "required": [
         "LicensePlateID"
       ]
@@ -12873,6 +13110,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Sales Item. Details",
       "required": [
         "Quantity",
         "Item"
@@ -12895,6 +13133,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Sanitary Measure. Details",
       "required": [
         "SanitaryMeasureTypeCode"
       ]
@@ -12916,6 +13155,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Score. Details",
       "required": [
         "ScoreNumeric",
         "ScoringSystemCode"
@@ -12946,7 +13186,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Extension"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Secondary Hazard. Details"
     },
     "SecurityClearanceTermType": {
       "$anchor": "SecurityClearanceTermType",
@@ -12964,7 +13205,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Security Clearance Term. Details"
     },
     "SecurityListingType": {
       "$anchor": "SecurityListingType",
@@ -12989,6 +13231,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Security Listing. Details",
       "required": [
         "MarketName"
       ]
@@ -13010,6 +13253,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Security Measure. Details",
       "required": [
         "Description"
       ]
@@ -13028,6 +13272,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Service Frequency. Details",
       "required": [
         "WeekDayCode"
       ]
@@ -13116,7 +13361,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Service Level Agreement. Details"
     },
     "ServiceProviderPartyType": {
       "$anchor": "ServiceProviderPartyType",
@@ -13144,6 +13390,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Service Provider Party. Details",
       "required": [
         "Party"
       ]
@@ -13167,7 +13414,8 @@
           "$ref": "#/$defs/PartyType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Shareholder Party. Details"
     },
     "ShipRequirementType": {
       "$anchor": "ShipRequirementType",
@@ -13186,6 +13434,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Ship Requirement. Details",
       "required": [
         "Description"
       ]
@@ -13216,6 +13465,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Ship Store Article. Details",
       "required": [
         "ID"
       ]
@@ -13256,6 +13506,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Ship To Ship Activity Record. Details",
       "required": [
         "Description"
       ]
@@ -13429,7 +13680,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Shipment. Details"
     },
     "ShipmentStageType": {
       "$anchor": "ShipmentStageType",
@@ -13790,7 +14042,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Shipment Stage. Details"
     },
     "SignatureType": {
       "$anchor": "SignatureType",
@@ -13836,6 +14089,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Signature. Details",
       "required": [
         "ID"
       ]
@@ -13863,6 +14117,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Social Media Profile. Details",
       "required": [
         "URI"
       ]
@@ -14017,6 +14272,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Statement Line. Details",
       "required": [
         "ID"
       ]
@@ -14103,7 +14359,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Status. Details"
     },
     "StockAvailabilityReportLineType": {
       "$anchor": "StockAvailabilityReportLineType",
@@ -14137,6 +14394,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Stock Availability Report Line. Details",
       "required": [
         "ID",
         "Quantity",
@@ -14203,6 +14461,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Storage. Details",
       "required": [
         "ID"
       ]
@@ -14236,7 +14495,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Stowage. Details"
     },
     "SubcontractTermsType": {
       "$anchor": "SubcontractTermsType",
@@ -14269,7 +14529,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/MinimumPercent"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Subcontract Terms. Details"
     },
     "SubscriberConsumptionType": {
       "$anchor": "SubscriberConsumptionType",
@@ -14329,6 +14590,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Subscriber Consumption. Details",
       "required": [
         "UtilityConsumptionPoint"
       ]
@@ -14373,6 +14635,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Supplier Consumption. Details",
       "required": [
         "Consumption",
         "ConsumptionLine"
@@ -14409,7 +14672,8 @@
           "$ref": "#/$defs/ContactType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Supplier Party. Details"
     },
     "TaxCategoryType": {
       "$anchor": "TaxCategoryType",
@@ -14454,7 +14718,8 @@
           "$ref": "#/$defs/TaxSchemeType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tax Category. Details"
     },
     "TaxSchemeType": {
       "$anchor": "TaxSchemeType",
@@ -14491,7 +14756,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tax Scheme. Details"
     },
     "TaxSubtotalType": {
       "$anchor": "TaxSubtotalType",
@@ -14540,6 +14806,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tax Subtotal. Details",
       "required": [
         "TaxAmount",
         "TaxCategory"
@@ -14584,6 +14851,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tax Total. Details",
       "required": [
         "TaxAmount"
       ]
@@ -14712,6 +14980,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Telecommunications Service. Details",
       "required": [
         "CallDate",
         "CallTime",
@@ -14758,6 +15027,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Telecommunications Supply. Details",
       "required": [
         "PrivacyCode",
         "TelecommunicationsSupplyLine"
@@ -14842,6 +15112,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Telecommunications Supply Line. Details",
       "required": [
         "ID",
         "PhoneNumber",
@@ -14870,7 +15141,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/Description"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Temperature. Details"
     },
     "TenderLineType": {
       "$anchor": "TenderLineType",
@@ -14998,7 +15270,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tender Line. Details"
     },
     "TenderPreparationType": {
       "$anchor": "TenderPreparationType",
@@ -15062,6 +15335,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tender Preparation. Details",
       "required": [
         "TenderEnvelopeID"
       ]
@@ -15086,6 +15360,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tender Requirement. Details",
       "required": [
         "Name"
       ]
@@ -15172,6 +15447,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tender Result. Details",
       "required": [
         "AwardDate"
       ]
@@ -15282,7 +15558,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tendered Project. Details"
     },
     "TendererPartyQualificationType": {
       "$anchor": "TendererPartyQualificationType",
@@ -15324,6 +15601,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tenderer Party Qualification. Details",
       "required": [
         "MainQualifyingParty"
       ]
@@ -15421,7 +15699,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tenderer Qualification Request. Details"
     },
     "TendererRequirementType": {
       "$anchor": "TendererRequirementType",
@@ -15458,7 +15737,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tenderer Requirement. Details"
     },
     "TenderingCriterionType": {
       "$anchor": "TenderingCriterionType",
@@ -15562,7 +15842,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tendering Criterion. Details"
     },
     "TenderingCriterionPropertyType": {
       "$anchor": "TenderingCriterionPropertyType",
@@ -15669,7 +15950,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tendering Criterion Property. Details"
     },
     "TenderingCriterionPropertyGroupType": {
       "$anchor": "TenderingCriterionPropertyGroupType",
@@ -15727,6 +16009,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Tendering Criterion Property Group. Details",
       "required": [
         "TenderingCriterionProperty"
       ]
@@ -15834,7 +16117,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tendering Criterion Response. Details"
     },
     "TenderingProcessType": {
       "$anchor": "TenderingProcessType",
@@ -15990,7 +16274,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tendering Process. Details"
     },
     "TenderingTermsType": {
       "$anchor": "TenderingTermsType",
@@ -16334,7 +16619,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Tendering Terms. Details"
     },
     "TradeFinancingType": {
       "$anchor": "TradeFinancingType",
@@ -16388,6 +16674,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Trade Financing. Details",
       "required": [
         "FinancingParty"
       ]
@@ -16411,7 +16698,8 @@
           "$ref": "#/$defs/AddressType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Trading Terms. Details"
     },
     "TransactionConditionsType": {
       "$anchor": "TransactionConditionsType",
@@ -16445,7 +16733,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Transaction Conditions. Details"
     },
     "TransportEquipmentType": {
       "$anchor": "TransportEquipmentType",
@@ -16849,7 +17138,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Transport Equipment. Details"
     },
     "TransportEquipmentSealType": {
       "$anchor": "TransportEquipmentSealType",
@@ -16877,6 +17167,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Transport Equipment Seal. Details",
       "required": [
         "ID"
       ]
@@ -16960,7 +17251,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Transport Event. Details"
     },
     "TransportExecutionTermsType": {
       "$anchor": "TransportExecutionTermsType",
@@ -17045,7 +17337,8 @@
           "$ref": "#/$defs/PaymentTermsType"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Transport Execution Terms. Details"
     },
     "TransportHandlingUnitType": {
       "$anchor": "TransportHandlingUnitType",
@@ -17294,7 +17587,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Transport Handling Unit. Details"
     },
     "TransportMeansType": {
       "$anchor": "TransportMeansType",
@@ -17355,7 +17649,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Transport Means. Details"
     },
     "TransportScheduleType": {
       "$anchor": "TransportScheduleType",
@@ -17404,6 +17699,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Transport Schedule. Details",
       "required": [
         "SequenceNumeric",
         "StatusLocation"
@@ -17448,6 +17744,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Transportation Segment. Details",
       "required": [
         "SequenceNumeric",
         "TransportationService",
@@ -17634,6 +17931,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Transportation Service. Details",
       "required": [
         "TransportServiceCode"
       ]
@@ -17657,7 +17955,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/TimeAmount"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Unstructured Price. Details"
     },
     "UtilityItemType": {
       "$anchor": "UtilityItemType",
@@ -17715,6 +18014,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Utility Item. Details",
       "required": [
         "ID"
       ]
@@ -17774,6 +18074,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Verified Gross Mass. Details",
       "required": [
         "WeighingMethodCode",
         "GrossMassMeasure",
@@ -17805,7 +18106,8 @@
           "$ref": "CommonBasicComponents-2.5.json#/$defs/RateOfTurnMeasure"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Vessel Dynamics. Details"
     },
     "WHOAffectedAreaVisitType": {
       "$anchor": "WHOAffectedAreaVisitType",
@@ -17824,6 +18126,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "WHO Affected Area Visit. Details",
       "required": [
         "VisitDate",
         "WHOAffectedAreaPortLocation"
@@ -17852,6 +18155,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Waste Generated. Details",
       "required": [
         "WasteMeasure"
       ]
@@ -17895,6 +18199,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Web Site. Details",
       "required": [
         "URI"
       ]
@@ -17919,6 +18224,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Web Site Access. Details",
       "required": [
         "Password",
         "Login"
@@ -17941,6 +18247,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Winning Party. Details",
       "required": [
         "Party"
       ]
@@ -17986,7 +18293,8 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Work Phase Reference. Details"
     },
     "WorkQuantityTotalType": {
       "$anchor": "WorkQuantityTotalType",
@@ -18008,6 +18316,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Work Quantity Total. Details",
       "required": [
         "Quantity",
         "WorkTypeDescription"
@@ -18099,6 +18408,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "Work Report Line. Details",
       "required": [
         "ID",
         "Quantity"

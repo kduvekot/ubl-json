@@ -81,5 +81,6 @@
     "ID",
     "IssueDate"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Document Status. Details"
 }

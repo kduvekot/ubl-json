@@ -128,5 +128,6 @@
     "ExportingGuarantorParty",
     "GoodsItemPassportCounterfoil"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Proof Of Reexportation Reminder. Details"
 }

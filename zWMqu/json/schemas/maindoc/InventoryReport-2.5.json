@@ -104,5 +104,6 @@
     "InventoryReportingParty",
     "InventoryReportLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Inventory Report. Details"
 }

@@ -140,5 +140,6 @@
     "ID",
     "CustomsParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Transit Customs Declaration. Details"
 }

@@ -107,5 +107,6 @@
     "ReceiverParty",
     "TenderResult"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Unawarded Notification. Details"
 }

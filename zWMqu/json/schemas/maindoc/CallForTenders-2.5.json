@@ -183,5 +183,6 @@
     "ContractingParty",
     "ProcurementProject"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Call For Tenders. Details"
 }

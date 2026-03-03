@@ -79,5 +79,6 @@
     "ReceiverParty",
     "BillingReference"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Invoice Status Request. Details"
 }

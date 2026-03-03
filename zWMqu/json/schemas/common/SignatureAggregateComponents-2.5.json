@@ -18,7 +18,8 @@
           "$ref": "SignatureBasicComponents-2.5.json#/$defs/ReferencedSignatureID"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "Signature Information. Details"
     },
     "UBLDocumentSignaturesType": {
       "$anchor": "UBLDocumentSignaturesType",
@@ -45,6 +46,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "UBL Document Signatures. Details",
       "required": [
         "SignatureInformation"
       ]

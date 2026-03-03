@@ -115,5 +115,6 @@
     "ReceiverParty",
     "ProviderParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Catalogue Deletion. Details"
 }

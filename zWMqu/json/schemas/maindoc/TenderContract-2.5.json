@@ -167,5 +167,6 @@
     "EconomicOperatorParty",
     "TenderResult"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tender Contract. Details"
 }

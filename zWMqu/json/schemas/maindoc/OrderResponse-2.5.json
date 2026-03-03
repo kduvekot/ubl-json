@@ -319,5 +319,6 @@
     "SellerSupplierParty",
     "BuyerCustomerParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Order Response. Details"
 }

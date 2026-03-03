@@ -451,5 +451,6 @@
     "LegalMonetaryTotal",
     "CreditNoteLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Self Billed Credit Note. Details"
 }

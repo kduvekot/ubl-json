@@ -194,5 +194,6 @@
     "AccountingCustomerParty",
     "StatementLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Statement. Details"
 }

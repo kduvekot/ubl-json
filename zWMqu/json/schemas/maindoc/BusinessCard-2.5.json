@@ -111,5 +111,6 @@
     "IssueDate",
     "BusinessParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Business Card. Details"
 }

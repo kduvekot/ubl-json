@@ -87,5 +87,6 @@
     "IssueTime",
     "TransportationService"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Transport Service Description Request. Details"
 }

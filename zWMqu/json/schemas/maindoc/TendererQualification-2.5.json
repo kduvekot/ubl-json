@@ -113,5 +113,6 @@
     "IssueDate",
     "TendererPartyQualification"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tenderer Qualification. Details"
 }

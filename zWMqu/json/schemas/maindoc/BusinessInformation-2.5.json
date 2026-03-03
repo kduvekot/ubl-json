@@ -168,5 +168,6 @@
     "IssueDate",
     "BusinessParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Business Information. Details"
 }

@@ -104,5 +104,6 @@
     "InventoryReportingParty",
     "StockAvailabilityReportLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Stock Availability Report. Details"
 }

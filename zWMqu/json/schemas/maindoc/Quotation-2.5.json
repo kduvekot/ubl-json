@@ -189,5 +189,6 @@
     "QuotedMonetaryTotal",
     "QuotationLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Quotation. Details"
 }

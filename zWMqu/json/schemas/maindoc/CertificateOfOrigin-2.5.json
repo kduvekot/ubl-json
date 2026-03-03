@@ -94,5 +94,6 @@
     "CertificateOfOriginApplication",
     "IssuerEndorsement"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Certificate Of Origin. Details"
 }

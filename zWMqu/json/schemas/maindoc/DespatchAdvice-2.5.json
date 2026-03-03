@@ -161,5 +161,6 @@
     "DeliveryCustomerParty",
     "DespatchLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Despatch Advice. Details"
 }

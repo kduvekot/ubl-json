@@ -45,6 +45,7 @@
         }
       },
       "additionalProperties": false,
+      "title": "UBL Extension. Details",
       "required": [
         "ExtensionContent"
       ]

@@ -108,5 +108,6 @@
     "ReceiverParty",
     "ExceptionCriteriaLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Exception Criteria. Details"
 }

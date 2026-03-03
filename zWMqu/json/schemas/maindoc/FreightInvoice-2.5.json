@@ -337,5 +337,6 @@
     "LegalMonetaryTotal",
     "InvoiceLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Freight Invoice. Details"
 }

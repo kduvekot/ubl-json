@@ -163,5 +163,6 @@
     "TendererParty",
     "TenderedProject"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tender. Details"
 }

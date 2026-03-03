@@ -105,5 +105,6 @@
     "ReceiverParty",
     "ExceptionNotificationLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Exception Notification. Details"
 }

@@ -457,5 +457,6 @@
     "LegalMonetaryTotal",
     "InvoiceLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Self Billed Invoice. Details"
 }

@@ -133,5 +133,6 @@
     "UBLEntity",
     "ID"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Bill Of Lading. Details"
 }

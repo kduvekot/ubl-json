@@ -195,5 +195,6 @@
     "TransportServiceProviderParty",
     "Consignment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Transport Execution Plan. Details"
 }

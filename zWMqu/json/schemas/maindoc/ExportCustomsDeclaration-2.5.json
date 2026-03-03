@@ -72,5 +72,6 @@
     "ExporterParty",
     "CustomsDeclaration"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Export Customs Declaration. Details"
 }

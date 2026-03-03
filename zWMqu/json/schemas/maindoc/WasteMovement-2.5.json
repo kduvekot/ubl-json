@@ -130,5 +130,6 @@
     "WasteProducerParty",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Waste Movement. Details"
 }

@@ -115,5 +115,6 @@
     "ReceiverParty",
     "ForecastLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Forecast. Details"
 }

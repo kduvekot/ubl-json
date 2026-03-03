@@ -165,5 +165,6 @@
     "BuyerCustomerParty",
     "WorkReportLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Work Report. Details"
 }

@@ -108,5 +108,6 @@
     "ReceiverParty",
     "ItemManagementProfile"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Trade Item Location Profile. Details"
 }

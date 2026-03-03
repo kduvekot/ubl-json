@@ -114,5 +114,6 @@
     "ID",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Import Customs Declaration. Details"
 }

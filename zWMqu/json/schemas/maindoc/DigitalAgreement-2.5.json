@@ -128,5 +128,6 @@
     "ParticipantParty",
     "DigitalProcess"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Digital Agreement. Details"
 }

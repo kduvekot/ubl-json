@@ -98,5 +98,6 @@
     "RequestorParty",
     "ResponderParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Enquiry. Details"
 }

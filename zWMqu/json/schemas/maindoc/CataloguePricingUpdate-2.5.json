@@ -149,5 +149,6 @@
     "ReceiverParty",
     "CataloguePricingUpdateLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Catalogue Pricing Update. Details"
 }

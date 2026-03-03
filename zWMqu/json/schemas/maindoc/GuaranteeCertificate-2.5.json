@@ -128,5 +128,6 @@
     "GuarantorParty",
     "InterestedParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Guarantee Certificate. Details"
 }

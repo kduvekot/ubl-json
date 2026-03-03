@@ -177,5 +177,6 @@
     "ReceiverParty",
     "CatalogueLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Catalogue. Details"
 }

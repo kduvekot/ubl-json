@@ -93,5 +93,6 @@
     "IssueDate",
     "DocumentResponse"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Invoice Status Response. Details"
 }

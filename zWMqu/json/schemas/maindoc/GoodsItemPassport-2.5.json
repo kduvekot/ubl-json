@@ -143,5 +143,6 @@
     "Shipment",
     "GoodsItemPassportCounterfoil"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Goods Item Passport. Details"
 }

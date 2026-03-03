@@ -118,5 +118,6 @@
     "SenderParty",
     "ReceiverParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Common Transportation Report. Details"
 }

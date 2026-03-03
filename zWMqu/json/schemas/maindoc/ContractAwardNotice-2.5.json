@@ -193,5 +193,6 @@
     "ContractingParty",
     "TenderResult"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Contract Award Notice. Details"
 }

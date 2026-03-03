@@ -89,5 +89,6 @@
     "EconomicOperatorParty",
     "ContractingParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Unsubscribe From Procedure Response. Details"
 }

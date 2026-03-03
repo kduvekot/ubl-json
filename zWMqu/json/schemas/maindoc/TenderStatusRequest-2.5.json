@@ -99,5 +99,6 @@
     "ContractingParty",
     "EconomicOperatorParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tender Status Request. Details"
 }

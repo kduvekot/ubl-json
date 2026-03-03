@@ -304,5 +304,6 @@
     "SellerSupplierParty",
     "OrderLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Order. Details"
 }

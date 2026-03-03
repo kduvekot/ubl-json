@@ -96,5 +96,6 @@
     "ResponderParty",
     "ParentDocumentReference"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Enquiry Response. Details"
 }

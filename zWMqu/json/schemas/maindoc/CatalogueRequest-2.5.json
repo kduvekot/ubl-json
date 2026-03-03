@@ -182,5 +182,6 @@
     "ReceiverParty",
     "ProviderParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Catalogue Request. Details"
 }

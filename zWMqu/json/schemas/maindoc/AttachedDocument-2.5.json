@@ -97,5 +97,6 @@
     "ReceiverParty",
     "Attachment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Attached Document. Details"
 }

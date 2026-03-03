@@ -149,5 +149,6 @@
     "DeliveryCustomerParty",
     "DespatchSupplierParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Receipt Advice. Details"
 }

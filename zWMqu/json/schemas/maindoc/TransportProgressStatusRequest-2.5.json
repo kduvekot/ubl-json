@@ -83,5 +83,6 @@
     "IssueTime",
     "TransportMeans"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Transport Progress Status Request. Details"
 }

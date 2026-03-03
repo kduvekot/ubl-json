@@ -117,5 +117,6 @@
     "ReceiverParty",
     "TenderResult"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Awarded Notification. Details"
 }

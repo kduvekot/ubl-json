@@ -149,5 +149,6 @@
     "ID",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Waybill. Details"
 }

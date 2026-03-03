@@ -94,5 +94,6 @@
     "SenderParty",
     "ReceiverParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tender Receipt. Details"
 }

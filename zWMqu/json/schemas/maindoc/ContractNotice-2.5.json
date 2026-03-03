@@ -162,5 +162,6 @@
     "ContractingParty",
     "ProcurementProject"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Contract Notice. Details"
 }

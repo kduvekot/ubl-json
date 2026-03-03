@@ -119,5 +119,6 @@
     "EconomicOperatorParty",
     "ContractingParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Expression Of Interest Request. Details"
 }

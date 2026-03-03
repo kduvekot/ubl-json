@@ -102,5 +102,6 @@
     "ReceiverParty",
     "SupplyChainActivityDataLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Product Activity. Details"
 }

@@ -77,5 +77,6 @@
     "ReceiverParty",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Weight Statement. Details"
 }

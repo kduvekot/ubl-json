@@ -86,5 +86,6 @@
     "SenderParty",
     "ReceiverParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Application Response. Details"
 }

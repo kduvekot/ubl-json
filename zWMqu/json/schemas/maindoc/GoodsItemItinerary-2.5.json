@@ -141,5 +141,6 @@
     "TransportExecutionPlanReferenceID",
     "TransportationSegment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Goods Item Itinerary. Details"
 }

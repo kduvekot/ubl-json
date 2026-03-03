@@ -228,5 +228,6 @@
     "LegalMonetaryTotal",
     "ReminderLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Reminder. Details"
 }

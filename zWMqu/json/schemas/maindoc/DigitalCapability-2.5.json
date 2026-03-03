@@ -84,5 +84,6 @@
     "BusinessParty",
     "DigitalProcess"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Digital Capability. Details"
 }

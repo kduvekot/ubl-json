@@ -105,5 +105,6 @@
     "ReceiverParty",
     "ItemInformationRequestLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Item Information Request. Details"
 }

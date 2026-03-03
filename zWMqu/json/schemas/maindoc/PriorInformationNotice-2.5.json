@@ -174,5 +174,6 @@
     "IssueDate",
     "ContractingParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Prior Information Notice. Details"
 }

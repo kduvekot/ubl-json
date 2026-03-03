@@ -94,5 +94,6 @@
     "ReceiverParty",
     "QualificationResolution"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Tenderer Qualification Response. Details"
 }

@@ -186,5 +186,6 @@
     "EconomicOperatorParty",
     "TenderingCriterionResponse"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Qualification Application Response. Details"
 }

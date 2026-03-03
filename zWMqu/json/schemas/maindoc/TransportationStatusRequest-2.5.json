@@ -134,5 +134,6 @@
     "UBLEntity",
     "ID"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Transportation Status Request. Details"
 }

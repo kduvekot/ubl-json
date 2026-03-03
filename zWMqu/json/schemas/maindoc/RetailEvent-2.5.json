@@ -124,5 +124,6 @@
     "SenderParty",
     "ReceiverParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Retail Event. Details"
 }

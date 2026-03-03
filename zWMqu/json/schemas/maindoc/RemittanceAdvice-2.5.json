@@ -154,5 +154,6 @@
     "AccountingSupplierParty",
     "RemittanceAdviceLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Remittance Advice. Details"
 }

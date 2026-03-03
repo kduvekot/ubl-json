@@ -113,5 +113,6 @@
     "WasteProducerParty",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Waste Notification. Details"
 }

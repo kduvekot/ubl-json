@@ -95,5 +95,6 @@
     "UBLEntity",
     "ID"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Transport Service Description. Details"
 }

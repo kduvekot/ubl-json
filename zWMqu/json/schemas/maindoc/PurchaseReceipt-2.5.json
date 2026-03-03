@@ -199,5 +199,6 @@
     "LegalMonetaryTotal",
     "PurchaseReceiptLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Purchase Receipt. Details"
 }

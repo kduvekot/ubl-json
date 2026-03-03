@@ -147,5 +147,6 @@
     "IssuerParty",
     "Shipment"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Goods Certificate. Details"
 }

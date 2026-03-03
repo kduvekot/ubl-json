@@ -153,5 +153,6 @@
     "IssueDate",
     "ContractingParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Qualification Application Request. Details"
 }

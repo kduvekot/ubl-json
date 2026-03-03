@@ -141,5 +141,6 @@
     "ID",
     "SendingLogisticsOperatorParty"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Manifest. Details"
 }

@@ -167,5 +167,6 @@
     "SellerSupplierParty",
     "RequestForQuotationLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Request For Quotation. Details"
 }

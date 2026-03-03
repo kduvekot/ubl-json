@@ -101,5 +101,6 @@
     "RetailerCustomerParty",
     "InstructionForReturnsLine"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "title": "Instruction For Returns. Details"
 }
