@@ -1,109 +1,110 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:GoodsCertificate-2",
   "description": "A document that describes a certificate of goods for importation and exportation",
   "type": "object",
   "properties": {
     "UBLEntity": {
-      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/GoodsCertificate-2",
+      "const": "urn:oasis:names:specification:ubl:schema:json:GoodsCertificate-2",
       "description": "The JSON Schema identifier for this document type."
     },
     "UBLExtensions": {
-      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
     "Signature": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
           }
         }
       ]
     },
     "UBLVersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
     },
     "CustomizationID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
     },
     "ProfileID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
     },
     "ProfileExecutionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
     },
     "ID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
     },
     "UUID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
     },
     "IssueDate": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
     },
     "IssueTime": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
     },
     "TypeCode": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TypeCode"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TypeCode"
     },
     "Description": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Description"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
     },
     "Note": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
     },
     "VersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
     },
     "ValidityPeriod": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
     },
     "ApplicableTerritoryAddress": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AddressType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AddressType"
     },
     "ExporterParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "ImporterParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "WarehouseParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "ConsignorParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "ConsigneeParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "FreightForwarderParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "IssuerParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "LegalAuthorityParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "ApplicantParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "Shipment": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ShipmentType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ShipmentType"
     },
     "Attestation": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AttestationType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AttestationType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AttestationType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AttestationType"
           }
         }
       ]
@@ -111,31 +112,31 @@
     "GoodsProcessing": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/GoodsProcessingType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/GoodsProcessingType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/GoodsProcessingType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/GoodsProcessingType"
           }
         }
       ]
     },
     "OriginalDocumentReference": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
     },
     "PreviousDocumentReference": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
     },
     "AdditionalDocumentReference": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
           }
         }
       ]

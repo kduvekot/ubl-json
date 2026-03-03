@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2",
   "description": "UBL 2.5 Signature Aggregate Components",
   "$defs": {
     "SignatureInformationType": {
@@ -8,14 +9,14 @@
       "description": "This class captures a single signature and optionally associates to a signature in the document with the corresponding identifier.",
       "properties": {
         "UBLEntity": {
-          "const": "https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2#SignatureInformationType",
+          "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#SignatureInformationType",
           "description": "The UBL entity type identifier."
         },
         "ID": {
-          "$ref": "SignatureBasicComponents-2.5.json#/$defs/ID"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2#/$defs/ID"
         },
         "ReferencedSignatureID": {
-          "$ref": "SignatureBasicComponents-2.5.json#/$defs/ReferencedSignatureID"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2#/$defs/ReferencedSignatureID"
         }
       },
       "additionalProperties": false,
@@ -27,7 +28,7 @@
       "description": "This class collects all signature information for a document.",
       "properties": {
         "UBLEntity": {
-          "const": "https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2#UBLDocumentSignaturesType",
+          "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#UBLDocumentSignaturesType",
           "description": "The UBL entity type identifier."
         },
         "SignatureInformation": {

@@ -1,132 +1,133 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:Statement-2",
   "description": "A document used to report the status of orders, billing, and payment. This document is a statement of account, not a summary invoice.",
   "type": "object",
   "properties": {
     "UBLEntity": {
-      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/Statement-2",
+      "const": "urn:oasis:names:specification:ubl:schema:json:Statement-2",
       "description": "The JSON Schema identifier for this document type."
     },
     "UBLExtensions": {
-      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
     "Signature": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
           }
         }
       ]
     },
     "UBLVersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
     },
     "CustomizationID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
     },
     "ProfileID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
     },
     "ProfileExecutionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
     },
     "ID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
     },
     "CopyIndicator": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
     },
     "IssueDate": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
     },
     "IssueTime": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
     },
     "Note": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
     },
     "DocumentCurrencyCode": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/DocumentCurrencyCode"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DocumentCurrencyCode"
     },
     "TotalDebitAmount": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TotalDebitAmount"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TotalDebitAmount"
     },
     "TotalCreditAmount": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TotalCreditAmount"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TotalCreditAmount"
     },
     "TotalBalanceAmount": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/TotalBalanceAmount"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TotalBalanceAmount"
     },
     "LineCountNumeric": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/LineCountNumeric"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LineCountNumeric"
     },
     "StatementTypeCode": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/StatementTypeCode"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/StatementTypeCode"
     },
     "StatementPeriod": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
     },
     "AdditionalDocumentReference": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
           }
         }
       ]
     },
     "AccountingSupplierParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SupplierPartyType"
     },
     "AccountingCustomerParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CustomerPartyType"
     },
     "BuyerCustomerParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CustomerPartyType"
     },
     "SellerSupplierParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SupplierPartyType"
     },
     "OriginatorCustomerParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CustomerPartyType"
     },
     "BeneficiaryParty": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
           }
         }
       ]
     },
     "PayeeParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "PaymentMeans": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PaymentMeansType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PaymentMeansType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PaymentMeansType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PaymentMeansType"
           }
         }
       ]
@@ -134,12 +135,12 @@
     "PaymentTerms": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PaymentTermsType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PaymentTermsType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PaymentTermsType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PaymentTermsType"
           }
         }
       ]
@@ -147,12 +148,12 @@
     "AllowanceCharge": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AllowanceChargeType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AllowanceChargeType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/AllowanceChargeType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AllowanceChargeType"
           }
         }
       ]
@@ -160,12 +161,12 @@
     "TaxTotal": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TaxTotalType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TaxTotalType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TaxTotalType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TaxTotalType"
           }
         }
       ]
@@ -173,12 +174,12 @@
     "StatementLine": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/StatementLineType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/StatementLineType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/StatementLineType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/StatementLineType"
           },
           "minItems": 1
         }

@@ -1,12 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2",
   "description": "UBL 2.5 Signature Basic Components",
   "$defs": {
     "ID": {
-      "$ref": "QualifiedDataTypes-2.5.json#/$defs/IdentifierType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
     },
     "ReferencedSignatureID": {
-      "$ref": "QualifiedDataTypes-2.5.json#/$defs/IdentifierType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
     }
   }
 }

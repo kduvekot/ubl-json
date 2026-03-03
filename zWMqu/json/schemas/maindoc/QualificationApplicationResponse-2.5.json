@@ -1,94 +1,95 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:QualificationApplicationResponse-2",
   "description": "A self-declaration of an economic operator, stating that it does not fall under the Exclusion Grounds and that it meets the Selection Criteria for a specific procurement.",
   "type": "object",
   "properties": {
     "UBLEntity": {
-      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/QualificationApplicationResponse-2",
+      "const": "urn:oasis:names:specification:ubl:schema:json:QualificationApplicationResponse-2",
       "description": "The JSON Schema identifier for this document type."
     },
     "UBLExtensions": {
-      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
     "Signature": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
           }
         }
       ]
     },
     "UBLVersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
     },
     "CustomizationID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
     },
     "ProfileID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
     },
     "ProfileExecutionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
     },
     "ID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
     },
     "CopyIndicator": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CopyIndicator"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
     },
     "ContractFolderID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ContractFolderID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ContractFolderID"
     },
     "ContractName": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ContractName"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ContractName"
     },
     "IssueDate": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
     },
     "IssueTime": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
     },
     "EconomicOperatorGroupName": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/EconomicOperatorGroupName"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EconomicOperatorGroupName"
     },
     "VersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
     },
     "PreviousVersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/PreviousVersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PreviousVersionID"
     },
     "ProcedureCode": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProcedureCode"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProcedureCode"
     },
     "QualificationApplicationTypeCode": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/QualificationApplicationTypeCode"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/QualificationApplicationTypeCode"
     },
     "WeightScoringMethodologyNote": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/WeightScoringMethodologyNote"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/WeightScoringMethodologyNote"
     },
     "WeightingTypeCode": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/WeightingTypeCode"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/WeightingTypeCode"
     },
     "Note": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
     },
     "ContractingParty": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractingPartyType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ContractingPartyType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractingPartyType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ContractingPartyType"
           },
           "minItems": 1
         }
@@ -97,29 +98,29 @@
     "EconomicOperatorParty": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EconomicOperatorPartyType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/EconomicOperatorPartyType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EconomicOperatorPartyType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/EconomicOperatorPartyType"
           },
           "minItems": 1
         }
       ]
     },
     "ProcurementProject": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProcurementProjectType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ProcurementProjectType"
     },
     "ProcurementProjectLot": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProcurementProjectLotType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ProcurementProjectLotType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ProcurementProjectLotType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ProcurementProjectLotType"
           }
         }
       ]
@@ -127,12 +128,12 @@
     "TenderingCriterion": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TenderingCriterionType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TenderingCriterionType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TenderingCriterionType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TenderingCriterionType"
           }
         }
       ]
@@ -140,12 +141,12 @@
     "TenderingCriterionResponse": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TenderingCriterionResponseType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TenderingCriterionResponseType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/TenderingCriterionResponseType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TenderingCriterionResponseType"
           },
           "minItems": 1
         }
@@ -154,12 +155,12 @@
     "AdditionalDocumentReference": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/DocumentReferenceType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
           }
         }
       ]
@@ -167,12 +168,12 @@
     "Evidence": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EvidenceType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/EvidenceType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/EvidenceType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/EvidenceType"
           }
         }
       ]

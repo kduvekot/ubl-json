@@ -1,110 +1,111 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:CatalogueDeletion-2",
   "description": "A document used to cancel an entire Catalogue.",
   "type": "object",
   "properties": {
     "UBLEntity": {
-      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/CatalogueDeletion-2",
+      "const": "urn:oasis:names:specification:ubl:schema:json:CatalogueDeletion-2",
       "description": "The JSON Schema identifier for this document type."
     },
     "UBLExtensions": {
-      "$ref": "../common/CommonExtensionComponents-2.5.json#/$defs/UBLExtensionsType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
     "Signature": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SignatureType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
           }
         }
       ]
     },
     "UBLVersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UBLVersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
     },
     "CustomizationID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/CustomizationID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
     },
     "ProfileID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
     },
     "ProfileExecutionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ProfileExecutionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
     },
     "ID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/ID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
     },
     "UUID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/UUID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
     },
     "Name": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Name"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
     },
     "IssueDate": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueDate"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
     },
     "IssueTime": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/IssueTime"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
     },
     "EffectiveDate": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/EffectiveDate"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EffectiveDate"
     },
     "EffectiveTime": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/EffectiveTime"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EffectiveTime"
     },
     "Note": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Note"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
     },
     "VersionID": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/VersionID"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
     },
     "Description": {
-      "$ref": "../common/CommonBasicComponents-2.5.json#/$defs/Description"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
     },
     "ValidityPeriod": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PeriodType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
           }
         }
       ]
     },
     "DeletedCatalogueReference": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CatalogueReferenceType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CatalogueReferenceType"
     },
     "ReferencedContract": {
       "oneOf": [
         {
-          "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ContractType"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/ContractType"
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ContractType"
           }
         }
       ]
     },
     "ReceiverParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "ProviderParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/PartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "SellerSupplierParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/SupplierPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SupplierPartyType"
     },
     "ContractorCustomerParty": {
-      "$ref": "../common/CommonAggregateComponents-2.5.json#/$defs/CustomerPartyType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CustomerPartyType"
     }
   },
   "required": [

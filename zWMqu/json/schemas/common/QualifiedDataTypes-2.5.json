@@ -1,111 +1,112 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2",
   "description": "UBL 2.5 Qualified Data Types",
   "$defs": {
     "AllowanceChargeReason_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "AmountType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/AmountType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/AmountType"
     },
     "BinaryObjectType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/BinaryObjectType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/BinaryObjectType"
     },
     "Channel_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "Chip_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "ContentType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/ContentType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/ContentType"
     },
     "CountryIdentification_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "Currency_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "DateType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/DateType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/DateType"
     },
     "DocumentStatus_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "IdentifierType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/IdentifierType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/IdentifierType"
     },
     "IndicatorType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/IndicatorType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/IndicatorType"
     },
     "Language_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "LatitudeDirection_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "LineStatus_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "LongitudeDirection_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "MeasureType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/MeasureType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/MeasureType"
     },
     "NameType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/NameType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/NameType"
     },
     "NumericType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/NumericType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/NumericType"
     },
     "Operator_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "PackagingType_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "PaymentMeans_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "PercentType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/PercentType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/PercentType"
     },
     "QuantityType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/QuantityType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/QuantityType"
     },
     "RateType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/RateType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/RateType"
     },
     "ReceiptAdviceType_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "SubstitutionStatus_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "TextType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/TextType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/TextType"
     },
     "TimeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/TimeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/TimeType"
     },
     "TransportEquipmentType_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "TransportMode_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "UnitOfMeasure_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "WeekDay_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     },
     "WeighingMethod_CodeType": {
-      "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/CodeType"
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/CodeType"
     }
   }
 }

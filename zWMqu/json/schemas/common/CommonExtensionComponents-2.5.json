@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2",
   "description": "UBL 2.5 Common Extension Components",
   "$defs": {
     "UBLExtensionsType": {
@@ -14,34 +15,34 @@
       "description": "A single extension for private use.",
       "properties": {
         "ID": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ID"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
         "Name": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/Name"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
         "ExtensionAgencyID": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionAgencyID"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionAgencyID"
         },
         "ExtensionAgencyName": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionAgencyName"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionAgencyName"
         },
         "ExtensionVersionID": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionVersionID"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionVersionID"
         },
         "ExtensionAgencyURI": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionAgencyURI"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionAgencyURI"
         },
         "ExtensionURI": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionURI"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionURI"
         },
         "ExtensionReasonCode": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionReasonCode"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionReasonCode"
         },
         "ExtensionReason": {
-          "$ref": "CommonBasicComponents-2.5.json#/$defs/ExtensionReason"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExtensionReason"
         },
         "ExtensionContent": {
-          "$ref": "UnqualifiedDataTypes-2.5.json#/$defs/ContentType"
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2#/$defs/ContentType"
         }
       },
       "additionalProperties": false,
