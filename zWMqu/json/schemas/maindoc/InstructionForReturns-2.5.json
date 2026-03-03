@@ -4,10 +4,6 @@
   "description": "A document used to initiate a return of goods. The producer is requesting the return of products that are not selling well, either to use in other places or to free up rack or shelf space.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:InstructionForReturns-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -95,7 +91,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "IssueDate",
     "SellerSupplierParty",

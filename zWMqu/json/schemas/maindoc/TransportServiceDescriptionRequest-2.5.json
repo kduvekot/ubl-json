@@ -4,10 +4,6 @@
   "description": "A document requesting a Transport Service Description, sent from a party with a transport demand (transport user) to a party providing transport services (transport service provider).",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescriptionRequest-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -82,7 +78,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "IssueDate",
     "IssueTime",

@@ -4,10 +4,6 @@
   "description": "A credit note created by the debtor in a self billing arrangement with a creditor.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:SelfBilledCreditNote-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -444,7 +440,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "IssueDate",
     "AccountingCustomerParty",

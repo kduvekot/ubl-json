@@ -4,10 +4,6 @@
   "description": "A document specifying trade item attributes relating to replenishment policies.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:TradeItemLocationProfile-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -101,7 +97,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "IssueDate",
     "Period",

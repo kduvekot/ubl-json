@@ -4,10 +4,6 @@
   "description": "A document published by a Contracting Party to announce the awarding of a procurement project.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:ContractAwardNotice-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -188,7 +184,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ContractFolderID",
     "IssueDate",
     "ContractingParty",

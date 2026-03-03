@@ -4,10 +4,6 @@
   "description": "A document describing how goods are packed.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:PackingList-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -103,7 +99,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "Shipment"
   ],

@@ -4,10 +4,6 @@
   "description": "A document sent by a requestor to a responder resquesting information about a particular business process. ",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:Enquiry-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -94,7 +90,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "IssueDate",
     "RequestorParty",
     "ResponderParty"

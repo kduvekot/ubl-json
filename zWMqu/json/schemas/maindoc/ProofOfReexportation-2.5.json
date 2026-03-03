@@ -4,10 +4,6 @@
   "description": "A document providing a status or a proof that goods have been re-exported",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportation-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -109,7 +105,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "GoodsItemPassportCounterfoil",
     "ReexportationEvidence"

@@ -8,10 +8,6 @@
       "type": "object",
       "description": "A class to associate a time period and locations (activity data) with an item for inventory planning purposes.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ActivityDataLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -62,10 +58,6 @@
       "type": "object",
       "description": "A class to define a name/value pair for a property of an inventory planning activity.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ActivityPropertyType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -85,10 +77,6 @@
       "type": "object",
       "description": "A class to define common information related to an address.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AddressType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -202,10 +190,6 @@
       "type": "object",
       "description": "A class to define an unstructured address line.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AddressLineType",
-          "description": "The UBL entity type identifier."
-        },
         "Line": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Line"
         }
@@ -221,10 +205,6 @@
       "type": "object",
       "description": "A class to identify a specific aircraft used for transportation.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AirTransportType",
-          "description": "The UBL entity type identifier."
-        },
         "AircraftID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AircraftID"
         }
@@ -240,10 +220,6 @@
       "type": "object",
       "description": "A class to describe information about a charge or discount as applied to a price component.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AllowanceChargeType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -325,10 +301,6 @@
       "type": "object",
       "description": "A class to define a structured annotation providing contextual or explanatory information related to a document or other business object",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AnnotationType",
-          "description": "The UBL entity type identifier."
-        },
         "SubjectCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SubjectCode"
         },
@@ -350,10 +322,6 @@
       "type": "object",
       "description": "A class to describe the terms and conditions, set by the contracting authority, under which an appeal can be lodged for a tender award.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AppealTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "Description": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
         },
@@ -378,10 +346,6 @@
       "type": "object",
       "description": "A class to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AttachmentType",
-          "description": "The UBL entity type identifier."
-        },
         "EmbeddedDocumentBinaryObject": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EmbeddedDocumentBinaryObject"
         },
@@ -403,10 +367,6 @@
       "type": "object",
       "description": "A class describing an attestation made for an item",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AttestationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -454,10 +414,6 @@
       "type": "object",
       "description": "A class describing an attestation line",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AttestationLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -502,10 +458,6 @@
       "type": "object",
       "description": "A class to describe the terms to be fulfilled by tenderers if an auction is to be executed before the awarding of a tender.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AuctionTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "AuctionConstraintIndicator": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AuctionConstraintIndicator"
         },
@@ -536,10 +488,6 @@
       "type": "object",
       "description": "A class to define an authorization that as been issued",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AuthorizationType",
-          "description": "The UBL entity type identifier."
-        },
         "PurposeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PurposeCode"
         },
@@ -571,10 +519,6 @@
       "type": "object",
       "description": "A class to define a criterion from the contracting party that will be taken into account when awarding a contract. An awarding criterion can be objective, when it can be evaluated following a formula, or subjective, when human analysis is required.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AwardingCriterionType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -636,10 +580,6 @@
       "type": "object",
       "description": "Defines the response for an awarding criterion from the tendering party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AwardingCriterionResponseType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -680,10 +620,6 @@
       "type": "object",
       "description": "A class to define the terms for awarding a contract.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AwardingTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "WeightingAlgorithmCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/WeightingAlgorithmCode"
         },
@@ -762,10 +698,6 @@
       "type": "object",
       "description": "A class to summarize the ballast water management of a vessel.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BallastWaterSummaryType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -853,10 +785,6 @@
       "type": "object",
       "description": "A class to define a ballast water transaction, such as the uptake, exchange or discharge of ballast water.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BallastWaterTransactionType",
-          "description": "The UBL entity type identifier."
-        },
         "TankID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TankID"
         },
@@ -896,10 +824,6 @@
       "type": "object",
       "description": "A class to define a reference to a billing document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BillingReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "InvoiceDocumentReference": {
           "$ref": "#/$defs/DocumentReferenceType"
         },
@@ -943,10 +867,6 @@
       "type": "object",
       "description": "A class to define a reference to a transaction line in a billing document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BillingReferenceLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -978,10 +898,6 @@
       "type": "object",
       "description": "A class to describe a branch or a division of an organization.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BranchType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1003,10 +919,6 @@
       "type": "object",
       "description": "A class to define a budget account.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BudgetAccountType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1025,10 +937,6 @@
       "type": "object",
       "description": "A class to define a budget account line.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BudgetAccountLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1057,10 +965,6 @@
       "type": "object",
       "description": "A class to define a reference provided by the buyer for internal routing or classification.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BuyerAssignedReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "BuyerReferenceCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/BuyerReferenceCode"
         },
@@ -1076,10 +980,6 @@
       "type": "object",
       "description": "A class to describe a specific capability of an organization.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CapabilityType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1136,10 +1036,6 @@
       "type": "object",
       "description": "A class to define a credit card, debit card, or charge card account.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CardAccountType",
-          "description": "The UBL entity type identifier."
-        },
         "PrimaryAccountNumberID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PrimaryAccountNumberID"
         },
@@ -1188,10 +1084,6 @@
       "type": "object",
       "description": "A class to define the cash register used in a commercial transaction.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CashRegisterType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1210,10 +1102,6 @@
       "type": "object",
       "description": "A class to define a line describing the transaction that updates the specification of an item in a catalogue.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueItemSpecificationUpdateLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1239,10 +1127,6 @@
       "type": "object",
       "description": "A class to define a line in a Catalogue describing a purchasable item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1459,10 +1343,6 @@
       "type": "object",
       "description": "A class to define a line describing a pricing update to a catalogue line.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CataloguePricingUpdateLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1497,10 +1377,6 @@
       "type": "object",
       "description": "A class to define a reference to a catalogue.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1543,10 +1419,6 @@
       "type": "object",
       "description": "A class to define a line describing a request for a catalogue line.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueRequestLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1588,10 +1460,6 @@
       "type": "object",
       "description": "A class to define a certificate applied to the item. Certificated can be a requirement to sell goods or services in a jurisdiction.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CertificateType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1660,10 +1528,6 @@
       "type": "object",
       "description": "A class to define an application for a Certificate of Origin (CoO).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CertificateOfOriginApplicationType",
-          "description": "The UBL entity type identifier."
-        },
         "ReferenceID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ReferenceID"
         },
@@ -1772,10 +1636,6 @@
       "type": "object",
       "description": "A class to describe circular economy-related properties of a product, including its resource efficiency, reusability, repairability, and end-of-life treatment.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CircularityProfileType",
-          "description": "The UBL entity type identifier."
-        },
         "CircularityTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CircularityTypeCode"
         },
@@ -1855,10 +1715,6 @@
       "type": "object",
       "description": "A class to define a category within a classification scheme.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ClassificationCategoryType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -1890,10 +1746,6 @@
       "type": "object",
       "description": "A class to define a classification scheme, such as a taxonomy for classifying goods or services.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ClassificationSchemeType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1960,10 +1812,6 @@
       "type": "object",
       "description": "A class to define a clause (a distinct article or provision) in a contract, treaty, will, or other formal or legal written document requiring compliance.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ClauseType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -1979,10 +1827,6 @@
       "type": "object",
       "description": "A class to describe the classification of a commodity.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CommodityClassificationType",
-          "description": "The UBL entity type identifier."
-        },
         "NatureCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/NatureCode"
         },
@@ -2004,10 +1848,6 @@
       "type": "object",
       "description": "A class to describe a means of communication.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CommunicationType",
-          "description": "The UBL entity type identifier."
-        },
         "ChannelCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ChannelCode"
         },
@@ -2026,10 +1866,6 @@
       "type": "object",
       "description": "A class to describe the completion of a specific task in the tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CompletedTaskType",
-          "description": "The UBL entity type identifier."
-        },
         "AnnualAverageAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AnnualAverageAmount"
         },
@@ -2083,10 +1919,6 @@
       "type": "object",
       "description": "A class to define a measurable condition of an object.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConditionType",
-          "description": "The UBL entity type identifier."
-        },
         "AttributeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AttributeID"
         },
@@ -2114,10 +1946,6 @@
       "type": "object",
       "description": "A class to describe an identifiable collection of one or more goods items to be transported between the consignor and the consignee. This information may be defined within a transport contract. A consignment may comprise more than one shipment (e.g., when consolidated by a freight forwarder).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsignmentType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -2629,10 +2457,6 @@
       "type": "object",
       "description": "A class to describe the consumption of a utility.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionType",
-          "description": "The UBL entity type identifier."
-        },
         "UtilityStatementTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UtilityStatementTypeCode"
         },
@@ -2686,10 +2510,6 @@
       "type": "object",
       "description": "A class to define an average consumption as a monetary amount.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionAverageType",
-          "description": "The UBL entity type identifier."
-        },
         "AverageAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AverageAmount"
         },
@@ -2705,10 +2525,6 @@
       "type": "object",
       "description": "The Statement of correction, for examples heating correction.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionCorrectionType",
-          "description": "The UBL entity type identifier."
-        },
         "CorrectionType": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CorrectionType"
         },
@@ -2754,10 +2570,6 @@
       "type": "object",
       "description": "A class to describe the measurement of a type of consumption during a particular period, used for the subscriber to get an overview of his consumption",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionHistoryType",
-          "description": "The UBL entity type identifier."
-        },
         "MeterNumber": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MeterNumber"
         },
@@ -2792,10 +2604,6 @@
       "type": "object",
       "description": "A class to describe a line item for utility consumption. To specify more than one utility item, use separate consumption lines.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -2877,10 +2685,6 @@
       "type": "object",
       "description": "A class to define the point of consumption for a utility, such as a meter.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionPointType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -2930,10 +2734,6 @@
       "type": "object",
       "description": "A class to describe utility consumption, including details of the environment in which consumption takes place.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionReportType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3020,10 +2820,6 @@
       "type": "object",
       "description": "A class to define a reference to an earlier consumption report (e.g., last year's consumption).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionReportReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ConsumptionReportID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ConsumptionReportID"
         },
@@ -3053,10 +2849,6 @@
       "type": "object",
       "description": "A class to describe a contactable person or department in an organization.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContactType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3103,10 +2895,6 @@
       "type": "object",
       "description": "A class to describe a contract.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3174,10 +2962,6 @@
       "type": "object",
       "description": "A class to describe a requirement for execution of a contract.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractExecutionRequirementType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -3196,10 +2980,6 @@
       "type": "object",
       "description": "A class to describe possible extensions to a contract.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractExtensionType",
-          "description": "The UBL entity type identifier."
-        },
         "OptionsDescription": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/OptionsDescription"
         },
@@ -3237,10 +3017,6 @@
       "type": "object",
       "description": "The nature of the type of business of the organization.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingActivityType",
-          "description": "The UBL entity type identifier."
-        },
         "ActivityTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ActivityTypeCode"
         },
@@ -3256,10 +3032,6 @@
       "type": "object",
       "description": "A class to describe an individual, a group, or a body having a procurement role in a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "BuyerProfileURI": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/BuyerProfileURI"
         },
@@ -3307,10 +3079,6 @@
       "type": "object",
       "description": "The type of contracting party that is independent of its role.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingPartyTypeType",
-          "description": "The UBL entity type identifier."
-        },
         "PartyTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PartyTypeCode"
         },
@@ -3326,10 +3094,6 @@
       "type": "object",
       "description": "The type of representation the party has acting for the Contracting party",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingRepresentationTypeType",
-          "description": "The UBL entity type identifier."
-        },
         "RepresentationTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RepresentationTypeCode"
         },
@@ -3345,10 +3109,6 @@
       "type": "object",
       "description": "A class to describe the contracting system. If the procedure is individual (nonrepetitive), this class ought not be used.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingSystemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3367,10 +3127,6 @@
       "type": "object",
       "description": "A class to describe a scheme for corporate registration.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CorporateRegistrationSchemeType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3402,10 +3158,6 @@
       "type": "object",
       "description": "A class to describe a country.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CountryType",
-          "description": "The UBL entity type identifier."
-        },
         "IdentificationCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IdentificationCode"
         },
@@ -3421,10 +3173,6 @@
       "type": "object",
       "description": "A class to identify a credit account for sales on account.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CreditAccountType",
-          "description": "The UBL entity type identifier."
-        },
         "AccountID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AccountID"
         }
@@ -3440,10 +3188,6 @@
       "type": "object",
       "description": "A class to define a line in a Credit Note or Self Billed Credit Note.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CreditNoteLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3718,10 +3462,6 @@
       "type": "object",
       "description": "A class describing the effect or belonging of a Crew Person",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CrewPersonEffectType",
-          "description": "The UBL entity type identifier."
-        },
         "EffectDescription": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EffectDescription"
         },
@@ -3740,10 +3480,6 @@
       "type": "object",
       "description": "A class describing a criteria",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CriterionItemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3769,10 +3505,6 @@
       "type": "object",
       "description": "A class to describe a customer party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CustomerPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "CustomerAssignedAccountID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomerAssignedAccountID"
         },
@@ -3803,10 +3535,6 @@
       "type": "object",
       "description": "A class describing identifiers or references relating to customs procedures.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CustomsDeclarationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -3868,10 +3596,6 @@
       "type": "object",
       "description": "A class to define a line in a Debit Note.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DebitNoteLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4144,10 +3868,6 @@
       "type": "object",
       "description": "A class to describe a declaration by an economic operator of certain characteristics or capabilities in fulfilment of requirements specified in a call for tenders.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeclarationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4195,10 +3915,6 @@
       "type": "object",
       "description": "A class to describe a delivery.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4339,10 +4055,6 @@
       "type": "object",
       "description": "A class to describe a delivery channel.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryChannelType",
-          "description": "The UBL entity type identifier."
-        },
         "NetworkID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/NetworkID"
         },
@@ -4367,10 +4079,6 @@
       "type": "object",
       "description": "A class for describing the terms and conditions applying to the delivery of goods.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4401,10 +4109,6 @@
       "type": "object",
       "description": "A class to describe a delivery unit.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryUnitType",
-          "description": "The UBL entity type identifier."
-        },
         "BatchQuantity": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/BatchQuantity"
         },
@@ -4426,10 +4130,6 @@
       "type": "object",
       "description": "A class to define the price of an item as a percentage of the price of a different item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DependentPriceReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "Percent": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Percent"
         },
@@ -4448,10 +4148,6 @@
       "type": "object",
       "description": "A class to describe the despatching of goods (their pickup for delivery).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DespatchType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4531,10 +4227,6 @@
       "type": "object",
       "description": "A class to define a line in a Despatch Advice.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DespatchLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4641,10 +4333,6 @@
       "type": "object",
       "description": "A class to describe the terms and conditions of a digital agreement.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalAgreementTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "Description": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
         },
@@ -4679,10 +4367,6 @@
       "type": "object",
       "description": "A class to describe a digital trade collaboration.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalCollaborationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4701,10 +4385,6 @@
       "type": "object",
       "description": "A class to describe a digital trade process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalProcessType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4749,10 +4429,6 @@
       "type": "object",
       "description": "A class to describe a specific digital trade service supported by an organization for either sending or receiving business documents on different formats (e.g. UBL, ISO20022, EDIFACT, ...).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalServiceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4811,10 +4487,6 @@
       "type": "object",
       "description": "A class to define a measurable dimension (length, mass, weight, volume, or area) of an item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DimensionType",
-          "description": "The UBL entity type identifier."
-        },
         "AttributeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AttributeID"
         },
@@ -4842,10 +4514,6 @@
       "type": "object",
       "description": "A class to describe the distribution of a document to an interested party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentDistributionType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4888,10 +4556,6 @@
       "type": "object",
       "description": "A class to describe the metadata of a specific business document based on any document format (e.g. UBL, EDIFACT, ...).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentMetadataType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4920,10 +4584,6 @@
       "type": "object",
       "description": "A class to define a reference to a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -4990,10 +4650,6 @@
       "type": "object",
       "description": "A class to describe an application-level response to a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentResponseType",
-          "description": "The UBL entity type identifier."
-        },
         "Response": {
           "$ref": "#/$defs/ResponseType"
         },
@@ -5043,10 +4699,6 @@
       "type": "object",
       "description": "The charging rate used for both call charging and time dependent charging",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DutyType",
-          "description": "The UBL entity type identifier."
-        },
         "Amount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Amount"
         },
@@ -5071,10 +4723,6 @@
       "type": "object",
       "description": "A class to describe a potential contractor, supplier and service provider responding to a tender.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EconomicOperatorPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "QualifyingParty": {
           "oneOf": [
             {
@@ -5116,10 +4764,6 @@
       "type": "object",
       "description": "A class to describe the tenderer contracting role.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EconomicOperatorRoleType",
-          "description": "The UBL entity type identifier."
-        },
         "RoleCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RoleCode"
         },
@@ -5135,10 +4779,6 @@
       "type": "object",
       "description": "A class to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EconomicOperatorShortListType",
-          "description": "The UBL entity type identifier."
-        },
         "LimitationDescription": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LimitationDescription"
         },
@@ -5173,10 +4813,6 @@
       "type": "object",
       "description": "A class to describe an Electronic Address where a Party is registered on a given exchange network.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ElectronicAddressType",
-          "description": "The UBL entity type identifier."
-        },
         "ExchangeNetworkID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExchangeNetworkID"
         },
@@ -5195,10 +4831,6 @@
       "type": "object",
       "description": "A class to define how an environmental emission is calculated.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EmissionCalculationMethodType",
-          "description": "The UBL entity type identifier."
-        },
         "CalculationMethodCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CalculationMethodCode"
         },
@@ -5249,10 +4881,6 @@
       "type": "object",
       "description": "Details of a certificate path chain used in encryption.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EncryptionCertificatePathChainType",
-          "description": "The UBL entity type identifier."
-        },
         "Value": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Value"
         },
@@ -5268,10 +4896,6 @@
       "type": "object",
       "description": "Details of an encryption process",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EncryptionDataType",
-          "description": "The UBL entity type identifier."
-        },
         "MessageFormat": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MessageFormat"
         },
@@ -5316,10 +4940,6 @@
       "type": "object",
       "description": "Details of a symmetric algorithm used in encryption.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EncryptionSymmetricAlgorithmType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -5335,10 +4955,6 @@
       "type": "object",
       "description": "A class to describe how an entity is expected to be treated at the end of its lifecycle, including treatment pathway, processing type, location, and environmental considerations.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EndOfLifeTreatmentType",
-          "description": "The UBL entity type identifier."
-        },
         "TreatmentPathwayCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TreatmentPathwayCode"
         },
@@ -5360,10 +4976,6 @@
       "type": "object",
       "description": "A class to describe an endorsement of a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EndorsementType",
-          "description": "The UBL entity type identifier."
-        },
         "DocumentID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DocumentID"
         },
@@ -5403,10 +5015,6 @@
       "type": "object",
       "description": "A class to describe the party endorsing a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EndorserPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "RoleCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RoleCode"
         },
@@ -5434,10 +5042,6 @@
       "type": "object",
       "description": "A class to describe an allocation of energy consumption and its associated environmental emissions",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnergyConsumptionAllocationType",
-          "description": "The UBL entity type identifier."
-        },
         "EnergySourceTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EnergySourceTypeCode"
         },
@@ -5470,10 +5074,6 @@
       "type": "object",
       "description": "A class to describe energy taxes.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnergyTaxReportType",
-          "description": "The UBL entity type identifier."
-        },
         "TaxEnergyAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TaxEnergyAmount"
         },
@@ -5498,10 +5098,6 @@
       "type": "object",
       "description": "A class to describe the supply (and therefore consumption) of an amount of energy or water.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnergyWaterSupplyType",
-          "description": "The UBL entity type identifier."
-        },
         "ConsumptionReport": {
           "oneOf": [
             {
@@ -5563,10 +5159,6 @@
       "type": "object",
       "description": "A class to describe an environmental emission.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnvironmentalEmissionType",
-          "description": "The UBL entity type identifier."
-        },
         "EnvironmentalEmissionTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EnvironmentalEmissionTypeCode"
         },
@@ -5620,10 +5212,6 @@
       "type": "object",
       "description": "A class defining the required criterion for a tenderer to be elligible in a tendering process. ",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EvaluationCriterionType",
-          "description": "The UBL entity type identifier."
-        },
         "EvaluationCriterionTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EvaluationCriterionTypeCode"
         },
@@ -5667,10 +5255,6 @@
       "type": "object",
       "description": "A class to describe a significant occurrence relating to an object, process, or person.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventType",
-          "description": "The UBL entity type identifier."
-        },
         "IdentificationID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IdentificationID"
         },
@@ -5730,10 +5314,6 @@
       "type": "object",
       "description": "A class to define comments about a retail event.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventCommentType",
-          "description": "The UBL entity type identifier."
-        },
         "Comment": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Comment"
         },
@@ -5755,10 +5335,6 @@
       "type": "object",
       "description": "A class to define a line item describing the expected impacts associated with a retail event involving a specific product at a specific location.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventLineItemType",
-          "description": "The UBL entity type identifier."
-        },
         "LineNumberNumeric": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LineNumberNumeric"
         },
@@ -5793,10 +5369,6 @@
       "type": "object",
       "description": "A class defining a specific type of action or situation arranged by the Buyer or the Seller to promote the product or products.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventTacticType",
-          "description": "The UBL entity type identifier."
-        },
         "Comment": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Comment"
         },
@@ -5821,10 +5393,6 @@
       "type": "object",
       "description": "A class to define a set of codes that describes a retail tactic.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventTacticEnumerationType",
-          "description": "The UBL entity type identifier."
-        },
         "ConsumerIncentiveTacticTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ConsumerIncentiveTacticTypeCode"
         },
@@ -5846,10 +5414,6 @@
       "type": "object",
       "description": "A class to describe an item of evidentiary support for representations of capabilities or the ability to meet tendering requirements, which an economic operator must provide for acceptance into a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EvidenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -5896,10 +5460,6 @@
       "type": "object",
       "description": "(Deprecated) A reference to evidence.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EvidenceSuppliedType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         }
@@ -5915,10 +5475,6 @@
       "type": "object",
       "description": "A class to define a line in an ExceptionCriteria document that specifies a threshold for forecast variance, product activity, or performance history, the exceeding of which will trigger an exception message.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExceptionCriteriaLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -5981,10 +5537,6 @@
       "type": "object",
       "description": "A class to define a line in an Exception Notification.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExceptionNotificationLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6055,10 +5607,6 @@
       "type": "object",
       "description": "A class to define an exchange rate.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExchangeRateType",
-          "description": "The UBL entity type identifier."
-        },
         "SourceCurrencyCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SourceCurrencyCode"
         },
@@ -6099,10 +5647,6 @@
       "type": "object",
       "description": "A class to describe an external object, such as a document stored at a remote location.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExternalReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "URI": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/URI"
         },
@@ -6145,10 +5689,6 @@
       "type": "object",
       "description": "A class to describe a revenue.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FeeType",
-          "description": "The UBL entity type identifier."
-        },
         "FeeTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/FeeTypeCode"
         },
@@ -6167,10 +5707,6 @@
       "type": "object",
       "description": "A class to describe a financial account.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FinancialAccountType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6210,10 +5746,6 @@
       "type": "object",
       "description": "A class to describe the bond guarantee of a tenderer or bid submitter's actual entry into a contract in the event that it is the successful bidder.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FinancialGuaranteeType",
-          "description": "The UBL entity type identifier."
-        },
         "GuaranteeTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/GuaranteeTypeCode"
         },
@@ -6241,10 +5773,6 @@
       "type": "object",
       "description": "A class to describe a financial institution.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FinancialInstitutionType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6263,10 +5791,6 @@
       "type": "object",
       "description": "As explained in Exception Criteria Line: Three types of exception criteria can be defined, Operational, Metric or Forecast Exceptions. This class provides criteria for forecast exception type: the identification of the purpose of the forecast, the source of data and the time basis criteria for the exception.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastExceptionType",
-          "description": "The UBL entity type identifier."
-        },
         "ForecastPurposeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ForecastPurposeCode"
         },
@@ -6306,10 +5830,6 @@
       "type": "object",
       "description": "Establishes the criterion for one of the three types of exceptions. This class provides criteria for the kind of forecast exception, the identification of the purpose of the forecast, the source of data and the time basis criterion for the exception.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastExceptionCriterionLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ForecastPurposeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ForecastPurposeCode"
         },
@@ -6339,10 +5859,6 @@
       "type": "object",
       "description": "Detailed information about a particular Forecast Line within a Forecast Document",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6374,10 +5890,6 @@
       "type": "object",
       "description": "A class to define a line in a Forecast Revision describing a revision to a line in a Forecast.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastRevisionLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6420,10 +5932,6 @@
       "type": "object",
       "description": "A class to describe a tendering framework agreement.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FrameworkAgreementType",
-          "description": "The UBL entity type identifier."
-        },
         "ExpectedOperatorQuantity": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ExpectedOperatorQuantity"
         },
@@ -6467,10 +5975,6 @@
       "type": "object",
       "description": "A class to describe fuel consumption.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FuelConsumptionType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6534,10 +6038,6 @@
       "type": "object",
       "description": "A class to describe fuel metering.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FuelMeteringType",
-          "description": "The UBL entity type identifier."
-        },
         "TypeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TypeID"
         },
@@ -6557,10 +6057,6 @@
       "type": "object",
       "description": "A class to describe a fuel property.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FuelPropertyType",
-          "description": "The UBL entity type identifier."
-        },
         "TypeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TypeID"
         },
@@ -6580,10 +6076,6 @@
       "type": "object",
       "description": "A class to describe a separately identifiable quantity of goods of a single product type.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsItemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6857,10 +6349,6 @@
       "type": "object",
       "description": "A class defining how goods items are split across transport equipment.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsItemContainerType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6892,10 +6380,6 @@
       "type": "object",
       "description": "A class describing a Goods Item Passport or ATA Carnet Counterfoil",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsItemPassportCounterfoilType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -6991,10 +6475,6 @@
       "type": "object",
       "description": "A class to describe the processing of goods and products",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsProcessingType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7048,10 +6528,6 @@
       "type": "object",
       "description": "A class to describe hazardous goods in transit.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#HazardousGoodsTransitType",
-          "description": "The UBL entity type identifier."
-        },
         "TransportEmergencyCardCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TransportEmergencyCardCode"
         },
@@ -7085,10 +6561,6 @@
       "type": "object",
       "description": "A class to describe a hazardous item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#HazardousItemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7240,10 +6712,6 @@
       "type": "object",
       "description": "A class to describe a set of ISPS Requirements.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ISPSRequirementsType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7328,10 +6796,6 @@
       "type": "object",
       "description": "A class to describe an immobilized security to be used as a guarantee.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ImmobilizedSecurityType",
-          "description": "The UBL entity type identifier."
-        },
         "ImmobilizationCertificateID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ImmobilizationCertificateID"
         },
@@ -7362,10 +6826,6 @@
       "type": "object",
       "description": "A class to define a line in an Instruction for Returns.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InstructionForReturnsLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7395,10 +6855,6 @@
       "type": "object",
       "description": "A class to define an insurance policy.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InsurancePolicyType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7454,10 +6910,6 @@
       "type": "object",
       "description": "A class to describe an interest rate applied to a monetary amount over a defined period.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InterestRateType",
-          "description": "The UBL entity type identifier."
-        },
         "InterestRatePercent": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/InterestRatePercent"
         },
@@ -7479,10 +6931,6 @@
       "type": "object",
       "description": "A class to define a line in an Inventory Report.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InventoryReportLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7521,10 +6969,6 @@
       "type": "object",
       "description": "A class to define a line in an Invoice.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InvoiceLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -7777,10 +7221,6 @@
       "type": "object",
       "description": "A class to describe an item of trade. It includes a generic description applicable to all examples of the item together with optional subsidiary descriptions of any number of actual instances of the type.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemType",
-          "description": "The UBL entity type identifier."
-        },
         "Description": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
         },
@@ -8051,10 +7491,6 @@
       "type": "object",
       "description": "A class to provide information about price and quantity of an item for use in price comparisons based on price, quantity, or measurements.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemComparisonType",
-          "description": "The UBL entity type identifier."
-        },
         "PriceAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PriceAmount"
         },
@@ -8070,10 +7506,6 @@
       "type": "object",
       "description": "A class for assigning identifying information to an item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemIdentificationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8127,10 +7559,6 @@
       "type": "object",
       "description": "A class to define a line in an Item Information Request asking a trading partner for item information.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemInformationRequestLineType",
-          "description": "The UBL entity type identifier."
-        },
         "TimeFrequencyCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TimeFrequencyCode"
         },
@@ -8184,10 +7612,6 @@
       "type": "object",
       "description": "A class to describe a specific, trackable instance of an item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemInstanceType",
-          "description": "The UBL entity type identifier."
-        },
         "ProductTraceID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProductTraceID"
         },
@@ -8231,10 +7655,6 @@
       "type": "object",
       "description": "A class for information about pricing structure, lead time, delivery, and location associated with an item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemLocationQuantityType",
-          "description": "The UBL entity type identifier."
-        },
         "LeadTimeMeasure": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LeadTimeMeasure"
         },
@@ -8323,10 +7743,6 @@
       "type": "object",
       "description": "A class to define a management profile for an item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemManagementProfileType",
-          "description": "The UBL entity type identifier."
-        },
         "FrozenPeriodDaysNumeric": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/FrozenPeriodDaysNumeric"
         },
@@ -8370,10 +7786,6 @@
       "type": "object",
       "description": "A class to describe a specific property of an item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemPropertyType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8451,10 +7863,6 @@
       "type": "object",
       "description": "A class to describe a property group or classification.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemPropertyGroupType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8476,10 +7884,6 @@
       "type": "object",
       "description": "A class to describe a range of values for an item property.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemPropertyRangeType",
-          "description": "The UBL entity type identifier."
-        },
         "MinimumValue": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MinimumValue"
         },
@@ -8495,10 +7899,6 @@
       "type": "object",
       "description": "A class to describe a language.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LanguageType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8517,10 +7917,6 @@
       "type": "object",
       "description": "A class to describe a reference to a piece of legislation.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LegislationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8574,10 +7970,6 @@
       "type": "object",
       "description": "A class to describe a line item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LineItemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8763,10 +8155,6 @@
       "type": "object",
       "description": "A class to define a reference to a line in a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LineReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "LineID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LineID"
         },
@@ -8791,10 +8179,6 @@
       "type": "object",
       "description": "A class to describe responses to a line in a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LineResponseType",
-          "description": "The UBL entity type identifier."
-        },
         "LineReference": {
           "$ref": "#/$defs/LineReferenceType"
         },
@@ -8825,10 +8209,6 @@
       "type": "object",
       "description": "A class to describe a location.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LocationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -8907,10 +8287,6 @@
       "type": "object",
       "description": "A class for defining a set of geographical coordinates (apparently misnamed).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LocationCoordinateType",
-          "description": "The UBL entity type identifier."
-        },
         "CoordinateSystemCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CoordinateSystemCode"
         },
@@ -8944,10 +8320,6 @@
       "type": "object",
       "description": "A class defining how to treat different lots in a single procurement.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LotDistributionType",
-          "description": "The UBL entity type identifier."
-        },
         "MaximumLotsAwardedNumeric": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MaximumLotsAwardedNumeric"
         },
@@ -8979,10 +8351,6 @@
       "type": "object",
       "description": "A class for defining a lot identifier (the identifier of a set of item instances that would be used in case of a recall of that item).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LotIdentificationType",
-          "description": "The UBL entity type identifier."
-        },
         "LotNumberID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LotNumberID"
         },
@@ -9011,10 +8379,6 @@
       "type": "object",
       "description": "A class for defining set of lots.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LotsGroupType",
-          "description": "The UBL entity type identifier."
-        },
         "LotsGroupID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LotsGroupID"
         },
@@ -9045,10 +8409,6 @@
       "type": "object",
       "description": "A class to desccribe a maritime health declaration.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MaritimeHealthDeclarationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -9164,10 +8524,6 @@
       "type": "object",
       "description": "A class to describe a vessel used for transport by water (including sea, river, and canal).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MaritimeTransportType",
-          "description": "The UBL entity type identifier."
-        },
         "VesselID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VesselID"
         },
@@ -9219,10 +8575,6 @@
       "type": "object",
       "description": "A class to describe a transaction of maritime waste.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MaritimeWasteType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -9266,10 +8618,6 @@
       "type": "object",
       "description": "A class to describe how a message is delivered (routed).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MessageDeliveryType",
-          "description": "The UBL entity type identifier."
-        },
         "ProtocolID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProtocolID"
         },
@@ -9288,10 +8636,6 @@
       "type": "object",
       "description": "A class to describe a meter and its readings.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MeterType",
-          "description": "The UBL entity type identifier."
-        },
         "MeterNumber": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MeterNumber"
         },
@@ -9342,10 +8686,6 @@
       "type": "object",
       "description": "The name of this meter property.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MeterPropertyType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -9370,10 +8710,6 @@
       "type": "object",
       "description": "A class to describe a meter reading.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MeterReadingType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -9429,10 +8765,6 @@
       "type": "object",
       "description": "A class to describe a miscellaneous event associated with a retail event.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MiscellaneousEventType",
-          "description": "The UBL entity type identifier."
-        },
         "MiscellaneousEventTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MiscellaneousEventTypeCode"
         },
@@ -9463,10 +8795,6 @@
       "type": "object",
       "description": "A class to define a monetary total.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MonetaryTotalType",
-          "description": "The UBL entity type identifier."
-        },
         "LineExtensionAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LineExtensionAmount"
         },
@@ -9515,10 +8843,6 @@
       "type": "object",
       "description": "A class to define a Notice Subtype",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#NoticeSubTypeType",
-          "description": "The UBL entity type identifier."
-        },
         "SubTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SubTypeCode"
         },
@@ -9534,10 +8858,6 @@
       "type": "object",
       "description": "A class to describe a notification requirement.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#NotificationRequirementType",
-          "description": "The UBL entity type identifier."
-        },
         "NotificationTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/NotificationTypeCode"
         },
@@ -9598,10 +8918,6 @@
       "type": "object",
       "description": "A scheduled prepayment (on-account payment) for a estimated utility consumption",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OnAccountPaymentType",
-          "description": "The UBL entity type identifier."
-        },
         "EstimatedConsumedQuantity": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EstimatedConsumedQuantity"
         },
@@ -9635,10 +8951,6 @@
       "type": "object",
       "description": "A class to define the type of operation",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OperationTypeType",
-          "description": "The UBL entity type identifier."
-        },
         "Code": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Code"
         },
@@ -9654,10 +8966,6 @@
       "type": "object",
       "description": "A class to define a line in an order document (e.g., Order, Order Change, or Order Response) describing an item being ordered.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderLineType",
-          "description": "The UBL entity type identifier."
-        },
         "SubstitutionStatusCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SubstitutionStatusCode"
         },
@@ -9750,10 +9058,6 @@
       "type": "object",
       "description": "A class to define a reference to an order line.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderLineReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "LineID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LineID"
         },
@@ -9781,10 +9085,6 @@
       "type": "object",
       "description": "A class to define a reference to an Order.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -9824,10 +9124,6 @@
       "type": "object",
       "description": "A class to describe an ordered shipment.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderedShipmentType",
-          "description": "The UBL entity type identifier."
-        },
         "Shipment": {
           "$ref": "#/$defs/ShipmentType"
         },
@@ -9856,10 +9152,6 @@
       "type": "object",
       "description": "A class to describe a package.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PackageType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -9970,10 +9262,6 @@
       "type": "object",
       "description": "A class to describe a participant party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ParticipantPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "InitiatingPartyIndicator": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/InitiatingPartyIndicator"
         },
@@ -10013,10 +9301,6 @@
       "type": "object",
       "description": "A class to describe an organization, sub-organization, or individual fulfilling a role in a business process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyType",
-          "description": "The UBL entity type identifier."
-        },
         "MarkCareIndicator": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MarkCareIndicator"
         },
@@ -10231,10 +9515,6 @@
       "type": "object",
       "description": "A class to define a Group of Parties",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyGroupType",
-          "description": "The UBL entity type identifier."
-        },
         "GroupTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/GroupTypeCode"
         },
@@ -10267,10 +9547,6 @@
       "type": "object",
       "description": "A class to define an identifier for a party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyIdentificationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         }
@@ -10286,10 +9562,6 @@
       "type": "object",
       "description": "A class to describe a party as a legal entity.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyLegalEntityType",
-          "description": "The UBL entity type identifier."
-        },
         "RegistrationName": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RegistrationName"
         },
@@ -10367,10 +9639,6 @@
       "type": "object",
       "description": "A class for defining the name of a party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyNameType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         }
@@ -10386,10 +9654,6 @@
       "type": "object",
       "description": "A class to describe a taxation scheme applying to a party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyTaxSchemeType",
-          "description": "The UBL entity type identifier."
-        },
         "RegistrationName": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RegistrationName"
         },
@@ -10423,10 +9687,6 @@
       "type": "object",
       "description": "A class to describe a payment.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10494,10 +9754,6 @@
       "type": "object",
       "description": "A class to describe a payment mandate.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentMandateType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10547,10 +9803,6 @@
       "type": "object",
       "description": "A class to describe a means of payment.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentMeansType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10643,10 +9895,6 @@
       "type": "object",
       "description": "A class to describe a set of payment terms.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10716,10 +9964,6 @@
       "type": "object",
       "description": "A class to define a line in a Performance History.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PerformanceDataLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10752,10 +9996,6 @@
       "type": "object",
       "description": "A class to describe a period of time.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PeriodType",
-          "description": "The UBL entity type identifier."
-        },
         "StartDate": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/StartDate"
         },
@@ -10786,10 +10026,6 @@
       "type": "object",
       "description": "A class to describe a person.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PersonType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10885,10 +10121,6 @@
       "type": "object",
       "description": "A class to describe a health incident involving crew or other personnel.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PersonnelHealthIncidentType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -10941,10 +10173,6 @@
       "type": "object",
       "description": "A class to describe a physical attribute.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PhysicalAttributeType",
-          "description": "The UBL entity type identifier."
-        },
         "AttributeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AttributeID"
         },
@@ -10969,10 +10197,6 @@
       "type": "object",
       "description": "A class to describe a pickup for delivery.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PickupType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11009,10 +10233,6 @@
       "type": "object",
       "description": "A class to describe a call to a port.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PortCallType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11075,10 +10295,6 @@
       "type": "object",
       "description": "A class to describe the purpose of a port call.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PortCallPurposeType",
-          "description": "The UBL entity type identifier."
-        },
         "PurposeTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PurposeTypeCode"
         },
@@ -11097,10 +10313,6 @@
       "type": "object",
       "description": "A record for a ship call at a port facility.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PortCallRecordType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11135,10 +10347,6 @@
       "type": "object",
       "description": "A class to describe a post award process. These processes following the agreement on a contract for supply of goods or services ( for example, after the awarding of a tender).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PostAwardProcessType",
-          "description": "The UBL entity type identifier."
-        },
         "ElectronicCatalogueUsageIndicator": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ElectronicCatalogueUsageIndicator"
         },
@@ -11160,10 +10368,6 @@
       "type": "object",
       "description": "A class to describe a power of attorney.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PowerOfAttorneyType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11220,10 +10424,6 @@
       "type": "object",
       "description": "A class to describe a price, expressed in a data structure containing multiple properties (compare with UnstructuredPrice).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PriceType",
-          "description": "The UBL entity type identifier."
-        },
         "PriceAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PriceAmount"
         },
@@ -11302,10 +10502,6 @@
       "type": "object",
       "description": "A class to describe a price extension, calculated by multiplying the price per unit by the quantity of items.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PriceExtensionType",
-          "description": "The UBL entity type identifier."
-        },
         "Amount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Amount"
         },
@@ -11337,10 +10533,6 @@
       "type": "object",
       "description": "A class to describe a price list.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PriceListType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11372,10 +10564,6 @@
       "type": "object",
       "description": "A reference to the basis for pricing. This may be based on a catalogue or a quoted amount from a price list and include some alternative pricing conditions.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PricingReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "OriginalItemLocationQuantity": {
           "$ref": "#/$defs/ItemLocationQuantityType"
         },
@@ -11401,10 +10589,6 @@
       "type": "object",
       "description": "A class to describe something valuable offered or striven for in competition.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PrizeType",
-          "description": "The UBL entity type identifier."
-        },
         "RankCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RankCode"
         },
@@ -11426,10 +10610,6 @@
       "type": "object",
       "description": "A class to describe a justification for the choice of tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcessJustificationType",
-          "description": "The UBL entity type identifier."
-        },
         "PreviousCancellationReasonCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PreviousCancellationReasonCode"
         },
@@ -11451,10 +10631,6 @@
       "type": "object",
       "description": "A class to describe additional types for a procurement project",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementAdditionalTypeType",
-          "description": "The UBL entity type identifier."
-        },
         "ProcurementTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProcurementTypeCode"
         },
@@ -11470,10 +10646,6 @@
       "type": "object",
       "description": "A class to describe a project to procure goods, works, or services.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementProjectType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11593,10 +10765,6 @@
       "type": "object",
       "description": "A class to describe one of the parts of a procurement project that is being subdivided to allow the contracting party to award different lots to different economic operators under different contracts.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementProjectLotType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11686,10 +10854,6 @@
       "type": "object",
       "description": "A class to reference to a lot identifier.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementProjectLotReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         }
@@ -11705,10 +10869,6 @@
       "type": "object",
       "description": "A class to define a reference to a procurement project.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProjectReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11743,10 +10903,6 @@
       "type": "object",
       "description": "Agree can be renamed as PromotionalEvents",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PromotionalEventType",
-          "description": "The UBL entity type identifier."
-        },
         "PromotionalEventTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PromotionalEventTypeCode"
         },
@@ -11789,10 +10945,6 @@
       "type": "object",
       "description": "A class to describe a line item associated with a promotional event.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PromotionalEventLineItemType",
-          "description": "The UBL entity type identifier."
-        },
         "Amount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Amount"
         },
@@ -11812,10 +10964,6 @@
       "type": "object",
       "description": "A class to describe a promotional event as a set of item locations that share a set of promotional tactics.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PromotionalSpecificationType",
-          "description": "The UBL entity type identifier."
-        },
         "SpecificationID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SpecificationID"
         },
@@ -11858,10 +11006,6 @@
       "type": "object",
       "description": "A class for assigning identifying information for a property",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PropertyIdentificationType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11883,10 +11027,6 @@
       "type": "object",
       "description": "A class to define a line item in a purchase receipt.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PurchaseReceiptLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11956,10 +11096,6 @@
       "type": "object",
       "description": "A class for referencing an object to which a purchase relates, such as a subscription number, telephone number, meter, vehicle, person, etc.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PurchaseReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -11978,10 +11114,6 @@
       "type": "object",
       "description": "A class to describe the acceptance or rejection of an economic operator in a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#QualificationResolutionType",
-          "description": "The UBL entity type identifier."
-        },
         "AdmissionCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AdmissionCode"
         },
@@ -12013,10 +11145,6 @@
       "type": "object",
       "description": "A class to describe the distinctive features or characteristics qualifying an economic operator to be a party in a tendering process (e.g., number of employees, number of operating units, type of business, technical and financial capabilities, completed projects).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#QualifyingPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "ParticipationPercent": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ParticipationPercent"
         },
@@ -12108,10 +11236,6 @@
       "type": "object",
       "description": "A class to define a line in a Quotation.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#QuotationLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12190,10 +11314,6 @@
       "type": "object",
       "description": "A class defining the maximum activity of the radioactive contents capable of sustaining a nuclear fission chain reaction during carriage.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RadioactiveIsotopeType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -12213,10 +11333,6 @@
       "type": "object",
       "description": "A class defining a radioactive material.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RadioactiveMaterialType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -12244,10 +11360,6 @@
       "type": "object",
       "description": "A class defining details about a train wagon used as a means of transport.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RailTransportType",
-          "description": "The UBL entity type identifier."
-        },
         "TrainID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TrainID"
         },
@@ -12266,10 +11378,6 @@
       "type": "object",
       "description": "A class to define a line in a Receipt Advice.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ReceiptLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12385,10 +11493,6 @@
       "type": "object",
       "description": "A class to describe a regulation.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RegulationType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -12410,10 +11514,6 @@
       "type": "object",
       "description": "A class to describe the relationship to an item different from the item associated with the item line in which RelatedItem is used.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RelatedItemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12432,10 +11532,6 @@
       "type": "object",
       "description": "A class to define a line in a Reminder document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ReminderLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12510,10 +11606,6 @@
       "type": "object",
       "description": "A class to define a line in a Remittance Advice.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RemittanceAdviceLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12623,10 +11715,6 @@
       "type": "object",
       "description": "A class to describe the renewal of a commercial arrangement, such as a contract or licence fee.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RenewalType",
-          "description": "The UBL entity type identifier."
-        },
         "Amount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Amount"
         },
@@ -12642,10 +11730,6 @@
       "type": "object",
       "description": "A class to define a line in a Request for Quotation.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RequestForQuotationLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12692,10 +11776,6 @@
       "type": "object",
       "description": "A class to define a line in a Request for Tender describing an item of goods or a service solicited in the Request for Tender.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RequestForTenderLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12796,10 +11876,6 @@
       "type": "object",
       "description": "A class defining budgeted monetary amounts.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RequestedTenderTotalType",
-          "description": "The UBL entity type identifier."
-        },
         "EstimatedOverallContractAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EstimatedOverallContractAmount"
         },
@@ -12846,10 +11922,6 @@
       "type": "object",
       "description": "A class to describe the type and amount of resources consumed during a product\u2019s lifecycle, including information about source and timing.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResourceConsumptionType",
-          "description": "The UBL entity type identifier."
-        },
         "ResourceTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ResourceTypeCode"
         },
@@ -12875,10 +11947,6 @@
       "type": "object",
       "description": "A class to describe an application-level response to a document.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResponseType",
-          "description": "The UBL entity type identifier."
-        },
         "ReferenceID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ReferenceID"
         },
@@ -12916,10 +11984,6 @@
       "type": "object",
       "description": "A class to describe the criterion requirement response value.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResponseValueType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -12971,10 +12035,6 @@
       "type": "object",
       "description": "A class to describe the result of an attempt to verify a signature.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResultOfVerificationType",
-          "description": "The UBL entity type identifier."
-        },
         "ValidatorID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ValidatorID"
         },
@@ -13008,10 +12068,6 @@
       "type": "object",
       "description": "A class to describe a planned effect of a retail event (e.g., a promotion or a change in inventory policy) upon supply or demand.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RetailPlannedImpactType",
-          "description": "The UBL entity type identifier."
-        },
         "Amount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Amount"
         },
@@ -13038,10 +12094,6 @@
       "type": "object",
       "description": "A class for identifying a vehicle used for road transport.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RoadTransportType",
-          "description": "The UBL entity type identifier."
-        },
         "LicensePlateID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LicensePlateID"
         },
@@ -13060,10 +12112,6 @@
       "type": "object",
       "description": "A class to describe information related to an item in a sales context",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SalesItemType",
-          "description": "The UBL entity type identifier."
-        },
         "Quantity": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Quantity"
         },
@@ -13122,10 +12170,6 @@
       "type": "object",
       "description": "A class describing a plan, action or meassure that has been implemented for sanitary reasons.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SanitaryMeasureType",
-          "description": "The UBL entity type identifier."
-        },
         "SanitaryMeasureTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SanitaryMeasureTypeCode"
         },
@@ -13144,10 +12188,6 @@
       "type": "object",
       "description": "A class to describe an assigned numeric or qualitative score using a recognized scoring system.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ScoreType",
-          "description": "The UBL entity type identifier."
-        },
         "ScoreNumeric": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ScoreNumeric"
         },
@@ -13167,10 +12207,6 @@
       "type": "object",
       "description": "A class to describe a secondary hazard associated with a hazardous item.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecondaryHazardType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13195,10 +12231,6 @@
       "type": "object",
       "description": "A class to specify security clearance terms.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecurityClearanceTermType",
-          "description": "The UBL entity type identifier."
-        },
         "Code": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Code"
         },
@@ -13214,10 +12246,6 @@
       "type": "object",
       "description": "A class to describe a financial security listed on a regulated market.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecurityListingType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13242,10 +12270,6 @@
       "type": "object",
       "description": "A class to describe a security measure",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecurityMeasureType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13264,10 +12288,6 @@
       "type": "object",
       "description": "A class to specify which day of the week a transport service is operational.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ServiceFrequencyType",
-          "description": "The UBL entity type identifier."
-        },
         "WeekDayCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/WeekDayCode"
         }
@@ -13283,10 +12303,6 @@
       "type": "object",
       "description": "A class to describe a service level agreement which regulates the quality, availability and responsibilities of digital services.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ServiceLevelAgreementType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13370,10 +12386,6 @@
       "type": "object",
       "description": "A class to describe a party contracting to provide services, such as transportation, finance, etc.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ServiceProviderPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13401,10 +12413,6 @@
       "type": "object",
       "description": "A class to describe a Party that owns shares or equity.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShareholderPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "PartecipationPercent": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PartecipationPercent"
         },
@@ -13423,10 +12431,6 @@
       "type": "object",
       "description": "A class to describe a requirement for a ship",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipRequirementType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13445,10 +12449,6 @@
       "type": "object",
       "description": "An article in the ship's stores during a shipment stage.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipStoreArticleType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13476,10 +12476,6 @@
       "type": "object",
       "description": "A class to describe a ship to ship activity record.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipToShipActivityRecordType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13517,10 +12513,6 @@
       "type": "object",
       "description": "A class defining an identifiable collection of one or more goods items to be transported between the seller party and the buyer party. This information may be defined within a commercial contract. A shipment can be transported in different consignments (e.g., split for logistical purposes).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipmentType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -13689,10 +12681,6 @@
       "type": "object",
       "description": "A class to describe one stage of movement in a transport of goods.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipmentStageType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14051,10 +13039,6 @@
       "type": "object",
       "description": "A class to define a signature.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SignatureType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14100,10 +13084,6 @@
       "type": "object",
       "description": "A class to describe a social media profile.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SocialMediaProfileType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14128,10 +13108,6 @@
       "type": "object",
       "description": "A class to define a line in a Statement of account.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StatementLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14283,10 +13259,6 @@
       "type": "object",
       "description": "A class to describe the condition or position of an object.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StatusType",
-          "description": "The UBL entity type identifier."
-        },
         "ConditionCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ConditionCode"
         },
@@ -14368,10 +13340,6 @@
       "type": "object",
       "description": "A class to define a line in a Stock Availability Report describing the availability of an item of sale.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StockAvailabilityReportLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14407,10 +13375,6 @@
       "type": "object",
       "description": "A class to describe a storage and storage requirements",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StorageType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14472,10 +13436,6 @@
       "type": "object",
       "description": "A class to describe a location on board a means of transport where specified goods or transport equipment have been stowed or are to be stowed.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StowageType",
-          "description": "The UBL entity type identifier."
-        },
         "LocationID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LocationID"
         },
@@ -14504,10 +13464,6 @@
       "type": "object",
       "description": "A class to describe subcontract terms for a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SubcontractTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "Rate": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Rate"
         },
@@ -14538,10 +13494,6 @@
       "type": "object",
       "description": "The consumption for a specific party for given consumption point provided by a numbers of suppliers. An enterprise can have one utility statement for several parties (e.g. a ministry of defence receiving a telephone bill). In this way each subscriber consumption represent a sub utility statement.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SubscriberConsumptionType",
-          "description": "The UBL entity type identifier."
-        },
         "ConsumptionID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ConsumptionID"
         },
@@ -14601,10 +13553,6 @@
       "type": "object",
       "description": "The consumption in case the consumption is for one and only one supplier.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SupplierConsumptionType",
-          "description": "The UBL entity type identifier."
-        },
         "Description": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
         },
@@ -14647,10 +13595,6 @@
       "type": "object",
       "description": "A class to describe a supplier party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SupplierPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "CustomerAssignedAccountID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomerAssignedAccountID"
         },
@@ -14681,10 +13625,6 @@
       "type": "object",
       "description": "A class to describe one of the tax categories within a taxation scheme (e.g., High Rate VAT, Low Rate VAT).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxCategoryType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14727,10 +13667,6 @@
       "type": "object",
       "description": "A class to describe a taxation scheme (e.g., VAT, State tax, County tax).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxSchemeType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14765,10 +13701,6 @@
       "type": "object",
       "description": "A class to define the subtotal for a particular tax category within a particular taxation scheme, such as standard rate within VAT.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxSubtotalType",
-          "description": "The UBL entity type identifier."
-        },
         "TaxableAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TaxableAmount"
         },
@@ -14818,10 +13750,6 @@
       "type": "object",
       "description": "A class to describe the total tax for a particular taxation scheme.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxTotalType",
-          "description": "The UBL entity type identifier."
-        },
         "TaxAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TaxAmount"
         },
@@ -14862,10 +13790,6 @@
       "type": "object",
       "description": "A class to describe a telecommunications service (e.g., a telephone call or a video on demand service).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TelecommunicationsServiceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -14993,10 +13917,6 @@
       "type": "object",
       "description": "A class describing the supply of a telecommunication service, e.g., providing telephone calls.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TelecommunicationsSupplyType",
-          "description": "The UBL entity type identifier."
-        },
         "TelecommunicationsSupplyType": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TelecommunicationsSupplyType"
         },
@@ -15039,10 +13959,6 @@
       "type": "object",
       "description": "A class that outlines the telecommunication supply in details",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TelecommunicationsSupplyLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -15125,10 +14041,6 @@
       "type": "object",
       "description": "A class to describe a measurement of temperature.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TemperatureType",
-          "description": "The UBL entity type identifier."
-        },
         "AttributeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AttributeID"
         },
@@ -15150,10 +14062,6 @@
       "type": "object",
       "description": "A class to define a line in a Tender.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -15279,10 +14187,6 @@
       "type": "object",
       "description": "A class to describe directions for preparing a tender.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderPreparationType",
-          "description": "The UBL entity type identifier."
-        },
         "TenderEnvelopeID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TenderEnvelopeID"
         },
@@ -15346,10 +14250,6 @@
       "type": "object",
       "description": "A template for a required document in a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderRequirementType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -15371,10 +14271,6 @@
       "type": "object",
       "description": "A class to describe the awarding of a tender in a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderResultType",
-          "description": "The UBL entity type identifier."
-        },
         "AwardID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AwardID"
         },
@@ -15458,10 +14354,6 @@
       "type": "object",
       "description": "A class to describe a tendered project or project lot.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderedProjectType",
-          "description": "The UBL entity type identifier."
-        },
         "VariantID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VariantID"
         },
@@ -15567,10 +14459,6 @@
       "type": "object",
       "description": "A class to describe the qualifications of a tenderer party.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TendererPartyQualificationType",
-          "description": "The UBL entity type identifier."
-        },
         "InterestedProcurementProjectLot": {
           "oneOf": [
             {
@@ -15612,10 +14500,6 @@
       "type": "object",
       "description": "The evaluation that the Contracting Authority party requests to fulfill to the tenderers.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TendererQualificationRequestType",
-          "description": "The UBL entity type identifier."
-        },
         "CompanyLegalFormCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CompanyLegalFormCode"
         },
@@ -15708,10 +14592,6 @@
       "type": "object",
       "description": "A class to describe an action or statement required of an economic operator participating in a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TendererRequirementType",
-          "description": "The UBL entity type identifier."
-        },
         "Name": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Name"
         },
@@ -15746,10 +14626,6 @@
       "type": "object",
       "description": "A class to describe an item of criterion support for representations of capabilities or the ability to meet tendering requirements, which an economic operator must provide for acceptance into a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -15851,10 +14727,6 @@
       "type": "object",
       "description": "A class to describe the criterion properties.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionPropertyType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -15959,10 +14831,6 @@
       "type": "object",
       "description": "A class to describe a group of tendering criteria",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionPropertyGroupType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -16020,10 +14888,6 @@
       "type": "object",
       "description": "A class to describe a response to a criterion property.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionResponseType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -16126,10 +14990,6 @@
       "type": "object",
       "description": "A class to describe the process of a formal offer and response to execute work or supply goods at a stated price.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingProcessType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -16283,10 +15143,6 @@
       "type": "object",
       "description": "A class to describe tendering terms for a tendering process.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "AwardingMethodTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/AwardingMethodTypeCode"
         },
@@ -16628,10 +15484,6 @@
       "type": "object",
       "description": "A class to describe a trade financing instrument.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TradeFinancingType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -16685,10 +15537,6 @@
       "type": "object",
       "description": "A class for describing the terms of a trade agreement.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TradingTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "Information": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Information"
         },
@@ -16707,10 +15555,6 @@
       "type": "object",
       "description": "A class to describe purchasing, sales, or payment conditions.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransactionConditionsType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -16742,10 +15586,6 @@
       "type": "object",
       "description": "A class to describe a piece of equipment used to transport goods.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportEquipmentType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -17147,10 +15987,6 @@
       "type": "object",
       "description": "A class to describe a device (a transport equipment seal) for securing the doors of a shipping container.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportEquipmentSealType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -17178,10 +16014,6 @@
       "type": "object",
       "description": "A class to describe a significant occurrence or happening related to the transportation of goods.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportEventType",
-          "description": "The UBL entity type identifier."
-        },
         "IdentificationID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IdentificationID"
         },
@@ -17260,10 +16092,6 @@
       "type": "object",
       "description": "A class to describe terms applying to a transport execution plan.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportExecutionTermsType",
-          "description": "The UBL entity type identifier."
-        },
         "TransportUserSpecialTerms": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TransportUserSpecialTerms"
         },
@@ -17346,10 +16174,6 @@
       "type": "object",
       "description": "A class to describe a uniquely identifiable unit consisting of one or more packages, goods items, or pieces of transport equipment.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportHandlingUnitType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -17596,10 +16420,6 @@
       "type": "object",
       "description": "A class to describe a particular vehicle or vessel used for the conveyance of goods or persons.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportMeansType",
-          "description": "The UBL entity type identifier."
-        },
         "JourneyID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/JourneyID"
         },
@@ -17658,10 +16478,6 @@
       "type": "object",
       "description": "Describes the location and schedule relating to a transport means.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportScheduleType",
-          "description": "The UBL entity type identifier."
-        },
         "SequenceNumeric": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SequenceNumeric"
         },
@@ -17711,10 +16527,6 @@
       "type": "object",
       "description": "A class to describe one segment or leg in a transportation service.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportationSegmentType",
-          "description": "The UBL entity type identifier."
-        },
         "SequenceNumeric": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SequenceNumeric"
         },
@@ -17757,10 +16569,6 @@
       "type": "object",
       "description": "A class to describe a transportation service.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportationServiceType",
-          "description": "The UBL entity type identifier."
-        },
         "TransportServiceCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TransportServiceCode"
         },
@@ -17942,10 +16750,6 @@
       "type": "object",
       "description": "A simplified version of the Price class intended for applications such as telephone billing.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#UnstructuredPriceType",
-          "description": "The UBL entity type identifier."
-        },
         "PriceAmount": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PriceAmount"
         },
@@ -17964,10 +16768,6 @@
       "type": "object",
       "description": "A class to describe the consumption of a utility product.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#UtilityItemType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -18025,10 +16825,6 @@
       "type": "object",
       "description": "A class to describe a verified gross mass (VGM) measure and its documentation.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#VerifiedGrossMassType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -18087,10 +16883,6 @@
       "type": "object",
       "description": "A class to describe the dynamics of a vesssel.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#VesselDynamicsType",
-          "description": "The UBL entity type identifier."
-        },
         "NavigationStatusCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/NavigationStatusCode"
         },
@@ -18115,10 +16907,6 @@
       "type": "object",
       "description": "A class to describe a visit to a port located in a geographical area considered an \u201caffected area\u201d by the World Health Organization (WHO).",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WHOAffectedAreaVisitType",
-          "description": "The UBL entity type identifier."
-        },
         "VisitDate": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VisitDate"
         },
@@ -18138,10 +16926,6 @@
       "type": "object",
       "description": "A class to describe a quantity of waste generated by an item, process, or activity, including type, quantity, and optional lifecycle context.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WasteGeneratedType",
-          "description": "The UBL entity type identifier."
-        },
         "WasteTypeCode": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/WasteTypeCode"
         },
@@ -18166,10 +16950,6 @@
       "type": "object",
       "description": "A class to describe a web site.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WebSiteType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -18210,10 +16990,6 @@
       "type": "object",
       "description": "A class to describe access to a web site.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WebSiteAccessType",
-          "description": "The UBL entity type identifier."
-        },
         "URI": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/URI"
         },
@@ -18236,10 +17012,6 @@
       "type": "object",
       "description": "A party that is identified as the awarded by a tender result.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WinningPartyType",
-          "description": "The UBL entity type identifier."
-        },
         "Rank": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Rank"
         },
@@ -18258,10 +17030,6 @@
       "type": "object",
       "description": "A class that refers to a phase of work. Used for instance to specify what part of the contract the billing is referring to.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WorkPhaseReferenceType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },
@@ -18302,10 +17070,6 @@
       "type": "object",
       "description": "A class to define a document-level total of reported work expressed as a quantity.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WorkQuantityTotalType",
-          "description": "The UBL entity type identifier."
-        },
         "Quantity": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Quantity"
         },
@@ -18328,10 +17092,6 @@
       "type": "object",
       "description": "A class to describe a line in a Work Report, specifying the work performed.",
       "properties": {
-        "UBLEntity": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WorkReportLineType",
-          "description": "The UBL entity type identifier."
-        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
         },

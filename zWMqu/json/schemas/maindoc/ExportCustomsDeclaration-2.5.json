@@ -4,10 +4,6 @@
   "description": "A customs declaration document for exporting goods",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:ExportCustomsDeclaration-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -68,7 +64,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "ExporterParty",
     "CustomsDeclaration"

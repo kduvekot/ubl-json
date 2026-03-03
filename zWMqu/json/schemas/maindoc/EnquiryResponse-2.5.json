@@ -4,10 +4,6 @@
   "description": "A document sent by a responder to a requester answering a particular enqury.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:EnquiryResponse-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -91,7 +87,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "IssueDate",
     "RequestorParty",
     "ResponderParty",

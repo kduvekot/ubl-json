@@ -4,10 +4,6 @@
   "description": "A document sent by a transport service provider to announce the availability of a transport service.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescription-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -93,7 +89,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID"
   ],
   "additionalProperties": false,

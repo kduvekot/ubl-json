@@ -4,10 +4,6 @@
   "description": "A document issued by a procurement organization to notify an economic operator whether it has been admitted to or excluded from the tendering process.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:TendererQualificationResponse-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -88,7 +84,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ContractFolderID",
     "IssueDate",
     "SenderParty",

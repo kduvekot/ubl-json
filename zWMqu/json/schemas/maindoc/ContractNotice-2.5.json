@@ -4,10 +4,6 @@
   "description": "A document used by a Contracting party to announce a project to buy goods, services, or works.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:ContractNotice-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -158,7 +154,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ContractFolderID",
     "ContractingParty",
     "ProcurementProject"

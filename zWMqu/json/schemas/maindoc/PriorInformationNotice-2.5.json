@@ -4,10 +4,6 @@
   "description": "A document used by a contracting party to declare the intention to buy goods, services, or works during a specified period.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:PriorInformationNotice-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -171,7 +167,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "IssueDate",
     "ContractingParty"
   ],

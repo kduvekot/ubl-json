@@ -4,10 +4,6 @@
   "description": "A document used to specify basic information about retail events (such as promotions, product introductions, and community or environmental events) that affect supply or demand.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:RetailEvent-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -118,7 +114,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "RetailEventStatusCode",
     "Period",

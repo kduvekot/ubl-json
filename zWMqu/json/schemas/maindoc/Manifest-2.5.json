@@ -4,10 +4,6 @@
   "description": "A document listing the contents, cargo, passengers and crew of an airplane, a ship, a truck or a wagon.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:Manifest-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -138,7 +134,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "SendingLogisticsOperatorParty"
   ],

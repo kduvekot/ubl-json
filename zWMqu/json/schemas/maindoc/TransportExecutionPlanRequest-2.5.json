@@ -4,10 +4,6 @@
   "description": "A document sent by a transport user to request a transport service from a transport service provider.",
   "type": "object",
   "properties": {
-    "UBLEntity": {
-      "const": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlanRequest-2",
-      "description": "The JSON Schema identifier for this document type."
-    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -172,7 +168,6 @@
     }
   },
   "required": [
-    "UBLEntity",
     "ID",
     "TransportServiceProviderParty",
     "Consignment"
