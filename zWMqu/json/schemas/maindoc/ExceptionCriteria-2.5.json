@@ -4,6 +4,10 @@
   "description": "A document used to specify the thresholds for forecast variance, product activity, and performance history beyond which exceptions will be triggered.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ExceptionCriteria-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -107,6 +111,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "ValidityPeriod",
@@ -115,5 +120,6 @@
     "ExceptionCriteriaLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Exception Criteria. Details"
 }

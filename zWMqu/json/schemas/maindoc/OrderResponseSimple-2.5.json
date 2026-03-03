@@ -4,6 +4,10 @@
   "description": "(Deprecated) A document used to indicate simple acceptance or rejection of an entire Order.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:OrderResponseSimple-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -144,6 +148,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "AcceptedIndicator",
@@ -152,5 +157,6 @@
     "BuyerCustomerParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Order Response Simple. Details"
 }

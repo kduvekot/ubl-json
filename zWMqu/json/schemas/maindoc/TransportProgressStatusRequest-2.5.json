@@ -4,6 +4,10 @@
   "description": "A document sent from a transport service provider to a transportation network manager requesting a Transport Progress Status.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportProgressStatusRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -84,11 +88,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "IssueTime",
     "TransportMeans"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Transport Progress Status Request. Details"
 }

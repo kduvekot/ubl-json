@@ -4,6 +4,10 @@
   "description": "A document used to request product activity, forecast, or performance data.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ItemInformationRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -104,6 +108,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "Period",
@@ -112,5 +117,6 @@
     "ItemInformationRequestLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Item Information Request. Details"
 }

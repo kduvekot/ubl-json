@@ -4,6 +4,10 @@
   "description": "An expression of interest confirmation issued by a Contracting Party in reply to an expression of interest. The purpose of this document is to inform the Economic Operator he has been registered as an interested party.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ExpressionOfInterestResponse-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -127,11 +131,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "EconomicOperatorParty",
     "ContractingParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Expression Of Interest Response. Details"
 }

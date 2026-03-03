@@ -4,6 +4,10 @@
   "description": "A document sent by a transport service provider to announce the availability of a transport service.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescription-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -99,8 +103,10 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Transport Service Description. Details"
 }

@@ -4,6 +4,10 @@
   "description": "A document used to order goods and services.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:Order-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -304,6 +308,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "BuyerCustomerParty",
@@ -311,5 +316,6 @@
     "OrderLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Order. Details"
 }

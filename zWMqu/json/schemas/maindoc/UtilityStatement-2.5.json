@@ -4,6 +4,10 @@
   "description": "A supplement to an Invoice or Credit Note, containing information on the consumption of services provided by utility suppliers to private and public customers, including electricity, gas, water, and telephone services.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:UtilityStatement-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -128,6 +132,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "UtilityStatementTypeCode",
@@ -137,5 +142,6 @@
     "ReceiverParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Utility Statement. Details"
 }

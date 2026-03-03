@@ -4,6 +4,10 @@
   "description": "A document to indicate the application's response to a transaction. This may be a business response initiated by a user or a technical response sent automatically by an application.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ApplicationResponse-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -87,11 +91,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "SenderParty",
     "ReceiverParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Application Response. Details"
 }

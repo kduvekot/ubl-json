@@ -4,6 +4,10 @@
   "description": "(Deprecated) A document sent by an Economic Operator asking about the details and status of a tendering procedure.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TenderStatusRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -111,10 +115,12 @@
     }
   },
   "required": [
+    "$jsonschema",
     "IssueDate",
     "ContractingParty",
     "EconomicOperatorParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Tender Status Request. Details"
 }

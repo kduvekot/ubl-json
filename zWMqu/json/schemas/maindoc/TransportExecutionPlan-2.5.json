@@ -4,6 +4,10 @@
   "description": "A document used in the negotiation of a transport service between a transport user and a transport service provider.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlan-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -227,10 +231,12 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "TransportServiceProviderParty",
     "Consignment"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Transport Execution Plan. Details"
 }

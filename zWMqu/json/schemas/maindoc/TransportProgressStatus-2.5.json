@@ -4,6 +4,10 @@
   "description": "A document sent from a Transportation Network Manager to a Transport Service Provider giving the status of the whereabouts and schedule of the transport means involved in a transport service.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportProgressStatus-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -93,11 +97,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "IssueTime",
     "TransportMeans"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Transport Progress Status. Details"
 }

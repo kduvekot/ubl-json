@@ -4,6 +4,10 @@
   "description": "A receipt for a purchase made with cash or cash equivalents.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:PurchaseReceipt-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -199,6 +203,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "AccountingSupplierParty",
@@ -206,5 +211,6 @@
     "PurchaseReceiptLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Purchase Receipt. Details"
 }

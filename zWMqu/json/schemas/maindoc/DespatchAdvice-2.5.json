@@ -4,6 +4,10 @@
   "description": "A document used to describe the despatch or delivery of goods and services.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:DespatchAdvice-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -161,6 +165,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "DespatchSupplierParty",
@@ -168,5 +173,6 @@
     "DespatchLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Despatch Advice. Details"
 }

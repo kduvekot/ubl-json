@@ -4,6 +4,10 @@
   "description": "A document used by a Contracting Party to define a procurement project to buy goods, services, or works during a specified period.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:CallForTenders-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -184,11 +188,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ContractFolderID",
     "IssueDate",
     "ContractingParty",
     "ProcurementProject"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Call For Tenders. Details"
 }

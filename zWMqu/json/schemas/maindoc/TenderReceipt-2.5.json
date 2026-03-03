@@ -4,6 +4,10 @@
   "description": "A document sent by a contracting party to an economic operator acknowledging receipt of a Tender.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TenderReceipt-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -103,6 +107,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ContractFolderID",
     "IssueDate",
     "RegisteredDate",
@@ -111,5 +116,6 @@
     "ReceiverParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Tender Receipt. Details"
 }

@@ -4,6 +4,10 @@
   "description": "A document used to provide information about a business.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:BusinessInformation-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -190,10 +194,12 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "BusinessParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Business Information. Details"
 }

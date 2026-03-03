@@ -4,6 +4,10 @@
   "description": "An Invoice document created by the Customer (rather than the Supplier) in a Self Billing relationship.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:SelfBilledInvoice-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -456,6 +460,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "AccountingCustomerParty",
@@ -464,5 +469,6 @@
     "InvoiceLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Self Billed Invoice. Details"
 }

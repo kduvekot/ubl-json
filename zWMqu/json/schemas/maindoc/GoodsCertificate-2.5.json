@@ -4,6 +4,10 @@
   "description": "A document that describes a certificate of goods for importation and exportation",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:GoodsCertificate-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -159,10 +163,12 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssuerParty",
     "Shipment"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Goods Certificate. Details"
 }

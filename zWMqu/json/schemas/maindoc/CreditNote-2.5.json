@@ -4,6 +4,10 @@
   "description": "A document used to specify credits due to the Debtor from the Creditor.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:CreditNote-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -450,6 +454,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "AccountingSupplierParty",
@@ -457,5 +462,6 @@
     "CreditNoteLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Credit Note. Details"
 }

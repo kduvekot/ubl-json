@@ -4,6 +4,10 @@
   "description": "A document requesting the status or proof that goods have been re-exported",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportationRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -90,11 +94,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "GoodsItemPassportID",
     "ImportingGuarantorParty",
     "ExportingGuarantorParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Proof Of Reexportation Request. Details"
 }

@@ -4,6 +4,10 @@
   "description": "A document used by a contracting party to declare the intention to buy goods, services, or works during a specified period.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:PriorInformationNotice-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -187,9 +191,11 @@
     }
   },
   "required": [
+    "$jsonschema",
     "IssueDate",
     "ContractingParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Prior Information Notice. Details"
 }

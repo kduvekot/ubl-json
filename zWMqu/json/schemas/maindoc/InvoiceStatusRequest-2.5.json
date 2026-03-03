@@ -4,6 +4,10 @@
   "description": "A document used to request the status of a previously issued Invoice.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:InvoiceStatusRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -79,6 +83,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "RequestDate",
     "SenderParty",
@@ -86,5 +91,6 @@
     "BillingReference"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Invoice Status Request. Details"
 }

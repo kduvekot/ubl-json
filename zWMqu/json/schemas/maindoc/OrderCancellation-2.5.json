@@ -4,6 +4,10 @@
   "description": "A document used to cancel an entire Order.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:OrderCancellation-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -141,6 +145,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "CancellationNote",
@@ -149,5 +154,6 @@
     "SellerSupplierParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Order Cancellation. Details"
 }

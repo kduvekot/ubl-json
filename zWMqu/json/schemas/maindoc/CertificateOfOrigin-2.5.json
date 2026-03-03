@@ -4,6 +4,10 @@
   "description": "A document that describes the Certificate of Origin.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:CertificateOfOrigin-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -106,10 +110,12 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "CertificateOfOriginApplication",
     "IssuerEndorsement"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Certificate Of Origin. Details"
 }

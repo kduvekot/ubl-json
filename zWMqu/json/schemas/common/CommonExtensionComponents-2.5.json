@@ -46,9 +46,11 @@
         }
       },
       "additionalProperties": false,
+      "minProperties": 1,
       "title": "UBL Extension. Details",
       "required": [
-        "ExtensionContent"
+        "ExtensionContent",
+        "ExtensionURI"
       ]
     }
   }

@@ -4,6 +4,10 @@
   "description": "A document used to request the status of a collaboration/process associated with a document.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:DocumentStatusRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -74,9 +78,11 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Document Status Request. Details"
 }

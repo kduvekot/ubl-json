@@ -4,6 +4,10 @@
   "description": "A document issued by a procurement organization to notify an economic operator whether it has been admitted to or excluded from the tendering process.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TendererQualificationResponse-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -104,6 +108,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ContractFolderID",
     "IssueDate",
     "SenderParty",
@@ -111,5 +116,6 @@
     "QualificationResolution"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Tenderer Qualification Response. Details"
 }

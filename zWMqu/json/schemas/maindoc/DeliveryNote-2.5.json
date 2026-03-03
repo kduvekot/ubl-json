@@ -4,6 +4,10 @@
   "description": "A document confirming the actual delivery of goods or services, detailing delivered items, quantities, and shipment information.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:DeliveryNote-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -155,6 +159,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "DespatchSupplierParty",
@@ -162,5 +167,6 @@
     "DespatchLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Delivery Note. Details"
 }

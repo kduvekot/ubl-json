@@ -4,6 +4,10 @@
   "description": "A document sent from a Contracting Party to the Economic Operator confirming that the latter has been unsubscribed from a tendering procedure.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:UnsubscribeFromProcedureResponse-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -90,11 +94,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "EconomicOperatorParty",
     "ContractingParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Unsubscribe From Procedure Response. Details"
 }

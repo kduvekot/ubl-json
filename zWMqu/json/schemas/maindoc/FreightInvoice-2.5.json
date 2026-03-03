@@ -4,6 +4,10 @@
   "description": "(Deprecated) A document stating the charges incurred for a logistics service.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:FreightInvoice-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -335,6 +339,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "Shipment",
@@ -344,5 +349,6 @@
     "InvoiceLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Freight Invoice. Details"
 }

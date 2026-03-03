@@ -4,6 +4,10 @@
   "description": "A document used to describe the receipt of goods and services or as a reply to a despatch advice.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ReceiptAdvice-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -160,11 +164,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "DeliveryCustomerParty",
     "DespatchSupplierParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Receipt Advice. Details"
 }

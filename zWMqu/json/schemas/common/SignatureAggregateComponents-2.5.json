@@ -8,6 +8,10 @@
       "type": "object",
       "description": "This class captures a single signature and optionally associates to a signature in the document with the corresponding identifier.",
       "properties": {
+        "$jsonschema": {
+          "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#SignatureInformationType",
+          "description": "Identifies the JSON schema governing this instance."
+        },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2#/$defs/ID"
         },
@@ -16,6 +20,7 @@
         }
       },
       "additionalProperties": false,
+      "minProperties": 1,
       "title": "Signature Information. Details"
     },
     "UBLDocumentSignaturesType": {
@@ -23,6 +28,10 @@
       "type": "object",
       "description": "This class collects all signature information for a document.",
       "properties": {
+        "$jsonschema": {
+          "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#UBLDocumentSignaturesType",
+          "description": "Identifies the JSON schema governing this instance."
+        },
         "SignatureInformation": {
           "oneOf": [
             {
@@ -39,6 +48,7 @@
         }
       },
       "additionalProperties": false,
+      "minProperties": 1,
       "title": "UBL Document Signatures. Details",
       "required": [
         "SignatureInformation"

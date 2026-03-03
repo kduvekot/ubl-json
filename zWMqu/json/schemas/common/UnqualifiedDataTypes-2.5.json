@@ -36,10 +36,12 @@
           "type": "number"
         },
         "currencyID": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "currencyCodeListVersionID": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         }
       },
       "required": [
@@ -53,29 +55,37 @@
       "type": "object",
       "properties": {
         "value": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "mimeCode": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "format": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "encodingCode": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "characterSetCode": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "uri": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "filename": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         }
       },
       "required": [
-        "value"
+        "value",
+        "mimeCode"
       ],
       "additionalProperties": false,
       "description": "A set of finite-length sequences of binary octets."
@@ -87,10 +97,12 @@
           "type": "number"
         },
         "unitCode": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "unitCodeListVersionID": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         }
       },
       "required": [
@@ -103,40 +115,51 @@
     "CodeType": {
       "oneOf": [
         {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         {
           "type": "object",
           "properties": {
             "value": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listAgencyID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listAgencyName": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listName": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listVersionID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "name": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "languageID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listURI": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "listSchemeURI": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -150,34 +173,43 @@
     "IdentifierType": {
       "oneOf": [
         {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         {
           "type": "object",
           "properties": {
             "value": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeName": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeAgencyID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeAgencyName": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeVersionID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeDataURI": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "schemeURI": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -200,16 +232,20 @@
               "type": "number"
             },
             "unitCode": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "unitCodeListID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "unitCodeListAgencyID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "unitCodeListAgencyName": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -223,19 +259,23 @@
     "TextType": {
       "oneOf": [
         {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         {
           "type": "object",
           "properties": {
             "value": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "languageID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "languageLocaleID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -249,19 +289,23 @@
     "NameType": {
       "oneOf": [
         {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         {
           "type": "object",
           "properties": {
             "value": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "languageID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "languageLocaleID": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -274,6 +318,7 @@
     },
     "ContentType": {
       "type": "object",
+      "minProperties": 1,
       "description": "Extension content. Any structure is allowed."
     }
   }

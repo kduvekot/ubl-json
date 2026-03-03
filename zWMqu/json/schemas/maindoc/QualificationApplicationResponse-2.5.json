@@ -4,6 +4,10 @@
   "description": "A self-declaration of an economic operator, stating that it does not fall under the Exclusion Grounds and that it meets the Selection Criteria for a specific procurement.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:QualificationApplicationResponse-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -206,6 +210,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ContractFolderID",
     "IssueDate",
     "ContractingParty",
@@ -213,5 +218,6 @@
     "TenderingCriterionResponse"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Qualification Application Response. Details"
 }

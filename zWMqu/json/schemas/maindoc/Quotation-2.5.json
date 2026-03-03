@@ -4,6 +4,10 @@
   "description": "A document used to quote for the provision of goods and services.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:Quotation-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -190,11 +194,13 @@
     }
   },
   "required": [
+    "$jsonschema",
     "IssueDate",
     "SellerSupplierParty",
     "QuotedMonetaryTotal",
     "QuotationLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Quotation. Details"
 }

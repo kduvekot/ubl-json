@@ -4,6 +4,10 @@
   "description": "A document to circulate reports of transportation status or changes in status (events) among a group of participants.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportationStatus-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -173,8 +177,10 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Transportation Status. Details"
 }

@@ -4,6 +4,10 @@
   "description": "A document requesting a Transportation Status report.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportationStatusRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -148,8 +152,10 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Transportation Status Request. Details"
 }

@@ -4,6 +4,10 @@
   "description": "(Deprecated) A report on the quantities of each item that are, or will be, in stock. This document is sent by a Seller (for example a producer) to a Buyer (for example a retailer).",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:StockAvailabilityReport-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -104,6 +108,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "SellerSupplierParty",
@@ -111,5 +116,6 @@
     "StockAvailabilityReportLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Stock Availability Report. Details"
 }

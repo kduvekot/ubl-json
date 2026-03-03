@@ -4,6 +4,10 @@
   "description": "A common document used for reporting transport related issues to authorities or regulators.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:CommonTransportationReport-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -138,6 +142,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "ReporterParty",
@@ -145,5 +150,6 @@
     "ReceiverParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Common Transportation Report. Details"
 }

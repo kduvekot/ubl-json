@@ -4,6 +4,10 @@
   "description": "A document issued by a buyer defining how the Exclusion Grounds and the Selection Criteria should be addressed in a Single Procurement Document for a specific procurement.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:QualificationApplicationRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -175,10 +179,12 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ContractFolderID",
     "IssueDate",
     "ContractingParty"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Qualification Application Request. Details"
 }

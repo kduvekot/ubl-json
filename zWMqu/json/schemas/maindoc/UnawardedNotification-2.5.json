@@ -4,6 +4,10 @@
   "description": "A document communicating to a tenderer that the contract has been awarded to different tenderer.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:UnawardedNotification-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -117,6 +121,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ContractFolderID",
     "IssueDate",
     "SenderParty",
@@ -124,5 +129,6 @@
     "TenderResult"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Unawarded Notification. Details"
 }

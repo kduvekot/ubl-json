@@ -4,6 +4,10 @@
   "description": "A document used to update information (e.g., technical descriptions and properties) about Items in an existing Catalogue.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:CatalogueItemSpecificationUpdate-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -158,6 +162,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "RelatedCatalogueReference",
@@ -166,5 +171,6 @@
     "CatalogueItemSpecificationUpdateLine"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Catalogue Item Specification Update. Details"
 }

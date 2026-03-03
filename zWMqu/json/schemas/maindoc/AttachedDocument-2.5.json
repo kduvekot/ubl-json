@@ -4,6 +4,10 @@
   "description": "(Deprecated) A wrapper that allows a document of any kind to be packaged with the UBL document that references it.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:AttachedDocument-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -96,6 +100,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "IssueDate",
     "ParentDocumentID",
@@ -104,5 +109,6 @@
     "Attachment"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Attached Document. Details"
 }

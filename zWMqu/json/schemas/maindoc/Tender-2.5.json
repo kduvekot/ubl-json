@@ -4,6 +4,10 @@
   "description": "A document whereby an economic operator (the tenderer) makes a formal offer (the tender) to a contracting authority to execute an order for the supply or purchase of goods, or for the execution of work, according to the terms of a proposed contract.",
   "type": "object",
   "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:Tender-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
     "UBLExtensions": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
     },
@@ -173,6 +177,7 @@
     }
   },
   "required": [
+    "$jsonschema",
     "ID",
     "ContractFolderID",
     "IssueDate",
@@ -180,5 +185,6 @@
     "TenderedProject"
   ],
   "additionalProperties": false,
+  "minProperties": 1,
   "title": "Tender. Details"
 }
