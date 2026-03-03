@@ -1,0 +1,264 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescription-2",
+  "UBLVersionID": "2.1",
+  "ID": "TSD_RESP_1",
+  "IssueDate": "2011-09-12",
+  "IssueTime": "11:01:10+01:00",
+  "SenderParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673827641",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "ReceiverParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673827000",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "Consignor"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+8687878763",
+      "ElectronicMail": "SomeName@consignor.cn"
+    }
+  },
+  "TransportServiceDescriptionRequestDocumentReference": {
+    "ID": "TSD_REQ_1"
+  },
+  "TransportServiceProviderParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673827641",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "ServiceChargePaymentTerms": {
+    "Amount": {
+      "value": 2500,
+      "currencyID": "EUR"
+    },
+    "PaymentDueDate": "2011-11-06"
+  },
+  "ValidityPeriod": {
+    "StartDate": "2011-09-12",
+    "EndDate": "2011-09-30",
+    "EndTime": "16:00:00+01:00"
+  },
+  "TransportationService": {
+    "TransportServiceCode": "3",
+    "SupportedTransportEquipment": [
+      {
+        "ID": "1",
+        "TransportEquipmentTypeCode": "CN",
+        "MeasurementDimension": [
+          {
+            "AttributeID": "Length",
+            "Measure": {
+              "value": 6.1,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Height",
+            "Measure": {
+              "value": 2.6,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Width",
+            "Measure": {
+              "value": 2.44,
+              "unitCode": "MTR"
+            }
+          }
+        ]
+      },
+      {
+        "ID": "1",
+        "TransportEquipmentTypeCode": "CN",
+        "MeasurementDimension": [
+          {
+            "AttributeID": "Length",
+            "Measure": {
+              "value": 6.1,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Height",
+            "Measure": {
+              "value": 2.6,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Width",
+            "Measure": {
+              "value": 2.44,
+              "unitCode": "MTR"
+            }
+          }
+        ]
+      }
+    ],
+    "ShipmentStage": [
+      {
+        "ID": "1",
+        "PlannedDepartureTransportEvent": {
+          "Location": {
+            "Address": {
+              "ID": {
+                "value": "DEHAM",
+                "schemeName": "UN/LOCODE",
+                "schemeAgencyName": "UN"
+              },
+              "StreetName": "Neuer Wandrahm 4",
+              "CityName": "Hamburg",
+              "Country": {
+                "IdentificationCode": "DE"
+              }
+            }
+          },
+          "Period": {
+            "StartDate": "2011-10-03",
+            "StartTime": "09:30:10+01:00",
+            "EndDate": "2011-10-03",
+            "EndTime": "12:30:10+01:00"
+          }
+        },
+        "PlannedArrivalTransportEvent": {
+          "Location": {
+            "LocationTypeCode": "13",
+            "Address": {
+              "ID": {
+                "value": "4568763527610",
+                "schemeName": "GLN",
+                "schemeAgencyName": "GS1"
+              },
+              "StreetName": "Ludwig-Erhard-Str. 15",
+              "CityName": "Bremen",
+              "Country": {
+                "IdentificationCode": "DE"
+              }
+            }
+          },
+          "Period": {
+            "StartDate": "2011-10-03",
+            "StartTime": "18:30:10+01:00",
+            "EndDate": "2011-10-03",
+            "EndTime": "21:30:10+01:00"
+          }
+        }
+      },
+      {
+        "ID": "2",
+        "PlannedDepartureTransportEvent": {
+          "Location": {
+            "LocationTypeCode": "13",
+            "Address": {
+              "ID": {
+                "value": "4568763527610",
+                "schemeName": "GLN",
+                "schemeAgencyName": "GS1"
+              },
+              "StreetName": "Ludwig-Erhard-Str. 15",
+              "CityName": "Bremen",
+              "Country": {
+                "IdentificationCode": "DE"
+              }
+            }
+          },
+          "Period": {
+            "StartDate": "2011-10-04",
+            "StartTime": "09:30:10+01:00",
+            "EndDate": "2011-10-04",
+            "EndTime": "09:30:10+01:00"
+          }
+        },
+        "PlannedArrivalTransportEvent": {
+          "Location": {
+            "LocationTypeCode": "13",
+            "Address": {
+              "StreetName": "Sandstr. 38-40",
+              "CityName": "Nurnberg",
+              "Country": {
+                "IdentificationCode": "DE"
+              }
+            }
+          },
+          "Period": {
+            "StartDate": "2011-10-04",
+            "StartTime": "15:30:10+01:00",
+            "EndDate": "2011-10-04",
+            "EndTime": "18:30:10+01:00"
+          }
+        }
+      },
+      {
+        "ID": "3",
+        "PlannedDepartureTransportEvent": {
+          "Location": {
+            "LocationTypeCode": "13",
+            "Address": {
+              "StreetName": "Sandstr. 38-40",
+              "CityName": "Nurnberg",
+              "Country": {
+                "IdentificationCode": "DE"
+              }
+            }
+          },
+          "Period": {
+            "StartDate": "2011-10-06",
+            "StartTime": "09:30:10+01:00",
+            "EndDate": "2011-10-06",
+            "EndTime": "12:30:10+01:00"
+          }
+        },
+        "PlannedArrivalTransportEvent": {
+          "Location": {
+            "Address": {
+              "StreetName": "Grosse strasse 34",
+              "CityName": "Nurnberg",
+              "Country": {
+                "IdentificationCode": "DE"
+              }
+            }
+          },
+          "Period": {
+            "StartDate": "2011-10-06",
+            "StartTime": "12:30:10+01:00",
+            "EndDate": "2011-10-06",
+            "EndTime": "15:30:10+01:00"
+          }
+        }
+      }
+    ]
+  }
+}

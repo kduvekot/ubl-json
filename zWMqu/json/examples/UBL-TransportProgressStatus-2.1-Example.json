@@ -1,0 +1,100 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportProgressStatus-2",
+  "UBLVersionID": "2.1",
+  "ID": "TPSR_1",
+  "IssueDate": "2011-10-03",
+  "IssueTime": "14:30:10+01:00",
+  "StatusAvailableIndicator": true,
+  "SenderParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673821325",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "ARRIVA"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557888",
+      "ElectronicMail": "SomeName@arriva.de"
+    }
+  },
+  "ReceiverParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673827641",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "SourceIssuerParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673821325",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "ARRIVA"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557888",
+      "ElectronicMail": "SomeName@arriva.de"
+    }
+  },
+  "TransportProgressStatusRequestDocumentReference": {
+    "ID": {
+      "value": "TPS_1",
+      "schemeName": "MovementReferenceNumber"
+    }
+  },
+  "TransportMeans": {
+    "JourneyID": "RHamBrem",
+    "RegistrationNationalityID": "DE",
+    "TransportMeansTypeCode": "230",
+    "RailTransport": {
+      "TrainID": "RID01235"
+    }
+  },
+  "TransportSchedule": {
+    "SequenceNumeric": 1,
+    "ReliabilityPercent": 80,
+    "StatusLocation": {
+      "LocationTypeCode": "13",
+      "Address": {
+        "ID": {
+          "value": "4568763527610",
+          "schemeName": "GLN",
+          "schemeAgencyName": "GS1"
+        },
+        "StreetName": "Ludwig-Erhard-Str. 15",
+        "CityName": "Bremen",
+        "Country": {
+          "IdentificationCode": "DE"
+        }
+      }
+    },
+    "EstimatedArrivalTransportEvent": {
+      "Period": {
+        "StartDate": "2011-10-03",
+        "StartTime": "18:30:10+01:00",
+        "EndDate": "2011-10-03",
+        "EndTime": "18:35:10+01:00"
+      }
+    }
+  }
+}

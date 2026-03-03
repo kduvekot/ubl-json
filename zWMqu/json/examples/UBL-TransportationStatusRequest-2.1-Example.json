@@ -1,0 +1,14 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportationStatusRequest-2",
+  "UBLVersionID": "2.1",
+  "ID": "TSR_1",
+  "IssueDate": "2011-10-06",
+  "IssueTime": "09:29:10+01:00",
+  "TransportationStatusTypeCode": "All deviations",
+  "TransportExecutionPlanDocumentReference": {
+    "ID": "TEP_1"
+  },
+  "Consignment": {
+    "ID": "CON_1"
+  }
+}

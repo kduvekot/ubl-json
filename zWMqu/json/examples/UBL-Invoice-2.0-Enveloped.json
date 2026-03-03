@@ -1,0 +1,374 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
+  "UBLExtensions": [
+    {
+      "ExtensionURI": "dummy1",
+      "ExtensionContent": {
+        "AnExtension": ""
+      }
+    },
+    {
+      "ExtensionURI": "dummy2",
+      "ExtensionContent": {
+        "AnotherExtension": ""
+      }
+    },
+    {
+      "ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",
+      "ExtensionContent": {
+        "UBLDocumentSignatures": {
+          "SignatureInformation": {
+            "Signature": {
+              "SignedInfo": {
+                "CanonicalizationMethod": "",
+                "SignatureMethod": "",
+                "Reference": [
+                  {
+                    "Transforms": {
+                      "Transform": {
+                        "XPath": "count(ancestor-or-self::sig:UBLDocumentSignatures |\n                  here()/ancestor::sig:UBLDocumentSignatures[1]) >\n            count(ancestor-or-self::sig:UBLDocumentSignatures)"
+                      }
+                    },
+                    "DigestMethod": "",
+                    "DigestValue": "d7OYkPHx+k+Qg+tBX2RfdzaBuYs="
+                  },
+                  {
+                    "DigestMethod": "",
+                    "DigestValue": "rcWlUoFmv2beSz8h5BKpxBv/IWQ="
+                  }
+                ]
+              },
+              "SignatureValue": "nUGjDSgnAizCE4n8VsJhM1DljVf+lmQqKcXiuWkM2xUaRFoni4VUiku7BzC4I8w2\nNbDjhusexvxIzN5IZf8uY4gXn4OrNuWsYZT/U73qj0T8N32jsHpeyXFMsuUq5kgG\nm4MqK4QcI8/VnSYqfGOF/wCJi0GDM/sccLbB7tKgX8Y=",
+              "KeyInfo": {
+                "KeyValue": {
+                  "RSAKeyValue": {
+                    "Modulus": "uXEmg0yTZN1Yf7IuwDcf+MhHjILcPtFXVW3FRFpy5ymWDDmoOddPJrG3S6zHcCbu\nkdqJR+fIHhpGauMifTbC4k9F0UNgT0DSzxoOkVMFwv/pREK28lvnDZD1rGnS9GKt\ncyOMVbGe5BSl49iBI5xhpUtmRYxVR/RAxSUmCrfZFoM=",
+                    "Exponent": "AQAB"
+                  }
+                },
+                "X509Data": {
+                  "X509Certificate": "MIICcTCCAdoCCQDzGe/d5rwBKzANBgkqhkiG9w0BAQUFADB9MQswCQYDVQQGEwJV\nUzEWMBQGA1UECAwNTWFzc2FjaHVzZXR0czETMBEGA1UEBwwKQnVybGluZ3RvbjEO\nMAwGA1UECgwFT0FTSVMxIDAeBgNVBAsMF1VCTCBUZWNobmljYWwgQ29tbWl0dGVl\nMQ8wDQYDVQQDDAZVQkwgVEMwHhcNMTMwMjE1MTg1OTQ2WhcNMTMwMzE3MTg1OTQ2\nWjB9MQswCQYDVQQGEwJVUzEWMBQGA1UECAwNTWFzc2FjaHVzZXR0czETMBEGA1UE\nBwwKQnVybGluZ3RvbjEOMAwGA1UECgwFT0FTSVMxIDAeBgNVBAsMF1VCTCBUZWNo\nbmljYWwgQ29tbWl0dGVlMQ8wDQYDVQQDDAZVQkwgVEMwgZ8wDQYJKoZIhvcNAQEB\nBQADgY0AMIGJAoGBALlxJoNMk2TdWH+yLsA3H/jIR4yC3D7RV1VtxURacucplgw5\nqDnXTyaxt0usx3Am7pHaiUfnyB4aRmrjIn02wuJPRdFDYE9A0s8aDpFTBcL/6URC\ntvJb5w2Q9axp0vRirXMjjFWxnuQUpePYgSOcYaVLZkWMVUf0QMUlJgq32RaDAgMB\nAAEwDQYJKoZIhvcNAQEFBQADgYEAVtqeUFJQa64pqCYJAxflCGdOKFBX2p8LCo3K\neupnQC9UvLdOxuS8fAjzo40FQG687/7NGcZ30ysVjy/s3XyqxDFLln601vI470i9\n6Gip3cBF8WHB5lUnvaT9dNEYFDBBR22glEnY9SA8y8EbbO+Cy8hIQEzULoVOkr/a\nJfeH5w4=",
+                  "X509SubjectName": "CN=UBL TC,OU=UBL Technical Committee,O=OASIS,L=Burlington,ST=Massachusetts,C=US",
+                  "X509IssuerSerial": {
+                    "X509IssuerName": "CN=UBL TC,OU=UBL Technical Committee,O=OASIS,L=Burlington,ST=Massachusetts,C=US",
+                    "X509SerialNumber": "17517295961972146475"
+                  }
+                }
+              },
+              "Object": {
+                "QualifyingProperties": {
+                  "SignedProperties": {
+                    "SignedSignatureProperties": {
+                      "SigningTime": "2010-11-26T18:00:00Z"
+                    }
+                  },
+                  "UnsignedProperties": {
+                    "UnsignedSignatureProperties": {
+                      "SignatureTimeStamp": {
+                        "XMLTimeStamp": "2010-11-26T18:00:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "UBLVersionID": "2.0",
+  "CustomizationID": "urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft",
+  "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-invoice-notification-draft",
+  "ID": "A00095678",
+  "CopyIndicator": false,
+  "UUID": "849FBBCE-E081-40B4-906C-94C5FF9D1AC3",
+  "IssueDate": "2005-06-21",
+  "InvoiceTypeCode": "SalesInvoice",
+  "Note": "sample",
+  "TaxPointDate": "2005-06-21",
+  "OrderReference": {
+    "ID": "AEG012345",
+    "SalesOrderID": "CON0095678",
+    "UUID": "6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1",
+    "IssueDate": "2005-06-20"
+  },
+  "Signature": {
+    "ID": "urn:oasis:names:specification:ubl:signature:Invoice",
+    "SignatureMethod": "urn:oasis:names:specification:ubl:dsig:enveloped",
+    "SignatoryParty": {
+      "PartyIdentification": {
+        "ID": "MyParty"
+      }
+    }
+  },
+  "AccountingSupplierParty": {
+    "CustomerAssignedAccountID": "CO001",
+    "Party": {
+      "PartyName": {
+        "Name": "Consortial"
+      },
+      "PostalAddress": {
+        "StreetName": "Busy Street",
+        "BuildingName": "Thereabouts",
+        "BuildingNumber": "56A",
+        "CityName": "Farthing",
+        "PostalZone": "AA99 1BB",
+        "CountrySubentity": "Heremouthshire",
+        "AddressLine": {
+          "Line": "The Roundabout"
+        },
+        "Country": {
+          "IdentificationCode": "GB"
+        }
+      },
+      "PartyTaxScheme": {
+        "RegistrationName": "Farthing Purchasing Consortium",
+        "CompanyID": "175 269 2355",
+        "ExemptionReason": "N/A",
+        "TaxScheme": {
+          "ID": "VAT",
+          "TaxTypeCode": "VAT"
+        }
+      },
+      "Contact": {
+        "Name": "Mrs Bouquet",
+        "Telephone": "0158 1233714",
+        "Telefax": "0158 1233856",
+        "ElectronicMail": "bouquet@fpconsortial.co.uk"
+      }
+    }
+  },
+  "AccountingCustomerParty": {
+    "CustomerAssignedAccountID": "XFB01",
+    "SupplierAssignedAccountID": "GT00978567",
+    "Party": {
+      "PartyName": {
+        "Name": "IYT Corporation"
+      },
+      "PostalAddress": {
+        "StreetName": "Avon Way",
+        "BuildingName": "Thereabouts",
+        "BuildingNumber": "56A",
+        "CityName": "Bridgtow",
+        "PostalZone": "ZZ99 1ZZ",
+        "CountrySubentity": "Avon",
+        "AddressLine": {
+          "Line": "3rd Floor, Room 5"
+        },
+        "Country": {
+          "IdentificationCode": "GB"
+        }
+      },
+      "PartyTaxScheme": {
+        "RegistrationName": "Bridgtow District Council",
+        "CompanyID": "12356478",
+        "ExemptionReason": "Local Authority",
+        "TaxScheme": {
+          "ID": "UK VAT",
+          "TaxTypeCode": "VAT"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Fred Churchill",
+        "Telephone": "0127 2653214",
+        "Telefax": "0127 2653215",
+        "ElectronicMail": "fred@iytcorporation.gov.uk"
+      }
+    }
+  },
+  "Delivery": {
+    "ActualDeliveryDate": "2005-06-20",
+    "ActualDeliveryTime": "11:30:00.0Z",
+    "DeliveryAddress": {
+      "StreetName": "Avon Way",
+      "BuildingName": "Thereabouts",
+      "BuildingNumber": "56A",
+      "CityName": "Bridgtow",
+      "PostalZone": "ZZ99 1ZZ",
+      "CountrySubentity": "Avon",
+      "AddressLine": {
+        "Line": "3rd Floor, Room 5"
+      },
+      "Country": {
+        "IdentificationCode": "GB"
+      }
+    }
+  },
+  "PaymentMeans": {
+    "PaymentMeansCode": "20",
+    "PaymentDueDate": "2005-07-21",
+    "PayeeFinancialAccount": {
+      "ID": "12345678",
+      "Name": "Farthing Purchasing Consortium",
+      "AccountTypeCode": "Current",
+      "CurrencyCode": "GBP",
+      "FinancialInstitutionBranch": {
+        "ID": "10-26-58",
+        "Name": "Open Bank Ltd, Bridgstow Branch",
+        "FinancialInstitution": {
+          "ID": "10-26-58",
+          "Name": "Open Bank Ltd",
+          "Address": {
+            "StreetName": "City Road",
+            "BuildingName": "Banking House",
+            "BuildingNumber": "12",
+            "CityName": "London",
+            "PostalZone": "AQ1 6TH",
+            "CountrySubentity": "London",
+            "AddressLine": {
+              "Line": "5th Floor"
+            },
+            "Country": {
+              "IdentificationCode": "GB"
+            }
+          }
+        },
+        "Address": {
+          "StreetName": "Busy Street",
+          "BuildingName": "The Mall",
+          "BuildingNumber": "152",
+          "CityName": "Farthing",
+          "PostalZone": "AA99 1BB",
+          "CountrySubentity": "Heremouthshire",
+          "AddressLine": {
+            "Line": "West Wing"
+          },
+          "Country": {
+            "IdentificationCode": "GB"
+          }
+        }
+      },
+      "Country": {
+        "IdentificationCode": "GB"
+      }
+    }
+  },
+  "PaymentTerms": {
+    "Note": "Payable within 1 calendar month from the invoice date"
+  },
+  "AllowanceCharge": {
+    "ChargeIndicator": false,
+    "AllowanceChargeReasonCode": "17",
+    "MultiplierFactorNumeric": 0.1,
+    "Amount": {
+      "value": 10.0,
+      "currencyID": "GBP"
+    }
+  },
+  "TaxTotal": {
+    "TaxAmount": {
+      "value": 17.5,
+      "currencyID": "GBP"
+    },
+    "TaxEvidenceIndicator": true,
+    "TaxSubtotal": {
+      "TaxableAmount": {
+        "value": 100.0,
+        "currencyID": "GBP"
+      },
+      "TaxAmount": {
+        "value": 17.5,
+        "currencyID": "GBP"
+      },
+      "TaxCategory": {
+        "ID": "A",
+        "TaxScheme": {
+          "ID": "UK VAT",
+          "TaxTypeCode": "VAT"
+        }
+      }
+    }
+  },
+  "LegalMonetaryTotal": {
+    "LineExtensionAmount": {
+      "value": 100.0,
+      "currencyID": "GBP"
+    },
+    "TaxExclusiveAmount": {
+      "value": 90.0,
+      "currencyID": "GBP"
+    },
+    "AllowanceTotalAmount": {
+      "value": 10.0,
+      "currencyID": "GBP"
+    },
+    "PayableAmount": {
+      "value": 107.5,
+      "currencyID": "GBP"
+    }
+  },
+  "InvoiceLine": {
+    "ID": "A",
+    "InvoicedQuantity": {
+      "value": 100,
+      "unitCode": "KGM"
+    },
+    "LineExtensionAmount": {
+      "value": 100.0,
+      "currencyID": "GBP"
+    },
+    "OrderLineReference": {
+      "LineID": "1",
+      "SalesOrderLineID": "A",
+      "LineStatusCode": "NoStatus",
+      "OrderReference": {
+        "ID": "AEG012345",
+        "SalesOrderID": "CON0095678",
+        "UUID": "6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1",
+        "IssueDate": "2005-06-20"
+      }
+    },
+    "TaxTotal": {
+      "TaxAmount": {
+        "value": 17.5,
+        "currencyID": "GBP"
+      },
+      "TaxEvidenceIndicator": true,
+      "TaxSubtotal": {
+        "TaxableAmount": {
+          "value": 100.0,
+          "currencyID": "GBP"
+        },
+        "TaxAmount": {
+          "value": 17.5,
+          "currencyID": "GBP"
+        },
+        "TaxCategory": {
+          "ID": "A",
+          "Percent": 17.5,
+          "TaxScheme": {
+            "ID": "UK VAT",
+            "TaxTypeCode": "VAT"
+          }
+        }
+      }
+    },
+    "Item": {
+      "Description": "Acme beeswax",
+      "Name": "beeswax",
+      "BuyersItemIdentification": {
+        "ID": "6578489"
+      },
+      "SellersItemIdentification": {
+        "ID": "17589683"
+      },
+      "ItemInstance": {
+        "LotIdentification": {
+          "LotNumberID": "546378239",
+          "ExpiryDate": "2010-01-01"
+        }
+      }
+    },
+    "Price": {
+      "PriceAmount": {
+        "value": 1.0,
+        "currencyID": "GBP"
+      },
+      "BaseQuantity": {
+        "value": 1,
+        "unitCode": "KGM"
+      }
+    }
+  }
+}

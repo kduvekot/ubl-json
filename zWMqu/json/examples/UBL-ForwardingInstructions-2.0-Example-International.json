@@ -1,0 +1,275 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ForwardingInstructions-2",
+  "UBLVersionID": "2.0",
+  "CustomizationID": "urn:oasis:names:specification:ubl:xpath:ForwardingInstructions-2.0:samples-2.0-draft",
+  "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario",
+  "ID": "KHN23-44044",
+  "UUID": "6E09886B-DC6E-439F-82D1-7C83746352B1",
+  "IssueDate": "2005-06-24",
+  "IssueTime": "14:20:00.0Z",
+  "ConsignorParty": {
+    "PartyName": {
+      "Name": "Consortial"
+    },
+    "PostalAddress": {
+      "StreetName": "Boston Road",
+      "BuildingName": "Suite M-102",
+      "BuildingNumber": "630",
+      "CityName": "Billerica",
+      "PostalZone": "01821",
+      "CountrySubentity": "Massachusetts",
+      "CountrySubentityCode": "MA",
+      "Country": {
+        "IdentificationCode": "US"
+      }
+    },
+    "Contact": {
+      "Name": "Mrs Bouquet",
+      "Telephone": "+1 158 1233714",
+      "Telefax": "+ 1 158 1233856",
+      "ElectronicMail": "bouquet@fpconsortial.com"
+    }
+  },
+  "FreightForwarderParty": {
+    "PartyName": {
+      "Name": "One-Stop Forwarders"
+    },
+    "PostalAddress": {
+      "Postbox": "99043",
+      "CityName": "Boston",
+      "PostalZone": "02210",
+      "CountrySubentityCode": "MA",
+      "Country": {
+        "IdentificationCode": "US"
+      }
+    },
+    "Contact": {
+      "Name": "Con Solidador",
+      "Telephone": "+1 343 1453654",
+      "Telefax": "+1 343 1453655",
+      "ElectronicMail": "ctanner@onestopfreight.com"
+    }
+  },
+  "Shipment": {
+    "ID": "CONS-0001",
+    "GrossWeightMeasure": {
+      "value": 130,
+      "unitCode": "KGM"
+    },
+    "NetWeightMeasure": {
+      "value": 110,
+      "unitCode": "KGM"
+    },
+    "NetNetWeightMeasure": {
+      "value": 100,
+      "unitCode": "KGM"
+    },
+    "GrossVolumeMeasure": {
+      "value": 2,
+      "unitCode": "MTQ"
+    },
+    "NetVolumeMeasure": {
+      "value": 2.235,
+      "unitCode": "MTQ"
+    },
+    "TotalGoodsItemQuantity": 1,
+    "TotalTransportHandlingUnitQuantity": 10,
+    "InsuranceValueAmount": {
+      "value": 1000.0,
+      "currencyID": "USD"
+    },
+    "DeclaredCustomsValueAmount": {
+      "value": 524.8,
+      "currencyID": "GBP"
+    },
+    "FreeOnBoardValueAmount": {
+      "value": 1200.0,
+      "currencyID": "USD"
+    },
+    "SpecialInstructions": "Beeswax becomes liquid at 50'C",
+    "Consignment": {
+      "ID": "CONS-0001",
+      "TariffDescription": "Beeswax, other insect waxes and spermacetti",
+      "TariffCode": "15219000",
+      "HazardousRiskIndicator": false,
+      "ConsigneeParty": {
+        "PartyName": {
+          "Name": "IYT Corporation"
+        },
+        "PostalAddress": {
+          "StreetName": "Avon Way",
+          "BuildingName": "Thereabouts",
+          "BuildingNumber": "56A",
+          "CityName": "Bridgtow",
+          "PostalZone": "ZZ99 1ZZ",
+          "CountrySubentity": "Avon",
+          "AddressLine": {
+            "Line": "3rd Floor, Room 5"
+          },
+          "Country": {
+            "IdentificationCode": "GB"
+          }
+        },
+        "Contact": {
+          "Name": "Mr Fred Churchill",
+          "Telephone": "+44 127 2653214",
+          "Telefax": "+44 127 2653215",
+          "ElectronicMail": "fred@iytcorporation.gov.uk"
+        }
+      },
+      "NotifyParty": {
+        "PartyName": {
+          "Name": "IYT Corporation"
+        },
+        "PostalAddress": {
+          "StreetName": "Avon Way",
+          "BuildingName": "Thereabouts",
+          "BuildingNumber": "56A",
+          "CityName": "Bridgtow",
+          "PostalZone": "ZZ99 1ZZ",
+          "CountrySubentity": "Avon",
+          "AddressLine": {
+            "Line": "3rd Floor, Room 5"
+          },
+          "Country": {
+            "IdentificationCode": "GB"
+          }
+        },
+        "Contact": {
+          "Name": "Mr Fred Churchill",
+          "Telephone": "+44 127 2653214",
+          "Telefax": "+44 127 2653215",
+          "ElectronicMail": "fred@iytcorporation.gov.uk"
+        }
+      },
+      "FinalDeliveryParty": {
+        "PartyName": {
+          "Name": "The Terminus"
+        },
+        "PostalAddress": {
+          "StreetName": "Avon Way",
+          "BuildingName": "Thereabouts",
+          "BuildingNumber": "56A",
+          "CityName": "Bridgtow",
+          "PostalZone": "ZZ99 1ZZ",
+          "CountrySubentity": "Avon",
+          "AddressLine": {
+            "Line": "3rd Floor, Room 5"
+          },
+          "Country": {
+            "IdentificationCode": "GB"
+          }
+        },
+        "Contact": {
+          "Name": "S Massiah",
+          "Telephone": "+ 44 127 98876545",
+          "Telefax": "+ 44 127 98876546",
+          "ElectronicMail": "smassiah@the-email.co.uk"
+        }
+      },
+      "OriginalDepartureCountry": {
+        "IdentificationCode": "US"
+      },
+      "FinalDestinationCountry": {
+        "IdentificationCode": "GB"
+      },
+      "DeliveryTerms": {
+        "ID": "FOB Destination",
+        "DeliveryLocation": {
+          "ID": {
+            "value": "GBBRS",
+            "schemeID": "UN/LOCODE",
+            "schemeAgencyID": "6"
+          },
+          "Description": "Bristol"
+        }
+      },
+      "FreightAllowanceCharge": [
+        {
+          "ChargeIndicator": true,
+          "AllowanceChargeReason": "Freight charges",
+          "SequenceNumeric": 1,
+          "Amount": {
+            "value": 254.0,
+            "currencyID": "USD"
+          }
+        },
+        {
+          "ChargeIndicator": false,
+          "AllowanceChargeReasonCode": "79",
+          "AllowanceChargeReason": "Sundry discount",
+          "MultiplierFactorNumeric": 0.05,
+          "SequenceNumeric": 2,
+          "Amount": {
+            "value": 12.7,
+            "currencyID": "USD"
+          },
+          "BaseAmount": {
+            "value": 254.0,
+            "currencyID": "USD"
+          }
+        }
+      ]
+    },
+    "GoodsItem": {
+      "ID": "1",
+      "SequenceNumberID": "1",
+      "Description": "Acme beeswax",
+      "HazardousRiskIndicator": false,
+      "DeclaredCustomsValueAmount": {
+        "value": 524.8,
+        "currencyID": "GBP"
+      },
+      "DeclaredStatisticsValueAmount": {
+        "value": 1000.0,
+        "currencyID": "USD"
+      },
+      "FreeOnBoardValueAmount": {
+        "value": 1241.3,
+        "currencyID": "USD"
+      },
+      "InsuranceValueAmount": {
+        "value": 1241.3,
+        "currencyID": "USD"
+      },
+      "ValueAmount": {
+        "value": 1000.0,
+        "currencyID": "USD"
+      },
+      "GrossWeightMeasure": {
+        "value": 130,
+        "unitCode": "KGM"
+      },
+      "NetWeightMeasure": {
+        "value": 110,
+        "unitCode": "KGM"
+      },
+      "NetNetWeightMeasure": {
+        "value": 100,
+        "unitCode": "KGM"
+      },
+      "GrossVolumeMeasure": {
+        "value": 2,
+        "unitCode": "MTQ"
+      },
+      "NetVolumeMeasure": {
+        "value": 2.235,
+        "unitCode": "MTQ"
+      },
+      "Quantity": 10,
+      "RequiredCustomsID": "ECN12344566",
+      "CustomsStatusCode": "Cleared",
+      "CustomsTariffQuantity": 100,
+      "Item": {
+        "Description": "Beeswax",
+        "Name": "Acme Beeswax",
+        "BuyersItemIdentification": {
+          "ID": "6578489"
+        },
+        "SellersItemIdentification": {
+          "ID": "17589683"
+        }
+      }
+    }
+  }
+}

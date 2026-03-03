@@ -1,0 +1,178 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:WeightStatement-2",
+  "UBLVersionID": "2.2",
+  "ID": "GOA294107",
+  "IssueDate": "2016-11-03",
+  "IssueTime": "09:30:00Z",
+  "WeightStatementTypeCode": {
+    "value": "749",
+    "listID": "UN/ECE 1001",
+    "listAgencyID": "6",
+    "listVersionID": "d16a"
+  },
+  "SenderParty": {
+    "EndpointID": {
+      "value": "1234567987654",
+      "schemeID": "GLN",
+      "schemeAgencyID": "9"
+    },
+    "IndustryClassificationCode": {
+      "value": "CA",
+      "listID": "UN/ECE 3035",
+      "listAgencyID": "6"
+    },
+    "PartyIdentification": {
+      "ID": {
+        "value": "XXX",
+        "schemeID": "LINES",
+        "schemeName": "SMDG master liner code list",
+        "schemeAgencyID": "306",
+        "schemeAgencyName": "SMDG"
+      }
+    },
+    "PartyName": {
+      "Name": "ACME Ltd."
+    },
+    "PostalAddress": {
+      "StreetName": "One Hundred Road",
+      "BuildingNumber": "100",
+      "CityName": "London",
+      "Country": {
+        "IdentificationCode": "GB"
+      }
+    }
+  },
+  "ReceiverParty": {
+    "EndpointID": {
+      "value": "9994567987654",
+      "schemeID": "GLN",
+      "schemeAgencyID": "9"
+    },
+    "IndustryClassificationCode": {
+      "value": "TR",
+      "listID": "UN/ECE 3035",
+      "listAgencyID": "6"
+    },
+    "PartyName": {
+      "Name": "La Spezia Container Terminal"
+    },
+    "PostalAddress": {
+      "CityName": "La Spezia",
+      "Country": {
+        "IdentificationCode": "IT"
+      }
+    }
+  },
+  "WeighingParty": {
+    "IndustryClassificationCode": {
+      "value": "WPA",
+      "listID": "UN/ECE 3035",
+      "listAgencyID": "6"
+    },
+    "PartyName": {
+      "Name": "LEONARDO"
+    },
+    "PostalAddress": {
+      "CityName": "La Spezia",
+      "Country": {
+        "IdentificationCode": "IT"
+      }
+    },
+    "Person": {
+      "FirstName": "GIORGIO",
+      "FamilyName": "VERDI",
+      "RoleCode": {
+        "value": "BN",
+        "listID": "UN/ECE 3139",
+        "listAgencyID": "6"
+      }
+    }
+  },
+  "ResponsibleParty": {
+    "IndustryClassificationCode": {
+      "value": "SPC",
+      "listID": "UN/ECE 3035",
+      "listAgencyID": "6"
+    },
+    "PartyName": {
+      "Name": "LEONARDO"
+    },
+    "PostalAddress": {
+      "CityName": "La Spezia",
+      "Country": {
+        "IdentificationCode": "IT"
+      }
+    },
+    "Person": {
+      "FirstName": "STEFANO",
+      "FamilyName": "ROSSI",
+      "RoleCode": {
+        "value": "RP",
+        "listID": "UN/ECE 3139",
+        "listAgencyID": "6"
+      }
+    }
+  },
+  "Shipment": {
+    "ID": "123456",
+    "TransportHandlingUnit": {
+      "TransportEquipment": {
+        "ID": {
+          "value": "TRHU1652173",
+          "schemeID": "ISO 6346",
+          "schemeAgencyID": "5"
+        },
+        "TransportEquipmentTypeCode": {
+          "value": "CN",
+          "listID": "UN/ECE 8053",
+          "listAgencyID": "6"
+        },
+        "SizeTypeCode": {
+          "value": "22G1",
+          "listID": "ISO 6346",
+          "listAgencyID": "5"
+        },
+        "FullnessIndicationCode": {
+          "value": "5",
+          "listID": "UN/ECE 8169",
+          "listAgencyID": "6"
+        },
+        "VerifiedGrossMass": {
+          "ID": "123",
+          "WeighingDate": "2016-11-01",
+          "WeighingTime": "00:30:00Z",
+          "WeighingMethodCode": {
+            "value": "SM1",
+            "listID": "IMO SOLAS",
+            "listAgencyID": "54"
+          },
+          "WeighingDeviceID": "TS12345",
+          "WeighingDeviceType": "Truck Scale",
+          "GrossMassMeasure": {
+            "value": 25730,
+            "unitCode": "KGM"
+          },
+          "DocumentReference": {
+            "ID": "W123",
+            "IssueDate": "2016-11-02",
+            "DocumentTypeCode": {
+              "value": "SM1",
+              "listID": "VGM",
+              "listAgencyID": "306",
+              "listAgencyName": "SMDG"
+            },
+            "DocumentDescription": "Certificate for determination of VGM according to method 1"
+          }
+        }
+      },
+      "ShipmentDocumentReference": {
+        "ID": "GOA294107",
+        "DocumentTypeCode": {
+          "value": "BN",
+          "listID": "UN/ECE 1153",
+          "listAgencyID": "6"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescriptionRequest-2",
+  "UBLVersionID": "2.1",
+  "ID": "TSD_REQ_1",
+  "IssueDate": "2011-09-12",
+  "IssueTime": "11:01:10+01:00",
+  "SenderParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673827000",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "Consignor"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+8687878763",
+      "ElectronicMail": "SomeName@consignor.cn"
+    }
+  },
+  "ReceiverParty": {
+    "PartyIdentification": {
+      "ID": {
+        "value": "4058673827641",
+        "schemeName": "GLN",
+        "schemeAgencyName": "GS1"
+      }
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "TransportationService": {
+    "TransportServiceCode": "3",
+    "TransportEquipment": [
+      {
+        "ID": "1",
+        "TransportEquipmentTypeCode": "CN",
+        "MeasurementDimension": [
+          {
+            "AttributeID": "Length",
+            "Measure": {
+              "value": 6.1,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Height",
+            "Measure": {
+              "value": 2.6,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Width",
+            "Measure": {
+              "value": 2.44,
+              "unitCode": "MTR"
+            }
+          }
+        ]
+      },
+      {
+        "ID": "1",
+        "TransportEquipmentTypeCode": "CN",
+        "MeasurementDimension": [
+          {
+            "AttributeID": "Length",
+            "Measure": {
+              "value": 6.1,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Height",
+            "Measure": {
+              "value": 2.6,
+              "unitCode": "MTR"
+            }
+          },
+          {
+            "AttributeID": "Width",
+            "Measure": {
+              "value": 2.44,
+              "unitCode": "MTR"
+            }
+          }
+        ]
+      }
+    ],
+    "ShipmentStage": {
+      "ID": "1",
+      "RequestedDepartureTransportEvent": {
+        "Location": {
+          "Address": {
+            "ID": {
+              "value": "DEHAM",
+              "schemeName": "UN/LOCODE",
+              "schemeAgencyName": "UN"
+            },
+            "StreetName": "Neuer Wandrahm 4",
+            "CityName": "Hamburg",
+            "Country": {
+              "IdentificationCode": "DE"
+            }
+          }
+        },
+        "Period": {
+          "StartDate": "2011-10-03",
+          "EndDate": "2011-10-03"
+        }
+      },
+      "RequestedArrivalTransportEvent": {
+        "Location": {
+          "Address": {
+            "StreetName": "Grosse strasse 34",
+            "CityName": "Nurnberg",
+            "Country": {
+              "IdentificationCode": "DE"
+            }
+          }
+        },
+        "Period": {
+          "StartDate": "2011-10-06",
+          "EndDate": "2011-10-06"
+        }
+      }
+    }
+  }
+}

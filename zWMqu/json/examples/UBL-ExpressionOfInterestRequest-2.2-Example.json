@@ -1,0 +1,88 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ExpressionOfInterestRequest-2",
+  "UBLVersionID": "2.2",
+  "CustomizationID": "urn:www.cenbii.eu:transaction:BiiTrns081:ver2.0",
+  "ProfileID": "urn:www.cenbii.eu:profile:bii46:ver2.0",
+  "ID": "234486-2017",
+  "UUID": "x2344vghjjrhhfhrrrgd4567",
+  "ContractFolderID": "2017/S 214-3792289",
+  "IssueDate": "2017-10-16",
+  "IssueTime": "17:30:00+01:00",
+  "Note": "We are very interested please send us all information possible",
+  "EconomicOperatorParty": {
+    "Party": {
+      "WebsiteURI": "http://super.company.dk",
+      "EndpointID": {
+        "value": "01842222222222",
+        "schemeID": "FI:OVT",
+        "schemeAgencyID": "9"
+      },
+      "PartyIdentification": {
+        "ID": {
+          "value": "5790000127777",
+          "schemeID": "GLN",
+          "schemeAgencyID": "9"
+        }
+      },
+      "PartyName": {
+        "Name": "SuperCompany"
+      },
+      "PostalAddress": {
+        "AddressFormatCode": {
+          "value": "Structured",
+          "listID": "CENBII3",
+          "listAgencyID": "700"
+        },
+        "StreetName": "Korsbygade 34",
+        "CityName": "Aalborg",
+        "PostalZone": "9000",
+        "Country": {
+          "IdentificationCode": "DK"
+        }
+      },
+      "PartyLegalEntity": {
+        "RegistrationName": "SuperCompany",
+        "CompanyID": {
+          "value": "DK59873677",
+          "schemeID": "DK:CVR"
+        }
+      },
+      "Contact": {
+        "ID": "7778",
+        "Name": "Ole Hansen",
+        "Telephone": "4526532147",
+        "Telefax": "4526532146",
+        "ElectronicMail": "Ole@super.company.dk"
+      }
+    }
+  },
+  "ContractingParty": {
+    "Party": {
+      "EndpointID": {
+        "value": "01841111111111",
+        "schemeID": "FI:OVT"
+      },
+      "PartyIdentification": {
+        "ID": {
+          "value": "5398000392577",
+          "schemeID": "GLN",
+          "schemeAgencyID": "9"
+        }
+      },
+      "PartyName": {
+        "Name": "FirstAgency"
+      },
+      "Contact": {
+        "Name": "Ole Ellerbæk Madsen"
+      }
+    }
+  },
+  "ProcurementProject": {
+    "ID": "DP",
+    "Name": "DigitalPost",
+    "Description": "Only Lot2"
+  },
+  "ProcurementProjectLotReference": {
+    "ID": "Lot2"
+  }
+}

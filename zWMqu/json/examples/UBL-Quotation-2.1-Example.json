@@ -1,0 +1,324 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Quotation-2",
+  "UBLVersionID": "2.0",
+  "CustomizationID": "OIOUBL-2.1",
+  "ProfileID": {
+    "value": "Procurement-QuoSim-1.0",
+    "schemeID": "urn:oioubl:id:profileid-1.2",
+    "schemeAgencyID": "320"
+  },
+  "ID": "QIY7655",
+  "CopyIndicator": false,
+  "UUID": "4D07786B-DA6D-439F-82D1-6FFFC7F4E3B1",
+  "IssueDate": "2008-05-01",
+  "IssueTime": "11:32:26.0Z",
+  "Note": {
+    "value": "Bestilling af computere",
+    "languageID": "da-dk"
+  },
+  "ValidityPeriod": {
+    "StartDate": "2008-05-01",
+    "EndDate": "2008-05-06"
+  },
+  "RequestForQuotationDocumentReference": {
+    "ID": "G867B",
+    "UUID": "93T5G3G5-HYA3-7267-BVG3-GS46SW44WG53",
+    "IssueDate": "2008-04-19"
+  },
+  "SellerSupplierParty": {
+    "CustomerAssignedAccountID": "LEV00123",
+    "Party": {
+      "EndpointID": {
+        "value": "DK18296799",
+        "schemeID": "DK:CVR"
+      },
+      "PartyIdentification": {
+        "ID": {
+          "value": "DK18296799",
+          "schemeID": "DK:CVR"
+        }
+      },
+      "PartyName": {
+        "Name": "Delcomputer A/S"
+      },
+      "PostalAddress": {
+        "AddressFormatCode": {
+          "value": "StructuredDK",
+          "listID": "urn:oioubl:codelist:addressformatcode-1.1",
+          "listAgencyID": "320"
+        },
+        "StreetName": "Arne Jacobsens Allé",
+        "BuildingNumber": "15",
+        "CityName": "København S",
+        "PostalZone": "2300",
+        "Country": {
+          "IdentificationCode": "DK"
+        }
+      },
+      "PartyTaxScheme": {
+        "CompanyID": {
+          "value": "DK18296799",
+          "schemeID": "DK:SE"
+        },
+        "TaxScheme": {
+          "ID": {
+            "value": "63",
+            "schemeID": "urn:oioubl:id:taxschemeid-1.1",
+            "schemeAgencyID": "320"
+          },
+          "Name": "Moms"
+        }
+      },
+      "PartyLegalEntity": {
+        "RegistrationName": "Delcomputer A/S",
+        "CompanyID": {
+          "value": "18296799",
+          "schemeID": "DK:CVR"
+        }
+      }
+    }
+  },
+  "OriginatorCustomerParty": {
+    "Party": {
+      "EndpointID": {
+        "value": "5798000416604",
+        "schemeID": "GLN",
+        "schemeAgencyID": "9"
+      },
+      "PartyIdentification": {
+        "ID": {
+          "value": "5798000416604",
+          "schemeID": "GLN",
+          "schemeAgencyID": "9"
+        }
+      },
+      "PartyName": {
+        "Name": "Gentofte Kommune"
+      },
+      "PostalAddress": {
+        "AddressFormatCode": {
+          "value": "StructuredDK",
+          "listID": "urn:oioubl:codelist:addressformatcode-1.1",
+          "listAgencyID": "320"
+        },
+        "StreetName": "Bernstorffsvej",
+        "BuildingNumber": "161",
+        "CityName": "Charlottenlund",
+        "PostalZone": "2920",
+        "Country": {
+          "IdentificationCode": "DK"
+        }
+      },
+      "PartyTaxScheme": {
+        "CompanyID": {
+          "value": "DK12345678",
+          "schemeID": "DK:SE"
+        },
+        "TaxScheme": {
+          "ID": {
+            "value": "63",
+            "schemeID": "urn:oioubl:id:taxschemeid-1.1",
+            "schemeAgencyID": "320"
+          },
+          "Name": "Moms"
+        }
+      },
+      "PartyLegalEntity": {
+        "RegistrationName": "Gentofte Kommune",
+        "CompanyID": {
+          "value": "DK12345678",
+          "schemeID": "DK:CVR"
+        }
+      },
+      "Contact": {
+        "ID": "12345678",
+        "Name": "Sille Schyberg"
+      }
+    }
+  },
+  "Delivery": {
+    "DeliveryAddress": {
+      "AddressFormatCode": {
+        "value": "StructuredDK",
+        "listID": "urn:oioubl:codelist:addressformatcode-1.1",
+        "listAgencyID": "320"
+      },
+      "StreetName": "Bernstorffsvej",
+      "BuildingNumber": "161",
+      "CityName": "Charlottenlund",
+      "PostalZone": "2920",
+      "AddressLine": [
+        {
+          "Line": "IT-afdelingen"
+        },
+        {
+          "Line": "1. sal"
+        }
+      ],
+      "Country": {
+        "IdentificationCode": "DK"
+      }
+    },
+    "RequestedDeliveryPeriod": {
+      "StartDate": "2008-05-06",
+      "StartTime": "09:30:47.0Z",
+      "EndDate": "2008-05-10",
+      "EndTime": "09:30:47.0Z"
+    }
+  },
+  "DeliveryTerms": {
+    "SpecialTerms": "1% reduktion i kontraktsummen pr. dags forsinkelse jf. SKI kontrakt"
+  },
+  "QuotedMonetaryTotal": {
+    "LineExtensionAmount": {
+      "value": 197750.0,
+      "currencyID": "DKK"
+    },
+    "TaxExclusiveAmount": {
+      "value": 49437.5,
+      "currencyID": "DKK"
+    },
+    "TaxInclusiveAmount": {
+      "value": 247187.5,
+      "currencyID": "DKK"
+    },
+    "PayableAmount": {
+      "value": 247187.5,
+      "currencyID": "DKK"
+    }
+  },
+  "QuotationLine": [
+    {
+      "ID": "1",
+      "Note": "Computer",
+      "LineItem": {
+        "ID": "DELL1052665",
+        "Quantity": {
+          "value": 35,
+          "unitCode": "EA"
+        },
+        "LineExtensionAmount": {
+          "value": 150500.0,
+          "currencyID": "DKK"
+        },
+        "TotalTaxAmount": {
+          "value": 37625.0,
+          "currencyID": "DKK"
+        },
+        "Price": {
+          "PriceAmount": {
+            "value": 4300.0,
+            "currencyID": "DKK"
+          },
+          "BaseQuantity": {
+            "value": 1,
+            "unitCode": "EA"
+          }
+        },
+        "Item": {
+          "Description": "Stationær computer",
+          "Name": "Dell PrecisionTM  T3400"
+        }
+      }
+    },
+    {
+      "ID": "2",
+      "Note": "Skærm",
+      "LineItem": {
+        "ID": "DELL2363463",
+        "Quantity": {
+          "value": 35,
+          "unitCode": "EA"
+        },
+        "LineExtensionAmount": {
+          "value": 43750.0,
+          "currencyID": "DKK"
+        },
+        "TotalTaxAmount": {
+          "value": 10937.5,
+          "currencyID": "DKK"
+        },
+        "Price": {
+          "PriceAmount": {
+            "value": 1250.0,
+            "currencyID": "DKK"
+          },
+          "BaseQuantity": {
+            "value": 1,
+            "unitCode": "EA"
+          }
+        },
+        "Item": {
+          "Description": "Fladskærm",
+          "Name": "FP/BL 1908WFP"
+        }
+      }
+    },
+    {
+      "ID": "3",
+      "Note": "Mus",
+      "LineItem": {
+        "ID": "DELL2367452",
+        "Quantity": {
+          "value": 35,
+          "unitCode": "EA"
+        },
+        "LineExtensionAmount": {
+          "value": 1750.0,
+          "currencyID": "DKK"
+        },
+        "TotalTaxAmount": {
+          "value": 437.5,
+          "currencyID": "DKK"
+        },
+        "Price": {
+          "PriceAmount": {
+            "value": 50.0,
+            "currencyID": "DKK"
+          },
+          "BaseQuantity": {
+            "value": 1,
+            "unitCode": "EA"
+          }
+        },
+        "Item": {
+          "Description": "Mus",
+          "Name": "Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)"
+        }
+      }
+    },
+    {
+      "ID": "4",
+      "Note": "Tastatur",
+      "LineItem": {
+        "ID": "DELL8436783",
+        "Quantity": {
+          "value": 35,
+          "unitCode": "EA"
+        },
+        "LineExtensionAmount": {
+          "value": 1750.0,
+          "currencyID": "DKK"
+        },
+        "TotalTaxAmount": {
+          "value": 437.5,
+          "currencyID": "DKK"
+        },
+        "Price": {
+          "PriceAmount": {
+            "value": 50.0,
+            "currencyID": "DKK"
+          },
+          "BaseQuantity": {
+            "value": 1,
+            "unitCode": "EA"
+          }
+        },
+        "Item": {
+          "Description": "Tastatur",
+          "Name": "Dell Quietkey USB-tastatur, sort - Dansk (QWERTY)"
+        }
+      }
+    }
+  ]
+}
