@@ -34,13 +34,18 @@ jobs:
 
       - name: Validate all schemas against JSON Schema 2020-12
         run: |
-          uv pip install check-jsonschema
+          uv pip install check-jsonschema jsonschema referencing
           for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
             uv run check-jsonschema --check-metaschema "$f"
           done
 
-      - name: Upload schemas as artifact
+      - name: Convert XML examples
+        run: uv run python convert_xml_examples.py --validate
+
+      - name: Upload schemas and examples as artifact
         uses: actions/upload-artifact@v4
         with:
           name: json-schemas
-          path: json/schemas/
+          path: |
+            json/schemas/
+            json/examples/
