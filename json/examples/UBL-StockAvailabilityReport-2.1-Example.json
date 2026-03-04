@@ -1,0 +1,146 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:StockAvailabilityReport-2",
+  "UBLVersionID": "2.1",
+  "ID": "SA2009",
+  "CopyIndicator": false,
+  "IssueDate": "2010-04-11",
+  "Note": "Report about quantities of each item which are (or will be) available",
+  "InventoryPeriod": {
+    "StartDate": "2010-04-11",
+    "StartTime": "08:00:00Z",
+    "EndDate": "2011-04-11"
+  },
+  "SellerSupplierParty": {
+    "Party": {
+      "PartyName": {
+        "Name": "Arancio Forniture spa"
+      },
+      "PostalAddress": {
+        "StreetName": "Via Dell'Arcoveggio",
+        "BuildingNumber": "403",
+        "CityName": "Bologna",
+        "PostalZone": "40129",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Rossi",
+        "Telephone": "0039 051 23000000",
+        "Telefax": "0039 051 23000023",
+        "ElectronicMail": "rossi@arancioforniture.it"
+      }
+    }
+  },
+  "RetailerCustomerParty": {
+    "Party": {
+      "PartyName": {
+        "Name": "Beta Shop"
+      },
+      "PostalAddress": {
+        "StreetName": "Via Emilia",
+        "BuildingNumber": "1",
+        "CityName": "Modena",
+        "PostalZone": "41121",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Delta",
+        "Telephone": "0039 059 33000000",
+        "Telefax": "0039 059 33000055",
+        "ElectronicMail": "delta@betashop.it"
+      }
+    }
+  },
+  "InventoryReportingParty": {
+    "PartyName": {
+      "Name": "Beta Shop"
+    },
+    "PostalAddress": {
+      "Floor": "2",
+      "Room": "309",
+      "StreetName": "Via Emilia",
+      "BuildingNumber": "1",
+      "CityName": "Modena",
+      "PostalZone": "41121",
+      "Country": {
+        "IdentificationCode": "IT",
+        "Name": "Italy"
+      }
+    },
+    "Contact": {
+      "Name": "Mr Gamma",
+      "Telephone": "0039 059 33000022",
+      "Telefax": "0039 059 33000057",
+      "ElectronicMail": "gamma@betashop.it"
+    }
+  },
+  "StockAvailabilityReportLine": [
+    {
+      "ID": "1",
+      "Quantity": {
+        "value": 50,
+        "unitCode": "NAR"
+      },
+      "AvailabilityDate": "2010-04-20",
+      "AvailabilityStatusCode": {
+        "value": "1",
+        "listID": "7011"
+      },
+      "Item": {
+        "Description": "T-shirt",
+        "BuyersItemIdentification": {
+          "ID": "TT319"
+        },
+        "SellersItemIdentification": {
+          "ID": "ZZ738"
+        }
+      }
+    },
+    {
+      "ID": "2",
+      "Quantity": {
+        "value": 80,
+        "unitCode": "NAR"
+      },
+      "AvailabilityDate": "2010-04-11",
+      "AvailabilityStatusCode": {
+        "value": "2",
+        "listID": "7011"
+      },
+      "Item": {
+        "Description": "jersey",
+        "BuyersItemIdentification": {
+          "ID": "TJ043"
+        },
+        "SellersItemIdentification": {
+          "ID": "K0058"
+        }
+      }
+    },
+    {
+      "ID": "3",
+      "Quantity": {
+        "value": 0,
+        "unitCode": "NAR"
+      },
+      "AvailabilityStatusCode": {
+        "value": "8",
+        "listID": "7011"
+      },
+      "Item": {
+        "Description": "skirt",
+        "BuyersItemIdentification": {
+          "ID": "TS893"
+        },
+        "SellersItemIdentification": {
+          "ID": "PK009"
+        }
+      }
+    }
+  ]
+}

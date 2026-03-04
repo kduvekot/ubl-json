@@ -1,0 +1,224 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:DigitalAgreement-2",
+  "UBLVersionID": "2.2",
+  "ID": "A54321-2016",
+  "IssueDate": "2016-11-07",
+  "AgreementTypeCode": "Multilateral",
+  "VersionID": "1.1",
+  "PreviousVersionID": "1.0",
+  "GovernorParty": {
+    "PartyName": {
+      "Name": "OpenPEPPOL AISBL"
+    },
+    "PostalAddress": {
+      "CityName": "Brussels",
+      "Country": {
+        "IdentificationCode": "BE"
+      }
+    }
+  },
+  "ParticipantParty": [
+    {
+      "PrivatePartyIndicator": true,
+      "Party": {
+        "EndpointID": {
+          "value": "1234567987654",
+          "schemeID": "9:GLN"
+        },
+        "PartyName": {
+          "Name": "Vendor Inc."
+        },
+        "PostalAddress": {
+          "CityName": "New York",
+          "Country": {
+            "IdentificationCode": "US"
+          }
+        }
+      },
+      "LegalContact": {
+        "Name": "John Smith",
+        "ElectronicMail": "john.smith@vendor.net"
+      },
+      "TechnicalContact": {
+        "Name": "Paul McQueen",
+        "ElectronicMail": "paul.mcqueen@vendor.net"
+      },
+      "SupportContact": {
+        "Name": "Paul McQueen",
+        "ElectronicMail": "paul.mcqueen@vendor.net"
+      },
+      "CommercialContact": {
+        "Name": "Jennifer de Niro",
+        "ElectronicMail": "jennifer.deniro@vendor.net"
+      }
+    },
+    {
+      "PrivatePartyIndicator": true,
+      "Party": {
+        "EndpointID": {
+          "value": "9994567987654",
+          "schemeID": "9:GLN"
+        },
+        "PartyName": {
+          "Name": "Buyer GmbH"
+        },
+        "PostalAddress": {
+          "CityName": "Munchen",
+          "Country": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      "LegalContact": {
+        "Name": "Peter Gruen",
+        "ElectronicMail": "peter.gruen@buyer.de"
+      },
+      "TechnicalContact": {
+        "Name": "Peter Gruen",
+        "ElectronicMail": "peter.gruen@buyer.de"
+      },
+      "SupportContact": {
+        "Name": "Peter Gruen",
+        "ElectronicMail": "peter.gruen@buyer.de"
+      },
+      "CommercialContact": {
+        "Name": "Peter Gruen",
+        "ElectronicMail": "peter.gruen@buyer.de"
+      }
+    }
+  ],
+  "AgreementCountry": [
+    {
+      "IdentificationCode": "US"
+    },
+    {
+      "IdentificationCode": "DE"
+    },
+    {
+      "IdentificationCode": "GB"
+    },
+    {
+      "IdentificationCode": "DK"
+    }
+  ],
+  "DigitalAgreementTerms": {
+    "Description": "Trading Partner Agreement Terms",
+    "AdoptionPeriod": {
+      "DurationMeasure": {
+        "value": 90,
+        "unitCode": "DAY"
+      }
+    },
+    "ServiceLevelAgreement": [
+      {
+        "ID": "1",
+        "ServiceTypeCode": "AP",
+        "AvailabilityTimePercent": 98.5,
+        "MondayAvailabilityIndicator": true,
+        "TuesdayAvailabilityIndicator": true,
+        "WednesdayAvailabilityIndicator": true,
+        "ThursdayAvailabilityIndicator": true,
+        "FridayAvailabilityIndicator": true,
+        "MinimumResponseTimeDurationMeasure": {
+          "value": 300,
+          "unitCode": "SEC"
+        },
+        "MinimumDownTimeScheduleDurationMeasure": {
+          "value": 3,
+          "unitCode": "DAY"
+        },
+        "MaximumIncidentNotificationDurationMeasure": {
+          "value": 4,
+          "unitCode": "HUR"
+        },
+        "MaximumDataLossDurationMeasure": {
+          "value": 24,
+          "unitCode": "HUR"
+        },
+        "MeanTimeToRecoverDurationMeasure": {
+          "value": 3,
+          "unitCode": "HUR"
+        },
+        "ServiceAvailabilityPeriod": {
+          "StartTime": "09:00:00Z",
+          "EndTime": "16:00:00Z"
+        },
+        "ServiceMaintenancePeriod": {
+          "StartTime": "22:00:00Z",
+          "EndTime": "06:00:00Z"
+        }
+      },
+      {
+        "ID": "2",
+        "ServiceTypeCode": "AP",
+        "AvailabilityTimePercent": 94.0,
+        "SaturdayAvailabilityIndicator": true,
+        "SundayAvailabilityIndicator": true,
+        "ServiceAvailabilityPeriod": {
+          "StartTime": "09:00:00Z",
+          "EndTime": "16:00:00Z"
+        },
+        "ServiceMaintenancePeriod": {
+          "StartTime": "22:00:00Z",
+          "EndTime": "06:00:00Z"
+        }
+      }
+    ]
+  },
+  "DigitalProcess": {
+    "ID": "urn:www.cenbii.eu:profile:bii05:ver2.0",
+    "ProfileID": "BII",
+    "DigitalCollaboration": {
+      "ID": "1",
+      "SendingDigitalService": {
+        "ID": "Invoice",
+        "CustomizationID": "urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0",
+        "DigitalDocumentMetadata": {
+          "FormatID": "UBL",
+          "VersionID": "2.2",
+          "SchemaURI": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+          "DocumentTypeCode": {
+            "value": "380",
+            "listID": "6:UN/ECE 1001"
+          }
+        },
+        "DigitalDeliveryChannel": {
+          "NetworkID": "OpenPEPPOL",
+          "ParticipantID": {
+            "value": "1234567987654",
+            "schemeID": "9:GLN"
+          },
+          "TestIndicator": true,
+          "DigitalMessageDelivery": {
+            "ProtocolID": "AS2",
+            "EndpointURI": "http://as2.buyer.biz"
+          }
+        }
+      },
+      "ReceivingDigitalService": {
+        "ID": "CreditNote",
+        "CustomizationID": "urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0",
+        "DigitalDocumentMetadata": {
+          "FormatID": "UBL",
+          "VersionID": "2.2",
+          "SchemaURI": "urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2",
+          "DocumentTypeCode": {
+            "value": "381",
+            "listID": "6:UN/ECE 1001"
+          }
+        },
+        "DigitalDeliveryChannel": {
+          "NetworkID": "OpenPEPPOL",
+          "ParticipantID": {
+            "value": "1234567987654",
+            "schemeID": "9:GLN"
+          },
+          "DigitalMessageDelivery": {
+            "ProtocolID": "AS2",
+            "EndpointURI": "http://as2.vendor.biz"
+          }
+        }
+      }
+    }
+  }
+}

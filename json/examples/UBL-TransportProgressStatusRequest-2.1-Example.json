@@ -1,0 +1,52 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportProgressStatusRequest-2",
+  "UBLVersionID": "2.1",
+  "ID": "TPS_1",
+  "IssueDate": "2011-10-03",
+  "IssueTime": "14:30:10+01:00",
+  "SenderParty": {
+    "PartyIdentification": {
+      "ID": "4058673827641"
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "ReceiverParty": {
+    "PartyIdentification": {
+      "ID": "4058673821325"
+    },
+    "PartyName": {
+      "Name": "ARRIVA"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557888",
+      "ElectronicMail": "SomeName@arriva.de"
+    }
+  },
+  "TransportMeans": {
+    "JourneyID": "RHamBrem",
+    "RegistrationNationalityID": "DE",
+    "TransportMeansTypeCode": "230",
+    "RailTransport": {
+      "TrainID": "RID01235"
+    }
+  },
+  "StatusLocation": {
+    "LocationTypeCode": "13",
+    "Address": {
+      "ID": "4568763527610",
+      "StreetName": "Ludwig-Erhard-Str. 15",
+      "CityName": "Bremen",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    }
+  }
+}

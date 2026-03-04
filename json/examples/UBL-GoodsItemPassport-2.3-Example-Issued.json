@@ -1,0 +1,633 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:GoodsItemPassport-2",
+  "CustomizationID": "UBL-2.3",
+  "ID": "ata01661",
+  "IssueDate": "2019-02-21",
+  "StatusCode": "ISSUED",
+  "ValidityPeriod": {
+    "StartDate": "2019-02-21",
+    "EndDate": "2020-02-20"
+  },
+  "IssuerParty": {
+    "PartyName": {
+      "Name": "Dansk Industri"
+    },
+    "PostalAddress": {
+      "ID": "6916",
+      "StreetName": "Vesterbrogade 1L, 1.sal",
+      "CityName": "København V.",
+      "PostalZone": "1620",
+      "Country": {
+        "IdentificationCode": "DK",
+        "Name": "Denmark"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "16077593"
+    }
+  },
+  "HolderParty": {
+    "PartyName": {
+      "Name": "STEFCO A/S"
+    },
+    "PostalAddress": {
+      "StreetName": "Industrivej 3",
+      "CityName": "Ørum Djurs",
+      "PostalZone": "8586",
+      "Country": {
+        "IdentificationCode": "DK",
+        "Name": "Denmark"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "DK89343487"
+    },
+    "Contact": {
+      "Name": "Andreas Andersen"
+    }
+  },
+  "RepresentativeParty": {
+    "PartyName": {
+      "Name": "Grenå Tools"
+    },
+    "PostalAddress": {
+      "StreetName": "Højdevej 18",
+      "CityName": "Grenå",
+      "PostalZone": "8500",
+      "Country": {
+        "IdentificationCode": "DK",
+        "Name": "Denmark"
+      }
+    },
+    "Person": {
+      "FirstName": "Kirsten",
+      "FamilyName": "Jensen",
+      "IdentityDocumentReference": {
+        "ID": {
+          "value": "325334535",
+          "schemeID": "Passport"
+        }
+      }
+    }
+  },
+  "ExportingGuarantorParty": {
+    "PartyName": {
+      "Name": "Dansk Erhverv"
+    },
+    "PostalAddress": {
+      "StreetName": "Slotsholmsgade",
+      "BuildingNumber": "1",
+      "CityName": "København K",
+      "PostalZone": "1216",
+      "Country": {
+        "IdentificationCode": "DK"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "43232010"
+    }
+  },
+  "Shipment": {
+    "ID": "32453",
+    "DeclaredStatisticsValueAmount": {
+      "value": 34800.0,
+      "currencyID": "DKK"
+    },
+    "Consignment": {
+      "ID": "1",
+      "TotalInvoiceAmount": {
+        "value": 44250.0,
+        "currencyID": "DKK"
+      },
+      "GrossWeightMeasure": {
+        "value": 230.8,
+        "unitCode": "KGM"
+      },
+      "Information": "Professional equipment",
+      "TotalGoodsItemQuantity": 23,
+      "FinalDestinationCountry": {
+        "IdentificationCode": "CH"
+      },
+      "TransitCountry": {
+        "IdentificationCode": "DE"
+      },
+      "FirstArrivalPortLocation": {
+        "Name": "Padborg"
+      },
+      "LastExitPortLocation": {
+        "Name": "Bietingen"
+      }
+    },
+    "GoodsItem": [
+      {
+        "ID": "1",
+        "DeclaredCustomsValueAmount": {
+          "value": 0.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 4500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 2,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "HILTI TE2 + TE35 Boremaskiner",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          },
+          "AdditionalItemProperty": [
+            {
+              "Name": "AlcoholPercentage",
+              "Value": "0"
+            },
+            {
+              "Name": "DegreeOfPlato",
+              "Value": "0"
+            }
+          ]
+        }
+      },
+      {
+        "ID": "2",
+        "DeclaredCustomsValueAmount": {
+          "value": 0.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "BACHO S910, Topnøglesæt",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "3",
+        "DeclaredCustomsValueAmount": {
+          "value": 0.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "DEWALT DC822, Boltspænder",
+          "OriginCountry": {
+            "IdentificationCode": "US"
+          }
+        }
+      },
+      {
+        "ID": "4",
+        "DeclaredCustomsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "DEWALT DC542, Fugepistol",
+          "OriginCountry": {
+            "IdentificationCode": "US"
+          }
+        }
+      },
+      {
+        "ID": "5",
+        "DeclaredStatisticsValueAmount": {
+          "value": 1000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "METABO GE700, Pinolsliber",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "6",
+        "DeclaredCustomsValueAmount": {
+          "value": 1000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "METABO SBE 1010, Boremaskine",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "7",
+        "DeclaredCustomsValueAmount": {
+          "value": 2500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 2500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "KAMA AD 105S, Båndsav",
+          "OriginCountry": {
+            "IdentificationCode": "US"
+          }
+        }
+      },
+      {
+        "ID": "8",
+        "DeclaredCustomsValueAmount": {
+          "value": 2500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 2500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "LIFTKET 021/51, Talje",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "9",
+        "DeclaredCustomsValueAmount": {
+          "value": 500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "KING TONY 6316, Topnøglesæt",
+          "OriginCountry": {
+            "IdentificationCode": "US"
+          }
+        }
+      },
+      {
+        "ID": "10",
+        "DeclaredCustomsValueAmount": {
+          "value": 1000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 2,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "STAHL WILLE 730/02, Momentnøgle",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "11",
+        "DeclaredCustomsValueAmount": {
+          "value": 500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "HADEF 750kg, Talje",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "12",
+        "DeclaredCustomsValueAmount": {
+          "value": 750.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 750.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 2,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "HADEF 250kg, Talje",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "13",
+        "DeclaredCustomsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "DURA PRO 2000kg, Dunkraft",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "14",
+        "DeclaredCustomsValueAmount": {
+          "value": 2000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 2000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "BY45A, Donkraft",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "15",
+        "DeclaredCustomsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "MILWAUKEE HD18PD, Akkuboremaskine",
+          "OriginCountry": {
+            "IdentificationCode": "US"
+          }
+        }
+      },
+      {
+        "ID": "16",
+        "DeclaredCustomsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 1500.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "ESMOLADARA KH3105, Bænksliber",
+          "OriginCountry": {
+            "IdentificationCode": "IT"
+          }
+        }
+      },
+      {
+        "ID": "17",
+        "DeclaredCustomsValueAmount": {
+          "value": 2000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 2000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "SCANTOOL 20AT, Søjleboremaskine",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      {
+        "ID": "18",
+        "DeclaredCustomsValueAmount": {
+          "value": 10000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 10000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "KEMPPI MASTER 2200, Tigsvejser",
+          "OriginCountry": {
+            "IdentificationCode": "FI"
+          }
+        }
+      },
+      {
+        "ID": "19",
+        "DeclaredCustomsValueAmount": {
+          "value": 5000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 5000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "VÆRKTØJSKASSE m/div. håndværktøj",
+          "OriginCountry": {
+            "IdentificationCode": "DK"
+          }
+        }
+      },
+      {
+        "ID": "20",
+        "DeclaredCustomsValueAmount": {
+          "value": 3000.0,
+          "currencyID": "DKK"
+        },
+        "DeclaredStatisticsValueAmount": {
+          "value": 3000.0,
+          "currencyID": "DKK"
+        },
+        "Quantity": {
+          "value": 1,
+          "unitCode": "H87"
+        },
+        "Item": {
+          "Description": "BOSCH GLL 3-80P Lasernivilering",
+          "OriginCountry": {
+            "IdentificationCode": "DE"
+          }
+        }
+      }
+    ],
+    "ShipmentStage": {
+      "UnloadingPortLocation": {
+        "Address": {
+          "Country": {
+            "IdentificationCode": "CH",
+            "Name": "Swiss"
+          }
+        }
+      }
+    },
+    "OriginAddress": {
+      "Country": {
+        "IdentificationCode": "DK",
+        "Name": "Denmark"
+      }
+    },
+    "FirstArrivalPortLocation": {
+      "Name": "Padborg"
+    },
+    "LastExitPortLocation": {
+      "Description": "ART INTERNATIONAL ZURICH 2019",
+      "Address": {
+        "StreetName": "Giessereistrasse",
+        "BuildingNumber": "18",
+        "CityName": "Zürich",
+        "PostalZone": "CH-8005",
+        "Country": {
+          "IdentificationCode": "CH"
+        }
+      }
+    }
+  },
+  "GoodsItemPassportCounterfoil": [
+    {
+      "ID": "645634567",
+      "GoodsItemPassportID": "ata01661",
+      "CustomsOfficeLocation": {
+        "Name": "Padborg"
+      },
+      "VoucherDocumentReference": {
+        "ID": "5234533222"
+      }
+    },
+    {
+      "ID": "634563324",
+      "GoodsItemPassportID": "ata01661",
+      "CustomsOfficeLocation": {
+        "Name": "Bietingen"
+      },
+      "VoucherDocumentReference": {
+        "ID": "52345423423"
+      }
+    }
+  ],
+  "IssuerEndorsement": {
+    "DocumentID": "33006",
+    "ApprovalStatus": "Issued",
+    "EndorserParty": {
+      "RoleCode": "Champer",
+      "SequenceNumeric": 1,
+      "Party": {
+        "PartyName": {
+          "Name": "Dansk Industri"
+        },
+        "PostalAddress": {
+          "ID": "6916",
+          "StreetName": "Vesterbrogade 1L, 1.sal",
+          "CityName": "København V.",
+          "PostalZone": "1620",
+          "Country": {
+            "IdentificationCode": "DK",
+            "Name": "Denmark"
+          }
+        },
+        "PartyLegalEntity": {
+          "CompanyID": "16077593"
+        }
+      },
+      "SignatoryContact": {
+        "ID": "ML",
+        "Name": "Mette Lind"
+      }
+    }
+  }
+}

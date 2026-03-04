@@ -1,0 +1,98 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:BusinessCard-2",
+  "UBLVersionID": "2.2",
+  "ID": "BC1-2016",
+  "IssueDate": "2016-11-07",
+  "VersionID": "1.1",
+  "PreviousVersionID": "1.0",
+  "BriefDescription": "OASIS is a nonprofit consortium that drives the development, convergence and adoption of open standards for the global information society.  OASIS promotes industry consensus and produces worldwide standards for security, Internet of Things, cloud computing, energy, content technologies, emergency management, and other areas. OASIS open standards offer the potential to lower cost, stimulate innovation, grow global markets, and protect the right of free choice of technology.  OASIS members broadly represent the marketplace of public and private sector technology leaders, users and influencers. The consortium has more than 5,000 participants representing over 600 organizations and individual members in more than 65 countries.  OASIS is distinguished by its transparent governance and operating procedures. Members themselves set the OASIS technical agenda, using a lightweight process expressly designed to promote industry consensus and unite disparate efforts. Completed work is ratified by open ballot. Governance is accountable and unrestricted. Officers of both the OASIS Board of Directors and Technical Advisory Board are chosen by democratic election to serve two-year terms. Consortium leadership is based on individual merit and is not tied to financial contribution, corporate standing, or special appointment.  OASIS Member Sections include AMQP, Emergency, IDtrust, LegalXML, Open CSA, OSLC, and WS-I.",
+  "SenderParty": {
+    "WebsiteURI": "https://www.oasis-open.org",
+    "LogoReferenceID": "https://www.oasis-open.org/sites/www.oasis-open.org/files/logo.png",
+    "PartyName": [
+      {
+        "Name": "OASIS"
+      },
+      {
+        "Name": "Organization for the Advancement of Structured Information Standards"
+      }
+    ],
+    "PostalAddress": {
+      "StreetName": "Corporate Drive Suite 150",
+      "BuildingNumber": "35",
+      "CityName": "Burlington",
+      "PostalZone": "01803-4238",
+      "CountrySubentityCode": "MA",
+      "Country": {
+        "IdentificationCode": "US"
+      }
+    },
+    "PhysicalLocation": {
+      "InformationURI": "https://goo.gl/maps/2k242"
+    },
+    "Contact": {
+      "ID": "1",
+      "Telephone": "+1 781 425 5073",
+      "Telefax": "+1 781 425 5072",
+      "ElectronicMail": "info@oasis-open.org"
+    },
+    "AdditionalWebSite": {
+      "ID": "1",
+      "Name": "RSS",
+      "URI": "https://www.oasis-open.org/feed"
+    },
+    "SocialMediaProfile": [
+      {
+        "ID": "1",
+        "Name": "LinkedIN",
+        "SocialMediaTypeCode": "Business",
+        "URI": "https://www.linkedin.com/company/oasis"
+      },
+      {
+        "ID": "2",
+        "Name": "Twitter",
+        "URI": "http://twitter.com/OASISopen"
+      },
+      {
+        "ID": "3",
+        "Name": "Facebook",
+        "URI": "http://facebook.com/oasis.open"
+      },
+      {
+        "ID": "4",
+        "Name": "YouTube",
+        "URI": "http://www.youtube.com/oasisopen"
+      },
+      {
+        "ID": "5",
+        "Name": "Google+",
+        "URI": "https://plus.google.com/+Oasis-openOrg"
+      }
+    ]
+  },
+  "BusinessParty": {
+    "EndpointID": {
+      "value": "9994567987654",
+      "schemeID": "9:GLN"
+    },
+    "PartyIdentification": {
+      "ID": {
+        "value": "GB999999973",
+        "schemeID": "GB:VAT"
+      }
+    },
+    "PartyName": {
+      "Name": "World Events Ltd."
+    },
+    "PostalAddress": {
+      "CityName": "London",
+      "Country": {
+        "IdentificationCode": "GB"
+      }
+    }
+  },
+  "BusinessCapability": {
+    "CapabilityTypeCode": "General",
+    "Description": "Advancing open standards for the information society."
+  }
+}
