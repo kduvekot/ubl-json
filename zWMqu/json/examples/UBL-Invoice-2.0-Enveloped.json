@@ -2,18 +2,6 @@
   "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
   "UBLExtensions": [
     {
-      "ExtensionURI": "dummy1",
-      "ExtensionContent": {
-        "AnExtension": "(empty)"
-      }
-    },
-    {
-      "ExtensionURI": "dummy2",
-      "ExtensionContent": {
-        "AnotherExtension": "(empty)"
-      }
-    },
-    {
       "ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",
       "ExtensionContent": {
         "UBLDocumentSignatures": {
