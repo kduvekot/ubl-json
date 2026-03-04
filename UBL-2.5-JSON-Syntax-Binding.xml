@@ -69,6 +69,12 @@
         </listitem>
       </varlistentry>
       <varlistentry>
+        <term>CCTS</term>
+        <listitem>
+          <para>Core Components Technical Specification</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
         <term>CTC</term>
         <listitem>
           <para>Continuous Transaction Controls</para>
@@ -178,7 +184,7 @@
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>Monospaced font is used for JSON keywords, property names, schema keywords, literal values, and regular expressions (e.g., $schema, currencyID, true, ^[0-9]{4}-[0-9]{2}-[0-9]{2}$).</para>
+          <para>Monospaced font is used for JSON keywords, property names, schema keywords, literal values, and regular expressions (e.g., $jsonschema, currencyID, true, ^[0-9]{4}-[0-9]{2}-[0-9]{2}$).</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -197,7 +203,7 @@
 
     <section id="S-EXCHANGE-OF-COMPLETE-UBL-DOCUMENTS">
       <title>Exchange of complete UBL documents</title>
-      <para>The predominant use of UBL JSON is the exchange of complete business documents such as Invoice, Order, Catalogue, or BillOfLading. In this mode, the root object of the JSON instance corresponds directly to a document type defined in the UBL Semantic Library. Each such instance shall conform to the normative rules of this specification, including property naming, cardinality, datatype representation, and schema identification via the $schema property as specified in section 9.1.</para>
+      <para>The predominant use of UBL JSON is the exchange of complete business documents such as Invoice, Order, Catalogue, or BillOfLading. In this mode, the root object of the JSON instance corresponds directly to a document type defined in the UBL Semantic Library. Each such instance shall conform to the normative rules of this specification, including property naming, cardinality, datatype representation, and schema identification via the $jsonschema property as specified in section 9.1.</para>
       <para>This document-oriented approach reflects the original design objective of UBL: to model electronic transactions that mirror existing business practices. Documents are the units of contractual and legal effect in commerce, and UBL JSON preserves that role while allowing instances to be expressed in JSON syntax. For example, an electronic Invoice sent from a supplier to a buyer would appear as a JSON object rooted in the Invoice ABIE. It may contain embedded Party objects (AccountingSupplierParty, AccountingCustomerParty), LineItem arrays, and PaymentMeans details, all governed by the same semantic library as in UBL XML.</para>
       <para>Document-level UBL JSON instances are therefore suited for use in environments where a complete business transaction is transmitted between systems or organizations.</para>
     </section>
@@ -218,7 +224,7 @@
         </listitem>
       </itemizedlist>
       <para>The semantics remain consistent: the Party appearing inside an Invoice is structurally identical to the Party served at an API endpoint. This eliminates semantic drift between documents and APIs, ensuring that business data carries the same meaning across channels.</para>
-      <para>Conformance rules are identical to those for full documents: property naming, cardinality, datatype representation, and schema identification through $schema. Communities of use may therefore adopt either or both paradigms, knowing they are interoperable by design.</para>
+      <para>Conformance rules are identical to those for full documents: property naming, cardinality, datatype representation, and schema identification through $jsonschema. Communities of use may therefore adopt either or both paradigms, knowing they are interoperable by design.</para>
     </section>
 
     <section id="S-COMPLEMENTARITY-OF-DOCUMENTS-AND-COMPONENTS">
@@ -381,6 +387,9 @@
         </listitem>
       </itemizedlist>
       <para>These rules apply in addition to JSON Schema validation and to any supplementary constraints introduced by an interoperability profile.</para>
+      <note>
+        <para>The constraints against empty strings and empty objects are encoded directly in the normative JSON schemas using <literal>minLength: 1</literal> for string-valued properties and <literal>minProperties: 1</literal> for object-valued properties. Consequently, standard JSON Schema validation is sufficient to enforce these rules and no separate validation layer is required.</para>
+      </note>
     </section>
   </section>
 
@@ -394,12 +403,12 @@
 
     <section id="S-SCHEMA-IDENTIFICATION">
       <title>Schema identification</title>
-      <para>Every conformant UBL JSON instance shall carry a $schema property at its root identifying the governing schema. For document instances, this value shall be the identifier of the corresponding UBL document schema. For standalone Aggregate Business Information Entity (ABIE) payloads, the value shall be the identifier of the Common Aggregate Components schema with the appropriate fragment identifier.</para>
-      <para>Out-of-band declarations of schema context (for example through API contracts or community profiles) may supplement this mechanism, but they do not replace the in-band $schema property. Where both are present, they shall be consistent.</para>
-      <para>For document instances, the root object shall include a $schema property whose value identifies the corresponding UBL document schema. The URI shall resolve to the authoritative schema published for that document type in the UBL JSON distribution.</para>
-      <para>For standalone Aggregate Business Information Entities (ABIEs) exchanged as autonomous root payloads, the instance shall include a $schema property whose value identifies the Common Aggregate Components schema together with a fragment identifier corresponding to the ABIE. Each ABIE in the UBL Common Aggregate Components schema is published with an anchor equal to its UBL name, enabling unambiguous reference.</para>
-      <para>For extensions expressed using the UBL extension mechanism (6.3), each extension container shall include a $schema property whose value identifies the schema context and version governing the extension content. The value shall be a stable identifier published by the authority responsible for the extension.</para>
-      <para>In all cases, producers shall ensure that instances validate successfully against the schema identified in the $schema property, and consumers shall apply the corresponding rule set. Where both in-band and out-of-band indications are provided, the profile authority or community of use shall define precedence. In the absence of such a rule, the indications shall be consistent.</para>
+      <para>Every conformant UBL JSON instance shall carry a $jsonschema property at its root identifying the governing schema. For document instances, this value shall be the identifier of the corresponding UBL document schema. For standalone Aggregate Business Information Entity (ABIE) payloads, the value shall be the identifier of the Common Aggregate Components schema with the appropriate fragment identifier.</para>
+      <para>Out-of-band declarations of schema context (for example through API contracts or community profiles) may supplement this mechanism, but they do not replace the in-band $jsonschema property. Where both are present, they shall be consistent.</para>
+      <para>For document instances, the root object shall include a $jsonschema property whose value identifies the corresponding UBL document schema. The URI shall resolve to the authoritative schema published for that document type in the UBL JSON distribution.</para>
+      <para>For standalone Aggregate Business Information Entities (ABIEs) exchanged as autonomous root payloads, the instance shall include a $jsonschema property whose value identifies the Common Aggregate Components schema together with a fragment identifier corresponding to the ABIE. Each ABIE in the UBL Common Aggregate Components schema is published with an anchor equal to its UBL name, enabling unambiguous reference.</para>
+      <para>For extensions expressed using the UBL extension mechanism (6.3), each extension container shall include a $jsonschema property whose value identifies the schema context and version governing the extension content. The value shall be a stable identifier published by the authority responsible for the extension.</para>
+      <para>In all cases, producers shall ensure that instances validate successfully against the schema identified in the $jsonschema property, and consumers shall apply the corresponding rule set. Where both in-band and out-of-band indications are provided, the profile authority or community of use shall define precedence. In the absence of such a rule, the indications shall be consistent.</para>
     </section>
 
     <section id="S-INTEROPERABILITY-PROFILES">
@@ -413,7 +422,8 @@
 
     <section id="S-UBL-UNQUALIFIED-DATA-TYPES">
       <title>UBL unqualified data types</title>
-      <para>The CCTS-derived data types employed in UBL are represented in JSON either in scalar form (core value only) or in object form (a value property with supplementary components). Producers may emit the scalar form when no supplementary components are supplied or required. Producers shall emit the object form whenever any supplementary component is present. Consumers shall implement acceptance of both forms. Optional supplementary components are represented by omission, and the JSON literal null shall not be employed.</para>
+      <para>The CCTS-derived data types employed in UBL are represented in JSON either in scalar form (core value only) or in object form (a value property with a single supplementary component). Producers may emit the scalar form when no supplementary component is supplied or required. Producers shall emit the object form whenever the supplementary component is present. Consumers shall implement acceptance of both forms. Optional supplementary components are represented by omission, and the JSON literal null shall not be employed.</para>
+      <para>Each data type admits at most one supplementary component as listed in <xref linkend="T-UBL-UNQUALIFIED-DATA-TYPES"/>. The full CCTS attribute sets defined in the XML representation (e.g., <literal>listAgencyID</literal>, <literal>schemeAgencyID</literal>, <literal>schemeName</literal>) are simplified in JSON to the single attribute shown in the table. When converting from XML, the agency identifier may be preserved by prefixing it to the primary attribute value using the <literal>agencyID:value</literal> convention (e.g., <literal>"schemeID": "9:GLN"</literal> or <literal>"listID": "6:UN/ECE 1001"</literal>). Descriptive metadata attributes (e.g., <literal>listName</literal>, <literal>schemeAgencyName</literal>, <literal>listVersionID</literal>) are not carried over, as they can be resolved from the primary identifier by reference to the relevant code list or scheme registry.</para>
       <table id="T-UBL-UNQUALIFIED-DATA-TYPES" frame="all">
         <title>UBL unqualified data types</title>
         <tgroup cols="3">
@@ -609,12 +619,12 @@
       <title>Normative status</title>
       <para>The JSON Schemas <emphasis role="bold">[JSON-SCHEMA]</emphasis> distributed with this specification are normative artefacts. They prescribe the structural representation of the UBL Semantic Library and the catalogue of UBL business documents in JSON syntax. Conformance to this specification requires that instances validate successfully against the applicable JSON Schema.</para>
       <para>These schemas govern the syntactic representation of UBL in JSON. Business-level constraints such as controlled vocabularies, profile specific rules, or regulatory mandates are addressed separately in sections 8 (Controlled vocabularies), 9 (Versioning and profiles), and 11 (Digital Signatures).</para>
-      <para>All normative schemas are published in the json/schemas/ directory of the release package. Each schema is identified by a stable HTTPS URL that is fixed at the major version level (e.g., https://docs.oasis-open.org/ubl/json/schemas/Invoice-2). Minor revisions do not change these identifiers.</para>
+      <para>All normative schemas are published in the json/schemas/ directory of the release package. Each schema is identified by a stable URN that is fixed at the major version level (e.g., urn:oasis:names:specification:ubl:schema:json:Invoice-2). Minor revisions do not change these identifiers.</para>
     </section>
 
     <section id="S-DOCUMENT-INSTANCES">
       <title>Document instances</title>
-      <para>When a complete UBL business document is exchanged (such as an Invoice, an Order, or a Catalogue) the root JSON object shall identify its governing schema by means of the $schema property. The value of this property shall be the major-stable identifier corresponding to the UBL document type.</para>
+      <para>When a complete UBL business document is exchanged (such as an Invoice, an Order, or a Catalogue) the root JSON object shall identify its governing schema by means of the $jsonschema property. The value of this property shall be the major-stable identifier corresponding to the UBL document type.</para>
       <para>This requirement ensures that any receiving system can unambiguously determine the exact structural rules to apply when validating and processing the instance. Because the identifiers are stable across all minor revisions of the UBL 2.x line, a document referencing, for example, a UBL Invoice-2 remains valid regardless of whether the schema implementation in use is UBL 2.5, 2.6, or 2.x. This guarantees forward compatibility, thereby protecting investments in existing implementations and reducing the operational risk of upgrading to newer releases.</para>
       <para>Document instances follow the canonical model prescribed by the UBL Semantic Library and thus embed complete sets of ABIEs and BBIEs in accordance with the schema definitions. By referencing the document schema explicitly, producers and consumers can rely on a shared contract: the producer asserts conformance to the UBL document model, and the consumer can validate, process, and archive the document with the assurance that its structure is compliant and interoperable.</para>
     </section>
@@ -622,7 +632,7 @@
     <section id="S-STANDALONE-ABIES">
       <title>Standalone ABIEs</title>
       <para>The JSON schemas define each Aggregate Business Information Entity (ABIE) of the UBL Common Library not only as a component for embedding within larger structures but also as a valid root payload. This design enables implementers to employ individual ABIEs directly in transactional contexts that do not require the overhead of a complete UBL document instance. A common example is the deployment of application programming interfaces (APIs) that exchange business components in isolation, such as a getAddress or putParty endpoint.</para>
-      <para>In these scenarios, the $schema property serves to anchor the instance to the relevant definition in the Common Aggregate Components schema, and the fragment identifier designates the ABIE in question. The result is that a JSON instance representing, for example, an Address payload, carries the same normative semantics as when that same ABIE is embedded within a UBL document such as an Invoice or an Order.</para>
+      <para>In these scenarios, the $jsonschema property serves to anchor the instance to the relevant definition in the Common Aggregate Components schema, and the fragment identifier designates the ABIE in question. The result is that a JSON instance representing, for example, an Address payload, carries the same normative semantics as when that same ABIE is embedded within a UBL document such as an Invoice or an Order.</para>
       <para>This approach guarantees semantic consistency: a Party or Address exchanged as a standalone payload is precisely the same structure, subject to the same rules, as when appearing within a larger document. It also promotes reuse of the UBL semantic vocabulary across heterogeneous integration models, allowing implementers to unify document-centric exchanges and component-centric API calls under a single coherent set of rules.</para>
     </section>
 
@@ -644,13 +654,13 @@
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/CommonAggregateComponents-2.json">json/schemas/common/CommonAggregateComponents-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/CommonAggregateComponents-2.5.json">json/schemas/common/CommonAggregateComponents-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -668,13 +678,13 @@
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/CommonBasicComponents-2.json">json/schemas/common/CommonBasicComponents-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/CommonBasicComponents-2.5.json">json/schemas/common/CommonBasicComponents-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -686,19 +696,19 @@
             <varlistentry>
               <term>Description:</term>
               <listitem>
-                <para></para>
+                <para>The Qualified Data Types schema defines domain-specific refinements of the unqualified data types, such as restricted code types with closed value enumerations. Each qualified data type references its corresponding unqualified base type.</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/QualifiedDataTypes-2.json">json/schemas/common/QualifiedDataTypes-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/QualifiedDataTypes-2.5.json">json/schemas/common/QualifiedDataTypes-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/QualifiedDataTypes-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -710,19 +720,19 @@
             <varlistentry>
               <term>Description:</term>
               <listitem>
-                <para></para>
+                <para>The Unqualified Data Types schema defines the CCTS-derived primitive data types used throughout UBL, including their scalar and object representations and supplementary components as prescribed in section 10.</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/UnqualifiedDataTypes-2.json">json/schemas/common/UnqualifiedDataTypes-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/UnqualifiedDataTypes-2.5.json">json/schemas/common/UnqualifiedDataTypes-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/UnqualifiedDataTypes-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -734,19 +744,19 @@
             <varlistentry>
               <term>Description:</term>
               <listitem>
-                <para></para>
+                <para>The Common Extension Components schema defines the standardized extension scaffolding described in section 6.3, providing the UBLExtensions container and the UBLExtension structure through which user communities may introduce additional content into a UBL JSON instance.</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/CommonExtensionComponents-2.json">json/schemas/common/CommonExtensionComponents-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/CommonExtensionComponents-2.5.json">json/schemas/common/CommonExtensionComponents-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -758,19 +768,19 @@
             <varlistentry>
               <term>Description:</term>
               <listitem>
-                <para></para>
+                <para>The Signature Aggregate Components schema defines those Aggregate Business Information Entities (ABIEs) that are used for signature constructs not defined in the common library.</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/SignatureAggregateComponents-2.json">json/schemas/common/SignatureAggregateComponents-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/SignatureAggregateComponents-2.5.json">json/schemas/common/SignatureAggregateComponents-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2 </para>
+                <para>urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2 </para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -782,19 +792,19 @@
             <varlistentry>
               <term>Description:</term>
               <listitem>
-                <para></para>
+                <para>The Signature Basic Components schema defines those Basic Business Information Entities (BBIEs) that are used for signature constructs not defined in the common library.</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/common/SignatureBasicComponents-2.json">json/schemas/common/SignatureBasicComponents-2.json</ulink></para>
+                <para><ulink url="json/schemas/common/SignatureBasicComponents-2.5.json">json/schemas/common/SignatureBasicComponents-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/SignatureBasicComponents-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -816,13 +826,13 @@
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/maindoc/ApplicationResponse-2.json">json/schemas/maindoc/ApplicationResponse-2.json</ulink></para>
+                <para><ulink url="json/schemas/maindoc/ApplicationResponse-2.5.json">json/schemas/maindoc/ApplicationResponse-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/ApplicationResponse-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:ApplicationResponse-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -840,13 +850,13 @@
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/maindoc/AwardedNotification-2.json">json/schemas/maindoc/AwardedNotification-2.json</ulink></para>
+                <para><ulink url="json/schemas/maindoc/AwardedNotification-2.5.json">json/schemas/maindoc/AwardedNotification-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/AwardedNotification-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:AwardedNotification-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -864,13 +874,13 @@
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/maindoc/BillOfLading-2.json">json/schemas/maindoc/BillOfLading-2.json</ulink></para>
+                <para><ulink url="json/schemas/maindoc/BillOfLading-2.5.json">json/schemas/maindoc/BillOfLading-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/BillOfLading-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:BillOfLading-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -912,13 +922,13 @@
             <varlistentry>
               <term>Normative schema:</term>
               <listitem>
-                <para><ulink url="json/schemas/maindoc/WorkReport-2.json">json/schemas/maindoc/WorkReport-2.json</ulink></para>
+                <para><ulink url="json/schemas/maindoc/WorkReport-2.5.json">json/schemas/maindoc/WorkReport-2.5.json</ulink></para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>Identifier:</term>
               <listitem>
-                <para>https://docs.oasis-open.org/ubl/2/json/schemas/WorkReport-2</para>
+                <para>urn:oasis:names:specification:ubl:schema:json:WorkReport-2</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -951,7 +961,7 @@
       <para>A UBL JSON instance is conformant to this specification when all the following conditions are satisfied:</para>
       <orderedlist>
         <listitem>
-          <para>The instance validates against the applicable normative JSON Schema defined in section 12.4 (Normative schemas) and carries a $schema property identifying the governing schema. For document instances, this is the schema of the declared document type. For standalone ABIE payloads, this is the Common Aggregate Components schema with the designated fragment identifier;</para>
+          <para>The instance validates against the applicable normative JSON Schema defined in section 12.4 (Normative schemas) and carries a $jsonschema property identifying the governing schema. For document instances, this is the schema of the declared document type. For standalone ABIE payloads, this is the Common Aggregate Components schema with the designated fragment identifier;</para>
         </listitem>
         <listitem>
           <para>If present, extensions conform to the scaffolding defined in section 6.3 (Document extensions), do not collide with or alter the semantics of standard UBL properties, and extension metadata complies with the rules prescribed in that section; and</para>
@@ -1025,6 +1035,10 @@
         <abbrev>MEDIA-TYPES</abbrev>
         <emphasis role="bold">[MEDIA-TYPES]</emphasis> Internet Assigned Numbers Authority (IANA) Media Types. [Online]. Available: <ulink url="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</ulink>
       </bibliomixed>
+      <bibliomixed id="BIB-JSON-SCHEMA">
+        <abbrev>JSON-SCHEMA</abbrev>
+        <emphasis role="bold">[JSON-SCHEMA]</emphasis> A. Wright, H. Andrews, B. Hutton, G. Dennis, "JSON Schema: A Media Type for Describing JSON Documents", Internet-Draft draft-bhutton-json-schema-01, June 2022. [Online]. Available: <ulink url="https://json-schema.org/draft/2020-12/json-schema-core">https://json-schema.org/draft/2020-12/json-schema-core</ulink>
+      </bibliomixed>
     </section>
 
     <section id="S-B2-INFORMATIVE-REFERENCES">
@@ -1040,11 +1054,7 @@
       </bibliomixed>
       <bibliomixed id="BIB-UBLNDR">
         <abbrev>UBLNDR</abbrev>
-        <emphasis role="bold">[UBLNDR]</emphasis> UBL Naming and Design Rules 3.0, Committee Note 01. July 2016. OASIS. <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html">http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html</ulink>
-      </bibliomixed>
-      <bibliomixed id="BIB-JSON-SCHEMA">
-        <abbrev>JSON-SCHEMA</abbrev>
-        <emphasis role="bold">[JSON-SCHEMA]</emphasis> JSON Schema: A Media Type for Describing JSON Documents, IETF Internet-Draft, work in progress, draft-bhutton-json-schema-00, July 2020. [Online]. Available: <ulink url="https://www.rfc-editor.org/rfc/rfc8927">https://www.rfc-editor.org/rfc/rfc8927</ulink>
+        <emphasis role="bold">[UBLNDR]</emphasis> UBL Naming and Design Rules 3.0, Committee Note 01. July 2016. OASIS. <ulink url="https://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html">https://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-UTR36">
         <abbrev>UTR#36</abbrev>
