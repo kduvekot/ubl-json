@@ -6,28 +6,28 @@
     "DateType": {
       "type": "string",
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
-      "description": "One calendar day according to the Gregorian calendar."
+      "description": "One calendar day according the Gregorian calendar."
     },
     "TimeType": {
       "type": "string",
       "pattern": "^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$",
-      "description": "A specific point in time recurring every day."
+      "description": "An instance of time that occurs every day."
     },
     "IndicatorType": {
       "type": "boolean",
-      "description": "A list whose elements are restricted to \"true\" and \"false\"."
+      "description": "A list of two mutually exclusive Boolean values that express the only possible states of a property."
     },
     "NumericType": {
       "type": "number",
-      "description": "Numeric information that is assigned or is determined by calculation."
+      "description": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure."
     },
     "PercentType": {
       "type": "number",
-      "description": "Numeric information that is assigned or is determined by calculation."
+      "description": "Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure."
     },
     "RateType": {
       "type": "number",
-      "description": "A numeric expression of a rate."
+      "description": "A numeric expression of a rate that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure."
     },
     "AmountType": {
       "type": "object",
@@ -45,7 +45,7 @@
         "currencyID"
       ],
       "additionalProperties": false,
-      "description": "A number of monetary units specified in a given currency."
+      "description": "A number of monetary units specified using a given unit of currency."
     },
     "BinaryObjectType": {
       "type": "object",
@@ -82,7 +82,7 @@
         "unitCode"
       ],
       "additionalProperties": false,
-      "description": "A numeric measurement of something."
+      "description": "A numeric value determined by measuring an object using a specified unit of measure."
     },
     "CodeType": {
       "oneOf": [
@@ -108,7 +108,7 @@
           "additionalProperties": false
         }
       ],
-      "description": "A character string (letters, figures, or symbols) from a controlled vocabulary or code list."
+      "description": "A character string (letters, figures, or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an attribute, together with relevant supplementary information."
     },
     "IdentifierType": {
       "oneOf": [
@@ -134,7 +134,7 @@
           "additionalProperties": false
         }
       ],
-      "description": "An identifier for an object."
+      "description": "A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information."
     },
     "QuantityType": {
       "oneOf": [
@@ -158,7 +158,7 @@
           "additionalProperties": false
         }
       ],
-      "description": "A counted number of non-monetary units."
+      "description": "A counted number of non-monetary units, possibly including a fractional part."
     },
     "TextType": {
       "oneOf": [
@@ -184,7 +184,7 @@
           "additionalProperties": false
         }
       ],
-      "description": "A character string (including spaces and line breaks) the expression of a natural language."
+      "description": "A character string (i.e. a finite set of characters), generally in the form of words of a language."
     },
     "NameType": {
       "oneOf": [
@@ -210,7 +210,7 @@
           "additionalProperties": false
         }
       ],
-      "description": "A character string (including spaces and line breaks) the expression of a natural language."
+      "description": "A character string that constitutes the distinctive designation of a person, place, thing or concept."
     },
     "ContentType": {
       "type": "object",
