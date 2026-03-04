@@ -180,10 +180,7 @@
         }
       },
       "MainCarriageShipmentStage": {
-        "TransportModeCode": {
-          "value": "1",
-          "name": "Sea"
-        },
+        "TransportModeCode": "1",
         "LoadingPortLocation": {
           "ID": "Aarhus"
         },

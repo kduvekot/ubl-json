@@ -6,11 +6,7 @@
   "IssueTime": "11:01:10+01:00",
   "SenderParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827641"
     },
     "PartyName": {
       "Name": "NECOSS"
@@ -23,11 +19,7 @@
   },
   "ReceiverParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827000",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827000"
     },
     "PartyName": {
       "Name": "Consignor"
@@ -43,11 +35,7 @@
   },
   "TransportServiceProviderParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827641"
     },
     "PartyName": {
       "Name": "NECOSS"
@@ -134,11 +122,7 @@
         "PlannedDepartureTransportEvent": {
           "Location": {
             "Address": {
-              "ID": {
-                "value": "DEHAM",
-                "schemeName": "UN/LOCODE",
-                "schemeAgencyName": "UN"
-              },
+              "ID": "DEHAM",
               "StreetName": "Neuer Wandrahm 4",
               "CityName": "Hamburg",
               "Country": {
@@ -157,11 +141,7 @@
           "Location": {
             "LocationTypeCode": "13",
             "Address": {
-              "ID": {
-                "value": "4568763527610",
-                "schemeName": "GLN",
-                "schemeAgencyName": "GS1"
-              },
+              "ID": "4568763527610",
               "StreetName": "Ludwig-Erhard-Str. 15",
               "CityName": "Bremen",
               "Country": {
@@ -183,11 +163,7 @@
           "Location": {
             "LocationTypeCode": "13",
             "Address": {
-              "ID": {
-                "value": "4568763527610",
-                "schemeName": "GLN",
-                "schemeAgencyName": "GS1"
-              },
+              "ID": "4568763527610",
               "StreetName": "Ludwig-Erhard-Str. 15",
               "CityName": "Bremen",
               "Country": {

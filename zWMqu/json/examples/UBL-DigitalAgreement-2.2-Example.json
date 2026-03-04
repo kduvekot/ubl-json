@@ -13,8 +13,7 @@
       "Party": {
         "EndpointID": {
           "value": "1234567987654",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "PartyName": {
           "Name": "Vendor Inc."
@@ -48,8 +47,7 @@
       "Party": {
         "EndpointID": {
           "value": "9994567987654",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "PartyName": {
           "Name": "Buyer GmbH"
@@ -171,16 +169,14 @@
           "SchemaURI": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
           "DocumentTypeCode": {
             "value": "380",
-            "listID": "UN/ECE 1001",
-            "listAgencyID": "6"
+            "listID": "6:UN/ECE 1001"
           }
         },
         "DigitalDeliveryChannel": {
           "NetworkID": "OpenPEPPOL",
           "ParticipantID": {
             "value": "1234567987654",
-            "schemeID": "GLN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GLN"
           },
           "TestIndicator": true,
           "DigitalMessageDelivery": {
@@ -198,16 +194,14 @@
           "SchemaURI": "urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2",
           "DocumentTypeCode": {
             "value": "381",
-            "listID": "UN/ECE 1001",
-            "listAgencyID": "6"
+            "listID": "6:UN/ECE 1001"
           }
         },
         "DigitalDeliveryChannel": {
           "NetworkID": "OpenPEPPOL",
           "ParticipantID": {
             "value": "1234567987654",
-            "schemeID": "GLN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GLN"
           },
           "DigitalMessageDelivery": {
             "ProtocolID": "AS2",

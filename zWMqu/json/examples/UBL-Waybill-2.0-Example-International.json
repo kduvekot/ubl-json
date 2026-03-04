@@ -106,11 +106,7 @@
     },
     "SpecialInstructions": "Beeswax becomes liquid at 50'C",
     "Consignment": {
-      "ID": {
-        "value": "2005US12345678998765432112345678",
-        "schemeName": "Unique Consignment Reference",
-        "schemeAgencyName": "WCO"
-      },
+      "ID": "2005US12345678998765432112345678",
       "TariffDescription": "Beeswax, other insect waxes and spermacetti",
       "TariffCode": "15219000",
       "HazardousRiskIndicator": false,
@@ -261,8 +257,7 @@
         "DeliveryLocation": {
           "ID": {
             "value": "GBBRS",
-            "schemeID": "UN/LOCODE",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/LOCODE"
           },
           "Description": "Bristol"
         }
@@ -366,8 +361,7 @@
         "ID": "1",
         "TransportModeCode": {
           "value": "3",
-          "listID": "UN/ECE rec 16",
-          "listAgencyID": "6"
+          "listID": "6:UN/ECE rec 16"
         },
         "TransportMeansTypeCode": "Truck",
         "PreCarriageIndicator": true,
@@ -396,8 +390,7 @@
         "ID": "2",
         "TransportModeCode": {
           "value": "4",
-          "listID": "UN/ECE rec 16",
-          "listAgencyID": "6"
+          "listID": "6:UN/ECE rec 16"
         },
         "TransportMeansTypeCode": "Plane",
         "PreCarriageIndicator": false,
@@ -425,24 +418,21 @@
         "LoadingPortLocation": {
           "ID": {
             "value": "USBOS",
-            "schemeID": "UN/LOCODE",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/LOCODE"
           },
           "Description": "Boston Airport"
         },
         "UnloadingPortLocation": {
           "ID": {
             "value": "GBBRS",
-            "schemeID": "UN/LOCODE",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/LOCODE"
           },
           "Description": "Bristol Airport"
         },
         "TransshipPortLocation": {
           "ID": {
             "value": "GBLHR",
-            "schemeID": "UN/LOCODE",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/LOCODE"
           },
           "Description": "Heathrow Apt/London"
         }
@@ -520,8 +510,7 @@
       "ID": "1",
       "TransportHandlingUnitTypeCode": {
         "value": "PA",
-        "listID": "TRED 8053",
-        "listAgencyName": "United Nations Economic Commission for Europe"
+        "listID": "TRED 8053"
       },
       "HazardousRiskIndicator": false,
       "TotalGoodsItemQuantity": 10,
@@ -530,8 +519,7 @@
         "Quantity": 10,
         "PackagingTypeCode": {
           "value": "TB",
-          "listID": "UN/ECE rec 21",
-          "listAgencyID": "6"
+          "listID": "6:UN/ECE rec 21"
         }
       }
     },
@@ -550,16 +538,14 @@
     "FirstArrivalPortLocation": {
       "ID": {
         "value": "GBBRS",
-        "schemeID": "UN/LOCODE",
-        "schemeAgencyID": "6"
+        "schemeID": "6:UN/LOCODE"
       },
       "Description": "Bristol"
     },
     "LastExitPortLocation": {
       "ID": {
         "value": "USBOS",
-        "schemeID": "UN/LOCODE",
-        "schemeAgencyID": "6"
+        "schemeID": "6:UN/LOCODE"
       },
       "Description": "Boston"
     },

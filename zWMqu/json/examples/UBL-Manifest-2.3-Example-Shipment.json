@@ -203,8 +203,7 @@
         "DeliveryLocation": {
           "ID": {
             "value": "GBBRS",
-            "schemeID": "UN/LOCODE",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/LOCODE"
           },
           "Description": "Bristol"
         }

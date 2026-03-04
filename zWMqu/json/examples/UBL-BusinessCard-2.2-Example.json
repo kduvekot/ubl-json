@@ -73,8 +73,7 @@
   "BusinessParty": {
     "EndpointID": {
       "value": "9994567987654",
-      "schemeID": "GLN",
-      "schemeAgencyID": "9"
+      "schemeID": "9:GLN"
     },
     "PartyIdentification": {
       "ID": {

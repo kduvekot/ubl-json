@@ -8,11 +8,7 @@
   "DocumentStatusCode": "NotConfirmed",
   "SenderParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827000",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827000"
     },
     "PartyName": {
       "Name": "Consignor"
@@ -25,11 +21,7 @@
   },
   "ReceiverParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827641"
     },
     "PartyName": {
       "Name": "NECOSS"
@@ -42,11 +34,7 @@
   },
   "TransportUserParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827000",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827000"
     },
     "PartyName": {
       "Name": "Consignor"
@@ -59,11 +47,7 @@
   },
   "TransportServiceProviderParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827641"
     },
     "PartyName": {
       "Name": "NECOSS"
@@ -102,11 +86,7 @@
   "FromLocation": {
     "LocationTypeCode": "13",
     "Address": {
-      "ID": {
-        "value": "DEHAM",
-        "schemeName": "UN/LOCODE",
-        "schemeAgencyName": "UN"
-      },
+      "ID": "DEHAM",
       "StreetName": "Neuer Wandrahm 4",
       "CityName": "Hamburg",
       "PostalZone": "29400",
@@ -128,10 +108,7 @@
   },
   "TransportExecutionTerms": {
     "DeliveryTerms": {
-      "ID": {
-        "value": "EXW",
-        "schemeAgencyName": "INCOTERMS"
-      },
+      "ID": "EXW",
       "DeliveryLocation": {
         "Address": {
           "CityName": "Hamburg"
@@ -222,11 +199,7 @@
     "RequestedPickupTransportEvent": {
       "Location": {
         "Address": {
-          "ID": {
-            "value": "DEHAM",
-            "schemeName": "UN/LOCODE",
-            "schemeAgencyName": "UN"
-          },
+          "ID": "DEHAM",
           "StreetName": "Neuer Wandrahm 4",
           "CityName": "Hamburg",
           "PostalZone": "29400",
@@ -262,11 +235,7 @@
     },
     "ConsigneeParty": {
       "PartyIdentification": {
-        "ID": {
-          "value": "4058673827123",
-          "schemeName": "GLN",
-          "schemeAgencyName": "GS1"
-        }
+        "ID": "4058673827123"
       },
       "PartyName": {
         "Name": "Consignee"
@@ -279,21 +248,13 @@
     },
     "ConsignorParty": {
       "PartyIdentification": {
-        "ID": {
-          "value": "4058673827000",
-          "schemeName": "GLN",
-          "schemeAgencyName": "GS1"
-        }
+        "ID": "4058673827000"
       },
       "PartyName": {
         "Name": "Consignor"
       },
       "PostalAddress": {
-        "ID": {
-          "value": "4058673827000",
-          "schemeName": "GLN",
-          "schemeAgencyName": "GS1"
-        }
+        "ID": "4058673827000"
       },
       "Contact": {
         "Name": "SomeName",

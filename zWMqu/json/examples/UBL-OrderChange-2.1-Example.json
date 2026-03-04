@@ -4,8 +4,7 @@
   "CustomizationID": "urn:www.cenbii.eu:transaction:biicoretrdmXYZ:ver1.0",
   "ProfileID": {
     "value": "urn:www.cenbii.eu:profile:BIIXYZ:ver1.0",
-    "schemeID": "Profile",
-    "schemeAgencyID": "BII"
+    "schemeID": "BII:Profile"
   },
   "ID": "7",
   "IssueDate": "2010-01-21",
@@ -19,15 +18,13 @@
     "Party": {
       "EndpointID": {
         "value": "7300072311115",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": [
         {
           "ID": {
             "value": "7300070011115",
-            "schemeID": "GLN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GLN"
           }
         },
         {
@@ -43,8 +40,7 @@
     "Party": {
       "EndpointID": {
         "value": "7302347231111",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": {
         "ID": "SellerPartyID123"
@@ -60,8 +56,7 @@
       "ID": "1",
       "LineStatusCode": {
         "value": "Revised",
-        "listAgencyID": "UBL",
-        "listName": "Line Status"
+        "listID": "UBL"
       },
       "Quantity": {
         "value": 240,
@@ -87,8 +82,7 @@
         "PartyIdentification": {
           "ID": {
             "value": "EmployeeXXX",
-            "schemeID": "ZZZ",
-            "schemeAgencyID": "ZZZ"
+            "schemeID": "ZZZ:ZZZ"
           }
         },
         "PartyName": {
@@ -114,8 +108,7 @@
         "StandardItemIdentification": {
           "ID": {
             "value": "1234567890123",
-            "schemeID": "GTIN",
-            "schemeAgencyID": "6"
+            "schemeID": "6:GTIN"
           }
         },
         "AdditionalItemProperty": [

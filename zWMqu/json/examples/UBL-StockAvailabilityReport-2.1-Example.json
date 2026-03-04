@@ -89,9 +89,7 @@
       "AvailabilityDate": "2010-04-20",
       "AvailabilityStatusCode": {
         "value": "1",
-        "listID": "7011",
-        "listAgencyName": "UN/ECE",
-        "listURI": "http://www.unece.org/trade/untdid/d09b/tred/tred7011.htm"
+        "listID": "7011"
       },
       "Item": {
         "Description": "T-shirt",
@@ -112,9 +110,7 @@
       "AvailabilityDate": "2010-04-11",
       "AvailabilityStatusCode": {
         "value": "2",
-        "listID": "7011",
-        "listAgencyName": "UN/ECE",
-        "listURI": "http://www.unece.org/trade/untdid/d09b/tred/tred7011.htm"
+        "listID": "7011"
       },
       "Item": {
         "Description": "jersey",
@@ -134,9 +130,7 @@
       },
       "AvailabilityStatusCode": {
         "value": "8",
-        "listID": "7011",
-        "listAgencyName": "UN/ECE",
-        "listURI": "http://www.unece.org/trade/untdid/d09b/tred/tred7011.htm"
+        "listID": "7011"
       },
       "Item": {
         "Description": "skirt",

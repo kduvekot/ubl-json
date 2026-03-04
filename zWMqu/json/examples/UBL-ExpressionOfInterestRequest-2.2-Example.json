@@ -14,14 +14,12 @@
       "WebsiteURI": "http://super.company.dk",
       "EndpointID": {
         "value": "01842222222222",
-        "schemeID": "FI:OVT",
-        "schemeAgencyID": "9"
+        "schemeID": "9:FI:OVT"
       },
       "PartyIdentification": {
         "ID": {
           "value": "5790000127777",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         }
       },
       "PartyName": {
@@ -30,8 +28,7 @@
       "PostalAddress": {
         "AddressFormatCode": {
           "value": "Structured",
-          "listID": "CENBII3",
-          "listAgencyID": "700"
+          "listID": "700:CENBII3"
         },
         "StreetName": "Korsbygade 34",
         "CityName": "Aalborg",
@@ -65,8 +62,7 @@
       "PartyIdentification": {
         "ID": {
           "value": "5398000392577",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         }
       },
       "PartyName": {

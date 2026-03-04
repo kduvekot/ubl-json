@@ -4,8 +4,7 @@
   "CustomizationID": "urn:www.cenbii.eu:transaction:biicoretrdm001:ver1.0",
   "ProfileID": {
     "value": "urn:www.cenbii.eu:profile:BII01:ver1.0",
-    "schemeID": "Profile",
-    "schemeAgencyID": "BII"
+    "schemeID": "BII:Profile"
   },
   "ID": "34",
   "IssueDate": "2010-01-20",
@@ -54,15 +53,13 @@
     "Party": {
       "EndpointID": {
         "value": "7300072311115",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": [
         {
           "ID": {
             "value": "7300070011115",
-            "schemeID": "GLN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GLN"
           }
         },
         {
@@ -75,8 +72,7 @@
       "PostalAddress": {
         "ID": {
           "value": "1234567890123",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "PoBox123",
         "StreetName": "Rådhusgatan",
@@ -102,8 +98,7 @@
         "TaxScheme": {
           "ID": {
             "value": "VAT",
-            "schemeID": "UN/ECE 5153",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5153"
           }
         }
       },
@@ -144,8 +139,7 @@
     "Party": {
       "EndpointID": {
         "value": "7302347231111",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": {
         "ID": "SellerPartyID123"
@@ -156,8 +150,7 @@
       "PostalAddress": {
         "ID": {
           "value": "0987654321123",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "321",
         "StreetName": "Kungsgatan",
@@ -203,8 +196,7 @@
       "PartyIdentification": {
         "ID": {
           "value": "0987678321123",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         }
       },
       "PartyName": {
@@ -228,8 +220,7 @@
       "Address": {
         "ID": {
           "value": "1234567890123",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "123",
         "StreetName": "Rådhusgatan",
@@ -252,8 +243,7 @@
       "PartyIdentification": {
         "ID": {
           "value": "67654328394567",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         }
       },
       "PartyName": {
@@ -270,8 +260,7 @@
   "DeliveryTerms": {
     "ID": {
       "value": "FOT",
-      "schemeID": "IMCOTERM",
-      "schemeAgencyID": "6"
+      "schemeID": "6:IMCOTERM"
     },
     "SpecialTerms": "CAD",
     "DeliveryLocation": {
@@ -349,8 +338,7 @@
           "PartyIdentification": {
             "ID": {
               "value": "EmployeeXXX",
-              "schemeID": "ZZZ",
-              "schemeAgencyID": "ZZZ"
+              "schemeID": "ZZZ:ZZZ"
             }
           },
           "PartyName": {
@@ -376,8 +364,7 @@
           "StandardItemIdentification": {
             "ID": {
               "value": "1234567890123",
-              "schemeID": "GTIN",
-              "schemeAgencyID": "6"
+              "schemeID": "6:GTIN"
             }
           },
           "AdditionalItemProperty": [
@@ -421,8 +408,7 @@
           "PartyIdentification": {
             "ID": {
               "value": "EmployeeXXX",
-              "schemeID": "ZZZ",
-              "schemeAgencyID": "ZZZ"
+              "schemeID": "ZZZ:ZZZ"
             }
           },
           "PartyName": {
@@ -448,8 +434,7 @@
           "StandardItemIdentification": {
             "ID": {
               "value": "123452340123",
-              "schemeID": "GTIN",
-              "schemeAgencyID": "6"
+              "schemeID": "6:GTIN"
             }
           },
           "AdditionalItemProperty": [

@@ -10,11 +10,7 @@
   "VersionID": "1",
   "ReporterParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827641"
     },
     "PartyName": {
       "Name": "D2D GmbH"
@@ -45,11 +41,7 @@
   },
   "ReceiverParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058675698641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058675698641"
     },
     "PartyName": {
       "Name": "Lisboa Harbour"
@@ -67,11 +59,7 @@
   },
   "Shipment": {
     "Consignment": {
-      "ID": {
-        "value": "7365566156191234567",
-        "schemeName": "GINC",
-        "schemeAgencyName": "GS1"
-      },
+      "ID": "7365566156191234567",
       "GrossWeightMeasure": {
         "value": 600,
         "unitCode": "KGM"
@@ -80,11 +68,7 @@
       "TotalTransportHandlingUnitQuantity": 2,
       "PlannedPickupTransportEvent": {
         "Location": {
-          "ID": {
-            "value": "MAPTM",
-            "schemeName": "LOCODE",
-            "schemeAgencyName": "UN"
-          },
+          "ID": "MAPTM",
           "Address": {
             "CityName": "Tanger",
             "Country": {
@@ -95,11 +79,7 @@
       },
       "PlannedDeliveryTransportEvent": {
         "Location": {
-          "ID": {
-            "value": "ITGOA",
-            "schemeName": "LOCODE",
-            "schemeAgencyName": "UN"
-          },
+          "ID": "ITGOA",
           "Address": {
             "Country": {
               "IdentificationCode": "IT"
@@ -122,11 +102,7 @@
       },
       "ConsignorParty": {
         "PartyIdentification": {
-          "ID": {
-            "value": "4058673827000",
-            "schemeName": "GLN",
-            "schemeAgencyName": "GS1"
-          }
+          "ID": "4058673827000"
         },
         "PartyName": {
           "Name": "Disfruta"
@@ -166,10 +142,7 @@
           "OccurrenceDate": "2013-05-25",
           "OccurrenceTime": "18:00:00+01:00",
           "Location": {
-            "ID": {
-              "value": "ITGOA",
-              "schemeName": "UNLOCODE"
-            },
+            "ID": "ITGOA",
             "LocationTypeCode": "24",
             "Address": {
               "Country": {
@@ -186,10 +159,7 @@
           "HazardousRiskIndicator": false,
           "ShippingMarks": "Agricultural products",
           "TransportEquipment": {
-            "ID": {
-              "value": "BFCU4040001",
-              "schemeName": "bic"
-            },
+            "ID": "BFCU4040001",
             "TransportEquipmentTypeCode": "CN",
             "FullnessIndicationCode": "1",
             "ReturnabilityIndicator": true,
@@ -243,10 +213,7 @@
           "HazardousRiskIndicator": false,
           "ShippingMarks": "Agricultural products",
           "TransportEquipment": {
-            "ID": {
-              "value": "BFCU4040002",
-              "schemeName": "bic"
-            },
+            "ID": "BFCU4040002",
             "TransportEquipmentTypeCode": "CN",
             "FullnessIndicationCode": "1",
             "ReturnabilityIndicator": true,
@@ -296,10 +263,7 @@
         }
       ],
       "FirstArrivalPortLocation": {
-        "ID": {
-          "value": "ITGOA",
-          "schemeName": "UNLOCODE"
-        },
+        "ID": "ITGOA",
         "LocationTypeCode": "41",
         "Address": {
           "Country": {

@@ -6,28 +6,21 @@
   "IssueTime": "09:30:00Z",
   "WeightStatementTypeCode": {
     "value": "749",
-    "listID": "UN/ECE 1001",
-    "listAgencyID": "6",
-    "listVersionID": "d16a"
+    "listID": "6:UN/ECE 1001"
   },
   "SenderParty": {
     "EndpointID": {
       "value": "1234567987654",
-      "schemeID": "GLN",
-      "schemeAgencyID": "9"
+      "schemeID": "9:GLN"
     },
     "IndustryClassificationCode": {
       "value": "CA",
-      "listID": "UN/ECE 3035",
-      "listAgencyID": "6"
+      "listID": "6:UN/ECE 3035"
     },
     "PartyIdentification": {
       "ID": {
         "value": "XXX",
-        "schemeID": "LINES",
-        "schemeName": "SMDG master liner code list",
-        "schemeAgencyID": "306",
-        "schemeAgencyName": "SMDG"
+        "schemeID": "306:LINES"
       }
     },
     "PartyName": {
@@ -45,13 +38,11 @@
   "ReceiverParty": {
     "EndpointID": {
       "value": "9994567987654",
-      "schemeID": "GLN",
-      "schemeAgencyID": "9"
+      "schemeID": "9:GLN"
     },
     "IndustryClassificationCode": {
       "value": "TR",
-      "listID": "UN/ECE 3035",
-      "listAgencyID": "6"
+      "listID": "6:UN/ECE 3035"
     },
     "PartyName": {
       "Name": "La Spezia Container Terminal"
@@ -66,8 +57,7 @@
   "WeighingParty": {
     "IndustryClassificationCode": {
       "value": "WPA",
-      "listID": "UN/ECE 3035",
-      "listAgencyID": "6"
+      "listID": "6:UN/ECE 3035"
     },
     "PartyName": {
       "Name": "LEONARDO"
@@ -83,16 +73,14 @@
       "FamilyName": "VERDI",
       "RoleCode": {
         "value": "BN",
-        "listID": "UN/ECE 3139",
-        "listAgencyID": "6"
+        "listID": "6:UN/ECE 3139"
       }
     }
   },
   "ResponsibleParty": {
     "IndustryClassificationCode": {
       "value": "SPC",
-      "listID": "UN/ECE 3035",
-      "listAgencyID": "6"
+      "listID": "6:UN/ECE 3035"
     },
     "PartyName": {
       "Name": "LEONARDO"
@@ -108,8 +96,7 @@
       "FamilyName": "ROSSI",
       "RoleCode": {
         "value": "RP",
-        "listID": "UN/ECE 3139",
-        "listAgencyID": "6"
+        "listID": "6:UN/ECE 3139"
       }
     }
   },
@@ -119,23 +106,19 @@
       "TransportEquipment": {
         "ID": {
           "value": "TRHU1652173",
-          "schemeID": "ISO 6346",
-          "schemeAgencyID": "5"
+          "schemeID": "5:ISO 6346"
         },
         "TransportEquipmentTypeCode": {
           "value": "CN",
-          "listID": "UN/ECE 8053",
-          "listAgencyID": "6"
+          "listID": "6:UN/ECE 8053"
         },
         "SizeTypeCode": {
           "value": "22G1",
-          "listID": "ISO 6346",
-          "listAgencyID": "5"
+          "listID": "5:ISO 6346"
         },
         "FullnessIndicationCode": {
           "value": "5",
-          "listID": "UN/ECE 8169",
-          "listAgencyID": "6"
+          "listID": "6:UN/ECE 8169"
         },
         "VerifiedGrossMass": {
           "ID": "123",
@@ -143,8 +126,7 @@
           "WeighingTime": "00:30:00Z",
           "WeighingMethodCode": {
             "value": "SM1",
-            "listID": "IMO SOLAS",
-            "listAgencyID": "54"
+            "listID": "54:IMO SOLAS"
           },
           "WeighingDeviceID": "TS12345",
           "WeighingDeviceType": "Truck Scale",
@@ -157,9 +139,7 @@
             "IssueDate": "2016-11-02",
             "DocumentTypeCode": {
               "value": "SM1",
-              "listID": "VGM",
-              "listAgencyID": "306",
-              "listAgencyName": "SMDG"
+              "listID": "306:VGM"
             },
             "DocumentDescription": "Certificate for determination of VGM according to method 1"
           }
@@ -169,8 +149,7 @@
         "ID": "GOA294107",
         "DocumentTypeCode": {
           "value": "BN",
-          "listID": "UN/ECE 1153",
-          "listAgencyID": "6"
+          "listID": "6:UN/ECE 1153"
         }
       }
     }

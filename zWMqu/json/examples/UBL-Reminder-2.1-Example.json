@@ -7,8 +7,7 @@
     "Party": {
       "EndpointID": {
         "value": "1234567890123",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": {
         "ID": {
@@ -22,8 +21,7 @@
       "PostalAddress": {
         "ID": {
           "value": "1231412341324",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "5467",
         "StreetName": "Main street",
@@ -36,22 +34,19 @@
         "Country": {
           "IdentificationCode": {
             "value": "DK",
-            "listID": "ISO3166-1",
-            "listAgencyID": "6"
+            "listID": "6:ISO3166-1"
           }
         }
       },
       "PartyTaxScheme": {
         "CompanyID": {
           "value": "DK12345",
-          "schemeID": "DKVAT",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:DKVAT"
         },
         "TaxScheme": {
           "ID": {
             "value": "VAT",
-            "schemeID": "UN/ECE 5153",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5153"
           }
         }
       },
@@ -59,8 +54,7 @@
         "RegistrationName": "The Sellercompany Incorporated",
         "CompanyID": {
           "value": "5402697509",
-          "schemeID": "CVR",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:CVR"
         },
         "RegistrationAddress": {
           "CityName": "Big city",
@@ -87,8 +81,7 @@
     "Party": {
       "EndpointID": {
         "value": "1234567987654",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": {
         "ID": {
@@ -102,8 +95,7 @@
       "PostalAddress": {
         "ID": {
           "value": "1238764941386",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "123",
         "StreetName": "Anystreet",
@@ -116,22 +108,19 @@
         "Country": {
           "IdentificationCode": {
             "value": "BE",
-            "listID": "ISO3166-1",
-            "listAgencyID": "6"
+            "listID": "6:ISO3166-1"
           }
         }
       },
       "PartyTaxScheme": {
         "CompanyID": {
           "value": "BE54321",
-          "schemeID": "BEVAT",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:BEVAT"
         },
         "TaxScheme": {
           "ID": {
             "value": "VAT",
-            "schemeID": "UN/ECE 5153",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5153"
           }
         }
       },
@@ -139,8 +128,7 @@
         "RegistrationName": "The buyercompany inc.",
         "CompanyID": {
           "value": "5645342123",
-          "schemeID": "ZZZ",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:ZZZ"
         },
         "RegistrationAddress": {
           "CityName": "Mainplace",

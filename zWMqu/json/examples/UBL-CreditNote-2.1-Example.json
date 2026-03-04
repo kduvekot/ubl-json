@@ -9,8 +9,7 @@
   },
   "DocumentCurrencyCode": {
     "value": "EUR",
-    "listID": "ISO 4217 Alpha",
-    "listAgencyID": "6"
+    "listID": "6:ISO 4217 Alpha"
   },
   "AccountingCost": "Project cost code 123",
   "InvoicePeriod": {
@@ -49,8 +48,7 @@
     "Party": {
       "EndpointID": {
         "value": "1234567890123",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": {
         "ID": {
@@ -64,8 +62,7 @@
       "PostalAddress": {
         "ID": {
           "value": "1231412341324",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "5467",
         "StreetName": "Main street",
@@ -78,22 +75,19 @@
         "Country": {
           "IdentificationCode": {
             "value": "DK",
-            "listID": "ISO3166-1",
-            "listAgencyID": "6"
+            "listID": "6:ISO3166-1"
           }
         }
       },
       "PartyTaxScheme": {
         "CompanyID": {
           "value": "DK12345",
-          "schemeID": "DKVAT",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:DKVAT"
         },
         "TaxScheme": {
           "ID": {
             "value": "VAT",
-            "schemeID": "UN/ECE 5153",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5153"
           }
         }
       },
@@ -101,8 +95,7 @@
         "RegistrationName": "The Sellercompany Incorporated",
         "CompanyID": {
           "value": "5402697509",
-          "schemeID": "CVR",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:CVR"
         },
         "RegistrationAddress": {
           "CityName": "Big city",
@@ -129,8 +122,7 @@
     "Party": {
       "EndpointID": {
         "value": "1234567987654",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       },
       "PartyIdentification": {
         "ID": {
@@ -144,8 +136,7 @@
       "PostalAddress": {
         "ID": {
           "value": "1238764941386",
-          "schemeID": "GLN",
-          "schemeAgencyID": "9"
+          "schemeID": "9:GLN"
         },
         "Postbox": "123",
         "StreetName": "Anystreet",
@@ -158,22 +149,19 @@
         "Country": {
           "IdentificationCode": {
             "value": "BE",
-            "listID": "ISO3166-1",
-            "listAgencyID": "6"
+            "listID": "6:ISO3166-1"
           }
         }
       },
       "PartyTaxScheme": {
         "CompanyID": {
           "value": "BE54321",
-          "schemeID": "BEVAT",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:BEVAT"
         },
         "TaxScheme": {
           "ID": {
             "value": "VAT",
-            "schemeID": "UN/ECE 5153",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5153"
           }
         }
       },
@@ -181,8 +169,7 @@
         "RegistrationName": "The buyercompany inc.",
         "CompanyID": {
           "value": "5645342123",
-          "schemeID": "ZZZ",
-          "schemeAgencyID": "ZZZ"
+          "schemeID": "ZZZ:ZZZ"
         },
         "RegistrationAddress": {
           "CityName": "Mainplace",
@@ -209,8 +196,7 @@
     "PartyIdentification": {
       "ID": {
         "value": "098740918237",
-        "schemeID": "GLN",
-        "schemeAgencyID": "9"
+        "schemeID": "9:GLN"
       }
     },
     "PartyName": {
@@ -219,8 +205,7 @@
     "PartyLegalEntity": {
       "CompanyID": {
         "value": "6411982340",
-        "schemeID": "UK:CH",
-        "schemeAgencyID": "ZZZ"
+        "schemeID": "ZZZ:UK:CH"
       }
     }
   },
@@ -260,15 +245,13 @@
         "TaxCategory": {
           "ID": {
             "value": "S",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 20,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         }
@@ -285,15 +268,13 @@
         "TaxCategory": {
           "ID": {
             "value": "AA",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 10,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         }
@@ -310,21 +291,18 @@
         "TaxCategory": {
           "ID": {
             "value": "E",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 0,
           "TaxExemptionReasonCode": {
             "value": "AAM",
-            "listID": "CWA 15577",
-            "listAgencyID": "ZZZ"
+            "listID": "ZZZ:CWA 15577"
           },
           "TaxExemptionReason": "Exempt New Means of Transport",
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         }
@@ -396,38 +374,33 @@
         "StandardItemIdentification": {
           "ID": {
             "value": "1234567890124",
-            "schemeID": "GTIN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GTIN"
           }
         },
         "CommodityClassification": [
           {
             "ItemClassificationCode": {
               "value": "12344321",
-              "listID": "UNSPSC",
-              "listAgencyID": "113"
+              "listID": "113:UNSPSC"
             }
           },
           {
             "ItemClassificationCode": {
               "value": "65434568",
-              "listID": "CPV",
-              "listAgencyID": "2"
+              "listID": "2:CPV"
             }
           }
         ],
         "ClassifiedTaxCategory": {
           "ID": {
             "value": "S",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 20,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         },
@@ -485,38 +458,33 @@
         "StandardItemIdentification": {
           "ID": {
             "value": "1234567890125",
-            "schemeID": "GTIN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GTIN"
           }
         },
         "CommodityClassification": [
           {
             "ItemClassificationCode": {
               "value": "32344324",
-              "listID": "UNSPSC",
-              "listAgencyID": "113"
+              "listID": "113:UNSPSC"
             }
           },
           {
             "ItemClassificationCode": {
               "value": "65434567",
-              "listID": "CPV",
-              "listAgencyID": "2"
+              "listID": "2:CPV"
             }
           }
         ],
         "ClassifiedTaxCategory": {
           "ID": {
             "value": "AA",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 10,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         }
@@ -556,38 +524,33 @@
         "StandardItemIdentification": {
           "ID": {
             "value": "1234567890126",
-            "schemeID": "GTIN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GTIN"
           }
         },
         "CommodityClassification": [
           {
             "ItemClassificationCode": {
               "value": "32344324",
-              "listID": "UNSPSC",
-              "listAgencyID": "113"
+              "listID": "113:UNSPSC"
             }
           },
           {
             "ItemClassificationCode": {
               "value": "65434566",
-              "listID": "CPV",
-              "listAgencyID": "2"
+              "listID": "2:CPV"
             }
           }
         ],
         "ClassifiedTaxCategory": {
           "ID": {
             "value": "AA",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 10,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         }
@@ -640,38 +603,33 @@
         "StandardItemIdentification": {
           "ID": {
             "value": "1234567890127",
-            "schemeID": "GTIN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GTIN"
           }
         },
         "CommodityClassification": [
           {
             "ItemClassificationCode": {
               "value": "12344322",
-              "listID": "UNSPSC",
-              "listAgencyID": "113"
+              "listID": "113:UNSPSC"
             }
           },
           {
             "ItemClassificationCode": {
               "value": "65434565",
-              "listID": "CPV",
-              "listAgencyID": "2"
+              "listID": "2:CPV"
             }
           }
         ],
         "ClassifiedTaxCategory": {
           "ID": {
             "value": "E",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 0,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         }
@@ -712,38 +670,33 @@
         "StandardItemIdentification": {
           "ID": {
             "value": "1234567890128",
-            "schemeID": "GTIN",
-            "schemeAgencyID": "9"
+            "schemeID": "9:GTIN"
           }
         },
         "CommodityClassification": [
           {
             "ItemClassificationCode": {
               "value": "12344325",
-              "listID": "UNSPSC",
-              "listAgencyID": "113"
+              "listID": "113:UNSPSC"
             }
           },
           {
             "ItemClassificationCode": {
               "value": "65434564",
-              "listID": "CPV",
-              "listAgencyID": "2"
+              "listID": "2:CPV"
             }
           }
         ],
         "ClassifiedTaxCategory": {
           "ID": {
             "value": "S",
-            "schemeID": "UN/ECE 5305",
-            "schemeAgencyID": "6"
+            "schemeID": "6:UN/ECE 5305"
           },
           "Percent": 20,
           "TaxScheme": {
             "ID": {
               "value": "VAT",
-              "schemeID": "UN/ECE 5153",
-              "schemeAgencyID": "6"
+              "schemeID": "6:UN/ECE 5153"
             }
           }
         },

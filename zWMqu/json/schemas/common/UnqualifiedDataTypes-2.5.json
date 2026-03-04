@@ -38,10 +38,6 @@
         "currencyID": {
           "type": "string",
           "minLength": 1
-        },
-        "currencyCodeListVersionID": {
-          "type": "string",
-          "minLength": 1
         }
       },
       "required": [
@@ -61,26 +57,6 @@
         "mimeCode": {
           "type": "string",
           "minLength": 1
-        },
-        "format": {
-          "type": "string",
-          "minLength": 1
-        },
-        "encodingCode": {
-          "type": "string",
-          "minLength": 1
-        },
-        "characterSetCode": {
-          "type": "string",
-          "minLength": 1
-        },
-        "uri": {
-          "type": "string",
-          "minLength": 1
-        },
-        "filename": {
-          "type": "string",
-          "minLength": 1
         }
       },
       "required": [
@@ -97,10 +73,6 @@
           "type": "number"
         },
         "unitCode": {
-          "type": "string",
-          "minLength": 1
-        },
-        "unitCodeListVersionID": {
           "type": "string",
           "minLength": 1
         }
@@ -126,38 +98,6 @@
               "minLength": 1
             },
             "listID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "listAgencyID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "listAgencyName": {
-              "type": "string",
-              "minLength": 1
-            },
-            "listName": {
-              "type": "string",
-              "minLength": 1
-            },
-            "listVersionID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "name": {
-              "type": "string",
-              "minLength": 1
-            },
-            "languageID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "listURI": {
-              "type": "string",
-              "minLength": 1
-            },
-            "listSchemeURI": {
               "type": "string",
               "minLength": 1
             }
@@ -186,30 +126,6 @@
             "schemeID": {
               "type": "string",
               "minLength": 1
-            },
-            "schemeName": {
-              "type": "string",
-              "minLength": 1
-            },
-            "schemeAgencyID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "schemeAgencyName": {
-              "type": "string",
-              "minLength": 1
-            },
-            "schemeVersionID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "schemeDataURI": {
-              "type": "string",
-              "minLength": 1
-            },
-            "schemeURI": {
-              "type": "string",
-              "minLength": 1
             }
           },
           "required": [
@@ -232,18 +148,6 @@
               "type": "number"
             },
             "unitCode": {
-              "type": "string",
-              "minLength": 1
-            },
-            "unitCodeListID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "unitCodeListAgencyID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "unitCodeListAgencyName": {
               "type": "string",
               "minLength": 1
             }
@@ -272,10 +176,6 @@
             "languageID": {
               "type": "string",
               "minLength": 1
-            },
-            "languageLocaleID": {
-              "type": "string",
-              "minLength": 1
             }
           },
           "required": [
@@ -300,10 +200,6 @@
               "minLength": 1
             },
             "languageID": {
-              "type": "string",
-              "minLength": 1
-            },
-            "languageLocaleID": {
               "type": "string",
               "minLength": 1
             }

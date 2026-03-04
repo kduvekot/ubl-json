@@ -7,11 +7,7 @@
   "StatusAvailableIndicator": true,
   "SenderParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673821325",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673821325"
     },
     "PartyName": {
       "Name": "ARRIVA"
@@ -24,11 +20,7 @@
   },
   "ReceiverParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673827641",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673827641"
     },
     "PartyName": {
       "Name": "NECOSS"
@@ -41,11 +33,7 @@
   },
   "SourceIssuerParty": {
     "PartyIdentification": {
-      "ID": {
-        "value": "4058673821325",
-        "schemeName": "GLN",
-        "schemeAgencyName": "GS1"
-      }
+      "ID": "4058673821325"
     },
     "PartyName": {
       "Name": "ARRIVA"
@@ -57,10 +45,7 @@
     }
   },
   "TransportProgressStatusRequestDocumentReference": {
-    "ID": {
-      "value": "TPS_1",
-      "schemeName": "MovementReferenceNumber"
-    }
+    "ID": "TPS_1"
   },
   "TransportMeans": {
     "JourneyID": "RHamBrem",
@@ -76,11 +61,7 @@
     "StatusLocation": {
       "LocationTypeCode": "13",
       "Address": {
-        "ID": {
-          "value": "4568763527610",
-          "schemeName": "GLN",
-          "schemeAgencyName": "GS1"
-        },
+        "ID": "4568763527610",
         "StreetName": "Ludwig-Erhard-Str. 15",
         "CityName": "Bremen",
         "Country": {
