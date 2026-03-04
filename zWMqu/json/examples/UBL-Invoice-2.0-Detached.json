@@ -18,7 +18,7 @@
   },
   "Signature": {
     "ID": "urn:oasis:names:specification:ubl:signature:Invoice",
-    "SignatureMethod": "urn:oasis:names:specification:ubl:dsig:detached",
+    "SignatureMethod": "https://docs.oasis-open.org/ubl/json/jws/detached",
     "SignatoryParty": {
       "PartyIdentification": {
         "ID": "MyParty"
@@ -26,7 +26,8 @@
     },
     "DigitalSignatureAttachment": {
       "ExternalReference": {
-        "URI": "UBL-Invoice-2.0-Detached-Signature.xml"
+        "URI": "UBL-Invoice-2.0-Detached-Signature.jws",
+        "Description": "TODO: Provide the actual detached JWS file — see DocBook Section 11"
       }
     }
   },
