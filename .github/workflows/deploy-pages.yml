@@ -63,16 +63,21 @@ jobs:
 
       - name: Validate schemas
         run: |
-          uv pip install check-jsonschema
+          uv pip install check-jsonschema jsonschema referencing
           for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
             uv run check-jsonschema --check-metaschema "$f"
           done
 
-      - name: Upload schemas artifact
+      - name: Convert XML examples
+        run: uv run python convert_xml_examples.py --validate
+
+      - name: Upload schemas and examples artifact
         uses: actions/upload-artifact@v4
         with:
           name: json-schemas-main
-          path: json/schemas/
+          path: |
+            json/schemas/
+            json/examples/
 
       # ── Build and deploy gh-pages ──
       - name: Checkout gh-pages branch
@@ -90,19 +95,23 @@ jobs:
 
       - name: Preserve branch previews
         run: |
-          # Save branches.json and all SHA directories before overwriting
+          mkdir -p /tmp/branch-previews
+          # Save branches.json and preview directories listed in it
           if [ -f gh-pages/branches.json ]; then
             cp gh-pages/branches.json /tmp/branches.json
+            # Extract slugs from branches.json and preserve those directories
+            for slug in $(python3 -c "
+          import json, sys
+          data = json.load(open('gh-pages/branches.json'))
+          for info in data.get('branches', {}).values():
+              s = info.get('slug') or info.get('sha', '')[:7]
+              if s: print(s)
+          "); do
+              if [ -d "gh-pages/$slug" ]; then
+                cp -r "gh-pages/$slug" "/tmp/branch-previews/$slug"
+              fi
+            done
           fi
-          # Save branch preview directories (7-char hex names)
-          mkdir -p /tmp/branch-previews
-          for dir in gh-pages/*/; do
-            dirname=$(basename "$dir")
-            # Match 7-character hex strings (short SHAs)
-            if echo "$dirname" | grep -qE '^[0-9a-f]{7}$'; then
-              cp -r "$dir" "/tmp/branch-previews/$dirname"
-            fi
-          done
           # Save branches index
           if [ -d gh-pages/branches ]; then
             cp -r gh-pages/branches /tmp/branch-previews/_branches
@@ -114,6 +123,7 @@ jobs:
             --pages-dir gh-pages \
             --spec-html UBL-2.5-JSON-Syntax-Binding.html \
             --schemas-dir json/schemas \
+            --examples-dir json/examples \
             --repo ${{ github.repository }}
 
       - name: Restore branch previews
@@ -136,6 +146,7 @@ jobs:
             --pages-dir gh-pages \
             --spec-html UBL-2.5-JSON-Syntax-Binding.html \
             --schemas-dir json/schemas \
+            --examples-dir json/examples \
             --repo ${{ github.repository }}
 
       - name: Push to gh-pages (with retry)
@@ -159,7 +170,9 @@ jobs:
           echo "Push failed after 4 attempts" && exit 1
 
   # ─────────────────────────────────────────────────────────
-  # Deploy branch preview: spec HTML + schemas → gh-pages/<short-sha>/
+  # Deploy branch preview: spec HTML + schemas → gh-pages/<slug>/
+  # The slug is the Claude Code session short code for claude/* branches,
+  # or the short commit SHA for other branches.
   # Each preview is self-contained — relative links from the spec
   # to json/schemas/ resolve within the preview directory.
   # Rapid pushes to the same branch cancel the previous run.
@@ -174,13 +187,19 @@ jobs:
       - name: Checkout branch source
         uses: actions/checkout@v4
 
-      - name: Extract branch name
+      - name: Extract branch name and preview slug
         id: branch-info
         run: |
           BRANCH="${GITHUB_REF#refs/heads/}"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
           echo "sha_short=${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
+          # For claude/ branches, use the session short code as the preview slug
+          if [[ "$BRANCH" =~ ^claude/.*-([A-Za-z0-9]{5})$ ]]; then
+            echo "slug=${BASH_REMATCH[1]}" >> "$GITHUB_OUTPUT"
+          else
+            echo "slug=${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
+          fi
 
       # ── Generate HTML spec ──
       - name: Set up Java
@@ -215,16 +234,21 @@ jobs:
 
       - name: Validate schemas
         run: |
-          uv pip install check-jsonschema
+          uv pip install check-jsonschema jsonschema referencing
           for f in json/schemas/common/*.json json/schemas/maindoc/*.json; do
             uv run check-jsonschema --check-metaschema "$f"
           done
 
-      - name: Upload schemas artifact
+      - name: Convert XML examples
+        run: uv run python convert_xml_examples.py --validate
+
+      - name: Upload schemas and examples artifact
         uses: actions/upload-artifact@v4
         with:
           name: json-schemas-${{ steps.branch-info.outputs.sha_short }}
-          path: json/schemas/
+          path: |
+            json/schemas/
+            json/examples/
 
       # ── Look up associated PR (if any) ──
       - name: Find associated pull request
@@ -276,6 +300,7 @@ jobs:
             --pages-dir gh-pages \
             --spec-html UBL-2.5-JSON-Syntax-Binding.html \
             --schemas-dir json/schemas \
+            --examples-dir json/examples \
             --branch "${{ steps.branch-info.outputs.branch }}" \
             --sha "${{ steps.branch-info.outputs.sha }}" \
             --repo "${{ github.repository }}" \
@@ -310,11 +335,12 @@ jobs:
           script: |
             const sha = '${{ steps.branch-info.outputs.sha }}';
             const shaShort = '${{ steps.branch-info.outputs.sha_short }}';
+            const slug = '${{ steps.branch-info.outputs.slug }}';
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const prNumber = parseInt('${{ steps.find-pr.outputs.pr_number }}');
             const pagesUrl = `https://${owner}.github.io/${repo}`;
-            const previewUrl = `${pagesUrl}/${shaShort}/`;
+            const previewUrl = `${pagesUrl}/${slug}/`;
             const artifactUrl = `https://github.com/${owner}/${repo}/actions/runs/${{ github.run_id }}`;
 
             const body = [

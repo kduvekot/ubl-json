@@ -5,11 +5,13 @@ This script manages the gh-pages directory structure:
 
     /index.html              ← spec document with banner (main branch)
     /json/schemas/           ← JSON schemas (main branch, matches spec links)
+    /json/examples/          ← JSON examples (main branch)
     /branches.json           ← metadata for active branch previews
     /branches/index.html     ← human-readable branch index
-    /<short-sha>/            ← branch preview directory
+    /<slug>/                 ← branch preview directory (session code or short SHA)
         index.html           ← spec document with branch preview banner
         json/schemas/        ← generated schemas (relative links from spec work)
+        json/examples/       ← generated examples
 
 Usage:
     # Deploy main branch (spec + schemas)
@@ -39,6 +41,7 @@ import argparse
 import html
 import json
 import os
+import re as _re
 import shutil
 import sys
 from datetime import datetime, timezone
@@ -46,6 +49,22 @@ from pathlib import Path
 
 
 BRANCHES_JSON = "branches.json"
+
+
+def preview_slug(branch_name: str, sha: str) -> str:
+    """Derive a short, human-friendly slug for the branch preview directory.
+
+    For Claude Code branches (``claude/<description>-<code>``), use the
+    trailing session short code (e.g. ``zWMqu``).  For all other branches,
+    fall back to the first 7 characters of the commit SHA.
+    """
+    if branch_name.startswith("claude/"):
+        m = _re.search(r'-([A-Za-z0-9]{5})$', branch_name)
+        if m:
+            return m.group(1)
+    return sha[:7]
+
+
 REPO_URL_TEMPLATE = "https://github.com/{repo}"
 PAGES_URL_TEMPLATE = "https://{owner}.github.io/{repo_name}"
 
@@ -78,6 +97,7 @@ def generate_banner_html(branches_data: dict, repo: str) -> str:
     <strong style="font-size:16px;">UBL 2.5 JSON</strong>
     <a href="json/schemas/common/" style="color:#6ec6ff;text-decoration:none;">Common Schemas</a>
     <a href="json/schemas/maindoc/" style="color:#6ec6ff;text-decoration:none;">Document Schemas</a>
+    <a href="json/examples/" style="color:#6ec6ff;text-decoration:none;">Examples</a>
     <a href="branches/index.html" style="color:#6ec6ff;text-decoration:none;">Active Branches{badge}</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
@@ -145,6 +165,7 @@ def generate_branch_banner_html(
   <div style="display:flex;align-items:center;gap:12px;">
     <a href="json/schemas/common/" style="color:#6ec6ff;text-decoration:none;">Common Schemas</a>
     <a href="json/schemas/maindoc/" style="color:#6ec6ff;text-decoration:none;">Document Schemas</a>
+    <a href="json/examples/" style="color:#6ec6ff;text-decoration:none;">Examples</a>
     <a href="../branches/" style="color:#6ec6ff;text-decoration:none;">All Branches</a>
     <a href="../" style="color:#6ec6ff;text-decoration:none;">Main</a>{artifact_html}
   </div>
@@ -241,12 +262,12 @@ def generate_branches_index(pages_dir: Path, repo: str):
     rows = []
     for branch_name, info in sorted(branches.items()):
         sha_short = info.get("sha", "")[:7]
-        sha_full = info.get("sha", "")
+        slug = info.get("slug") or sha_short
         updated = info.get("updated", "")
         pr_num = info.get("pr")
         run_id = info.get("run_id")
 
-        preview_url = f"../{sha_short}/"
+        preview_url = f"../{slug}/"
         pr_link = f'<a href="https://github.com/{html.escape(repo)}/pull/{pr_num}">#{pr_num}</a>' if pr_num else "&mdash;"
         artifact_link = f'<a href="https://github.com/{html.escape(repo)}/actions/runs/{run_id}">Artifacts</a>' if run_id else "&mdash;"
 
@@ -398,6 +419,21 @@ def cmd_deploy_main(args):
             if subdir.is_dir():
                 generate_directory_index(subdir, f"UBL 2.5 JSON Schemas — {subdir.name}")
 
+    # Copy examples to json/examples/
+    if args.examples_dir and os.path.isdir(args.examples_dir):
+        dest = pages_dir / "json" / "examples"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if dest.exists():
+            shutil.rmtree(dest)
+        shutil.copytree(args.examples_dir, dest)
+        print(f"Copied examples to {dest}")
+
+        # Generate directory index pages for examples
+        generate_directory_index(dest, "UBL 2.5 JSON Examples")
+        for subdir in dest.iterdir():
+            if subdir.is_dir():
+                generate_directory_index(subdir, f"UBL 2.5 JSON Examples — {subdir.name}")
+
     # Inject banner into index.html
     index_html = pages_dir / "index.html"
     if index_html.exists():
@@ -416,52 +452,52 @@ def cmd_deploy_branch(args):
     pages_dir = Path(args.pages_dir)
     pages_dir.mkdir(parents=True, exist_ok=True)
 
-    sha_short = args.sha[:7]
     branch_name = args.branch
+    slug = preview_slug(branch_name, args.sha)
 
     # Load current branches data
     data = load_branches(pages_dir)
     branches = data.setdefault("branches", {})
 
-    # Clean up old deployment for this branch if SHA changed
+    # Clean up old deployment for this branch if slug changed
     if branch_name in branches:
-        old_sha = branches[branch_name].get("sha", "")[:7]
-        if old_sha and old_sha != sha_short:
-            old_dir = pages_dir / old_sha
+        old_slug = branches[branch_name].get("slug") or branches[branch_name].get("sha", "")[:7]
+        if old_slug and old_slug != slug:
+            old_dir = pages_dir / old_slug
             if old_dir.exists():
                 shutil.rmtree(old_dir)
                 print(f"Removed old deployment at {old_dir}")
 
     # Create new deployment directory
-    sha_dir = pages_dir / sha_short
-    sha_dir.mkdir(parents=True, exist_ok=True)
+    slug_dir = pages_dir / slug
+    slug_dir.mkdir(parents=True, exist_ok=True)
 
     pr_num = int(args.pr) if args.pr else None
 
     # Copy spec HTML as index.html (the main page for the preview)
     spec_html = getattr(args, "spec_html", None)
     if spec_html and os.path.isfile(spec_html):
-        shutil.copy2(spec_html, sha_dir / "index.html")
-        print(f"Copied spec HTML to {sha_dir / 'index.html'}")
+        shutil.copy2(spec_html, slug_dir / "index.html")
+        print(f"Copied spec HTML to {slug_dir / 'index.html'}")
 
         # Inject branch preview banner
         banner = generate_branch_banner_html(
             branch_name, args.sha, args.repo,
             pr_num=pr_num, run_id=args.run_id,
         )
-        inject_banner(sha_dir / "index.html", banner)
+        inject_banner(slug_dir / "index.html", banner)
         print("Injected branch preview banner into spec HTML")
     else:
         # Fallback: generate a simple preview page if spec HTML unavailable
         generate_branch_preview_page(
-            sha_dir, branch_name, args.sha, args.repo,
+            slug_dir, branch_name, args.sha, args.repo,
             pr_num=pr_num, run_id=args.run_id,
         )
-        print(f"Generated fallback preview page at {sha_dir / 'index.html'}")
+        print(f"Generated fallback preview page at {slug_dir / 'index.html'}")
 
     # Copy schemas to json/schemas/ (matches relative links in spec HTML)
     if args.schemas_dir and os.path.isdir(args.schemas_dir):
-        dest = sha_dir / "json" / "schemas"
+        dest = slug_dir / "json" / "schemas"
         dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
             shutil.rmtree(dest)
@@ -474,15 +510,31 @@ def cmd_deploy_branch(args):
             if subdir.is_dir():
                 generate_directory_index(subdir, f"Schemas — {branch_name} — {subdir.name}")
 
+    # Copy examples to json/examples/
+    if args.examples_dir and os.path.isdir(args.examples_dir):
+        dest = slug_dir / "json" / "examples"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if dest.exists():
+            shutil.rmtree(dest)
+        shutil.copytree(args.examples_dir, dest)
+        print(f"Copied examples to {dest}")
+
+        # Generate directory index pages for examples
+        generate_directory_index(dest, f"Examples — {branch_name}")
+        for subdir in dest.iterdir():
+            if subdir.is_dir():
+                generate_directory_index(subdir, f"Examples — {branch_name} — {subdir.name}")
+
     # Update branches.json
     branches[branch_name] = {
         "sha": args.sha,
+        "slug": slug,
         "updated": datetime.now(timezone.utc).isoformat(),
         "pr": pr_num,
         "run_id": args.run_id,
     }
     save_branches(pages_dir, data)
-    print(f"Updated branches.json: {branch_name} → {sha_short}")
+    print(f"Updated branches.json: {branch_name} → {slug}")
 
     # Rebuild branches index page
     generate_branches_index(pages_dir, args.repo)
@@ -509,12 +561,12 @@ def cmd_cleanup_branch(args):
         return
 
     # Remove deployment directory
-    sha_short = branches[branch_name].get("sha", "")[:7]
-    if sha_short:
-        sha_dir = pages_dir / sha_short
-        if sha_dir.exists():
-            shutil.rmtree(sha_dir)
-            print(f"Removed deployment directory {sha_dir}")
+    slug = branches[branch_name].get("slug") or branches[branch_name].get("sha", "")[:7]
+    if slug:
+        slug_dir = pages_dir / slug
+        if slug_dir.exists():
+            shutil.rmtree(slug_dir)
+            print(f"Removed deployment directory {slug_dir}")
 
     # Remove from branches.json
     del branches[branch_name]
@@ -542,6 +594,7 @@ def main():
     p_main.add_argument("--pages-dir", required=True, help="Path to gh-pages directory")
     p_main.add_argument("--spec-html", help="Path to generated spec HTML file")
     p_main.add_argument("--schemas-dir", help="Path to generated schemas directory")
+    p_main.add_argument("--examples-dir", help="Path to generated examples directory")
     p_main.add_argument("--repo", required=True, help="GitHub repo (owner/name)")
 
     # deploy-branch
@@ -549,6 +602,7 @@ def main():
     p_branch.add_argument("--pages-dir", required=True, help="Path to gh-pages directory")
     p_branch.add_argument("--spec-html", help="Path to generated spec HTML file")
     p_branch.add_argument("--schemas-dir", required=True, help="Path to generated schemas directory")
+    p_branch.add_argument("--examples-dir", help="Path to generated examples directory")
     p_branch.add_argument("--branch", required=True, help="Branch name")
     p_branch.add_argument("--sha", required=True, help="Full commit SHA")
     p_branch.add_argument("--repo", required=True, help="GitHub repo (owner/name)")

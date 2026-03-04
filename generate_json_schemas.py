@@ -17,6 +17,16 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
 
+# Version suffix for generated schema filenames.
+# Filenames use the full version "-2.5" to match XML specification naming.
+FILE_VERSION_SUFFIX = '-2.5'
+
+# URN base for JSON schema identifiers, paralleling the XSD convention:
+#   XSD:  urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
+#   JSON: urn:oasis:names:specification:ubl:schema:json:Invoice-2
+# URNs are stable at the major version level ("-2", not "-2.5").
+URN_BASE = 'urn:oasis:names:specification:ubl:schema:json'
+
 
 def parse_gc_file(filepath):
     """
@@ -116,6 +126,7 @@ def build_registry(rows):
             model_data[model_name]['abies'][object_class] = {
                 'component_name': component_name,
                 'definition': row.get('Definition', ''),
+                'dictionary_entry_name': row.get('DictionaryEntryName', ''),
             }
         elif component_type in ('BBIE', 'ASBIE') and object_class:
             # Store as child of the owning ABIE
@@ -166,56 +177,72 @@ def generate_unqualified_data_types(output_dir):
     # Define the 14 unqualified data types with their schemas
     defs = {}
 
+    # ---------------------------------------------------------------
+    # Data types follow the DocBook Table T-UBL-UNQUALIFIED-DATA-TYPES
+    # which prescribes one supplementary component per type.  The full
+    # CCTS attribute sets from the XSD are simplified to the single
+    # attribute listed in the DocBook specification.
+    # ---------------------------------------------------------------
+
     # Scalar-only types (no supplementary components)
     defs['DateType'] = {
         'type': 'string',
         'pattern': '^[0-9]{4}-[0-9]{2}-[0-9]{2}$',
-        'description': 'One calendar day according to the Gregorian calendar.'
+        'description': 'One calendar day according the Gregorian calendar.'
     }
 
+    # TimeType: supports optional fractional seconds to match xsd:time
     defs['TimeType'] = {
         'type': 'string',
-        'pattern': '^[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|[+-][0-9]{2}:[0-9]{2})?$',
-        'description': 'A specific point in time recurring every day.'
+        'pattern': r'^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$',
+        'description': 'An instance of time that occurs every day.'
     }
 
     defs['IndicatorType'] = {
         'type': 'boolean',
-        'description': 'A list whose elements are restricted to "true" and "false".'
+        'description': 'A list of two mutually exclusive Boolean values that express the only possible states of a property.'
     }
 
     defs['NumericType'] = {
         'type': 'number',
-        'description': 'Numeric information that is assigned or is determined by calculation.'
+        'description': 'Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.'
     }
 
     defs['PercentType'] = {
         'type': 'number',
-        'description': 'Numeric information that is assigned or is determined by calculation.'
+        'description': 'Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure.'
     }
 
     defs['RateType'] = {
         'type': 'number',
-        'description': 'A numeric expression of a rate.'
+        'description': 'A numeric expression of a rate that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.'
     }
 
+    # Shorthand helpers – enforce minLength:1 on every string property
+    # to satisfy DocBook Section 7.4: "Validation shall fail when …
+    # a property is present with an empty string as its value."
+    _str = {'type': 'string', 'minLength': 1}
+    _num = {'type': 'number'}
+
     # Mandatory supplementary types (always object form)
+    # DocBook Table T-UBL-UNQUALIFIED-DATA-TYPES: one supplementary per type
     defs['AmountType'] = {
         'type': 'object',
         'properties': {
-            'value': {'type': 'number'},
-            'currencyID': {'type': 'string'}
+            'value': _num,
+            'currencyID': _str
         },
         'required': ['value', 'currencyID'],
         'additionalProperties': False,
-        'description': 'A number of monetary units specified in a given currency.'
+        'description': 'A number of monetary units specified using a given unit of currency.'
     }
 
+    # DocBook Section 10.2: mimeCode is mandatory
     defs['BinaryObjectType'] = {
         'type': 'object',
         'properties': {
-            'value': {'type': 'string'},
-            'mimeCode': {'type': 'string'}
+            'value': _str,
+            'mimeCode': _str
         },
         'required': ['value', 'mimeCode'],
         'additionalProperties': False,
@@ -225,117 +252,124 @@ def generate_unqualified_data_types(output_dir):
     defs['MeasureType'] = {
         'type': 'object',
         'properties': {
-            'value': {'type': 'number'},
-            'unitCode': {'type': 'string'}
+            'value': _num,
+            'unitCode': _str
         },
         'required': ['value', 'unitCode'],
         'additionalProperties': False,
-        'description': 'A numeric measurement of something.'
+        'description': 'A numeric value determined by measuring an object using a specified unit of measure.'
     }
 
     # Optional supplementary types (oneOf scalar or object)
+    # DocBook Table T-UBL-UNQUALIFIED-DATA-TYPES prescribes one
+    # supplementary component per type.  When no supplementary
+    # attribute is present the simple form (bare string/number) is
+    # used; when the attribute is present the object form is used.
+
     defs['CodeType'] = {
         'oneOf': [
-            {'type': 'string'},
+            _str,
             {
                 'type': 'object',
                 'properties': {
-                    'value': {'type': 'string'},
-                    'listID': {'type': 'string'}
+                    'value': _str,
+                    'listID': _str
                 },
                 'required': ['value'],
                 'additionalProperties': False
             }
         ],
-        'description': 'A character string (letters, figures, or symbols) from a controlled vocabulary or code list.'
+        'description': 'A character string (letters, figures, or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an attribute, together with relevant supplementary information.'
     }
 
     defs['IdentifierType'] = {
         'oneOf': [
-            {'type': 'string'},
+            _str,
             {
                 'type': 'object',
                 'properties': {
-                    'value': {'type': 'string'},
-                    'schemeID': {'type': 'string'}
+                    'value': _str,
+                    'schemeID': _str
                 },
                 'required': ['value'],
                 'additionalProperties': False
             }
         ],
-        'description': 'An identifier for an object.'
+        'description': 'A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information.'
     }
 
     defs['QuantityType'] = {
         'oneOf': [
-            {'type': 'number'},
+            _num,
             {
                 'type': 'object',
                 'properties': {
-                    'value': {'type': 'number'},
-                    'unitCode': {'type': 'string'}
+                    'value': _num,
+                    'unitCode': _str
                 },
                 'required': ['value'],
                 'additionalProperties': False
             }
         ],
-        'description': 'A counted number of non-monetary units.'
+        'description': 'A counted number of non-monetary units, possibly including a fractional part.'
     }
 
     defs['TextType'] = {
         'oneOf': [
-            {'type': 'string'},
+            _str,
             {
                 'type': 'object',
                 'properties': {
-                    'value': {'type': 'string'},
-                    'languageID': {'type': 'string'}
+                    'value': _str,
+                    'languageID': _str
                 },
                 'required': ['value'],
                 'additionalProperties': False
             }
         ],
-        'description': 'A character string (including spaces and line breaks) the expression of a natural language.'
+        'description': 'A character string (i.e. a finite set of characters), generally in the form of words of a language.'
     }
 
     defs['NameType'] = {
         'oneOf': [
-            {'type': 'string'},
+            _str,
             {
                 'type': 'object',
                 'properties': {
-                    'value': {'type': 'string'},
-                    'languageID': {'type': 'string'}
+                    'value': _str,
+                    'languageID': _str
                 },
                 'required': ['value'],
                 'additionalProperties': False
             }
         ],
-        'description': 'A character string (including spaces and line breaks) the expression of a natural language.'
+        'description': 'A character string that constitutes the distinctive designation of a person, place, thing or concept.'
     }
 
     # ContentType is used in UBL-CommonExtensionComponents for extension content
     # Maps to xsd:any — an open JSON object
+    # DocBook Section 6.3: ExtensionContent "shall not be empty"
     defs['ContentType'] = {
         'type': 'object',
+        'minProperties': 1,
         'description': 'Extension content. Any structure is allowed.'
     }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/UnqualifiedDataTypes-2',
+        '$id': f'{URN_BASE}:UnqualifiedDataTypes-2',
         'description': 'UBL 2.5 Unqualified Data Types',
         '$defs': defs
     }
 
     # Write the schema to file
-    output_file = output_dir / 'UnqualifiedDataTypes-2.json'
+    output_file = output_dir / f'UnqualifiedDataTypes{FILE_VERSION_SUFFIX}.json'
     with open(output_file, 'w') as f:
         json.dump(schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written UnqualifiedDataTypes-2.json")
+    print(f"  Written UnqualifiedDataTypes{FILE_VERSION_SUFFIX}.json")
 
 
 # ============================================================================
@@ -390,24 +424,24 @@ def generate_qualified_data_types(output_dir, rows):
 
         # Create the reference entry
         defs[key] = {
-            '$ref': f'UnqualifiedDataTypes-2.json#/$defs/{unqualified_type}'
+            '$ref': f'{URN_BASE}:UnqualifiedDataTypes-2#/$defs/{unqualified_type}'
         }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/QualifiedDataTypes-2',
+        '$id': f'{URN_BASE}:QualifiedDataTypes-2',
         'description': 'UBL 2.5 Qualified Data Types',
         '$defs': defs
     }
 
     # Write the schema to file
-    output_file = output_dir / 'QualifiedDataTypes-2.json'
+    output_file = output_dir / f'QualifiedDataTypes{FILE_VERSION_SUFFIX}.json'
     with open(output_file, 'w') as f:
         json.dump(schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written QualifiedDataTypes-2.json")
+    print(f"  Written QualifiedDataTypes{FILE_VERSION_SUFFIX}.json")
 
 
 # ============================================================================
@@ -477,24 +511,24 @@ def generate_common_basic_components(output_dir, registry):
 
         # Create the $ref entry
         defs[component_name] = {
-            '$ref': f'QualifiedDataTypes-2.json#/$defs/{qualified_type_key}'
+            '$ref': f'{URN_BASE}:QualifiedDataTypes-2#/$defs/{qualified_type_key}'
         }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2',
+        '$id': f'{URN_BASE}:CommonBasicComponents-2',
         'description': 'UBL 2.5 Common Basic Components',
         '$defs': defs
     }
 
     # Write the schema to file
-    output_file = output_dir / 'CommonBasicComponents-2.json'
+    output_file = output_dir / f'CommonBasicComponents{FILE_VERSION_SUFFIX}.json'
     with open(output_file, 'w') as f:
         json.dump(schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written CommonBasicComponents-2.json")
+    print(f"  Written CommonBasicComponents{FILE_VERSION_SUFFIX}.json")
 
 
 # ============================================================================
@@ -543,6 +577,13 @@ def generate_common_aggregate_components(output_dir, registry):
         properties = {}
         required = []
 
+        # $jsonschema: identifies this ABIE type for standalone use
+        # (optional when embedded, required when used as root payload)
+        properties['$jsonschema'] = {
+            'const': f'{URN_BASE}:CommonAggregateComponents-2#{type_name}',
+            'description': 'Identifies the JSON schema governing this instance.'
+        }
+
         for child in children:
             child_component_name = child['component_name']
             component_type = child['component_type']
@@ -550,9 +591,27 @@ def generate_common_aggregate_components(output_dir, registry):
 
             if component_type == 'BBIE':
                 # BBIE: reference to CommonBasicComponents
-                properties[child_component_name] = {
-                    '$ref': f'CommonBasicComponents-2.json#/$defs/{child_component_name}'
+                ref_schema = {
+                    '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
+
+                if cardinality in ('0..1', '1'):
+                    properties[child_component_name] = ref_schema
+                elif cardinality in ('0..n', '1..n'):
+                    # Repeating BBIE: allow single value or array
+                    properties[child_component_name] = {
+                        'oneOf': [
+                            ref_schema,
+                            {
+                                'type': 'array',
+                                'items': ref_schema
+                            }
+                        ]
+                    }
+                    if cardinality == '1..n':
+                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
+                else:
+                    properties[child_component_name] = ref_schema
 
             elif component_type == 'ASBIE':
                 # ASBIE: reference to another ABIE (in this schema)
@@ -592,14 +651,27 @@ def generate_common_aggregate_components(output_dir, registry):
             if cardinality in ('1', '1..n'):
                 required.append(child_component_name)
 
+        # Every ABIE allows an optional UBLExtensions property,
+        # matching the xsd:element ref="ext:UBLExtensions" minOccurs="0"
+        # that appears in every XSD complex type.
+        properties['UBLExtensions'] = {
+            '$ref': f'{URN_BASE}:CommonExtensionComponents-2#/$defs/UBLExtensionsType'
+        }
+
         # Build the ABIE definition
+        # minProperties:1 per DocBook Section 7.4 (empty objects are invalid)
+        dictionary_entry_name = abie.get('dictionary_entry_name', '')
         abie_def = {
             '$anchor': type_name,
             'type': 'object',
             'description': definition,
             'properties': properties,
-            'additionalProperties': False
+            'additionalProperties': False,
+            'minProperties': 1
         }
+
+        if dictionary_entry_name:
+            abie_def['title'] = dictionary_entry_name
 
         # Add required only if there are required properties
         if required:
@@ -610,18 +682,18 @@ def generate_common_aggregate_components(output_dir, registry):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2',
+        '$id': f'{URN_BASE}:CommonAggregateComponents-2',
         'description': 'UBL 2.5 Common Aggregate Components',
         '$defs': defs
     }
 
     # Write the schema to file
-    output_file = output_dir / 'CommonAggregateComponents-2.json'
+    output_file = output_dir / f'CommonAggregateComponents{FILE_VERSION_SUFFIX}.json'
     with open(output_file, 'w') as f:
         json.dump(schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written CommonAggregateComponents-2.json with {len(defs)} ABIE types")
+    print(f"  Written CommonAggregateComponents{FILE_VERSION_SUFFIX}.json with {len(defs)} ABIE types")
 
 
 # ============================================================================
@@ -674,17 +746,22 @@ def generate_common_extension_components(output_dir, registry):
         if child_component_name == 'ExtensionContent':
             # ExtensionContent is special: reference to ContentType in UnqualifiedDataTypes
             extension_properties[child_component_name] = {
-                '$ref': 'UnqualifiedDataTypes-2.json#/$defs/ContentType'
+                '$ref': f'{URN_BASE}:UnqualifiedDataTypes-2#/$defs/ContentType'
             }
         else:
             # All other BBIEs reference CommonBasicComponents
             extension_properties[child_component_name] = {
-                '$ref': f'CommonBasicComponents-2.json#/$defs/{child_component_name}'
+                '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
             }
 
         # Add to required list if cardinality is 1
         if cardinality == '1':
             extension_required.append(child_component_name)
+
+    # DocBook Section 6.3: "Each extension shall be a JSON object
+    # containing at least the following members: ExtensionURI ... ExtensionContent"
+    if 'ExtensionURI' not in extension_required:
+        extension_required.append('ExtensionURI')
 
     # Build $defs
     defs = {}
@@ -697,12 +774,17 @@ def generate_common_extension_components(output_dir, registry):
     }
 
     # UBLExtensionType: single extension object
+    dictionary_entry_name = ubl_extension_abie.get('dictionary_entry_name', '')
     ubl_extension_type_def = {
         'type': 'object',
         'description': definition,
         'properties': extension_properties,
-        'additionalProperties': False
+        'additionalProperties': False,
+        'minProperties': 1
     }
+
+    if dictionary_entry_name:
+        ubl_extension_type_def['title'] = dictionary_entry_name
 
     # Add required only if there are required properties
     if extension_required:
@@ -713,18 +795,18 @@ def generate_common_extension_components(output_dir, registry):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2',
+        '$id': f'{URN_BASE}:CommonExtensionComponents-2',
         'description': 'UBL 2.5 Common Extension Components',
         '$defs': defs
     }
 
     # Write the schema to file
-    output_file = output_dir / 'CommonExtensionComponents-2.json'
+    output_file = output_dir / f'CommonExtensionComponents{FILE_VERSION_SUFFIX}.json'
     with open(output_file, 'w') as f:
         json.dump(schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written CommonExtensionComponents-2.json")
+    print(f"  Written CommonExtensionComponents{FILE_VERSION_SUFFIX}.json")
 
 
 # ============================================================================
@@ -787,24 +869,24 @@ def generate_signature_schemas(output_dir, registry):
 
         # Create the $ref entry to QualifiedDataTypes
         sig_basic_defs[component_name] = {
-            '$ref': f'QualifiedDataTypes-2.json#/$defs/{qualified_type_key}'
+            '$ref': f'{URN_BASE}:QualifiedDataTypes-2#/$defs/{qualified_type_key}'
         }
 
     # Build SignatureBasicComponents schema
     sig_basic_schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/SignatureBasicComponents-2',
+        '$id': f'{URN_BASE}:SignatureBasicComponents-2',
         'description': 'UBL 2.5 Signature Basic Components',
         '$defs': sig_basic_defs
     }
 
-    # Write SignatureBasicComponents-2.json
-    sig_basic_file = output_dir / 'SignatureBasicComponents-2.json'
+    # Write SignatureBasicComponents
+    sig_basic_file = output_dir / f'SignatureBasicComponents{FILE_VERSION_SUFFIX}.json'
     with open(sig_basic_file, 'w') as f:
         json.dump(sig_basic_schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written SignatureBasicComponents-2.json")
+    print(f"  Written SignatureBasicComponents{FILE_VERSION_SUFFIX}.json")
 
     # Step 2: Generate SignatureAggregateComponents-2.json
     # Get ABIEs from signature models
@@ -823,6 +905,12 @@ def generate_signature_schemas(output_dir, registry):
             type_name = component_name + 'Type'
             properties = {}
             required = []
+
+            # $jsonschema for standalone use
+            properties['$jsonschema'] = {
+                'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
+                'description': 'Identifies the JSON schema governing this instance.'
+            }
 
             for child in children:
                 child_component_name = child['component_name']
@@ -856,13 +944,18 @@ def generate_signature_schemas(output_dir, registry):
                     required.append(child_component_name)
 
             # Build the ABIE definition
+            dictionary_entry_name = abie.get('dictionary_entry_name', '')
             abie_def = {
                 '$anchor': type_name,
                 'type': 'object',
                 'description': definition,
                 'properties': properties,
-                'additionalProperties': False
+                'additionalProperties': False,
+                'minProperties': 1
             }
+
+            if dictionary_entry_name:
+                abie_def['title'] = dictionary_entry_name
 
             if required:
                 abie_def['required'] = required
@@ -883,6 +976,12 @@ def generate_signature_schemas(output_dir, registry):
             properties = {}
             required = []
 
+            # $jsonschema for standalone use
+            properties['$jsonschema'] = {
+                'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
+                'description': 'Identifies the JSON schema governing this instance.'
+            }
+
             for child in children:
                 child_component_name = child['component_name']
                 component_type = child.get('component_type')
@@ -891,7 +990,7 @@ def generate_signature_schemas(output_dir, registry):
                 if component_type == 'BBIE':
                     # Reference to SignatureBasicComponents
                     properties[child_component_name] = {
-                        '$ref': f'SignatureBasicComponents-2.json#/$defs/{child_component_name}'
+                        '$ref': f'{URN_BASE}:SignatureBasicComponents-2#/$defs/{child_component_name}'
                     }
 
                 # Add to required list if cardinality is 1 or 1..n
@@ -899,13 +998,18 @@ def generate_signature_schemas(output_dir, registry):
                     required.append(child_component_name)
 
             # Build the ABIE definition
+            dictionary_entry_name = abie.get('dictionary_entry_name', '')
             abie_def = {
                 '$anchor': type_name,
                 'type': 'object',
                 'description': definition,
                 'properties': properties,
-                'additionalProperties': False
+                'additionalProperties': False,
+                'minProperties': 1
             }
+
+            if dictionary_entry_name:
+                abie_def['title'] = dictionary_entry_name
 
             if required:
                 abie_def['required'] = required
@@ -915,18 +1019,18 @@ def generate_signature_schemas(output_dir, registry):
     # Build SignatureAggregateComponents schema with sorted $defs
     sig_agg_schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': 'https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2',
+        '$id': f'{URN_BASE}:SignatureAggregateComponents-2',
         'description': 'UBL 2.5 Signature Aggregate Components',
         '$defs': dict(sorted(sig_agg_defs.items()))
     }
 
-    # Write SignatureAggregateComponents-2.json
-    sig_agg_file = output_dir / 'SignatureAggregateComponents-2.json'
+    # Write SignatureAggregateComponents
+    sig_agg_file = output_dir / f'SignatureAggregateComponents{FILE_VERSION_SUFFIX}.json'
     with open(sig_agg_file, 'w') as f:
         json.dump(sig_agg_schema, f, indent=2)
         f.write('\n')
 
-    print(f"  Written SignatureAggregateComponents-2.json")
+    print(f"  Written SignatureAggregateComponents{FILE_VERSION_SUFFIX}.json")
 
 
 # ============================================================================
@@ -992,7 +1096,7 @@ def generate_document_schemas(output_dir, registry):
         doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
 
         # Build the schema
-        schema_id = f"https://docs.oasis-open.org/ubl/2/json/schemas/{doc_name}-2"
+        schema_urn = f"{URN_BASE}:{doc_name}-2"
         definition = root_abie.get('definition', '')
         children = root_abie.get('children', [])
 
@@ -1000,30 +1104,30 @@ def generate_document_schemas(output_dir, registry):
         properties = {}
         required = []
 
-        # 1. Add $schema property
-        properties['$schema'] = {
-            'const': schema_id,
-            'description': 'The JSON Schema identifier for this document type.'
+        # $jsonschema: identifies this document type (required)
+        properties['$jsonschema'] = {
+            'const': schema_urn,
+            'description': 'Identifies the JSON schema governing this instance.'
         }
-        required.append('$schema')
+        required.append('$jsonschema')
 
-        # 2. Add UBLExtensions (optional)
+        # 1. Add UBLExtensions (optional)
         properties['UBLExtensions'] = {
-            '$ref': 'common/CommonExtensionComponents-2.json#/$defs/UBLExtensionsType'
+            '$ref': f'{URN_BASE}:CommonExtensionComponents-2#/$defs/UBLExtensionsType'
         }
 
-        # 3. Add Signature (optional, 0..n via oneOf)
+        # 2. Add Signature (optional, 0..n via oneOf)
         properties['Signature'] = {
             'oneOf': [
-                {'$ref': 'common/CommonAggregateComponents-2.json#/$defs/SignatureType'},
+                {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'},
                 {
                     'type': 'array',
-                    'items': {'$ref': 'common/CommonAggregateComponents-2.json#/$defs/SignatureType'}
+                    'items': {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'}
                 }
             ]
         }
 
-        # 4. Add children (BBIEs and ASBIEs)
+        # 3. Add children (BBIEs and ASBIEs)
         for child in children:
             child_component_name = child['component_name']
             component_type = child['component_type']
@@ -1031,9 +1135,27 @@ def generate_document_schemas(output_dir, registry):
 
             if component_type == 'BBIE':
                 # BBIE: reference to CommonBasicComponents
-                properties[child_component_name] = {
-                    '$ref': f'common/CommonBasicComponents-2.json#/$defs/{child_component_name}'
+                ref_schema = {
+                    '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
+
+                if cardinality in ('0..1', '1'):
+                    properties[child_component_name] = ref_schema
+                elif cardinality in ('0..n', '1..n'):
+                    # Repeating BBIE: allow single value or array
+                    properties[child_component_name] = {
+                        'oneOf': [
+                            ref_schema,
+                            {
+                                'type': 'array',
+                                'items': ref_schema
+                            }
+                        ]
+                    }
+                    if cardinality == '1..n':
+                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
+                else:
+                    properties[child_component_name] = ref_schema
 
             elif component_type == 'ASBIE':
                 # ASBIE: reference to another ABIE (in CommonAggregateComponents)
@@ -1046,7 +1168,7 @@ def generate_document_schemas(output_dir, registry):
                     # Fallback
                     target_type = associated_object_class.replace(' ', '') + 'Type'
 
-                ref_schema = {'$ref': f'common/CommonAggregateComponents-2.json#/$defs/{target_type}'}
+                ref_schema = {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/{target_type}'}
 
                 if cardinality in ('0..1', '1'):
                     # Single value
@@ -1074,18 +1196,23 @@ def generate_document_schemas(output_dir, registry):
                 required.append(child_component_name)
 
         # Build the document schema
+        dictionary_entry_name = root_abie.get('dictionary_entry_name', '')
         schema = {
             '$schema': 'https://json-schema.org/draft/2020-12/schema',
-            '$id': schema_id,
+            '$id': schema_urn,
             'description': definition,
             'type': 'object',
             'properties': properties,
             'required': required,
-            'additionalProperties': False
+            'additionalProperties': False,
+            'minProperties': 1
         }
 
+        if dictionary_entry_name:
+            schema['title'] = dictionary_entry_name
+
         # Write the schema to file
-        filename = f"{doc_name}-2.json"
+        filename = f"{doc_name}{FILE_VERSION_SUFFIX}.json"
         output_file = output_dir / filename
         with open(output_file, 'w') as f:
             json.dump(schema, f, indent=2)
@@ -1094,6 +1221,67 @@ def generate_document_schemas(output_dir, registry):
         count += 1
 
     print(f"  Written {count} document schemas")
+
+
+# ============================================================================
+# Step 10: Generate JSON Schema catalog
+# ============================================================================
+
+def generate_catalog(output_dir, registry):
+    """
+    Generate a JSON catalog mapping URNs to schema file paths.
+
+    Args:
+        output_dir: Root output directory for schemas (json/schemas/)
+        registry: Built registry from build_registry()
+
+    Produces a catalog file that allows schema resolvers to locate
+    the actual schema files from their URN-based $id values.
+    """
+    catalog = {}
+
+    # Common schemas (fixed set)
+    common_schemas = [
+        'UnqualifiedDataTypes',
+        'QualifiedDataTypes',
+        'CommonBasicComponents',
+        'CommonAggregateComponents',
+        'CommonExtensionComponents',
+        'SignatureBasicComponents',
+        'SignatureAggregateComponents',
+    ]
+    for name in common_schemas:
+        urn = f'{URN_BASE}:{name}-2'
+        catalog[urn] = f'common/{name}{FILE_VERSION_SUFFIX}.json'
+
+    # Document schemas
+    SKIP_MODELS = {
+        'UBL-CommonLibrary-2.5',
+        'UBL-CommonSignatureComponents-2.5',
+        'UBL-SignatureLibrary-2.5',
+        'UBL-CommonExtensionComponents-2.5',
+    }
+
+    for model_name in sorted(registry['models'].keys()):
+        if model_name in SKIP_MODELS:
+            continue
+
+        model_data = registry['models'][model_name]
+        if not model_data.get('abies'):
+            continue
+
+        doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
+        urn = f'{URN_BASE}:{doc_name}-2'
+        catalog[urn] = f'maindoc/{doc_name}{FILE_VERSION_SUFFIX}.json'
+
+    # Write the catalog
+    output_dir.mkdir(parents=True, exist_ok=True)
+    catalog_file = output_dir / 'catalog.json'
+    with open(catalog_file, 'w') as f:
+        json.dump(catalog, f, indent=2)
+        f.write('\n')
+
+    print(f"  Written catalog.json ({len(catalog)} entries)")
 
 
 # ============================================================================
@@ -1127,24 +1315,24 @@ def main():
     num_abies = sum(len(model['abies']) for model in registry['models'].values())
     print(f"  Built registry: {num_models} models, {num_abies} ABIEs")
 
-    # Step 3: Generate UnqualifiedDataTypes-2.json
-    print("\nStep 3: Generating UnqualifiedDataTypes-2.json...")
+    # Step 3: Generate UnqualifiedDataTypes
+    print(f"\nStep 3: Generating UnqualifiedDataTypes{FILE_VERSION_SUFFIX}.json...")
     generate_unqualified_data_types(output_dir / 'common')
 
-    # Step 4: Generate QualifiedDataTypes-2.json
-    print("\nStep 4: Generating QualifiedDataTypes-2.json...")
+    # Step 4: Generate QualifiedDataTypes
+    print(f"\nStep 4: Generating QualifiedDataTypes{FILE_VERSION_SUFFIX}.json...")
     generate_qualified_data_types(output_dir / 'common', all_rows)
 
-    # Step 5: Generate CommonBasicComponents-2.json
-    print("\nStep 5: Generating CommonBasicComponents-2.json...")
+    # Step 5: Generate CommonBasicComponents
+    print(f"\nStep 5: Generating CommonBasicComponents{FILE_VERSION_SUFFIX}.json...")
     generate_common_basic_components(output_dir / 'common', registry)
 
-    # Step 6: Generate CommonAggregateComponents-2.json
-    print("\nStep 6: Generating CommonAggregateComponents-2.json...")
+    # Step 6: Generate CommonAggregateComponents
+    print(f"\nStep 6: Generating CommonAggregateComponents{FILE_VERSION_SUFFIX}.json...")
     generate_common_aggregate_components(output_dir / 'common', registry)
 
-    # Step 7: Generate CommonExtensionComponents-2.json
-    print("\nStep 7: Generating CommonExtensionComponents-2.json...")
+    # Step 7: Generate CommonExtensionComponents
+    print(f"\nStep 7: Generating CommonExtensionComponents{FILE_VERSION_SUFFIX}.json...")
     generate_common_extension_components(output_dir / 'common', registry)
 
     # Step 8: Generate Signature schemas
@@ -1154,6 +1342,10 @@ def main():
     # Step 9: Generate document schemas
     print("\nStep 9: Generating document schemas...")
     generate_document_schemas(output_dir / 'maindoc', registry)
+
+    # Step 10: Generate catalog
+    print("\nStep 10: Generating catalog...")
+    generate_catalog(output_dir, registry)
 
     print("\nDone.")
 

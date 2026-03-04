@@ -430,10 +430,16 @@ source = { virtual = "." }
 [package.optional-dependencies]
 dev = [
     { name = "check-jsonschema" },
+    { name = "jsonschema" },
+    { name = "referencing" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "check-jsonschema", marker = "extra == 'dev'" }]
+requires-dist = [
+    { name = "check-jsonschema", marker = "extra == 'dev'" },
+    { name = "jsonschema", marker = "extra == 'dev'" },
+    { name = "referencing", marker = "extra == 'dev'" },
+]
 provides-extras = ["dev"]
 
 [[package]]
