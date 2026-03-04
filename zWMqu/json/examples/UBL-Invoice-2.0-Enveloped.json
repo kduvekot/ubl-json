@@ -4,13 +4,13 @@
     {
       "ExtensionURI": "dummy1",
       "ExtensionContent": {
-        "AnExtension": ""
+        "AnExtension": "(empty)"
       }
     },
     {
       "ExtensionURI": "dummy2",
       "ExtensionContent": {
-        "AnotherExtension": ""
+        "AnotherExtension": "(empty)"
       }
     },
     {
@@ -20,8 +20,8 @@
           "SignatureInformation": {
             "Signature": {
               "SignedInfo": {
-                "CanonicalizationMethod": "",
-                "SignatureMethod": "",
+                "CanonicalizationMethod": "http://www.w3.org/TR/2001/REC-xml-c14n-20010315",
+                "SignatureMethod": "http://www.w3.org/2000/09/xmldsig#rsa-sha1",
                 "Reference": [
                   {
                     "Transforms": {
@@ -29,11 +29,11 @@
                         "XPath": "count(ancestor-or-self::sig:UBLDocumentSignatures |\n                  here()/ancestor::sig:UBLDocumentSignatures[1]) >\n            count(ancestor-or-self::sig:UBLDocumentSignatures)"
                       }
                     },
-                    "DigestMethod": "",
+                    "DigestMethod": "http://www.w3.org/2000/09/xmldsig#sha1",
                     "DigestValue": "d7OYkPHx+k+Qg+tBX2RfdzaBuYs="
                   },
                   {
-                    "DigestMethod": "",
+                    "DigestMethod": "http://www.w3.org/2000/09/xmldsig#sha1",
                     "DigestValue": "rcWlUoFmv2beSz8h5BKpxBv/IWQ="
                   }
                 ]
