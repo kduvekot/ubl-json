@@ -866,12 +866,15 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                 close_all_sections(xml_lines)
 
             # Build an id slug from the part of the title after "Annex/Appendix X"
+            # The descriptive title (without the "Annex A" / "Appendix 1" prefix)
+            # is used as the <title> — DocBook auto-generates appendix labels.
             parts = text.split(None, 2)
-            slug = slugify(parts[2]) if len(parts) > 2 else slugify(text)
+            descriptive_title = parts[2] if len(parts) > 2 else text
+            slug = slugify(descriptive_title)
 
             xml_lines.append("")
             xml_lines.append(f'  <appendix id="A-{slug}">')
-            xml_lines.append(f"    <title>{xml_escape(text)}</title>")
+            xml_lines.append(f"    <title>{xml_escape(descriptive_title)}</title>")
             in_appendix = True
             appendix_name = annex_letter
             section_stack.clear()
