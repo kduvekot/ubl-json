@@ -76,12 +76,13 @@ def check_prerequisites(input_xml):
 
 
 def prepare_input(input_xml):
-    """Strip DOCTYPE from input XML to avoid remote DTD resolution.
+    """Resolve internal entities and strip DOCTYPE from input XML.
 
-    Saxon HE needs the Apache XML Commons resolver library for catalog-based
-    DTD resolution, which we don't bundle. Since our DocBook XML doesn't use
-    any DTD-defined entities, stripping the DOCTYPE is safe and avoids the
-    network dependency entirely.
+    The DocBook XML uses entity references (e.g. &standard;, &pubdate;)
+    defined in the DOCTYPE's internal subset.  We extract those definitions
+    with a regex, expand every reference in the document body, then strip the
+    entire DOCTYPE block so Saxon never needs to fetch the external DTD over
+    the network.
     """
     import re
     import tempfile
@@ -89,17 +90,46 @@ def prepare_input(input_xml):
     with open(input_xml, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Remove DOCTYPE declaration (may span multiple lines)
-    content = re.sub(
-        r'<!DOCTYPE\s+article\s+[^>]*>', '', content, count=1
-    )
+    # ------------------------------------------------------------------
+    # 1. Extract the DOCTYPE block (including the internal subset [...]).
+    #    The block starts with "<!DOCTYPE" and ends at the matching "]>"
+    #    (when an internal subset is present) or the first bare ">".
+    # ------------------------------------------------------------------
+    # Match DOCTYPE with internal subset (ends with ]>) or without (ends with >)
+    doctype_match = re.search(r'<!DOCTYPE\b(.*?\]>|[^>]*>)', content, re.DOTALL)
+
+    entities = {}
+    if doctype_match:
+        doctype_block = doctype_match.group(0)
+
+        # 2. Extract all <!ENTITY name "value"> declarations from the block
+        for m in re.finditer(r'<!ENTITY\s+(\S+)\s+"([^"]*)"', doctype_block):
+            entities[m.group(1)] = m.group(2)
+
+        # 3. Remove the entire DOCTYPE block from the content
+        content = content[:doctype_match.start()] + content[doctype_match.end():]
+
+    # 4. Expand entity references in the remaining content.
+    #    Only expand the entities we found; leave standard XML entities alone
+    #    (&amp; &lt; &gt; &apos; &quot;) — the XML parser handles those itself.
+    if entities:
+        def replace_entity(m):
+            name = m.group(1)
+            return entities.get(name, m.group(0))  # leave unknown refs untouched
+
+        # Build a pattern that matches only our custom entities
+        pattern = r'&(' + '|'.join(re.escape(k) for k in entities) + r');'
+        content = re.sub(pattern, replace_entity, content)
+
+    if entities:
+        print(f"  Resolved {len(entities)} internal entities: {', '.join(entities)}")
 
     tmp = tempfile.NamedTemporaryFile(
         mode="w", suffix=".xml", dir=SCRIPT_DIR, delete=False, encoding="utf-8"
     )
     tmp.write(content)
     tmp.close()
-    print(f"  Preprocessed input (DOCTYPE stripped): {tmp.name}")
+    print(f"  Preprocessed input (entities resolved, DOCTYPE stripped): {tmp.name}")
     return tmp.name
 
 
