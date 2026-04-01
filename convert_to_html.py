@@ -36,7 +36,7 @@ STYLESHEET = os.path.join(
     "stylesheets", "oasis-2025-spec-note-html.xsl"
 )
 
-DEFAULT_INPUT = os.path.join(SCRIPT_DIR, "UBL-2.5-JSON-Syntax-Binding.xml")
+DEFAULT_INPUT = os.path.join(SCRIPT_DIR, "UBL-json.xml")
 
 
 def check_java():

@@ -15,7 +15,7 @@ W = f"{{{WNS}}}"
 R = f"{{{RNS}}}"
 
 DOCX_PATH = "source/UBL_2.5_JSON_Syntax_Binding_version_1.0_WD01.docx"
-OUTPUT_PATH = "UBL-2.5-JSON-Syntax-Binding-v1.0-WD01.xml"
+OUTPUT_PATH = "UBL-json.xml"
 
 # ---------------------------------------------------------------------------
 # Helpers
