@@ -1,0 +1,196 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Reminder-2",
+  "UBLVersionID": "2.1",
+  "ID": "12",
+  "IssueDate": "2010-04-14",
+  "AccountingSupplierParty": {
+    "Party": {
+      "EndpointID": {
+        "value": "1234567890123",
+        "schemeID": "9:GLN"
+      },
+      "PartyIdentification": {
+        "ID": {
+          "value": "Supp123",
+          "schemeID": "ZZZ"
+        }
+      },
+      "PartyName": {
+        "Name": "Salescompany ltd."
+      },
+      "PostalAddress": {
+        "ID": {
+          "value": "1231412341324",
+          "schemeID": "9:GLN"
+        },
+        "Postbox": "5467",
+        "StreetName": "Main street",
+        "AdditionalStreetName": "Suite 123",
+        "BuildingNumber": "1",
+        "Department": "Revenue department",
+        "CityName": "Big city",
+        "PostalZone": "54321",
+        "CountrySubentityCode": "RegionA",
+        "Country": {
+          "IdentificationCode": {
+            "value": "DK",
+            "listID": "6:ISO3166-1"
+          }
+        }
+      },
+      "PartyTaxScheme": {
+        "CompanyID": {
+          "value": "DK12345",
+          "schemeID": "ZZZ:DKVAT"
+        },
+        "TaxScheme": {
+          "ID": {
+            "value": "VAT",
+            "schemeID": "6:UN/ECE 5153"
+          }
+        }
+      },
+      "PartyLegalEntity": {
+        "RegistrationName": "The Sellercompany Incorporated",
+        "CompanyID": {
+          "value": "5402697509",
+          "schemeID": "ZZZ:CVR"
+        },
+        "RegistrationAddress": {
+          "CityName": "Big city",
+          "CountrySubentity": "RegionA",
+          "Country": {
+            "IdentificationCode": "DK"
+          }
+        }
+      },
+      "Contact": {
+        "Telephone": "4621230",
+        "Telefax": "4621231",
+        "ElectronicMail": "antonio@salescompany.dk"
+      },
+      "Person": {
+        "FirstName": "Antonio",
+        "FamilyName": "M",
+        "MiddleName": "Salemacher",
+        "JobTitle": "Sales manager"
+      }
+    }
+  },
+  "AccountingCustomerParty": {
+    "Party": {
+      "EndpointID": {
+        "value": "1234567987654",
+        "schemeID": "9:GLN"
+      },
+      "PartyIdentification": {
+        "ID": {
+          "value": "345KS5324",
+          "schemeID": "ZZZ"
+        }
+      },
+      "PartyName": {
+        "Name": "Buyercompany ltd"
+      },
+      "PostalAddress": {
+        "ID": {
+          "value": "1238764941386",
+          "schemeID": "9:GLN"
+        },
+        "Postbox": "123",
+        "StreetName": "Anystreet",
+        "AdditionalStreetName": "Back door",
+        "BuildingNumber": "8",
+        "Department": "Accounting department",
+        "CityName": "Anytown",
+        "PostalZone": "101",
+        "CountrySubentity": "RegionB",
+        "Country": {
+          "IdentificationCode": {
+            "value": "BE",
+            "listID": "6:ISO3166-1"
+          }
+        }
+      },
+      "PartyTaxScheme": {
+        "CompanyID": {
+          "value": "BE54321",
+          "schemeID": "ZZZ:BEVAT"
+        },
+        "TaxScheme": {
+          "ID": {
+            "value": "VAT",
+            "schemeID": "6:UN/ECE 5153"
+          }
+        }
+      },
+      "PartyLegalEntity": {
+        "RegistrationName": "The buyercompany inc.",
+        "CompanyID": {
+          "value": "5645342123",
+          "schemeID": "ZZZ:ZZZ"
+        },
+        "RegistrationAddress": {
+          "CityName": "Mainplace",
+          "CountrySubentity": "RegionB",
+          "Country": {
+            "IdentificationCode": "BE"
+          }
+        }
+      },
+      "Contact": {
+        "Telephone": "5121230",
+        "Telefax": "5121231",
+        "ElectronicMail": "john@buyercompany.eu"
+      },
+      "Person": {
+        "FirstName": "John",
+        "FamilyName": "X",
+        "MiddleName": "Doe",
+        "JobTitle": "Purchasing manager"
+      }
+    }
+  },
+  "LegalMonetaryTotal": {
+    "LineExtensionAmount": {
+      "value": 1436.5,
+      "currencyID": "EUR"
+    },
+    "TaxExclusiveAmount": {
+      "value": 1436.5,
+      "currencyID": "EUR"
+    },
+    "TaxInclusiveAmount": {
+      "value": 1729,
+      "currencyID": "EUR"
+    },
+    "AllowanceTotalAmount": {
+      "value": 100,
+      "currencyID": "EUR"
+    },
+    "ChargeTotalAmount": {
+      "value": 100,
+      "currencyID": "EUR"
+    },
+    "PrepaidAmount": {
+      "value": 1000,
+      "currencyID": "EUR"
+    },
+    "PayableRoundingAmount": {
+      "value": 0.3,
+      "currencyID": "EUR"
+    },
+    "PayableAmount": {
+      "value": 729,
+      "currencyID": "EUR"
+    }
+  },
+  "ReminderLine": {
+    "ID": "1",
+    "BillingReference": {
+      "InvoiceDocumentReference": {
+        "ID": "TOSL108"
+      }
+    }
+  }
+}

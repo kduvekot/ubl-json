@@ -1,0 +1,147 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:InventoryReport-2",
+  "UBLVersionID": "2.1",
+  "ID": "CC2679",
+  "CopyIndicator": false,
+  "IssueDate": "2010-04-12",
+  "Note": "Report about the quantities on stock.",
+  "DocumentCurrencyCode": {
+    "value": "EUR",
+    "listID": "ISO 4217 Alpha"
+  },
+  "InventoryPeriod": {
+    "StartDate": "2010-04-11",
+    "StartTime": "14:00:00Z",
+    "EndDate": "2010-04-11"
+  },
+  "RetailerCustomerParty": {
+    "Party": {
+      "PartyName": {
+        "Name": "Beta Shop"
+      },
+      "PostalAddress": {
+        "StreetName": "Via Emilia",
+        "BuildingNumber": "1",
+        "CityName": "Modena",
+        "PostalZone": "41121",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Delta",
+        "Telephone": "0039 059 33000000",
+        "Telefax": "0039 059 33000055",
+        "ElectronicMail": "delta@betashop.it"
+      }
+    }
+  },
+  "InventoryReportingParty": {
+    "PartyName": {
+      "Name": "Arancio Forniture spa"
+    },
+    "PostalAddress": {
+      "StreetName": "Via Dell'Arcoveggio",
+      "BuildingNumber": "405",
+      "Department": "Sales and Planning Department",
+      "CityName": "Bologna",
+      "PostalZone": "40129",
+      "Country": {
+        "IdentificationCode": "IT",
+        "Name": "Italy"
+      }
+    },
+    "Contact": {
+      "Name": "Mr Bianchi",
+      "Telephone": "0039 051 23000008",
+      "Telefax": "0039 051 23000025",
+      "ElectronicMail": "bianchi@arancioforniture.it"
+    }
+  },
+  "SellerSupplierParty": {
+    "Party": {
+      "PartyName": {
+        "Name": "Arancio Forniture spa"
+      },
+      "PostalAddress": {
+        "StreetName": "Via Dell'Arcoveggio",
+        "BuildingNumber": "403",
+        "CityName": "Bologna",
+        "PostalZone": "40129",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Rossi",
+        "Telephone": "0039 051 23000000",
+        "Telefax": "0039 051 23000023",
+        "ElectronicMail": "rossi@arancioforniture.it"
+      }
+    }
+  },
+  "InventoryReportLine": [
+    {
+      "ID": "1",
+      "Quantity": {
+        "value": 10,
+        "unitCode": "NAR"
+      },
+      "InventoryValueAmount": {
+        "value": 200,
+        "currencyID": "EUR"
+      },
+      "Item": {
+        "Description": "shirt",
+        "BuyersItemIdentification": {
+          "ID": "SH009"
+        },
+        "SellersItemIdentification": {
+          "ID": "DD88"
+        }
+      }
+    },
+    {
+      "ID": "2",
+      "Quantity": {
+        "value": 15,
+        "unitCode": "NAR"
+      },
+      "InventoryValueAmount": {
+        "value": 750,
+        "currencyID": "EUR"
+      },
+      "Item": {
+        "Description": "trousers",
+        "BuyersItemIdentification": {
+          "ID": "TH009"
+        },
+        "SellersItemIdentification": {
+          "ID": "DA008"
+        }
+      }
+    },
+    {
+      "ID": "3",
+      "Quantity": {
+        "value": 5,
+        "unitCode": "NAR"
+      },
+      "InventoryValueAmount": {
+        "value": 300,
+        "currencyID": "EUR"
+      },
+      "Item": {
+        "Description": "woman's dress",
+        "BuyersItemIdentification": {
+          "ID": "DH019"
+        },
+        "SellersItemIdentification": {
+          "ID": "BA058"
+        }
+      }
+    }
+  ]
+}

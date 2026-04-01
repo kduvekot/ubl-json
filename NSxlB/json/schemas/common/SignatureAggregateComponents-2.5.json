@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2",
+  "description": "UBL 2.5 Signature Aggregate Components",
+  "$defs": {
+    "SignatureInformationType": {
+      "$anchor": "SignatureInformationType",
+      "type": "object",
+      "description": "This class captures a single signature and optionally associates to a signature in the document with the corresponding identifier.",
+      "properties": {
+        "$jsonschema": {
+          "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#SignatureInformationType",
+          "description": "Identifies the JSON schema governing this instance."
+        },
+        "ID": {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2#/$defs/ID"
+        },
+        "ReferencedSignatureID": {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:SignatureBasicComponents-2#/$defs/ReferencedSignatureID"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "title": "Signature Information. Details"
+    },
+    "UBLDocumentSignaturesType": {
+      "$anchor": "UBLDocumentSignaturesType",
+      "type": "object",
+      "description": "This class collects all signature information for a document.",
+      "properties": {
+        "$jsonschema": {
+          "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#UBLDocumentSignaturesType",
+          "description": "Identifies the JSON schema governing this instance."
+        },
+        "SignatureInformation": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/SignatureInformationType"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/SignatureInformationType"
+              },
+              "minItems": 1
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "title": "UBL Document Signatures. Details",
+      "required": [
+        "SignatureInformation"
+      ]
+    }
+  }
+}
