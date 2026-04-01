@@ -533,6 +533,9 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
 
         # Skip truly empty Normal paragraphs
         if not text and not inline and style == "Normal":
+            # Still insert a TABLE marker if a table follows this empty paragraph.
+            if i in table_positions:
+                elements.append({"style": "TABLE", "index": table_positions[i]})
             continue
 
         elem = {
@@ -739,10 +742,11 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
 
         text = elem.get("text", "")
 
-        # Detect any Annex (A, B, C, D, ...) generically
+        # Detect any Annex (A, B, C, ...) or Appendix (1, 2, ...) generically
         annex_match = re.match(r"Annex\s+([A-Z])", text)
-        if style == "Heading 1" and annex_match:
-            annex_letter = annex_match.group(1)
+        appendix_match = re.match(r"Appendix\s+(\w+)", text)
+        if style == "Heading 1" and (annex_match or appendix_match):
+            annex_letter = annex_match.group(1) if annex_match else appendix_match.group(1)
             # Close previous appendix or open sections
             if in_appendix:
                 close_all_sections(xml_lines, base_indent=2)
@@ -751,7 +755,7 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
             else:
                 close_all_sections(xml_lines)
 
-            # Build an id slug from the part of the title after "Annex X"
+            # Build an id slug from the part of the title after "Annex/Appendix X"
             parts = text.split(None, 2)
             slug = slugify(parts[2]) if len(parts) > 2 else slugify(text)
 
@@ -764,7 +768,7 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
             section_title_stack.clear()
 
             # Annex B is the bibliography section
-            if annex_letter == "B":
+            if annex_match and annex_letter == "B":
                 in_bibliography = True
             else:
                 in_bibliography = False
@@ -826,7 +830,10 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         if style == "Monospace":
             code_lines = []
             while i < len(elements) and elements[i]["style"] == "Monospace":
-                code_lines.append(elements[i]["text"])
+                line = elements[i]["text"]
+                # Strip markdown fence markers (```json, ```, etc.)
+                if not re.match(r"^```", line.strip()):
+                    code_lines.append(line)
                 i += 1
             code_text = "\n".join(code_lines)
             lvl = (2 if in_appendix else 1) + len(section_stack)
