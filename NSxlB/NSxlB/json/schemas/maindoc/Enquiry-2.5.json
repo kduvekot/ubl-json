@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:Enquiry-2",
+  "description": "A document sent by a requestor to a responder resquesting information about a particular business process. ",
+  "type": "object",
+  "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:Enquiry-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "LatestReplyDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LatestReplyDate"
+    },
+    "LatestReplyTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LatestReplyTime"
+    },
+    "Description": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
+          }
+        }
+      ]
+    },
+    "RequestorParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ResponderParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "Attachment": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AttachmentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AttachmentType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "$jsonschema",
+    "IssueDate",
+    "RequestorParty",
+    "ResponderParty"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Enquiry. Details"
+}

@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:GuaranteeCertificate-2",
+  "description": "A document to notify the deposit of a Guarantee, such as a bid bond.",
+  "type": "object",
+  "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:GuaranteeCertificate-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
+    },
+    "CopyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
+    },
+    "ContractFolderID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ContractFolderID"
+    },
+    "IssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "GuaranteeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/GuaranteeTypeCode"
+    },
+    "Purpose": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Purpose"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Purpose"
+          }
+        }
+      ]
+    },
+    "LiabilityAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LiabilityAmount"
+    },
+    "ConstitutionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ConstitutionCode"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+          }
+        }
+      ]
+    },
+    "ApplicablePeriod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
+    },
+    "ApplicableRegulation": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/RegulationType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/RegulationType"
+          }
+        }
+      ]
+    },
+    "GuaranteeDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "ImmobilizedSecurity": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ImmobilizedSecurityType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ImmobilizedSecurityType"
+          }
+        }
+      ]
+    },
+    "GuarantorParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "InterestedParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "BeneficiaryParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    }
+  },
+  "required": [
+    "$jsonschema",
+    "ContractFolderID",
+    "IssueDate",
+    "LiabilityAmount",
+    "GuarantorParty",
+    "InterestedParty"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Guarantee Certificate. Details"
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:InvoiceStatusRequest-2",
+  "description": "A document used to request the status of a previously issued Invoice.",
+  "type": "object",
+  "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:InvoiceStatusRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
+    },
+    "RequestDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RequestDate"
+    },
+    "RequestTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RequestTime"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+          }
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "BillingReference": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/BillingReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/BillingReferenceType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "$jsonschema",
+    "ID",
+    "RequestDate",
+    "SenderParty",
+    "ReceiverParty",
+    "BillingReference"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Invoice Status Request. Details"
+}
