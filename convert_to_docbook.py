@@ -355,7 +355,20 @@ def extract_inline_content(paragraph, hyperlink_map):
             if link_text:
                 result.append({"type": "hyperlink", "url": url, "text": link_text})
 
-    return result
+    # Merge adjacent runs with identical formatting (Word often splits a single
+    # word like "ExtensionURI" into multiple runs, e.g. "E" + "xtensionURI").
+    merged = []
+    for item in result:
+        if (merged
+                and item["type"] == "text"
+                and merged[-1]["type"] == "text"
+                and item["bold"] == merged[-1]["bold"]
+                and item["italic"] == merged[-1]["italic"]
+                and item.get("monospace") == merged[-1].get("monospace")):
+            merged[-1]["text"] += item["text"]
+        else:
+            merged.append(item)
+    return merged
 
 
 def render_inline(items):
