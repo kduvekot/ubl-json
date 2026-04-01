@@ -94,20 +94,41 @@ def prepare_input(input_xml):
     # 1. Extract the DOCTYPE block (including the internal subset [...]).
     #    The block starts with "<!DOCTYPE" and ends at the matching "]>"
     #    (when an internal subset is present) or the first bare ">".
+    #
+    #    We use find() rather than a DOTALL regex so that we never
+    #    accidentally match a "]]>" from a CDATA section later in the
+    #    document.  The DOCTYPE is always before the root element, so
+    #    any "]>" we find starting from the "[" position is guaranteed
+    #    to be the DOCTYPE's closing delimiter and not a CDATA end-tag.
     # ------------------------------------------------------------------
-    # Match DOCTYPE with internal subset (ends with ]>) or without (ends with >)
-    doctype_match = re.search(r'<!DOCTYPE\b(.*?\]>|[^>]*>)', content, re.DOTALL)
-
     entities = {}
-    if doctype_match:
-        doctype_block = doctype_match.group(0)
+    doctype_start = content.find('<!DOCTYPE')
+    if doctype_start != -1:
+        bracket_pos = content.find('[', doctype_start)
+        close_tag_pos = content.find('>', doctype_start)
+
+        if bracket_pos != -1 and bracket_pos < close_tag_pos:
+            # Has internal subset — find the closing ]>
+            # This is safe: "[" is inside the DOCTYPE prolog, well before
+            # any element content, so the first "]>" from here belongs to
+            # the DOCTYPE, not to a CDATA section.
+            subset_end = content.find(']>', bracket_pos)
+            if subset_end != -1:
+                doctype_end = subset_end + 2  # include the ]>
+            else:
+                doctype_end = close_tag_pos + 1
+        else:
+            # No internal subset — just find the closing >
+            doctype_end = close_tag_pos + 1
+
+        doctype_block = content[doctype_start:doctype_end]
 
         # 2. Extract all <!ENTITY name "value"> declarations from the block
         for m in re.finditer(r'<!ENTITY\s+(\S+)\s+"([^"]*)"', doctype_block):
             entities[m.group(1)] = m.group(2)
 
         # 3. Remove the entire DOCTYPE block from the content
-        content = content[:doctype_match.start()] + content[doctype_match.end():]
+        content = content[:doctype_start] + content[doctype_end:]
 
     # 4. Expand entity references in the remaining content.
     #    Only expand the entities we found; leave standard XML entities alone
