@@ -829,15 +829,24 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         # Handle Monospace (code blocks) - collect consecutive ones
         if style == "Monospace":
             code_lines = []
+            lang = None
             while i < len(elements) and elements[i]["style"] == "Monospace":
                 line = elements[i]["text"]
-                # Strip markdown fence markers (```json, ```, etc.)
-                if not re.match(r"^```", line.strip()):
-                    code_lines.append(line)
+                stripped = line.strip()
+                # Detect opening fence like ```json or ```xml
+                fence_match = re.match(r"^```(\w+)?$", stripped)
+                if fence_match:
+                    if fence_match.group(1):
+                        lang = fence_match.group(1)
+                    # Skip both opening and closing fences
+                    i += 1
+                    continue
+                code_lines.append(line)
                 i += 1
             code_text = "\n".join(code_lines)
             lvl = (2 if in_appendix else 1) + len(section_stack)
-            xml_lines.append(f"{indent(lvl)}<programlisting><![CDATA[{code_text}]]></programlisting>")
+            lang_attr = f' language="{xml_escape(lang)}"' if lang else ""
+            xml_lines.append(f"{indent(lvl)}<programlisting{lang_attr}><![CDATA[{code_text}]]></programlisting>")
             continue
 
         # Handle List Paragraphs - collect consecutive ones into a list
