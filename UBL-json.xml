@@ -13,7 +13,6 @@
   <!ENTITY previous-loc "">
   <!ENTITY committee "OASIS Universal Business Language TC">
   <!ENTITY abstract-text "This specification defines a normative JSON syntax binding for Universal Business Language (UBL) version 2.5. It establishes the rules, constraints, and validation requirements governing the representation of UBL business documents and Aggregate Business Information Entities (ABIEs) in JSON form.">
-  <!ENTITY citation-text "When referencing this document, the following citation format should be used: K. Bengtsson, E. K. Bergheim and K. Duvekot, Eds., UBL 2.5 JSON Syntax Binding, Version 1.0, Committee Specification Draft 01, OASIS Universal Business Language (UBL) Technical Committee, OASIS Open, Feb. 20, 2026. [Online]. Available: https://docs.oasis-open.org/ubl/csd01-UBL-2.5-JSON-1.0/UBL-2.5-JSON-1.0.html">
 ]>
 
 <article status="&standard;" lang="en">
@@ -21,12 +20,11 @@
     <productname class="trade">&name;</productname>
     <productnumber>&version;</productnumber>
     <releaseinfo role="track">Standards Track Work Product</releaseinfo>
-    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-1.0.docx (Authoritative)</releaseinfo>
-    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-1.0.html</releaseinfo>
-    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-1.0.pdf</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-1.0.docx (Authoritative)</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-1.0.html</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-1.0.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>
     <title>&title;</title>
     <releaseinfo role="committee">&committee;</releaseinfo>
     <authorgroup>
@@ -57,10 +55,21 @@
     <abstract>
       <para>&abstract-text;</para>
     </abstract>
-    <legalnotice role="citation">
+    <legalnotice role="citation" id="CITATION">
       <title>Citation format</title>
-      <bibliolist>
-        <bibliomixed>&citation-text;</bibliomixed>
+      <para>When referencing this specification the following citation format should be used:</para>
+      <bibliolist id="citationfmt">
+        <bibliomixed id="UBL-JSON">
+          <abbrev>UBL-2.5-JSON-&spec-version;</abbrev>
+          <citetitle>&title;.</citetitle>
+          <bibliomisc>Edited by Kenneth Bengtsson, Erlend Klakegg Bergheim and Kees Duvekot.</bibliomisc>
+          <date>&pubdate;.</date>
+          <releaseinfo>&standard;.</releaseinfo>
+          <bibliomisc>
+            <ulink url="&this-loc;/UBL-2.5-JSON-&spec-version;.html">&this-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.
+            Latest stage: <ulink url="&latest-loc;/UBL-2.5-JSON-&spec-version;.html">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.
+          </bibliomisc>
+        </bibliomixed>
       </bibliolist>
     </legalnotice>
     <legalnotice role="notices">
@@ -121,15 +130,15 @@
           <para>Naming conventions:</para>
           <itemizedlist>
             <listitem>
-              <para>Names of Business Information Entities (BIEs), including Document ABIEs, ABIEs, BBIEs, and ASBIEs, appear in Title Case (e.g., Invoice, Order, ID, IssueDate, BuyerCustomerParty).</para>
+              <para>Names of Business Information Entities (BIEs), including Document ABIEs, ABIEs, BBIEs, and ASBIEs, appear in Title Case (e.g., <literal moreinfo="none">Invoice</literal>, <literal moreinfo="none">Order</literal>, <literal moreinfo="none">ID</literal>, <literal moreinfo="none">IssueDate</literal>, <literal moreinfo="none">BuyerCustomerParty</literal>).</para>
             </listitem>
             <listitem>
-              <para>CCTS-derived supplementary components (e.g., members of typed primitives such as Identifier, Code, Amount, Quantity, Measure, BinaryObject, Date, Time, Text/Name) appear in lowerCamelCase (e.g., schemeID, currencyID, unitCode).</para>
+              <para>CCTS-derived supplementary components (e.g., members of typed primitives such as Identifier, Code, Amount, Quantity, Measure, BinaryObject, Date, Time, Text/Name) appear in lowerCamelCase (e.g., <literal moreinfo="none">schemeID</literal>, <literal moreinfo="none">currencyID</literal>, <literal moreinfo="none">unitCode</literal>).</para>
             </listitem>
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>Monospaced font is used for JSON keywords, property names, schema keywords, literal values, and regular expressions (e.g., UBLEntity, currencyID, true, ^[0-9]{4}-[0-9]{2}-[0-9]{2}$).</para>
+          <para>Monospaced font is used for JSON keywords, property names, schema keywords, literal values, and regular expressions (e.g., <literal moreinfo="none">UBLEntity</literal>, <literal moreinfo="none">currencyID</literal>, <literal moreinfo="none">true</literal>, <literal moreinfo="none">^[0-9]{4}-[0-9]{2}-[0-9]{2}$</literal>).</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -167,8 +176,8 @@
 
     <section id="S-EXCHANGE-OF-COMPLETE-UBL-DOCUMENTS">
       <title>Exchange of complete UBL documents</title>
-      <para>The predominant use of UBL JSON is the exchange of complete business documents such as Invoice, Order, Catalogue, or BillOfLading. In this mode, the root object of the JSON instance corresponds directly to a document type defined in the UBL Semantic Library. Each such instance shall conform to the normative rules of this specification, including property naming, cardinality, datatype representation, and schema identification via the UBLEntity property as specified in section 10.1 (Schema identification).</para>
-      <para>This document-oriented approach reflects the original design objective of UBL: to model electronic transactions that mirror existing business practices. Documents are the units of contractual and legal effect in commerce, and UBL JSON preserves that role while allowing instances to be expressed in JSON syntax. For example, an electronic Invoice sent from a supplier to a buyer would appear as a JSON object rooted in the Invoice ABIE. It may contain embedded Party objects (AccountingSupplierParty, AccountingCustomerParty), LineItem arrays, and PaymentMeans details, all governed by the same semantic library as in UBL XML.</para>
+      <para>The predominant use of UBL JSON is the exchange of complete business documents such as Invoice, Order, Catalogue, or BillOfLading. In this mode, the root object of the JSON instance corresponds directly to a document type defined in the UBL Semantic Library. Each such instance shall conform to the normative rules of this specification, including property naming, cardinality, datatype representation, and schema identification via the <literal moreinfo="none">UBLEntity</literal> property as specified in section 10.1 (Schema identification).</para>
+      <para>This document-oriented approach reflects the original design objective of UBL: to model electronic transactions that mirror existing business practices. Documents are the units of contractual and legal effect in commerce, and UBL JSON preserves that role while allowing instances to be expressed in JSON syntax. For example, an electronic Invoice sent from a supplier to a buyer would appear as a JSON object rooted in the Invoice ABIE. It may contain embedded <literal moreinfo="none">Party</literal> objects (<literal moreinfo="none">AccountingSupplierParty</literal>, <literal moreinfo="none">AccountingCustomerParty</literal>), <literal moreinfo="none">LineItem</literal> arrays, and <literal moreinfo="none">PaymentMeans</literal> details, all governed by the same semantic library as in UBL XML.</para>
       <para>Document-level UBL JSON instances are therefore suited for use in environments where a complete business transaction is transmitted between systems or organizations.</para>
     </section>
 
@@ -178,17 +187,17 @@
       <para>This design enables UBL to be employed in API-driven integrations. For example:</para>
       <itemizedlist>
         <listitem>
-          <para>A Party ABIE may be exposed through endpoints such as GET /party/{id} or PUT /party/{id}.</para>
+          <para>A <literal moreinfo="none">Party</literal> ABIE may be exposed through endpoints such as <literal moreinfo="none">GET /party/{id}</literal> or <literal moreinfo="none">PUT /party/{id}</literal>.</para>
         </listitem>
         <listitem>
-          <para>An Address ABIE may be returned in response to a geolocation lookup.</para>
+          <para>An <literal moreinfo="none">Address</literal> ABIE may be returned in response to a geolocation lookup.</para>
         </listitem>
         <listitem>
-          <para>A PaymentMeans ABIE may be submitted to configure a customer’s payment preferences.</para>
+          <para>A <literal moreinfo="none">PaymentMeans</literal> ABIE may be submitted to configure a customer’s payment preferences.</para>
         </listitem>
       </itemizedlist>
-      <para>The semantics remain consistent: the Party appearing inside an Invoice is structurally identical to the Party served at an API endpoint. This eliminates semantic drift between documents and APIs, ensuring that business data carries the same meaning across channels.</para>
-      <para>Conformance rules are identical to those for full documents: property naming, cardinality, datatype representation, and schema identification through UBLEntity. Communities of use may therefore adopt either or both paradigms, knowing they are interoperable by design.</para>
+      <para>The semantics remain consistent: the <literal moreinfo="none">Party</literal> appearing inside an Invoice is structurally identical to the <literal moreinfo="none">Party</literal> served at an API endpoint. This eliminates semantic drift between documents and APIs, ensuring that business data carries the same meaning across channels.</para>
+      <para>Conformance rules are identical to those for full documents: property naming, cardinality, datatype representation, and schema identification through <literal moreinfo="none">UBLEntity</literal>. Communities of use may therefore adopt either or both paradigms, knowing they are interoperable by design.</para>
     </section>
 
     <section id="S-COMPLEMENTARITY-OF-DOCUMENTS-AND-COMPONENTS">
@@ -244,16 +253,16 @@
     <section id="S-DOCUMENT-EXTENSIONS">
       <title>Document extensions</title>
       <para>UBL provides a standardized extension scaffolding defined in the Common Extension Components schema (see C.1.5 Common Extension Components schema). This scaffolding enables user communities to introduce additional content into a UBL JSON instance when required.</para>
-      <para>An extension container, if present, shall be expressed using the UBLExtensions property. Each extension shall be a JSON object containing at least the following members:</para>
+      <para>An extension container, if present, shall be expressed using the <literal moreinfo="none">UBLExtensions</literal> property. Each extension shall be a JSON object containing at least the following members:</para>
       <itemizedlist>
         <listitem>
-          <para>ExtensionURI: a URI that uniquely identifies the extension. This value shall not collide with any predefined UBL property name. Extension identifiers should be namespaced, for example by reverse-DNS or URI-scoped conventions, to minimize the risk of collision across communities.</para>
+          <para><literal moreinfo="none">E</literal><literal moreinfo="none">xtensionURI</literal>: a URI that uniquely identifies the extension. This value shall not collide with any predefined UBL property name. Extension identifiers should be namespaced, for example by reverse-DNS or URI-scoped conventions, to minimize the risk of collision across communities.</para>
         </listitem>
         <listitem>
-          <para>ExtensionContent: a JSON object containing the extension payload. This member is mandatory whenever the extension container is used and shall not be empty.</para>
+          <para><literal moreinfo="none">E</literal><literal moreinfo="none">xtensionContent</literal>: a JSON object containing the extension payload. This member is mandatory whenever the extension container is used and shall not be empty.</para>
         </listitem>
       </itemizedlist>
-      <para>Extension content shall not alter or redefine the meaning of standard UBL properties and is strictly additive in nature. Extension metadata (e.g., ExtensionAgencyID, ExtensionVersionID) is optional unless required by a community profile.</para>
+      <para>Extension content shall not alter or redefine the meaning of standard UBL properties and is strictly additive in nature. Extension metadata (e.g., <literal moreinfo="none">E</literal><literal moreinfo="none">xtensionAgencyID</literal>, <literal moreinfo="none">E</literal><literal moreinfo="none">xtensionVersionID</literal>) is optional unless required by a community profile.</para>
       <para>Implementers should be aware that extensions inevitably reduce interoperability with communities or systems that have not adopted the same extension.</para>
       <para><emphasis>Example (non-normative, truncated):</emphasis></para>
       <programlisting language="json"><![CDATA["UBLExtensions": [
@@ -273,13 +282,13 @@
       <para>The cardinality of Business Information Entities (BIEs) as defined in the UBL Semantic Library shall be reflected in JSON according to the following rules:</para>
       <itemizedlist>
         <listitem>
-          <para>[1..1]: The property shall be present exactly once, represented either in scalar or object form as prescribed for its data type.</para>
+          <para><literal moreinfo="none">[1..1]</literal>: The property shall be present exactly once, represented either in scalar or object form as prescribed for its data type.</para>
         </listitem>
         <listitem>
-          <para>[0..1]: The property may be absent, or, if present, shall appear exactly once in scalar or object form as prescribed for its data type. Omission shall constitute non-occurrence.</para>
+          <para><literal moreinfo="none">[0..1]</literal>: The property may be absent, or, if present, shall appear exactly once in scalar or object form as prescribed for its data type. Omission shall constitute non-occurrence.</para>
         </listitem>
         <listitem>
-          <para>[0..n] or [1..n]:</para>
+          <para><literal moreinfo="none">[0..n]</literal> or <literal moreinfo="none">[1..n]</literal>:</para>
           <itemizedlist>
             <listitem>
               <para>If exactly one occurrence is present, it shall be represented as a single value or object.</para>
@@ -291,7 +300,7 @@
         </listitem>
       </itemizedlist>
       <para>Consumers shall implement acceptance of both the singleton and array forms in order to accommodate the full range of cardinalities. Producers shall emit the scalar form only when no supplementary components are supplied or required and shall emit the object form whenever any supplementary component is present or mandated by a profile. The JSON literal null shall not be employed to indicate absence. Omission of an optional property shall constitute the normative representation of non-occurrence.</para>
-      <para><emphasis>Example (non-normative). A BBIE </emphasis>Description<emphasis> with cardinality 0..n may be represented as:</emphasis></para>
+      <para><emphasis>Example (non-normative). A BBIE </emphasis><literal moreinfo="none">Description</literal><emphasis> with cardinality 0..n may be represented as:</emphasis></para>
       <programlisting language="json"><![CDATA["Description": "My description"]]></programlisting>
       <para><emphasis>when a single occurrence is present, or as:</emphasis></para>
       <programlisting language="json"><![CDATA["Description": {"value": "My description", "languageID": "EN"}]]></programlisting>
@@ -305,9 +314,9 @@
 
     <section id="S-NULLABILITY-AND-OMISSION">
       <title>Nullability and omission</title>
-      <para>JSON null values shall not be employed to represent absence in UBL JSON. Optional properties shall be omitted when not present.</para>
-      <para>Within the JSON schemas, certain internal definition names (for example in $defs) use the suffix _n to denote repeatable constructs corresponding to cardinalities of 0..n or 1..n. These suffixed names are schema-level artefacts used to express multiplicity and alternative structural representations (such as singleton versus array forms). They do not appear in instance JSON and do not constitute instance property names.</para>
-      <para>The presence of such schema variants does not imply acceptance of the JSON literal null in instance documents.</para>
+      <para>JSON <literal moreinfo="none">null</literal> values shall not be employed to represent absence in UBL JSON. Optional properties shall be omitted when not present.</para>
+      <para>Within the JSON schemas, certain internal definition names (for example in <literal moreinfo="none">$defs</literal>) use the suffix <literal moreinfo="none">_n</literal> to denote repeatable constructs corresponding to cardinalities of <literal moreinfo="none">0..n</literal> or <literal moreinfo="none">1..n</literal>. These suffixed names are schema-level artefacts used to express multiplicity and alternative structural representations (such as singleton versus array forms). They do not appear in instance JSON and do not constitute instance property names.</para>
+      <para>The presence of such schema variants does not imply acceptance of the JSON literal <literal moreinfo="none">null</literal> in instance documents.</para>
     </section>
 
     <section id="S-ORDERING-WHITESPACE-AND-FORMATTING">
@@ -344,10 +353,10 @@
           <para>In the case of natural language Text or Name elements with repeating cardinality:</para>
           <itemizedlist>
             <listitem>
-              <para>Any occurrence omits a languageID, or</para>
+              <para>Any occurrence omits a <literal moreinfo="none">languageID</literal>, or</para>
             </listitem>
             <listitem>
-              <para>Two occurrences share the same languageID.</para>
+              <para>Two occurrences share the same <literal moreinfo="none">languageID</literal>.</para>
             </listitem>
           </itemizedlist>
         </listitem>
@@ -358,7 +367,7 @@
 
   <section id="S-CONTROLLED-VOCABULARIES">
     <title>Controlled vocabularies</title>
-    <para>When a BBIE incorporates a schemeID, listID, unitCode, or currencyID, producers should employ published and stable vocabularies appropriate to their business domain. Conformance to external vocabularies is determined by the profile or community in which the document is exchanged and lies outside the scope of this specification.</para>
+    <para>When a BBIE incorporates a <literal moreinfo="none">schemeID</literal>, <literal moreinfo="none">listID</literal>, <literal moreinfo="none">unitCode</literal>, or <literal moreinfo="none">currencyID</literal>, producers should employ published and stable vocabularies appropriate to their business domain. Conformance to external vocabularies is determined by the profile or community in which the document is exchanged and lies outside the scope of this specification.</para>
     <para>Common examples of controlled vocabularies include ISO 4217 <emphasis role="bold">[ISO 4217]</emphasis> for currency codes, UN/ECE Recommendations 20 and 21 <emphasis role="bold">[UNECE Rec 20/21]</emphasis> for units of measure, and ISO 3166 <emphasis role="bold">[ISO 3166]</emphasis> for country and region codes.</para>
   </section>
 
@@ -386,7 +395,7 @@
 
     <section id="S-UBL-UNQUALIFIED-DATA-TYPES">
       <title>UBL unqualified data types</title>
-      <para>The CCTS-derived data types employed in UBL are represented in JSON either in scalar form (core value only) or in object form (a value property with supplementary components). Producers may emit the scalar form when no supplementary components are supplied or required. Producers shall emit the object form whenever any supplementary component is present. Consumers shall implement acceptance of both forms. Optional supplementary components are represented by omission, and the JSON literal null shall not be employed.</para>
+      <para>The CCTS-derived data types employed in UBL are represented in JSON either in scalar form (core value only) or in object form (a <literal moreinfo="none">value</literal> property with supplementary components). Producers may emit the scalar form when no supplementary components are supplied or required. Producers shall emit the object form whenever any supplementary component is present. Consumers shall implement acceptance of both forms. Optional supplementary components are represented by omission, and the JSON literal <literal moreinfo="none">null</literal> shall not be employed.</para>
       <table id="T-DATA-TYPE" frame="all">
         <title>Data type</title>
         <tgroup cols="3">
@@ -478,7 +487,7 @@
 
     <section id="S-BINARYOBJECT-TYPE">
       <title>BinaryObject type</title>
-      <para>A BinaryObject is always represented in object form. The value property is required and shall contain a base64-encoded string. The mimeCode property is required and shall identify the media type of the content using an IANA-registered MIME type (e.g., application/pdf, image/png, text/plain, application/octet-stream, etc.) <emphasis role="bold">[MEDIA-TYPES]</emphasis>.</para>
+      <para>A BinaryObject is always represented in object form. The <literal moreinfo="none">value</literal> property is required and shall contain a base64-encoded string. The <literal moreinfo="none">mimeCode</literal> property is required and shall identify the media type of the content using an IANA-registered MIME type (e.g., <literal moreinfo="none">application/pdf</literal>, <literal moreinfo="none">image/png</literal>, <literal moreinfo="none">text/plain</literal>, <literal moreinfo="none">application/octet-stream</literal>, etc.) <emphasis role="bold">[MEDIA-TYPES]</emphasis>.</para>
       <para><emphasis>Example (non-normative):</emphasis></para>
       <programlisting language="json"><![CDATA[{
   "value": "JVBERi0xLjQKJcfsj6IK...",
@@ -536,9 +545,9 @@
         <para>Enveloped signatures shall be carried within the standard UBL extension mechanism (see section 7.3). A digital signature extension shall be identified by the reserved URI:</para>
         <programlisting language="json"><![CDATA["ExtensionURI":
 https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
-        <para>The ExtensionContent member of such an extension shall be a JSON object containing a mandatory property named signatures. The value of signatures shall be an array of one or more JSON Web Signature (JWS) objects expressed using the JSON Serialization defined in <emphasis role="bold">[RFC7515]</emphasis>. No other properties shall appear in the ExtensionContent object unless defined by a community profile.</para>
+        <para>The <literal moreinfo="none">ExtensionContent</literal> member of such an extension shall be a JSON object containing a mandatory property named <literal moreinfo="none">signatures</literal>. The value of <literal moreinfo="none">signatures</literal> shall be an array of one or more JSON Web Signature (JWS) objects expressed using the JSON Serialization defined in <emphasis role="bold">[RFC7515]</emphasis>. No other properties shall appear in the <literal moreinfo="none">ExtensionContent</literal> object unless defined by a community profile.</para>
         <para>The payload of each JWS shall be the JSON Canonicalization Scheme (JCS) canonicalized octet stream of the enclosing UBL JSON instance, with the exception that the extension container holding the signature shall be omitted from the canonicalization input. This ensures that the signature covers the complete business content of the document while avoiding recursive inclusion of the signature itself.</para>
-        <para>Each JWS object may include protected headers in accordance with <emphasis role="bold">[RFC7515]</emphasis>, such as alg to identify the algorithm, kid to reference the signing key, or x5c to carry the certificate chain. Where multiple signatures are applied to the same document, the ExtensionContent shall carry an array of JWS objects, each independently verifiable over the same canonicalized payload.</para>
+        <para>Each JWS object may include protected headers in accordance with <emphasis role="bold">[RFC7515]</emphasis>, such as <literal moreinfo="none">alg</literal> to identify the algorithm, <literal moreinfo="none">kid</literal> to reference the signing key, or <literal moreinfo="none">x5c</literal> to carry the certificate chain. Where multiple signatures are applied to the same document, the <literal moreinfo="none">E</literal><literal moreinfo="none">xtensionContent</literal> shall carry an array of JWS objects, each independently verifiable over the same canonicalized payload.</para>
         <para>A conformant consumer shall validate an enveloped signature by canonicalizing the instance excluding the signature extension, verifying the JWS signature over that canonicalized octet stream, and applying any certificate or trust validation procedures mandated by the relevant community or regulatory profile.</para>
         <para><emphasis>Example (non-normative, truncated):</emphasis></para>
         <programlisting language="json"><![CDATA["UBLExtensions": [
@@ -560,7 +569,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       <section id="S-DETACHED-SIGNATURES">
         <title>Detached signatures</title>
         <para>Detached signatures shall be conveyed separately from the UBL JSON instance. In this profile, the UBL document itself remains unsigned in its payload form, and the signature is transported as a distinct JWS object. The payload of the detached JWS shall be the JCS-canonicalized octet stream of the complete UBL JSON instance.</para>
-        <para>Where required, the UBL JSON instance may include a Signature Aggregate Business Information Entity (ABIE) referencing the detached signature by URI or identifier. In such cases, the SignatureMethod property of the ABIE shall be set to the fixed identifier:</para>
+        <para>Where required, the UBL JSON instance may include a <literal moreinfo="none">Signature</literal> Aggregate Business Information Entity (ABIE) referencing the detached signature by URI or identifier. In such cases, the <literal moreinfo="none">SignatureMethod</literal> property of the ABIE shall be set to the fixed identifier:</para>
         <programlisting><![CDATA["https://docs.oasis-open.org/ubl/json/jws/detached"]]></programlisting>
         <para>The mechanism by which detached signatures are packaged together with the UBL document, such as multipart envelopes, container formats, or service-specific transports, lies outside the scope of this specification, but any such mechanism shall ensure that the association between the instance and its detached signature is unambiguous and verifiable.</para>
         <para>A conformant consumer shall validate a detached signature by canonicalizing the entire UBL JSON instance, verifying the JWS signature over that canonicalized octet stream, and applying certificate and trust validation in accordance with the governing profile.</para>
@@ -570,7 +579,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
     <section id="S-CANONICALIZATION">
       <title>Canonicalization</title>
       <para>Prior to signing or verification, a UBL JSON instance shall be transformed into a deterministic octet stream using the JSON Canonicalization Scheme (JCS) <emphasis role="bold">[RFC8785]</emphasis>.</para>
-      <para>The canonicalization input shall exclude only the extension object whose ExtensionURI matches the signature URI and contains the signature itself. For detached signatures, the entire canonicalized root instance shall be covered.</para>
+      <para>The canonicalization input shall exclude only the extension object whose <literal moreinfo="none">ExtensionURI</literal> matches the signature URI and contains the signature itself. For detached signatures, the entire canonicalized root instance shall be covered.</para>
       <para>Consumers shall reject any signature whose input does not match the JCS-canonicalized form of the unsigned instance.</para>
     </section>
   </section>
@@ -582,21 +591,21 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       <title>Normative status</title>
       <para>The JSON Schemas <emphasis role="bold">[JSON-SCHEMA]</emphasis> distributed with this specification are normative artefacts. They prescribe the structural representation of the UBL Semantic Library and the catalogue of UBL business documents in JSON syntax. Conformance to this specification requires that instances validate successfully against the applicable JSON Schema.</para>
       <para>These schemas govern the syntactic representation of UBL in JSON. Business-level constraints such as controlled vocabularies, profile specific rules, or regulatory mandates are addressed separately in sections 9 (Controlled vocabularies), 10 (Versioning and profiles), and 12 (Digital Signatures).</para>
-      <para>All normative schemas are published in the json/schemas/ directory of the release package. Each schema is identified by a stable URI, listed in Annex C Normative schemas, that is fixed at the major version level. (e.g., https://docs.oasis-open.org/ubl/json/schemas/Invoice-2). Minor revisions do not change these identifiers.</para>
+      <para>All normative schemas are published in the <literal moreinfo="none">json/schemas/</literal> directory of the release package. Each schema is identified by a stable URI, listed in Annex C Normative schemas, that is fixed at the major version level. (e.g., <literal moreinfo="none">https://docs.oasis-open.org/ubl/json/schemas/Invoice-2</literal>). Minor revisions do not change these identifiers.</para>
     </section>
 
     <section id="S-DOCUMENT-INSTANCES">
       <title>Document instances</title>
       <para>When a complete UBL business document is exchanged (such as an Invoice, an Order, or a Catalogue) the root JSON object shall identify its governing schema by means of the UBLEntity property. The value of this property shall be the major-stable identifier corresponding to the UBL document type.</para>
-      <para>This requirement ensures that any receiving system can unambiguously determine the exact structural rules to apply when validating and processing the instance. Because the identifiers are stable across all minor revisions of the UBL 2.x line, a document referencing, for example, a UBL Invoice-2 remains valid regardless of whether the schema implementation in use is UBL 2.5, 2.6, or 2.x. This guarantees forward compatibility, thereby protecting investments in existing implementations and reducing the operational risk of upgrading to newer releases.</para>
+      <para>This requirement ensures that any receiving system can unambiguously determine the exact structural rules to apply when validating and processing the instance. Because the identifiers are stable across all minor revisions of the UBL 2.x line, a document referencing, for example, a UBL <literal moreinfo="none">Invoice-2</literal> remains valid regardless of whether the schema implementation in use is UBL 2.5, 2.6, or 2.x. This guarantees forward compatibility, thereby protecting investments in existing implementations and reducing the operational risk of upgrading to newer releases.</para>
       <para>Document instances follow the canonical model prescribed by the UBL Semantic Library and thus embed complete sets of ABIEs and BBIEs in accordance with the schema definitions. By referencing the document schema explicitly, producers and consumers can rely on a shared contract: the producer asserts conformance to the UBL document model, and the consumer can validate, process, and archive the document with the assurance that its structure is compliant and interoperable.</para>
     </section>
 
     <section id="S-STANDALONE-ABIES">
       <title>Standalone ABIEs</title>
-      <para>The JSON schemas define each Aggregate Business Information Entity (ABIE) of the UBL Common Library not only as a component for embedding within larger structures but also as a valid root payload. This design enables implementers to employ individual ABIEs directly in transactional contexts that do not require the overhead of a complete UBL document instance. A common example is the deployment of application programming interfaces (APIs) that exchange business components in isolation, such as a getAddress or putParty endpoint.</para>
-      <para>In these scenarios, the UBLEntity property serves to anchor the instance to the relevant definition in the Common Aggregate Components schema, and the fragment identifier designates the ABIE in question. The result is that a JSON instance representing, for example, an Address payload, carries the same normative semantics as when that same ABIE is embedded within a UBL document such as an Invoice or an Order.</para>
-      <para>This approach guarantees semantic consistency: a Party or Address exchanged as a standalone payload is precisely the same structure, subject to the same rules, as when appearing within a larger document. It also promotes reuse of the UBL semantic vocabulary across heterogeneous integration models, allowing implementers to unify document-centric exchanges and component-centric API calls under a single coherent set of rules.</para>
+      <para>The JSON schemas define each Aggregate Business Information Entity (ABIE) of the UBL Common Library not only as a component for embedding within larger structures but also as a valid root payload. This design enables implementers to employ individual ABIEs directly in transactional contexts that do not require the overhead of a complete UBL document instance. A common example is the deployment of application programming interfaces (APIs) that exchange business components in isolation, such as a <literal moreinfo="none">getAddress</literal> or <literal moreinfo="none">putParty</literal> endpoint.</para>
+      <para>In these scenarios, the UBLEntity property serves to anchor the instance to the relevant definition in the Common Aggregate Components schema, and the fragment identifier designates the ABIE in question. The result is that a JSON instance representing, for example, an <literal moreinfo="none">Address</literal> payload, carries the same normative semantics as when that same ABIE is embedded within a UBL document such as an Invoice or an Order.</para>
+      <para>This approach guarantees semantic consistency: a <literal moreinfo="none">Party</literal> or <literal moreinfo="none">Address</literal> exchanged as a standalone payload is precisely the same structure, subject to the same rules, as when appearing within a larger document. It also promotes reuse of the UBL semantic vocabulary across heterogeneous integration models, allowing implementers to unify document-centric exchanges and component-centric API calls under a single coherent set of rules.</para>
     </section>
 
     <section id="S-NORMATIVE-SCHEMAS">
@@ -611,7 +620,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
 
     <section id="S-SECURITY-CONSIDERATIONS">
       <title>Security considerations</title>
-      <para>UBL JSON instances are ordinary JSON documents. Implementers shall therefore consider the general security considerations applicable to application/json as described in <emphasis role="bold">[RFC8259]</emphasis>, including validation of input, avoidance of unsafe evaluation of textual content, and proper handling of Unicode per <emphasis role="bold">[UTR#36]</emphasis>.</para>
+      <para>UBL JSON instances are ordinary JSON documents. Implementers shall therefore consider the general security considerations applicable to <literal moreinfo="none">application/json</literal> as described in <emphasis role="bold">[RFC8259]</emphasis>, including validation of input, avoidance of unsafe evaluation of textual content, and proper handling of Unicode per <emphasis role="bold">[UTR#36]</emphasis>.</para>
       <para>The extension mechanism (section 7.3, Document extensions) allows communities to embed additional content. Such content is outside the scope of this specification and may introduce security risks if not governed by appropriate community rules. Implementers should ensure that extensions do not introduce executable code, unsafe references, or other payloads that could compromise consumers.</para>
       <para>Where digital signatures are applied, the considerations described in <emphasis role="bold">[RFC7515]</emphasis> (JWS) and <emphasis role="bold">[RFC8785]</emphasis> (JCS) apply. In particular, weak algorithms, inadequate key sizes, and improper certificate validation may compromise integrity and authenticity. This specification deliberately leaves algorithm choice and trust management to implementation profiles or regulatory frameworks.</para>
     </section>
@@ -630,7 +639,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       <para>A UBL JSON instance is conformant to this specification when all the following conditions are satisfied:</para>
       <orderedlist>
         <listitem>
-          <para>The instance validates against the applicable normative JSON Schema defined in Annex C Normative schemas and carries a UBLEntity property identifying the governing schema. For document instances, this is the schema of the declared document type. For standalone ABIE payloads, this is the Common Aggregate Components schema with the designated fragment identifier;</para>
+          <para>The instance validates against the applicable normative JSON Schema defined in Annex C Normative schemas and carries a <literal moreinfo="none">UBLEntity</literal> property identifying the governing schema. For document instances, this is the schema of the declared document type. For standalone ABIE payloads, this is the Common Aggregate Components schema with the designated fragment identifier;</para>
         </listitem>
         <listitem>
           <para>If present, extensions conform to the scaffolding defined in section 7.3 (Document extensions), do not collide with or alter the semantics of standard UBL properties, and extension metadata complies with the rules prescribed in that section; and</para>
@@ -663,10 +672,10 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <para>The signature is expressed as a JSON Web Signature (JWS) object conformant to [RFC7515] and bound to UBL JSON as prescribed in section 12 (Digital Signatures).</para>
         </listitem>
         <listitem>
-          <para>When signatures are embedded in the instance, they are carried within the UBL extension mechanism (UBLExtensions) using the reserved extension URI https://docs.oasis-open.org/ubl/json/jws/enveloped.</para>
+          <para>When signatures are embedded in the instance, they are carried within the UBL extension mechanism (<literal moreinfo="none">UBLExtensions</literal>) using the reserved extension URI <literal moreinfo="none">https://docs.oasis-open.org/ubl/json/jws/enveloped</literal>.</para>
         </listitem>
         <listitem>
-          <para>When signatures are conveyed separately from the instance, the payload of the detached JWS is the JCS-canonicalized octet stream of the complete UBL JSON document. Where the document includes a Signature ABIE referencing the detached signature, its SignatureMethod is set to https://docs.oasis-open.org/ubl/json/jws/detached.</para>
+          <para>When signatures are conveyed separately from the instance, the payload of the detached JWS is the JCS-canonicalized octet stream of the complete UBL JSON document. Where the document includes a Signature ABIE referencing the detached signature, its SignatureMethod is set to <literal moreinfo="none">https://docs.oasis-open.org/ubl/json/jws/detached</literal>.</para>
         </listitem>
       </orderedlist>
     </section>

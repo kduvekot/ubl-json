@@ -326,6 +326,7 @@ def extract_inline_content(paragraph, hyperlink_map):
             rPr = child.find(f"{W}rPr")
             bold = False
             italic = False
+            monospace = False
             if rPr is not None:
                 b_elem = rPr.find(f"{W}b")
                 if b_elem is not None:
@@ -335,7 +336,13 @@ def extract_inline_content(paragraph, hyperlink_map):
                 if i_elem is not None:
                     val = i_elem.get(f"{W}val")
                     italic = val != "0" if val is not None else True
-            result.append({"type": "text", "text": text, "bold": bold, "italic": italic})
+                # Check for monospace character style
+                rStyle = rPr.find(f"{W}rStyle")
+                if rStyle is not None:
+                    style_val = rStyle.get(f"{W}val", "")
+                    if "monospace" in style_val.lower() or "code" in style_val.lower():
+                        monospace = True
+            result.append({"type": "text", "text": text, "bold": bold, "italic": italic, "monospace": monospace})
 
         elif tag == f"{W}hyperlink":
             rid = child.get(f"{R}id")
@@ -366,7 +373,9 @@ def render_inline(items):
             # Replace tabs with spaces for inline text (tabs are structural
             # separators in the .docx, not meaningful in DocBook inline content)
             text = xml_escape(item["text"].replace("\t", " "))
-            if item["bold"] and item["italic"]:
+            if item.get("monospace"):
+                parts.append(f'<literal moreinfo="none">{text}</literal>')
+            elif item["bold"] and item["italic"]:
                 parts.append(f'<emphasis role="bold"><emphasis>{text}</emphasis></emphasis>')
             elif item["bold"]:
                 parts.append(f'<emphasis role="bold">{text}</emphasis>')
@@ -620,7 +629,6 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         "previous-loc": previous_loc,
         "committee": meta.get("technical_committee", ""),
         "abstract-text": meta.get("abstract", ""),
-        "citation-text": meta.get("citation_format", ""),
     }
 
     # -----------------------------------------------------------------------
@@ -647,44 +655,20 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
     # Standards track (invariant — not version-specific)
     xml_lines.append('    <releaseinfo role="track">Standards Track Work Product</releaseinfo>')
 
-    # "This version" URLs — composed from &this-loc; entity + filename
-    for url_line in this_version_urls:
-        url_line = url_line.strip()
-        # Extract just the filename (last path component), stripping annotation
-        annotated = url_line.endswith("(Authoritative)")
-        bare_url = re.sub(r"\s*\([^)]*\)\s*$", "", url_line).strip()
-        filename = bare_url.rsplit("/", 1)[-1]
-        if annotated:
-            role = "OASIS-specification-this-authoritative"
-            content = f"&this-loc;/{filename} (Authoritative)"
-        else:
-            role = "OASIS-specification-this"
-            content = f"&this-loc;/{filename}"
-        xml_lines.append(f'    <releaseinfo role="{role}">{content}</releaseinfo>')
+    # "This version" URLs — HTML first, then PDF, then XML (authoritative)
+    xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
+    xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
+    xml_lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>')
 
-    # "Previous version" URLs
-    for url_line in previous_version_urls:
-        url_line = url_line.strip()
-        bare_url = re.sub(r"\s*\([^)]*\)\s*$", "", url_line).strip()
-        filename = bare_url.rsplit("/", 1)[-1]
-        annotated = url_line.endswith("(Authoritative)")
-        if annotated:
-            content = f"&previous-loc;/{filename} (Authoritative)"
-        else:
-            content = f"&previous-loc;/{filename}"
-        xml_lines.append(f'    <releaseinfo role="OASIS-specification-previous">{content}</releaseinfo>')
+    # "Previous version" URLs (if available)
+    if meta.get("previous_version_urls"):
+        xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
+        xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
+        xml_lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>')
 
     # "Latest version" URLs
-    for url_line in latest_version_urls:
-        url_line = url_line.strip()
-        bare_url = re.sub(r"\s*\([^)]*\)\s*$", "", url_line).strip()
-        filename = bare_url.rsplit("/", 1)[-1]
-        annotated = url_line.endswith("(Authoritative)")
-        if annotated:
-            content = f"&latest-loc;/{filename} (Authoritative)"
-        else:
-            content = f"&latest-loc;/{filename}"
-        xml_lines.append(f'    <releaseinfo role="OASIS-specification-latest">{content}</releaseinfo>')
+    xml_lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
+    xml_lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
 
     # Title
     xml_lines.append("    <title>&title;</title>")
@@ -750,14 +734,39 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         xml_lines.append("      <para>&abstract-text;</para>")
         xml_lines.append("    </abstract>")
 
-    # Citation format
-    if meta.get("citation_format"):
-        xml_lines.append('    <legalnotice role="citation">')
-        xml_lines.append("      <title>Citation format</title>")
-        xml_lines.append("      <bibliolist>")
-        xml_lines.append("        <bibliomixed>&citation-text;</bibliomixed>")
-        xml_lines.append("      </bibliolist>")
-        xml_lines.append("    </legalnotice>")
+    # Citation format — build structured citation from metadata
+    xml_lines.append('    <legalnotice role="citation" id="CITATION">')
+    xml_lines.append("      <title>Citation format</title>")
+    xml_lines.append("      <para>When referencing this specification the following citation format should be used:</para>")
+    xml_lines.append('      <bibliolist id="citationfmt">')
+    xml_lines.append('        <bibliomixed id="UBL-JSON">')
+    xml_lines.append('          <abbrev>UBL-2.5-JSON-&spec-version;</abbrev>')
+    xml_lines.append('          <citetitle>&title;.</citetitle>')
+
+    # Build "Edited by X, Y and Z." from editors
+    editors = meta.get("editors", [])
+    if editors:
+        editor_names = []
+        for ed in editors:
+            name = ed.get("name", "")
+            editor_names.append(name)
+        if len(editor_names) == 1:
+            editors_str = editor_names[0]
+        elif len(editor_names) == 2:
+            editors_str = f"{editor_names[0]} and {editor_names[1]}"
+        else:
+            editors_str = ", ".join(editor_names[:-1]) + f" and {editor_names[-1]}"
+        xml_lines.append(f'          <bibliomisc>Edited by {xml_escape(editors_str)}.</bibliomisc>')
+
+    xml_lines.append('          <date>&pubdate;.</date>')
+    xml_lines.append('          <releaseinfo>&standard;.</releaseinfo>')
+    xml_lines.append('          <bibliomisc>')
+    xml_lines.append('            <ulink url="&this-loc;/UBL-2.5-JSON-&spec-version;.html">&this-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.')
+    xml_lines.append('            Latest stage: <ulink url="&latest-loc;/UBL-2.5-JSON-&spec-version;.html">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.')
+    xml_lines.append('          </bibliomisc>')
+    xml_lines.append('        </bibliomixed>')
+    xml_lines.append('      </bibliolist>')
+    xml_lines.append('    </legalnotice>')
 
     # Status / notices text (copyright / license notice)
     status_text = meta.get("status_text", "")
