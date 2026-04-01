@@ -413,12 +413,12 @@
             <row>
               <entry>AmountType</entry>
               <entry>A number of monetary units specified using a given unit of currency.</entry>
-              <entry>currencyID (mandatory)</entry>
+              <entry><emphasis role="bold">currencyID (mandatory)</emphasis></entry>
             </row>
             <row>
               <entry>BinaryObjectType</entry>
               <entry>A set of finite-length sequences of binary octets.</entry>
-              <entry>mimeCode (mandatory)</entry>
+              <entry><emphasis role="bold">mimeCode (mandatory)</emphasis></entry>
             </row>
             <row>
               <entry>CodeType</entry>
@@ -427,13 +427,13 @@
             </row>
             <row>
               <entry>DateType</entry>
-              <entry>One calendar day according to the Gregorian calendar represented as a string in the format YYYY-MM-DD conforming to ISO 8601 [ISO-8601].</entry>
-              <entry>(none)</entry>
+              <entry>One calendar day according to the Gregorian calendar represented as a string in the format <literal moreinfo="none">YYYY-MM-DD</literal> conforming to ISO 8601 <emphasis role="bold">[ISO-8601]</emphasis>.</entry>
+              <entry><emphasis>(none)</emphasis></entry>
             </row>
             <row>
               <entry>TimeType</entry>
-              <entry>An instance of time that occurs every day represented as a string in the format HH:MM:SS with optional timezone offset conforming to ISO 8601 [ISO-8601].</entry>
-              <entry>(none)</entry>
+              <entry>An instance of time that occurs every day represented as a string in the format <literal moreinfo="none">HH:MM:SS</literal> with optional timezone offset conforming to ISO 8601 <emphasis role="bold">[ISO-8601]</emphasis>.</entry>
+              <entry><emphasis>(none)</emphasis></entry>
             </row>
             <row>
               <entry>IdentifierType</entry>
@@ -443,27 +443,27 @@
             <row>
               <entry>IndicatorType</entry>
               <entry>A list of two mutually exclusive Boolean values that express the only possible states of a property.</entry>
-              <entry>(none)</entry>
+              <entry><emphasis>(none)</emphasis></entry>
             </row>
             <row>
               <entry>MeasureType</entry>
               <entry>A numeric value determined by measuring an object using a specified unit of measure.</entry>
-              <entry>unitCode (mandatory)</entry>
+              <entry><emphasis role="bold">unitCode (mandatory)</emphasis></entry>
             </row>
             <row>
               <entry>NumericType</entry>
               <entry>Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.</entry>
-              <entry>(none)</entry>
+              <entry><emphasis>(none)</emphasis></entry>
             </row>
             <row>
               <entry>PercentType</entry>
               <entry>Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure.</entry>
-              <entry>(none)</entry>
+              <entry><emphasis>(none)</emphasis></entry>
             </row>
             <row>
               <entry>RateType</entry>
               <entry>A numeric expression of a rate that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.</entry>
-              <entry>(none)</entry>
+              <entry><emphasis>(none)</emphasis></entry>
             </row>
             <row>
               <entry>QuantityType</entry>
@@ -796,19 +796,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.1 Common Aggregate Components schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>The Common Aggregate Components schema defines the Aggregate Business Information Entities (ABIEs) that are used throughout UBL, serving, in effect, as an “ABIE type database” for constructing the main documents.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/CommonAggregateComponents-2.json">json/schemas/common/CommonAggregateComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2</para>
             </listitem>
@@ -820,19 +820,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.2 Common Basic Components schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>The Common Basic Components schema defines the global Basic Business Information Entities (BBIEs) that are used throughout UBL, serving, in effect, as a “global BBIE type database” for constructing documents. BBIEs are the “leaf nodes” of UBL documents, corresponding to individual data fields in traditional printed business forms.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/CommonBasicComponents-2.json">json/schemas/common/CommonBasicComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2</para>
             </listitem>
@@ -844,19 +844,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.3 Qualified Data Types schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para><emphasis role="bold">[CCTS]</emphasis> permits the definition of Qualified Datatypes as derivations from CCTS-specified Unqualified Datatypes. The UBL-QualifiedDataTypes-2.json file has declarations for each qualified type being only an unmodified restriction of the base unqualified data type, thus adding no constraints. The Common Basic Components schema declarations reference the JSON qualified types where the BBIEs are qualified in the CCTS model, but all BBIEs are effectively unqualified for the purposes of JSON Schema validation.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/QualifiedDataTypes-2.json">json/schemas/common/QualifiedDataTypes-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/QualifiedDataTypes-2</para>
             </listitem>
@@ -868,19 +868,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.4 Unqualified Data Types schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>This schema defines Unqualified Data Types for BBIE definition. These types are derived from the Core Component Types defined in <emphasis role="bold">[CCTS]</emphasis>. Where an unqualified type is not based solely on a JSON primitive type, all CCTS supplementary components are made available in the UBL Unqualified Data Type from the corresponding CCTS Core Component Type.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/UnqualifiedDataTypes-2.json">json/schemas/common/UnqualifiedDataTypes-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UnqualifiedDataTypes-2</para>
             </listitem>
@@ -892,19 +892,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.5 Common Extension Components schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>The Common Extension Components schema defines the extension scaffolding used in all UBL document types, providing metadata regarding the use of an extension embedded in a UBL document instance (see section 7.3, Document extensions).</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/CommonExtensionComponents-2.json">json/schemas/common/CommonExtensionComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2</para>
             </listitem>
@@ -916,19 +916,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.6 Signature Aggregate Components schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>The Signature Aggregate Components schema defines those Aggregate Business Information Entities (ABIEs) that are used for signature constructs not defined in the common library.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/SignatureAggregateComponents-2.json">json/schemas/common/SignatureAggregateComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/SignatureAggregateComponents-2 </para>
             </listitem>
@@ -940,19 +940,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.1.7 Signature Basic Components schema</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>The Signature Basic Components schema defines those Basic Business Information Entities (BBIEs) that are used for signature constructs not defined in the common library.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/common/SignatureBasicComponents-2.json">json/schemas/common/SignatureBasicComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/SignatureBasicComponents-2</para>
             </listitem>
@@ -968,19 +968,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.1 UBL-ApplicationResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document to indicate the application's response to a transaction. This may be a business response initiated by a user or a technical response sent automatically by an application.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ApplicationResponse-2.5.json">json/schemas/maindoc/UBL-ApplicationResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ApplicationResponse-2</para>
             </listitem>
@@ -992,19 +992,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.2 UBL-AwardedNotification-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>The document used to communicate a contract award to the winner.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-AwardedNotification-2.5.json">json/schemas/maindoc/UBL-AwardedNotification-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-AwardedNotification-2</para>
             </listitem>
@@ -1016,19 +1016,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.3 UBL-BillOfLading-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document issued by the party who acts as an agent for a transportation carrier or other agents to the party who gives instructions for the transportation services (shipper, consignor, etc.) stating the details of the transportation, charges, and terms and conditions under which the transportation service is provided. The party issuing this document does not necessarily provide the physical transportation service. The information in the Bill of Lading corresponds to the information on the Forwarding Instructions. It is used for any mode of transport. A Bill of Lading can serve as a contractual document between the parties for the transportation service. The document evidences a contract of carriage by sea and the acceptance of responsibility for the goods by the carrier, by which the carrier undertakes to deliver the goods against surrender of the document. A provision in the document that the goods are to be delivered to the order of a named person, or to order, or to bearer, constitutes such an undertaking.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-BillOfLading-2.5.json">json/schemas/maindoc/UBL-BillOfLading-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-BillOfLading-2</para>
             </listitem>
@@ -1040,19 +1040,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.4 UBL-BusinessCard-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to provide information about a business party and its business capabilities.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-BusinessCard-2.5.json">json/schemas/maindoc/UBL-BusinessCard-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-BusinessCard-2</para>
             </listitem>
@@ -1064,19 +1064,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.5 UBL-BusinessInformation-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to provide information about a business.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-BusinessInformation-2.5.json">json/schemas/maindoc/UBL-BusinessInformation-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-BusinessInformation-2</para>
             </listitem>
@@ -1088,19 +1088,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.6 UBL-CallForTenders-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used by a Contracting Party to define a procurement project to buy goods, services, or works during a specified period.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CallForTenders-2.5.json">json/schemas/maindoc/UBL-CallForTenders-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CallForTenders-2</para>
             </listitem>
@@ -1112,19 +1112,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.7 UBL-Catalogue-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document that describes items, prices, and price validity.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Catalogue-2.5.json">json/schemas/maindoc/UBL-Catalogue-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Catalogue-2</para>
             </listitem>
@@ -1136,19 +1136,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.8 UBL-CatalogueDeletion-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to cancel an entire Catalogue.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CatalogueDeletion-2.5.json">json/schemas/maindoc/UBL-CatalogueDeletion-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CatalogueDeletion-2</para>
             </listitem>
@@ -1160,19 +1160,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.9 UBL-CatalogueItemSpecificationUpdate-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to update information (e.g., technical descriptions and properties) about Items in an existing Catalogue.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CatalogueItemSpecificationUpdate-2.5.json">json/schemas/maindoc/UBL-CatalogueItemSpecificationUpdate-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CatalogueItemSpecificationUpdate-2</para>
             </listitem>
@@ -1184,19 +1184,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.10 UBL-CataloguePricingUpdate-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to update information about prices in an existing Catalogue.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CataloguePricingUpdate-2.5.json">json/schemas/maindoc/UBL-CataloguePricingUpdate-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CataloguePricingUpdate-2</para>
             </listitem>
@@ -1208,19 +1208,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.11 UBL-CatalogueRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to request a Catalogue.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CatalogueRequest-2.5.json">json/schemas/maindoc/UBL-CatalogueRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CatalogueRequest-2</para>
             </listitem>
@@ -1232,19 +1232,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.12 UBL-CertificateOfOrigin-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document that describes the Certificate of Origin.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CertificateOfOrigin-2.5.json">json/schemas/maindoc/UBL-CertificateOfOrigin-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CertificateOfOrigin-2</para>
             </listitem>
@@ -1256,19 +1256,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.13 UBL-CommonTransportationReport-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A common document used for reporting transport related issues to authorities or regulators.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CommonTransportationReport-2.5.json">json/schemas/maindoc/UBL-CommonTransportationReport-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CommonTransportationReport-2</para>
             </listitem>
@@ -1280,19 +1280,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.14 UBL-ContractAwardNotice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document published by a Contracting Party to announce the awarding of a procurement project.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ContractAwardNotice-2.5.json">json/schemas/maindoc/UBL-ContractAwardNotice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ContractAwardNotice-2</para>
             </listitem>
@@ -1304,19 +1304,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.15 UBL-ContractNotice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used by a Contracting party to announce a project to buy goods, services, or works.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ContractNotice-2.5.json">json/schemas/maindoc/UBL-ContractNotice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ContractNotice-2</para>
             </listitem>
@@ -1328,19 +1328,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.16 UBL-CreditNote-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to specify credits due to the Debtor from the Creditor.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-CreditNote-2.5.json">json/schemas/maindoc/UBL-CreditNote-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CreditNote-2</para>
             </listitem>
@@ -1352,19 +1352,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.17 UBL-DebitNote-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to specify debits due to the Creditor from the Debtor.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DebitNote-2.5.json">json/schemas/maindoc/UBL-DebitNote-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DebitNote-2</para>
             </listitem>
@@ -1376,19 +1376,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.18 UBL-DeliveryNote-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document confirming the actual delivery of goods or services, detailing delivered items, quantities, and shipment information.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DeliveryNote-2.5.json">json/schemas/maindoc/UBL-DeliveryNote-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DeliveryNote-2</para>
             </listitem>
@@ -1400,19 +1400,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.19 UBL-DespatchAdvice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to describe the despatch or delivery of goods and services.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DespatchAdvice-2.5.json">json/schemas/maindoc/UBL-DespatchAdvice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DespatchAdvice-2</para>
             </listitem>
@@ -1424,19 +1424,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.20 UBL-DigitalAgreement-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to support business parties agreeing on a set of digital processes, terms and conditions to ensure interoperability.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DigitalAgreement-2.5.json">json/schemas/maindoc/UBL-DigitalAgreement-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DigitalAgreement-2</para>
             </listitem>
@@ -1448,19 +1448,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.21 UBL-DigitalCapability-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to provide information about a business party and its digital trade capabilities.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DigitalCapability-2.5.json">json/schemas/maindoc/UBL-DigitalCapability-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DigitalCapability-2</para>
             </listitem>
@@ -1472,19 +1472,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.22 UBL-DocumentStatus-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to provide information about the status of a collaboration/process associated with a document.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DocumentStatus-2.5.json">json/schemas/maindoc/UBL-DocumentStatus-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DocumentStatus-2</para>
             </listitem>
@@ -1496,19 +1496,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.23 UBL-DocumentStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to request the status of a collaboration/process associated with a document.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-DocumentStatusRequest-2.5.json">json/schemas/maindoc/UBL-DocumentStatusRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DocumentStatusRequest-2</para>
             </listitem>
@@ -1520,19 +1520,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.24 UBL-Enquiry-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by a requestor to a responder resquesting information about a particular business process. </para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Enquiry-2.5.json">json/schemas/maindoc/UBL-Enquiry-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Enquiry-2</para>
             </listitem>
@@ -1544,19 +1544,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.25 UBL-EnquiryResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by a responder to a requester answering a particular enqury.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-EnquiryResponse-2.5.json">json/schemas/maindoc/UBL-EnquiryResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-EnquiryResponse-2</para>
             </listitem>
@@ -1568,19 +1568,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.26 UBL-ExceptionCriteria-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to specify the thresholds for forecast variance, product activity, and performance history beyond which exceptions will be triggered.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ExceptionCriteria-2.5.json">json/schemas/maindoc/UBL-ExceptionCriteria-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExceptionCriteria-2</para>
             </listitem>
@@ -1592,19 +1592,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.27 UBL-ExceptionNotification-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to notify an exception in forecast variance, product activity, or performance history.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ExceptionNotification-2.5.json">json/schemas/maindoc/UBL-ExceptionNotification-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExceptionNotification-2</para>
             </listitem>
@@ -1616,19 +1616,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.28 UBL-ExportCustomsDeclaration-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A customs declaration document for exporting goods</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ExportCustomsDeclaration-2.5.json">json/schemas/maindoc/UBL-ExportCustomsDeclaration-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExportCustomsDeclaration-2</para>
             </listitem>
@@ -1640,19 +1640,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.29 UBL-ExpressionOfInterestRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>An expression of interest to a tendering process. An Economic Operator can demonstrate interest in a tendering process issuing an Expression Of Interest document to the contracting party. Upon reception, the Contracting Party registers the interest of the Economic Operator sending the relevant information for the tendering process.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ExpressionOfInterestRequest-2.5.json">json/schemas/maindoc/UBL-ExpressionOfInterestRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExpressionOfInterestRequest-2</para>
             </listitem>
@@ -1664,19 +1664,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.30 UBL-ExpressionOfInterestResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>An expression of interest confirmation issued by a Contracting Party in reply to an expression of interest. The purpose of this document is to inform the Economic Operator he has been registered as an interested party.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ExpressionOfInterestResponse-2.5.json">json/schemas/maindoc/UBL-ExpressionOfInterestResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExpressionOfInterestResponse-2</para>
             </listitem>
@@ -1688,19 +1688,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.31 UBL-Forecast-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to forecast sales or orders.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Forecast-2.5.json">json/schemas/maindoc/UBL-Forecast-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Forecast-2</para>
             </listitem>
@@ -1712,19 +1712,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.32 UBL-ForecastRevision-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to revise a Forecast.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ForecastRevision-2.5.json">json/schemas/maindoc/UBL-ForecastRevision-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ForecastRevision-2</para>
             </listitem>
@@ -1736,19 +1736,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.33 UBL-ForwardingInstructions-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document issued to a forwarder, giving instructions regarding the action to be taken for the forwarding of goods described therein. Forwarding Instructions is used by any party who gives instructions for the transportation services required for a consignment of goods to any party who is contracted to provide the transportation services. The parties who issue this document are commonly referred to as the shipper or consignor, while the parties who receive this document are forwarders, carriers, shipping agents, etc. This document may also be issued by a forwarder or shipping agent in its capacity as a shipper. This document can be used to arrange for the transportation (1) of different types of goods or cargoes; (2) whether containerized or non-containerized; (3) through different modes of transport including multi-modal; and (4) from any origin to any destination.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ForwardingInstructions-2.5.json">json/schemas/maindoc/UBL-ForwardingInstructions-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ForwardingInstructions-2</para>
             </listitem>
@@ -1760,19 +1760,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.34 UBL-FulfilmentCancellation-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to cancel an entire fulfilment document (Despatch Advice or Receipt Advice).</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-FulfilmentCancellation-2.5.json">json/schemas/maindoc/UBL-FulfilmentCancellation-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-FulfilmentCancellation-2</para>
             </listitem>
@@ -1784,19 +1784,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.35 UBL-GoodsCertificate-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document that describes a certificate of goods for importation and exportation</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-GoodsCertificate-2.5.json">json/schemas/maindoc/UBL-GoodsCertificate-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-GoodsCertificate-2</para>
             </listitem>
@@ -1808,19 +1808,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.36 UBL-GoodsItemItinerary-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document providing details relating to a transport service, such as transport movement, identification of equipment and goods, subcontracted service providers, etc.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-GoodsItemItinerary-2.5.json">json/schemas/maindoc/UBL-GoodsItemItinerary-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-GoodsItemItinerary-2</para>
             </listitem>
@@ -1832,19 +1832,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.37 UBL-GoodsItemPassport-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document providing a temporary export license, also knowned as an ATA Carnet</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-GoodsItemPassport-2.5.json">json/schemas/maindoc/UBL-GoodsItemPassport-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-GoodsItemPassport-2</para>
             </listitem>
@@ -1856,19 +1856,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.38 UBL-GuaranteeCertificate-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document to notify the deposit of a Guarantee, such as a bid bond.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-GuaranteeCertificate-2.5.json">json/schemas/maindoc/UBL-GuaranteeCertificate-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-GuaranteeCertificate-2</para>
             </listitem>
@@ -1880,19 +1880,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.39 UBL-ImportCustomsDeclaration-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A customs declaration document for importing goods.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ImportCustomsDeclaration-2.5.json">json/schemas/maindoc/UBL-ImportCustomsDeclaration-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ImportCustomsDeclaration-2</para>
             </listitem>
@@ -1904,19 +1904,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.40 UBL-InstructionForReturns-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to initiate a return of goods. The producer is requesting the return of products that are not selling well, either to use in other places or to free up rack or shelf space.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-InstructionForReturns-2.5.json">json/schemas/maindoc/UBL-InstructionForReturns-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-InstructionForReturns-2</para>
             </listitem>
@@ -1928,19 +1928,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.41 UBL-InventoryReport-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A report on the quantities of each item that are, or will be, in stock. This document is sent by a Buyer (for example a retailer) to a Seller (for example a producer).</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-InventoryReport-2.5.json">json/schemas/maindoc/UBL-InventoryReport-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-InventoryReport-2</para>
             </listitem>
@@ -1952,19 +1952,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.42 UBL-Invoice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to request payment.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Invoice-2.5.json">json/schemas/maindoc/UBL-Invoice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2</para>
             </listitem>
@@ -1976,19 +1976,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.43 UBL-InvoiceStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to request the status of a previously issued Invoice.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-InvoiceStatusRequest-2.5.json">json/schemas/maindoc/UBL-InvoiceStatusRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-InvoiceStatusRequest-2</para>
             </listitem>
@@ -2000,19 +2000,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.44 UBL-InvoiceStatusResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to provide information about the status of a collaboration/process associated with a document.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-InvoiceStatusResponse-2.5.json">json/schemas/maindoc/UBL-InvoiceStatusResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-InvoiceStatusResponse-2</para>
             </listitem>
@@ -2024,19 +2024,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.45 UBL-ItemInformationRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to request product activity, forecast, or performance data.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ItemInformationRequest-2.5.json">json/schemas/maindoc/UBL-ItemInformationRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ItemInformationRequest-2</para>
             </listitem>
@@ -2048,19 +2048,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.46 UBL-Manifest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document listing the contents, cargo, passengers and crew of an airplane, a ship, a truck or a wagon.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Manifest-2.5.json">json/schemas/maindoc/UBL-Manifest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Manifest-2</para>
             </listitem>
@@ -2072,19 +2072,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.47 UBL-Order-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to order goods and services.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Order-2.5.json">json/schemas/maindoc/UBL-Order-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Order-2</para>
             </listitem>
@@ -2096,19 +2096,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.48 UBL-OrderCancellation-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to cancel an entire Order.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-OrderCancellation-2.5.json">json/schemas/maindoc/UBL-OrderCancellation-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-OrderCancellation-2</para>
             </listitem>
@@ -2120,19 +2120,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.49 UBL-OrderChange-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to specify changes to an existing Order.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-OrderChange-2.5.json">json/schemas/maindoc/UBL-OrderChange-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-OrderChange-2</para>
             </listitem>
@@ -2144,19 +2144,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.50 UBL-OrderResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to indicate detailed acceptance or rejection of an Order or to make a counter-offer.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-OrderResponse-2.5.json">json/schemas/maindoc/UBL-OrderResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-OrderResponse-2</para>
             </listitem>
@@ -2168,19 +2168,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.51 UBL-PackingList-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document describing how goods are packed.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-PackingList-2.5.json">json/schemas/maindoc/UBL-PackingList-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PackingList-2</para>
             </listitem>
@@ -2192,19 +2192,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.52 UBL-PriorInformationNotice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used by a contracting party to declare the intention to buy goods, services, or works during a specified period.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-PriorInformationNotice-2.5.json">json/schemas/maindoc/UBL-PriorInformationNotice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PriorInformationNotice-2</para>
             </listitem>
@@ -2216,19 +2216,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.53 UBL-ProcurementStatus-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by a Contracting Party to an Economic Operator describing the status of a procurement procedure, Project, or Lot.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ProcurementStatus-2.5.json">json/schemas/maindoc/UBL-ProcurementStatus-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProcurementStatus-2</para>
             </listitem>
@@ -2240,19 +2240,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.54 UBL-ProcurementStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by an Economic Operator to a Contracting Party asking about the details and status of a procurement procedure, Project, or Lot.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ProcurementStatusRequest-2.5.json">json/schemas/maindoc/UBL-ProcurementStatusRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProcurementStatusRequest-2</para>
             </listitem>
@@ -2264,19 +2264,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.55 UBL-ProductActivity-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document reporting the movement of goods at specified retail locations for inventory tracking purposes.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ProductActivity-2.5.json">json/schemas/maindoc/UBL-ProductActivity-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProductActivity-2</para>
             </listitem>
@@ -2288,19 +2288,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.56 UBL-ProofOfReexportation-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document providing a status or a proof that goods have been re-exported</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ProofOfReexportation-2.5.json">json/schemas/maindoc/UBL-ProofOfReexportation-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProofOfReexportation-2</para>
             </listitem>
@@ -2312,19 +2312,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.57 UBL-ProofOfReexportationReminder-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A reminder that a requested Proof of Reexportation is pending.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ProofOfReexportationReminder-2.5.json">json/schemas/maindoc/UBL-ProofOfReexportationReminder-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProofOfReexportationReminder-2</para>
             </listitem>
@@ -2336,19 +2336,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.58 UBL-ProofOfReexportationRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document requesting the status or proof that goods have been re-exported</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ProofOfReexportationRequest-2.5.json">json/schemas/maindoc/UBL-ProofOfReexportationRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProofOfReexportationRequest-2</para>
             </listitem>
@@ -2360,19 +2360,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.59 UBL-PurchaseReceipt-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A receipt for a purchase made with cash or cash equivalents.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-PurchaseReceipt-2.5.json">json/schemas/maindoc/UBL-PurchaseReceipt-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PurchaseReceipt-2</para>
             </listitem>
@@ -2384,19 +2384,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.60 UBL-QualificationApplicationRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document issued by a buyer defining how the Exclusion Grounds and the Selection Criteria should be addressed in a Single Procurement Document for a specific procurement.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-QualificationApplicationRequest-2.5.json">json/schemas/maindoc/UBL-QualificationApplicationRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-QualificationApplicationRequest-2</para>
             </listitem>
@@ -2408,19 +2408,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.61 UBL-QualificationApplicationResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A self-declaration of an economic operator, stating that it does not fall under the Exclusion Grounds and that it meets the Selection Criteria for a specific procurement.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-QualificationApplicationResponse-2.5.json">json/schemas/maindoc/UBL-QualificationApplicationResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-QualificationApplicationResponse-2</para>
             </listitem>
@@ -2432,19 +2432,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.62 UBL-Quotation-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to quote for the provision of goods and services.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Quotation-2.5.json">json/schemas/maindoc/UBL-Quotation-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Quotation-2</para>
             </listitem>
@@ -2456,19 +2456,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.63 UBL-ReceiptAdvice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to describe the receipt of goods and services or as a reply to a despatch advice.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-ReceiptAdvice-2.5.json">json/schemas/maindoc/UBL-ReceiptAdvice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ReceiptAdvice-2</para>
             </listitem>
@@ -2480,19 +2480,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.64 UBL-Reminder-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to remind a customer of payments past due.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Reminder-2.5.json">json/schemas/maindoc/UBL-Reminder-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Reminder-2</para>
             </listitem>
@@ -2504,19 +2504,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.65 UBL-RemittanceAdvice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document that specifies details of an actual payment.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-RemittanceAdvice-2.5.json">json/schemas/maindoc/UBL-RemittanceAdvice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-RemittanceAdvice-2</para>
             </listitem>
@@ -2528,19 +2528,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.66 UBL-RequestForQuotation-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to request a Quotation for goods and services from a Seller.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-RequestForQuotation-2.5.json">json/schemas/maindoc/UBL-RequestForQuotation-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-RequestForQuotation-2</para>
             </listitem>
@@ -2552,19 +2552,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.67 UBL-RetailEvent-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to specify basic information about retail events (such as promotions, product introductions, and community or environmental events) that affect supply or demand.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-RetailEvent-2.5.json">json/schemas/maindoc/UBL-RetailEvent-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-RetailEvent-2</para>
             </listitem>
@@ -2576,19 +2576,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.68 UBL-SelfBilledCreditNote-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A credit note created by the debtor in a self billing arrangement with a creditor.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-SelfBilledCreditNote-2.5.json">json/schemas/maindoc/UBL-SelfBilledCreditNote-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-SelfBilledCreditNote-2</para>
             </listitem>
@@ -2600,19 +2600,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.69 UBL-SelfBilledInvoice-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>An Invoice document created by the Customer (rather than the Supplier) in a Self Billing relationship.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-SelfBilledInvoice-2.5.json">json/schemas/maindoc/UBL-SelfBilledInvoice-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-SelfBilledInvoice-2</para>
             </listitem>
@@ -2624,19 +2624,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.70 UBL-Statement-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to report the status of orders, billing, and payment. This document is a statement of account, not a summary invoice.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Statement-2.5.json">json/schemas/maindoc/UBL-Statement-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Statement-2</para>
             </listitem>
@@ -2648,19 +2648,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.71 UBL-Tender-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document whereby an economic operator (the tenderer) makes a formal offer (the tender) to a contracting authority to execute an order for the supply or purchase of goods, or for the execution of work, according to the terms of a proposed contract.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Tender-2.5.json">json/schemas/maindoc/UBL-Tender-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Tender-2</para>
             </listitem>
@@ -2672,19 +2672,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.72 UBL-TenderContract-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document published by a Contracting Party to announce the awarding of a procurement project.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TenderContract-2.5.json">json/schemas/maindoc/UBL-TenderContract-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TenderContract-2</para>
             </listitem>
@@ -2696,19 +2696,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.73 UBL-TenderReceipt-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by a contracting party to an economic operator acknowledging receipt of a Tender.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TenderReceipt-2.5.json">json/schemas/maindoc/UBL-TenderReceipt-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TenderReceipt-2</para>
             </listitem>
@@ -2720,19 +2720,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.74 UBL-TenderWithdrawal-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by an Economic Operator to a Contracting Party with the intention of withdrawing a previously sent Tender document.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TenderWithdrawal-2.5.json">json/schemas/maindoc/UBL-TenderWithdrawal-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TenderWithdrawal-2</para>
             </listitem>
@@ -2744,19 +2744,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.75 UBL-TendererQualification-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document declaring the qualifications of a tenderer.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TendererQualification-2.5.json">json/schemas/maindoc/UBL-TendererQualification-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TendererQualification-2</para>
             </listitem>
@@ -2768,19 +2768,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.76 UBL-TendererQualificationResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document issued by a procurement organization to notify an economic operator whether it has been admitted to or excluded from the tendering process.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TendererQualificationResponse-2.5.json">json/schemas/maindoc/UBL-TendererQualificationResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TendererQualificationResponse-2</para>
             </listitem>
@@ -2792,19 +2792,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.77 UBL-TradeItemLocationProfile-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document specifying trade item attributes relating to replenishment policies.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TradeItemLocationProfile-2.5.json">json/schemas/maindoc/UBL-TradeItemLocationProfile-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TradeItemLocationProfile-2</para>
             </listitem>
@@ -2816,19 +2816,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.78 UBL-TransitCustomsDeclaration-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document that describes an import customs declaration.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransitCustomsDeclaration-2.5.json">json/schemas/maindoc/UBL-TransitCustomsDeclaration-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransitCustomsDeclaration-2</para>
             </listitem>
@@ -2840,19 +2840,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.79 UBL-TransportExecutionPlan-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used in the negotiation of a transport service between a transport user and a transport service provider.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportExecutionPlan-2.5.json">json/schemas/maindoc/UBL-TransportExecutionPlan-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportExecutionPlan-2</para>
             </listitem>
@@ -2864,19 +2864,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.80 UBL-TransportExecutionPlanRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by a transport user to request a transport service from a transport service provider.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportExecutionPlanRequest-2.5.json">json/schemas/maindoc/UBL-TransportExecutionPlanRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportExecutionPlanRequest-2</para>
             </listitem>
@@ -2888,19 +2888,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.81 UBL-TransportProgressStatus-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent from a Transportation Network Manager to a Transport Service Provider giving the status of the whereabouts and schedule of the transport means involved in a transport service.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportProgressStatus-2.5.json">json/schemas/maindoc/UBL-TransportProgressStatus-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportProgressStatus-2</para>
             </listitem>
@@ -2912,19 +2912,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.82 UBL-TransportProgressStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent from a transport service provider to a transportation network manager requesting a Transport Progress Status.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportProgressStatusRequest-2.5.json">json/schemas/maindoc/UBL-TransportProgressStatusRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportProgressStatusRequest-2</para>
             </listitem>
@@ -2936,19 +2936,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.83 UBL-TransportServiceDescription-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent by a transport service provider to announce the availability of a transport service.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportServiceDescription-2.5.json">json/schemas/maindoc/UBL-TransportServiceDescription-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportServiceDescription-2</para>
             </listitem>
@@ -2960,19 +2960,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.84 UBL-TransportServiceDescriptionRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document requesting a Transport Service Description, sent from a party with a transport demand (transport user) to a party providing transport services (transport service provider).</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportServiceDescriptionRequest-2.5.json">json/schemas/maindoc/UBL-TransportServiceDescriptionRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportServiceDescriptionRequest-2</para>
             </listitem>
@@ -2984,19 +2984,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.85 UBL-TransportationStatus-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document to circulate reports of transportation status or changes in status (events) among a group of participants.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportationStatus-2.5.json">json/schemas/maindoc/UBL-TransportationStatus-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportationStatus-2</para>
             </listitem>
@@ -3008,19 +3008,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.86 UBL-TransportationStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document requesting a Transportation Status report.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-TransportationStatusRequest-2.5.json">json/schemas/maindoc/UBL-TransportationStatusRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportationStatusRequest-2</para>
             </listitem>
@@ -3032,19 +3032,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.87 UBL-UnawardedNotification-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document communicating to a tenderer that the contract has been awarded to different tenderer.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-UnawardedNotification-2.5.json">json/schemas/maindoc/UBL-UnawardedNotification-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-UnawardedNotification-2</para>
             </listitem>
@@ -3056,19 +3056,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.88 UBL-UnsubscribeFromProcedureRequest-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A request to unsubscribe from a tendering procedure. Economic Operators can subscribe to a tendering procedure using the Expression Of Interest. Upon subscription, the Economic Operator keeps receiving relevant documentation for the tendering process. The unsubscribe to procedure document allows the Economic Operator to be removed from the list of interested parties.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-UnsubscribeFromProcedureRequest-2.5.json">json/schemas/maindoc/UBL-UnsubscribeFromProcedureRequest-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-UnsubscribeFromProcedureRequest-2</para>
             </listitem>
@@ -3080,19 +3080,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.89 UBL-UnsubscribeFromProcedureResponse-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document sent from a Contracting Party to the Economic Operator confirming that the latter has been unsubscribed from a tendering procedure.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-UnsubscribeFromProcedureResponse-2.5.json">json/schemas/maindoc/UBL-UnsubscribeFromProcedureResponse-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-UnsubscribeFromProcedureResponse-2</para>
             </listitem>
@@ -3104,19 +3104,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.90 UBL-UtilityStatement-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A supplement to an Invoice or Credit Note, containing information on the consumption of services provided by utility suppliers to private and public customers, including electricity, gas, water, and telephone services.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-UtilityStatement-2.5.json">json/schemas/maindoc/UBL-UtilityStatement-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-UtilityStatement-2</para>
             </listitem>
@@ -3128,19 +3128,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.91 UBL-WasteMovement-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to report the transport of waste.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-WasteMovement-2.5.json">json/schemas/maindoc/UBL-WasteMovement-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-WasteMovement-2</para>
             </listitem>
@@ -3152,19 +3152,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.92 UBL-WasteNotification-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to notify the competent authorities of planned movements of waste.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-WasteNotification-2.5.json">json/schemas/maindoc/UBL-WasteNotification-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-WasteNotification-2</para>
             </listitem>
@@ -3176,19 +3176,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.93 UBL-Waybill-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A transport document describing a shipment It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-Waybill-2.5.json">json/schemas/maindoc/UBL-Waybill-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Waybill-2</para>
             </listitem>
@@ -3200,19 +3200,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.94 UBL-WeightStatement-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to report weight or verified mass measurements in the transport chain.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-WeightStatement-2.5.json">json/schemas/maindoc/UBL-WeightStatement-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-WeightStatement-2</para>
             </listitem>
@@ -3224,19 +3224,19 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
         <title>C.2.95 UBL-WorkReport-2.5</title>
         <variablelist>
           <varlistentry>
-            <term>Description:</term>
+            <term><emphasis role="bold">Description:</emphasis></term>
             <listitem>
               <para>A document used to report work performed.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Normative schema:</term>
+            <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
               <para><ulink url="json/schemas/maindoc/UBL-WorkReport-2.5.json">json/schemas/maindoc/UBL-WorkReport-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>Identifier:</term>
+            <term><emphasis role="bold">Identifier:</emphasis></term>
             <listitem>
               <para>https://docs.oasis-open.org/ubl/2/json/schemas/UBL-WorkReport-2</para>
             </listitem>

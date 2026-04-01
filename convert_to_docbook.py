@@ -448,11 +448,20 @@ def render_table(table, hyperlink_map, title=None):
     for ci in range(ncols):
         lines.append(f'    <colspec colnum="{ci+1}" colname="col{ci+1}"/>')
 
+    def render_cell(cell):
+        """Render a table cell with inline formatting preserved."""
+        parts = []
+        for para in cell.paragraphs:
+            inline = extract_inline_content(para, hyperlink_map)
+            if inline:
+                parts.append(render_inline(inline))
+        return " ".join(parts) if parts else xml_escape(cell.text.strip())
+
     # First row is header
     lines.append("    <thead>")
     lines.append("      <row>")
     for cell in rows[0].cells:
-        lines.append(f"        <entry>{xml_escape(cell.text.strip())}</entry>")
+        lines.append(f"        <entry>{render_cell(cell)}</entry>")
     lines.append("      </row>")
     lines.append("    </thead>")
 
@@ -460,7 +469,7 @@ def render_table(table, hyperlink_map, title=None):
     for row in rows[1:]:
         lines.append("      <row>")
         for cell in row.cells:
-            lines.append(f"        <entry>{xml_escape(cell.text.strip())}</entry>")
+            lines.append(f"        <entry>{render_cell(cell)}</entry>")
         lines.append("      </row>")
     lines.append("    </tbody>")
     lines.append("  </tgroup>")
@@ -1057,29 +1066,35 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                         defn = ""
                     term = term.strip()
                     defn = defn.strip()
-                    # For entries with hyperlinks, render inline content minus the term
+                    # Split inline content at the tab: items before it form the
+                    # term, items after it form the definition.
                     inl = di.get("inline", [])
+                    term_inline = []
                     defn_inline = []
                     found_tab = False
                     for item in inl:
                         if item["type"] == "text" and "\t" in item["text"] and not found_tab:
-                            # Split on tab, keep what's after
-                            after_tab = item["text"].split("\t", 1)[1]
+                            before_tab, after_tab = item["text"].split("\t", 1)
+                            if before_tab.strip():
+                                term_inline.append({**item, "text": before_tab})
                             if after_tab.strip():
-                                defn_inline.append({"type": "text", "text": after_tab,
-                                                    "bold": False, "italic": False})
+                                defn_inline.append({**item, "text": after_tab})
                             found_tab = True
                             continue
                         if found_tab:
                             defn_inline.append(item)
+                        else:
+                            term_inline.append(item)
 
                     if defn_inline:
                         defn_rendered = render_inline(defn_inline)
                     else:
                         defn_rendered = xml_escape(defn) if defn else ""
 
+                    term_rendered = render_inline(term_inline) if term_inline else xml_escape(term)
+
                     xml_lines.append(f"{indent(lvl+1)}<varlistentry>")
-                    xml_lines.append(f'{indent(lvl+2)}<term>{xml_escape(term)}</term>')
+                    xml_lines.append(f'{indent(lvl+2)}<term>{term_rendered}</term>')
                     xml_lines.append(f"{indent(lvl+2)}<listitem>")
                     if defn_rendered:
                         xml_lines.append(f"{indent(lvl+3)}<para>{defn_rendered}</para>")
