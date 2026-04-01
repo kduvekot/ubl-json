@@ -121,7 +121,7 @@ jobs:
         run: |
           python build_pages.py deploy-main \
             --pages-dir gh-pages \
-            --spec-html UBL-2.5-JSON-Syntax-Binding.html \
+            --spec-html UBL-json.html \
             --schemas-dir json/schemas \
             --examples-dir json/examples \
             --repo ${{ github.repository }}
@@ -144,7 +144,7 @@ jobs:
           # Rebuild banner and index with correct branch data
           python build_pages.py deploy-main \
             --pages-dir gh-pages \
-            --spec-html UBL-2.5-JSON-Syntax-Binding.html \
+            --spec-html UBL-json.html \
             --schemas-dir json/schemas \
             --examples-dir json/examples \
             --repo ${{ github.repository }}
@@ -298,7 +298,7 @@ jobs:
           fi
           python build_pages.py deploy-branch \
             --pages-dir gh-pages \
-            --spec-html UBL-2.5-JSON-Syntax-Binding.html \
+            --spec-html UBL-json.html \
             --schemas-dir json/schemas \
             --examples-dir json/examples \
             --branch "${{ steps.branch-info.outputs.branch }}" \
