@@ -739,8 +739,8 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
     xml_lines.append("      <title>Citation format</title>")
     xml_lines.append("      <para>When referencing this specification the following citation format should be used:</para>")
     xml_lines.append('      <bibliolist id="citationfmt">')
-    xml_lines.append('        <bibliomixed id="UBL-JSON">')
-    xml_lines.append('          <abbrev>UBL-2.5-JSON-&spec-version;</abbrev>')
+    xml_lines.append('        <bibliomixed id="UBL-JSON" conformance="skip">')
+    xml_lines.append('          <abbrev condition="oasis">UBL-2.5-JSON-&spec-version;</abbrev>')
     xml_lines.append('          <citetitle>&title;.</citetitle>')
 
     # Build "Edited by X, Y and Z." from editors

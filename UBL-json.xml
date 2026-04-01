@@ -59,8 +59,8 @@
       <title>Citation format</title>
       <para>When referencing this specification the following citation format should be used:</para>
       <bibliolist id="citationfmt">
-        <bibliomixed id="UBL-JSON">
-          <abbrev>UBL-2.5-JSON-&spec-version;</abbrev>
+        <bibliomixed id="UBL-JSON" conformance="skip">
+          <abbrev condition="oasis">UBL-2.5-JSON-&spec-version;</abbrev>
           <citetitle>&title;.</citetitle>
           <bibliomisc>Edited by Kenneth Bengtsson, Erlend Klakegg Bergheim and Kees Duvekot.</bibliomisc>
           <date>&pubdate;.</date>
