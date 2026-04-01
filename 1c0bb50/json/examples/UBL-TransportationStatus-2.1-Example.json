@@ -1,0 +1,26 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportationStatus-2",
+  "UBLVersionID": "2.1",
+  "ID": "TS_1",
+  "IssueDate": "2011-10-06",
+  "IssueTime": "09:29:30+01:00",
+  "TransportationStatusTypeCode": "All deviations",
+  "TransportExecutionStatusCode": "35",
+  "Consignment": {
+    "ID": "CON_1",
+    "TransportHandlingUnit": {
+      "ID": "CON_THU_1",
+      "TransportEquipment": {
+        "ID": "CON_TE_1"
+      },
+      "Status": {
+        "ConditionCode": "4",
+        "StatusReasonCode": "23",
+        "StatusReason": "Reefer container lost power - cargo of fish destroyed"
+      }
+    }
+  },
+  "TransportExecutionPlanDocumentReference": {
+    "ID": "TEP_1"
+  }
+}
