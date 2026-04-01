@@ -564,54 +564,136 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
     def indent(level):
         return "  " * level
 
-    # XML declaration and DOCTYPE
-    xml_lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-    xml_lines.append('<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"')
-    xml_lines.append('  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">')
-    xml_lines.append("")
-
-    # --- Parse front-matter metadata and generate <articleinfo> ---
+    # --- Parse front-matter metadata ---
     meta = parse_front_matter(doc)
 
-    status = xml_escape(meta.get("status", ""))
-    xml_lines.append(f'<article status="{status}" lang="en">')
+    # -----------------------------------------------------------------------
+    # Build entity definitions from parsed metadata
+    # -----------------------------------------------------------------------
+
+    def _url_base(url):
+        """Strip filename (last path segment) and trailing slash from a URL."""
+        url = url.strip()
+        # Remove any trailing annotation like " (Authoritative)"
+        url = re.sub(r"\s*\([^)]*\)\s*$", "", url).strip()
+        # Strip the last path component (the filename)
+        return url.rsplit("/", 1)[0].rstrip("/")
+
+    # this-loc: base URL from first "this version" URL
+    this_version_urls = meta.get("this_version_urls", [])
+    this_loc = _url_base(this_version_urls[0]) if this_version_urls else ""
+
+    # latest-loc: base URL from first "latest version" URL
+    latest_version_urls = meta.get("latest_version_urls", [])
+    latest_loc = _url_base(latest_version_urls[0]) if latest_version_urls else ""
+
+    # previous-loc: base URL from first "previous version" URL (may be empty)
+    previous_version_urls = meta.get("previous_version_urls", [])
+    previous_loc = _url_base(previous_version_urls[0]) if previous_version_urls else ""
+
+    # stage: extract from the last path segment of this-loc
+    # e.g. "https://docs.oasis-open.org/ubl/csd01-UBL-2.5-JSON-1.0" -> "csd01"
+    stage = ""
+    if this_loc:
+        last_seg = this_loc.rsplit("/", 1)[-1]
+        m = re.match(r"^([a-z]+\d+)-", last_seg)
+        if m:
+            stage = m.group(1)
+
+    # spec-version: parse from title "Version X.Y"
+    spec_version = ""
+    title_str = meta.get("title", "")
+    m = re.search(r"[Vv]ersion\s+([\d.]+)", title_str)
+    if m:
+        spec_version = m.group(1)
+
+    entities = {
+        "name": "UBL",
+        "version": "2.5",
+        "spec-version": spec_version,
+        "stage": stage,
+        "standard": meta.get("status", ""),
+        "pubdate": meta.get("date", ""),
+        "title": title_str,
+        "this-loc": this_loc,
+        "latest-loc": latest_loc,
+        "previous-loc": previous_loc,
+        "committee": meta.get("technical_committee", ""),
+        "abstract-text": meta.get("abstract", ""),
+        "citation-text": meta.get("citation_format", ""),
+    }
+
+    # -----------------------------------------------------------------------
+    # XML declaration and DOCTYPE with entity declarations
+    # -----------------------------------------------------------------------
+    xml_lines.append('<?xml version="1.0" encoding="UTF-8"?>')
+    xml_lines.append('<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"')
+    xml_lines.append('  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [')
+    for ent_name, ent_value in entities.items():
+        xml_lines.append(f'  <!ENTITY {ent_name} "{xml_escape(ent_value)}">')
+    xml_lines.append(']>')
+    xml_lines.append("")
+
+    # -----------------------------------------------------------------------
+    # Generate <articleinfo> using entity references
+    # -----------------------------------------------------------------------
+    xml_lines.append('<article status="&standard;" lang="en">')
     xml_lines.append("  <articleinfo>")
 
     # Product name / number (always UBL 2.5 for this document)
-    xml_lines.append('    <productname class="trade">UBL</productname>')
-    xml_lines.append('    <productnumber>2.5</productnumber>')
+    xml_lines.append('    <productname class="trade">&name;</productname>')
+    xml_lines.append('    <productnumber>&version;</productnumber>')
 
-    # Standards track
+    # Standards track (invariant — not version-specific)
     xml_lines.append('    <releaseinfo role="track">Standards Track Work Product</releaseinfo>')
 
-    # "This version" URLs
-    for url_line in meta.get("this_version_urls", []):
+    # "This version" URLs — composed from &this-loc; entity + filename
+    for url_line in this_version_urls:
         url_line = url_line.strip()
-        if url_line.endswith("(Authoritative)"):
+        # Extract just the filename (last path component), stripping annotation
+        annotated = url_line.endswith("(Authoritative)")
+        bare_url = re.sub(r"\s*\([^)]*\)\s*$", "", url_line).strip()
+        filename = bare_url.rsplit("/", 1)[-1]
+        if annotated:
             role = "OASIS-specification-this-authoritative"
+            content = f"&this-loc;/{filename} (Authoritative)"
         else:
             role = "OASIS-specification-this"
-        xml_lines.append(f'    <releaseinfo role="{role}">{xml_escape(url_line)}</releaseinfo>')
+            content = f"&this-loc;/{filename}"
+        xml_lines.append(f'    <releaseinfo role="{role}">{content}</releaseinfo>')
 
     # "Previous version" URLs
-    for url_line in meta.get("previous_version_urls", []):
-        xml_lines.append(f'    <releaseinfo role="OASIS-specification-previous">{xml_escape(url_line.strip())}</releaseinfo>')
+    for url_line in previous_version_urls:
+        url_line = url_line.strip()
+        bare_url = re.sub(r"\s*\([^)]*\)\s*$", "", url_line).strip()
+        filename = bare_url.rsplit("/", 1)[-1]
+        annotated = url_line.endswith("(Authoritative)")
+        if annotated:
+            content = f"&previous-loc;/{filename} (Authoritative)"
+        else:
+            content = f"&previous-loc;/{filename}"
+        xml_lines.append(f'    <releaseinfo role="OASIS-specification-previous">{content}</releaseinfo>')
 
     # "Latest version" URLs
-    for url_line in meta.get("latest_version_urls", []):
-        xml_lines.append(f'    <releaseinfo role="OASIS-specification-latest">{xml_escape(url_line.strip())}</releaseinfo>')
+    for url_line in latest_version_urls:
+        url_line = url_line.strip()
+        bare_url = re.sub(r"\s*\([^)]*\)\s*$", "", url_line).strip()
+        filename = bare_url.rsplit("/", 1)[-1]
+        annotated = url_line.endswith("(Authoritative)")
+        if annotated:
+            content = f"&latest-loc;/{filename} (Authoritative)"
+        else:
+            content = f"&latest-loc;/{filename}"
+        xml_lines.append(f'    <releaseinfo role="OASIS-specification-latest">{content}</releaseinfo>')
 
     # Title
-    title = xml_escape(meta.get("title", "UBL 2.5 JSON Syntax Binding"))
-    xml_lines.append(f"    <title>{title}</title>")
+    xml_lines.append("    <title>&title;</title>")
 
     # Technical committee
-    tc = meta.get("technical_committee", "")
-    if tc:
-        # Wrap in ulink if it looks like "Name (URL)" or just emit as text
-        xml_lines.append(f'    <releaseinfo role="committee">{xml_escape(tc)}</releaseinfo>')
+    if meta.get("technical_committee"):
+        xml_lines.append('    <releaseinfo role="committee">&committee;</releaseinfo>')
 
-    # Editors
+    # Editors (structured content — kept dynamic, not entities)
     editors = meta.get("editors", [])
     if editors:
         xml_lines.append("    <authorgroup>")
@@ -635,11 +717,10 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         xml_lines.append("    </authorgroup>")
 
     # Publication date
-    pub_date = meta.get("date", "")
-    if pub_date:
-        xml_lines.append(f"    <pubdate>{xml_escape(pub_date)}</pubdate>")
+    if meta.get("date"):
+        xml_lines.append("    <pubdate>&pubdate;</pubdate>")
 
-    # Related work
+    # Related work (structured content — kept dynamic, not entities)
     related = meta.get("related_work", [])
     if related:
         xml_lines.append('    <legalnotice role="related">')
@@ -664,19 +745,17 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         xml_lines.append("    </legalnotice>")
 
     # Abstract
-    abstract = meta.get("abstract", "")
-    if abstract:
+    if meta.get("abstract"):
         xml_lines.append("    <abstract>")
-        xml_lines.append(f"      <para>{xml_escape(abstract)}</para>")
+        xml_lines.append("      <para>&abstract-text;</para>")
         xml_lines.append("    </abstract>")
 
     # Citation format
-    citation = meta.get("citation_format", "")
-    if citation:
+    if meta.get("citation_format"):
         xml_lines.append('    <legalnotice role="citation">')
         xml_lines.append("      <title>Citation format</title>")
         xml_lines.append("      <bibliolist>")
-        xml_lines.append(f"        <bibliomixed>{xml_escape(citation)}</bibliomixed>")
+        xml_lines.append("        <bibliomixed>&citation-text;</bibliomixed>")
         xml_lines.append("      </bibliolist>")
         xml_lines.append("    </legalnotice>")
 
