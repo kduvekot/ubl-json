@@ -611,17 +611,17 @@ def generate_common_aggregate_components(output_dir, registry):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Repeating BBIE: allow single value or array
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     properties[child_component_name] = ref_schema
 
@@ -643,18 +643,17 @@ def generate_common_aggregate_components(output_dir, registry):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Array (single or array)
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    # For 1..n, add minItems constraint
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     # Fallback for unknown cardinality
                     properties[child_component_name] = ref_schema
@@ -938,18 +937,17 @@ def generate_signature_schemas(output_dir, registry):
                         properties[child_component_name] = ref_schema
                     elif cardinality in ('0..n', '1..n'):
                         # Array (single or array)
+                        # minItems: 1 — empty arrays are not valid; omit property instead
                         properties[child_component_name] = {
                             'oneOf': [
                                 ref_schema,
                                 {
                                     'type': 'array',
-                                    'items': ref_schema
+                                    'items': ref_schema,
+                                    'minItems': 1
                                 }
                             ]
                         }
-                        # For 1..n, add minItems constraint
-                        if cardinality == '1..n':
-                            properties[child_component_name]['oneOf'][1]['minItems'] = 1
 
                 # Add to required list if cardinality is 1 or 1..n
                 if cardinality in ('1', '1..n'):
@@ -1134,7 +1132,8 @@ def generate_document_schemas(output_dir, registry):
                 {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'},
                 {
                     'type': 'array',
-                    'items': {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'}
+                    'items': {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'},
+                    'minItems': 1
                 }
             ]
         }
@@ -1155,17 +1154,17 @@ def generate_document_schemas(output_dir, registry):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Repeating BBIE: allow single value or array
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     properties[child_component_name] = ref_schema
 
@@ -1187,18 +1186,17 @@ def generate_document_schemas(output_dir, registry):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Array (single or array)
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    # For 1..n, add minItems constraint
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     # Fallback for unknown cardinality
                     properties[child_component_name] = ref_schema
