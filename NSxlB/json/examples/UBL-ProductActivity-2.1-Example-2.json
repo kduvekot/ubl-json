@@ -1,8 +1,7 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ProductActivity-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProductActivity-2",
   "UBLVersionID": "2.1",
   "ID": "ID0009",
-  "CopyIndicator": false,
   "IssueDate": "2010-04-10",
   "Note": "Report about movements of goods between Beta Shop's locations located in\n        Emilia-Romagna.",
   "ActivityPeriod": {

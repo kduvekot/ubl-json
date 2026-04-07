@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ExportCustomsDeclaration-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExportCustomsDeclaration-2",
   "ID": "exi000073",
   "IssueDate": "2019-03-18",
   "ExportTypeCode": "20",

@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ReceiptAdvice-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ReceiptAdvice-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:ReceiptAdvice-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-receipt-advice-notification-draft",
   "ID": "658398",
-  "CopyIndicator": false,
   "UUID": "89F82FA6-5331-491D-83BC-7B6CA7FD047C",
   "IssueDate": "2005-06-21",
   "Note": "sample",
