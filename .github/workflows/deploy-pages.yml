@@ -155,6 +155,9 @@ jobs:
             --examples-dir json/examples \
             --repo ${{ github.repository }}
 
+      - name: Validate links
+        run: python tools/validate_links.py gh-pages
+
       - name: Push to gh-pages (with retry)
         run: |
           cd gh-pages
@@ -318,6 +321,9 @@ jobs:
             --repo "${{ github.repository }}" \
             --run-id "${{ github.run_id }}" \
             $PR_ARG
+
+      - name: Validate links
+        run: python tools/validate_links.py gh-pages --subdir "${{ steps.branch-info.outputs.slug }}"
 
       - name: Push to gh-pages (with retry)
         run: |

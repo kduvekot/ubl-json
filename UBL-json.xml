@@ -22,7 +22,7 @@
     <releaseinfo role="track">Standards Track Work Product</releaseinfo>
     <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>
-    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>
+    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>
     <title>&title;</title>
@@ -804,7 +804,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/CommonAggregateComponents-2.json">json/schemas/common/CommonAggregateComponents-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/CommonAggregateComponents-2.5.json">json/schemas/common/CommonAggregateComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
@@ -828,7 +828,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/CommonBasicComponents-2.json">json/schemas/common/CommonBasicComponents-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/CommonBasicComponents-2.5.json">json/schemas/common/CommonBasicComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
@@ -852,7 +852,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/QualifiedDataTypes-2.json">json/schemas/common/QualifiedDataTypes-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/QualifiedDataTypes-2.5.json">json/schemas/common/QualifiedDataTypes-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
@@ -876,7 +876,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/UnqualifiedDataTypes-2.json">json/schemas/common/UnqualifiedDataTypes-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/UnqualifiedDataTypes-2.5.json">json/schemas/common/UnqualifiedDataTypes-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
@@ -900,7 +900,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/CommonExtensionComponents-2.json">json/schemas/common/CommonExtensionComponents-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/CommonExtensionComponents-2.5.json">json/schemas/common/CommonExtensionComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
@@ -924,7 +924,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/SignatureAggregateComponents-2.json">json/schemas/common/SignatureAggregateComponents-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/SignatureAggregateComponents-2.5.json">json/schemas/common/SignatureAggregateComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>
@@ -948,7 +948,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
           <varlistentry>
             <term><emphasis role="bold">Normative schema:</emphasis></term>
             <listitem>
-              <para><ulink url="json/schemas/common/SignatureBasicComponents-2.json">json/schemas/common/SignatureBasicComponents-2.5.json</ulink></para>
+              <para><ulink url="json/schemas/common/SignatureBasicComponents-2.5.json">json/schemas/common/SignatureBasicComponents-2.5.json</ulink></para>
             </listitem>
           </varlistentry>
           <varlistentry>

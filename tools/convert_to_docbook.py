@@ -49,7 +49,13 @@ def build_hyperlink_map(doc):
     hmap = {}
     for rel_id, rel in rels.items():
         if "hyperlink" in str(rel.reltype).lower():
-            hmap[rel_id] = rel.target_ref
+            target = rel.target_ref
+            # Fix Word source erratum: common schema hyperlinks use "-2.json"
+            # but should be "-2.5.json" (display text is correct, URL is not).
+            # Safe when the .docx is corrected: "-2.5.json" won't match "-2.json".
+            if target.startswith("json/schemas/common/") and target.endswith("-2.json"):
+                target = target[:-len("-2.json")] + "-2.5.json"
+            hmap[rel_id] = target
     return hmap
 
 
@@ -680,13 +686,13 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
     # "This version" URLs — HTML first, then PDF, then XML (authoritative)
     xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
     xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
-    xml_lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>')
+    xml_lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
 
     # "Previous version" URLs (if available)
     if meta.get("previous_version_urls"):
         xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
         xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
-        xml_lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>')
+        xml_lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
 
     # "Latest version" URLs
     xml_lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
