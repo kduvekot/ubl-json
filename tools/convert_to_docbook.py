@@ -49,7 +49,12 @@ def build_hyperlink_map(doc):
     hmap = {}
     for rel_id, rel in rels.items():
         if "hyperlink" in str(rel.reltype).lower():
-            hmap[rel_id] = rel.target_ref
+            target = rel.target_ref
+            # Fix Word source erratum: common schema hyperlinks use "-2.json"
+            # but should be "-2.5.json" (display text is correct, URL is not).
+            if target.startswith("json/schemas/common/") and target.endswith("-2.json"):
+                target = target[:-len("-2.json")] + "-2.5.json"
+            hmap[rel_id] = target
     return hmap
 
 

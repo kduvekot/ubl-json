@@ -25,3 +25,5 @@
 1. **Section 13.1 example URI (line 594)** — Shows `https://docs.oasis-open.org/ubl/json/schemas/Invoice-2` but Annex C uses `https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2`. Missing `/2/` path segment and `UBL-` prefix.
 
 2. **Orphan bibliography entry [BDNDR] (Appendix B.2)** — "Business Document Naming and Design Rules" is listed in B.2 Informative References but never cited in the document body. Either cite where relevant or remove.
+
+3. **Common schema hyperlinks in Annex C (Word source erratum)** — The 7 common schema entries in Annex C have incorrect hyperlink targets in the `.docx` source. The display text is correct (`-2.5.json`) but the hyperlink URL uses `-2.json` (missing minor version). Affected: CommonAggregateComponents, CommonBasicComponents, QualifiedDataTypes, UnqualifiedDataTypes, CommonExtensionComponents, SignatureAggregateComponents, SignatureBasicComponents. Maindoc schema links are correct. Fixed in `convert_to_docbook.py` but the `.docx` source should also be corrected.
