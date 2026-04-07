@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:ImportCustomsDeclaration-2",
+  "description": "A customs declaration document for importing goods.",
+  "type": "object",
+  "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:ImportCustomsDeclaration-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "TypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TypeCode"
+    },
+    "SubTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SubTypeCode"
+    },
+    "NatureOfTransactionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/NatureOfTransactionCode"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+          }
+        }
+      ]
+    },
+    "VersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
+    },
+    "ValidityPeriod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
+    },
+    "CustomsExitOfficeLocation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/LocationType"
+    },
+    "JurisdictionRegionAddress": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AddressType"
+    },
+    "ImporterParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ConsignorParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ConsigneeParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "FreightForwarderParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "CustomsParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "NotifierParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "Shipment": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ShipmentType"
+    },
+    "PreviousCustomsDeclaration": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CustomsDeclarationType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "$jsonschema",
+    "ID",
+    "Shipment"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Import Customs Declaration. Details"
+}
