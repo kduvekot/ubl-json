@@ -8,7 +8,7 @@
 
 3. ~~**309 ABIE types**~~ — Exhaustively checked all 309 ABIEs against GC. Results: 0 missing/extra types, 0 child name mismatches (2,855 children), 0 cardinality errors, 0 required array mismatches, 0 structural errors (additionalProperties, minProperties, $anchor). UBLEntity is correctly `const`+required on documents and `const`+optional on ABIEs (dual-use: standalone vs embedded).
 
-4. **1197 BBIE mappings** — The mapping logic and data type resolution is verified, but not every individual BBIE has been checked against the GC.
+4. ~~**1197 BBIE mappings**~~ — Exhaustively checked. 1,197 CBC definitions verified: 0 data type mapping errors across 1,194 BBIEs, all 35 QDT→UDT references valid, 5 "missing" BBIEs correctly absent (belong to deprecated documents AttachedDocument and OrderResponseSimple), 9 "extra" correctly present (from extension/signature GCs).
 
 ## Points for TC discussion
 
