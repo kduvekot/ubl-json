@@ -26,7 +26,7 @@
     "DigitalSignatureAttachment": {
       "ExternalReference": {
         "URI": "UBL-Invoice-2.0-Detached-Signature.jws",
-        "Description": "TODO: Provide the actual detached JWS file — see DocBook Section 11"
+        "Description": "Detached JWS signature file (RFC 7515) covering the JCS-canonicalized invoice"
       }
     }
   },

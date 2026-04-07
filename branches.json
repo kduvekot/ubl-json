@@ -8,11 +8,11 @@
       "run_id": "24076084366"
     },
     "claude/validate-json-docbook-schemas-gHfrj": {
-      "sha": "6b0870aad0e6aa175f533d6f1129615ce3d20fa7",
+      "sha": "49a056971c8a70b3351f69da42ab86271313732d",
       "slug": "gHfrj",
-      "updated": "2026-04-07T20:06:49.616321+00:00",
+      "updated": "2026-04-07T20:42:53.711410+00:00",
       "pr": null,
-      "run_id": "24101898440"
+      "run_id": "24103423330"
     }
   }
 }
