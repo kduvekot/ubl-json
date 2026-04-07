@@ -1,5 +1,7 @@
 # Generated outputs (built by CI)
-UBL-2.5-JSON-Syntax-Binding.html
+UBL-2.5-JSON-Syntax-Binding*.html
+UBL-2.5-JSON-Syntax-Binding*.xml
+UBL-json.html
 json/
 _site/
 
