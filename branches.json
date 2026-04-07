@@ -6,6 +6,13 @@
       "updated": "2026-04-07T10:11:42.487178+00:00",
       "pr": null,
       "run_id": "24076084366"
+    },
+    "claude/fix-common-schema-links-gHfrj": {
+      "sha": "eeb30b2f0ffe83cff7542d29731910ea3a09c966",
+      "slug": "gHfrj",
+      "updated": "2026-04-07T21:59:27.089646+00:00",
+      "pr": null,
+      "run_id": "24106446163"
     }
   }
 }
