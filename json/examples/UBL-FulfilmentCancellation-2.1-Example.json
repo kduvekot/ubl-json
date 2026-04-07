@@ -1,8 +1,7 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:FulfilmentCancellation-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-FulfilmentCancellation-2",
   "UBLVersionID": "2.1",
   "ID": "00384",
-  "CopyIndicator": false,
   "IssueDate": "2005-06-22",
   "Note": "sample",
   "CancellationNote": "The quality check has detected that the beeswax doesn't become liquid at the\n        expected temperature.",

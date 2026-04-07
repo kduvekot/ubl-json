@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:OrderCancellation-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-OrderCancellation-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "urn:www.cenbii.eu:transaction:biicoretrdmXYZ:ver1.0",
   "ProfileID": {
@@ -15,10 +15,6 @@
   },
   "BuyerCustomerParty": {
     "Party": {
-      "EndpointID": {
-        "value": "7300072311115",
-        "schemeID": "9:GLN"
-      },
       "PartyIdentification": [
         {
           "ID": {
@@ -37,10 +33,6 @@
   },
   "SellerSupplierParty": {
     "Party": {
-      "EndpointID": {
-        "value": "7302347231111",
-        "schemeID": "9:GLN"
-      },
       "PartyIdentification": {
         "ID": "SellerPartyID123"
       },

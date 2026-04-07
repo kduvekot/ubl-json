@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlanRequest-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportExecutionPlanRequest-2",
   "UBLVersionID": "2.1",
   "ID": "TEPR_1",
   "VersionID": "1",
@@ -120,7 +120,6 @@
         "NotificationTypeCode": "TIME_SCHEDULE_DEVIATIONS",
         "NotifyParty": [
           {
-            "EndpointID": "www.consignee.de/statusnotifications/",
             "PartyName": {
               "Name": "Consignee"
             },
@@ -129,7 +128,6 @@
             }
           },
           {
-            "EndpointID": "www.consignor.cn/statusnotifications/",
             "PartyName": {
               "Name": "Consignor"
             },
@@ -147,7 +145,6 @@
         },
         "NotifyParty": [
           {
-            "EndpointID": "www.consignee.com/statusnotifications/",
             "PartyName": {
               "Name": "Consignee"
             },
@@ -156,7 +153,6 @@
             }
           },
           {
-            "EndpointID": "www.consignor.cn/statusnotifications/",
             "PartyName": {
               "Name": "Consignor"
             },

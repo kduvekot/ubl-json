@@ -1,0 +1,69 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportation-2",
+  "ID": "23424244",
+  "IssueDate": "2019-05-08",
+  "ImportingGuarantorParty": {
+    "PartyName": {
+      "Name": "Deutscher Industrie- und Handelskammertag e.V."
+    },
+    "PostalAddress": {
+      "StreetName": "Breite Straße",
+      "BuildingNumber": "29",
+      "CityName": "Berlin",
+      "PostalZone": "10178",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "DE122125278"
+    }
+  },
+  "ExportingGuarantorParty": {
+    "PartyName": {
+      "Name": "Dansk Erhverv"
+    },
+    "PostalAddress": {
+      "StreetName": "Slotsholmsgade",
+      "BuildingNumber": "1",
+      "CityName": "København K",
+      "PostalZone": "1216",
+      "Country": {
+        "IdentificationCode": "DK"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "DK43232010"
+    }
+  },
+  "GoodsItemPassportCounterfoil": [
+    {
+      "ID": "645634567",
+      "GoodsItemPassportID": "ata01661",
+      "CustomsOfficeLocation": {
+        "Name": "Heiligenhafen"
+      },
+      "VoucherDocumentReference": {
+        "ID": "5234533222"
+      }
+    },
+    {
+      "ID": "634563324",
+      "GoodsItemPassportID": "ata01661",
+      "CustomsOfficeLocation": {
+        "Name": "Bietingen"
+      },
+      "VoucherDocumentReference": {
+        "ID": "52345423423"
+      }
+    }
+  ],
+  "ReexportationEvidence": {
+    "EvidenceTypeCode": "mail",
+    "Description": "Received mail from Frau Gerlung",
+    "DocumentReference": {
+      "ID": "34563456",
+      "DocumentType": "ATA carnet, paper"
+    }
+  }
+}

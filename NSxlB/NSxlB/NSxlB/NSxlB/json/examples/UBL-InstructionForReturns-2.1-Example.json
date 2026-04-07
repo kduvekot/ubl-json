@@ -1,0 +1,141 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:InstructionForReturns-2",
+  "UBLVersionID": "2.1",
+  "ID": "AB011",
+  "CopyIndicator": false,
+  "IssueDate": "2010-04-10",
+  "Note": "Instruction to return goods that are badly sent to you.",
+  "SellerSupplierParty": {
+    "Party": {
+      "PartyName": {
+        "Name": "Arancio Forniture spa"
+      },
+      "PostalAddress": {
+        "StreetName": "Via Dell'Arcoveggio",
+        "BuildingNumber": "403",
+        "CityName": "Bologna",
+        "PostalZone": "40129",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Rossi",
+        "Telephone": "0039 051 23000000",
+        "Telefax": "0039 051 23000023",
+        "ElectronicMail": "rossi@arancioforniture.it"
+      }
+    }
+  },
+  "RetailerCustomerParty": {
+    "Party": {
+      "PartyName": {
+        "Name": "Beta Shop"
+      },
+      "PostalAddress": {
+        "StreetName": "Via Emilia",
+        "BuildingNumber": "1",
+        "CityName": "Modena",
+        "PostalZone": "41121",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Contact": {
+        "Name": "Mr Delta",
+        "Telephone": "0039 059 33000000",
+        "Telefax": "0039 059 33000055",
+        "ElectronicMail": "delta@betashop.it"
+      }
+    }
+  },
+  "ManufacturerParty": {
+    "PartyName": {
+      "Name": "AZ Outsourcing srl"
+    },
+    "PostalAddress": {
+      "StreetName": "Via Bolognese",
+      "BuildingNumber": "199",
+      "CityName": "Bologna",
+      "PostalZone": "40129",
+      "Country": {
+        "IdentificationCode": "IT",
+        "Name": "Italy"
+      }
+    },
+    "Contact": {
+      "Name": "Mr Verdi",
+      "Telephone": "0039 051 25400000",
+      "Telefax": "0039 051 25400023",
+      "ElectronicMail": "verdi@azoutsourcing.it"
+    }
+  },
+  "Shipment": {
+    "ID": "51022",
+    "Consignment": {
+      "ID": "510"
+    },
+    "Delivery": {
+      "DeliveryAddress": {
+        "StreetName": "Via Dell'Arcoveggio",
+        "BuildingNumber": "403",
+        "CityName": "Bologna",
+        "PostalZone": "40129",
+        "Country": {
+          "IdentificationCode": "IT",
+          "Name": "Italy"
+        }
+      },
+      "Despatch": {
+        "DespatchAddress": {
+          "StreetName": "Via Emilia",
+          "BuildingNumber": "1",
+          "CityName": "Modena",
+          "PostalZone": "41121",
+          "Country": {
+            "IdentificationCode": "IT",
+            "Name": "Italy"
+          }
+        }
+      }
+    }
+  },
+  "InstructionForReturnsLine": [
+    {
+      "ID": "1",
+      "Quantity": {
+        "value": 20,
+        "unitCode": "NAR"
+      },
+      "Item": {
+        "Description": "Denim Jeans Jacket",
+        "Name": "Jeans Jacket man",
+        "BuyersItemIdentification": {
+          "ID": "AA109"
+        },
+        "SellersItemIdentification": {
+          "ID": "YX401"
+        }
+      }
+    },
+    {
+      "ID": "2",
+      "Quantity": {
+        "value": 5,
+        "unitCode": "NAR"
+      },
+      "Item": {
+        "Description": "Leather Jacket",
+        "Name": "Leather Jacket man",
+        "BuyersItemIdentification": {
+          "ID": "AA128"
+        },
+        "SellersItemIdentification": {
+          "ID": "YX233"
+        }
+      }
+    }
+  ]
+}
