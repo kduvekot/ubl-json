@@ -21,9 +21,11 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
-# Schema identifiers — not meant to resolve
+# URLs to skip: schema identifiers (not meant to resolve) and sites
+# that block CI/cloud requests (verified manually to be reachable).
 SKIP_PATTERNS = [
     "docs.oasis-open.org/ubl/2/json/schemas/",
+    "unece.org/",
 ]
 
 TIMEOUT = 10  # seconds per request
