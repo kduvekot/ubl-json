@@ -6,13 +6,6 @@
       "updated": "2026-04-01T14:20:24.602858+00:00",
       "pr": null,
       "run_id": "23853387712"
-    },
-    "claude/check-docx-conversion-aVjmv": {
-      "sha": "d622c8edf25a8a8a473157f310ccd3aff911d95e",
-      "slug": "aVjmv",
-      "updated": "2026-04-02T07:08:28.009924+00:00",
-      "pr": null,
-      "run_id": "23888548393"
     }
   }
 }
