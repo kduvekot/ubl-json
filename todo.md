@@ -16,8 +16,12 @@
 
 2. **Repeating languageID uniqueness (8.4.8)** — Cannot be expressed in JSON Schema 2020-12. Requires application-level validation.
 
-3. **Spec inconsistency in Section 13.1 (line 594)** — Example URI missing `/2/` path component and `UBL-` prefix compared to Annex C.
+3. **`_n` suffix pattern** — Mentioned in spec but not used. Confirm this is acceptable.
 
-4. **`_n` suffix pattern** — Mentioned in spec but not used. Confirm this is acceptable.
+4. **Controlled vocabularies (Chapter 9)** — No code list enforcement in JSON Schema. Confirm this is the intended approach.
 
-5. **Controlled vocabularies (Chapter 9)** — No code list enforcement in JSON Schema. Confirm this is the intended approach.
+## DocBook editorial fixes needed
+
+1. **Section 13.1 example URI (line 594)** — Shows `https://docs.oasis-open.org/ubl/json/schemas/Invoice-2` but Annex C uses `https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2`. Missing `/2/` path segment and `UBL-` prefix.
+
+2. **Orphan bibliography entry [BDNDR] (Appendix B.2)** — "Business Document Naming and Design Rules" is listed in B.2 Informative References but never cited in the document body. Either cite where relevant or remove.
