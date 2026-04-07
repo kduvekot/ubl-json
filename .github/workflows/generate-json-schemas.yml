@@ -4,13 +4,13 @@ on:
   pull_request:
     paths:
       - 'gc/*.gc'
-      - 'generate_json_schemas.py'
+      - 'tools/generate_json_schemas.py'
       - '.github/workflows/generate-json-schemas.yml'
   push:
     branches: [main]
     paths:
       - 'gc/*.gc'
-      - 'generate_json_schemas.py'
+      - 'tools/generate_json_schemas.py'
       - '.github/workflows/generate-json-schemas.yml'
   workflow_dispatch:
 
@@ -30,7 +30,7 @@ jobs:
         run: uv python install
 
       - name: Generate JSON Schemas
-        run: uv run python generate_json_schemas.py
+        run: uv run python tools/generate_json_schemas.py
 
       - name: Validate all schemas against JSON Schema 2020-12
         run: |
@@ -40,7 +40,7 @@ jobs:
           done
 
       - name: Convert XML examples
-        run: uv run python convert_xml_examples.py --validate
+        run: uv run python tools/convert_xml_examples.py --validate
 
       - name: Upload schemas and examples as artifact
         uses: actions/upload-artifact@v4

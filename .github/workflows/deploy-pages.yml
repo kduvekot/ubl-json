@@ -49,7 +49,7 @@ jobs:
           python-version: '3.12'
 
       - name: Generate HTML from DocBook XML
-        run: python convert_to_html.py
+        run: python tools/convert_to_html.py
 
       # ── Generate JSON schemas ──
       - name: Install uv
@@ -59,7 +59,7 @@ jobs:
         run: uv python install
 
       - name: Generate JSON schemas
-        run: uv run python generate_json_schemas.py
+        run: uv run python tools/generate_json_schemas.py
 
       - name: Validate schemas
         run: |
@@ -69,7 +69,7 @@ jobs:
           done
 
       - name: Convert XML examples
-        run: uv run python convert_xml_examples.py --validate
+        run: uv run python tools/convert_xml_examples.py --validate
 
       - name: Upload schemas and examples artifact
         uses: actions/upload-artifact@v4
@@ -119,7 +119,7 @@ jobs:
 
       - name: Deploy main content
         run: |
-          python build_pages.py deploy-main \
+          python tools/build_pages.py deploy-main \
             --pages-dir gh-pages \
             --spec-html UBL-json.html \
             --schemas-dir json/schemas \
@@ -142,7 +142,7 @@ jobs:
             fi
           done
           # Rebuild banner and index with correct branch data
-          python build_pages.py deploy-main \
+          python tools/build_pages.py deploy-main \
             --pages-dir gh-pages \
             --spec-html UBL-json.html \
             --schemas-dir json/schemas \
@@ -220,7 +220,7 @@ jobs:
           python-version: '3.12'
 
       - name: Generate HTML from DocBook XML
-        run: python convert_to_html.py
+        run: python tools/convert_to_html.py
 
       # ── Generate JSON schemas ──
       - name: Install uv
@@ -230,7 +230,7 @@ jobs:
         run: uv python install
 
       - name: Generate JSON schemas
-        run: uv run python generate_json_schemas.py
+        run: uv run python tools/generate_json_schemas.py
 
       - name: Validate schemas
         run: |
@@ -240,7 +240,7 @@ jobs:
           done
 
       - name: Convert XML examples
-        run: uv run python convert_xml_examples.py --validate
+        run: uv run python tools/convert_xml_examples.py --validate
 
       - name: Upload schemas and examples artifact
         uses: actions/upload-artifact@v4
@@ -296,7 +296,7 @@ jobs:
           if [ "${{ steps.find-pr.outputs.has_pr }}" = "true" ]; then
             PR_ARG="--pr ${{ steps.find-pr.outputs.pr_number }}"
           fi
-          python build_pages.py deploy-branch \
+          python tools/build_pages.py deploy-branch \
             --pages-dir gh-pages \
             --spec-html UBL-json.html \
             --schemas-dir json/schemas \
@@ -420,7 +420,7 @@ jobs:
       - name: Clean up branch preview
         if: ${{ hashFiles('gh-pages/branches.json') != '' }}
         run: |
-          python build_pages.py cleanup-branch \
+          python tools/build_pages.py cleanup-branch \
             --pages-dir gh-pages \
             --branch "${{ steps.branch-name.outputs.branch }}" \
             --repo "${{ github.repository }}"

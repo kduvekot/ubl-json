@@ -1290,7 +1290,7 @@ def generate_catalog(output_dir, registry):
 
 def main():
     """Main script flow: parse GC files, build registry, generate schemas."""
-    base_dir = Path(__file__).parent
+    base_dir = Path(__file__).resolve().parent.parent
     gc_dir = base_dir / 'gc'
     output_dir = base_dir / 'json' / 'schemas'
 

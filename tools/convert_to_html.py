@@ -27,7 +27,7 @@ import sys
 # Configuration
 # ---------------------------------------------------------------------------
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SAXON_JAR = os.path.join(SCRIPT_DIR, "utilities", "saxon9he", "saxon9he.jar")
 
