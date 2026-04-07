@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2",
   "UBLExtensions": [
     {
       "ExtensionURI": "dummy1",
