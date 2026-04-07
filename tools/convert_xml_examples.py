@@ -40,6 +40,8 @@ from pathlib import Path
 
 SCHEMAS_DIR = Path("json/schemas")
 EXAMPLES_DIR = Path("json/examples")
+# XML examples are fetched from oasis-tcs/ubl (branch ubl-2.5, path raw/xml/)
+# at CI time. For local runs, clone the repo or pass --xml-dir explicitly.
 DEFAULT_XML_DIR = Path("xml/UBL-2.5")
 
 # URN base for JSON schema identifiers (must match generate_json_schemas.py)
