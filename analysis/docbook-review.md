@@ -6,18 +6,11 @@ schemas — see `todo.md` for the exhaustive verification results.
 
 ---
 
-## 1. Signature examples still contain placeholder content (Ch. 12)
+## 1. ~~Signature examples~~ — Resolved
 
-The signature examples have correct URIs and structure but still contain
-placeholder content where valid JWS objects should be:
-
-| File | Issue |
-|------|-------|
-| `UBL-Invoice-2.0-Enveloped.json` | `_TODO` marker in `SignatureInformation` — needs valid JWS (RFC 7515) object |
-| `UBL-Invoice-2.0-Detached.json` | `Description` contains TODO text — needs actual `.jws` file |
-
-**Status**: URIs and structure fixed. JWS content still needs manual authoring.
-See [signature-examples-remediation.md](signature-examples-remediation.md).
+Signature examples now contain structurally valid JWS content per DocBook
+Section 12.3. All TODOs removed. See
+[signature-examples-remediation.md](signature-examples-remediation.md).
 
 ---
 
