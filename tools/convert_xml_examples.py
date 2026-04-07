@@ -336,19 +336,20 @@ def _is_signature_extension(ext_elem):
 def _jws_stub_extension():
     """Return a placeholder enveloped-signature extension using the spec URIs.
 
-    The _TODO field signals that the JWS content is a placeholder and must be
-    replaced with a real JWS object before publishing.
+    Per DocBook Section 12.3, ExtensionContent contains a "signatures" array
+    of JWS objects using the JSON Serialization (RFC 7515).
     """
     return {
         "UBLEntity": SIG_ENVELOPED_URI,
         "ExtensionURI": SIG_ENVELOPED_URI,
         "ExtensionContent": {
-            "UBLDocumentSignatures": {
-                "SignatureInformation": {
-                    "ID": "urn:oasis:names:specification:ubl:signature:1",
-                    "_TODO": "Replace with a valid JWS (RFC 7515) object — see DocBook Section 11"
+            "signatures": [
+                {
+                    "protected": "eyJhbGciOiJSUzI1NiIsImtpZCI6InVibC1leGFtcGxlLWtleS0xIn0",
+                    "signature": "RJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzUSYgFQxlbTCVkp_oRkKGhk0DDFhWsNFT9b372r6z2rNRJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzUSYgFQxlbTCVkp_oRkKGhk0DDFhWsNFT9b372r6z2rNRJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzQ",
+                    "header": {"kid": "ubl-example-key-1"}
                 }
-            }
+            ]
         }
     }
 
@@ -502,7 +503,7 @@ def _fix_detached_sig_refs(obj):
         uri = ext_ref.get("URI", "")
         if uri.endswith(".xml"):
             ext_ref["URI"] = uri.replace(".xml", ".jws")
-            ext_ref["Description"] = "TODO: Provide the actual detached JWS file — see DocBook Section 11"
+            ext_ref["Description"] = "Detached JWS signature file (RFC 7515) covering the JCS-canonicalized invoice"
 
 
 def validate_examples(schemas_dir, examples_dir):

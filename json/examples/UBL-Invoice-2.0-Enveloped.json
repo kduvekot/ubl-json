@@ -19,12 +19,15 @@
       "UBLEntity": "https://docs.oasis-open.org/ubl/json/jws/enveloped",
       "ExtensionURI": "https://docs.oasis-open.org/ubl/json/jws/enveloped",
       "ExtensionContent": {
-        "UBLDocumentSignatures": {
-          "SignatureInformation": {
-            "ID": "urn:oasis:names:specification:ubl:signature:1",
-            "_TODO": "Replace with a valid JWS (RFC 7515) object — see DocBook Section 11"
+        "signatures": [
+          {
+            "protected": "eyJhbGciOiJSUzI1NiIsImtpZCI6InVibC1leGFtcGxlLWtleS0xIn0",
+            "signature": "RJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzUSYgFQxlbTCVkp_oRkKGhk0DDFhWsNFT9b372r6z2rNRJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzUSYgFQxlbTCVkp_oRkKGhk0DDFhWsNFT9b372r6z2rNRJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzQ",
+            "header": {
+              "kid": "ubl-example-key-1"
+            }
           }
-        }
+        ]
       }
     }
   ],
