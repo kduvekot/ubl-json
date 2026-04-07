@@ -40,6 +40,7 @@ from pathlib import Path
 
 SCHEMAS_DIR = Path("json/schemas")
 EXAMPLES_DIR = Path("json/examples")
+GC_DIR = Path(__file__).resolve().parent.parent / "gc"
 # XML examples are fetched from oasis-tcs/ubl (branch ubl-2.5, path raw/xml/)
 # at CI time. For local runs, clone the repo or pass --xml-dir explicitly.
 DEFAULT_XML_DIR = Path("xml/UBL-2.5")
@@ -64,6 +65,77 @@ def local_name(tag):
     if tag.startswith("{"):
         return tag.split("}", 1)[1]
     return tag
+
+
+def build_deprecated_set():
+    """Build a mapping of deprecated elements from the UBL Entities GC file.
+
+    DocBook Section 5.2: deprecated elements shall not appear in JSON instances.
+    This parses the GC to identify which child elements are deprecated within
+    each parent ABIE type, so the converter can strip them during XML→JSON
+    conversion.
+
+    Also builds an element-name → ABIE-type mapping from ASBIEs so that
+    elements like SenderParty (of type Party) inherit Party's deprecated
+    children.
+
+    Returns:
+        dict mapping parent element name → set of deprecated child element names
+        (resolved through the ASBIE type chain)
+    """
+    gc_path = GC_DIR / "UBL-Entities-2.5.gc"
+    if not gc_path.exists():
+        return {}
+
+    tree = ET.parse(gc_path)
+    root = tree.getroot()
+
+    scl = root.find('SimpleCodeList')
+    if scl is None:
+        return {}
+
+    # First pass: collect all rows
+    all_rows = []
+    for row in scl.findall('Row'):
+        vals = {}
+        for v in row.findall('Value'):
+            col = v.get('ColumnRef')
+            sv = v.find('SimpleValue')
+            if sv is not None and sv.text:
+                vals[col] = sv.text
+        if vals:
+            all_rows.append(vals)
+
+    # Build deprecated set by ABIE type name
+    deprecated_by_type = {}  # ABIE_type → {child_names}
+    for vals in all_rows:
+        if not vals.get('Definition', '').startswith('(Deprecated)'):
+            continue
+        comp_type = vals.get('ComponentType')
+        if comp_type in ('BBIE', 'ASBIE'):
+            parent = vals.get('ObjectClass', '').replace(' ', '')
+            child = vals.get('ComponentName', '').replace(' ', '')
+            if parent and child:
+                deprecated_by_type.setdefault(parent, set()).add(child)
+
+    # Build element name → ABIE type mapping from ASBIEs
+    # e.g., SenderParty → Party, AccountingSupplierParty → SupplierParty
+    elem_to_type = {}
+    for vals in all_rows:
+        if vals.get('ComponentType') == 'ASBIE':
+            elem_name = vals.get('ComponentName', '').replace(' ', '')
+            assoc_class = vals.get('AssociatedObjectClass', '').replace(' ', '')
+            if elem_name and assoc_class:
+                elem_to_type[elem_name] = assoc_class
+
+    # Resolve: for each element that maps to a type with deprecated children,
+    # propagate those deprecations. Also keep direct ABIE-name lookups.
+    deprecated = dict(deprecated_by_type)
+    for elem_name, abie_type in elem_to_type.items():
+        if abie_type in deprecated_by_type and elem_name not in deprecated:
+            deprecated[elem_name] = deprecated_by_type[abie_type]
+
+    return deprecated
 
 
 def build_type_map():
@@ -285,12 +357,13 @@ def _map_signature_method(value):
     return _SIG_URI_MAP.get(value, value)
 
 
-def convert_element(elem, type_map):
+def convert_element(elem, type_map, deprecated=None):
     """Recursively convert an XML element to a JSON-compatible structure.
 
     - Leaf elements (no child elements): resolved via the semantic type map
     - Aggregate elements (with children): recursed into, grouping repeated
       child elements as JSON arrays
+    - Deprecated elements (per DocBook Section 5.2) are silently stripped
     """
     children = list(elem)
     name = local_name(elem.tag)
@@ -309,7 +382,7 @@ def convert_element(elem, type_map):
                 result.append(_jws_stub_extension())
                 continue
 
-            ext = convert_element(child, type_map)
+            ext = convert_element(child, type_map, deprecated)
             # DocBook Section 6.3: ExtensionURI is required.
             # Some legacy XML examples omit it; add a placeholder.
             if isinstance(ext, dict) and "ExtensionURI" not in ext:
@@ -348,26 +421,31 @@ def convert_element(elem, type_map):
         return convert_leaf_value(elem.text, elem.attrib, udt_type, tag=elem.tag)
 
     # Aggregate element: group children by local name (preserving order)
+    # Strip deprecated children (DocBook Section 5.2)
+    deprecated_children = deprecated.get(name, set()) if deprecated else set()
+
     result = OrderedDict()
     child_groups = OrderedDict()
     for child in children:
         child_name = local_name(child.tag)
+        if child_name in deprecated_children:
+            continue
         if child_name not in child_groups:
             child_groups[child_name] = []
         child_groups[child_name].append(child)
 
     for child_name, child_elems in child_groups.items():
         if len(child_elems) == 1:
-            result[child_name] = convert_element(child_elems[0], type_map)
+            result[child_name] = convert_element(child_elems[0], type_map, deprecated)
         else:
             result[child_name] = [
-                convert_element(c, type_map) for c in child_elems
+                convert_element(c, type_map, deprecated) for c in child_elems
             ]
 
     return dict(result)
 
 
-def convert_xml_to_json(xml_path, type_map):
+def convert_xml_to_json(xml_path, type_map, deprecated=None):
     """Convert a UBL XML file to a JSON object.
 
     Returns (doc_type, json_object) where doc_type is the root element's
@@ -375,11 +453,12 @@ def convert_xml_to_json(xml_path, type_map):
 
     Adds UBLEntity as the first property of the root object to identify
     the governing JSON schema (the JSON equivalent of the XML namespace).
+    Deprecated elements (DocBook Section 5.2) are stripped during conversion.
     """
     tree = ET.parse(xml_path)
     root = tree.getroot()
     doc_type = local_name(root.tag)
-    json_obj = convert_element(root, type_map)
+    json_obj = convert_element(root, type_map, deprecated)
 
     # Add UBLEntity as the first property
     if isinstance(json_obj, dict):
@@ -562,6 +641,11 @@ def main():
     type_map = build_type_map()
     print(f"  Resolved {len(type_map)} basic component → UDT type mappings")
 
+    # Build deprecated element set (DocBook Section 5.2)
+    deprecated = build_deprecated_set()
+    dep_count = sum(len(v) for v in deprecated.values())
+    print(f"  Loaded {dep_count} deprecated elements across {len(deprecated)} parent types")
+
     # Ensure output directory exists
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -583,7 +667,7 @@ def main():
 
     for xml_path in xml_files:
         try:
-            doc_type, json_obj = convert_xml_to_json(xml_path, type_map)
+            doc_type, json_obj = convert_xml_to_json(xml_path, type_map, deprecated)
         except Exception as e:
             print(f"  ERROR: {xml_path.name}: {e}")
             errors += 1
