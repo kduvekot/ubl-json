@@ -1132,24 +1132,13 @@ def generate_document_schemas(output_dir, registry):
         }
         required.append('UBLEntity')
 
-        # 1. Add UBLExtensions (optional)
+        # 1. Add UBLExtensions (optional, not in GC — added by extension mechanism)
         properties['UBLExtensions'] = {
             '$ref': f'{SCHEMA_BASE}/CommonExtensionComponents-2#/$defs/UBLExtensionsType'
         }
 
-        # 2. Add Signature (optional, 0..n via oneOf)
-        properties['Signature'] = {
-            'oneOf': [
-                {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/SignatureType'},
-                {
-                    'type': 'array',
-                    'items': {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/SignatureType'},
-                    'minItems': 1
-                }
-            ]
-        }
-
-        # 3. Add children (BBIEs and ASBIEs)
+        # 2. Add children (BBIEs and ASBIEs) in GC order
+        # Note: Signature ASBIE comes from GC in its natural position (not hardcoded)
         for child in children:
             child_component_name = child['component_name']
             component_type = child['component_type']
