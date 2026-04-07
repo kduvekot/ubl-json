@@ -20,7 +20,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -63,7 +64,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -115,7 +117,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -142,7 +145,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -155,7 +159,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -171,7 +176,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -184,7 +190,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ContractType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -206,7 +213,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -228,7 +236,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DeliveryType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -244,7 +253,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PaymentMeansType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -257,7 +267,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PaymentTermsType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -270,7 +281,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AllowanceChargeType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -298,7 +310,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TaxTotalType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -314,7 +327,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/OrderLineType"
-          }
+          },
+          "minItems": 1
         }
       ]
     }

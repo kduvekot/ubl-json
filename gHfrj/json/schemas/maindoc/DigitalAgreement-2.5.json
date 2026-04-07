@@ -20,7 +20,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -86,7 +87,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CountryType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -99,7 +101,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },

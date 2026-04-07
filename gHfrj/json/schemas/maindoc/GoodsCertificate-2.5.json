@@ -20,7 +20,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -60,7 +61,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -73,7 +75,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -125,7 +128,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/AttestationType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -138,7 +142,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/GoodsProcessingType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -157,7 +162,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
-          }
+          },
+          "minItems": 1
         }
       ]
     }

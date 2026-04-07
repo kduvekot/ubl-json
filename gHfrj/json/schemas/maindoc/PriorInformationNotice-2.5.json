@@ -20,7 +20,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -60,7 +61,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -85,7 +87,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/RegulatoryDomain"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -104,7 +107,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/LanguageType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -117,7 +121,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -144,7 +149,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/CustomerPartyType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -157,7 +163,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
-          }
+          },
+          "minItems": 1
         }
       ]
     },
@@ -182,7 +189,8 @@
           "type": "array",
           "items": {
             "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ProcurementProjectLotType"
-          }
+          },
+          "minItems": 1
         }
       ]
     }
