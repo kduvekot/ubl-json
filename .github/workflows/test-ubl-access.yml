@@ -1,0 +1,26 @@
+name: Test UBL repo access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-access:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test git clone (sparse checkout)
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/oasis-tcs/ubl.git /tmp/ubl-test
+          cd /tmp/ubl-test
+          git sparse-checkout set "os-UBL-2.5/xml/UBL-2.5"
+          echo "--- Files found ---"
+          ls os-UBL-2.5/xml/UBL-2.5/ | head -10
+          echo "..."
+          ls os-UBL-2.5/xml/UBL-2.5/ | wc -l
+          echo "--- Success ---"
+
+      - name: Test curl fallback
+        run: |
+          curl -fsSL -o /tmp/test-invoice.xml \
+            "https://raw.githubusercontent.com/oasis-tcs/ubl/ubl-2.5/os-UBL-2.5/xml/UBL-2.5/UBL-Invoice-2.0-Example.xml"
+          echo "--- Downloaded $(wc -c < /tmp/test-invoice.xml) bytes ---"
