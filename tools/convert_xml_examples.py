@@ -373,7 +373,7 @@ def convert_xml_to_json(xml_path, type_map):
     Returns (doc_type, json_object) where doc_type is the root element's
     local name (e.g., 'Invoice', 'CreditNote').
 
-    Adds $jsonschema as the first property of the root object to identify
+    Adds UBLEntity as the first property of the root object to identify
     the governing JSON schema (the JSON equivalent of the XML namespace).
     """
     tree = ET.parse(xml_path)
@@ -381,10 +381,10 @@ def convert_xml_to_json(xml_path, type_map):
     doc_type = local_name(root.tag)
     json_obj = convert_element(root, type_map)
 
-    # Add $jsonschema as the first property
+    # Add UBLEntity as the first property
     if isinstance(json_obj, dict):
         schema_urn = f"{URN_BASE}:{doc_type}-2"
-        json_obj = {"$jsonschema": schema_urn, **json_obj}
+        json_obj = {"UBLEntity": schema_urn, **json_obj}
 
     # Post-process: fix detached signature external references
     # (e.g., .xml → .jws for signature attachment URIs)

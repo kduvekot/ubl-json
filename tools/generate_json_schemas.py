@@ -110,12 +110,21 @@ def build_registry(rows):
     # First pass: collect all rows by model and object class
     model_data = defaultdict(lambda: {'abies': {}, 'children': defaultdict(list)})
 
+    deprecated_count = 0
+
     for row in rows:
         model_name = row.get('ModelName')
         component_type = row.get('ComponentType')
         object_class = row.get('ObjectClass')
 
         if not model_name:
+            continue
+
+        # DocBook Section 5.2: "deprecated elements defined in UBL 2.5 are
+        # not included in the normative JSON Schemas."
+        definition = row.get('Definition', '')
+        if definition.startswith('(Deprecated)'):
+            deprecated_count += 1
             continue
 
         # Use ComponentName if available, fall back to UBLName (for signature/extension)
@@ -157,6 +166,9 @@ def build_registry(rows):
 
     # Convert defaultdict to regular dict
     registry['models'] = dict(registry['models'])
+
+    if deprecated_count:
+        print(f"  Skipped {deprecated_count} deprecated elements (DocBook Section 5.2)")
 
     return registry
 
@@ -577,9 +589,9 @@ def generate_common_aggregate_components(output_dir, registry):
         properties = {}
         required = []
 
-        # $jsonschema: identifies this ABIE type for standalone use
+        # UBLEntity: identifies this ABIE type for standalone use
         # (optional when embedded, required when used as root payload)
-        properties['$jsonschema'] = {
+        properties['UBLEntity'] = {
             'const': f'{URN_BASE}:CommonAggregateComponents-2#{type_name}',
             'description': 'Identifies the JSON schema governing this instance.'
         }
@@ -906,8 +918,8 @@ def generate_signature_schemas(output_dir, registry):
             properties = {}
             required = []
 
-            # $jsonschema for standalone use
-            properties['$jsonschema'] = {
+            # UBLEntity for standalone use
+            properties['UBLEntity'] = {
                 'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
                 'description': 'Identifies the JSON schema governing this instance.'
             }
@@ -976,8 +988,8 @@ def generate_signature_schemas(output_dir, registry):
             properties = {}
             required = []
 
-            # $jsonschema for standalone use
-            properties['$jsonschema'] = {
+            # UBLEntity for standalone use
+            properties['UBLEntity'] = {
                 'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
                 'description': 'Identifies the JSON schema governing this instance.'
             }
@@ -1104,12 +1116,12 @@ def generate_document_schemas(output_dir, registry):
         properties = {}
         required = []
 
-        # $jsonschema: identifies this document type (required)
-        properties['$jsonschema'] = {
+        # UBLEntity: identifies this document type (required)
+        properties['UBLEntity'] = {
             'const': schema_urn,
             'description': 'Identifies the JSON schema governing this instance.'
         }
-        required.append('$jsonschema')
+        required.append('UBLEntity')
 
         # 1. Add UBLExtensions (optional)
         properties['UBLExtensions'] = {
