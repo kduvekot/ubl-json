@@ -4,7 +4,7 @@
 
 1. ~~**Chapters 1-6**~~ — Checked. No issues found. Naming conventions (TitleCase for BIEs, lowerCamelCase for supplementary components), deprecated element exclusion (5.2), standalone ABIE support (6.2), and description annotations (5.1) all verified correct.
 
-2. **SignatureAggregateComponents schema** — Chapter 12 describes `UBLDocumentSignatures` and `SignatureInformation` types. Schemas exist and pass metaschema validation, but a field-by-field check against the spec and GC data has not been done.
+2. ~~**SignatureAggregateComponents schema**~~ — Checked field-by-field against GC (`UBL-Signature-Entities-2.5.gc`, 5 rows). Both `UBLDocumentSignaturesType` and `SignatureInformationType` match the GC exactly: correct properties, cardinality, data types, required fields, descriptions, and titles. `SignatureBasicComponents` also verified (2 BBIEs, both `Identifier. Type`). Runtime validation tests pass.
 
 3. **309 ABIE types** — The overall pattern is verified (UBLEntity, additionalProperties: false, minProperties: 1, correct cardinality handling), but individual ABIE children have not been exhaustively checked against the GC.
 
