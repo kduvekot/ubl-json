@@ -6,6 +6,13 @@
       "updated": "2026-04-07T10:11:42.487178+00:00",
       "pr": null,
       "run_id": "24076084366"
+    },
+    "claude/validate-json-docbook-schemas-gHfrj": {
+      "sha": "d4ac5394108f40733d529e79fbf8d2ef5c00ce47",
+      "slug": "gHfrj",
+      "updated": "2026-04-07T10:37:37.784322+00:00",
+      "pr": null,
+      "run_id": "24077073681"
     }
   }
 }
