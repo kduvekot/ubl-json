@@ -58,6 +58,7 @@
     "PartyIdentification": {
       "UBLExtensions": [
         {
+          "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",
           "ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",
           "ExtensionContent": {
             "IDExtension": "T0002"

@@ -43,6 +43,11 @@
         },
         "ExtensionContent": {
           "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/UnqualifiedDataTypes-2#/$defs/ContentType"
+        },
+        "UBLEntity": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Identifies the schema governing this extension content."
         }
       },
       "additionalProperties": false,
@@ -50,6 +55,7 @@
       "title": "UBL Extension. Details",
       "required": [
         "ExtensionContent",
+        "UBLEntity",
         "ExtensionURI"
       ]
     }
