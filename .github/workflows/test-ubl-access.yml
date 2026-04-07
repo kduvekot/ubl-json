@@ -1,7 +1,9 @@
 name: Test UBL repo access
 
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test-ubl-access.yml'
 
 jobs:
   test-access:
