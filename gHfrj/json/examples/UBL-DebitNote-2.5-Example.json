@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:DebitNote-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:DebitNote-2",
   "UBLVersionID": "2.5",
   "CustomizationID": "urn:oasis:names:specification:ubl:default",
   "ProfileID": "ExampleProfile",

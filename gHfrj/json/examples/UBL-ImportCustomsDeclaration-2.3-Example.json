@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ImportCustomsDeclaration-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ImportCustomsDeclaration-2",
   "UBLExtensions": [
     {
       "ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",

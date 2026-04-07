@@ -1,8 +1,7 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ProductActivity-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ProductActivity-2",
   "UBLVersionID": "2.1",
   "ID": "ID0113",
-  "CopyIndicator": false,
   "IssueDate": "2010-04-08",
   "Note": "Report about sales of goods in Beta Shop's shops located in Bologna.",
   "ActivityPeriod": {

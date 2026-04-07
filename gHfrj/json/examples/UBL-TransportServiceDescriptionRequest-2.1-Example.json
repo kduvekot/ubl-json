@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescriptionRequest-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:TransportServiceDescriptionRequest-2",
   "UBLVersionID": "2.1",
   "ID": "TSD_REQ_1",
   "IssueDate": "2011-09-12",

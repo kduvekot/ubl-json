@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:RemittanceAdvice-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:RemittanceAdvice-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:RemittanceAdvice-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-remittance-advice-notification-draft",
   "ID": "6577884",
-  "CopyIndicator": false,
   "UUID": "84E081CE-F9D1-94C5-40F9-94C5FF9D1AC3",
   "IssueDate": "2005-06-22",
   "Note": "dummy as sample",

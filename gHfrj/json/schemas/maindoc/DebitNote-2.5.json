@@ -4,7 +4,7 @@
   "description": "A document used to specify debits due to the Creditor from the Debtor.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:DebitNote-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -38,9 +38,6 @@
     },
     "ID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -467,7 +464,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "AccountingSupplierParty",

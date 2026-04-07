@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
   "ID": "123",
   "IssueDate": "2011-09-22",
   "InvoicePeriod": {

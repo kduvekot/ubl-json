@@ -4,7 +4,7 @@
   "description": "A document used to cancel an entire fulfilment document (Despatch Advice or Receipt Advice).",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:FulfilmentCancellation-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -38,9 +38,6 @@
     },
     "ID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -173,7 +170,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "CancellationNote"

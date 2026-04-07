@@ -4,7 +4,7 @@
   "description": "A document sent by a transport user to request a transport service from a transport service provider.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlanRequest-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -41,9 +41,6 @@
     },
     "VersionID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -109,9 +106,6 @@
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "TransportServiceProviderParty": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
-    },
-    "PayeeParty": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
     },
     "BillToParty": {
@@ -202,7 +196,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "TransportServiceProviderParty",
     "Consignment"

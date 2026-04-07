@@ -1,8 +1,7 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:InstructionForReturns-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:InstructionForReturns-2",
   "UBLVersionID": "2.1",
   "ID": "AB011",
-  "CopyIndicator": false,
   "IssueDate": "2010-04-10",
   "Note": "Instruction to return goods that are badly sent to you.",
   "SellerSupplierParty": {

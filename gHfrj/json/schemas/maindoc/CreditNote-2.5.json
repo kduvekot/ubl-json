@@ -4,7 +4,7 @@
   "description": "A document used to specify credits due to the Debtor from the Creditor.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:CreditNote-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -38,9 +38,6 @@
     },
     "ID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -96,9 +93,6 @@
     },
     "LineCountNumeric": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LineCountNumeric"
-    },
-    "BuyerReference": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/BuyerReference"
     },
     "DefaultLanguageCode": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DefaultLanguageCode"
@@ -454,7 +448,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "AccountingSupplierParty",

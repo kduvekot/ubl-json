@@ -4,7 +4,7 @@
   "description": "A document used to cancel an entire Catalogue.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:CatalogueDeletion-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -129,7 +129,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "DeletedCatalogueReference",

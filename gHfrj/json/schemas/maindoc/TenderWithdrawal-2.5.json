@@ -4,7 +4,7 @@
   "description": "A document sent by an Economic Operator to a Contracting Party with the intention of withdrawing a previously sent Tender document.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:TenderWithdrawal-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -38,9 +38,6 @@
     },
     "ID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -128,7 +125,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "IssueDate",
     "ContractingParty",
     "TendererParty"

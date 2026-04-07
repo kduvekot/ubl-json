@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ExpressionOfInterestRequest-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ExpressionOfInterestRequest-2",
   "UBLVersionID": "2.2",
   "CustomizationID": "urn:www.cenbii.eu:transaction:BiiTrns081:ver2.0",
   "ProfileID": "urn:www.cenbii.eu:profile:bii46:ver2.0",
@@ -12,10 +12,6 @@
   "EconomicOperatorParty": {
     "Party": {
       "WebsiteURI": "http://super.company.dk",
-      "EndpointID": {
-        "value": "01842222222222",
-        "schemeID": "9:FI:OVT"
-      },
       "PartyIdentification": {
         "ID": {
           "value": "5790000127777",
@@ -55,10 +51,6 @@
   },
   "ContractingParty": {
     "Party": {
-      "EndpointID": {
-        "value": "01841111111111",
-        "schemeID": "FI:OVT"
-      },
       "PartyIdentification": {
         "ID": {
           "value": "5398000392577",

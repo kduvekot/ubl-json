@@ -1,8 +1,7 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:InventoryReport-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:InventoryReport-2",
   "UBLVersionID": "2.1",
   "ID": "CC2679",
-  "CopyIndicator": false,
   "IssueDate": "2010-04-12",
   "Note": "Report about the quantities on stock.",
   "DocumentCurrencyCode": {

@@ -4,7 +4,7 @@
   "description": "A document used in the negotiation of a transport service between a transport user and a transport service provider.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlan-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -41,9 +41,6 @@
     },
     "VersionID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -231,7 +228,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "TransportServiceProviderParty",
     "Consignment"

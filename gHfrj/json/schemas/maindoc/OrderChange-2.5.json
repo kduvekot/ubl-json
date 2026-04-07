@@ -4,7 +4,7 @@
   "description": "A document used to specify changes to an existing Order.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:OrderChange-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -41,9 +41,6 @@
     },
     "SalesOrderID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SalesOrderID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -275,7 +272,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "IssueDate",
     "SequenceNumberID",
     "OrderReference",

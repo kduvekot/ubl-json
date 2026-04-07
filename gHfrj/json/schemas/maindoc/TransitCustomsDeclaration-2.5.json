@@ -4,7 +4,7 @@
   "description": "A document that describes an import customs declaration.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:TransitCustomsDeclaration-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -147,7 +147,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "CustomsParty"
   ],

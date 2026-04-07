@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:CommonTransportationReport-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:CommonTransportationReport-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "Common Framework",
   "ProfileID": "ENS",

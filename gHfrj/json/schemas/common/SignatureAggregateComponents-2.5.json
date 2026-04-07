@@ -8,7 +8,7 @@
       "type": "object",
       "description": "This class captures a single signature and optionally associates to a signature in the document with the corresponding identifier.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#SignatureInformationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -28,7 +28,7 @@
       "type": "object",
       "description": "This class collects all signature information for a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:SignatureAggregateComponents-2#UBLDocumentSignaturesType",
           "description": "Identifies the JSON schema governing this instance."
         },

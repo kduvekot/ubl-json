@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Waybill-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Waybill-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:Waybill-2.0:samples-2.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario",
@@ -204,7 +204,6 @@
         "ContractDocumentReference": [
           {
             "ID": "normalizedString",
-            "CopyIndicator": false,
             "UUID": "normalizedString",
             "IssueDate": "1967-08-13",
             "DocumentTypeCode": "normalizedString",
@@ -225,7 +224,6 @@
           },
           {
             "ID": "normalizedString",
-            "CopyIndicator": false,
             "UUID": "normalizedString",
             "IssueDate": "1967-08-13",
             "DocumentTypeCode": "normalizedString",
@@ -604,8 +602,6 @@
   },
   "DocumentDistribution": [
     {
-      "PrintQualifier": "Copies allowed",
-      "MaximumCopiesNumeric": 5,
       "Party": {
         "PartyName": {
           "Name": "Consortial"
@@ -631,8 +627,6 @@
       }
     },
     {
-      "PrintQualifier": "Copies allowed",
-      "MaximumCopiesNumeric": 4,
       "Party": {
         "PartyName": {
           "Name": "IYT Corporation"

@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Order-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Order-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "urn:www.cenbii.eu:transaction:biicoretrdm001:ver1.0",
   "ProfileID": {
@@ -51,10 +51,6 @@
   },
   "BuyerCustomerParty": {
     "Party": {
-      "EndpointID": {
-        "value": "7300072311115",
-        "schemeID": "9:GLN"
-      },
       "PartyIdentification": [
         {
           "ID": {
@@ -137,10 +133,6 @@
   },
   "SellerSupplierParty": {
     "Party": {
-      "EndpointID": {
-        "value": "7302347231111",
-        "schemeID": "9:GLN"
-      },
       "PartyIdentification": {
         "ID": "SellerPartyID123"
       },

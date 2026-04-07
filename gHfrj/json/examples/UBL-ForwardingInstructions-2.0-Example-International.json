@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ForwardingInstructions-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ForwardingInstructions-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:ForwardingInstructions-2.0:samples-2.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario",

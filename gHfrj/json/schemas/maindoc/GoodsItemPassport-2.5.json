@@ -4,7 +4,7 @@
   "description": "A document providing a temporary export license, also knowned as an ATA Carnet",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:GoodsItemPassport-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -168,7 +168,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "HolderParty",
     "Shipment",

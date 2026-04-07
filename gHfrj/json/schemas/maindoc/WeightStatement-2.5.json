@@ -4,7 +4,7 @@
   "description": "A document used to report weight or verified mass measurements in the transport chain.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:WeightStatement-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -71,7 +71,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "SenderParty",

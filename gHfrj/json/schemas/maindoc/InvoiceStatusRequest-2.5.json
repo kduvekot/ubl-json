@@ -4,7 +4,7 @@
   "description": "A document used to request the status of a previously issued Invoice.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:InvoiceStatusRequest-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -83,7 +83,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "RequestDate",
     "SenderParty",

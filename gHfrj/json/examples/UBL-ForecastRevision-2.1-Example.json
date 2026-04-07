@@ -1,9 +1,8 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ForecastRevision-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ForecastRevision-2",
   "UBLVersionID": "2.1",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-credit-notification-draft",
   "ID": "OFR_758494",
-  "CopyIndicator": false,
   "UUID": "349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4",
   "IssueDate": "2002-02-10",
   "IssueTime": "12:00:01.000Z",

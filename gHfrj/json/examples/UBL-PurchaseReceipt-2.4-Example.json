@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:PurchaseReceipt-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:PurchaseReceipt-2",
   "UBLVersionID": "2.4",
   "CustomizationID": "Sample-0.9",
   "ProfileID": "ShopReceipt-0.9",

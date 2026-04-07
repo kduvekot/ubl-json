@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ExceptionCriteria-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ExceptionCriteria-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:ExceptionCriteria-2.1:1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-cpfr-exception-criteria-draft",
   "ID": "EC758494",
-  "CopyIndicator": false,
   "UUID": "349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4",
   "IssueDate": "2009-12-25",
   "Note": "sample",

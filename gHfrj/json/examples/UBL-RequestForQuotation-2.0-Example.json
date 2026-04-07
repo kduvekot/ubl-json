@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:RequestForQuotation-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:RequestForQuotation-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:RequestForQuotation-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-request-for-quotation-draft",
   "ID": "G867B",
-  "CopyIndicator": false,
   "UUID": "8D076867-AE6D-439F-8281-5AAFC7F4E3B1",
   "IssueDate": "2005-06-19",
   "IssueTime": "11:32:26.0Z",

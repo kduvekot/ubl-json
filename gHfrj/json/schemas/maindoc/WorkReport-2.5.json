@@ -4,7 +4,7 @@
   "description": "A document used to report work performed.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:WorkReport-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -169,7 +169,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "SellerSupplierParty",

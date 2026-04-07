@@ -4,7 +4,7 @@
   "description": "A document used to provide information about the status of a collaboration/process associated with a document.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:InvoiceStatusResponse-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -99,7 +99,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ID",
     "IssueDate",
     "DocumentResponse"

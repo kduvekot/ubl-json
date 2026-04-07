@@ -8,7 +8,7 @@
       "type": "object",
       "description": "A class to associate a time period and locations (activity data) with an item for inventory planning purposes.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ActivityDataLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -66,7 +66,7 @@
       "type": "object",
       "description": "A class to define a name/value pair for a property of an inventory planning activity.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ActivityPropertyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -93,7 +93,7 @@
       "type": "object",
       "description": "A class to define common information related to an address.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AddressType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -274,7 +274,7 @@
       "type": "object",
       "description": "A class to define an unstructured address line.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AddressLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -308,7 +308,7 @@
       "type": "object",
       "description": "A class to identify a specific aircraft used for transportation.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AirTransportType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -331,7 +331,7 @@
       "type": "object",
       "description": "A class to describe information about a charge or discount as applied to a price component.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AllowanceChargeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -430,7 +430,7 @@
       "type": "object",
       "description": "A class to define a structured annotation providing contextual or explanatory information related to a document or other business object",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AnnotationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -480,7 +480,7 @@
       "type": "object",
       "description": "A class to describe the terms and conditions, set by the contracting authority, under which an appeal can be lodged for a tender award.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AppealTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -522,7 +522,7 @@
       "type": "object",
       "description": "A class to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AttachmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -551,7 +551,7 @@
       "type": "object",
       "description": "A class describing an attestation made for an item",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AttestationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -626,7 +626,7 @@
       "type": "object",
       "description": "A class describing an attestation line",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AttestationLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -688,7 +688,7 @@
       "type": "object",
       "description": "A class to describe the terms to be fulfilled by tenderers if an auction is to be executed before the awarding of a tender.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AuctionTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -776,7 +776,7 @@
       "type": "object",
       "description": "A class to define an authorization that as been issued",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AuthorizationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -825,7 +825,7 @@
       "type": "object",
       "description": "A class to define a criterion from the contracting party that will be taken into account when awarding a contract. An awarding criterion can be objective, when it can be evaluated following a formula, or subjective, when human analysis is required.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AwardingCriterionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -944,7 +944,7 @@
       "type": "object",
       "description": "Defines the response for an awarding criterion from the tendering party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AwardingCriterionResponseType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1012,7 +1012,7 @@
       "type": "object",
       "description": "A class to define the terms for awarding a contract.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#AwardingTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1148,7 +1148,7 @@
       "type": "object",
       "description": "A class to summarize the ballast water management of a vessel.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BallastWaterSummaryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1263,7 +1263,7 @@
       "type": "object",
       "description": "A class to define a ballast water transaction, such as the uptake, exchange or discharge of ballast water.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BallastWaterTransactionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1310,7 +1310,7 @@
       "type": "object",
       "description": "A class to define a reference to a billing document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BillingReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1361,7 +1361,7 @@
       "type": "object",
       "description": "A class to define a reference to a transaction line in a billing document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BillingReferenceLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1400,7 +1400,7 @@
       "type": "object",
       "description": "A class to describe a branch or a division of an organization.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BranchType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1429,7 +1429,7 @@
       "type": "object",
       "description": "A class to define a budget account.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BudgetAccountType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1455,7 +1455,7 @@
       "type": "object",
       "description": "A class to define a budget account line.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BudgetAccountLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1491,7 +1491,7 @@
       "type": "object",
       "description": "A class to define a reference provided by the buyer for internal routing or classification.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#BuyerAssignedReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1524,7 +1524,7 @@
       "type": "object",
       "description": "A class to describe a specific capability of an organization.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CapabilityType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1552,19 +1552,6 @@
         },
         "ValueQuantity": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ValueQuantity"
-        },
-        "EvidenceSupplied": {
-          "oneOf": [
-            {
-              "$ref": "#/$defs/EvidenceSuppliedType"
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/EvidenceSuppliedType"
-              }
-            }
-          ]
         },
         "SuppliedEvidence": {
           "oneOf": [
@@ -1598,7 +1585,7 @@
       "type": "object",
       "description": "A class to define a credit card, debit card, or charge card account.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CardAccountType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1654,7 +1641,7 @@
       "type": "object",
       "description": "A class to define the cash register used in a commercial transaction.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CashRegisterType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1680,7 +1667,7 @@
       "type": "object",
       "description": "A class to define a line describing the transaction that updates the specification of an item in a catalogue.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueItemSpecificationUpdateLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1713,7 +1700,7 @@
       "type": "object",
       "description": "A class to define a line in a Catalogue describing a purchasable item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1957,7 +1944,7 @@
       "type": "object",
       "description": "A class to define a line describing a pricing update to a catalogue line.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CataloguePricingUpdateLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -1999,7 +1986,7 @@
       "type": "object",
       "description": "A class to define a reference to a catalogue.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2069,7 +2056,7 @@
       "type": "object",
       "description": "A class to define a line describing a request for a catalogue line.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CatalogueRequestLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2128,7 +2115,7 @@
       "type": "object",
       "description": "A class to define a certificate applied to the item. Certificated can be a requirement to sell goods or services in a jurisdiction.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CertificateType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2224,7 +2211,7 @@
       "type": "object",
       "description": "A class to define an application for a Certificate of Origin (CoO).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CertificateOfOriginApplicationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2350,7 +2337,7 @@
       "type": "object",
       "description": "A class to describe circular economy-related properties of a product, including its resource efficiency, reusability, repairability, and end-of-life treatment.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CircularityProfileType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2447,7 +2434,7 @@
       "type": "object",
       "description": "A class to define a category within a classification scheme.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ClassificationCategoryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2496,7 +2483,7 @@
       "type": "object",
       "description": "A class to define a classification scheme, such as a taxonomy for classifying goods or services.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ClassificationSchemeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2590,7 +2577,7 @@
       "type": "object",
       "description": "A class to define a clause (a distinct article or provision) in a contract, treaty, will, or other formal or legal written document requiring compliance.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ClauseType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2623,7 +2610,7 @@
       "type": "object",
       "description": "A class to describe the classification of a commodity.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CommodityClassificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2652,7 +2639,7 @@
       "type": "object",
       "description": "A class to describe a means of communication.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CommunicationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2678,7 +2665,7 @@
       "type": "object",
       "description": "A class to describe the completion of a specific task in the tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CompletedTaskType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2700,19 +2687,6 @@
               "type": "array",
               "items": {
                 "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Description"
-              }
-            }
-          ]
-        },
-        "EvidenceSupplied": {
-          "oneOf": [
-            {
-              "$ref": "#/$defs/EvidenceSuppliedType"
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/EvidenceSuppliedType"
               }
             }
           ]
@@ -2749,7 +2723,7 @@
       "type": "object",
       "description": "A class to define a measurable condition of an object.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConditionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -2794,7 +2768,7 @@
       "type": "object",
       "description": "A class to describe an identifiable collection of one or more goods items to be transported between the consignor and the consignee. This information may be defined within a transport contract. A consignment may comprise more than one shipment (e.g., when consolidated by a freight forwarder).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsignmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3443,7 +3417,7 @@
       "type": "object",
       "description": "A class to describe the consumption of a utility.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3504,7 +3478,7 @@
       "type": "object",
       "description": "A class to define an average consumption as a monetary amount.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionAverageType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3537,7 +3511,7 @@
       "type": "object",
       "description": "The Statement of correction, for examples heating correction.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionCorrectionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3600,7 +3574,7 @@
       "type": "object",
       "description": "A class to describe the measurement of a type of consumption during a particular period, used for the subscriber to get an overview of his consumption",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionHistoryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3652,7 +3626,7 @@
       "type": "object",
       "description": "A class to describe a line item for utility consumption. To specify more than one utility item, use separate consumption lines.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3741,7 +3715,7 @@
       "type": "object",
       "description": "A class to define the point of consumption for a utility, such as a meter.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionPointType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3808,7 +3782,7 @@
       "type": "object",
       "description": "A class to describe utility consumption, including details of the environment in which consumption takes place.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionReportType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3912,7 +3886,7 @@
       "type": "object",
       "description": "A class to define a reference to an earlier consumption report (e.g., last year's consumption).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ConsumptionReportReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -3949,7 +3923,7 @@
       "type": "object",
       "description": "A class to describe a contactable person or department in an organization.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContactType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4013,7 +3987,7 @@
       "type": "object",
       "description": "A class to describe a contract.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4118,7 +4092,7 @@
       "type": "object",
       "description": "A class to describe a requirement for execution of a contract.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractExecutionRequirementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4164,7 +4138,7 @@
       "type": "object",
       "description": "A class to describe possible extensions to a contract.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractExtensionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4219,7 +4193,7 @@
       "type": "object",
       "description": "The nature of the type of business of the organization.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingActivityType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4252,7 +4226,7 @@
       "type": "object",
       "description": "A class to describe an individual, a group, or a body having a procurement role in a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4307,7 +4281,7 @@
       "type": "object",
       "description": "The type of contracting party that is independent of its role.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingPartyTypeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4340,7 +4314,7 @@
       "type": "object",
       "description": "The type of representation the party has acting for the Contracting party",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingRepresentationTypeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4373,7 +4347,7 @@
       "type": "object",
       "description": "A class to describe the contracting system. If the procedure is individual (nonrepetitive), this class ought not be used.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ContractingSystemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4409,7 +4383,7 @@
       "type": "object",
       "description": "A class to describe a scheme for corporate registration.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CorporateRegistrationSchemeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4448,7 +4422,7 @@
       "type": "object",
       "description": "A class to describe a country.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CountryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4471,7 +4445,7 @@
       "type": "object",
       "description": "A class to identify a credit account for sales on account.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CreditAccountType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4494,7 +4468,7 @@
       "type": "object",
       "description": "A class to define a line in a Credit Note or Self Billed Credit Note.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CreditNoteLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4786,7 +4760,7 @@
       "type": "object",
       "description": "A class describing the effect or belonging of a Crew Person",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CrewPersonEffectType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4823,7 +4797,7 @@
       "type": "object",
       "description": "A class describing a criteria",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CriterionItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4867,7 +4841,7 @@
       "type": "object",
       "description": "A class to describe a customer party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CustomerPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4915,7 +4889,7 @@
       "type": "object",
       "description": "A class describing identifiers or references relating to customs procedures.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#CustomsDeclarationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -4984,7 +4958,7 @@
       "type": "object",
       "description": "A class to define a line in a Debit Note.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DebitNoteLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5274,7 +5248,7 @@
       "type": "object",
       "description": "A class to describe a declaration by an economic operator of certain characteristics or capabilities in fulfilment of requirements specified in a call for tenders.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeclarationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5310,19 +5284,6 @@
             }
           ]
         },
-        "EvidenceSupplied": {
-          "oneOf": [
-            {
-              "$ref": "#/$defs/EvidenceSuppliedType"
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/EvidenceSuppliedType"
-              }
-            }
-          ]
-        },
         "SuppliedEvidence": {
           "oneOf": [
             {
@@ -5349,7 +5310,7 @@
       "type": "object",
       "description": "A class to describe a delivery.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5497,7 +5458,7 @@
       "type": "object",
       "description": "A class to describe a delivery channel.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryChannelType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5529,7 +5490,7 @@
       "type": "object",
       "description": "A class for describing the terms and conditions applying to the delivery of goods.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5587,7 +5548,7 @@
       "type": "object",
       "description": "A class to describe a delivery unit.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DeliveryUnitType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5616,7 +5577,7 @@
       "type": "object",
       "description": "A class to define the price of an item as a percentage of the price of a different item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DependentPriceReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5642,7 +5603,7 @@
       "type": "object",
       "description": "A class to describe the despatching of goods (their pickup for delivery).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DespatchType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5739,7 +5700,7 @@
       "type": "object",
       "description": "A class to define a line in a Despatch Advice.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DespatchLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5883,7 +5844,7 @@
       "type": "object",
       "description": "A class to describe the terms and conditions of a digital agreement.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalAgreementTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5936,7 +5897,7 @@
       "type": "object",
       "description": "A class to describe a digital trade collaboration.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalCollaborationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -5962,7 +5923,7 @@
       "type": "object",
       "description": "A class to describe a digital trade process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalProcessType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6024,7 +5985,7 @@
       "type": "object",
       "description": "A class to describe a specific digital trade service supported by an organization for either sending or receiving business documents on different formats (e.g. UBL, ISO20022, EDIFACT, ...).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DigitalServiceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6090,7 +6051,7 @@
       "type": "object",
       "description": "A class to define a measurable dimension (length, mass, weight, volume, or area) of an item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DimensionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6135,7 +6096,7 @@
       "type": "object",
       "description": "A class to describe the distribution of a document to an interested party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentDistributionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6161,18 +6122,6 @@
             }
           ]
         },
-        "PrintQualifier": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PrintQualifier"
-        },
-        "CopyIndicator": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
-        },
-        "MaximumCopiesNumeric": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MaximumCopiesNumeric"
-        },
-        "MaximumOriginalsNumeric": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MaximumOriginalsNumeric"
-        },
         "Communication": {
           "$ref": "#/$defs/CommunicationType"
         },
@@ -6195,7 +6144,7 @@
       "type": "object",
       "description": "A class to describe the metadata of a specific business document based on any document format (e.g. UBL, EDIFACT, ...).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentMetadataType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6231,15 +6180,12 @@
       "type": "object",
       "description": "A class to define a reference to a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
         "ID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-        },
-        "CopyIndicator": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
         },
         "UUID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -6335,7 +6281,7 @@
       "type": "object",
       "description": "A class to describe an application-level response to a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DocumentResponseType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6392,7 +6338,7 @@
       "type": "object",
       "description": "The charging rate used for both call charging and time dependent charging",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#DutyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6424,7 +6370,7 @@
       "type": "object",
       "description": "A class to describe a potential contractor, supplier and service provider responding to a tender.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EconomicOperatorPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6473,7 +6419,7 @@
       "type": "object",
       "description": "A class to describe the tenderer contracting role.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EconomicOperatorRoleType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6506,7 +6452,7 @@
       "type": "object",
       "description": "A class to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EconomicOperatorShortListType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6558,7 +6504,7 @@
       "type": "object",
       "description": "A class to describe an Electronic Address where a Party is registered on a given exchange network.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ElectronicAddressType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6584,7 +6530,7 @@
       "type": "object",
       "description": "A class to define how an environmental emission is calculated.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EmissionCalculationMethodType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6642,7 +6588,7 @@
       "type": "object",
       "description": "Details of a certificate path chain used in encryption.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EncryptionCertificatePathChainType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6665,7 +6611,7 @@
       "type": "object",
       "description": "Details of an encryption process",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EncryptionDataType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6717,7 +6663,7 @@
       "type": "object",
       "description": "Details of a symmetric algorithm used in encryption.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EncryptionSymmetricAlgorithmType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6740,7 +6686,7 @@
       "type": "object",
       "description": "A class to describe how an entity is expected to be treated at the end of its lifecycle, including treatment pathway, processing type, location, and environmental considerations.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EndOfLifeTreatmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6769,7 +6715,7 @@
       "type": "object",
       "description": "A class to describe an endorsement of a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EndorsementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6826,7 +6772,7 @@
       "type": "object",
       "description": "A class to describe the party endorsing a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EndorserPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6861,7 +6807,7 @@
       "type": "object",
       "description": "A class to describe an allocation of energy consumption and its associated environmental emissions",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnergyConsumptionAllocationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6901,7 +6847,7 @@
       "type": "object",
       "description": "A class to describe energy taxes.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnergyTaxReportType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -6933,7 +6879,7 @@
       "type": "object",
       "description": "A class to describe the supply (and therefore consumption) of an amount of energy or water.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnergyWaterSupplyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7002,7 +6948,7 @@
       "type": "object",
       "description": "A class to describe an environmental emission.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EnvironmentalEmissionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7083,7 +7029,7 @@
       "type": "object",
       "description": "A class defining the required criterion for a tenderer to be elligible in a tendering process. ",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EvaluationCriterionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7154,7 +7100,7 @@
       "type": "object",
       "description": "A class to describe a significant occurrence relating to an object, process, or person.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7212,9 +7158,6 @@
             }
           ]
         },
-        "OccurenceLocation": {
-          "$ref": "#/$defs/LocationType"
-        },
         "OccurrenceLocation": {
           "$ref": "#/$defs/LocationType"
         },
@@ -7231,7 +7174,7 @@
       "type": "object",
       "description": "A class to define comments about a retail event.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventCommentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7260,7 +7203,7 @@
       "type": "object",
       "description": "A class to define a line item describing the expected impacts associated with a retail event involving a specific product at a specific location.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventLineItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7302,7 +7245,7 @@
       "type": "object",
       "description": "A class defining a specific type of action or situation arranged by the Buyer or the Seller to promote the product or products.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventTacticType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7334,7 +7277,7 @@
       "type": "object",
       "description": "A class to define a set of codes that describes a retail tactic.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EventTacticEnumerationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7363,7 +7306,7 @@
       "type": "object",
       "description": "A class to describe an item of evidentiary support for representations of capabilities or the ability to meet tendering requirements, which an economic operator must provide for acceptance into a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EvidenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7432,35 +7375,12 @@
       "minProperties": 1,
       "title": "Evidence. Details"
     },
-    "EvidenceSuppliedType": {
-      "$anchor": "EvidenceSuppliedType",
-      "type": "object",
-      "description": "(Deprecated) A reference to evidence.",
-      "properties": {
-        "$jsonschema": {
-          "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#EvidenceSuppliedType",
-          "description": "Identifies the JSON schema governing this instance."
-        },
-        "ID": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-        },
-        "UBLExtensions": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
-        }
-      },
-      "additionalProperties": false,
-      "minProperties": 1,
-      "title": "Evidence Supplied. Details",
-      "required": [
-        "ID"
-      ]
-    },
     "ExceptionCriteriaLineType": {
       "$anchor": "ExceptionCriteriaLineType",
       "type": "object",
       "description": "A class to define a line in an ExceptionCriteria document that specifies a threshold for forecast variance, product activity, or performance history, the exceeding of which will trigger an exception message.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExceptionCriteriaLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7540,7 +7460,7 @@
       "type": "object",
       "description": "A class to define a line in an Exception Notification.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExceptionNotificationLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7638,7 +7558,7 @@
       "type": "object",
       "description": "A class to define an exchange rate.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExchangeRateType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7686,7 +7606,7 @@
       "type": "object",
       "description": "A class to describe an external object, such as a document stored at a remote location.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ExternalReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7746,7 +7666,7 @@
       "type": "object",
       "description": "A class to describe a revenue.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FeeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7782,7 +7702,7 @@
       "type": "object",
       "description": "A class to describe a financial account.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FinancialAccountType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7839,7 +7759,7 @@
       "type": "object",
       "description": "A class to describe the bond guarantee of a tenderer or bid submitter's actual entry into a contract in the event that it is the successful bidder.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FinancialGuaranteeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7884,7 +7804,7 @@
       "type": "object",
       "description": "A class to describe a financial institution.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FinancialInstitutionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7910,7 +7830,7 @@
       "type": "object",
       "description": "As explained in Exception Criteria Line: Three types of exception criteria can be defined, Operational, Metric or Forecast Exceptions. This class provides criteria for forecast exception type: the identification of the purpose of the forecast, the source of data and the time basis criteria for the exception.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastExceptionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7957,7 +7877,7 @@
       "type": "object",
       "description": "Establishes the criterion for one of the three types of exceptions. This class provides criteria for the kind of forecast exception, the identification of the purpose of the forecast, the source of data and the time basis criterion for the exception.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastExceptionCriterionLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -7994,7 +7914,7 @@
       "type": "object",
       "description": "Detailed information about a particular Forecast Line within a Forecast Document",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8043,7 +7963,7 @@
       "type": "object",
       "description": "A class to define a line in a Forecast Revision describing a revision to a line in a Forecast.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ForecastRevisionLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8113,7 +8033,7 @@
       "type": "object",
       "description": "A class to describe a tendering framework agreement.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FrameworkAgreementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8184,7 +8104,7 @@
       "type": "object",
       "description": "A class to describe fuel consumption.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FuelConsumptionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8265,7 +8185,7 @@
       "type": "object",
       "description": "A class to describe fuel metering.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FuelMeteringType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8292,7 +8212,7 @@
       "type": "object",
       "description": "A class to describe a fuel property.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#FuelPropertyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8319,7 +8239,7 @@
       "type": "object",
       "description": "A class to describe a separately identifiable quantity of goods of a single product type.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8610,7 +8530,7 @@
       "type": "object",
       "description": "A class defining how goods items are split across transport equipment.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsItemContainerType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8649,7 +8569,7 @@
       "type": "object",
       "description": "A class describing a Goods Item Passport or ATA Carnet Counterfoil",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsItemPassportCounterfoilType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8762,7 +8682,7 @@
       "type": "object",
       "description": "A class to describe the processing of goods and products",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#GoodsProcessingType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8843,7 +8763,7 @@
       "type": "object",
       "description": "A class to describe hazardous goods in transit.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#HazardousGoodsTransitType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -8894,7 +8814,7 @@
       "type": "object",
       "description": "A class to describe a hazardous item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#HazardousItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9073,7 +8993,7 @@
       "type": "object",
       "description": "A class to describe a set of ISPS Requirements.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ISPSRequirementsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9185,7 +9105,7 @@
       "type": "object",
       "description": "A class to describe an immobilized security to be used as a guarantee.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ImmobilizedSecurityType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9223,7 +9143,7 @@
       "type": "object",
       "description": "A class to define a line in an Instruction for Returns.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InstructionForReturnsLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9270,7 +9190,7 @@
       "type": "object",
       "description": "A class to define an insurance policy.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InsurancePolicyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9343,7 +9263,7 @@
       "type": "object",
       "description": "A class to describe an interest rate applied to a monetary amount over a defined period.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InterestRateType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9372,7 +9292,7 @@
       "type": "object",
       "description": "A class to define a line in an Inventory Report.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InventoryReportLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9428,7 +9348,7 @@
       "type": "object",
       "description": "A class to define a line in an Invoice.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#InvoiceLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -9698,7 +9618,7 @@
       "type": "object",
       "description": "A class to describe an item of trade. It includes a generic description applicable to all examples of the item together with optional subsidiary descriptions of any number of actual instances of the type.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10056,7 +9976,7 @@
       "type": "object",
       "description": "A class to provide information about price and quantity of an item for use in price comparisons based on price, quantity, or measurements.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemComparisonType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10079,7 +9999,7 @@
       "type": "object",
       "description": "A class for assigning identifying information to an item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemIdentificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10140,7 +10060,7 @@
       "type": "object",
       "description": "A class to define a line in an Item Information Request asking a trading partner for item information.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemInformationRequestLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10201,7 +10121,7 @@
       "type": "object",
       "description": "A class to describe a specific, trackable instance of an item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemInstanceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10252,7 +10172,7 @@
       "type": "object",
       "description": "A class for information about pricing structure, lead time, delivery, and location associated with an item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemLocationQuantityType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10358,7 +10278,7 @@
       "type": "object",
       "description": "A class to define a management profile for an item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemManagementProfileType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10419,7 +10339,7 @@
       "type": "object",
       "description": "A class to describe a specific property of an item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemPropertyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10524,7 +10444,7 @@
       "type": "object",
       "description": "A class to describe a property group or classification.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemPropertyGroupType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10553,7 +10473,7 @@
       "type": "object",
       "description": "A class to describe a range of values for an item property.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ItemPropertyRangeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10576,7 +10496,7 @@
       "type": "object",
       "description": "A class to describe a language.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LanguageType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10602,7 +10522,7 @@
       "type": "object",
       "description": "A class to describe a reference to a piece of legislation.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LegislationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10713,7 +10633,7 @@
       "type": "object",
       "description": "A class to describe a line item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LineItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10926,7 +10846,7 @@
       "type": "object",
       "description": "A class to define a reference to a line in a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LineReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10958,7 +10878,7 @@
       "type": "object",
       "description": "A class to describe responses to a line in a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LineResponseType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -10996,7 +10916,7 @@
       "type": "object",
       "description": "A class to describe a location.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LocationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11102,7 +11022,7 @@
       "type": "object",
       "description": "A class for defining a set of geographical coordinates (apparently misnamed).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LocationCoordinateType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11143,7 +11063,7 @@
       "type": "object",
       "description": "A class defining how to treat different lots in a single procurement.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LotDistributionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11192,7 +11112,7 @@
       "type": "object",
       "description": "A class for defining a lot identifier (the identifier of a set of item instances that would be used in case of a recall of that item).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LotIdentificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11228,7 +11148,7 @@
       "type": "object",
       "description": "A class for defining set of lots.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#LotsGroupType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11266,7 +11186,7 @@
       "type": "object",
       "description": "A class to desccribe a maritime health declaration.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MaritimeHealthDeclarationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11409,7 +11329,7 @@
       "type": "object",
       "description": "A class to describe a vessel used for transport by water (including sea, river, and canal).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MaritimeTransportType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11478,7 +11398,7 @@
       "type": "object",
       "description": "A class to describe a transaction of maritime waste.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MaritimeWasteType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11539,7 +11459,7 @@
       "type": "object",
       "description": "A class to describe how a message is delivered (routed).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MessageDeliveryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11565,7 +11485,7 @@
       "type": "object",
       "description": "A class to describe a meter and its readings.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MeterType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11623,7 +11543,7 @@
       "type": "object",
       "description": "The name of this meter property.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MeterPropertyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11665,7 +11585,7 @@
       "type": "object",
       "description": "A class to describe a meter reading.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MeterReadingType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11738,7 +11658,7 @@
       "type": "object",
       "description": "A class to describe a miscellaneous event associated with a retail event.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MiscellaneousEventType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11776,7 +11696,7 @@
       "type": "object",
       "description": "A class to define a monetary total.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#MonetaryTotalType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11832,7 +11752,7 @@
       "type": "object",
       "description": "A class to define a Notice Subtype",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#NoticeSubTypeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11865,7 +11785,7 @@
       "type": "object",
       "description": "A class to describe a notification requirement.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#NotificationRequirementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11933,7 +11853,7 @@
       "type": "object",
       "description": "A scheduled prepayment (on-account payment) for a estimated utility consumption",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OnAccountPaymentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -11984,7 +11904,7 @@
       "type": "object",
       "description": "A class to define the type of operation",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OperationTypeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12017,7 +11937,7 @@
       "type": "object",
       "description": "A class to define a line in an order document (e.g., Order, Order Change, or Order Response) describing an item being ordered.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12127,7 +12047,7 @@
       "type": "object",
       "description": "A class to define a reference to an order line.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderLineReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12162,7 +12082,7 @@
       "type": "object",
       "description": "A class to define a reference to an Order.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12171,9 +12091,6 @@
         },
         "SalesOrderID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SalesOrderID"
-        },
-        "CopyIndicator": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
         },
         "UUID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -12209,7 +12126,7 @@
       "type": "object",
       "description": "A class to describe an ordered shipment.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#OrderedShipmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12245,7 +12162,7 @@
       "type": "object",
       "description": "A class to describe a package.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PackageType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12383,7 +12300,7 @@
       "type": "object",
       "description": "A class to describe a participant party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ParticipantPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12430,24 +12347,15 @@
       "type": "object",
       "description": "A class to describe an organization, sub-organization, or individual fulfilling a role in a business process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyType",
           "description": "Identifies the JSON schema governing this instance."
-        },
-        "MarkCareIndicator": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MarkCareIndicator"
-        },
-        "MarkAttentionIndicator": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/MarkAttentionIndicator"
         },
         "WebsiteURI": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/WebsiteURI"
         },
         "LogoReferenceID": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/LogoReferenceID"
-        },
-        "EndpointID": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/EndpointID"
         },
         "IndustryClassificationCode": {
           "oneOf": [
@@ -12662,7 +12570,7 @@
       "type": "object",
       "description": "A class to define a Group of Parties",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyGroupType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12712,7 +12620,7 @@
       "type": "object",
       "description": "A class to define an identifier for a party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyIdentificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12735,7 +12643,7 @@
       "type": "object",
       "description": "A class to describe a party as a legal entity.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyLegalEntityType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12830,7 +12738,7 @@
       "type": "object",
       "description": "A class for defining the name of a party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyNameType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12853,7 +12761,7 @@
       "type": "object",
       "description": "A class to describe a taxation scheme applying to a party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PartyTaxSchemeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12904,7 +12812,7 @@
       "type": "object",
       "description": "A class to describe a payment.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -12979,7 +12887,7 @@
       "type": "object",
       "description": "A class to describe a payment mandate.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentMandateType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13036,7 +12944,7 @@
       "type": "object",
       "description": "A class to describe a means of payment.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentMeansType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13166,7 +13074,7 @@
       "type": "object",
       "description": "A class to describe a set of payment terms.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PaymentTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13263,7 +13171,7 @@
       "type": "object",
       "description": "A class to define a line in a Performance History.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PerformanceDataLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13313,7 +13221,7 @@
       "type": "object",
       "description": "A class to describe a period of time.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PeriodType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13371,7 +13279,7 @@
       "type": "object",
       "description": "A class to describe a person.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PersonType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13398,9 +13306,6 @@
         },
         "JobTitle": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/JobTitle"
-        },
-        "NationalityID": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/NationalityID"
         },
         "NationalID": {
           "oneOf": [
@@ -13484,7 +13389,7 @@
       "type": "object",
       "description": "A class to describe a health incident involving crew or other personnel.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PersonnelHealthIncidentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13575,7 +13480,7 @@
       "type": "object",
       "description": "A class to describe a physical attribute.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PhysicalAttributeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13617,7 +13522,7 @@
       "type": "object",
       "description": "A class to describe a pickup for delivery.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PickupType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13661,7 +13566,7 @@
       "type": "object",
       "description": "A class to describe a call to a port.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PortCallType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13771,7 +13676,7 @@
       "type": "object",
       "description": "A class to describe the purpose of a port call.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PortCallPurposeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13817,7 +13722,7 @@
       "type": "object",
       "description": "A record for a ship call at a port facility.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PortCallRecordType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13859,7 +13764,7 @@
       "type": "object",
       "description": "A class to describe a post award process. These processes following the agreement on a contract for supply of goods or services ( for example, after the awarding of a tender).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PostAwardProcessType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13898,7 +13803,7 @@
       "type": "object",
       "description": "A class to describe a power of attorney.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PowerOfAttorneyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -13972,7 +13877,7 @@
       "type": "object",
       "description": "A class to describe a price, expressed in a data structure containing multiple properties (compare with UnstructuredPrice).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PriceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14068,7 +13973,7 @@
       "type": "object",
       "description": "A class to describe a price extension, calculated by multiplying the price per unit by the quantity of items.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PriceExtensionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14107,7 +14012,7 @@
       "type": "object",
       "description": "A class to describe a price list.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PriceListType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14146,7 +14051,7 @@
       "type": "object",
       "description": "A reference to the basis for pricing. This may be based on a catalogue or a quoted amount from a price list and include some alternative pricing conditions.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PricingReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14179,7 +14084,7 @@
       "type": "object",
       "description": "A class to describe something valuable offered or striven for in competition.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PrizeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14218,7 +14123,7 @@
       "type": "object",
       "description": "A class to describe a justification for the choice of tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcessJustificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14267,7 +14172,7 @@
       "type": "object",
       "description": "A class to describe additional types for a procurement project",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementAdditionalTypeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14300,7 +14205,7 @@
       "type": "object",
       "description": "A class to describe a project to procure goods, works, or services.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementProjectType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14467,7 +14372,7 @@
       "type": "object",
       "description": "A class to describe one of the parts of a procurement project that is being subdivided to allow the contracting party to award different lots to different economic operators under different contracts.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementProjectLotType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14564,7 +14469,7 @@
       "type": "object",
       "description": "A class to reference to a lot identifier.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProcurementProjectLotReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14587,7 +14492,7 @@
       "type": "object",
       "description": "A class to define a reference to a procurement project.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ProjectReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14629,7 +14534,7 @@
       "type": "object",
       "description": "Agree can be renamed as PromotionalEvents",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PromotionalEventType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14638,9 +14543,6 @@
         },
         "SubmissionDate": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/SubmissionDate"
-        },
-        "FirstShipmentAvailibilityDate": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/FirstShipmentAvailibilityDate"
         },
         "FirstShipmentAvailabilityDate": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/FirstShipmentAvailabilityDate"
@@ -14679,7 +14581,7 @@
       "type": "object",
       "description": "A class to describe a line item associated with a promotional event.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PromotionalEventLineItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14706,7 +14608,7 @@
       "type": "object",
       "description": "A class to describe a promotional event as a set of item locations that share a set of promotional tactics.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PromotionalSpecificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14756,7 +14658,7 @@
       "type": "object",
       "description": "A class for assigning identifying information for a property",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PropertyIdentificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14785,7 +14687,7 @@
       "type": "object",
       "description": "A class to define a line item in a purchase receipt.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PurchaseReceiptLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14872,7 +14774,7 @@
       "type": "object",
       "description": "A class for referencing an object to which a purchase relates, such as a subscription number, telephone number, meter, vehicle, person, etc.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#PurchaseReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14908,7 +14810,7 @@
       "type": "object",
       "description": "A class to describe the acceptance or rejection of an economic operator in a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#QualificationResolutionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -14967,7 +14869,7 @@
       "type": "object",
       "description": "A class to describe the distinctive features or characteristics qualifying an economic operator to be a party in a tendering process (e.g., number of employees, number of operating units, type of business, technical and financial capabilities, completed projects).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#QualifyingPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15076,7 +14978,7 @@
       "type": "object",
       "description": "A class to define a line in a Quotation.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#QuotationLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15172,7 +15074,7 @@
       "type": "object",
       "description": "A class defining the maximum activity of the radioactive contents capable of sustaining a nuclear fission chain reaction during carriage.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RadioactiveIsotopeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15199,7 +15101,7 @@
       "type": "object",
       "description": "A class defining a radioactive material.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RadioactiveMaterialType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15244,7 +15146,7 @@
       "type": "object",
       "description": "A class defining details about a train wagon used as a means of transport.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RailTransportType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15270,7 +15172,7 @@
       "type": "object",
       "description": "A class to define a line in a Receipt Advice.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ReceiptLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15413,7 +15315,7 @@
       "type": "object",
       "description": "A class to describe a regulation.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RegulationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15453,7 +15355,7 @@
       "type": "object",
       "description": "A class to describe the relationship to an item different from the item associated with the item line in which RelatedItem is used.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RelatedItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15489,7 +15391,7 @@
       "type": "object",
       "description": "A class to define a line in a Reminder document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ReminderLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15581,7 +15483,7 @@
       "type": "object",
       "description": "A class to define a line in a Remittance Advice.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RemittanceAdviceLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15708,7 +15610,7 @@
       "type": "object",
       "description": "A class to describe the renewal of a commercial arrangement, such as a contract or licence fee.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RenewalType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15731,7 +15633,7 @@
       "type": "object",
       "description": "A class to define a line in a Request for Quotation.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RequestForQuotationLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15795,7 +15697,7 @@
       "type": "object",
       "description": "A class to define a line in a Request for Tender describing an item of goods or a service solicited in the Request for Tender.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RequestForTenderLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15913,7 +15815,7 @@
       "type": "object",
       "description": "A class defining budgeted monetary amounts.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RequestedTenderTotalType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -15977,7 +15879,7 @@
       "type": "object",
       "description": "A class to describe the type and amount of resources consumed during a product\u2019s lifecycle, including information about source and timing.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResourceConsumptionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16020,7 +15922,7 @@
       "type": "object",
       "description": "A class to describe an application-level response to a document.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResponseType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16075,7 +15977,7 @@
       "type": "object",
       "description": "A class to describe the criterion requirement response value.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResponseValueType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16154,7 +16056,7 @@
       "type": "object",
       "description": "A class to describe the result of an attempt to verify a signature.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ResultOfVerificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16195,7 +16097,7 @@
       "type": "object",
       "description": "A class to describe a planned effect of a retail event (e.g., a promotion or a change in inventory policy) upon supply or demand.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RetailPlannedImpactType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16229,7 +16131,7 @@
       "type": "object",
       "description": "A class for identifying a vehicle used for road transport.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#RoadTransportType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16255,7 +16157,7 @@
       "type": "object",
       "description": "A class to describe information related to an item in a sales context",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SalesItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16321,7 +16223,7 @@
       "type": "object",
       "description": "A class describing a plan, action or meassure that has been implemented for sanitary reasons.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SanitaryMeasureType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16347,7 +16249,7 @@
       "type": "object",
       "description": "A class to describe an assigned numeric or qualitative score using a recognized scoring system.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ScoreType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16374,7 +16276,7 @@
       "type": "object",
       "description": "A class to describe a secondary hazard associated with a hazardous item.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecondaryHazardType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16416,7 +16318,7 @@
       "type": "object",
       "description": "A class to specify security clearance terms.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecurityClearanceTermType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16449,7 +16351,7 @@
       "type": "object",
       "description": "A class to describe a financial security listed on a regulated market.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecurityListingType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16491,7 +16393,7 @@
       "type": "object",
       "description": "A class to describe a security measure",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SecurityMeasureType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16528,7 +16430,7 @@
       "type": "object",
       "description": "A class to specify which day of the week a transport service is operational.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ServiceFrequencyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16551,7 +16453,7 @@
       "type": "object",
       "description": "A class to describe a service level agreement which regulates the quality, availability and responsibilities of digital services.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ServiceLevelAgreementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16652,7 +16554,7 @@
       "type": "object",
       "description": "A class to describe a party contracting to provide services, such as transportation, finance, etc.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ServiceProviderPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16697,12 +16599,9 @@
       "type": "object",
       "description": "A class to describe a Party that owns shares or equity.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShareholderPartyType",
           "description": "Identifies the JSON schema governing this instance."
-        },
-        "PartecipationPercent": {
-          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/PartecipationPercent"
         },
         "ParticipationPercent": {
           "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ParticipationPercent"
@@ -16723,7 +16622,7 @@
       "type": "object",
       "description": "A class to describe a requirement for a ship",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipRequirementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16760,7 +16659,7 @@
       "type": "object",
       "description": "An article in the ship's stores during a shipment stage.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipStoreArticleType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16805,7 +16704,7 @@
       "type": "object",
       "description": "A class to describe a ship to ship activity record.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipToShipActivityRecordType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -16861,7 +16760,7 @@
       "type": "object",
       "description": "A class defining an identifiable collection of one or more goods items to be transported between the seller party and the buyer party. This information may be defined within a commercial contract. A shipment can be transported in different consignments (e.g., split for logistical purposes).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17087,7 +16986,7 @@
       "type": "object",
       "description": "A class to describe one stage of movement in a transport of goods.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#ShipmentStageType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17483,7 +17382,7 @@
       "type": "object",
       "description": "A class to define a signature.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SignatureType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17546,7 +17445,7 @@
       "type": "object",
       "description": "A class to describe a social media profile.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SocialMediaProfileType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17578,7 +17477,7 @@
       "type": "object",
       "description": "A class to define a line in a Statement of account.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StatementLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17747,7 +17646,7 @@
       "type": "object",
       "description": "A class to describe the condition or position of an object.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StatusType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17866,7 +17765,7 @@
       "type": "object",
       "description": "A class to define a line in a Stock Availability Report describing the availability of an item of sale.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StockAvailabilityReportLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17919,7 +17818,7 @@
       "type": "object",
       "description": "A class to describe a storage and storage requirements",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StorageType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -17988,7 +17887,7 @@
       "type": "object",
       "description": "A class to describe a location on board a means of transport where specified goods or transport equipment have been stowed or are to be stowed.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#StowageType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18034,7 +17933,7 @@
       "type": "object",
       "description": "A class to describe subcontract terms for a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SubcontractTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18082,7 +17981,7 @@
       "type": "object",
       "description": "The consumption for a specific party for given consumption point provided by a numbers of suppliers. An enterprise can have one utility statement for several parties (e.g. a ministry of defence receiving a telephone bill). In this way each subscriber consumption represent a sub utility statement.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SubscriberConsumptionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18159,7 +18058,7 @@
       "type": "object",
       "description": "The consumption in case the consumption is for one and only one supplier.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SupplierConsumptionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18219,7 +18118,7 @@
       "type": "object",
       "description": "A class to describe a supplier party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#SupplierPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18267,7 +18166,7 @@
       "type": "object",
       "description": "A class to describe one of the tax categories within a taxation scheme (e.g., High Rate VAT, Low Rate VAT).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxCategoryType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18327,7 +18226,7 @@
       "type": "object",
       "description": "A class to describe a taxation scheme (e.g., VAT, State tax, County tax).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxSchemeType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18369,7 +18268,7 @@
       "type": "object",
       "description": "A class to define the subtotal for a particular tax category within a particular taxation scheme, such as standard rate within VAT.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxSubtotalType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18426,7 +18325,7 @@
       "type": "object",
       "description": "A class to describe the total tax for a particular taxation scheme.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TaxTotalType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18474,7 +18373,7 @@
       "type": "object",
       "description": "A class to describe a telecommunications service (e.g., a telephone call or a video on demand service).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TelecommunicationsServiceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18609,7 +18508,7 @@
       "type": "object",
       "description": "A class describing the supply of a telecommunication service, e.g., providing telephone calls.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TelecommunicationsSupplyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18669,7 +18568,7 @@
       "type": "object",
       "description": "A class that outlines the telecommunication supply in details",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TelecommunicationsSupplyLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18769,7 +18668,7 @@
       "type": "object",
       "description": "A class to describe a measurement of temperature.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TemperatureType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18808,7 +18707,7 @@
       "type": "object",
       "description": "A class to define a line in a Tender.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderLineType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -18961,7 +18860,7 @@
       "type": "object",
       "description": "A class to describe directions for preparing a tender.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderPreparationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19042,7 +18941,7 @@
       "type": "object",
       "description": "A template for a required document in a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderRequirementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19092,7 +18991,7 @@
       "type": "object",
       "description": "A class to describe the awarding of a tender in a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderResultType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19193,7 +19092,7 @@
       "type": "object",
       "description": "A class to describe a tendered project or project lot.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderedProjectType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19316,7 +19215,7 @@
       "type": "object",
       "description": "A class to describe the qualifications of a tenderer party.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TendererPartyQualificationType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19365,7 +19264,7 @@
       "type": "object",
       "description": "The evaluation that the Contracting Authority party requests to fulfill to the tenderers.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TendererQualificationRequestType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19495,7 +19394,7 @@
       "type": "object",
       "description": "A class to describe an action or statement required of an economic operator participating in a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TendererRequirementType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19557,7 +19456,7 @@
       "type": "object",
       "description": "A class to describe an item of criterion support for representations of capabilities or the ability to meet tendering requirements, which an economic operator must provide for acceptance into a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19696,7 +19595,7 @@
       "type": "object",
       "description": "A class to describe the criterion properties.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionPropertyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19828,7 +19727,7 @@
       "type": "object",
       "description": "A class to describe a group of tendering criteria",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionPropertyGroupType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19903,7 +19802,7 @@
       "type": "object",
       "description": "A class to describe a response to a criterion property.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingCriterionResponseType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -19954,19 +19853,6 @@
               "type": "array",
               "items": {
                 "$ref": "#/$defs/PeriodType"
-              }
-            }
-          ]
-        },
-        "EvidenceSupplied": {
-          "oneOf": [
-            {
-              "$ref": "#/$defs/EvidenceSuppliedType"
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/EvidenceSuppliedType"
               }
             }
           ]
@@ -20023,7 +19909,7 @@
       "type": "object",
       "description": "A class to describe the process of a formal offer and response to execute work or supply goods at a stated price.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingProcessType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -20204,7 +20090,7 @@
       "type": "object",
       "description": "A class to describe tendering terms for a tendering process.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TenderingTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -20623,7 +20509,7 @@
       "type": "object",
       "description": "A class to describe a trade financing instrument.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TradeFinancingType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -20684,7 +20570,7 @@
       "type": "object",
       "description": "A class for describing the terms of a trade agreement.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TradingTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -20720,7 +20606,7 @@
       "type": "object",
       "description": "A class to describe purchasing, sales, or payment conditions.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransactionConditionsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -20769,7 +20655,7 @@
       "type": "object",
       "description": "A class to describe a piece of equipment used to transport goods.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportEquipmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21228,7 +21114,7 @@
       "type": "object",
       "description": "A class to describe a device (a transport equipment seal) for securing the doors of a shipping container.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportEquipmentSealType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21263,7 +21149,7 @@
       "type": "object",
       "description": "A class to describe a significant occurrence or happening related to the transportation of goods.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportEventType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21359,7 +21245,7 @@
       "type": "object",
       "description": "A class to describe terms applying to a transport execution plan.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportExecutionTermsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21479,7 +21365,7 @@
       "type": "object",
       "description": "A class to describe a uniquely identifiable unit consisting of one or more packages, goods items, or pieces of transport equipment.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportHandlingUnitType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21773,7 +21659,7 @@
       "type": "object",
       "description": "A class to describe a particular vehicle or vessel used for the conveyance of goods or persons.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportMeansType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21849,7 +21735,7 @@
       "type": "object",
       "description": "Describes the location and schedule relating to a transport means.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportScheduleType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21916,7 +21802,7 @@
       "type": "object",
       "description": "A class to describe one segment or leg in a transportation service.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportationSegmentType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -21966,7 +21852,7 @@
       "type": "object",
       "description": "A class to describe a transportation service.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#TransportationServiceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22165,7 +22051,7 @@
       "type": "object",
       "description": "A simplified version of the Price class intended for applications such as telephone billing.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#UnstructuredPriceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22191,7 +22077,7 @@
       "type": "object",
       "description": "A class to describe the consumption of a utility product.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#UtilityItemType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22266,7 +22152,7 @@
       "type": "object",
       "description": "A class to describe a verified gross mass (VGM) measure and its documentation.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#VerifiedGrossMassType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22332,7 +22218,7 @@
       "type": "object",
       "description": "A class to describe the dynamics of a vesssel.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#VesselDynamicsType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22364,7 +22250,7 @@
       "type": "object",
       "description": "A class to describe a visit to a port located in a geographical area considered an \u201caffected area\u201d by the World Health Organization (WHO).",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WHOAffectedAreaVisitType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22391,7 +22277,7 @@
       "type": "object",
       "description": "A class to describe a quantity of waste generated by an item, process, or activity, including type, quantity, and optional lifecycle context.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WasteGeneratedType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22433,7 +22319,7 @@
       "type": "object",
       "description": "A class to describe a web site.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WebSiteType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22491,7 +22377,7 @@
       "type": "object",
       "description": "A class to describe access to a web site.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WebSiteAccessType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22521,7 +22407,7 @@
       "type": "object",
       "description": "A party that is identified as the awarded by a tender result.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WinningPartyType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22547,7 +22433,7 @@
       "type": "object",
       "description": "A class that refers to a phase of work. Used for instance to specify what part of the contract the billing is referring to.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WorkPhaseReferenceType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22605,7 +22491,7 @@
       "type": "object",
       "description": "A class to define a document-level total of reported work expressed as a quantity.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WorkQuantityTotalType",
           "description": "Identifies the JSON schema governing this instance."
         },
@@ -22646,7 +22532,7 @@
       "type": "object",
       "description": "A class to describe a line in a Work Report, specifying the work performed.",
       "properties": {
-        "$jsonschema": {
+        "UBLEntity": {
           "const": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#WorkReportLineType",
           "description": "Identifies the JSON schema governing this instance."
         },

@@ -4,7 +4,7 @@
   "description": "A document to notify the deposit of a Guarantee, such as a bid bond.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:GuaranteeCertificate-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -38,9 +38,6 @@
     },
     "ID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
-    },
-    "CopyIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
     },
     "UUID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
@@ -142,7 +139,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "ContractFolderID",
     "IssueDate",
     "LiabilityAmount",

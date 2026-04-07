@@ -6,9 +6,6 @@
     "AcceptanceIndicator": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
     },
-    "AcceptedIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
-    },
     "AcceptedVariantsDescription": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
     },
@@ -906,9 +903,6 @@
     "EndTime": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
     },
-    "EndpointID": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
-    },
     "EndpointURI": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
     },
@@ -1120,9 +1114,6 @@
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
     },
     "FirstShipmentAvailabilityDate": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
-    },
-    "FirstShipmentAvailibilityDate": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
     },
     "FissileCriticalitySafetyIndexNumeric": {
@@ -1650,14 +1641,8 @@
     "MarkAttention": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
     },
-    "MarkAttentionIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
-    },
     "MarkCare": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
-    },
-    "MarkCareIndicator": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
     },
     "MarketCode": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
@@ -1686,9 +1671,6 @@
     "MaximumBackorderQuantity": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
     },
-    "MaximumCopiesNumeric": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
-    },
     "MaximumDataLossDurationMeasure": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
     },
@@ -1712,9 +1694,6 @@
     },
     "MaximumOrderQuantity": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
-    },
-    "MaximumOriginalsNumeric": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
     },
     "MaximumPaidAmount": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
@@ -1874,9 +1853,6 @@
     },
     "NationalityCode": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
-    },
-    "NationalityID": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
     },
     "NatureCode": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
@@ -2067,23 +2043,11 @@
     "PaidTime": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
     },
-    "ParentDocumentID": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
-    },
     "ParentDocumentLineReferenceID": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
-    },
-    "ParentDocumentTypeCode": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
-    },
-    "ParentDocumentVersionID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
     },
     "PartPresentationCode": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
-    },
-    "PartecipationPercent": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
     },
     "PartialDeliveryIndicator": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
@@ -2312,9 +2276,6 @@
     },
     "PrimaryAccountNumberID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
-    },
-    "PrintQualifier": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
     },
     "Priority": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
@@ -2549,9 +2510,6 @@
     },
     "RejectedQuantity": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
-    },
-    "RejectionNote": {
-      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
     },
     "ReleaseID": {
       "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"

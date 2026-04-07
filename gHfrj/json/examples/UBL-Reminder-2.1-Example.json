@@ -1,14 +1,10 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Reminder-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Reminder-2",
   "UBLVersionID": "2.1",
   "ID": "12",
   "IssueDate": "2010-04-14",
   "AccountingSupplierParty": {
     "Party": {
-      "EndpointID": {
-        "value": "1234567890123",
-        "schemeID": "9:GLN"
-      },
       "PartyIdentification": {
         "ID": {
           "value": "Supp123",
@@ -79,10 +75,6 @@
   },
   "AccountingCustomerParty": {
     "Party": {
-      "EndpointID": {
-        "value": "1234567987654",
-        "schemeID": "9:GLN"
-      },
       "PartyIdentification": {
         "ID": {
           "value": "345KS5324",

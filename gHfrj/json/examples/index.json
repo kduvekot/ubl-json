@@ -206,16 +206,6 @@
       "sourceXML": "UBL-OrderResponse-2.1-Example.xml",
       "schemaRef": "../schemas/maindoc/OrderResponse-2.5.json"
     },
-    "UBL-OrderResponseSimple-2.0-Example.json": {
-      "documentType": "OrderResponseSimple",
-      "sourceXML": "UBL-OrderResponseSimple-2.0-Example.xml",
-      "schemaRef": "../schemas/maindoc/OrderResponseSimple-2.5.json"
-    },
-    "UBL-OrderResponseSimple-2.1-Example.json": {
-      "documentType": "OrderResponseSimple",
-      "sourceXML": "UBL-OrderResponseSimple-2.1-Example.xml",
-      "schemaRef": "../schemas/maindoc/OrderResponseSimple-2.5.json"
-    },
     "UBL-PriorInformationNotice-2.2-Example-Embedded.json": {
       "documentType": "PriorInformationNotice",
       "sourceXML": "UBL-PriorInformationNotice-2.2-Example-Embedded.xml",
@@ -310,11 +300,6 @@
       "documentType": "Statement",
       "sourceXML": "UBL-Statement-2.0-Example.xml",
       "schemaRef": "../schemas/maindoc/Statement-2.5.json"
-    },
-    "UBL-StockAvailabilityReport-2.1-Example.json": {
-      "documentType": "StockAvailabilityReport",
-      "sourceXML": "UBL-StockAvailabilityReport-2.1-Example.xml",
-      "schemaRef": "../schemas/maindoc/StockAvailabilityReport-2.5.json"
     },
     "UBL-TradeItemLocationProfile-2.1-Example.json": {
       "documentType": "TradeItemLocationProfile",

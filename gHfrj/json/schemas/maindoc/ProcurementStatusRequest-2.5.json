@@ -4,7 +4,7 @@
   "description": "A document sent by an Economic Operator to a Contracting Party asking about the details and status of a procurement procedure, Project, or Lot.",
   "type": "object",
   "properties": {
-    "$jsonschema": {
+    "UBLEntity": {
       "const": "urn:oasis:names:specification:ubl:schema:json:ProcurementStatusRequest-2",
       "description": "Identifies the JSON schema governing this instance."
     },
@@ -115,7 +115,7 @@
     }
   },
   "required": [
-    "$jsonschema",
+    "UBLEntity",
     "IssueDate",
     "ContractingParty",
     "EconomicOperatorParty"

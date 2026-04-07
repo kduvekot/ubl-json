@@ -1,15 +1,11 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:DigitalCapability-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:DigitalCapability-2",
   "UBLVersionID": "2.2",
   "ID": "C12345-2016",
   "IssueDate": "2016-11-07",
   "VersionID": "1.1",
   "PreviousVersionID": "1.0",
   "SenderParty": {
-    "EndpointID": {
-      "value": "1234567987654",
-      "schemeID": "9:GLN"
-    },
     "PartyIdentification": {
       "ID": {
         "value": "DK12345678",
@@ -29,10 +25,6 @@
     }
   },
   "BusinessParty": {
-    "EndpointID": {
-      "value": "9994567987654",
-      "schemeID": "9:GLN"
-    },
     "PartyIdentification": {
       "ID": {
         "value": "IT01234567890",

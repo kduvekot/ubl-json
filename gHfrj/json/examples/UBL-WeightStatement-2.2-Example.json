@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:WeightStatement-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:WeightStatement-2",
   "UBLVersionID": "2.2",
   "ID": "GOA294107",
   "IssueDate": "2016-11-03",
@@ -9,10 +9,6 @@
     "listID": "6:UN/ECE 1001"
   },
   "SenderParty": {
-    "EndpointID": {
-      "value": "1234567987654",
-      "schemeID": "9:GLN"
-    },
     "IndustryClassificationCode": {
       "value": "CA",
       "listID": "6:UN/ECE 3035"
@@ -36,10 +32,6 @@
     }
   },
   "ReceiverParty": {
-    "EndpointID": {
-      "value": "9994567987654",
-      "schemeID": "9:GLN"
-    },
     "IndustryClassificationCode": {
       "value": "TR",
       "listID": "6:UN/ECE 3035"
