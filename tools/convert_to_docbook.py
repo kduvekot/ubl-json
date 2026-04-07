@@ -686,13 +686,13 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
     # "This version" URLs — HTML first, then PDF, then XML (authoritative)
     xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
     xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
-    xml_lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>')
+    xml_lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
 
     # "Previous version" URLs (if available)
     if meta.get("previous_version_urls"):
         xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
         xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
-        xml_lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>')
+        xml_lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
 
     # "Latest version" URLs
     xml_lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')

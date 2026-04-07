@@ -22,7 +22,7 @@
     <releaseinfo role="track">Standards Track Work Product</releaseinfo>
     <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>
-    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml (Authoritative)</releaseinfo>
+    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>
     <title>&title;</title>
