@@ -662,6 +662,13 @@ def main():
     }
     print(f"  Found {len(maindoc_schemas)} document schemas")
 
+    # Hand-crafted examples that should not be overwritten by conversion.
+    # These contain manually authored JWS content per DocBook Section 12.3.
+    HAND_CRAFTED = {
+        "UBL-Invoice-2.0-Enveloped",
+        "UBL-Invoice-2.0-Detached",
+    }
+
     # Convert each XML file
     xml_files = sorted(args.xml_dir.glob("*.xml"))
     print(f"\nConverting {len(xml_files)} XML files...")
@@ -672,6 +679,23 @@ def main():
     index_entries = OrderedDict()
 
     for xml_path in xml_files:
+        if xml_path.stem in HAND_CRAFTED:
+            # Preserve hand-crafted example; still include in index
+            out_name = xml_path.stem + ".json"
+            out_path = args.output_dir / out_name
+            if out_path.exists():
+                try:
+                    doc_type, _ = convert_xml_to_json(xml_path, type_map, deprecated)
+                    index_entries[out_name] = {
+                        "documentType": doc_type,
+                        "sourceXML": xml_path.name,
+                        "schemaRef": f"../schemas/maindoc/UBL-{doc_type}-2.5.json",
+                    }
+                except Exception:
+                    pass
+                print(f"  KEEP:  {xml_path.name} (hand-crafted)")
+                skipped += 1
+                continue
         try:
             doc_type, json_obj = convert_xml_to_json(xml_path, type_map, deprecated)
         except Exception as e:
