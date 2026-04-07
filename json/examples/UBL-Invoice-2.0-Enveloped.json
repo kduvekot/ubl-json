@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
+  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
   "UBLExtensions": [
     {
       "ExtensionURI": "dummy1",
@@ -29,7 +29,6 @@
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-invoice-notification-draft",
   "ID": "A00095678",
-  "CopyIndicator": false,
   "UUID": "849FBBCE-E081-40B4-906C-94C5FF9D1AC3",
   "IssueDate": "2005-06-21",
   "InvoiceTypeCode": "SalesInvoice",
