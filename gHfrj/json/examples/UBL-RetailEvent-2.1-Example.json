@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:RetailEvent-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-RetailEvent-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "UBL-TR",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-retail-event",

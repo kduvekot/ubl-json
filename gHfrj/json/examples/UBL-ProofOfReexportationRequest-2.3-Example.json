@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportationRequest-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProofOfReexportationRequest-2",
   "ID": "A2344",
   "IssueDate": "2019-06-21",
   "GoodsItemPassportID": "234222",

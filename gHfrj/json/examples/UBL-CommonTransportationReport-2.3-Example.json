@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:CommonTransportationReport-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CommonTransportationReport-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "Common Framework",
   "ProfileID": "ENS",

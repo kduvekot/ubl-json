@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ImportCustomsDeclaration-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ImportCustomsDeclaration-2",
   "UBLExtensions": [
     {
       "ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",

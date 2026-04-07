@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:DespatchAdvice-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DespatchAdvice-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:DespatchAdvice-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-despatch-advice-notification-draft",

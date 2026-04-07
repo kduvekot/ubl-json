@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ExceptionCriteria-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ExceptionCriteria-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:ExceptionCriteria-2.1:1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-cpfr-exception-criteria-draft",

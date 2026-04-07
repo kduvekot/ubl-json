@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:InstructionForReturns-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-InstructionForReturns-2",
   "UBLVersionID": "2.1",
   "ID": "AB011",
   "IssueDate": "2010-04-10",

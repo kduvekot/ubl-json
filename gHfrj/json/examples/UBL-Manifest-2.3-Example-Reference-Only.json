@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Manifest-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Manifest-2",
   "UBLVersionID": "2.3",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:ForwardingInstructions-2.0:samples-2.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario",

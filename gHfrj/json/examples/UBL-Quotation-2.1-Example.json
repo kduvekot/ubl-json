@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Quotation-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Quotation-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "OIOUBL-2.1",
   "ProfileID": {

@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:OrderResponse-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-OrderResponse-2",
   "UBLVersionID": "2.1",
   "CustomizationID": "urn:www.cenbii.eu:transaction:biicoretrdmXYZ:ver1.0",
   "ProfileID": {

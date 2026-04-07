@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Forecast-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Forecast-2",
   "UBLVersionID": "2.1",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-forecast-draft",
   "ID": "OF758494",

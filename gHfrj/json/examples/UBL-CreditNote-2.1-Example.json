@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:CreditNote-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CreditNote-2",
   "UBLVersionID": "2.1",
   "ID": "TOSL108",
   "IssueDate": "2009-12-15",

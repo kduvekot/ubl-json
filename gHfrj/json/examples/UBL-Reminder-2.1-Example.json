@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:Reminder-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Reminder-2",
   "UBLVersionID": "2.1",
   "ID": "12",
   "IssueDate": "2010-04-14",

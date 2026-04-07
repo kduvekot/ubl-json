@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ProductActivity-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProductActivity-2",
   "UBLVersionID": "2.1",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-1-cpfr-product-activity-draft",
   "ID": "PA_758494",

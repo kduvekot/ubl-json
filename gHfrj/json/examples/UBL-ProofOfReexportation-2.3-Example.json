@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportation-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProofOfReexportation-2",
   "ID": "23424244",
   "IssueDate": "2019-05-08",
   "ImportingGuarantorParty": {

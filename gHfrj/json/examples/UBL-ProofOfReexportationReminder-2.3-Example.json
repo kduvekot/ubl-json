@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportationReminder-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ProofOfReexportationReminder-2",
   "ID": "A2344",
   "IssueDate": "2019-06-21",
   "ProcedureCode": "A-letter",

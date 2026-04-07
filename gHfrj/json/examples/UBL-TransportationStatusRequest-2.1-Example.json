@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:TransportationStatusRequest-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportationStatusRequest-2",
   "UBLVersionID": "2.1",
   "ID": "TSR_1",
   "IssueDate": "2011-10-06",

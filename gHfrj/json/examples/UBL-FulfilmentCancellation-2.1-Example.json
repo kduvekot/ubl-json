@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:FulfilmentCancellation-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-FulfilmentCancellation-2",
   "UBLVersionID": "2.1",
   "ID": "00384",
   "IssueDate": "2005-06-22",

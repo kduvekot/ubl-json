@@ -1,5 +1,5 @@
 {
-  "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:PriorInformationNotice-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PriorInformationNotice-2",
   "IssueDate": "2016-05-29",
   "ContractingParty": {
     "Party": {
