@@ -45,8 +45,8 @@ GC_DIR = Path(__file__).resolve().parent.parent / "gc"
 # at CI time. For local runs, clone the repo or pass --xml-dir explicitly.
 DEFAULT_XML_DIR = Path("xml/UBL-2.5")
 
-# URN base for JSON schema identifiers (must match generate_json_schemas.py)
-URN_BASE = 'urn:oasis:names:specification:ubl:schema:json'
+# URL base for JSON schema identifiers (must match generate_json_schemas.py)
+SCHEMA_BASE = 'https://docs.oasis-open.org/ubl/2/json/schemas'
 
 # Spec-mandated signature URIs (DocBook Section 11)
 SIG_ENVELOPED_URI = 'https://docs.oasis-open.org/ubl/json/jws/enveloped'
@@ -460,10 +460,10 @@ def convert_xml_to_json(xml_path, type_map, deprecated=None):
     doc_type = local_name(root.tag)
     json_obj = convert_element(root, type_map, deprecated)
 
-    # Add UBLEntity as the first property
+    # Add UBLEntity as the first property (Annex C: UBL-{DocType}-2)
     if isinstance(json_obj, dict):
-        schema_urn = f"{URN_BASE}:{doc_type}-2"
-        json_obj = {"UBLEntity": schema_urn, **json_obj}
+        schema_url = f"{SCHEMA_BASE}/UBL-{doc_type}-2"
+        json_obj = {"UBLEntity": schema_url, **json_obj}
 
     # Post-process: fix detached signature external references
     # (e.g., .xml → .jws for signature attachment URIs)
@@ -534,12 +534,12 @@ def validate_examples(schemas_dir, examples_dir):
     registry = Registry().with_resources(schema_resources)
 
     # Map document types to their schema $ids
+    # URL format: .../UBL-Invoice-2 → Invoice
     doc_type_to_schema_id = {}
     for schema_id in schemas_by_id:
-        # Extract document type from URN: ...json:Invoice-2 → Invoice
-        parts = schema_id.rsplit(":", 1)
-        if len(parts) == 2:
-            doc_name = parts[1].rsplit("-", 1)[0]
+        last_segment = schema_id.rsplit("/", 1)[-1]
+        if last_segment.startswith("UBL-"):
+            doc_name = last_segment[4:].rsplit("-", 1)[0]  # UBL-Invoice-2 → Invoice
             doc_type_to_schema_id[doc_name] = schema_id
 
     # Load the examples index for document type lookup

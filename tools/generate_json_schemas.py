@@ -21,11 +21,12 @@ from pathlib import Path
 # Filenames use the full version "-2.5" to match XML specification naming.
 FILE_VERSION_SUFFIX = '-2.5'
 
-# URN base for JSON schema identifiers, paralleling the XSD convention:
-#   XSD:  urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
-#   JSON: urn:oasis:names:specification:ubl:schema:json:Invoice-2
-# URNs are stable at the major version level ("-2", not "-2.5").
-URN_BASE = 'urn:oasis:names:specification:ubl:schema:json'
+# URL base for JSON schema identifiers per DocBook Annex C.
+# Each schema is identified by a stable HTTPS URI fixed at the major version level:
+#   https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2
+# Common schemas omit the "UBL-" prefix:
+#   https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2
+SCHEMA_BASE = 'https://docs.oasis-open.org/ubl/2/json/schemas'
 
 
 def parse_gc_file(filepath):
@@ -370,7 +371,7 @@ def generate_unqualified_data_types(output_dir):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:UnqualifiedDataTypes-2',
+        '$id': f'{SCHEMA_BASE}/UnqualifiedDataTypes-2',
         'description': 'UBL 2.5 Unqualified Data Types',
         '$defs': defs
     }
@@ -436,13 +437,13 @@ def generate_qualified_data_types(output_dir, rows):
 
         # Create the reference entry
         defs[key] = {
-            '$ref': f'{URN_BASE}:UnqualifiedDataTypes-2#/$defs/{unqualified_type}'
+            '$ref': f'{SCHEMA_BASE}/UnqualifiedDataTypes-2#/$defs/{unqualified_type}'
         }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:QualifiedDataTypes-2',
+        '$id': f'{SCHEMA_BASE}/QualifiedDataTypes-2',
         'description': 'UBL 2.5 Qualified Data Types',
         '$defs': defs
     }
@@ -523,13 +524,13 @@ def generate_common_basic_components(output_dir, registry):
 
         # Create the $ref entry
         defs[component_name] = {
-            '$ref': f'{URN_BASE}:QualifiedDataTypes-2#/$defs/{qualified_type_key}'
+            '$ref': f'{SCHEMA_BASE}/QualifiedDataTypes-2#/$defs/{qualified_type_key}'
         }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:CommonBasicComponents-2',
+        '$id': f'{SCHEMA_BASE}/CommonBasicComponents-2',
         'description': 'UBL 2.5 Common Basic Components',
         '$defs': defs
     }
@@ -592,7 +593,7 @@ def generate_common_aggregate_components(output_dir, registry):
         # UBLEntity: identifies this ABIE type for standalone use
         # (optional when embedded, required when used as root payload)
         properties['UBLEntity'] = {
-            'const': f'{URN_BASE}:CommonAggregateComponents-2#{type_name}',
+            'const': f'{SCHEMA_BASE}/CommonAggregateComponents-2#{type_name}',
             'description': 'Identifies the JSON schema governing this instance.'
         }
 
@@ -604,7 +605,7 @@ def generate_common_aggregate_components(output_dir, registry):
             if component_type == 'BBIE':
                 # BBIE: reference to CommonBasicComponents
                 ref_schema = {
-                    '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
+                    '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
 
                 if cardinality in ('0..1', '1'):
@@ -666,7 +667,7 @@ def generate_common_aggregate_components(output_dir, registry):
         # matching the xsd:element ref="ext:UBLExtensions" minOccurs="0"
         # that appears in every XSD complex type.
         properties['UBLExtensions'] = {
-            '$ref': f'{URN_BASE}:CommonExtensionComponents-2#/$defs/UBLExtensionsType'
+            '$ref': f'{SCHEMA_BASE}/CommonExtensionComponents-2#/$defs/UBLExtensionsType'
         }
 
         # Build the ABIE definition
@@ -693,7 +694,7 @@ def generate_common_aggregate_components(output_dir, registry):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:CommonAggregateComponents-2',
+        '$id': f'{SCHEMA_BASE}/CommonAggregateComponents-2',
         'description': 'UBL 2.5 Common Aggregate Components',
         '$defs': defs
     }
@@ -757,12 +758,12 @@ def generate_common_extension_components(output_dir, registry):
         if child_component_name == 'ExtensionContent':
             # ExtensionContent is special: reference to ContentType in UnqualifiedDataTypes
             extension_properties[child_component_name] = {
-                '$ref': f'{URN_BASE}:UnqualifiedDataTypes-2#/$defs/ContentType'
+                '$ref': f'{SCHEMA_BASE}/UnqualifiedDataTypes-2#/$defs/ContentType'
             }
         else:
             # All other BBIEs reference CommonBasicComponents
             extension_properties[child_component_name] = {
-                '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
+                '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
             }
 
         # Add to required list if cardinality is 1
@@ -806,7 +807,7 @@ def generate_common_extension_components(output_dir, registry):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:CommonExtensionComponents-2',
+        '$id': f'{SCHEMA_BASE}/CommonExtensionComponents-2',
         'description': 'UBL 2.5 Common Extension Components',
         '$defs': defs
     }
@@ -880,13 +881,13 @@ def generate_signature_schemas(output_dir, registry):
 
         # Create the $ref entry to QualifiedDataTypes
         sig_basic_defs[component_name] = {
-            '$ref': f'{URN_BASE}:QualifiedDataTypes-2#/$defs/{qualified_type_key}'
+            '$ref': f'{SCHEMA_BASE}/QualifiedDataTypes-2#/$defs/{qualified_type_key}'
         }
 
     # Build SignatureBasicComponents schema
     sig_basic_schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:SignatureBasicComponents-2',
+        '$id': f'{SCHEMA_BASE}/SignatureBasicComponents-2',
         'description': 'UBL 2.5 Signature Basic Components',
         '$defs': sig_basic_defs
     }
@@ -919,7 +920,7 @@ def generate_signature_schemas(output_dir, registry):
 
             # UBLEntity for standalone use
             properties['UBLEntity'] = {
-                'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
+                'const': f'{SCHEMA_BASE}/SignatureAggregateComponents-2#{type_name}',
                 'description': 'Identifies the JSON schema governing this instance.'
             }
 
@@ -988,7 +989,7 @@ def generate_signature_schemas(output_dir, registry):
 
             # UBLEntity for standalone use
             properties['UBLEntity'] = {
-                'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
+                'const': f'{SCHEMA_BASE}/SignatureAggregateComponents-2#{type_name}',
                 'description': 'Identifies the JSON schema governing this instance.'
             }
 
@@ -1000,7 +1001,7 @@ def generate_signature_schemas(output_dir, registry):
                 if component_type == 'BBIE':
                     # Reference to SignatureBasicComponents
                     properties[child_component_name] = {
-                        '$ref': f'{URN_BASE}:SignatureBasicComponents-2#/$defs/{child_component_name}'
+                        '$ref': f'{SCHEMA_BASE}/SignatureBasicComponents-2#/$defs/{child_component_name}'
                     }
 
                 # Add to required list if cardinality is 1 or 1..n
@@ -1029,7 +1030,7 @@ def generate_signature_schemas(output_dir, registry):
     # Build SignatureAggregateComponents schema with sorted $defs
     sig_agg_schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:SignatureAggregateComponents-2',
+        '$id': f'{SCHEMA_BASE}/SignatureAggregateComponents-2',
         'description': 'UBL 2.5 Signature Aggregate Components',
         '$defs': dict(sorted(sig_agg_defs.items()))
     }
@@ -1105,8 +1106,8 @@ def generate_document_schemas(output_dir, registry):
         # Pattern: UBL-DocName-2.5 -> DocName
         doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
 
-        # Build the schema
-        schema_urn = f"{URN_BASE}:{doc_name}-2"
+        # Build the schema identifier per Annex C: UBL-{DocName}-2
+        schema_id = f"{SCHEMA_BASE}/UBL-{doc_name}-2"
         definition = root_abie.get('definition', '')
         children = root_abie.get('children', [])
 
@@ -1116,23 +1117,23 @@ def generate_document_schemas(output_dir, registry):
 
         # UBLEntity: identifies this document type (required)
         properties['UBLEntity'] = {
-            'const': schema_urn,
+            'const': schema_id,
             'description': 'Identifies the JSON schema governing this instance.'
         }
         required.append('UBLEntity')
 
         # 1. Add UBLExtensions (optional)
         properties['UBLExtensions'] = {
-            '$ref': f'{URN_BASE}:CommonExtensionComponents-2#/$defs/UBLExtensionsType'
+            '$ref': f'{SCHEMA_BASE}/CommonExtensionComponents-2#/$defs/UBLExtensionsType'
         }
 
         # 2. Add Signature (optional, 0..n via oneOf)
         properties['Signature'] = {
             'oneOf': [
-                {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'},
+                {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/SignatureType'},
                 {
                     'type': 'array',
-                    'items': {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'},
+                    'items': {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/SignatureType'},
                     'minItems': 1
                 }
             ]
@@ -1147,7 +1148,7 @@ def generate_document_schemas(output_dir, registry):
             if component_type == 'BBIE':
                 # BBIE: reference to CommonBasicComponents
                 ref_schema = {
-                    '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
+                    '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
 
                 if cardinality in ('0..1', '1'):
@@ -1179,7 +1180,7 @@ def generate_document_schemas(output_dir, registry):
                     # Fallback
                     target_type = associated_object_class.replace(' ', '') + 'Type'
 
-                ref_schema = {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/{target_type}'}
+                ref_schema = {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/{target_type}'}
 
                 if cardinality in ('0..1', '1'):
                     # Single value
@@ -1209,7 +1210,7 @@ def generate_document_schemas(output_dir, registry):
         dictionary_entry_name = root_abie.get('dictionary_entry_name', '')
         schema = {
             '$schema': 'https://json-schema.org/draft/2020-12/schema',
-            '$id': schema_urn,
+            '$id': schema_id,
             'description': definition,
             'type': 'object',
             'properties': properties,
@@ -1261,8 +1262,8 @@ def generate_catalog(output_dir, registry):
         'SignatureAggregateComponents',
     ]
     for name in common_schemas:
-        urn = f'{URN_BASE}:{name}-2'
-        catalog[urn] = f'common/{name}{FILE_VERSION_SUFFIX}.json'
+        schema_url = f'{SCHEMA_BASE}/{name}-2'
+        catalog[schema_url] = f'common/{name}{FILE_VERSION_SUFFIX}.json'
 
     # Document schemas
     SKIP_MODELS = {
@@ -1281,8 +1282,8 @@ def generate_catalog(output_dir, registry):
             continue
 
         doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
-        urn = f'{URN_BASE}:{doc_name}-2'
-        catalog[urn] = f'maindoc/{doc_name}{FILE_VERSION_SUFFIX}.json'
+        schema_url = f'{SCHEMA_BASE}/UBL-{doc_name}-2'
+        catalog[schema_url] = f'maindoc/{doc_name}{FILE_VERSION_SUFFIX}.json'
 
     # Write the catalog
     output_dir.mkdir(parents=True, exist_ok=True)
