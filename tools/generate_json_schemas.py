@@ -21,11 +21,12 @@ from pathlib import Path
 # Filenames use the full version "-2.5" to match XML specification naming.
 FILE_VERSION_SUFFIX = '-2.5'
 
-# URN base for JSON schema identifiers, paralleling the XSD convention:
-#   XSD:  urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
-#   JSON: urn:oasis:names:specification:ubl:schema:json:Invoice-2
-# URNs are stable at the major version level ("-2", not "-2.5").
-URN_BASE = 'urn:oasis:names:specification:ubl:schema:json'
+# URL base for JSON schema identifiers per DocBook Annex C.
+# Each schema is identified by a stable HTTPS URI fixed at the major version level:
+#   https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2
+# Common schemas omit the "UBL-" prefix:
+#   https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2
+SCHEMA_BASE = 'https://docs.oasis-open.org/ubl/2/json/schemas'
 
 
 def parse_gc_file(filepath):
@@ -110,12 +111,21 @@ def build_registry(rows):
     # First pass: collect all rows by model and object class
     model_data = defaultdict(lambda: {'abies': {}, 'children': defaultdict(list)})
 
+    deprecated_count = 0
+
     for row in rows:
         model_name = row.get('ModelName')
         component_type = row.get('ComponentType')
         object_class = row.get('ObjectClass')
 
         if not model_name:
+            continue
+
+        # DocBook Section 5.2: "deprecated elements defined in UBL 2.5 are
+        # not included in the normative JSON Schemas."
+        definition = row.get('Definition', '')
+        if definition.startswith('(Deprecated)'):
+            deprecated_count += 1
             continue
 
         # Use ComponentName if available, fall back to UBLName (for signature/extension)
@@ -157,6 +167,9 @@ def build_registry(rows):
 
     # Convert defaultdict to regular dict
     registry['models'] = dict(registry['models'])
+
+    if deprecated_count:
+        print(f"  Skipped {deprecated_count} deprecated elements (DocBook Section 5.2)")
 
     return registry
 
@@ -358,7 +371,7 @@ def generate_unqualified_data_types(output_dir):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:UnqualifiedDataTypes-2',
+        '$id': f'{SCHEMA_BASE}/UnqualifiedDataTypes-2',
         'description': 'UBL 2.5 Unqualified Data Types',
         '$defs': defs
     }
@@ -424,13 +437,13 @@ def generate_qualified_data_types(output_dir, rows):
 
         # Create the reference entry
         defs[key] = {
-            '$ref': f'{URN_BASE}:UnqualifiedDataTypes-2#/$defs/{unqualified_type}'
+            '$ref': f'{SCHEMA_BASE}/UnqualifiedDataTypes-2#/$defs/{unqualified_type}'
         }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:QualifiedDataTypes-2',
+        '$id': f'{SCHEMA_BASE}/QualifiedDataTypes-2',
         'description': 'UBL 2.5 Qualified Data Types',
         '$defs': defs
     }
@@ -511,13 +524,13 @@ def generate_common_basic_components(output_dir, registry):
 
         # Create the $ref entry
         defs[component_name] = {
-            '$ref': f'{URN_BASE}:QualifiedDataTypes-2#/$defs/{qualified_type_key}'
+            '$ref': f'{SCHEMA_BASE}/QualifiedDataTypes-2#/$defs/{qualified_type_key}'
         }
 
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:CommonBasicComponents-2',
+        '$id': f'{SCHEMA_BASE}/CommonBasicComponents-2',
         'description': 'UBL 2.5 Common Basic Components',
         '$defs': defs
     }
@@ -577,10 +590,10 @@ def generate_common_aggregate_components(output_dir, registry):
         properties = {}
         required = []
 
-        # $jsonschema: identifies this ABIE type for standalone use
+        # UBLEntity: identifies this ABIE type for standalone use
         # (optional when embedded, required when used as root payload)
-        properties['$jsonschema'] = {
-            'const': f'{URN_BASE}:CommonAggregateComponents-2#{type_name}',
+        properties['UBLEntity'] = {
+            'const': f'{SCHEMA_BASE}/CommonAggregateComponents-2#{type_name}',
             'description': 'Identifies the JSON schema governing this instance.'
         }
 
@@ -592,24 +605,24 @@ def generate_common_aggregate_components(output_dir, registry):
             if component_type == 'BBIE':
                 # BBIE: reference to CommonBasicComponents
                 ref_schema = {
-                    '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
+                    '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
 
                 if cardinality in ('0..1', '1'):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Repeating BBIE: allow single value or array
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     properties[child_component_name] = ref_schema
 
@@ -631,18 +644,17 @@ def generate_common_aggregate_components(output_dir, registry):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Array (single or array)
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    # For 1..n, add minItems constraint
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     # Fallback for unknown cardinality
                     properties[child_component_name] = ref_schema
@@ -655,7 +667,7 @@ def generate_common_aggregate_components(output_dir, registry):
         # matching the xsd:element ref="ext:UBLExtensions" minOccurs="0"
         # that appears in every XSD complex type.
         properties['UBLExtensions'] = {
-            '$ref': f'{URN_BASE}:CommonExtensionComponents-2#/$defs/UBLExtensionsType'
+            '$ref': f'{SCHEMA_BASE}/CommonExtensionComponents-2#/$defs/UBLExtensionsType'
         }
 
         # Build the ABIE definition
@@ -682,7 +694,7 @@ def generate_common_aggregate_components(output_dir, registry):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:CommonAggregateComponents-2',
+        '$id': f'{SCHEMA_BASE}/CommonAggregateComponents-2',
         'description': 'UBL 2.5 Common Aggregate Components',
         '$defs': defs
     }
@@ -746,19 +758,29 @@ def generate_common_extension_components(output_dir, registry):
         if child_component_name == 'ExtensionContent':
             # ExtensionContent is special: reference to ContentType in UnqualifiedDataTypes
             extension_properties[child_component_name] = {
-                '$ref': f'{URN_BASE}:UnqualifiedDataTypes-2#/$defs/ContentType'
+                '$ref': f'{SCHEMA_BASE}/UnqualifiedDataTypes-2#/$defs/ContentType'
             }
         else:
             # All other BBIEs reference CommonBasicComponents
             extension_properties[child_component_name] = {
-                '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
+                '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
             }
 
         # Add to required list if cardinality is 1
         if cardinality == '1':
             extension_required.append(child_component_name)
 
-    # DocBook Section 6.3: "Each extension shall be a JSON object
+    # DocBook Section 10.1: "each extension container shall include a
+    # UBLEntity property whose value identifies the schema context and
+    # version governing the extension content."
+    extension_properties['UBLEntity'] = {
+        'type': 'string',
+        'minLength': 1,
+        'description': 'Identifies the schema governing this extension content.'
+    }
+    extension_required.append('UBLEntity')
+
+    # DocBook Section 7.3: "Each extension shall be a JSON object
     # containing at least the following members: ExtensionURI ... ExtensionContent"
     if 'ExtensionURI' not in extension_required:
         extension_required.append('ExtensionURI')
@@ -795,7 +817,7 @@ def generate_common_extension_components(output_dir, registry):
     # Build the complete schema
     schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:CommonExtensionComponents-2',
+        '$id': f'{SCHEMA_BASE}/CommonExtensionComponents-2',
         'description': 'UBL 2.5 Common Extension Components',
         '$defs': defs
     }
@@ -869,13 +891,13 @@ def generate_signature_schemas(output_dir, registry):
 
         # Create the $ref entry to QualifiedDataTypes
         sig_basic_defs[component_name] = {
-            '$ref': f'{URN_BASE}:QualifiedDataTypes-2#/$defs/{qualified_type_key}'
+            '$ref': f'{SCHEMA_BASE}/QualifiedDataTypes-2#/$defs/{qualified_type_key}'
         }
 
     # Build SignatureBasicComponents schema
     sig_basic_schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:SignatureBasicComponents-2',
+        '$id': f'{SCHEMA_BASE}/SignatureBasicComponents-2',
         'description': 'UBL 2.5 Signature Basic Components',
         '$defs': sig_basic_defs
     }
@@ -906,9 +928,9 @@ def generate_signature_schemas(output_dir, registry):
             properties = {}
             required = []
 
-            # $jsonschema for standalone use
-            properties['$jsonschema'] = {
-                'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
+            # UBLEntity for standalone use
+            properties['UBLEntity'] = {
+                'const': f'{SCHEMA_BASE}/SignatureAggregateComponents-2#{type_name}',
                 'description': 'Identifies the JSON schema governing this instance.'
             }
 
@@ -926,18 +948,17 @@ def generate_signature_schemas(output_dir, registry):
                         properties[child_component_name] = ref_schema
                     elif cardinality in ('0..n', '1..n'):
                         # Array (single or array)
+                        # minItems: 1 — empty arrays are not valid; omit property instead
                         properties[child_component_name] = {
                             'oneOf': [
                                 ref_schema,
                                 {
                                     'type': 'array',
-                                    'items': ref_schema
+                                    'items': ref_schema,
+                                    'minItems': 1
                                 }
                             ]
                         }
-                        # For 1..n, add minItems constraint
-                        if cardinality == '1..n':
-                            properties[child_component_name]['oneOf'][1]['minItems'] = 1
 
                 # Add to required list if cardinality is 1 or 1..n
                 if cardinality in ('1', '1..n'):
@@ -976,9 +997,9 @@ def generate_signature_schemas(output_dir, registry):
             properties = {}
             required = []
 
-            # $jsonschema for standalone use
-            properties['$jsonschema'] = {
-                'const': f'{URN_BASE}:SignatureAggregateComponents-2#{type_name}',
+            # UBLEntity for standalone use
+            properties['UBLEntity'] = {
+                'const': f'{SCHEMA_BASE}/SignatureAggregateComponents-2#{type_name}',
                 'description': 'Identifies the JSON schema governing this instance.'
             }
 
@@ -990,7 +1011,7 @@ def generate_signature_schemas(output_dir, registry):
                 if component_type == 'BBIE':
                     # Reference to SignatureBasicComponents
                     properties[child_component_name] = {
-                        '$ref': f'{URN_BASE}:SignatureBasicComponents-2#/$defs/{child_component_name}'
+                        '$ref': f'{SCHEMA_BASE}/SignatureBasicComponents-2#/$defs/{child_component_name}'
                     }
 
                 # Add to required list if cardinality is 1 or 1..n
@@ -1019,7 +1040,7 @@ def generate_signature_schemas(output_dir, registry):
     # Build SignatureAggregateComponents schema with sorted $defs
     sig_agg_schema = {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
-        '$id': f'{URN_BASE}:SignatureAggregateComponents-2',
+        '$id': f'{SCHEMA_BASE}/SignatureAggregateComponents-2',
         'description': 'UBL 2.5 Signature Aggregate Components',
         '$defs': dict(sorted(sig_agg_defs.items()))
     }
@@ -1095,8 +1116,8 @@ def generate_document_schemas(output_dir, registry):
         # Pattern: UBL-DocName-2.5 -> DocName
         doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
 
-        # Build the schema
-        schema_urn = f"{URN_BASE}:{doc_name}-2"
+        # Build the schema identifier per Annex C: UBL-{DocName}-2
+        schema_id = f"{SCHEMA_BASE}/UBL-{doc_name}-2"
         definition = root_abie.get('definition', '')
         children = root_abie.get('children', [])
 
@@ -1104,30 +1125,20 @@ def generate_document_schemas(output_dir, registry):
         properties = {}
         required = []
 
-        # $jsonschema: identifies this document type (required)
-        properties['$jsonschema'] = {
-            'const': schema_urn,
+        # UBLEntity: identifies this document type (required)
+        properties['UBLEntity'] = {
+            'const': schema_id,
             'description': 'Identifies the JSON schema governing this instance.'
         }
-        required.append('$jsonschema')
+        required.append('UBLEntity')
 
-        # 1. Add UBLExtensions (optional)
+        # 1. Add UBLExtensions (optional, not in GC — added by extension mechanism)
         properties['UBLExtensions'] = {
-            '$ref': f'{URN_BASE}:CommonExtensionComponents-2#/$defs/UBLExtensionsType'
+            '$ref': f'{SCHEMA_BASE}/CommonExtensionComponents-2#/$defs/UBLExtensionsType'
         }
 
-        # 2. Add Signature (optional, 0..n via oneOf)
-        properties['Signature'] = {
-            'oneOf': [
-                {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'},
-                {
-                    'type': 'array',
-                    'items': {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/SignatureType'}
-                }
-            ]
-        }
-
-        # 3. Add children (BBIEs and ASBIEs)
+        # 2. Add children (BBIEs and ASBIEs) in GC order
+        # Note: Signature ASBIE comes from GC in its natural position (not hardcoded)
         for child in children:
             child_component_name = child['component_name']
             component_type = child['component_type']
@@ -1136,24 +1147,24 @@ def generate_document_schemas(output_dir, registry):
             if component_type == 'BBIE':
                 # BBIE: reference to CommonBasicComponents
                 ref_schema = {
-                    '$ref': f'{URN_BASE}:CommonBasicComponents-2#/$defs/{child_component_name}'
+                    '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
 
                 if cardinality in ('0..1', '1'):
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Repeating BBIE: allow single value or array
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     properties[child_component_name] = ref_schema
 
@@ -1168,25 +1179,24 @@ def generate_document_schemas(output_dir, registry):
                     # Fallback
                     target_type = associated_object_class.replace(' ', '') + 'Type'
 
-                ref_schema = {'$ref': f'{URN_BASE}:CommonAggregateComponents-2#/$defs/{target_type}'}
+                ref_schema = {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/{target_type}'}
 
                 if cardinality in ('0..1', '1'):
                     # Single value
                     properties[child_component_name] = ref_schema
                 elif cardinality in ('0..n', '1..n'):
                     # Array (single or array)
+                    # minItems: 1 — empty arrays are not valid; omit property instead
                     properties[child_component_name] = {
                         'oneOf': [
                             ref_schema,
                             {
                                 'type': 'array',
-                                'items': ref_schema
+                                'items': ref_schema,
+                                'minItems': 1
                             }
                         ]
                     }
-                    # For 1..n, add minItems constraint
-                    if cardinality == '1..n':
-                        properties[child_component_name]['oneOf'][1]['minItems'] = 1
                 else:
                     # Fallback for unknown cardinality
                     properties[child_component_name] = ref_schema
@@ -1199,7 +1209,7 @@ def generate_document_schemas(output_dir, registry):
         dictionary_entry_name = root_abie.get('dictionary_entry_name', '')
         schema = {
             '$schema': 'https://json-schema.org/draft/2020-12/schema',
-            '$id': schema_urn,
+            '$id': schema_id,
             'description': definition,
             'type': 'object',
             'properties': properties,
@@ -1211,8 +1221,8 @@ def generate_document_schemas(output_dir, registry):
         if dictionary_entry_name:
             schema['title'] = dictionary_entry_name
 
-        # Write the schema to file
-        filename = f"{doc_name}{FILE_VERSION_SUFFIX}.json"
+        # Write the schema to file (Annex C: UBL-{DocName}-2.5.json)
+        filename = f"UBL-{doc_name}{FILE_VERSION_SUFFIX}.json"
         output_file = output_dir / filename
         with open(output_file, 'w') as f:
             json.dump(schema, f, indent=2)
@@ -1251,8 +1261,8 @@ def generate_catalog(output_dir, registry):
         'SignatureAggregateComponents',
     ]
     for name in common_schemas:
-        urn = f'{URN_BASE}:{name}-2'
-        catalog[urn] = f'common/{name}{FILE_VERSION_SUFFIX}.json'
+        schema_url = f'{SCHEMA_BASE}/{name}-2'
+        catalog[schema_url] = f'common/{name}{FILE_VERSION_SUFFIX}.json'
 
     # Document schemas
     SKIP_MODELS = {
@@ -1271,8 +1281,8 @@ def generate_catalog(output_dir, registry):
             continue
 
         doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
-        urn = f'{URN_BASE}:{doc_name}-2'
-        catalog[urn] = f'maindoc/{doc_name}{FILE_VERSION_SUFFIX}.json'
+        schema_url = f'{SCHEMA_BASE}/UBL-{doc_name}-2'
+        catalog[schema_url] = f'maindoc/UBL-{doc_name}{FILE_VERSION_SUFFIX}.json'
 
     # Write the catalog
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1290,7 +1300,7 @@ def generate_catalog(output_dir, registry):
 
 def main():
     """Main script flow: parse GC files, build registry, generate schemas."""
-    base_dir = Path(__file__).parent
+    base_dir = Path(__file__).resolve().parent.parent
     gc_dir = base_dir / 'gc'
     output_dir = base_dir / 'json' / 'schemas'
 

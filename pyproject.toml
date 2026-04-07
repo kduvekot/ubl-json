@@ -7,6 +7,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["check-jsonschema", "jsonschema", "referencing"]
+docbook = ["python-docx", "lxml"]
 
 [project.scripts]
-generate = "generate_json_schemas:main"
+generate = "tools.generate_json_schemas:main"

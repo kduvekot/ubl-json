@@ -1,16 +1,16 @@
 # Extra-Schema Constraints — Reference for Future Implementation
 
 These 6 constraints are specified normatively in the UBL 2.5 JSON Syntax Binding
-but **cannot be enforced by JSON Schema alone**. Each entry includes the exact spec
-text, section reference, and why JSON Schema falls short.
+(WD01) but **cannot be enforced by JSON Schema alone**. Each entry includes the
+exact spec text, section reference, and why JSON Schema falls short.
 
 ---
 
 ## ESC-1: `languageID` uniqueness in repeating Text/Name elements
 
-**Spec section:** 7.4 — Error handling and strictness (`S-ERROR-HANDLING-AND-STRICTNESS`)
+**Spec section:** 8.4 — Error handling and strictness (`S-ERROR-HANDLING-AND-STRICTNESS`)
 
-**Normative text (lines 378–386):**
+**Normative text:**
 > Validation shall fail when … In the case of natural language Text or Name
 > elements with repeating cardinality:
 > - Any occurrence omits a `languageID`, or
@@ -34,13 +34,13 @@ that no two array members share the same `languageID` value requires either:
 
 **Affected schema types:** `TextType`, `NameType` (in `UnqualifiedDataTypes-2.5.json`)
 
-**Affected supplementary component:** `languageID` (see Table in §10.1, lines 501–510)
+**Affected supplementary component:** `languageID` (see Table in Section 11.1)
 
 ---
 
 ## ESC-2: `oneOf` replaces `_n` suffix convention (functionally equivalent)
 
-**Spec section:** 7.1 — Cardinality and repetition (`S-CARDINALITY-AND-REPETITION`)
+**Spec section:** 8.1 — Cardinality and repetition (`S-CARDINALITY-AND-REPETITION`)
 
 **Background:**
 The UBL NDR XML binding uses a `_n` suffix naming convention (e.g., `Description_1`,
@@ -49,16 +49,6 @@ convention is unnecessary because:
 1. Arrays naturally handle repetition
 2. The `oneOf` keyword in the schema allows a property to be either a single value
    (scalar/object) or an array
-
-**Schema pattern (from `UnqualifiedDataTypes-2.5.json`):**
-```json
-"CodeType": {
-  "oneOf": [
-    { "type": "string", "minLength": 1 },
-    { "type": "object", "properties": { "value": {...}, "listID": {...}, ... } }
-  ]
-}
-```
 
 **Why this is an observation, not a constraint:**
 This is an architectural decision, not a runtime validation gap. The `oneOf`
@@ -69,49 +59,50 @@ beyond awareness.
 
 ---
 
-## ESC-3: `$jsonschema` in extension containers is a producer obligation
+## ESC-3: `UBLEntity` in extension containers is a producer obligation
 
-**Spec section:** 9.1 — Schema identification (`S-SCHEMA-IDENTIFICATION`)
+**Spec section:** 10.1 — Schema identification (`S-SCHEMA-IDENTIFICATION`)
 
-**Normative text (lines 410–411):**
-> For extensions expressed using the UBL extension mechanism (6.3), each extension
-> container shall include a `$jsonschema` property whose value identifies the
-> schema context and version governing the extension content. The value shall be
-> a stable identifier published by the authority responsible for the extension.
+**Normative text (Section 10.1):**
+> For extensions expressed using the UBL extension mechanism (see section 7.3),
+> each extension container shall include a `UBLEntity` property whose value
+> identifies the schema context and version governing the extension content. The
+> value shall be a stable identifier published by the authority responsible for
+> the extension.
 
 > In all cases, producers shall ensure that instances validate successfully against
-> the schema identified in the `$jsonschema` property, and consumers shall apply
+> the schema identified in the `UBLEntity` property, and consumers shall apply
 > the corresponding rule set.
 
-**Why JSON Schema cannot enforce this:**
-The schema can require a `$jsonschema` *property* to be present (via `required`),
-but it **cannot**:
-1. Resolve the URI in `$jsonschema` to fetch the referenced extension schema
+**Why JSON Schema cannot fully enforce this:**
+The schema requires a `UBLEntity` *property* to be present (via `required`) with
+`minLength: 1`, but it **cannot**:
+1. Resolve the URI in `UBLEntity` to fetch the referenced extension schema
 2. Validate the sibling `ExtensionContent` against that dynamically-referenced schema
 3. Verify that the URI points to a real, published schema
 
 This is a **producer obligation**: the party creating the document must ensure the
-`$jsonschema` value is correct and that the content validates against it. Consumers
+`UBLEntity` value is correct and that the content validates against it. Consumers
 must independently fetch and apply the referenced schema — this is a two-party
 protocol that JSON Schema's single-document validation model cannot capture.
 
 **Possible implementation approaches:**
-- Application-level validation that resolves `$jsonschema` URIs and validates content
+- Application-level validation that resolves `UBLEntity` URIs and validates content
 - API middleware / gateway validation
 - Conformance test suites with known extension schemas
 
 ---
 
-## ESC-4: `$jsonschema` in standalone ABIEs is optional in schema
+## ESC-4: `UBLEntity` in standalone ABIEs is optional in schema
 
-**Spec section:** 9.1 — Schema identification (`S-SCHEMA-IDENTIFICATION`)
+**Spec section:** 10.1 — Schema identification (`S-SCHEMA-IDENTIFICATION`)
 
-**Normative text (lines 406–409):**
-> Every conformant UBL JSON instance shall carry a `$jsonschema` property at its
+**Normative text (Section 10.1):**
+> Every conformant UBL JSON instance shall carry a `UBLEntity` property at its
 > root identifying the governing schema.
 
 > For standalone Aggregate Business Information Entities (ABIEs) exchanged as
-> autonomous root payloads, the instance shall include a `$jsonschema` property
+> autonomous root payloads, the instance shall include a `UBLEntity` property
 > whose value identifies the Common Aggregate Components schema together with a
 > fragment identifier corresponding to the ABIE.
 
@@ -119,17 +110,19 @@ protocol that JSON Schema's single-document validation model cannot capture.
 The same ABIE schema definition (`CommonAggregateComponents-2.5.json`) is used in
 two contexts:
 1. **Embedded** — the ABIE appears as a child within a document (e.g., `Party`
-   inside `Invoice`). Here, `$jsonschema` would be redundant/wrong since the
-   parent document already declares its schema.
+   inside `Invoice`). Here, `UBLEntity` would be redundant since the parent
+   document already declares its schema.
 2. **Standalone** — the ABIE is the root payload (e.g., a `Party` served at an
-   API endpoint). Here, `$jsonschema` is normatively required.
+   API endpoint). Here, `UBLEntity` is normatively required.
 
 Since JSON Schema definitions are context-free (the same `$ref` is used in both
-cases), making `$jsonschema` `required` in the schema would break embedded usage.
-The spec therefore leaves this as a conformance rule rather than a schema constraint.
+cases), making `UBLEntity` `required` in the schema would break embedded usage.
+The schema uses `const` without `required` — if `UBLEntity` is present it must
+match the expected value, but it may be omitted. The spec therefore leaves this
+as a conformance rule rather than a schema constraint.
 
 **Possible implementation approaches:**
-- Wrapper schemas for standalone usage that add `$jsonschema` as required
+- Wrapper schemas for standalone usage that add `UBLEntity` as required
 - API-level validation middleware
 - Conformance profiles that layer additional constraints
 
@@ -137,9 +130,9 @@ The spec therefore leaves this as a conformance rule rather than a schema constr
 
 ## ESC-5: Base64 encoding for `BinaryObjectType.value`
 
-**Spec section:** 10.2 — BinaryObject type (`S-BINARYOBJECT-TYPE`)
+**Spec section:** 11.2 — BinaryObject type
 
-**Normative text (lines 518):**
+**Normative text (Section 11.2):**
 > A BinaryObject is always represented in object form. The value property is
 > required and shall contain a base64-encoded string. The mimeCode property is
 > required and shall identify the media type of the content using an
@@ -172,22 +165,22 @@ Enforcing valid base64 would require either:
 
 ## ESC-6: Safety, security, and data protection considerations are procedural
 
-**Spec section:** 13 — Safety, Security, and Data Protection Considerations
+**Spec section:** 14 — Safety, Security, and Data Protection Considerations
 (`S-SAFETY-SECURITY-AND-DATA-PROTECTION-CONSIDERATIONS`)
 
-**Normative text (lines 945–952):**
+**Normative text:**
 
-*Security (§13.1):*
+*Security (Section 14.1):*
 > UBL JSON instances are ordinary JSON documents. Implementers shall therefore
 > consider the general security considerations applicable to application/json as
 > described in [RFC8259], including validation of input, avoidance of unsafe
 > evaluation of textual content, and proper handling of Unicode per [UTR#36].
 
-> The extension mechanism (section 6.3) allows communities to embed additional
+> The extension mechanism (section 7.3) allows communities to embed additional
 > content. Such content is outside the scope of this specification and may
 > introduce security risks if not governed by appropriate community rules.
 
-*Data protection (§13.2):*
+*Data protection (Section 14.2):*
 > UBL JSON instances may contain personally identifiable information (PII) or
 > commercially sensitive data, including names, addresses, tax identifiers, and
 > financial amounts. This specification does not define mechanisms for redaction,
@@ -218,9 +211,9 @@ on **implementers and organizations**, not on document structure.
 
 | ID | Constraint | Spec § | Enforceable by | JSON Schema gap |
 |----|-----------|--------|----------------|-----------------|
-| ESC-1 | `languageID` uniqueness | 7.4 | Custom validator, Schematron-like rules | No cross-item property uniqueness |
-| ESC-2 | `_n` → `oneOf` convention | 7.1 | Already enforced by `oneOf` | None (observation only) |
-| ESC-3 | `$jsonschema` in extensions | 9.1 | Producer + consumer coordination | No dynamic schema resolution |
-| ESC-4 | `$jsonschema` in standalone ABIEs | 9.1 | Wrapper schemas, API validation | Context-dependent `required` |
-| ESC-5 | Base64 in `BinaryObjectType` | 10.2 | Runtime validation | `contentEncoding` is annotation-only |
-| ESC-6 | Security & privacy | 13 | Organizational policy | Procedural, not structural |
+| ESC-1 | `languageID` uniqueness | 8.4 | Custom validator, Schematron-like rules | No cross-item property uniqueness |
+| ESC-2 | `_n` → `oneOf` convention | 8.1 | Already enforced by `oneOf` | None (observation only) |
+| ESC-3 | `UBLEntity` in extensions | 10.1 | Producer + consumer coordination | No dynamic schema resolution |
+| ESC-4 | `UBLEntity` in standalone ABIEs | 10.1 | Wrapper schemas, API validation | Context-dependent `required` |
+| ESC-5 | Base64 in `BinaryObjectType` | 11.2 | Runtime validation | `contentEncoding` is annotation-only |
+| ESC-6 | Security & privacy | 14 | Organizational policy | Procedural, not structural |

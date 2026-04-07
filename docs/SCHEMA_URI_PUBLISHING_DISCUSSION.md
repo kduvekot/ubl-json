@@ -6,25 +6,31 @@ This document captures the architectural requirements around JSON Schema URIs in
 
 ## Specification Requirements
 
-### Schema Identification (Section 9.1)
+Reference: `UBL-json.xml` (WD01, UBL 2.5 JSON Syntax Binding Version 1.0)
+
+### Schema Identification (Section 10.1)
 
 The UBL 2.5 JSON Syntax Binding specification mandates the following:
 
-**Section 9.1.3 - Document Instances:**
-> "All normative schemas are published in the json/schemas/ directory of the release package. Each schema is identified by a **stable HTTPS URL that is fixed at the major version level** (e.g., https://docs.oasis-open.org/ubl/json/schemas/Invoice-2). **Minor revisions do not change these identifiers.**"
+**Section 13.1 - Normative Status:**
+> "All normative schemas are published in the `json/schemas/` directory of the release package. Each schema is identified by a **stable URI**, listed in Annex C Normative schemas, **that is fixed at the major version level**. Minor revisions do not change these identifiers."
 
-**Forward/Backward Compatibility Guarantee:**
+Annex C lists the canonical identifiers, e.g.:
+- `https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2`
+- `https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2`
+
+**Forward/Backward Compatibility Guarantee (Section 13.2):**
 > "Because the identifiers are stable across all minor revisions of the UBL 2.x line, a document referencing, for example, a UBL Invoice-2 remains valid regardless of whether the schema implementation in use is UBL 2.5, 2.6, or 2.x. This guarantees forward compatibility, thereby protecting investments in existing implementations and reducing the operational risk of upgrading to newer releases."
 
 ## Key Architectural Decisions
 
 ### 1. **Major Version Pinning in URIs**
-- Schema URIs should be pinned at the major version level (e.g., `Invoice-2`, `Order-2`)
+- Schema URIs should be pinned at the major version level (e.g., `UBL-Invoice-2`, `UBL-Order-2`)
 - The URI should **not** include minor or patch versions
 - This allows the same URI to resolve across all compatible minor releases
 
 ### 2. **Backwards Compatibility Across Minor Versions**
-- A document that specifies `$schema: https://docs.oasis-open.org/ubl/json/schemas/Invoice-2`
+- A document that specifies `UBLEntity: https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2`
 - Must remain valid when validated against:
   - UBL 2.5 release
   - UBL 2.6 release
@@ -32,7 +38,7 @@ The UBL 2.5 JSON Syntax Binding specification mandates the following:
 - Schema changes in minor versions must be backwards compatible
 
 ### 3. **URI Resolution and Publishing**
-- The stable HTTPS URL must resolve to the authoritative schema
+- The stable URI must resolve to the authoritative schema
 - The schema should be published in the `json/schemas/` directory of each UBL release package
 - The URI must consistently resolve to the appropriate version's schema
 
@@ -108,12 +114,16 @@ The UBL 2.5 JSON Syntax Binding specification mandates the following:
    - Establish procedures for schema updates
    - Create deprecation and retirement policies
 
-## Related Sections in Specification
+## Related Sections in Specification (WD01)
 
-- **Section 9.1:** Versioning and Profiles
-- **Section 9.1.1:** Schema Identification
-- **Section 9.1.3:** Document Instances
-- **Section 10.2:** Normative Status of JSON Schemas
+- **Section 10:** Versioning and Profiles
+- **Section 10.1:** Schema Identification
+- **Section 10.2:** Interoperability Profiles
+- **Section 13.1:** Normative Status
+- **Section 13.2:** Document Instances
+- **Section 13.3:** Standalone ABIEs
+- **Section 13.4:** Normative Schemas
+- **Annex C:** Normative Schemas (canonical URI listing)
 
 ## Status
 

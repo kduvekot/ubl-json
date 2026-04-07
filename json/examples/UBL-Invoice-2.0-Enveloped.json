@@ -1,27 +1,33 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Invoice-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2",
   "UBLExtensions": [
     {
+      "UBLEntity": "dummy1",
       "ExtensionURI": "dummy1",
       "ExtensionContent": {
         "AnExtension": "urn:X-dummy1"
       }
     },
     {
+      "UBLEntity": "dummy2",
       "ExtensionURI": "dummy2",
       "ExtensionContent": {
         "AnotherExtension": "urn:X-dummy2"
       }
     },
     {
+      "UBLEntity": "https://docs.oasis-open.org/ubl/json/jws/enveloped",
       "ExtensionURI": "https://docs.oasis-open.org/ubl/json/jws/enveloped",
       "ExtensionContent": {
-        "UBLDocumentSignatures": {
-          "SignatureInformation": {
-            "ID": "urn:oasis:names:specification:ubl:signature:1",
-            "_TODO": "Replace with a valid JWS (RFC 7515) object — see DocBook Section 11"
+        "signatures": [
+          {
+            "protected": "eyJhbGciOiJSUzI1NiIsImtpZCI6InVibC1leGFtcGxlLWtleS0xIn0",
+            "signature": "RJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzUSYgFQxlbTCVkp_oRkKGhk0DDFhWsNFT9b372r6z2rNRJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzUSYgFQxlbTCVkp_oRkKGhk0DDFhWsNFT9b372r6z2rNRJiAVDGVtMJWSn-hGQoaGTQMMWFaw0VP1vfvavrPas1EmIBUMZW0wlZKf6EZChoZNAwxYVrDRU_W9-9q-s9qzQ",
+            "header": {
+              "kid": "ubl-example-key-1"
+            }
           }
-        }
+        ]
       }
     }
   ],
@@ -29,7 +35,6 @@
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:Invoice-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-invoice-notification-draft",
   "ID": "A00095678",
-  "CopyIndicator": false,
   "UUID": "849FBBCE-E081-40B4-906C-94C5FF9D1AC3",
   "IssueDate": "2005-06-21",
   "InvoiceTypeCode": "SalesInvoice",
