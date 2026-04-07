@@ -2,7 +2,7 @@
 
 ## Outstanding verification
 
-1. **Chapters 1-6** — Not explicitly checked against the implementation. May contain requirements in the introduction, scope, terminology, or UBL Semantic Library description that affect schema generation.
+1. ~~**Chapters 1-6**~~ — Checked. No issues found. Naming conventions (TitleCase for BIEs, lowerCamelCase for supplementary components), deprecated element exclusion (5.2), standalone ABIE support (6.2), and description annotations (5.1) all verified correct.
 
 2. **SignatureAggregateComponents schema** — Chapter 12 describes `UBLDocumentSignatures` and `SignatureInformation` types. Schemas exist and pass metaschema validation, but a field-by-field check against the spec and GC data has not been done.
 
