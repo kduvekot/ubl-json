@@ -340,6 +340,7 @@ def _jws_stub_extension():
     replaced with a real JWS object before publishing.
     """
     return {
+        "UBLEntity": SIG_ENVELOPED_URI,
         "ExtensionURI": SIG_ENVELOPED_URI,
         "ExtensionContent": {
             "UBLDocumentSignatures": {
@@ -383,10 +384,14 @@ def convert_element(elem, type_map, deprecated=None):
                 continue
 
             ext = convert_element(child, type_map, deprecated)
-            # DocBook Section 6.3: ExtensionURI is required.
+            # DocBook Section 7.3: ExtensionURI is required.
             # Some legacy XML examples omit it; add a placeholder.
             if isinstance(ext, dict) and "ExtensionURI" not in ext:
                 ext = {"ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined", **ext}
+            # DocBook Section 10.1: UBLEntity is required, identifies the
+            # schema governing the extension content.
+            if isinstance(ext, dict) and "UBLEntity" not in ext:
+                ext = {"UBLEntity": ext.get("ExtensionURI", ""), **ext}
             result.append(ext)
         return result
 

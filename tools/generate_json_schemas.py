@@ -770,7 +770,17 @@ def generate_common_extension_components(output_dir, registry):
         if cardinality == '1':
             extension_required.append(child_component_name)
 
-    # DocBook Section 6.3: "Each extension shall be a JSON object
+    # DocBook Section 10.1: "each extension container shall include a
+    # UBLEntity property whose value identifies the schema context and
+    # version governing the extension content."
+    extension_properties['UBLEntity'] = {
+        'type': 'string',
+        'minLength': 1,
+        'description': 'Identifies the schema governing this extension content.'
+    }
+    extension_required.append('UBLEntity')
+
+    # DocBook Section 7.3: "Each extension shall be a JSON object
     # containing at least the following members: ExtensionURI ... ExtensionContent"
     if 'ExtensionURI' not in extension_required:
         extension_required.append('ExtensionURI')

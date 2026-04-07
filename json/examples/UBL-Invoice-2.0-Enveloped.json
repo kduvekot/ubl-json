@@ -2,18 +2,21 @@
   "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Invoice-2",
   "UBLExtensions": [
     {
+      "UBLEntity": "dummy1",
       "ExtensionURI": "dummy1",
       "ExtensionContent": {
         "AnExtension": "urn:X-dummy1"
       }
     },
     {
+      "UBLEntity": "dummy2",
       "ExtensionURI": "dummy2",
       "ExtensionContent": {
         "AnotherExtension": "urn:X-dummy2"
       }
     },
     {
+      "UBLEntity": "https://docs.oasis-open.org/ubl/json/jws/enveloped",
       "ExtensionURI": "https://docs.oasis-open.org/ubl/json/jws/enveloped",
       "ExtensionContent": {
         "UBLDocumentSignatures": {
