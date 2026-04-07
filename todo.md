@@ -6,7 +6,7 @@
 
 2. ~~**SignatureAggregateComponents schema**~~ — Checked field-by-field against GC (`UBL-Signature-Entities-2.5.gc`, 5 rows). Both `UBLDocumentSignaturesType` and `SignatureInformationType` match the GC exactly: correct properties, cardinality, data types, required fields, descriptions, and titles. `SignatureBasicComponents` also verified (2 BBIEs, both `Identifier. Type`). Runtime validation tests pass.
 
-3. **309 ABIE types** — The overall pattern is verified (UBLEntity, additionalProperties: false, minProperties: 1, correct cardinality handling), but individual ABIE children have not been exhaustively checked against the GC.
+3. ~~**309 ABIE types**~~ — Exhaustively checked all 309 ABIEs against GC. Results: 0 missing/extra types, 0 child name mismatches (2,855 children), 0 cardinality errors, 0 required array mismatches, 0 structural errors (additionalProperties, minProperties, $anchor). UBLEntity is correctly `const`+required on documents and `const`+optional on ABIEs (dual-use: standalone vs embedded).
 
 4. **1197 BBIE mappings** — The mapping logic and data type resolution is verified, but not every individual BBIE has been checked against the GC.
 
