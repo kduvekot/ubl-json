@@ -1221,8 +1221,8 @@ def generate_document_schemas(output_dir, registry):
         if dictionary_entry_name:
             schema['title'] = dictionary_entry_name
 
-        # Write the schema to file
-        filename = f"{doc_name}{FILE_VERSION_SUFFIX}.json"
+        # Write the schema to file (Annex C: UBL-{DocName}-2.5.json)
+        filename = f"UBL-{doc_name}{FILE_VERSION_SUFFIX}.json"
         output_file = output_dir / filename
         with open(output_file, 'w') as f:
             json.dump(schema, f, indent=2)
@@ -1282,7 +1282,7 @@ def generate_catalog(output_dir, registry):
 
         doc_name = model_name.replace('UBL-', '').replace('-2.5', '')
         schema_url = f'{SCHEMA_BASE}/UBL-{doc_name}-2'
-        catalog[schema_url] = f'maindoc/{doc_name}{FILE_VERSION_SUFFIX}.json'
+        catalog[schema_url] = f'maindoc/UBL-{doc_name}{FILE_VERSION_SUFFIX}.json'
 
     # Write the catalog
     output_dir.mkdir(parents=True, exist_ok=True)

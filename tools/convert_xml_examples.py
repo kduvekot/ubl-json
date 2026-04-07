@@ -656,7 +656,7 @@ def main():
 
     # Get available document schemas
     maindoc_schemas = {
-        p.stem.replace("-2.5", ""): p
+        p.stem.replace("-2.5", "").removeprefix("UBL-"): p
         for p in (args.schemas_dir / "maindoc").glob("*.json")
     }
     print(f"  Found {len(maindoc_schemas)} document schemas")
@@ -694,7 +694,7 @@ def main():
         index_entries[out_name] = {
             "documentType": doc_type,
             "sourceXML": xml_path.name,
-            "schemaRef": f"../schemas/maindoc/{doc_type}-2.5.json",
+            "schemaRef": f"../schemas/maindoc/UBL-{doc_type}-2.5.json",
         }
 
         print(f"  OK:    {xml_path.name} → {out_name} ({doc_type})")
