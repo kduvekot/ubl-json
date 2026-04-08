@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PurchaseReceipt-2",
+  "description": "A receipt for a purchase made with cash or cash equivalents.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PurchaseReceipt-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "UBLVersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "TransactionDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/TransactionDate"
+    },
+    "TransactionTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/TransactionTime"
+    },
+    "PurchaseDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/PurchaseDate"
+    },
+    "PurchaseTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/PurchaseTime"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "DocumentCurrencyCode": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/DocumentCurrencyCode"
+    },
+    "PurchaseReference": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PurchaseReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PurchaseReferenceType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "SalesDocumentReference": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "AccountingSupplierParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SupplierPartyType"
+    },
+    "AccountingCustomerParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/CustomerPartyType"
+    },
+    "CashierContact": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ContactType"
+    },
+    "CashRegister": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/CashRegisterType"
+    },
+    "PointOfSaleLocation": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/LocationType"
+    },
+    "PointOfSaleContact": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ContactType"
+    },
+    "Delivery": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DeliveryType"
+    },
+    "Payment": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PaymentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PaymentType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "PaymentMeans": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PaymentMeansType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PaymentMeansType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "AllowanceCharge": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/AllowanceChargeType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/AllowanceChargeType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "TaxExchangeRate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ExchangeRateType"
+    },
+    "PricingExchangeRate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ExchangeRateType"
+    },
+    "TaxTotal": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/TaxTotalType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/TaxTotalType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "LegalMonetaryTotal": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/MonetaryTotalType"
+    },
+    "PurchaseReceiptLine": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PurchaseReceiptLineType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PurchaseReceiptLineType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "AccountingSupplierParty",
+    "LegalMonetaryTotal",
+    "PurchaseReceiptLine"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Purchase Receipt. Details"
+}

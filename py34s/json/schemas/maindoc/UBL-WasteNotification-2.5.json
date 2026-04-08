@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-WasteNotification-2",
+  "description": "A document used to notify the competent authorities of planned movements of waste.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-WasteNotification-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "UBLVersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "WasteNotificationTypeCode": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/WasteNotificationTypeCode"
+    },
+    "ConsignmentQuantity": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ConsignmentQuantity"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "NotifierParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "CustomsParty": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "DisposalFacilityParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "RecoveryFacilityParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "WasteProducerParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "Shipment": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ShipmentType"
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "SenderParty",
+    "ReceiverParty",
+    "NotifierParty",
+    "CustomsParty",
+    "WasteProducerParty",
+    "Shipment"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Waste Notification. Details"
+}
