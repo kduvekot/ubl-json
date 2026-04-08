@@ -21,6 +21,13 @@ from tools.convert_to_docbook import (
     slugify,
     render_inline,
     convert,
+    _url_base,
+    _build_entities,
+    _emit_preamble,
+    _emit_articleinfo,
+    _is_definition_para,
+    _get_list_tag,
+    _render_list_items,
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -96,6 +103,108 @@ def test_slugify():
 
 
 # ── Unit tests for render_inline ──────────────────────────────────────────
+
+def test_url_base():
+    """_url_base should strip filename and annotations from URLs."""
+    return {
+        "simple": _url_base("https://example.com/path/file.html"),
+        "with_annotation": _url_base("https://example.com/path/file.html (Authoritative)"),
+        "no_path": _url_base("https://example.com"),
+    }
+
+
+def test_build_entities():
+    """_build_entities should produce the correct entity dict from metadata."""
+    meta = {
+        "title": "UBL 2.5 JSON Syntax Binding Version 1.0",
+        "status": "Working Draft 01",
+        "date": "01 January 2025",
+        "this_version_urls": ["https://docs.oasis-open.org/ubl/csd01-UBL-2.5-JSON-1.0/file.html"],
+        "latest_version_urls": ["https://docs.oasis-open.org/ubl/UBL-2.5-JSON-1.0/file.html"],
+        "technical_committee": "OASIS UBL TC",
+        "abstract": "This document defines...",
+    }
+    entities = _build_entities(meta)
+    return {
+        "name": entities["name"],
+        "version": entities["version"],
+        "spec-version": entities["spec-version"],
+        "stage": entities["stage"],
+        "has_this_loc": bool(entities["this-loc"]),
+        "has_latest_loc": bool(entities["latest-loc"]),
+    }
+
+
+def test_emit_preamble():
+    """_emit_preamble should produce valid XML declaration with entities."""
+    entities = {"name": "UBL", "version": "2.5"}
+    lines = _emit_preamble(entities)
+    joined = "\n".join(lines)
+    return {
+        "has_xml_decl": "<?xml" in joined,
+        "has_doctype": "<!DOCTYPE" in joined,
+        "has_entity": '<!ENTITY name "UBL">' in joined,
+        "line_count": len(lines),
+    }
+
+
+def test_emit_articleinfo():
+    """_emit_articleinfo should produce the <articleinfo> block."""
+    meta = {
+        "title": "Test Title",
+        "status": "Draft",
+        "date": "2025-01-01",
+        "editors": [{"name": "John Doe", "email": "john@example.com", "org": "ACME"}],
+        "technical_committee": "Test TC",
+        "abstract": "A test abstract.",
+    }
+    lines = _emit_articleinfo(meta)
+    joined = "\n".join(lines)
+    return {
+        "has_article_open": "<article " in joined,
+        "has_articleinfo": "<articleinfo>" in joined,
+        "has_articleinfo_close": "</articleinfo>" in joined,
+        "has_editor": "<editor>" in joined,
+        "has_abstract": "<abstract>" in joined,
+        "line_count": len(lines),
+    }
+
+
+def test_is_definition_para():
+    """_is_definition_para should detect TERM<tab>Definition patterns."""
+    yes = {"inline": [{"type": "text", "text": "Term", "bold": True}], "raw_text": "Term\tDefinition"}
+    no_tab = {"inline": [{"type": "text", "text": "Term", "bold": True}], "raw_text": "Term Definition"}
+    no_bold = {"inline": [{"type": "text", "text": "Term", "bold": False}], "raw_text": "Term\tDefinition"}
+    empty = {"inline": [], "raw_text": ""}
+    return {
+        "with_tab_and_bold": _is_definition_para(yes),
+        "without_tab": _is_definition_para(no_tab),
+        "without_bold": _is_definition_para(no_bold),
+        "empty": _is_definition_para(empty),
+    }
+
+
+def test_get_list_tag():
+    """_get_list_tag should return correct list type based on numbering format."""
+    nmap = {("1", "0"): "decimal", ("2", "0"): "bullet", ("3", "0"): "lowerRoman"}
+    return {
+        "decimal": _get_list_tag("1", 0, nmap),
+        "bullet": _get_list_tag("2", 0, nmap),
+        "roman": _get_list_tag("3", 0, nmap),
+        "unknown": _get_list_tag("99", 0, nmap),
+    }
+
+
+def test_render_list_items():
+    """_render_list_items should produce proper nested list XML."""
+    nmap = {("1", "0"): "bullet"}
+    items = [
+        {"numId": "1", "ilvl": 0, "inline": [{"type": "text", "text": "Item 1", "bold": False, "italic": False}]},
+        {"numId": "1", "ilvl": 0, "inline": [{"type": "text", "text": "Item 2", "bold": False, "italic": False}]},
+    ]
+    lines = _render_list_items(items, 2, nmap)
+    return {"lines": lines, "line_count": len(lines)}
+
 
 def test_render_inline_text():
     """Plain text rendering."""
@@ -224,6 +333,13 @@ ALL_TESTS = [
     ("xml_escape_clean", test_xml_escape_clean),
     ("xml_escape_entity_value", test_xml_escape_entity_value),
     ("slugify", test_slugify),
+    ("url_base", test_url_base),
+    ("build_entities", test_build_entities),
+    ("emit_preamble", test_emit_preamble),
+    ("emit_articleinfo", test_emit_articleinfo),
+    ("is_definition_para", test_is_definition_para),
+    ("get_list_tag", test_get_list_tag),
+    ("render_list_items", test_render_list_items),
     ("render_inline_text", test_render_inline_text),
     ("render_inline_bold_italic", test_render_inline_bold_italic),
     ("render_inline_hyperlink", test_render_inline_hyperlink),

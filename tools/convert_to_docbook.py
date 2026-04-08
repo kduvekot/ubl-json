@@ -514,114 +514,31 @@ def find_table_positions(doc):
 
 
 # ---------------------------------------------------------------------------
-# Main conversion
+# Helpers for convert() — extracted for readability and testability
 # ---------------------------------------------------------------------------
 
-def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
-    doc = docx.Document(docx_path)
-    hyperlink_map = build_hyperlink_map(doc)
-    numbering_map = build_numbering_map(docx_path)
+def _indent(level):
+    """Return indentation string for the given nesting level."""
+    return "  " * level
 
-    # -----------------------------------------------------------------------
-    # Phase 1: Parse all paragraphs into structured elements
-    # -----------------------------------------------------------------------
-    elements = []  # list of dicts describing each document element
 
-    # Build a mapping of paragraph_index -> table_object_index so we know
-    # where to insert table markers as we walk doc.paragraphs.
-    table_positions = find_table_positions(doc)
+def _url_base(url):
+    """Strip filename (last path segment) and trailing slash from a URL."""
+    url = url.strip()
+    # Remove any trailing annotation like " (Authoritative)"
+    url = re.sub(r"\s*\([^)]*\)\s*$", "", url).strip()
+    # Strip the last path component (the filename)
+    return url.rsplit("/", 1)[0].rstrip("/")
 
-    seen_first_heading = False
 
-    for i, p in enumerate(doc.paragraphs):
-        style, numId, ilvl = get_paragraph_info(p)
-
-        # Skip ToC entries
-        if style.startswith("toc"):
-            continue
-
-        # Skip the "Table of Contents" heading
-        if style == "Heading 1" and p.text.strip() == "Table of Contents":
-            continue
-
-        # Track whether we've seen the first Heading 1.
-        # Paragraphs before it are front matter (already handled by
-        # parse_front_matter()) and must not be emitted as body content.
-        if style == "Heading 1":
-            seen_first_heading = True
-        elif not seen_first_heading:
-            # Front-matter region: skip Title, Subtitle, Normal, etc.
-            # They are already processed by parse_front_matter().
-            if i in table_positions:
-                pass  # ignore any table that appears before the first heading
-            continue
-
-        # Handle Subtitle paragraphs in the body (unusual, but treat as Normal)
-        if style == "Subtitle":
-            style = "Normal"
-
-        text = p.text.strip()
-        raw_text = p.text  # preserve tabs for definition detection
-
-        inline = extract_inline_content(p, hyperlink_map)
-
-        # Skip truly empty Normal paragraphs
-        if not text and not inline and style == "Normal":
-            # Still insert a TABLE marker if a table follows this empty paragraph.
-            if i in table_positions:
-                elements.append({"style": "TABLE", "index": table_positions[i]})
-            continue
-
-        elem = {
-            "index": i,
-            "style": style,
-            "text": text,
-            "raw_text": raw_text,
-            "inline": inline,
-            "numId": numId,
-            "ilvl": ilvl,
-        }
-        elements.append(elem)
-
-        # Insert a TABLE marker if a table follows this paragraph in the body.
-        if i in table_positions:
-            elements.append({"style": "TABLE", "index": table_positions[i]})
-
-    # -----------------------------------------------------------------------
-    # Phase 2: Group elements into a tree structure
-    # -----------------------------------------------------------------------
-    # We'll generate the XML by walking through elements and tracking
-    # the section nesting stack.
-
-    xml_lines = []
-
-    def indent(level):
-        return "  " * level
-
-    # --- Parse front-matter metadata ---
-    meta = parse_front_matter(doc)
-
-    # -----------------------------------------------------------------------
-    # Build entity definitions from parsed metadata
-    # -----------------------------------------------------------------------
-
-    def _url_base(url):
-        """Strip filename (last path segment) and trailing slash from a URL."""
-        url = url.strip()
-        # Remove any trailing annotation like " (Authoritative)"
-        url = re.sub(r"\s*\([^)]*\)\s*$", "", url).strip()
-        # Strip the last path component (the filename)
-        return url.rsplit("/", 1)[0].rstrip("/")
-
-    # this-loc: base URL from first "this version" URL
+def _build_entities(meta):
+    """Build the dict of XML entity definitions from parsed front-matter metadata."""
     this_version_urls = meta.get("this_version_urls", [])
     this_loc = _url_base(this_version_urls[0]) if this_version_urls else ""
 
-    # latest-loc: base URL from first "latest version" URL
     latest_version_urls = meta.get("latest_version_urls", [])
     latest_loc = _url_base(latest_version_urls[0]) if latest_version_urls else ""
 
-    # previous-loc: base URL from first "previous version" URL (may be empty)
     previous_version_urls = meta.get("previous_version_urls", [])
     previous_loc = _url_base(previous_version_urls[0]) if previous_version_urls else ""
 
@@ -641,7 +558,7 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
     if m:
         spec_version = m.group(1)
 
-    entities = {
+    return {
         "name": "UBL",
         "version": "2.5",
         "spec-version": spec_version,
@@ -656,153 +573,268 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         "abstract-text": meta.get("abstract", ""),
     }
 
-    # -----------------------------------------------------------------------
-    # XML declaration and DOCTYPE with entity declarations
-    # -----------------------------------------------------------------------
-    xml_lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-    xml_lines.append('<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"')
-    xml_lines.append('  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [')
+
+def _emit_preamble(entities):
+    """Generate the XML declaration and DOCTYPE with entity declarations."""
+    lines = []
+    lines.append('<?xml version="1.0" encoding="UTF-8"?>')
+    lines.append('<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"')
+    lines.append('  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [')
     for ent_name, ent_value in entities.items():
-        xml_lines.append(f'  <!ENTITY {ent_name} "{xml_escape(ent_value)}">')
-    xml_lines.append(']>')
-    xml_lines.append("")
+        lines.append(f'  <!ENTITY {ent_name} "{xml_escape(ent_value)}">')
+    lines.append(']>')
+    lines.append("")
+    return lines
 
-    # -----------------------------------------------------------------------
-    # Generate <articleinfo> using entity references
-    # -----------------------------------------------------------------------
-    xml_lines.append('<article status="&standard;" lang="en">')
-    xml_lines.append("  <articleinfo>")
 
-    # Product name / number (always UBL 2.5 for this document)
-    xml_lines.append('    <productname class="trade">&name;</productname>')
-    xml_lines.append('    <productnumber>&version;</productnumber>')
+def _emit_articleinfo(meta):
+    """Generate the <articleinfo> block using entity references and metadata."""
+    lines = []
+    lines.append('<article status="&standard;" lang="en">')
+    lines.append("  <articleinfo>")
 
-    # Standards track (invariant — not version-specific)
-    xml_lines.append('    <releaseinfo role="track">Standards Track Work Product</releaseinfo>')
+    lines.append('    <productname class="trade">&name;</productname>')
+    lines.append('    <productnumber>&version;</productnumber>')
+    lines.append('    <releaseinfo role="track">Standards Track Work Product</releaseinfo>')
 
-    # "This version" URLs — HTML first, then PDF, then XML (authoritative)
-    xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
-    xml_lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
-    xml_lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
+    # "This version" URLs
+    lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
+    lines.append('    <releaseinfo role="OASIS-specification-this">&this-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
+    lines.append('    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
 
     # "Previous version" URLs (if available)
     if meta.get("previous_version_urls"):
-        xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
-        xml_lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
-        xml_lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
+        lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
+        lines.append('    <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
+        lines.append('    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-2.5-JSON-&spec-version;.xml</releaseinfo>')
 
     # "Latest version" URLs
-    xml_lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
-    xml_lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
+    lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</releaseinfo>')
+    lines.append('    <releaseinfo role="OASIS-specification-latest">&latest-loc;/UBL-2.5-JSON-&spec-version;.pdf</releaseinfo>')
 
-    # Title
-    xml_lines.append("    <title>&title;</title>")
+    lines.append("    <title>&title;</title>")
 
-    # Technical committee
     if meta.get("technical_committee"):
-        xml_lines.append('    <releaseinfo role="committee">&committee;</releaseinfo>')
+        lines.append('    <releaseinfo role="committee">&committee;</releaseinfo>')
 
-    # Editors (structured content — kept dynamic, not entities)
+    # Editors
     editors = meta.get("editors", [])
     if editors:
-        xml_lines.append("    <authorgroup>")
+        lines.append("    <authorgroup>")
         for ed in editors:
-            xml_lines.append("      <editor>")
+            lines.append("      <editor>")
             name = ed.get("name", "")
-            # Split name into firstname / surname on the last space
             if " " in name:
                 firstname, surname = name.rsplit(" ", 1)
             else:
                 firstname, surname = "", name
-            xml_lines.append(f"        <firstname>{xml_escape(firstname)}</firstname>")
-            xml_lines.append(f"        <surname>{xml_escape(surname)}</surname>")
+            lines.append(f"        <firstname>{xml_escape(firstname)}</firstname>")
+            lines.append(f"        <surname>{xml_escape(surname)}</surname>")
             org = ed.get("org", "")
             if org:
-                xml_lines.append(f"        <affiliation><orgname>{xml_escape(org)}</orgname></affiliation>")
+                lines.append(f"        <affiliation><orgname>{xml_escape(org)}</orgname></affiliation>")
             email = ed.get("email", "")
             if email:
-                xml_lines.append(f"        <email>{xml_escape(email)}</email>")
-            xml_lines.append("      </editor>")
-        xml_lines.append("    </authorgroup>")
+                lines.append(f"        <email>{xml_escape(email)}</email>")
+            lines.append("      </editor>")
+        lines.append("    </authorgroup>")
 
-    # Publication date
     if meta.get("date"):
-        xml_lines.append("    <pubdate>&pubdate;</pubdate>")
+        lines.append("    <pubdate>&pubdate;</pubdate>")
 
-    # Related work (structured content — kept dynamic, not entities)
+    # Related work
     related = meta.get("related_work", [])
     if related:
-        xml_lines.append('    <legalnotice role="related">')
-        xml_lines.append("      <title>Related work</title>")
-        # If the first line is an introductory sentence, emit it as a <para>
-        # then the remainder as <bibliomixed> entries inside a <bibliolist>.
+        lines.append('    <legalnotice role="related">')
+        lines.append("      <title>Related work</title>")
         intro_lines = []
         bib_entries = []
         for line in related:
-            # Heuristic: lines starting with '[' are bibliography references
             if line.lstrip().startswith("["):
                 bib_entries.append(line)
             else:
                 intro_lines.append(line)
         for intro in intro_lines:
-            xml_lines.append(f"      <para>{xml_escape(intro)}</para>")
+            lines.append(f"      <para>{xml_escape(intro)}</para>")
         if bib_entries:
-            xml_lines.append("      <bibliolist>")
+            lines.append("      <bibliolist>")
             for entry in bib_entries:
-                xml_lines.append(f"        <bibliomixed>{xml_escape(entry)}</bibliomixed>")
-            xml_lines.append("      </bibliolist>")
-        xml_lines.append("    </legalnotice>")
+                lines.append(f"        <bibliomixed>{xml_escape(entry)}</bibliomixed>")
+            lines.append("      </bibliolist>")
+        lines.append("    </legalnotice>")
 
-    # Abstract
     if meta.get("abstract"):
-        xml_lines.append("    <abstract>")
-        xml_lines.append("      <para>&abstract-text;</para>")
-        xml_lines.append("    </abstract>")
+        lines.append("    <abstract>")
+        lines.append("      <para>&abstract-text;</para>")
+        lines.append("    </abstract>")
 
-    # Citation format — build structured citation from metadata
-    xml_lines.append('    <legalnotice role="citation" id="CITATION">')
-    xml_lines.append("      <title>Citation format</title>")
-    xml_lines.append("      <para>When referencing this specification the following citation format should be used:</para>")
-    xml_lines.append('      <bibliolist id="citationfmt">')
-    xml_lines.append('        <bibliomixed id="UBL-JSON" conformance="skip">')
-    xml_lines.append('          <abbrev condition="oasis">UBL-2.5-JSON-&spec-version;</abbrev>')
-    xml_lines.append('          <citetitle>&title;.</citetitle>')
+    # Citation format
+    lines.append('    <legalnotice role="citation" id="CITATION">')
+    lines.append("      <title>Citation format</title>")
+    lines.append("      <para>When referencing this specification the following citation format should be used:</para>")
+    lines.append('      <bibliolist id="citationfmt">')
+    lines.append('        <bibliomixed id="UBL-JSON" conformance="skip">')
+    lines.append('          <abbrev condition="oasis">UBL-2.5-JSON-&spec-version;</abbrev>')
+    lines.append('          <citetitle>&title;.</citetitle>')
 
-    # Build "Edited by X, Y and Z." from editors
     editors = meta.get("editors", [])
     if editors:
-        editor_names = []
-        for ed in editors:
-            name = ed.get("name", "")
-            editor_names.append(name)
+        editor_names = [ed.get("name", "") for ed in editors]
         if len(editor_names) == 1:
             editors_str = editor_names[0]
         elif len(editor_names) == 2:
             editors_str = f"{editor_names[0]} and {editor_names[1]}"
         else:
             editors_str = ", ".join(editor_names[:-1]) + f" and {editor_names[-1]}"
-        xml_lines.append(f'          <bibliomisc>Edited by {xml_escape(editors_str)}.</bibliomisc>')
+        lines.append(f'          <bibliomisc>Edited by {xml_escape(editors_str)}.</bibliomisc>')
 
-    xml_lines.append('          <date>&pubdate;.</date>')
-    xml_lines.append('          <releaseinfo>&standard;.</releaseinfo>')
-    xml_lines.append('          <bibliomisc>')
-    xml_lines.append('            <ulink url="&this-loc;/UBL-2.5-JSON-&spec-version;.html">&this-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.')
-    xml_lines.append('            Latest stage: <ulink url="&latest-loc;/UBL-2.5-JSON-&spec-version;.html">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.')
-    xml_lines.append('          </bibliomisc>')
-    xml_lines.append('        </bibliomixed>')
-    xml_lines.append('      </bibliolist>')
-    xml_lines.append('    </legalnotice>')
+    lines.append('          <date>&pubdate;.</date>')
+    lines.append('          <releaseinfo>&standard;.</releaseinfo>')
+    lines.append('          <bibliomisc>')
+    lines.append('            <ulink url="&this-loc;/UBL-2.5-JSON-&spec-version;.html">&this-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.')
+    lines.append('            Latest stage: <ulink url="&latest-loc;/UBL-2.5-JSON-&spec-version;.html">&latest-loc;/UBL-2.5-JSON-&spec-version;.html</ulink>.')
+    lines.append('          </bibliomisc>')
+    lines.append('        </bibliomixed>')
+    lines.append('      </bibliolist>')
+    lines.append('    </legalnotice>')
 
-    # Status / notices text (copyright / license notice)
     status_text = meta.get("status_text", "")
     if status_text:
-        xml_lines.append('    <legalnotice role="notices">')
-        xml_lines.append("      <title>Notices</title>")
-        xml_lines.append(f"      <para>{xml_escape(status_text)}</para>")
-        xml_lines.append("    </legalnotice>")
+        lines.append('    <legalnotice role="notices">')
+        lines.append("      <title>Notices</title>")
+        lines.append(f"      <para>{xml_escape(status_text)}</para>")
+        lines.append("    </legalnotice>")
 
-    xml_lines.append("  </articleinfo>")
-    xml_lines.append("")
+    lines.append("  </articleinfo>")
+    lines.append("")
+    return lines
+
+
+def _parse_elements(doc, hyperlink_map, table_positions):
+    """Parse all document paragraphs into a flat list of structured elements.
+
+    Skips front-matter (before the first Heading 1), ToC entries, and empty
+    Normal paragraphs.  Inserts TABLE markers where tables appear in the body.
+    """
+    elements = []
+    seen_first_heading = False
+
+    for i, p in enumerate(doc.paragraphs):
+        style, numId, ilvl = get_paragraph_info(p)
+
+        if style.startswith("toc"):
+            continue
+
+        if style == "Heading 1" and p.text.strip() == "Table of Contents":
+            continue
+
+        if style == "Heading 1":
+            seen_first_heading = True
+        elif not seen_first_heading:
+            if i in table_positions:
+                pass  # ignore tables in front matter
+            continue
+
+        if style == "Subtitle":
+            style = "Normal"
+
+        text = p.text.strip()
+        raw_text = p.text
+        inline = extract_inline_content(p, hyperlink_map)
+
+        if not text and not inline and style == "Normal":
+            if i in table_positions:
+                elements.append({"style": "TABLE", "index": table_positions[i]})
+            continue
+
+        elem = {
+            "index": i,
+            "style": style,
+            "text": text,
+            "raw_text": raw_text,
+            "inline": inline,
+            "numId": numId,
+            "ilvl": ilvl,
+        }
+        elements.append(elem)
+
+        if i in table_positions:
+            elements.append({"style": "TABLE", "index": table_positions[i]})
+
+    return elements
+
+
+def _is_definition_para(el):
+    """Check if a paragraph looks like TERM<tab>Definition."""
+    inl = el.get("inline", [])
+    if not inl:
+        return False
+    first = inl[0]
+    if first["type"] != "text" or not first["bold"]:
+        return False
+    raw = el.get("raw_text", "")
+    return "\t" in raw
+
+
+def _get_list_tag(numId, ilvl_int, numbering_map):
+    """Return 'orderedlist' or 'itemizedlist' based on the numbering format."""
+    fmt = numbering_map.get((numId, str(ilvl_int)), "bullet")
+    ordered = fmt in ("decimal", "lowerLetter", "lowerRoman",
+                      "upperLetter", "upperRoman")
+    return "orderedlist" if ordered else "itemizedlist"
+
+
+def _render_list_items(items, base_lvl, numbering_map):
+    """Render a list of items (possibly with nested sub-lists) to XML lines."""
+    lines = []
+    if not items:
+        return lines
+    tag = _get_list_tag(items[0]["numId"], items[0]["ilvl"], numbering_map)
+    lines.append(f"{_indent(base_lvl)}<{tag}>")
+
+    idx = 0
+    while idx < len(items):
+        li = items[idx]
+        content = render_inline(li["inline"])
+        lines.append(f"{_indent(base_lvl+1)}<listitem>")
+        lines.append(f"{_indent(base_lvl+2)}<para>{content}</para>")
+
+        nested = []
+        while (idx + 1 < len(items)
+               and items[idx + 1]["ilvl"] > li["ilvl"]):
+            idx += 1
+            nested.append(items[idx])
+
+        if nested:
+            lines.extend(_render_list_items(nested, base_lvl + 2, numbering_map))
+
+        lines.append(f"{_indent(base_lvl+1)}</listitem>")
+        idx += 1
+
+    lines.append(f"{_indent(base_lvl)}</{tag}>")
+    return lines
+
+
+# ---------------------------------------------------------------------------
+# Main conversion
+# ---------------------------------------------------------------------------
+
+def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
+    doc = docx.Document(docx_path)
+    hyperlink_map = build_hyperlink_map(doc)
+    numbering_map = build_numbering_map(docx_path)
+
+    # Phase 1: Parse paragraphs into structured elements
+    table_positions = find_table_positions(doc)
+    elements = _parse_elements(doc, hyperlink_map, table_positions)
+
+    # Phase 2: Generate XML
+    meta = parse_front_matter(doc)
+    entities = _build_entities(meta)
+
+    xml_lines = []
+    xml_lines.extend(_emit_preamble(entities))
+    xml_lines.extend(_emit_articleinfo(meta))
 
     # -----------------------------------------------------------------------
     # State machine for generating nested sections
@@ -829,13 +861,13 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
         while section_stack and section_stack[-1] >= target_level:
             section_stack.pop()
             lvl = base_indent + len(section_stack)
-            lines.append(f"{indent(lvl)}</section>")
+            lines.append(f"{_indent(lvl)}</section>")
 
     def close_all_sections(lines, base_indent=1):
         while section_stack:
             section_stack.pop()
             lvl = base_indent + len(section_stack)
-            lines.append(f"{indent(lvl)}</section>")
+            lines.append(f"{_indent(lvl)}</section>")
 
     # Process elements
     i = 0
@@ -849,7 +881,7 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
             base = 1 + len(section_stack)
             table_xml = render_table(tbl, hyperlink_map)
             for line in table_xml.split("\n"):
-                xml_lines.append(f"{indent(base)}{line}")
+                xml_lines.append(f"{_indent(base)}{line}")
             i += 1
             continue
 
@@ -936,8 +968,8 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
 
             lvl = base + len(section_stack)
             xml_lines.append(f"")
-            xml_lines.append(f'{indent(lvl)}<section id="{xml_escape(section_id)}">')
-            xml_lines.append(f"{indent(lvl+1)}<title>{xml_escape(text)}</title>")
+            xml_lines.append(f'{_indent(lvl)}<section id="{xml_escape(section_id)}">')
+            xml_lines.append(f"{_indent(lvl+1)}<title>{xml_escape(text)}</title>")
             section_stack.append(hlevel)
             i += 1
             continue
@@ -962,7 +994,7 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
             code_text = "\n".join(code_lines)
             lvl = (2 if in_appendix else 1) + len(section_stack)
             lang_attr = f' language="{xml_escape(lang)}"' if lang else ""
-            xml_lines.append(f"{indent(lvl)}<programlisting{lang_attr}><![CDATA[{code_text}]]></programlisting>")
+            xml_lines.append(f"{_indent(lvl)}<programlisting{lang_attr}><![CDATA[{code_text}]]></programlisting>")
             continue
 
         # Handle List Paragraphs - collect consecutive ones into a list
@@ -978,51 +1010,8 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                 })
                 i += 1
 
-            # Determine if this is an ordered or itemized list
-            first_numId = list_items[0]["numId"]
-            first_ilvl = str(list_items[0]["ilvl"])
-            fmt = numbering_map.get((first_numId, first_ilvl), "bullet")
-            is_ordered = fmt in ("decimal", "lowerLetter", "lowerRoman",
-                                 "upperLetter", "upperRoman")
-
             lvl = (2 if in_appendix else 1) + len(section_stack)
-
-            def get_list_tag(numId, ilvl_int):
-                fmt = numbering_map.get((numId, str(ilvl_int)), "bullet")
-                ordered = fmt in ("decimal", "lowerLetter", "lowerRoman",
-                                  "upperLetter", "upperRoman")
-                return "orderedlist" if ordered else "itemizedlist"
-
-            def render_list(items, base_lvl):
-                """Render a list of items that may contain nested sub-lists."""
-                if not items:
-                    return
-                tag = get_list_tag(items[0]["numId"], items[0]["ilvl"])
-                xml_lines.append(f"{indent(base_lvl)}<{tag}>")
-
-                idx = 0
-                while idx < len(items):
-                    li = items[idx]
-                    content = render_inline(li["inline"])
-                    xml_lines.append(f"{indent(base_lvl+1)}<listitem>")
-                    xml_lines.append(f"{indent(base_lvl+2)}<para>{content}</para>")
-
-                    # Collect any nested items that follow at a deeper level
-                    nested = []
-                    while (idx + 1 < len(items)
-                           and items[idx + 1]["ilvl"] > li["ilvl"]):
-                        idx += 1
-                        nested.append(items[idx])
-
-                    if nested:
-                        render_list(nested, base_lvl + 2)
-
-                    xml_lines.append(f"{indent(base_lvl+1)}</listitem>")
-                    idx += 1
-
-                xml_lines.append(f"{indent(base_lvl)}</{tag}>")
-
-            render_list(list_items, lvl)
+            xml_lines.extend(_render_list_items(list_items, lvl, numbering_map))
             continue
 
         # Handle Title (skip - already in articleinfo)
@@ -1039,29 +1028,14 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
 
             lvl = (2 if in_appendix else 1) + len(section_stack)
 
-            # Detect definition list paragraphs (bold term + tab + definition)
-            # These appear in section 2 "Definitions and Acronyms" and in
-            # schema description fields (Description:/Normative schema:/Identifier:)
-            def is_definition_para(el):
-                """Check if a paragraph looks like TERM<tab>Definition."""
-                inl = el.get("inline", [])
-                if not inl:
-                    return False
-                first = inl[0]
-                if first["type"] != "text" or not first["bold"]:
-                    return False
-                # Check if raw text contains a tab (not stripped)
-                raw = el.get("raw_text", "")
-                return "\t" in raw
-
-            if is_definition_para(elem):
+            if _is_definition_para(elem):
                 # Collect consecutive definition paragraphs
                 def_items = []
-                while i < len(elements) and elements[i]["style"] == "Normal" and is_definition_para(elements[i]):
+                while i < len(elements) and elements[i]["style"] == "Normal" and _is_definition_para(elements[i]):
                     def_items.append(elements[i])
                     i += 1
 
-                xml_lines.append(f"{indent(lvl)}<variablelist>")
+                xml_lines.append(f"{_indent(lvl)}<variablelist>")
                 for di in def_items:
                     raw = di.get("raw_text", "")
                     # Split on first tab
@@ -1099,16 +1073,16 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
 
                     term_rendered = render_inline(term_inline) if term_inline else xml_escape(term)
 
-                    xml_lines.append(f"{indent(lvl+1)}<varlistentry>")
-                    xml_lines.append(f'{indent(lvl+2)}<term>{term_rendered}</term>')
-                    xml_lines.append(f"{indent(lvl+2)}<listitem>")
+                    xml_lines.append(f"{_indent(lvl+1)}<varlistentry>")
+                    xml_lines.append(f'{_indent(lvl+2)}<term>{term_rendered}</term>')
+                    xml_lines.append(f"{_indent(lvl+2)}<listitem>")
                     if defn_rendered:
-                        xml_lines.append(f"{indent(lvl+3)}<para>{defn_rendered}</para>")
+                        xml_lines.append(f"{_indent(lvl+3)}<para>{defn_rendered}</para>")
                     else:
-                        xml_lines.append(f"{indent(lvl+3)}<para></para>")
-                    xml_lines.append(f"{indent(lvl+2)}</listitem>")
-                    xml_lines.append(f"{indent(lvl+1)}</varlistentry>")
-                xml_lines.append(f"{indent(lvl)}</variablelist>")
+                        xml_lines.append(f"{_indent(lvl+3)}<para></para>")
+                    xml_lines.append(f"{_indent(lvl+2)}</listitem>")
+                    xml_lines.append(f"{_indent(lvl+1)}</varlistentry>")
+                xml_lines.append(f"{_indent(lvl)}</variablelist>")
                 continue
 
             # In bibliography sections, render references as bibliomixed
@@ -1121,21 +1095,21 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                     if abbrev_match:
                         abbrev = abbrev_match.group(1)
                         bib_id = "BIB-" + slugify(abbrev)
-                        xml_lines.append(f'{indent(lvl)}<bibliomixed id="{xml_escape(bib_id)}">')
-                        xml_lines.append(f"{indent(lvl+1)}<abbrev>{xml_escape(abbrev)}</abbrev>")
+                        xml_lines.append(f'{_indent(lvl)}<bibliomixed id="{xml_escape(bib_id)}">')
+                        xml_lines.append(f"{_indent(lvl+1)}<abbrev>{xml_escape(abbrev)}</abbrev>")
                         # Render the rest
                         rest_content = render_inline(elem["inline"])
-                        xml_lines.append(f"{indent(lvl+1)}{rest_content}")
-                        xml_lines.append(f"{indent(lvl)}</bibliomixed>")
+                        xml_lines.append(f"{_indent(lvl+1)}{rest_content}")
+                        xml_lines.append(f"{_indent(lvl)}</bibliomixed>")
                         i += 1
                         continue
 
                 # Non-reference paragraph in bibliography
-                xml_lines.append(f"{indent(lvl)}<para>{content}</para>")
+                xml_lines.append(f"{_indent(lvl)}<para>{content}</para>")
                 i += 1
                 continue
 
-            xml_lines.append(f"{indent(lvl)}<para>{content}</para>")
+            xml_lines.append(f"{_indent(lvl)}<para>{content}</para>")
             i += 1
             continue
 
