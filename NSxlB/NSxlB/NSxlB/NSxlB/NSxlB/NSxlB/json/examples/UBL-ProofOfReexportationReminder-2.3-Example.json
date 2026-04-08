@@ -1,0 +1,64 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:ProofOfReexportationReminder-2",
+  "ID": "A2344",
+  "IssueDate": "2019-06-21",
+  "ProcedureCode": "A-letter",
+  "ProofOfReexportationRequestDocumentReference": {
+    "ID": "A2344"
+  },
+  "ImportingGuarantorParty": {
+    "PartyName": {
+      "Name": "Deutscher Industrie- und Handelskammertag e.V."
+    },
+    "PostalAddress": {
+      "StreetName": "Breite Straße",
+      "BuildingNumber": "29",
+      "CityName": "Berlin",
+      "PostalZone": "10178",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "DE122125278"
+    }
+  },
+  "ExportingGuarantorParty": {
+    "PartyName": {
+      "Name": "Dansk Erhverv"
+    },
+    "PostalAddress": {
+      "StreetName": "Slotsholmsgade",
+      "BuildingNumber": "1",
+      "CityName": "København K",
+      "PostalZone": "1216",
+      "Country": {
+        "IdentificationCode": "DK"
+      }
+    },
+    "PartyLegalEntity": {
+      "CompanyID": "DK43232010"
+    }
+  },
+  "ImportingCustomsParty": {
+    "PartyName": {
+      "Name": "Zollamt"
+    },
+    "PostalAddress": {
+      "StreetName": "Tollbrettkoppel",
+      "BuildingNumber": "8",
+      "CityName": "Heiligenhafen",
+      "PostalZone": "23774",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    }
+  },
+  "GoodsItemPassportCounterfoil": {
+    "ID": "645634567",
+    "GoodsItemPassportID": "ata01661",
+    "VoucherDocumentReference": {
+      "ID": "23445567"
+    }
+  }
+}

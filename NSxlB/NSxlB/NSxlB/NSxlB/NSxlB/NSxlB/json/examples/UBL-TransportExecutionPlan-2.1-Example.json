@@ -1,0 +1,479 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlan-2",
+  "UBLVersionID": "2.1",
+  "ID": "TEP_1",
+  "VersionID": "1",
+  "IssueDate": "2011-09-13",
+  "IssueTime": "10:00:30+01:00",
+  "DocumentStatusCode": "Confirmed",
+  "SenderParty": {
+    "PartyIdentification": {
+      "ID": "4058673827641"
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "ReceiverParty": {
+    "PartyIdentification": {
+      "ID": "4058673827000"
+    },
+    "PartyName": {
+      "Name": "Consignor"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+8687878763",
+      "ElectronicMail": "SomeName@consignor.cn"
+    }
+  },
+  "TransportUserParty": {
+    "PartyIdentification": {
+      "ID": "4058673827000"
+    },
+    "PartyName": {
+      "Name": "Consignor"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+8687878763",
+      "ElectronicMail": "SomeName@consignor.cn"
+    }
+  },
+  "TransportServiceProviderParty": {
+    "PartyIdentification": {
+      "ID": "4058673827641"
+    },
+    "PartyName": {
+      "Name": "NECOSS"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@necoss.de"
+    }
+  },
+  "TransportServiceDescriptionDocumentReference": {
+    "ID": "2"
+  },
+  "TransportContract": {
+    "Note": "Framework Agreement",
+    "ContractDocumentReference": {
+      "ID": "TC101",
+      "IssueDate": "2010-01-01",
+      "DocumentTypeCode": "315",
+      "DocumentType": "Contract",
+      "DocumentDescription": "Framework Agreement between Consignor and NECOSS"
+    }
+  },
+  "TransportUserResponseRequiredPeriod": {
+    "EndDate": "2011-09-13",
+    "EndTime": "12:00:10+01:00"
+  },
+  "MainTransportationService": {
+    "TransportServiceCode": "3",
+    "TransportationServiceDescription": "Transport from Hamburg to Nurnberg"
+  },
+  "ServiceEndTimePeriod": {
+    "EndDate": "2011-10-06",
+    "EndTime": "16:00:10+01:00"
+  },
+  "FromLocation": {
+    "LocationTypeCode": "13",
+    "Address": {
+      "ID": "DEHAM",
+      "StreetName": "Neuer Wandrahm 4",
+      "CityName": "Hamburg",
+      "PostalZone": "29400",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    }
+  },
+  "ToLocation": {
+    "LocationTypeCode": "7",
+    "Address": {
+      "StreetName": "Grosse strasse 34",
+      "CityName": "Nurnberg",
+      "PostalZone": "28400",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    }
+  },
+  "TransportExecutionTerms": {
+    "DeliveryTerms": {
+      "ID": "EXW",
+      "DeliveryLocation": {
+        "Address": {
+          "CityName": "Hamburg"
+        }
+      }
+    },
+    "NotificationRequirement": [
+      {
+        "NotificationTypeCode": "TIME_SCHEDULE_DEVIATIONS",
+        "NotifyParty": [
+          {
+            "EndpointID": "www.consignee.de/statusnotifications/",
+            "PartyName": {
+              "Name": "Consignee"
+            },
+            "Contact": {
+              "ElectronicMail": "someName@consignee.de"
+            }
+          },
+          {
+            "EndpointID": "www.consignor.cn/statusnotifications/",
+            "PartyName": {
+              "Name": "Consignor"
+            },
+            "Contact": {
+              "ElectronicMail": "someName@consignor.cn"
+            }
+          }
+        ]
+      },
+      {
+        "NotificationTypeCode": "ITEM_CONDITION_DEVIATIONS",
+        "PostEventNotificationDurationMeasure": {
+          "value": 10,
+          "unitCode": "MIN"
+        },
+        "NotifyParty": [
+          {
+            "EndpointID": "www.consignee.com/statusnotifications/",
+            "PartyName": {
+              "Name": "Consignee"
+            },
+            "Contact": {
+              "ElectronicMail": "someName@consignee.de"
+            }
+          },
+          {
+            "EndpointID": "www.consignor.cn/statusnotifications/",
+            "PartyName": {
+              "Name": "Consignor"
+            },
+            "Contact": {
+              "ElectronicMail": "someName@consignor.cn"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "Consignment": {
+    "ID": "CON_1",
+    "GrossWeightMeasure": {
+      "value": 50000,
+      "unitCode": "KGM"
+    },
+    "NetWeightMeasure": {
+      "value": 3000,
+      "unitCode": "KGM"
+    },
+    "GrossVolumeMeasure": {
+      "value": 78,
+      "unitCode": "MTQ"
+    },
+    "LoadingLengthMeasure": {
+      "value": 12,
+      "unitCode": "MTR"
+    },
+    "HazardousRiskIndicator": false,
+    "TotalTransportHandlingUnitQuantity": 2,
+    "ConsolidatedShipment": [
+      {
+        "ID": "GSIN_1"
+      },
+      {
+        "ID": "GSIN_2"
+      }
+    ],
+    "PlannedPickupTransportEvent": {
+      "Location": {
+        "Address": {
+          "ID": "DEHAM",
+          "StreetName": "Neuer Wandrahm 4",
+          "CityName": "Hamburg",
+          "PostalZone": "29400",
+          "Country": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      "Period": {
+        "StartDate": "2011-10-03",
+        "StartTime": "09:30:10+01:00",
+        "EndDate": "2011-10-03",
+        "EndTime": "12:30:10+01:00"
+      }
+    },
+    "PlannedDeliveryTransportEvent": {
+      "Location": {
+        "Address": {
+          "StreetName": "Grosse strasse 34",
+          "CityName": "Nurnberg",
+          "PostalZone": "28400",
+          "Country": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      "Period": {
+        "StartDate": "2011-10-06",
+        "StartTime": "12:30:10+01:00",
+        "EndDate": "2011-10-06",
+        "EndTime": "15:30:10+01:00"
+      }
+    },
+    "ConsigneeParty": {
+      "PartyIdentification": {
+        "ID": "4058673827123"
+      },
+      "PartyName": {
+        "Name": "Consignee"
+      },
+      "Contact": {
+        "Name": "SomeName",
+        "Telephone": "+4987878763",
+        "ElectronicMail": "SomeName@consignee.de"
+      }
+    },
+    "ConsignorParty": {
+      "PartyIdentification": {
+        "ID": "4058673827000"
+      },
+      "PartyName": {
+        "Name": "Consignor"
+      },
+      "PostalAddress": {
+        "ID": "4058673827000"
+      },
+      "Contact": {
+        "Name": "SomeName",
+        "Telephone": "+8676576456",
+        "ElectronicMail": "SomeName@consignor.cn"
+      }
+    },
+    "OriginalDepartureCountry": {
+      "IdentificationCode": "CN"
+    },
+    "FinalDestinationCountry": {
+      "IdentificationCode": "DE"
+    },
+    "MainCarriageShipmentStage": {
+      "PlannedDepartureTransportEvent": {
+        "Location": {
+          "Address": {
+            "ID": "DEHAM",
+            "StreetName": "Neuer Wandrahm 4",
+            "CityName": "Hamburg",
+            "PostalZone": "29400",
+            "Country": {
+              "IdentificationCode": "DE"
+            }
+          }
+        },
+        "Period": {
+          "StartDate": "2011-10-03",
+          "StartTime": "09:30:10+01:00",
+          "EndDate": "2011-10-03",
+          "EndTime": "12:30:10+01:00"
+        }
+      },
+      "PlannedArrivalTransportEvent": {
+        "Location": {
+          "Address": {
+            "StreetName": "Grosse strasse 34",
+            "CityName": "Nurnberg",
+            "PostalZone": "28400",
+            "Country": {
+              "IdentificationCode": "DE"
+            }
+          }
+        },
+        "Period": {
+          "StartDate": "2011-10-06",
+          "StartTime": "12:30:10+01:00",
+          "EndDate": "2011-10-06",
+          "EndTime": "15:30:10+01:00"
+        }
+      }
+    },
+    "PreCarriageShipmentStage": {
+      "TransportModeCode": "1",
+      "TransportMeansTypeCode": "83",
+      "CarrierParty": {
+        "PartyName": {
+          "Name": "MAERSK"
+        },
+        "Contact": {
+          "Name": "SomeName",
+          "Telephone": "+4598786765",
+          "ElectronicMail": "SomeName@maersk.dk"
+        }
+      },
+      "TransportMeans": {
+        "JourneyID": "M22",
+        "RegistrationNationalityID": "DK",
+        "RegistrationNationality": "Denmark",
+        "TransportMeansTypeCode": "83",
+        "MaritimeTransport": {
+          "VesselID": "SomeIMONr",
+          "VesselName": "SomeVesselName"
+        }
+      },
+      "PlannedDepartureTransportEvent": {
+        "Location": {
+          "ID": "CNSHA"
+        },
+        "Period": {
+          "StartDate": "2011-09-20",
+          "StartTime": "09:30:10+01:00",
+          "EndDate": "2011-09-20",
+          "EndTime": "12:30:10+01:00"
+        }
+      },
+      "PlannedArrivalTransportEvent": {
+        "Location": {
+          "ID": "DEHAM"
+        },
+        "Period": {
+          "StartDate": "2011-10-01",
+          "StartTime": "09:30:10+01:00",
+          "EndDate": "2011-10-01",
+          "EndTime": "12:30:10+01:00"
+        }
+      }
+    },
+    "TransportHandlingUnit": [
+      {
+        "ID": "CON_THU_1",
+        "TransportHandlingUnitTypeCode": "4",
+        "HazardousRiskIndicator": false,
+        "TotalGoodsItemQuantity": 500,
+        "TotalPackageQuantity": 10,
+        "ShippingMarks": "General Cargo",
+        "TransportEquipment": {
+          "ID": "CON_TE_1",
+          "TransportEquipmentTypeCode": "CN",
+          "FullnessIndicationCode": "1",
+          "ReturnabilityIndicator": true,
+          "RefrigeratedIndicator": false,
+          "Description": "SomeDescription",
+          "GrossWeightMeasure": {
+            "value": 25000,
+            "unitCode": "KGM"
+          },
+          "GrossVolumeMeasure": {
+            "value": 39,
+            "unitCode": "MTQ"
+          },
+          "PowerIndicator": false,
+          "MeasurementDimension": [
+            {
+              "AttributeID": "Length",
+              "Measure": {
+                "value": 6.1,
+                "unitCode": "MTR"
+              }
+            },
+            {
+              "AttributeID": "Height",
+              "Measure": {
+                "value": 2.6,
+                "unitCode": "MTR"
+              }
+            },
+            {
+              "AttributeID": "Width",
+              "Measure": {
+                "value": 2.44,
+                "unitCode": "MTR"
+              }
+            }
+          ],
+          "Package": {
+            "ID": "CON_P_1",
+            "Quantity": 10,
+            "PackagingTypeCode": "PL",
+            "GoodsItem": {
+              "Item": {
+                "CommodityClassification": {
+                  "CargoTypeCode": "12"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "ID": "CON_THU_2",
+        "TransportHandlingUnitTypeCode": "4",
+        "HazardousRiskIndicator": false,
+        "TotalGoodsItemQuantity": 500,
+        "TotalPackageQuantity": 10,
+        "ShippingMarks": "General Cargo",
+        "TransportEquipment": {
+          "ID": "CON_TE_2",
+          "TransportEquipmentTypeCode": "CN",
+          "FullnessIndicationCode": "1",
+          "ReturnabilityIndicator": true,
+          "RefrigeratedIndicator": false,
+          "Description": "SomeDescription",
+          "GrossWeightMeasure": {
+            "value": 25000,
+            "unitCode": "KGM"
+          },
+          "GrossVolumeMeasure": {
+            "value": 39,
+            "unitCode": "MTQ"
+          },
+          "PowerIndicator": false,
+          "MeasurementDimension": [
+            {
+              "AttributeID": "Length",
+              "Measure": {
+                "value": 6.1,
+                "unitCode": "MTR"
+              }
+            },
+            {
+              "AttributeID": "Height",
+              "Measure": {
+                "value": 2.6,
+                "unitCode": "MTR"
+              }
+            },
+            {
+              "AttributeID": "Width",
+              "Measure": {
+                "value": 2.44,
+                "unitCode": "MTR"
+              }
+            }
+          ],
+          "Package": {
+            "ID": "CON_P_2",
+            "Quantity": 10,
+            "PackagingTypeCode": "PL",
+            "GoodsItem": {
+              "Item": {
+                "CommodityClassification": {
+                  "CargoTypeCode": "12"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
