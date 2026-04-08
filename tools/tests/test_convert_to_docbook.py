@@ -250,6 +250,57 @@ def test_render_inline_apostrophe_in_url():
     return {"result": result}
 
 
+# ── Appendix numbering test ──────────────────────────────────────────────
+
+def test_appendix_titles_no_duplicate_numbers():
+    """Appendix section titles must not contain hardcoded number prefixes.
+
+    The docx source has numbers baked into headings (e.g. "C.1 Common schemas")
+    but DocBook XSLT auto-generates them, so the converter must strip them.
+    This test guards against regression.
+    """
+    if not DOCX_PATH.exists():
+        return {"skipped": True, "reason": f"Source .docx not found: {DOCX_PATH}"}
+
+    import re
+
+    tmpdir = Path(tempfile.mkdtemp(prefix="ctd_test_"))
+    try:
+        output_path = tmpdir / "UBL-json.xml"
+        convert(str(DOCX_PATH), str(output_path))
+        content = output_path.read_text(encoding="utf-8")
+
+        # Find all <title> elements inside <appendix> blocks
+        in_appendix = False
+        numbered_titles = []
+        prefix_re = re.compile(r'^[A-Z]\.\d+(?:\.\d+)*\s')
+
+        for line_no, line in enumerate(content.splitlines(), 1):
+            if '<appendix ' in line:
+                in_appendix = True
+            elif '</appendix>' in line:
+                in_appendix = False
+            elif in_appendix and '<title>' in line:
+                # Extract title text between <title> and </title>
+                m = re.search(r'<title>(.*?)</title>', line)
+                if m:
+                    title_text = m.group(1)
+                    if prefix_re.match(title_text):
+                        numbered_titles.append(
+                            {"line": line_no, "title": title_text}
+                        )
+
+        assert not numbered_titles, (
+            f"Found {len(numbered_titles)} appendix <title> elements with "
+            f"hardcoded number prefixes (would cause duplicate numbering in "
+            f"HTML): {numbered_titles[:5]}"
+        )
+
+        return {"checked": True, "duplicate_titles_found": 0}
+    finally:
+        shutil.rmtree(tmpdir)
+
+
 # ── Full conversion test ──────────────────────────────────────────────────
 
 def test_full_conversion():
@@ -345,6 +396,7 @@ ALL_TESTS = [
     ("render_inline_hyperlink", test_render_inline_hyperlink),
     ("render_inline_special_chars", test_render_inline_special_chars),
     ("render_inline_apostrophe_in_url", test_render_inline_apostrophe_in_url),
+    ("appendix_titles_no_duplicate_numbers", test_appendix_titles_no_duplicate_numbers),
     ("full_conversion", test_full_conversion),
     ("conversion_matches_baseline", test_conversion_matches_baseline),
 ]

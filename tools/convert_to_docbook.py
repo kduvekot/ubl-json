@@ -967,10 +967,19 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                 elif "Informative" in text:
                     bib_subsection = "informative"
 
+            # Strip hardcoded number prefix from appendix subsection titles
+            # (e.g. "C.1 Common schemas" -> "Common schemas") because
+            # DocBook XSLT auto-generates section numbers for appendices.
+            display_title = text
+            if in_appendix:
+                display_title = re.sub(
+                    r'^[A-Z]\.\d+(?:\.\d+)*\s+', '', text
+                )
+
             lvl = base + len(section_stack)
             xml_lines.append(f"")
             xml_lines.append(f'{_indent(lvl)}<section id="{xml_escape(section_id)}">')
-            xml_lines.append(f"{_indent(lvl+1)}<title>{xml_escape(text)}</title>")
+            xml_lines.append(f"{_indent(lvl+1)}<title>{xml_escape(display_title)}</title>")
             section_stack.append(hlevel)
             i += 1
             continue

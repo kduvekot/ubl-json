@@ -686,14 +686,14 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
     <para>(This annex forms an integral part of this Specification.)</para>
 
     <section id="S-A1-DOCUMENT-STATUS">
-      <title>A.1 Document Status</title>
+      <title>Document Status</title>
       <para>This document was last revised or approved by the OASIS Universal Business Language (UBL) TC on the above date. The level of approval is also listed above. Check the &quot;Latest version&quot; location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://oasis-open.org/committees/ubl">https://oasis-open.org/committees/ubl</ulink>.</para>
       <para>TC members should send comments on this document to the TC&apos;s email list. Others should send comments to the TC&apos;s public comment list, after subscribing to it by following the comment instructions at the TC&apos;s comments list web page at <ulink url="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=ubl">https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=ubl</ulink>.</para>
       <para>NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product&apos;s prose narrative document(s), the content in the separate plain text file prevails.</para>
     </section>
 
     <section id="S-A2-LICENSE-AND-NOTICES">
-      <title>A.2 License and Notices</title>
+      <title>License and Notices</title>
       <para>Copyright © OASIS Open 2026. All Rights Reserved.</para>
       <para>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the &quot;OASIS IPR Policy&quot;). The full Policy, which governs the licensure of this document, may be found at the OASIS website: [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>]</para>
       <para>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</para>
@@ -715,7 +715,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
     <para>Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.</para>
 
     <section id="S-B1-NORMATIVE-REFERENCES">
-      <title>B.1 Normative References</title>
+      <title>Normative References</title>
       <para>The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.</para>
       <bibliomixed id="BIB-ISOIEC-DIRECTIVES">
         <abbrev>ISO/IEC Directives</abbrev>
@@ -748,7 +748,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
     </section>
 
     <section id="S-B2-INFORMATIVE-REFERENCES">
-      <title>B.2 Informative References</title>
+      <title>Informative References</title>
       <para>The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.</para>
       <bibliomixed id="BIB-CCTS">
         <abbrev>CCTS</abbrev>
@@ -790,10 +790,10 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
     <para>(This annex forms an integral part of this Specification.)</para>
 
     <section id="S-C1-COMMON-SCHEMAS">
-      <title>C.1 Common schemas</title>
+      <title>Common schemas</title>
 
       <section id="S-C11-COMMON-AGGREGATE-COMPONENTS-SCHEMA">
-        <title>C.1.1 Common Aggregate Components schema</title>
+        <title>Common Aggregate Components schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -817,7 +817,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C12-COMMON-BASIC-COMPONENTS-SCHEMA">
-        <title>C.1.2 Common Basic Components schema</title>
+        <title>Common Basic Components schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -841,7 +841,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C13-QUALIFIED-DATA-TYPES-SCHEMA">
-        <title>C.1.3 Qualified Data Types schema</title>
+        <title>Qualified Data Types schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -865,7 +865,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C14-UNQUALIFIED-DATA-TYPES-SCHEMA">
-        <title>C.1.4 Unqualified Data Types schema</title>
+        <title>Unqualified Data Types schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -889,7 +889,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C15-COMMON-EXTENSION-COMPONENTS-SCHEMA">
-        <title>C.1.5 Common Extension Components schema</title>
+        <title>Common Extension Components schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -913,7 +913,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C16-SIGNATURE-AGGREGATE-COMPONENTS-SCHEMA">
-        <title>C.1.6 Signature Aggregate Components schema</title>
+        <title>Signature Aggregate Components schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -937,7 +937,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C17-SIGNATURE-BASIC-COMPONENTS-SCHEMA">
-        <title>C.1.7 Signature Basic Components schema</title>
+        <title>Signature Basic Components schema</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -962,10 +962,10 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
     </section>
 
     <section id="S-C2-DOCUMENT-SCHEMAS">
-      <title>C.2 Document schemas</title>
+      <title>Document schemas</title>
 
       <section id="S-C21-UBL-APPLICATIONRESPONSE-25">
-        <title>C.2.1 UBL-ApplicationResponse-2.5</title>
+        <title>UBL-ApplicationResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -989,7 +989,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C22-UBL-AWARDEDNOTIFICATION-25">
-        <title>C.2.2 UBL-AwardedNotification-2.5</title>
+        <title>UBL-AwardedNotification-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1013,7 +1013,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C23-UBL-BILLOFLADING-25">
-        <title>C.2.3 UBL-BillOfLading-2.5</title>
+        <title>UBL-BillOfLading-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1037,7 +1037,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C24-UBL-BUSINESSCARD-25">
-        <title>C.2.4 UBL-BusinessCard-2.5</title>
+        <title>UBL-BusinessCard-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1061,7 +1061,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C25-UBL-BUSINESSINFORMATION-25">
-        <title>C.2.5 UBL-BusinessInformation-2.5</title>
+        <title>UBL-BusinessInformation-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1085,7 +1085,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C26-UBL-CALLFORTENDERS-25">
-        <title>C.2.6 UBL-CallForTenders-2.5</title>
+        <title>UBL-CallForTenders-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1109,7 +1109,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C27-UBL-CATALOGUE-25">
-        <title>C.2.7 UBL-Catalogue-2.5</title>
+        <title>UBL-Catalogue-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1133,7 +1133,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C28-UBL-CATALOGUEDELETION-25">
-        <title>C.2.8 UBL-CatalogueDeletion-2.5</title>
+        <title>UBL-CatalogueDeletion-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1157,7 +1157,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C29-UBL-CATALOGUEITEMSPECIFICATIONUPDATE-25">
-        <title>C.2.9 UBL-CatalogueItemSpecificationUpdate-2.5</title>
+        <title>UBL-CatalogueItemSpecificationUpdate-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1181,7 +1181,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C210-UBL-CATALOGUEPRICINGUPDATE-25">
-        <title>C.2.10 UBL-CataloguePricingUpdate-2.5</title>
+        <title>UBL-CataloguePricingUpdate-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1205,7 +1205,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C211-UBL-CATALOGUEREQUEST-25">
-        <title>C.2.11 UBL-CatalogueRequest-2.5</title>
+        <title>UBL-CatalogueRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1229,7 +1229,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C212-UBL-CERTIFICATEOFORIGIN-25">
-        <title>C.2.12 UBL-CertificateOfOrigin-2.5</title>
+        <title>UBL-CertificateOfOrigin-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1253,7 +1253,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C213-UBL-COMMONTRANSPORTATIONREPORT-25">
-        <title>C.2.13 UBL-CommonTransportationReport-2.5</title>
+        <title>UBL-CommonTransportationReport-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1277,7 +1277,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C214-UBL-CONTRACTAWARDNOTICE-25">
-        <title>C.2.14 UBL-ContractAwardNotice-2.5</title>
+        <title>UBL-ContractAwardNotice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1301,7 +1301,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C215-UBL-CONTRACTNOTICE-25">
-        <title>C.2.15 UBL-ContractNotice-2.5</title>
+        <title>UBL-ContractNotice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1325,7 +1325,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C216-UBL-CREDITNOTE-25">
-        <title>C.2.16 UBL-CreditNote-2.5</title>
+        <title>UBL-CreditNote-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1349,7 +1349,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C217-UBL-DEBITNOTE-25">
-        <title>C.2.17 UBL-DebitNote-2.5</title>
+        <title>UBL-DebitNote-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1373,7 +1373,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C218-UBL-DELIVERYNOTE-25">
-        <title>C.2.18 UBL-DeliveryNote-2.5</title>
+        <title>UBL-DeliveryNote-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1397,7 +1397,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C219-UBL-DESPATCHADVICE-25">
-        <title>C.2.19 UBL-DespatchAdvice-2.5</title>
+        <title>UBL-DespatchAdvice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1421,7 +1421,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C220-UBL-DIGITALAGREEMENT-25">
-        <title>C.2.20 UBL-DigitalAgreement-2.5</title>
+        <title>UBL-DigitalAgreement-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1445,7 +1445,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C221-UBL-DIGITALCAPABILITY-25">
-        <title>C.2.21 UBL-DigitalCapability-2.5</title>
+        <title>UBL-DigitalCapability-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1469,7 +1469,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C222-UBL-DOCUMENTSTATUS-25">
-        <title>C.2.22 UBL-DocumentStatus-2.5</title>
+        <title>UBL-DocumentStatus-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1493,7 +1493,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C223-UBL-DOCUMENTSTATUSREQUEST-25">
-        <title>C.2.23 UBL-DocumentStatusRequest-2.5</title>
+        <title>UBL-DocumentStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1517,7 +1517,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C224-UBL-ENQUIRY-25">
-        <title>C.2.24 UBL-Enquiry-2.5</title>
+        <title>UBL-Enquiry-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1541,7 +1541,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C225-UBL-ENQUIRYRESPONSE-25">
-        <title>C.2.25 UBL-EnquiryResponse-2.5</title>
+        <title>UBL-EnquiryResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1565,7 +1565,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C226-UBL-EXCEPTIONCRITERIA-25">
-        <title>C.2.26 UBL-ExceptionCriteria-2.5</title>
+        <title>UBL-ExceptionCriteria-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1589,7 +1589,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C227-UBL-EXCEPTIONNOTIFICATION-25">
-        <title>C.2.27 UBL-ExceptionNotification-2.5</title>
+        <title>UBL-ExceptionNotification-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1613,7 +1613,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C228-UBL-EXPORTCUSTOMSDECLARATION-25">
-        <title>C.2.28 UBL-ExportCustomsDeclaration-2.5</title>
+        <title>UBL-ExportCustomsDeclaration-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1637,7 +1637,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C229-UBL-EXPRESSIONOFINTERESTREQUEST-25">
-        <title>C.2.29 UBL-ExpressionOfInterestRequest-2.5</title>
+        <title>UBL-ExpressionOfInterestRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1661,7 +1661,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C230-UBL-EXPRESSIONOFINTERESTRESPONSE-25">
-        <title>C.2.30 UBL-ExpressionOfInterestResponse-2.5</title>
+        <title>UBL-ExpressionOfInterestResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1685,7 +1685,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C231-UBL-FORECAST-25">
-        <title>C.2.31 UBL-Forecast-2.5</title>
+        <title>UBL-Forecast-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1709,7 +1709,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C232-UBL-FORECASTREVISION-25">
-        <title>C.2.32 UBL-ForecastRevision-2.5</title>
+        <title>UBL-ForecastRevision-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1733,7 +1733,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C233-UBL-FORWARDINGINSTRUCTIONS-25">
-        <title>C.2.33 UBL-ForwardingInstructions-2.5</title>
+        <title>UBL-ForwardingInstructions-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1757,7 +1757,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C234-UBL-FULFILMENTCANCELLATION-25">
-        <title>C.2.34 UBL-FulfilmentCancellation-2.5</title>
+        <title>UBL-FulfilmentCancellation-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1781,7 +1781,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C235-UBL-GOODSCERTIFICATE-25">
-        <title>C.2.35 UBL-GoodsCertificate-2.5</title>
+        <title>UBL-GoodsCertificate-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1805,7 +1805,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C236-UBL-GOODSITEMITINERARY-25">
-        <title>C.2.36 UBL-GoodsItemItinerary-2.5</title>
+        <title>UBL-GoodsItemItinerary-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1829,7 +1829,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C237-UBL-GOODSITEMPASSPORT-25">
-        <title>C.2.37 UBL-GoodsItemPassport-2.5</title>
+        <title>UBL-GoodsItemPassport-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1853,7 +1853,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C238-UBL-GUARANTEECERTIFICATE-25">
-        <title>C.2.38 UBL-GuaranteeCertificate-2.5</title>
+        <title>UBL-GuaranteeCertificate-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1877,7 +1877,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C239-UBL-IMPORTCUSTOMSDECLARATION-25">
-        <title>C.2.39 UBL-ImportCustomsDeclaration-2.5</title>
+        <title>UBL-ImportCustomsDeclaration-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1901,7 +1901,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C240-UBL-INSTRUCTIONFORRETURNS-25">
-        <title>C.2.40 UBL-InstructionForReturns-2.5</title>
+        <title>UBL-InstructionForReturns-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1925,7 +1925,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C241-UBL-INVENTORYREPORT-25">
-        <title>C.2.41 UBL-InventoryReport-2.5</title>
+        <title>UBL-InventoryReport-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1949,7 +1949,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C242-UBL-INVOICE-25">
-        <title>C.2.42 UBL-Invoice-2.5</title>
+        <title>UBL-Invoice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1973,7 +1973,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C243-UBL-INVOICESTATUSREQUEST-25">
-        <title>C.2.43 UBL-InvoiceStatusRequest-2.5</title>
+        <title>UBL-InvoiceStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -1997,7 +1997,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C244-UBL-INVOICESTATUSRESPONSE-25">
-        <title>C.2.44 UBL-InvoiceStatusResponse-2.5</title>
+        <title>UBL-InvoiceStatusResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2021,7 +2021,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C245-UBL-ITEMINFORMATIONREQUEST-25">
-        <title>C.2.45 UBL-ItemInformationRequest-2.5</title>
+        <title>UBL-ItemInformationRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2045,7 +2045,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C246-UBL-MANIFEST-25">
-        <title>C.2.46 UBL-Manifest-2.5</title>
+        <title>UBL-Manifest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2069,7 +2069,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C247-UBL-ORDER-25">
-        <title>C.2.47 UBL-Order-2.5</title>
+        <title>UBL-Order-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2093,7 +2093,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C248-UBL-ORDERCANCELLATION-25">
-        <title>C.2.48 UBL-OrderCancellation-2.5</title>
+        <title>UBL-OrderCancellation-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2117,7 +2117,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C249-UBL-ORDERCHANGE-25">
-        <title>C.2.49 UBL-OrderChange-2.5</title>
+        <title>UBL-OrderChange-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2141,7 +2141,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C250-UBL-ORDERRESPONSE-25">
-        <title>C.2.50 UBL-OrderResponse-2.5</title>
+        <title>UBL-OrderResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2165,7 +2165,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C251-UBL-PACKINGLIST-25">
-        <title>C.2.51 UBL-PackingList-2.5</title>
+        <title>UBL-PackingList-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2189,7 +2189,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C252-UBL-PRIORINFORMATIONNOTICE-25">
-        <title>C.2.52 UBL-PriorInformationNotice-2.5</title>
+        <title>UBL-PriorInformationNotice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2213,7 +2213,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C253-UBL-PROCUREMENTSTATUS-25">
-        <title>C.2.53 UBL-ProcurementStatus-2.5</title>
+        <title>UBL-ProcurementStatus-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2237,7 +2237,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C254-UBL-PROCUREMENTSTATUSREQUEST-25">
-        <title>C.2.54 UBL-ProcurementStatusRequest-2.5</title>
+        <title>UBL-ProcurementStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2261,7 +2261,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C255-UBL-PRODUCTACTIVITY-25">
-        <title>C.2.55 UBL-ProductActivity-2.5</title>
+        <title>UBL-ProductActivity-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2285,7 +2285,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C256-UBL-PROOFOFREEXPORTATION-25">
-        <title>C.2.56 UBL-ProofOfReexportation-2.5</title>
+        <title>UBL-ProofOfReexportation-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2309,7 +2309,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C257-UBL-PROOFOFREEXPORTATIONREMINDER-25">
-        <title>C.2.57 UBL-ProofOfReexportationReminder-2.5</title>
+        <title>UBL-ProofOfReexportationReminder-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2333,7 +2333,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C258-UBL-PROOFOFREEXPORTATIONREQUEST-25">
-        <title>C.2.58 UBL-ProofOfReexportationRequest-2.5</title>
+        <title>UBL-ProofOfReexportationRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2357,7 +2357,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C259-UBL-PURCHASERECEIPT-25">
-        <title>C.2.59 UBL-PurchaseReceipt-2.5</title>
+        <title>UBL-PurchaseReceipt-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2381,7 +2381,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C260-UBL-QUALIFICATIONAPPLICATIONREQUEST-25">
-        <title>C.2.60 UBL-QualificationApplicationRequest-2.5</title>
+        <title>UBL-QualificationApplicationRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2405,7 +2405,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C261-UBL-QUALIFICATIONAPPLICATIONRESPONSE-25">
-        <title>C.2.61 UBL-QualificationApplicationResponse-2.5</title>
+        <title>UBL-QualificationApplicationResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2429,7 +2429,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C262-UBL-QUOTATION-25">
-        <title>C.2.62 UBL-Quotation-2.5</title>
+        <title>UBL-Quotation-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2453,7 +2453,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C263-UBL-RECEIPTADVICE-25">
-        <title>C.2.63 UBL-ReceiptAdvice-2.5</title>
+        <title>UBL-ReceiptAdvice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2477,7 +2477,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C264-UBL-REMINDER-25">
-        <title>C.2.64 UBL-Reminder-2.5</title>
+        <title>UBL-Reminder-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2501,7 +2501,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C265-UBL-REMITTANCEADVICE-25">
-        <title>C.2.65 UBL-RemittanceAdvice-2.5</title>
+        <title>UBL-RemittanceAdvice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2525,7 +2525,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C266-UBL-REQUESTFORQUOTATION-25">
-        <title>C.2.66 UBL-RequestForQuotation-2.5</title>
+        <title>UBL-RequestForQuotation-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2549,7 +2549,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C267-UBL-RETAILEVENT-25">
-        <title>C.2.67 UBL-RetailEvent-2.5</title>
+        <title>UBL-RetailEvent-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2573,7 +2573,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C268-UBL-SELFBILLEDCREDITNOTE-25">
-        <title>C.2.68 UBL-SelfBilledCreditNote-2.5</title>
+        <title>UBL-SelfBilledCreditNote-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2597,7 +2597,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C269-UBL-SELFBILLEDINVOICE-25">
-        <title>C.2.69 UBL-SelfBilledInvoice-2.5</title>
+        <title>UBL-SelfBilledInvoice-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2621,7 +2621,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C270-UBL-STATEMENT-25">
-        <title>C.2.70 UBL-Statement-2.5</title>
+        <title>UBL-Statement-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2645,7 +2645,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C271-UBL-TENDER-25">
-        <title>C.2.71 UBL-Tender-2.5</title>
+        <title>UBL-Tender-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2669,7 +2669,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C272-UBL-TENDERCONTRACT-25">
-        <title>C.2.72 UBL-TenderContract-2.5</title>
+        <title>UBL-TenderContract-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2693,7 +2693,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C273-UBL-TENDERRECEIPT-25">
-        <title>C.2.73 UBL-TenderReceipt-2.5</title>
+        <title>UBL-TenderReceipt-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2717,7 +2717,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C274-UBL-TENDERWITHDRAWAL-25">
-        <title>C.2.74 UBL-TenderWithdrawal-2.5</title>
+        <title>UBL-TenderWithdrawal-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2741,7 +2741,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C275-UBL-TENDERERQUALIFICATION-25">
-        <title>C.2.75 UBL-TendererQualification-2.5</title>
+        <title>UBL-TendererQualification-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2765,7 +2765,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C276-UBL-TENDERERQUALIFICATIONRESPONSE-25">
-        <title>C.2.76 UBL-TendererQualificationResponse-2.5</title>
+        <title>UBL-TendererQualificationResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2789,7 +2789,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C277-UBL-TRADEITEMLOCATIONPROFILE-25">
-        <title>C.2.77 UBL-TradeItemLocationProfile-2.5</title>
+        <title>UBL-TradeItemLocationProfile-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2813,7 +2813,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C278-UBL-TRANSITCUSTOMSDECLARATION-25">
-        <title>C.2.78 UBL-TransitCustomsDeclaration-2.5</title>
+        <title>UBL-TransitCustomsDeclaration-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2837,7 +2837,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C279-UBL-TRANSPORTEXECUTIONPLAN-25">
-        <title>C.2.79 UBL-TransportExecutionPlan-2.5</title>
+        <title>UBL-TransportExecutionPlan-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2861,7 +2861,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C280-UBL-TRANSPORTEXECUTIONPLANREQUEST-25">
-        <title>C.2.80 UBL-TransportExecutionPlanRequest-2.5</title>
+        <title>UBL-TransportExecutionPlanRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2885,7 +2885,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C281-UBL-TRANSPORTPROGRESSSTATUS-25">
-        <title>C.2.81 UBL-TransportProgressStatus-2.5</title>
+        <title>UBL-TransportProgressStatus-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2909,7 +2909,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C282-UBL-TRANSPORTPROGRESSSTATUSREQUEST-25">
-        <title>C.2.82 UBL-TransportProgressStatusRequest-2.5</title>
+        <title>UBL-TransportProgressStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2933,7 +2933,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C283-UBL-TRANSPORTSERVICEDESCRIPTION-25">
-        <title>C.2.83 UBL-TransportServiceDescription-2.5</title>
+        <title>UBL-TransportServiceDescription-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2957,7 +2957,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C284-UBL-TRANSPORTSERVICEDESCRIPTIONREQUEST-25">
-        <title>C.2.84 UBL-TransportServiceDescriptionRequest-2.5</title>
+        <title>UBL-TransportServiceDescriptionRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -2981,7 +2981,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C285-UBL-TRANSPORTATIONSTATUS-25">
-        <title>C.2.85 UBL-TransportationStatus-2.5</title>
+        <title>UBL-TransportationStatus-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3005,7 +3005,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C286-UBL-TRANSPORTATIONSTATUSREQUEST-25">
-        <title>C.2.86 UBL-TransportationStatusRequest-2.5</title>
+        <title>UBL-TransportationStatusRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3029,7 +3029,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C287-UBL-UNAWARDEDNOTIFICATION-25">
-        <title>C.2.87 UBL-UnawardedNotification-2.5</title>
+        <title>UBL-UnawardedNotification-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3053,7 +3053,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C288-UBL-UNSUBSCRIBEFROMPROCEDUREREQUEST-25">
-        <title>C.2.88 UBL-UnsubscribeFromProcedureRequest-2.5</title>
+        <title>UBL-UnsubscribeFromProcedureRequest-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3077,7 +3077,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C289-UBL-UNSUBSCRIBEFROMPROCEDURERESPONSE-25">
-        <title>C.2.89 UBL-UnsubscribeFromProcedureResponse-2.5</title>
+        <title>UBL-UnsubscribeFromProcedureResponse-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3101,7 +3101,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C290-UBL-UTILITYSTATEMENT-25">
-        <title>C.2.90 UBL-UtilityStatement-2.5</title>
+        <title>UBL-UtilityStatement-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3125,7 +3125,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C291-UBL-WASTEMOVEMENT-25">
-        <title>C.2.91 UBL-WasteMovement-2.5</title>
+        <title>UBL-WasteMovement-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3149,7 +3149,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C292-UBL-WASTENOTIFICATION-25">
-        <title>C.2.92 UBL-WasteNotification-2.5</title>
+        <title>UBL-WasteNotification-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3173,7 +3173,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C293-UBL-WAYBILL-25">
-        <title>C.2.93 UBL-Waybill-2.5</title>
+        <title>UBL-Waybill-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3197,7 +3197,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C294-UBL-WEIGHTSTATEMENT-25">
-        <title>C.2.94 UBL-WeightStatement-2.5</title>
+        <title>UBL-WeightStatement-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
@@ -3221,7 +3221,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </section>
 
       <section id="S-C295-UBL-WORKREPORT-25">
-        <title>C.2.95 UBL-WorkReport-2.5</title>
+        <title>UBL-WorkReport-2.5</title>
         <variablelist>
           <varlistentry>
             <term><emphasis role="bold">Description:</emphasis></term>
