@@ -1,0 +1,79 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:OrderResponse-2",
+  "UBLVersionID": "2.1",
+  "CustomizationID": "urn:www.cenbii.eu:transaction:biicoretrdmXYZ:ver1.0",
+  "ProfileID": {
+    "value": "urn:www.cenbii.eu:profile:BIIXYZ:ver1.0",
+    "schemeID": "BII:Profile"
+  },
+  "ID": "7",
+  "IssueDate": "2010-01-21",
+  "IssueTime": "12:30:00Z",
+  "Note": "Information text for the whole order response",
+  "DocumentCurrencyCode": "SEK",
+  "OrderReference": {
+    "ID": "34"
+  },
+  "SellerSupplierParty": {
+    "Party": {
+      "EndpointID": {
+        "value": "7302347231111",
+        "schemeID": "9:GLN"
+      },
+      "PartyIdentification": {
+        "ID": "SellerPartyID123"
+      },
+      "PartyName": {
+        "Name": "Moderna Produkter AB"
+      }
+    }
+  },
+  "BuyerCustomerParty": {
+    "Party": {
+      "EndpointID": {
+        "value": "7300072311115",
+        "schemeID": "9:GLN"
+      },
+      "PartyIdentification": [
+        {
+          "ID": {
+            "value": "7300070011115",
+            "schemeID": "9:GLN"
+          }
+        },
+        {
+          "ID": "PartyID123"
+        }
+      ],
+      "PartyName": {
+        "Name": "Johnssons byggvaror"
+      }
+    }
+  },
+  "OrderLine": [
+    {
+      "LineItem": {
+        "ID": "1",
+        "LineStatusCode": {
+          "value": "NoStatus",
+          "listID": "UBL"
+        },
+        "Item": {
+          "Description": "Red paint"
+        }
+      }
+    },
+    {
+      "LineItem": {
+        "ID": "2",
+        "LineStatusCode": {
+          "value": "Disputed",
+          "listID": "UBL"
+        },
+        "Item": {
+          "Description": "Very good pencils for red paint."
+        }
+      }
+    }
+  ]
+}

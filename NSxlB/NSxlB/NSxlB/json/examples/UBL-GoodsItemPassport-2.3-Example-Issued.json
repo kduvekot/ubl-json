@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:GoodsItemPassport-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-GoodsItemPassport-2",
   "CustomizationID": "UBL-2.3",
   "ID": "ata01661",
   "IssueDate": "2019-02-21",

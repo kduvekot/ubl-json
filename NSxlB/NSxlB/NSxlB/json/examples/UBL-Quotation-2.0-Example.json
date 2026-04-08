@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Quotation-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Quotation-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:schema:xsd:Quotation-2-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-request-for-quotation-draft",
   "ID": "QIY7655",
-  "CopyIndicator": false,
   "UUID": "4D07786B-DA6D-439F-82D1-6FFFC7F4E3B1",
   "IssueDate": "2005-06-20",
   "Note": "sample",
