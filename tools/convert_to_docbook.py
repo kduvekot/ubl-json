@@ -4,6 +4,7 @@
 import re
 import docx
 from lxml import etree
+from xml.sax.saxutils import escape as _sax_escape
 import zipfile
 
 # ---------------------------------------------------------------------------
@@ -29,14 +30,10 @@ def slugify(text):
 
 
 def xml_escape(text):
-    """Escape special XML characters."""
+    """Escape all five XML special characters: & < > " '."""
     if text is None:
         return ""
-    return (text
-            .replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace('"', "&quot;"))
+    return _sax_escape(text, {'"': "&quot;", "'": "&apos;"})
 
 
 # ---------------------------------------------------------------------------
