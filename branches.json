@@ -6,13 +6,6 @@
       "updated": "2026-04-08T08:32:43.830278+00:00",
       "pr": null,
       "run_id": "24125879126"
-    },
-    "claude/fix-duplicate-references-py34s": {
-      "sha": "5be328d36e07fd8e0e242351b9614c5464232b1b",
-      "slug": "py34s",
-      "updated": "2026-04-08T09:05:43.044544+00:00",
-      "pr": null,
-      "run_id": "24127258007"
     }
   }
 }
