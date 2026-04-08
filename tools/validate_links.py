@@ -15,11 +15,14 @@ Prints warnings for broken links but never fails the build.
 """
 
 import argparse
+import ipaddress
 import re
+import socket
 import sys
-import urllib.request
 import urllib.error
+import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 # URLs to skip: schema identifiers (not meant to resolve) and sites
 # that block CI/cloud requests (verified manually to be reachable).
@@ -29,6 +32,41 @@ SKIP_PATTERNS = [
 ]
 
 TIMEOUT = 10  # seconds per request
+MAX_GET_BYTES = 8192  # only read this many bytes on GET fallback
+
+
+def _is_private_url(url: str) -> bool:
+    """Return True if *url* targets a private, loopback, or link-local address.
+
+    Resolves the hostname to IP addresses and rejects any that fall within
+    non-public ranges.  This prevents SSRF attacks against cloud metadata
+    endpoints (169.254.x.x), localhost, and RFC 1918 networks.
+    """
+    try:
+        parsed = urlparse(url)
+        hostname = parsed.hostname
+        if not hostname:
+            return True  # no host → reject
+
+        # Reject well-known cloud metadata hostnames regardless of DNS
+        _BLOCKED_HOSTS = {
+            "metadata.google.internal",
+            "metadata.internal",
+        }
+        if hostname.lower() in _BLOCKED_HOSTS:
+            return True
+
+        # Resolve and check every address the hostname points to
+        for info in socket.getaddrinfo(hostname, parsed.port or 80,
+                                       proto=socket.IPPROTO_TCP):
+            addr = info[4][0]
+            ip = ipaddress.ip_address(addr)
+            if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved:
+                return True
+    except (socket.gaierror, ValueError):
+        return True  # unresolvable → skip rather than risk connecting
+
+    return False
 
 
 def find_links(html_path: Path) -> tuple[list[str], list[str]]:
@@ -75,25 +113,37 @@ def check_relative(base: Path, links: list[str]) -> list[str]:
 
 
 def check_external(urls: list[str]) -> list[tuple[str, str]]:
-    """Return list of (url, reason) for unreachable external URLs."""
+    """Return list of (url, reason) for unreachable external URLs.
+
+    Skips URLs that resolve to private/loopback/link-local addresses to
+    prevent SSRF.  Falls back from HEAD to a size-limited GET when servers
+    reject HEAD requests.
+    """
     broken = []
     seen = set()
     for url in urls:
         if url in seen:
             continue
         seen.add(url)
+
+        # SSRF protection: reject URLs targeting internal networks
+        if _is_private_url(url):
+            broken.append((url, "blocked (private/internal address)"))
+            continue
+
         try:
             req = urllib.request.Request(url, method="HEAD",
                                         headers={"User-Agent": "UBL-LinkCheck/1.0"})
             resp = urllib.request.urlopen(req, timeout=TIMEOUT)
             if resp.status >= 400:
                 broken.append((url, f"HTTP {resp.status}"))
-        except urllib.error.HTTPError as e:
-            # Some servers reject HEAD — try GET
+        except urllib.error.HTTPError:
+            # Some servers reject HEAD — try GET with a size limit
             try:
                 req = urllib.request.Request(url, method="GET",
                                             headers={"User-Agent": "UBL-LinkCheck/1.0"})
                 resp = urllib.request.urlopen(req, timeout=TIMEOUT)
+                resp.read(MAX_GET_BYTES)  # read limited bytes then discard
                 if resp.status >= 400:
                     broken.append((url, f"HTTP {resp.status}"))
             except Exception as e2:
