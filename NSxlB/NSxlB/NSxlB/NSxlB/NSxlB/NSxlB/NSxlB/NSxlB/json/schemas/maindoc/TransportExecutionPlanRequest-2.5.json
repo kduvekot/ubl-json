@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlanRequest-2",
+  "description": "A document sent by a transport user to request a transport service from a transport service provider.",
+  "type": "object",
+  "properties": {
+    "$jsonschema": {
+      "const": "urn:oasis:names:specification:ubl:schema:json:TransportExecutionPlanRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/SignatureType"
+          }
+        }
+      ]
+    },
+    "UBLVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/ID"
+    },
+    "VersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/VersionID"
+    },
+    "CopyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/CopyIndicator"
+    },
+    "UUID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "DocumentStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DocumentStatusCode"
+    },
+    "DocumentStatusReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DocumentStatusReasonCode"
+    },
+    "DocumentStatusReasonDescription": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DocumentStatusReasonDescription"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/DocumentStatusReasonDescription"
+          }
+        }
+      ]
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/Note"
+          }
+        }
+      ]
+    },
+    "TransportUserRemarks": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TransportUserRemarks"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2#/$defs/TransportUserRemarks"
+          }
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "TransportUserParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "TransportServiceProviderParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "PayeeParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "BillToParty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "TransportExecutionPlanDocumentReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+    },
+    "TransportServiceDescriptionDocumentReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+    },
+    "AdditionalDocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          }
+        }
+      ]
+    },
+    "TransportContract": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ContractType"
+    },
+    "TransportServiceProviderResponseDeadlinePeriod": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
+          }
+        }
+      ]
+    },
+    "MainTransportationService": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TransportationServiceType"
+    },
+    "AdditionalTransportationService": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TransportationServiceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TransportationServiceType"
+          }
+        }
+      ]
+    },
+    "ServiceStartTimePeriod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
+    },
+    "ServiceEndTimePeriod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/PeriodType"
+    },
+    "FromLocation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/LocationType"
+    },
+    "ToLocation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/LocationType"
+    },
+    "AtLocation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/LocationType"
+    },
+    "TransportExecutionTerms": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/TransportExecutionTermsType"
+    },
+    "Consignment": {
+      "oneOf": [
+        {
+          "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ConsignmentType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:oasis:names:specification:ubl:schema:json:CommonAggregateComponents-2#/$defs/ConsignmentType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "$jsonschema",
+    "ID",
+    "TransportServiceProviderParty",
+    "Consignment"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Transport Execution Plan Request. Details"
+}

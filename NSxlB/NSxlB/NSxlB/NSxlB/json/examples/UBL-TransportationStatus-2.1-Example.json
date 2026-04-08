@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransportationStatus-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportationStatus-2",
   "UBLVersionID": "2.1",
   "ID": "TS_1",
   "IssueDate": "2011-10-06",

@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:TransitCustomsDeclaration-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransitCustomsDeclaration-2",
   "ID": "2345678-910",
   "IssueDate": "2013-09-15",
   "IssueTime": "15:31:00Z",
@@ -58,6 +58,7 @@
     "PartyIdentification": {
       "UBLExtensions": [
         {
+          "UBLEntity": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",
           "ExtensionURI": "urn:oasis:names:specification:ubl:schema:json:extension:undefined",
           "ExtensionContent": {
             "IDExtension": "T0002"
