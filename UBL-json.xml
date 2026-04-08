@@ -719,31 +719,31 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       <para>The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.</para>
       <bibliomixed id="BIB-ISOIEC-DIRECTIVES">
         <abbrev>ISO/IEC Directives</abbrev>
-        <emphasis role="bold">[ISO/IEC Directives]</emphasis> ISO/IEC Directives, Part 2 (Ninth edition) Principles and rules for the structure and drafting of ISO and IEC documents, International Organization for Standardization and International Electrotechnical Commission, 2021. [Online]. Available: <ulink url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink>
+        ISO/IEC Directives, Part 2 (Ninth edition) Principles and rules for the structure and drafting of ISO and IEC documents, International Organization for Standardization and International Electrotechnical Commission, 2021. [Online]. Available: <ulink url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-UBL">
         <abbrev>UBL</abbrev>
-        <emphasis role="bold">[UBL]</emphasis> Universal Business Language Version 2.5, Committee Specification Draft 03, February 2026. [Online]. Available: <ulink url="https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html">https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html</ulink>
+        Universal Business Language Version 2.5, Committee Specification Draft 03, February 2026. [Online]. Available: <ulink url="https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html">https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-RFC8259">
         <abbrev>RFC8259</abbrev>
-        <emphasis role="bold">[RFC8259]</emphasis> The JavaScript Object Notation (JSON) Data Interchange Format. RFC 8259, December 2017. IETF. [Online]. Available: <ulink url="https://datatracker.ietf.org/doc/html/rfc8259">https://datatracker.ietf.org/doc/html/rfc8259</ulink>
+        The JavaScript Object Notation (JSON) Data Interchange Format. RFC 8259, December 2017. IETF. [Online]. Available: <ulink url="https://datatracker.ietf.org/doc/html/rfc8259">https://datatracker.ietf.org/doc/html/rfc8259</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-RFC7515">
         <abbrev>RFC7515</abbrev>
-        <emphasis role="bold">[RFC7515]</emphasis> JSON Web Signature (JWS). RFC 7515, May 2015. IETF. [Online]. Available: <ulink url="https://datatracker.ietf.org/doc/html/rfc7515">https://datatracker.ietf.org/doc/html/rfc7515</ulink>
+        JSON Web Signature (JWS). RFC 7515, May 2015. IETF. [Online]. Available: <ulink url="https://datatracker.ietf.org/doc/html/rfc7515">https://datatracker.ietf.org/doc/html/rfc7515</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-RFC8785">
         <abbrev>RFC8785</abbrev>
-        <emphasis role="bold">[RFC8785]</emphasis> JSON Canonicalization Scheme (JCS). RFC 8785, June 2020. IETF. [Online]. Available: <ulink url="https://datatracker.ietf.org/doc/html/rfc8785">https://datatracker.ietf.org/doc/html/rfc8785</ulink>
+        JSON Canonicalization Scheme (JCS). RFC 8785, June 2020. IETF. [Online]. Available: <ulink url="https://datatracker.ietf.org/doc/html/rfc8785">https://datatracker.ietf.org/doc/html/rfc8785</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-MEDIA-TYPES">
         <abbrev>MEDIA-TYPES</abbrev>
-        <emphasis role="bold">[MEDIA-TYPES]</emphasis> Internet Assigned Numbers Authority (IANA) Media Types. [Online]. Available: <ulink url="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</ulink>
+        Internet Assigned Numbers Authority (IANA) Media Types. [Online]. Available: <ulink url="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-ISO-8601">
         <abbrev>ISO-8601</abbrev>
-        <emphasis role="bold">[ISO-8601]</emphasis> Date and time, Representations for information interchange, Part 1: Basic rules. ISO 8601-1:2019. International Organization for Standardization. [Online]. Available: <ulink url="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</ulink>
+        Date and time, Representations for information interchange, Part 1: Basic rules. ISO 8601-1:2019. International Organization for Standardization. [Online]. Available: <ulink url="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</ulink>
       </bibliomixed>
     </section>
 
@@ -752,35 +752,35 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       <para>The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.</para>
       <bibliomixed id="BIB-CCTS">
         <abbrev>CCTS</abbrev>
-        <emphasis role="bold">[CCTS]</emphasis> Core Components Technical Specification, Version 2.01, UN/CEFACT. [Online]. Available: <ulink url="https://unece.org/trade/uncefact/ccts">https://unece.org/trade/uncefact/ccts</ulink>
+        Core Components Technical Specification, Version 2.01, UN/CEFACT. [Online]. Available: <ulink url="https://unece.org/trade/uncefact/ccts">https://unece.org/trade/uncefact/ccts</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-BDNDR">
         <abbrev>BDNDR</abbrev>
-        <emphasis role="bold">[BDNDR]</emphasis> Business Document Naming and Design Rules, Version 1.0. OASIS UBL. [Online]. Available: <ulink url="https://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/csprd01/Business-Document-NDR-v1.0-csprd01.html">https://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/csprd01/Business-Document-NDR-v1.0-csprd01.html</ulink>
+        Business Document Naming and Design Rules, Version 1.0. OASIS UBL. [Online]. Available: <ulink url="https://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/csprd01/Business-Document-NDR-v1.0-csprd01.html">https://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/csprd01/Business-Document-NDR-v1.0-csprd01.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-ISO-4217">
         <abbrev>ISO 4217</abbrev>
-        <emphasis role="bold">[ISO 4217]</emphasis> Codes for the representation of currencies. Third edition, December 2015. International Organization for Standardization. [Online]. Available: <ulink url="https://www.iso.org/iso-4217-currency-codes.html">https://www.iso.org/iso-4217-currency-codes.html</ulink>
+        Codes for the representation of currencies. Third edition, December 2015. International Organization for Standardization. [Online]. Available: <ulink url="https://www.iso.org/iso-4217-currency-codes.html">https://www.iso.org/iso-4217-currency-codes.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-ISO-3166">
         <abbrev>ISO 3166</abbrev>
-        <emphasis role="bold">[ISO 3166]</emphasis> Codes for the representation of names of countries and their subdivisions – Part 1: Country codes. ISO 3166-1. [Online]. Available: <ulink url="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</ulink>
+        Codes for the representation of names of countries and their subdivisions – Part 1: Country codes. ISO 3166-1. [Online]. Available: <ulink url="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-JSON-SCHEMA">
         <abbrev>JSON-SCHEMA</abbrev>
-        <emphasis role="bold">[JSON-SCHEMA]</emphasis> JSON Schema: A Media Type for Describing JSON Documents, IETF Internet-Draft, work in progress, draft-bhutton-json-schema-00, July 2020. [Online]. Available: <ulink url="https://www.rfc-editor.org/rfc/rfc8927">https://www.rfc-editor.org/rfc/rfc8927</ulink>
+        JSON Schema: A Media Type for Describing JSON Documents, IETF Internet-Draft, work in progress, draft-bhutton-json-schema-00, July 2020. [Online]. Available: <ulink url="https://www.rfc-editor.org/rfc/rfc8927">https://www.rfc-editor.org/rfc/rfc8927</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-UBLNDR">
         <abbrev>UBLNDR</abbrev>
-        <emphasis role="bold">[UBLNDR]</emphasis> UBL Naming and Design Rules 3.0, Committee Note 01. July 2016. OASIS. <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html">http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html</ulink>
+        UBL Naming and Design Rules 3.0, Committee Note 01. July 2016. OASIS. <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html">http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-UNECE-REC-2021">
         <abbrev>UNECE Rec 20/21</abbrev>
-        <emphasis role="bold">[UNECE Rec 20/21]</emphasis> United Nations/Economic Commission for Europe Recommendation 20, Codes for Units of Measure Used in International Trade; Recommendation 21, Additional Code Elements. [Online]. Available: <ulink url="https://unece.org/sites/default/files/2023-10/rec20_rev4E_2006.pdf">https://unece.org/sites/default/files/2023-10/rec20_rev4E_2006.pdf</ulink>
+        United Nations/Economic Commission for Europe Recommendation 20, Codes for Units of Measure Used in International Trade; Recommendation 21, Additional Code Elements. [Online]. Available: <ulink url="https://unece.org/sites/default/files/2023-10/rec20_rev4E_2006.pdf">https://unece.org/sites/default/files/2023-10/rec20_rev4E_2006.pdf</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-UTR36">
         <abbrev>UTR#36</abbrev>
-        <emphasis role="bold">[UTR#36]</emphasis> Unicode Security Considerations. Unicode Technical Report #36. [Online]. Available: <ulink url="https://www.unicode.org/reports/tr36/tr36-15.html">https://www.unicode.org/reports/tr36/tr36-15.html</ulink>
+        Unicode Security Considerations. Unicode Technical Report #36. [Online]. Available: <ulink url="https://www.unicode.org/reports/tr36/tr36-15.html">https://www.unicode.org/reports/tr36/tr36-15.html</ulink>
       </bibliomixed>
     </section>
   </appendix>

@@ -1107,8 +1107,16 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                         bib_id = "BIB-" + slugify(abbrev)
                         xml_lines.append(f'{_indent(lvl)}<bibliomixed id="{xml_escape(bib_id)}">')
                         xml_lines.append(f"{_indent(lvl+1)}<abbrev>{xml_escape(abbrev)}</abbrev>")
-                        # Render the rest
-                        rest_content = render_inline(elem["inline"])
+                        # Strip the [abbrev] bold text from inline content;
+                        # the XSLT generates the bracketed label from <abbrev>.
+                        remaining = list(elem["inline"])
+                        first_text = remaining[0]["text"]
+                        after_abbrev = first_text[len(abbrev_match.group(0)):]
+                        if after_abbrev.strip():
+                            remaining[0] = {**remaining[0], "text": after_abbrev}
+                        else:
+                            remaining = remaining[1:]
+                        rest_content = render_inline(remaining)
                         xml_lines.append(f"{_indent(lvl+1)}{rest_content}")
                         xml_lines.append(f"{_indent(lvl)}</bibliomixed>")
                         i += 1
