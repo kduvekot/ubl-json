@@ -40,8 +40,7 @@ Usage:
 import argparse
 import html
 import json
-import os
-import re as _re
+import re
 import shutil
 import sys
 from datetime import datetime, timezone
@@ -59,14 +58,10 @@ def preview_slug(branch_name: str, sha: str) -> str:
     fall back to the first 7 characters of the commit SHA.
     """
     if branch_name.startswith("claude/"):
-        m = _re.search(r'-([A-Za-z0-9]{5})$', branch_name)
+        m = re.search(r'-([A-Za-z0-9]{5})$', branch_name)
         if m:
             return m.group(1)
     return sha[:7]
-
-
-REPO_URL_TEMPLATE = "https://github.com/{repo}"
-PAGES_URL_TEMPLATE = "https://{owner}.github.io/{repo_name}"
 
 
 def load_branches(pages_dir: Path) -> dict:
@@ -114,7 +109,6 @@ def inject_banner(spec_html_path: Path, banner_html: str):
         content = f.read()
 
     # Remove any existing banner
-    import re
     content = re.sub(
         r"<!-- UBL JSON Pages Banner -->.*?<!-- End UBL JSON Pages Banner -->\n?",
         "",
@@ -400,12 +394,12 @@ def cmd_deploy_main(args):
     (pages_dir / ".nojekyll").touch()
 
     # Copy spec HTML as index.html
-    if args.spec_html and os.path.isfile(args.spec_html):
+    if args.spec_html and Path(args.spec_html).is_file():
         shutil.copy2(args.spec_html, pages_dir / "index.html")
         print(f"Copied spec HTML to {pages_dir / 'index.html'}")
 
     # Copy schemas to json/schemas/ (matches relative links in spec HTML)
-    if args.schemas_dir and os.path.isdir(args.schemas_dir):
+    if args.schemas_dir and Path(args.schemas_dir).is_dir():
         dest = pages_dir / "json" / "schemas"
         dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
@@ -420,7 +414,7 @@ def cmd_deploy_main(args):
                 generate_directory_index(subdir, f"UBL 2.5 JSON Schemas — {subdir.name}")
 
     # Copy examples to json/examples/
-    if args.examples_dir and os.path.isdir(args.examples_dir):
+    if args.examples_dir and Path(args.examples_dir).is_dir():
         dest = pages_dir / "json" / "examples"
         dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
@@ -476,7 +470,7 @@ def cmd_deploy_branch(args):
 
     # Copy spec HTML as index.html (the main page for the preview)
     spec_html = getattr(args, "spec_html", None)
-    if spec_html and os.path.isfile(spec_html):
+    if spec_html and Path(spec_html).is_file():
         shutil.copy2(spec_html, slug_dir / "index.html")
         print(f"Copied spec HTML to {slug_dir / 'index.html'}")
 
@@ -496,7 +490,7 @@ def cmd_deploy_branch(args):
         print(f"Generated fallback preview page at {slug_dir / 'index.html'}")
 
     # Copy schemas to json/schemas/ (matches relative links in spec HTML)
-    if args.schemas_dir and os.path.isdir(args.schemas_dir):
+    if args.schemas_dir and Path(args.schemas_dir).is_dir():
         dest = slug_dir / "json" / "schemas"
         dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
@@ -511,7 +505,7 @@ def cmd_deploy_branch(args):
                 generate_directory_index(subdir, f"Schemas — {branch_name} — {subdir.name}")
 
     # Copy examples to json/examples/
-    if args.examples_dir and os.path.isdir(args.examples_dir):
+    if args.examples_dir and Path(args.examples_dir).is_dir():
         dest = slug_dir / "json" / "examples"
         dest.parent.mkdir(parents=True, exist_ok=True)
         if dest.exists():
