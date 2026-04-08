@@ -33,10 +33,13 @@ Usage:
 
 import argparse
 import json
+import logging
 import sys
 import xml.etree.ElementTree as ET
 from collections import OrderedDict
 from pathlib import Path
+
+log = logging.getLogger(__name__)
 
 SCHEMAS_DIR = Path("json/schemas")
 EXAMPLES_DIR = Path("json/examples")
@@ -192,6 +195,7 @@ def to_number(text):
             return float(text)
         return int(text)
     except ValueError:
+        log.warning("Could not parse %r as a number, returning as string", text)
         return text
 
 
@@ -691,8 +695,8 @@ def main():
                         "sourceXML": xml_path.name,
                         "schemaRef": f"../schemas/maindoc/UBL-{doc_type}-2.5.json",
                     }
-                except Exception:
-                    pass
+                except Exception as e:
+                    log.warning("Could not extract doc type from %s: %s", xml_path.name, e)
                 print(f"  KEEP:  {xml_path.name} (hand-crafted)")
                 skipped += 1
                 continue

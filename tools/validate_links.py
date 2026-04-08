@@ -22,6 +22,7 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 # URLs to skip: schema identifiers (not meant to resolve) and sites
 # that block CI/cloud requests (verified manually to be reachable).
@@ -42,7 +43,6 @@ def _is_private_url(url: str) -> bool:
     endpoints (169.254.x.x), localhost, and RFC 1918 networks.
     """
     try:
-        from urllib.parse import urlparse
         parsed = urlparse(url)
         hostname = parsed.hostname
         if not hostname:

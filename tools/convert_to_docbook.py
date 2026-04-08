@@ -2,10 +2,11 @@
 """Convert a UBL .docx specification to DocBook XML 4.5."""
 
 import re
+import zipfile
+from xml.sax.saxutils import escape as _sax_escape
+
 import docx
 from lxml import etree
-from xml.sax.saxutils import escape as _sax_escape
-import zipfile
 
 # ---------------------------------------------------------------------------
 # Constants

@@ -39,6 +39,27 @@ _LIBRARY_MODELS = {
 }
 
 
+def _apply_cardinality(ref_schema, cardinality):
+    """Wrap *ref_schema* according to UBL cardinality rules.
+
+    - ``0..1`` / ``1``: single value (the ref as-is)
+    - ``0..n`` / ``1..n``: ``oneOf`` single value or non-empty array
+    - anything else: single value (safe fallback)
+    """
+    if cardinality in ('0..n', '1..n'):
+        return {
+            'oneOf': [
+                ref_schema,
+                {
+                    'type': 'array',
+                    'items': ref_schema,
+                    'minItems': 1
+                }
+            ]
+        }
+    return ref_schema
+
+
 def parse_gc_file(filepath):
     """
     Parse a Genericode XML file and extract all rows as dicts.
@@ -613,61 +634,19 @@ def generate_common_aggregate_components(output_dir, registry):
             cardinality = child['cardinality']
 
             if component_type == 'BBIE':
-                # BBIE: reference to CommonBasicComponents
                 ref_schema = {
                     '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
-
-                if cardinality in ('0..1', '1'):
-                    properties[child_component_name] = ref_schema
-                elif cardinality in ('0..n', '1..n'):
-                    # Repeating BBIE: allow single value or array
-                    # minItems: 1 — empty arrays are not valid; omit property instead
-                    properties[child_component_name] = {
-                        'oneOf': [
-                            ref_schema,
-                            {
-                                'type': 'array',
-                                'items': ref_schema,
-                                'minItems': 1
-                            }
-                        ]
-                    }
-                else:
-                    properties[child_component_name] = ref_schema
+                properties[child_component_name] = _apply_cardinality(ref_schema, cardinality)
 
             elif component_type == 'ASBIE':
-                # ASBIE: reference to another ABIE (in this schema)
                 associated_object_class = child.get('associated_object_class', '')
-
-                # Look up the type name from the object_class_to_type mapping
                 if associated_object_class in object_class_to_type:
                     target_type = object_class_to_type[associated_object_class]
                 else:
-                    # Fallback: replace spaces with empty string and append Type
                     target_type = associated_object_class.replace(' ', '') + 'Type'
-
                 ref_schema = {'$ref': f'#/$defs/{target_type}'}
-
-                if cardinality in ('0..1', '1'):
-                    # Single value
-                    properties[child_component_name] = ref_schema
-                elif cardinality in ('0..n', '1..n'):
-                    # Array (single or array)
-                    # minItems: 1 — empty arrays are not valid; omit property instead
-                    properties[child_component_name] = {
-                        'oneOf': [
-                            ref_schema,
-                            {
-                                'type': 'array',
-                                'items': ref_schema,
-                                'minItems': 1
-                            }
-                        ]
-                    }
-                else:
-                    # Fallback for unknown cardinality
-                    properties[child_component_name] = ref_schema
+                properties[child_component_name] = _apply_cardinality(ref_schema, cardinality)
 
             # Add to required list if cardinality is 1 or 1..n
             if cardinality in ('1', '1..n'):
@@ -950,25 +929,8 @@ def generate_signature_schemas(output_dir, registry):
                 cardinality = child.get('cardinality')
 
                 if component_type == 'ASBIE':
-                    # Reference to SignatureInformationType
                     ref_schema = {'$ref': '#/$defs/SignatureInformationType'}
-
-                    if cardinality in ('0..1', '1'):
-                        # Single value
-                        properties[child_component_name] = ref_schema
-                    elif cardinality in ('0..n', '1..n'):
-                        # Array (single or array)
-                        # minItems: 1 — empty arrays are not valid; omit property instead
-                        properties[child_component_name] = {
-                            'oneOf': [
-                                ref_schema,
-                                {
-                                    'type': 'array',
-                                    'items': ref_schema,
-                                    'minItems': 1
-                                }
-                            ]
-                        }
+                    properties[child_component_name] = _apply_cardinality(ref_schema, cardinality)
 
                 # Add to required list if cardinality is 1 or 1..n
                 if cardinality in ('1', '1..n'):
@@ -1147,61 +1109,19 @@ def generate_document_schemas(output_dir, registry):
             cardinality = child['cardinality']
 
             if component_type == 'BBIE':
-                # BBIE: reference to CommonBasicComponents
                 ref_schema = {
                     '$ref': f'{SCHEMA_BASE}/CommonBasicComponents-2#/$defs/{child_component_name}'
                 }
-
-                if cardinality in ('0..1', '1'):
-                    properties[child_component_name] = ref_schema
-                elif cardinality in ('0..n', '1..n'):
-                    # Repeating BBIE: allow single value or array
-                    # minItems: 1 — empty arrays are not valid; omit property instead
-                    properties[child_component_name] = {
-                        'oneOf': [
-                            ref_schema,
-                            {
-                                'type': 'array',
-                                'items': ref_schema,
-                                'minItems': 1
-                            }
-                        ]
-                    }
-                else:
-                    properties[child_component_name] = ref_schema
+                properties[child_component_name] = _apply_cardinality(ref_schema, cardinality)
 
             elif component_type == 'ASBIE':
-                # ASBIE: reference to another ABIE (in CommonAggregateComponents)
                 associated_object_class = child.get('associated_object_class', '')
-
-                # Resolve the type name
                 if associated_object_class in object_class_to_type:
                     target_type = object_class_to_type[associated_object_class]
                 else:
-                    # Fallback
                     target_type = associated_object_class.replace(' ', '') + 'Type'
-
                 ref_schema = {'$ref': f'{SCHEMA_BASE}/CommonAggregateComponents-2#/$defs/{target_type}'}
-
-                if cardinality in ('0..1', '1'):
-                    # Single value
-                    properties[child_component_name] = ref_schema
-                elif cardinality in ('0..n', '1..n'):
-                    # Array (single or array)
-                    # minItems: 1 — empty arrays are not valid; omit property instead
-                    properties[child_component_name] = {
-                        'oneOf': [
-                            ref_schema,
-                            {
-                                'type': 'array',
-                                'items': ref_schema,
-                                'minItems': 1
-                            }
-                        ]
-                    }
-                else:
-                    # Fallback for unknown cardinality
-                    properties[child_component_name] = ref_schema
+                properties[child_component_name] = _apply_cardinality(ref_schema, cardinality)
 
             # Add to required list if cardinality is 1 or 1..n
             if cardinality in ('1', '1..n'):

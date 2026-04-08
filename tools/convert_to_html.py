@@ -19,9 +19,12 @@ Requirements:
     - OASIS stylesheets + DocBook XSL at db/spec-0.9/htmlruntime/
 """
 
+import argparse
 import os
+import re
 import subprocess
 import sys
+import tempfile
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -84,9 +87,6 @@ def prepare_input(input_xml):
     entire DOCTYPE block so Saxon never needs to fetch the external DTD over
     the network.
     """
-    import re
-    import tempfile
-
     with open(input_xml, "r", encoding="utf-8") as f:
         content = f.read()
 
@@ -252,11 +252,21 @@ def validate_output(output_html):
 
 
 def main():
-    input_xml = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_INPUT
-    output_html = os.path.splitext(input_xml)[0] + ".html"
+    parser = argparse.ArgumentParser(
+        description="Convert DocBook XML to OASIS-styled HTML via Saxon HE"
+    )
+    parser.add_argument(
+        "input", nargs="?", default=DEFAULT_INPUT,
+        help=f"Path to DocBook XML input (default: {DEFAULT_INPUT})",
+    )
+    parser.add_argument(
+        "-o", "--output",
+        help="Path to HTML output (default: derived from input filename)",
+    )
+    args = parser.parse_args()
 
-    if len(sys.argv) > 2:
-        output_html = sys.argv[2]
+    input_xml = args.input
+    output_html = args.output or os.path.splitext(input_xml)[0] + ".html"
 
     print(f"DocBook XML to OASIS HTML Converter")
     print(f"{'=' * 40}")
