@@ -6,13 +6,6 @@
       "updated": "2026-04-07T22:37:19.257064+00:00",
       "pr": null,
       "run_id": "24107787331"
-    },
-    "claude/fix-duplicate-numbering-AdXCn": {
-      "sha": "efa4ba8e3feaa21533ceb943c5a89e5d3fc556ab",
-      "slug": "AdXCn",
-      "updated": "2026-04-08T08:22:53.655286+00:00",
-      "pr": 14,
-      "run_id": "24125476860"
     }
   }
 }
