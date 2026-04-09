@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:CreditNote-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-CreditNote-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:CreditNote-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-credit-notification-draft",
   "ID": "CN758494",
-  "CopyIndicator": false,
   "UUID": "349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4",
   "IssueDate": "2005-06-25",
   "TaxPointDate": "2005-06-21",

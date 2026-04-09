@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:oasis:names:specification:ubl:schema:json:UnqualifiedDataTypes-2",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/UnqualifiedDataTypes-2",
   "description": "UBL 2.5 Unqualified Data Types",
   "$defs": {
     "DateType": {

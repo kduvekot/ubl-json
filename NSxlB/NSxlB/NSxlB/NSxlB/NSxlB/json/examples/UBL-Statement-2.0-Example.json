@@ -1,10 +1,9 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:Statement-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-Statement-2",
   "UBLVersionID": "2.0",
   "CustomizationID": "urn:oasis:names:specification:ubl:xpath:Statement-2.0:sbs-1.0-draft",
   "ProfileID": "bpid:urn:oasis:names:draft:bpss:ubl-2-sbs-statement-notification-draft",
   "ID": "JUL2005-07758990",
-  "CopyIndicator": false,
   "UUID": "normalizedString",
   "IssueDate": "2005-08-02",
   "Note": "please present invoice if this credit amount cannot be taken against a forthcoming payment",

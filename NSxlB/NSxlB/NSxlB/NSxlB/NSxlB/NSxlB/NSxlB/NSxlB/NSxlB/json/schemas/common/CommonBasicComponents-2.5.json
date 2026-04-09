@@ -1,0 +1,3640 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:oasis:names:specification:ubl:schema:json:CommonBasicComponents-2",
+  "description": "UBL 2.5 Common Basic Components",
+  "$defs": {
+    "AcceptanceIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AcceptedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AcceptedVariantsDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AccessToolsURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AccountFormatCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AccountID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AccountTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AccountingCost": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AccountingCostCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ActionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ActivityLevelMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ActivityType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ActivityTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ActualDeliveryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ActualDeliveryTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ActualDespatchDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ActualDespatchTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ActualPickupDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ActualPickupTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ActualTemperatureReductionQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "AdValoremIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AdditionalAccountID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AdditionalConditions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AdditionalInformation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AdditionalMattersDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AdditionalStreetName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "AddressFormatCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AddressTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AdjustmentReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AdmissionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AdvertisementAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AgencyID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AgencyName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "AgreementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AirFlowPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "AircraftID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AliasName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "AllocatedEnergyMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "AllowanceChargeReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AllowanceChargeReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AllowanceChargeReason_CodeType"
+    },
+    "AllowanceTotalAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AllowanceTotalTaxInclusiveAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AltitudeMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "Amount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AmountRate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/RateType"
+    },
+    "AnimalFoodApprovedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AnimalFoodIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AnnotationContent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AnnualAverageAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AntennaLocus": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ApplicableCategory": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ApplicableCategoryCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ApplicationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ApplicationStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ApprovalDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ApprovalStatus": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Article": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AtAnchorageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AttributeID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AuctionConstraintIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "AuctionURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AuthorizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AvailabilityDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "AvailabilityStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AvailabilityTimePercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "AverageAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AverageSubsequentContractAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "AwardDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "AwardID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AwardTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "AwardingCriterionDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "AwardingCriterionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "AwardingCriterionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "AwardingMethodTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "BackOrderAllowedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "BackorderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "BackorderReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "BalanceAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "BalanceBroughtForwardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "BarcodeSymbologyID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BaseAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "BaseQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "BaseUnitMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "BasedOnConsensusIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "BasicConsumedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "BatchQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "BestBeforeDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "BindingOnBuyerIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "BirthDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "BirthplaceName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "BlockName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "BlockchainID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BrandName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "BriefDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "BrokerAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BudgetYearNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "BuildingName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "BuildingNumber": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "BulkCargoIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "BuriedAtSeaIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "BusinessClassificationEvidenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BusinessIdentityEvidenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BuyerEventID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BuyerProfileURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "BuyerReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "BuyerReferenceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CV2ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CabotageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "CalculationExpression": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CalculationExpressionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CalculationMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CalculationRate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/RateType"
+    },
+    "CalculationSequenceNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "CallBaseAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CallDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "CallExtensionAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CallTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "CancellationNote": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CandidateReductionConstraintIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "CandidateStatement": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CanonicalizationMethod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CapabilityTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CardChipCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Chip_CodeType"
+    },
+    "CardTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CargoAndBallastTankConditionDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CargoTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CarrierAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CarrierServiceInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CashChangeAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CatalogueIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "CategoryName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "CertificateReferenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CertificateType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CertificateTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CertificateURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CertificationLevelDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ChangeConditions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Channel": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ChannelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Channel_CodeType"
+    },
+    "CharacterSetCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Characteristics": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ChargeBearerCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ChargeIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ChargeTotalAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ChargeTotalTaxInclusiveAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ChargeableQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ChargeableWeightMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ChildConsignmentQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ChipApplicationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CircularityTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CityName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "CitySubdivisionName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "Code": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CodeValue": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CollaborationPriorityCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Comment": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CommodityCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CompanyID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CompanyLegalForm": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CompanyLegalFormCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CompanyLiquidationStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ComparedValueMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ComparisonDataCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ComparisonDataSourceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ComparisonForecastIssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ComparisonForecastIssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "CompletionIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "CompletionPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "Condition": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ConditionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Conditions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ConditionsDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ConfidentialityLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ConsigneeAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ConsignmentQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ConsignorAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ConsolidatableIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ConsolidatedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ConstitutionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ConsumerIncentiveTacticTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ConsumerUnitQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ConsumersEnergyLevel": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ConsumersEnergyLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ConsumptionEnergyQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ConsumptionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ConsumptionLevel": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ConsumptionLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ConsumptionMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ConsumptionReportID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ConsumptionType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ConsumptionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ConsumptionWaterQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ContainerizedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "Content": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ContentUnitQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ContractFolderID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ContractName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "ContractSubdivision": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ContractType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ContractTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ContractedCarrierAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ContractingSystemCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ContractingSystemTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CoordinateSystemCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CopyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "CopyQualityTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CorporateRegistrationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CorporateStockAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CorrectionAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CorrectionType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CorrectionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CorrectionUnitAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CountrySubentity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CountrySubentityCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CourseOverGroundDirection": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CreditLineAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "CreditNoteTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CreditedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "CrewQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "CriterionDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CriterionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "CurrentChargeType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CurrentChargeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CurrentOperatingSecurityLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CustomerAssignedAccountID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CustomerReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CustomizationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "CustomsClearanceServiceInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "CustomsImportClassifiedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "CustomsProcedureCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CustomsStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "CustomsTariffQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "DamageRemarks": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DangerousGoodsApprovedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "DataSendingCapability": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DataSourceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Date": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "DebitLineAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DebitNoteTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DebitedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "DeclarationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DeclaredCarriageValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DeclaredCustomsValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DeclaredForCarriageValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DeclaredStatisticsValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DeductibleAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DefaultLanguageCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DeliveredQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "DeliveryAcceptanceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DeliveryInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DemurrageInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Department": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Description": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DescriptionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DespatchAdviceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DiedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "DifferenceTemperatureReductionQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "DirectionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DisplayTacticTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DispositionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DistributionType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DistributionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "District": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DocumentCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "DocumentDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DocumentHash": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DocumentID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "DocumentStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DocumentStatus_CodeType"
+    },
+    "DocumentStatusReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DocumentStatusReasonDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DocumentType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DocumentTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "DocumentationFeeAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "DueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "DurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "Duty": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "DutyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EarliestPickupDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "EarliestPickupTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "EconomicOperatorGroupName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "EconomicOperatorRegistryURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "EffectDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "EffectiveDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "EffectiveTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ElectronicAddressID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ElectronicCatalogueUsageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ElectronicDeviceDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ElectronicInvoiceAcceptedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ElectronicMail": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ElectronicOrderUsageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ElectronicPaymentUsageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "EmbeddedDocument": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "EmbeddedDocumentBinaryObject": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/BinaryObjectType"
+    },
+    "EmergencyProceduresCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EmissionFactorSource": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "EmissionStandardReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "EmployeeQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "EncodingCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EndDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "EndTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "EndpointID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "EndpointURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "EnergySourceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EntitySizeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EnvelopeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EnvironmentalEmissionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EstimatedAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "EstimatedConsumedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "EstimatedDeliveryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "EstimatedDeliveryTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "EstimatedDespatchDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "EstimatedDespatchTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "EstimatedGeneratedUntilNextPortMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "EstimatedMaximumValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "EstimatedOverallContractAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "EstimatedOverallContractQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "EstimatedOverallFrameworkContractsAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "EstimatedTimingFurtherPublication": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "EvacuatedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "EvaluationCriterionTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EvaluationMethodTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "EvidenceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExceptionResolutionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExceptionStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExcessAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ExchangeMarketID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExchangeMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExchangeNetworkID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExchangedPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "ExclusionReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExecutionRequirementCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExemptionReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExemptionReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExpectedAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ExpectedAnchorageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ExpectedCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExpectedDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExpectedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExpectedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ExpectedOperatorQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ExpectedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ExpectedURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExpectedValueNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "ExpenseCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExpiryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ExpiryTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ExportReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExportReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExportTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Expression": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExpressionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExtendedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "Extension": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExtensionAgencyID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExtensionAgencyName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "ExtensionAgencyURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExtensionContent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/ContentType"
+    },
+    "ExtensionReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ExtensionReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ExtensionURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ExtensionVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "FaceValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "FamilyName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "FeatureTacticTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FeeAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "FeeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "FeeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FileName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "FinalReexportationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "FinancingInstrumentCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FirstName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "FirstShipmentAvailabilityDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "FirstShipmentAvailibilityDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "FissileCriticalitySafetyIndexNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "Floor": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "FollowupContractIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ForecastPurposeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ForecastTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FormatCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FormatID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ForwarderServiceInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "FreeOfChargeIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "FreeOnBoardValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "FreightForwarderAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "FreightRateClassCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Frequency": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "FridayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "FrozenDocumentIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "FrozenPeriodDaysNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "FuelConsumptionMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "FuelType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "FuelTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FulfilmentIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "FulfilmentIndicatorTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FullnessIndicationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FullyPaidSharesIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "FumigatedCargoTransportIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "FunctionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "FundingProgram": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "FundingProgramCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "GasPressureQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "GateID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "GenderCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "GeneralCargoIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "GivenTreatmentDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "GoodsItemPassportCounterfoilID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "GoodsItemPassportID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "GovernmentAgreementConstraintIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "GrossMassMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "GrossTonnageMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "GrossVolumeMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "GrossWeightMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "GroupType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "GroupTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "GroupingLots": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "GuaranteeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "GuaranteedDespatchDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "GuaranteedDespatchTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "HandlingCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "HandlingInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "HashAlgorithmMethod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "HaulageInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "HazardClassID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "HazardousCategoryCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "HazardousRegulationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "HazardousRiskIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "HazardousTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "HeatingType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "HeatingTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "HigherTenderAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "HolderName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "HumanFoodApprovedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "HumanFoodIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "HumidityPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "ID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "IMOGuidelinesOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "INFShipClassCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ISSCAbsenceReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ISSCExpiryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "IdentificationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CountryIdentification_CodeType"
+    },
+    "IdentificationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ImmobilizationCertificateID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ImpactCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ImportanceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "IndicationIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "IndustryClassificationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "InfectiousDiseaseCaseOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "Information": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "InformationURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "InhalationToxicityZoneCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "InhouseMail": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "InitiatingPartyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "InspectionMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "InstallmentDueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "InstructionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "InstructionNote": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Instructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "InsurancePremiumAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "InsuranceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "InsuranceTypeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "InsuranceValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "InsuredValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "InterestRatePercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "InventoryValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "InvoiceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "InvoicedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "InvoicingPartyReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "IssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "IssueNumberID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "IssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "IssuerID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "IssuerScopeID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ItemClassificationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ItemTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ItemUpdateRequestIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "JobTitle": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "JoinedShipDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "JourneyID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "JurisdictionLevel": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Justification": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "JustificationDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Keyword": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LanguageID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LastDrinkingWaterAnalysisDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LastRevisionDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LastRevisionTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "LatestDeliveryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LatestDeliveryTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "LatestMeterQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "LatestMeterReadingDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LatestMeterReadingMethod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LatestMeterReadingMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "LatestPickupDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LatestPickupTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "LatestProposalAcceptanceDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LatestReplyDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LatestReplyTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "LatestSecurityClearanceDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "LatitudeDegreesMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "LatitudeDirectionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/LatitudeDirection_CodeType"
+    },
+    "LatitudeMinutesMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "LeadTimeMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "LegalReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LegalStatusIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "LiabilityAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "LicensePlateID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LifeCycleStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "LifecycleStageCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "LifecycleStageDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LimitationDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Line": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LineCountNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "LineExtensionAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "LineID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LineNumberNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "LineStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/LineStatus_CodeType"
+    },
+    "ListValue": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LivestockIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "LoadingLengthMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "LoadingSequenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LocaleCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Language_CodeType"
+    },
+    "Location": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LocationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LocationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Login": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LogoReferenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LongitudeDegreesMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "LongitudeDirectionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/LongitudeDirection_CodeType"
+    },
+    "LongitudeMinutesMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "LossRisk": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LossRiskResponsibilityCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "LotNumberID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LotsGroupID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LowTendersDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "LowerOrangeHazardPlacardID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "LowerTenderAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MMSIRegistrationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "MaintenanceFrequencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MaintenanceFrequencyDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ManagementPlanImplementedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ManagementPlanOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "MandateTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ManifestType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ManifestTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ManufactureDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ManufactureTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "MaritimePollutantCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MarkAttention": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MarkAttentionIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "MarkCare": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MarkCareIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "MarketCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MarketName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "MarketValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MarkingID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "MathematicOperatorCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Operator_CodeType"
+    },
+    "MaxDedicatedStorageCapacityMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MaximumAdvertisementAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MaximumAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MaximumBackorderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MaximumCopiesNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumDataLossDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MaximumIncidentNotificationDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MaximumLotsAwardedNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumLotsSubmittedNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MaximumNumberNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumOperatorQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MaximumOrderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MaximumOriginalsNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumPaidAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MaximumPaymentInstructionsNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "MaximumQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MaximumValue": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MaximumValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MaximumValueNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MaximumVariantQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MeanTimeToRecoverDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "Measure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MeasureCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MedicalFirstAidGuideCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MedicalPractitionerConsultedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "MerchantID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "MessageFormat": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MeterConstant": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MeterConstantCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MeterName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "MeterNumber": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MeterReadingComments": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MeterReadingType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MeterReadingTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MiddleName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "MimeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MinimumAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "MinimumBackorderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MinimumDownTimeScheduleDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MinimumImprovementBid": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MinimumInventoryQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MinimumMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MinimumNumberNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MinimumOrderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MinimumPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "MinimumQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MinimumResponseTimeDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "MinimumValue": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MinimumValueNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "MiscellaneousEventTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ModelName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "ModificationReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ModificationReasonDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MondayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "MonetaryScope": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MoreIllThanExpectedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "MovieTitle": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "MultipleOrderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "MultipleTendersCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "MultiplierFactorNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "Name": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "NameCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NameSuffix": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "NationalID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "NationalityCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NationalityID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "NatureCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NatureOfIllnessDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "NatureOfTransactionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NavigationStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NegotiationDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "NetNetWeightMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "NetTonnageMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "NetVolumeMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "NetWeightMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "NetworkID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "NoControlActionsReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "NoFurtherNegotiationIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "NominationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "NominationTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "NormalTemperatureReductionQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "Note": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "NoticeLanguageCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NoticeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "NotificationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "OID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "OccurrenceDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "OccurrenceTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "OfficialUse": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OnCarriageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "OneTimeChargeType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OneTimeChargeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "OnsetDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "OntologyURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "OpenTenderID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "OperatingYearsQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "OptionalLineItemIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "OptionsDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OrderIntervalDaysNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "OrderQuantityIncrementNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "OrderResponseCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "OrderTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "OrderableIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "OrderableUnit": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OrderableUnitFactorRate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/RateType"
+    },
+    "OrganizationDepartment": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OriginalContractingSystemID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "OriginalJobID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "OtherConditionsIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "OtherControlActions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OtherInstruction": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OtherName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "OutstandingQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "OutstandingReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "OversupplyQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "OwnerTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PackLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PackQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "PackSizeNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "PackageLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PackagingDangerLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PackagingType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PackagingTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PackagingType_CodeType"
+    },
+    "PackingCriteriaCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PackingMaterial": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PaidAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PaidCashAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PaidDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "PaidTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ParentDocumentID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ParentDocumentLineReferenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ParentDocumentTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ParentDocumentVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PartPresentationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PartecipationPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "PartialDeliveryIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ParticipantID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ParticipationPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "PartyCapacityAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PartyType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PartyTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PassengerQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "Password": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PayPerView": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PayableAlternativeAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PayableAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PayableRoundingAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PayerReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PaymentAlternativeCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "PaymentChannelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PaymentCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "PaymentDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PaymentDueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "PaymentFrequencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PaymentID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PaymentMeansCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PaymentMeans_CodeType"
+    },
+    "PaymentMeansDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PaymentMeansID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PaymentNote": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PaymentOrderReference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PaymentPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "PaymentPlatformID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PaymentPurposeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PaymentRailID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PaymentTerminalID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PaymentTermsDetailsURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PenaltyAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PenaltySurchargePercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "PerUnitAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "Percent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "PerformanceMetricTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PerformanceValueQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "PerformingCarrierAssignedID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PersonalSituation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PhoneNumber": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PlacardEndorsement": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PlacardNotation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PlannedDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "PlannedInspectionsDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PlannedOperationsDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PlannedWorksDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PlotIdentification": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PositionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PositionInPortID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PostEventNotificationDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "PostalZone": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Postbox": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PowerIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PreCarriageIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PreEventNotificationDurationMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "PreferenceCriterionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PreferredLanguageLocaleCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Language_CodeType"
+    },
+    "PrepaidAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PrepaidIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PrepaidPaymentReferenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PreviousCancellationReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PreviousJobID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PreviousMeterQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "PreviousMeterReadingDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "PreviousMeterReadingMethod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PreviousMeterReadingMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PreviousVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PriceAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "PriceChangeReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PriceEvaluationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PriceRevisionFormulaDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PriceType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PriceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PricingCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "PricingUpdateRequestIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PrimaryAccountNumberID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "PrintQualifier": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Priority": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PrivacyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PrivatePartyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PrizeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PrizeIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ProcedureCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProcessDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ProcessReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ProcessReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProcessingTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProcurementSubTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProcurementType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ProcurementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProductTraceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ProfileExecutionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ProfileID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ProfileStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProgressPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "PromotionalEventTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProperShippingName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "PropertyGroupTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ProtocolID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ProviderTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PublicPartyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PublishAwardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "PurchaseDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "PurchaseTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "Purpose": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PurposeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "PurposeType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "PurposeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "QualificationApplicationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "QualityControlCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Quantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "QuantityDiscrepancyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RadioCallSignID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RailCarID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "Rank": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RankCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Rate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/RateType"
+    },
+    "RateOfTurnMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ReceiptAdviceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/ReceiptAdviceType_CodeType"
+    },
+    "ReceivedDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ReceivedElectronicTenderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ReceivedForeignTenderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ReceivedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ReceivedTenderQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ReceivedTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "RecurringProcurementDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RecurringProcurementIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "RecyclabilityPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "RecycledContentPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "Reference": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReferenceDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ReferenceEventCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ReferenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ReferenceTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ReferencedConsignmentID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ReferencedDocumentInternalAddress": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReferencedSignatureID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RefrigeratedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "RefrigerationOnIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "Region": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RegisteredDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RegisteredTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "RegistrationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RegistrationExpirationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RegistrationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RegistrationName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "RegistrationNationality": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RegistrationNationalityID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RegulatoryDomain": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReinspectionRequiredIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "RejectActionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RejectReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RejectReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RejectedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "RejectionNote": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReleaseID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ReliabilityPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "Remarks": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReminderSequenceNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "ReminderTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RenewalsIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ReplenishmentOwnerDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReportType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ReportTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ReportedToMedicalOfficerIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "RepresentationType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RepresentationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RequestDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RequestForQuotationLineID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RequestTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "RequestedDeliveryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RequestedDespatchDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RequestedDespatchTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "RequestedInvoiceCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "RequestedPublicationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RequiredCurriculaCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RequiredCurriculaIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "RequiredCustomsID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RequiredDeliveryDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RequiredDeliveryTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "RequiredFeeAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "RequiredResponseMessageLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ResidenceType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ResidenceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ResidentOccupantsNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "Resolution": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ResolutionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ResolutionDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ResolutionTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ResourceOriginDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ResourceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Response": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ResponseAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ResponseBinaryObject": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/BinaryObjectType"
+    },
+    "ResponseCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ResponseDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ResponseID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ResponseIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ResponseMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ResponseNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "ResponseQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ResponseTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ResponseURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RetailEventName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "RetailEventStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RetainedOnBoardMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ReturnabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ReturnableMaterialIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ReturnableQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "RevisedForecastLineID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "RevisionDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "RevisionStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RevisionTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "RoamingPartnerName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "RoleCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "RoleDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Room": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "RoundingAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "SMESuitableIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SSPOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SSPSecurityMeasuresAppliedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SalesOrderID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SalesOrderLineID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SalinityMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "SanitaryMeasureTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SanitaryMeasuresAppliedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SaturdayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SchemaURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SchemeURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ScoreNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "ScoringSystemCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SeaHeightMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "SealIssuerTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SealStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SealingPartyType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SecurityClassificationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SecurityID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SecurityLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SegregatedBallastMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "SellerEventID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SequenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SequenceNumberID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SequenceNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "SerialID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SerialNumberID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ServiceInformationPreferenceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ServiceLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ServiceName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "ServiceNumberCalled": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ServiceProviderPartyIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ServiceType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ServiceTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SettlementDiscountAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "SettlementDiscountPercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "SharesNumberQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ShipConfigurationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ShipmentStageType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ShipmentStageTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ShippingMarks": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ShippingOrderID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ShippingPriorityLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ShipsRequirements": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ShortQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ShortageActionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SickAnimalDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SickAnimalOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SignatureID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SignatureMethod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SizeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SocialMediaTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SoleProprietorshipIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SourceCurrencyBaseRate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/RateType"
+    },
+    "SourceCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "SourceForecastIssueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "SourceForecastIssueTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "SourceValueMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "SpecialFormDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SpecialInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SpecialSecurityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SpecialServiceInstructions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SpecialTerms": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SpecialTransportRequirements": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SpecificationID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SpecificationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SpeedOverGroundMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "SplitConsignmentIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "StartDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "StartTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "StatementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Status": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "StatusAvailableIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "StatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "StatusReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "StatusReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "StillIllIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "StillOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "StowagePositionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "StowawayDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "StowawaysFoundOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "StreetName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "SubTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SubTypeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SubcontractingConditionsCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Subject": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SubjectCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SubmissionDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "SubmissionDueDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "SubmissionMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SubscriberID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SubscriberType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SubscriberTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SubstitutionStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/SubstitutionStatus_CodeType"
+    },
+    "SuccessiveSequenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SummaryDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "SundayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "SupplierAssignedAccountID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "SupplyChainActivityTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "SupplyTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TankID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TankTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TanksExchangedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TanksInBallastQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TanksNotExchangedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TareWeightMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "TargetCurrencyBaseRate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/RateType"
+    },
+    "TargetCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "TargetInventoryQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TargetServicePercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "TariffClassCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TariffCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TariffDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TaxAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "TaxEnergyAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxEnergyBalanceAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxEnergyOnAccountAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxEvidenceIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TaxExclusiveAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxExemptionReason": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TaxExemptionReasonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TaxIncludedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TaxInclusiveAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxInclusiveLineExtensionAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxInclusivePriceAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TaxLevelCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TaxPointDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "TaxTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TaxableAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TechnicalCommitteeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TechnicalName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "TelecommunicationsServiceCall": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TelecommunicationsServiceCallCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TelecommunicationsServiceCategory": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TelecommunicationsServiceCategoryCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TelecommunicationsSupplyType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TelecommunicationsSupplyTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Telefax": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Telephone": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TenderEnvelopeID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TenderEnvelopeTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TenderLanguageLocaleCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Language_CodeType"
+    },
+    "TenderResultCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TenderTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TendererRequirementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TendererRoleCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TerminatedIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TestIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TestMethod": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "Text": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ThirdPartyPayerIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ThresholdAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ThresholdQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ThresholdValueComparisonCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ThursdayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TierRange": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TierRatePercent": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/PercentType"
+    },
+    "TimeAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TimeBasisCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TimeDeltaDaysQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TimeFrequencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TimezoneOffset": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TimingComplaint": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TimingComplaintCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "Title": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ToBeDeliveredMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ToOrderIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TotalAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalBalanceAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalBallastTanksOnBoardQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalBallastWaterCapacityMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "TotalBallastWaterOnBoardMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "TotalConsumedQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalCreditAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalDeadPersonQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalDebitAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalDeliveredQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalGoodsItemQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalIllPersonQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalInvoiceAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalMeteredQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalPackageQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalPackagesQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TotalPaymentAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalTaskAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalTaxAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TotalTransportHandlingUnitQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "TraceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TrackingDeviceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TrackingID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TradeItemPackingLabelingTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TradeServiceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TradingRestrictions": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TrailerLicensePlateID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TrainID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TransactionCurrencyTaxAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "TransactionDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "TransactionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TransactionTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "TransitDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TransitDirectionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TranslationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportAuthorizationCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportEmergencyCardCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportEquipmentTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TransportEquipmentType_CodeType"
+    },
+    "TransportEventTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportExecutionPlanReferenceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TransportExecutionStatusCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportHandlingUnitTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportIndexNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "TransportMeansTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportModeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TransportMode_CodeType"
+    },
+    "TransportServiceCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TransportServiceProviderRemarks": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TransportServiceProviderSpecialTerms": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TransportUserRemarks": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TransportUserSpecialTerms": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TransportationServiceDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "TransportationServiceDetailsURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "TransportationStatusTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TreatmentPathwayCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TuesdayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "TunnelRestrictionCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "TypeID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "UBLVersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "UNDGCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "UNPackingGroup": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "UNPackingGroupCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "URI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "UUID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "UnknownPriceIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "UpperOrangeHazardPlacardID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "UrgencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "UtilityStatementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ValidISSCIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ValidSanitationCertificateOnBoardIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "ValidateProcess": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ValidateTool": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ValidateToolVersion": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ValidatedCriterionPropertyID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ValidationDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "ValidationResultCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ValidationTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "ValidatorID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "ValidityStartDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "Value": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ValueAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "ValueBaseMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ValueCurrencyCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/Currency_CodeType"
+    },
+    "ValueDataTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "ValueFactorNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "ValueMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "ValueQualifier": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "ValueQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "ValueUnitCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/UnitOfMeasure_CodeType"
+    },
+    "VarianceQuantity": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/QuantityType"
+    },
+    "VariantConstraintCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "VariantConstraintIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "VariantID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "VersionID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "VesselID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "VesselName": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NameType"
+    },
+    "VisitDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "VolumeMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "WarrantyInformation": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WasteMeasure": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/MeasureType"
+    },
+    "WasteMovementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WasteNotificationTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WasteTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WasteTypeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WaybillTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WebSiteTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WebsiteURI": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "WednesdayAvailabilityIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "WeekDayCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/WeekDay_CodeType"
+    },
+    "WeighingDate": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/DateType"
+    },
+    "WeighingDeviceID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "WeighingDeviceType": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WeighingMethodCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/WeighingMethod_CodeType"
+    },
+    "WeighingTime": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TimeType"
+    },
+    "Weight": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WeightNumeric": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/NumericType"
+    },
+    "WeightScoringMethodologyNote": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WeightStatementTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WeightingAlgorithmCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WeightingConsiderationDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WeightingTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WithdrawOfferIndicator": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IndicatorType"
+    },
+    "WithholdingTaxTotalAmount": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/AmountType"
+    },
+    "WorkItemDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WorkItemID": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/IdentifierType"
+    },
+    "WorkPhase": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "WorkPhaseCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WorkTypeCode": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/CodeType"
+    },
+    "WorkTypeDescription": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    },
+    "XPath": {
+      "$ref": "urn:oasis:names:specification:ubl:schema:json:QualifiedDataTypes-2#/$defs/TextType"
+    }
+  }
+}

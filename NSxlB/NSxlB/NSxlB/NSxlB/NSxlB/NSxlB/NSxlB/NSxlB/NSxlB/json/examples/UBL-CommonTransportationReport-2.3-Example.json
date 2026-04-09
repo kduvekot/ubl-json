@@ -1,0 +1,289 @@
+{
+  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:CommonTransportationReport-2",
+  "UBLVersionID": "2.1",
+  "CustomizationID": "Common Framework",
+  "ProfileID": "ENS",
+  "ID": "224087496582335",
+  "IssueDate": "2013-05-08",
+  "IssueTime": "10:15:00+02:00",
+  "DocumentStatusCode": "NotConfirmed",
+  "VersionID": "1",
+  "ReporterParty": {
+    "PartyIdentification": {
+      "ID": "4058673827641"
+    },
+    "PartyName": {
+      "Name": "D2D GmbH"
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@d2d.de"
+    }
+  },
+  "SenderParty": {
+    "PartyName": {
+      "Name": "Declarant Inc"
+    },
+    "PostalAddress": {
+      "StreetName": "Declarant Street",
+      "CityName": "Declarant City",
+      "PostalZone": "Declarant Post Code",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    },
+    "Contact": {
+      "Name": "SomeName",
+      "Telephone": "+49450557000",
+      "ElectronicMail": "SomeName@d2d.de"
+    }
+  },
+  "ReceiverParty": {
+    "PartyIdentification": {
+      "ID": "4058675698641"
+    },
+    "PartyName": {
+      "Name": "Lisboa Harbour"
+    }
+  },
+  "ReportingLocation": {
+    "Address": {
+      "StreetName": "Declarant Street",
+      "CityName": "Declarant City",
+      "PostalZone": "Declarant Post Code",
+      "Country": {
+        "IdentificationCode": "DE"
+      }
+    }
+  },
+  "Shipment": {
+    "Consignment": {
+      "ID": "7365566156191234567",
+      "GrossWeightMeasure": {
+        "value": 600,
+        "unitCode": "KGM"
+      },
+      "TotalGoodsItemQuantity": 1500,
+      "TotalTransportHandlingUnitQuantity": 2,
+      "PlannedPickupTransportEvent": {
+        "Location": {
+          "ID": "MAPTM",
+          "Address": {
+            "CityName": "Tanger",
+            "Country": {
+              "IdentificationCode": "MA"
+            }
+          }
+        }
+      },
+      "PlannedDeliveryTransportEvent": {
+        "Location": {
+          "ID": "ITGOA",
+          "Address": {
+            "Country": {
+              "IdentificationCode": "IT"
+            }
+          }
+        }
+      },
+      "ConsigneeParty": {
+        "PartyName": {
+          "Name": "Consignee W"
+        },
+        "PostalAddress": {
+          "StreetName": "Consignee W Street",
+          "CityName": "Munich",
+          "PostalZone": "231",
+          "Country": {
+            "IdentificationCode": "DE"
+          }
+        }
+      },
+      "ConsignorParty": {
+        "PartyIdentification": {
+          "ID": "4058673827000"
+        },
+        "PartyName": {
+          "Name": "Disfruta"
+        },
+        "Contact": {
+          "Name": "SomeName",
+          "Telephone": "+212687878763",
+          "ElectronicMail": "SomeName@disfruta.ma"
+        }
+      },
+      "OriginalDepartureCountry": {
+        "IdentificationCode": "MA"
+      },
+      "FinalDestinationCountry": {
+        "IdentificationCode": "DE"
+      },
+      "TransitCountry": [
+        {
+          "IdentificationCode": "IT"
+        },
+        {
+          "IdentificationCode": "AT"
+        }
+      ],
+      "MainCarriageShipmentStage": {
+        "ShipmentStageTypeCode": "1",
+        "TransportModeCode": "1",
+        "TransportMeans": {
+          "JourneyID": "00344",
+          "RegistrationNationalityID": "IT",
+          "MaritimeTransport": {
+            "VesselID": "3852664",
+            "VesselName": "Vessel Name"
+          }
+        },
+        "EstimatedArrivalTransportEvent": {
+          "OccurrenceDate": "2013-05-25",
+          "OccurrenceTime": "18:00:00+01:00",
+          "Location": {
+            "ID": "ITGOA",
+            "LocationTypeCode": "24",
+            "Address": {
+              "Country": {
+                "IdentificationCode": "IT"
+              }
+            }
+          }
+        }
+      },
+      "TransportHandlingUnit": [
+        {
+          "ID": "CON_THU_1",
+          "TransportHandlingUnitTypeCode": "4",
+          "HazardousRiskIndicator": false,
+          "ShippingMarks": "Agricultural products",
+          "TransportEquipment": {
+            "ID": "BFCU4040001",
+            "TransportEquipmentTypeCode": "CN",
+            "FullnessIndicationCode": "1",
+            "ReturnabilityIndicator": true,
+            "RefrigeratedIndicator": true,
+            "Description": "Should have a temperature between 2-4 degrees celcius",
+            "GrossWeightMeasure": {
+              "value": 25000,
+              "unitCode": "KGM"
+            },
+            "GrossVolumeMeasure": {
+              "value": 39,
+              "unitCode": "MTQ"
+            },
+            "PowerIndicator": true,
+            "MeasurementDimension": [
+              {
+                "AttributeID": "Length",
+                "Measure": {
+                  "value": 6.1,
+                  "unitCode": "MTR"
+                }
+              },
+              {
+                "AttributeID": "Height",
+                "Measure": {
+                  "value": 2.6,
+                  "unitCode": "MTR"
+                }
+              },
+              {
+                "AttributeID": "Width",
+                "Measure": {
+                  "value": 2.44,
+                  "unitCode": "MTR"
+                }
+              }
+            ],
+            "GoodsItem": {
+              "Item": {
+                "CommodityClassification": {
+                  "CargoTypeCode": "14",
+                  "CommodityCode": "8"
+                }
+              }
+            }
+          }
+        },
+        {
+          "ID": "CON_THU_2",
+          "TransportHandlingUnitTypeCode": "4",
+          "HazardousRiskIndicator": false,
+          "ShippingMarks": "Agricultural products",
+          "TransportEquipment": {
+            "ID": "BFCU4040002",
+            "TransportEquipmentTypeCode": "CN",
+            "FullnessIndicationCode": "1",
+            "ReturnabilityIndicator": true,
+            "RefrigeratedIndicator": true,
+            "Description": "Should have a temperature between 2-4 degrees celcius",
+            "GrossWeightMeasure": {
+              "value": 25000,
+              "unitCode": "KGM"
+            },
+            "GrossVolumeMeasure": {
+              "value": 39,
+              "unitCode": "MTQ"
+            },
+            "PowerIndicator": true,
+            "MeasurementDimension": [
+              {
+                "AttributeID": "Length",
+                "Measure": {
+                  "value": 6.1,
+                  "unitCode": "MTR"
+                }
+              },
+              {
+                "AttributeID": "Height",
+                "Measure": {
+                  "value": 2.6,
+                  "unitCode": "MTR"
+                }
+              },
+              {
+                "AttributeID": "Width",
+                "Measure": {
+                  "value": 2.44,
+                  "unitCode": "MTR"
+                }
+              }
+            ],
+            "GoodsItem": {
+              "Item": {
+                "CommodityClassification": {
+                  "CargoTypeCode": "14",
+                  "CommodityCode": "8"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "FirstArrivalPortLocation": {
+        "ID": "ITGOA",
+        "LocationTypeCode": "41",
+        "Address": {
+          "Country": {
+            "IdentificationCode": "IT"
+          }
+        }
+      },
+      "OfficeOfEntryLocation": {
+        "ID": "DE000396",
+        "LocationTypeCode": "41",
+        "Address": {
+          "Country": {
+            "IdentificationCode": "DE"
+          }
+        }
+      }
+    }
+  },
+  "DocumentReference": {
+    "ID": "224087496582335",
+    "DocumentTypeCode": "704"
+  }
+}
