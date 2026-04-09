@@ -1,0 +1,189 @@
+/* NDR Analysis — Mobile-first responsive styles
+   Matches the system font stack used in build_pages.py */
+
+:root {
+  --text: #333;
+  --text-light: #555;
+  --bg: #fff;
+  --bg-alt: #f8f9fa;
+  --border: #dee2e6;
+  --link: #0366d6;
+  --link-visited: #6f42c1;
+  --code-bg: #f4f4f4;
+  --max-width: 960px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  margin: 0;
+  padding: 1.5rem 1rem;
+}
+
+/* Centered content column */
+header, main, nav#TOC {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Title */
+header h1.title {
+  font-size: 1.75rem;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+/* Table of Contents */
+nav#TOC {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav#TOC > ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+nav#TOC li { margin: 0.25rem 0; }
+
+nav#TOC a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+nav#TOC a:hover { color: var(--link); }
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: var(--text);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 1rem; color: var(--text-light); }
+
+/* Links */
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+
+/* Paragraphs and lists */
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+li { margin: 0.25rem 0; }
+
+/* Tables — horizontally scrollable on mobile */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--bg-alt);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Alternate row shading */
+tbody tr:nth-child(even) { background: var(--bg-alt); }
+
+/* Code */
+code {
+  font-family: 'SF Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+  font-size: 0.88em;
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--border);
+  margin: 0 0 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--text-light);
+  background: var(--bg-alt);
+}
+
+blockquote p:last-child { margin-bottom: 0; }
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Responsive: wider screens */
+@media (min-width: 600px) {
+  body { padding: 2rem; }
+  header h1.title { font-size: 2rem; }
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+}
+
+/* Print styles */
+@media print {
+  body {
+    font-size: 11pt;
+    color: #000;
+    padding: 0;
+    max-width: none;
+  }
+  nav#TOC { break-after: page; }
+  h1, h2, h3 { break-after: avoid; }
+  table, pre { break-inside: avoid; }
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+  a[href^="#"]::after { content: ""; }
+}

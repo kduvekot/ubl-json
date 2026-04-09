@@ -8,3 +8,6 @@ _site/
 # Temp files from conversion
 *.tmp.xml
 __pycache__/
+
+# NDR analysis generated output
+ndr-analysis/*.html

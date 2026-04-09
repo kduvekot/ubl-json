@@ -77,6 +77,17 @@ jobs:
       - name: Convert XML examples
         run: uv run python tools/convert_xml_examples.py --xml-dir /tmp/ubl/raw/xml --validate
 
+      # ── Build NDR analysis ──
+      - name: Build NDR analysis HTML
+        if: hashFiles('ndr-analysis/ndr-analysis.md') != ''
+        run: |
+          sudo apt-get install -y -qq pandoc > /dev/null
+          cd ndr-analysis && pandoc ndr-analysis.md \
+            -o ndr-analysis.html \
+            --standalone --toc --toc-depth=3 \
+            --from gfm --css=style.css --embed-resources \
+            --metadata title="Towards a Modular NDR Architecture for CCTS-Based Vocabularies"
+
       - name: Upload schemas and examples artifact
         uses: actions/upload-artifact@v4
         with:
@@ -131,6 +142,12 @@ jobs:
             --schemas-dir json/schemas \
             --examples-dir json/examples \
             --repo ${{ github.repository }}
+
+      - name: Deploy NDR analysis
+        if: hashFiles('ndr-analysis/ndr-analysis.html') != ''
+        run: |
+          mkdir -p gh-pages/ndr-analysis
+          cp ndr-analysis/ndr-analysis.html gh-pages/ndr-analysis/index.html
 
       - name: Restore branch previews
         run: |
@@ -257,6 +274,17 @@ jobs:
       - name: Convert XML examples
         run: uv run python tools/convert_xml_examples.py --xml-dir /tmp/ubl/raw/xml --validate
 
+      # ── Build NDR analysis ──
+      - name: Build NDR analysis HTML
+        if: hashFiles('ndr-analysis/ndr-analysis.md') != ''
+        run: |
+          sudo apt-get install -y -qq pandoc > /dev/null
+          cd ndr-analysis && pandoc ndr-analysis.md \
+            -o ndr-analysis.html \
+            --standalone --toc --toc-depth=3 \
+            --from gfm --css=style.css --embed-resources \
+            --metadata title="Towards a Modular NDR Architecture for CCTS-Based Vocabularies"
+
       - name: Upload schemas and examples artifact
         uses: actions/upload-artifact@v4
         with:
@@ -321,6 +349,13 @@ jobs:
             --repo "${{ github.repository }}" \
             --run-id "${{ github.run_id }}" \
             $PR_ARG
+
+      - name: Deploy NDR analysis to branch preview
+        if: hashFiles('ndr-analysis/ndr-analysis.html') != ''
+        run: |
+          SLUG="${{ steps.branch-info.outputs.slug }}"
+          mkdir -p "gh-pages/$SLUG/ndr-analysis"
+          cp ndr-analysis/ndr-analysis.html "gh-pages/$SLUG/ndr-analysis/index.html"
 
       - name: Validate links
         run: python tools/validate_links.py gh-pages --subdir "${{ steps.branch-info.outputs.slug }}"
