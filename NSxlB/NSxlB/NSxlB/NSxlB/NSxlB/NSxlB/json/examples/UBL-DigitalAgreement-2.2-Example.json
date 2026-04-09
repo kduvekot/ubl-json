@@ -1,5 +1,5 @@
 {
-  "$jsonschema": "urn:oasis:names:specification:ubl:schema:json:DigitalAgreement-2",
+  "UBLEntity": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-DigitalAgreement-2",
   "UBLVersionID": "2.2",
   "ID": "A12345-2016",
   "IssueDate": "2016-11-07",
@@ -11,10 +11,6 @@
       "InitiatingPartyIndicator": true,
       "PrivatePartyIndicator": true,
       "Party": {
-        "EndpointID": {
-          "value": "1234567987654",
-          "schemeID": "9:GLN"
-        },
         "PartyName": {
           "Name": "Vendor Inc."
         },
@@ -45,10 +41,6 @@
     {
       "PrivatePartyIndicator": true,
       "Party": {
-        "EndpointID": {
-          "value": "9994567987654",
-          "schemeID": "9:GLN"
-        },
         "PartyName": {
           "Name": "Buyer GmbH"
         },
