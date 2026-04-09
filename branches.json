@@ -1,3 +1,11 @@
 {
-  "branches": {}
+  "branches": {
+    "claude/review-ubl-json-specs-RKFcz": {
+      "sha": "2a818126377bf39eb651f03946cba802ab571117",
+      "slug": "RKFcz",
+      "updated": "2026-04-09T10:21:26.725128+00:00",
+      "pr": null,
+      "run_id": "24185084750"
+    }
+  }
 }
