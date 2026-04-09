@@ -1,11 +1,3 @@
 {
-  "branches": {
-    "claude/check-oasis-access-NSxlB": {
-      "sha": "e26699677bfd6e5b402dd4b9adf5caed3f881927",
-      "slug": "NSxlB",
-      "updated": "2026-04-08T08:32:43.830278+00:00",
-      "pr": null,
-      "run_id": "24125879126"
-    }
-  }
+  "branches": {}
 }
