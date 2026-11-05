@@ -10,11 +10,11 @@ generator.
 These are the authoritative input files for the generator.  All JSON schemas
 are derived from these GC files alone; no XSD parsing is required at runtime.
 
-| File | Rows | Origin | Stable URL (CSD03) |
+| File | Rows | Origin | Stable URL (OS) |
 |------|------|--------|---------------------|
-| `UBL-Entities-2.5.gc` | 5 854 | CSD03 distribution archive `mod/` | [UBL-Entities-2.5.gc](https://docs.oasis-open.org/ubl/csd03-UBL-2.5/mod/UBL-Entities-2.5.gc) |
-| `UBL-Signature-Entities-2.5.gc` | 5 | CSD03 distribution archive `mod/` | [UBL-Signature-Entities-2.5.gc](https://docs.oasis-open.org/ubl/csd03-UBL-2.5/mod/UBL-Signature-Entities-2.5.gc) |
-| `UBL-Endorsed-Entities-2.5.gc` | 5 854 | CSD03 distribution archive `endorsed/mod/` | [UBL-Endorsed-Entities-2.5.gc](https://docs.oasis-open.org/ubl/csd03-UBL-2.5/endorsed/mod/UBL-Endorsed-Entities-2.5.gc) |
+| `UBL-Entities-2.5.gc` | 5 854 | OS distribution archive `mod/` | [UBL-Entities-2.5.gc](https://docs.oasis-open.org/ubl/os-UBL-2.5/mod/UBL-Entities-2.5.gc) |
+| `UBL-Signature-Entities-2.5.gc` | 5 | OS distribution archive `mod/` | [UBL-Signature-Entities-2.5.gc](https://docs.oasis-open.org/ubl/os-UBL-2.5/mod/UBL-Signature-Entities-2.5.gc) |
+| `UBL-Endorsed-Entities-2.5.gc` | 5 854 | OS distribution archive `endorsed/mod/` | [UBL-Endorsed-Entities-2.5.gc](https://docs.oasis-open.org/ubl/os-UBL-2.5/endorsed/mod/UBL-Endorsed-Entities-2.5.gc) |
 | `UBL-Extension-Entities-2.5.gc` | 11 | **Derived** — see below | n/a (no official GC exists) |
 
 ### UBL-Extension-Entities-2.5.gc
@@ -22,15 +22,17 @@ are derived from these GC files alone; no XSD parsing is required at runtime.
 No official Genericode file exists for the UBL Common Extension Components.
 This file was generated once (2026-02-11) by manual conversion from the
 CSD03 XML Schema definitions listed below.  The extension scaffolding has been
-stable since UBL 2.1 and is not expected to change.
+stable since UBL 2.1 and is not expected to change.  On 2026-11-05 the source
+XSDs were re-checked against the OASIS Standard release and their element
+content is identical; only the header metadata of this file was updated.
 
 **Source XSDs** (retained in `history/` for traceability):
 
-| File | Description | Stable URL (CSD03) |
+| File | Description | Stable URL (OS) |
 |------|-------------|---------------------|
-| `UBL-CommonExtensionComponents-2.5.xsd` | UBLExtension ABIE + 9 BBIEs + basic-element type declarations | [xsd/common/UBL-CommonExtensionComponents-2.5.xsd](https://docs.oasis-open.org/ubl/csd03-UBL-2.5/xsdrt/common/UBL-CommonExtensionComponents-2.5.xsd) |
-| `UBL-ExtensionContentDataType-2.5.xsd` | ExtensionContent type (`xsd:any` — maps to open JSON object) | [xsd/common/UBL-ExtensionContentDataType-2.5.xsd](https://docs.oasis-open.org/ubl/csd03-UBL-2.5/xsdrt/common/UBL-ExtensionContentDataType-2.5.xsd) |
-| `UBL-CommonSignatureComponents-2.5.xsd` | UBLDocumentSignatures wrapper (kept for completeness) | [xsd/common/UBL-CommonSignatureComponents-2.5.xsd](https://docs.oasis-open.org/ubl/csd03-UBL-2.5/xsdrt/common/UBL-CommonSignatureComponents-2.5.xsd) |
+| `UBL-CommonExtensionComponents-2.5.xsd` | UBLExtension ABIE + 9 BBIEs + basic-element type declarations | [xsd/common/UBL-CommonExtensionComponents-2.5.xsd](https://docs.oasis-open.org/ubl/os-UBL-2.5/xsd/common/UBL-CommonExtensionComponents-2.5.xsd) |
+| `UBL-ExtensionContentDataType-2.5.xsd` | ExtensionContent type (`xsd:any` — maps to open JSON object) | [xsd/common/UBL-ExtensionContentDataType-2.5.xsd](https://docs.oasis-open.org/ubl/os-UBL-2.5/xsd/common/UBL-ExtensionContentDataType-2.5.xsd) |
+| `UBL-CommonSignatureComponents-2.5.xsd` | UBLDocumentSignatures wrapper (kept for completeness) | [xsd/common/UBL-CommonSignatureComponents-2.5.xsd](https://docs.oasis-open.org/ubl/os-UBL-2.5/xsd/common/UBL-CommonSignatureComponents-2.5.xsd) |
 
 **Conversion method:**
 
@@ -57,5 +59,15 @@ retained for auditability.  They are **not** read by the generator at runtime.
 The UBL 2.5 specification and all distribution artifacts are maintained by the
 OASIS UBL Technical Committee:
 
-- **GitHub repository:** <https://github.com/oasis-tcs/ubl> (branch `ubl-2.5`)
-- **CSD03 publication:** <https://docs.oasis-open.org/ubl/csd03-UBL-2.5/>
+- **GitHub repository:** <https://github.com/oasis-tcs/ubl> (branch `ubl-2.5-os`;
+  CI fetches the XML examples from `raw/xml/` on this branch)
+- **OASIS Standard publication (12 August 2026):** <https://docs.oasis-open.org/ubl/os-UBL-2.5/>
+- **Latest stage:** <https://docs.oasis-open.org/ubl/UBL-2.5.html>
+
+---
+
+## Update history
+
+| Date | Change |
+|------|--------|
+| 2026-11-05 | Moved from CSD03 to the UBL 2.5 OASIS Standard (`os-UBL-2.5`). The OS `.gc` files differ from CSD03 only in their `Identification` header (`ShortName`, `LongName`, `LocationUri`); all entity rows are identical, so the generated JSON schemas are unchanged. The `history/` XSDs differ only in their comment headers. |

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
-      <ShortName>UBL-2.5-CSD03</ShortName>
-      <LongName>UBL 2.5 CSD03 Business Entity Summary</LongName>
+      <ShortName>UBL-2.5-OS</ShortName>
+      <LongName>UBL 2.5 OS Business Entity Summary</LongName>
       <Version>2.5</Version>
       <CanonicalUri>urn:oasis:names:specification:ubl:BIE</CanonicalUri>
       <CanonicalVersionUri>urn:oasis:names:specification:ubl:BIE:2.5</CanonicalVersionUri>
-      <LocationUri>http://docs.oasis-open.org/ubl/csd03-UBL-2.5/mod/UBL-Entities-2.5.gc</LocationUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.5/mod/UBL-Entities-2.5.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">OASIS Universal Business Language</LongName>
          <Identifier>UBL</Identifier>

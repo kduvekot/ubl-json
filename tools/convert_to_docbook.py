@@ -1116,6 +1116,9 @@ def convert(docx_path=DOCX_PATH, output_path=OUTPUT_PATH):
                             remaining[0] = {**remaining[0], "text": after_abbrev}
                         else:
                             remaining = remaining[1:]
+                        # Drop the separator space that followed "[abbrev]".
+                        if remaining and remaining[0]["type"] == "text":
+                            remaining[0] = {**remaining[0], "text": remaining[0]["text"].lstrip()}
                         rest_content = render_inline(remaining)
                         xml_lines.append(f"{_indent(lvl+1)}{rest_content}")
                         xml_lines.append(f"{_indent(lvl)}</bibliomixed>")
