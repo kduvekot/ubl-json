@@ -8,11 +8,11 @@
       "run_id": "24185084750"
     },
     "claude/gracious-bardeen-gabr6p": {
-      "sha": "155b1519b76ded0b22cff06249ff011cc4b9a783",
-      "slug": "155b151",
-      "updated": "2026-11-05T11:40:36.780733+00:00",
-      "pr": null,
-      "run_id": "42020779127"
+      "sha": "c8d86b3af4b0cbd70927c0ccf1bbb10e03e39a22",
+      "slug": "c8d86b3",
+      "updated": "2026-11-05T12:03:08.027058+00:00",
+      "pr": 18,
+      "run_id": "42023767599"
     }
   }
 }
