@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportServiceDescriptionRequest-2",
+  "description": "A document requesting a Transport Service Description, sent from a party with a transport demand (transport user) to a party providing transport services (transport service provider).",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-TransportServiceDescriptionRequest-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "UBLVersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "ServiceInformationPreferenceCode": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ServiceInformationPreferenceCode"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "TransportServiceProviderParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "TransportationService": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/TransportationServiceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/TransportationServiceType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "IssueTime",
+    "TransportationService"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Transport Service Description Request. Details"
+}

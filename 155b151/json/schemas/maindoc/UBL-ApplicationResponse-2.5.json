@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ApplicationResponse-2",
+  "description": "A document to indicate the application's response to a transaction. This may be a business response initiated by a user or a technical response sent automatically by an application.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-ApplicationResponse-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "UBLVersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UUID"
+    },
+    "IssueDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "ResponseDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ResponseDate"
+    },
+    "ResponseTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ResponseTime"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "VersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/VersionID"
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "SenderParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "ReceiverParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "DocumentResponse": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentResponseType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentResponseType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "ID",
+    "IssueDate",
+    "SenderParty",
+    "ReceiverParty"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Application Response. Details"
+}

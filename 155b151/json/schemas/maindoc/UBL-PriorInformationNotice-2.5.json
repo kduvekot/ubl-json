@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PriorInformationNotice-2",
+  "description": "A document used by a contracting party to declare the intention to buy goods, services, or works during a specified period.",
+  "type": "object",
+  "properties": {
+    "UBLEntity": {
+      "const": "https://docs.oasis-open.org/ubl/2/json/schemas/UBL-PriorInformationNotice-2",
+      "description": "Identifies the JSON schema governing this instance."
+    },
+    "UBLExtensions": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonExtensionComponents-2#/$defs/UBLExtensionsType"
+    },
+    "UBLVersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UBLVersionID"
+    },
+    "CustomizationID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/CustomizationID"
+    },
+    "ProfileID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileID"
+    },
+    "ProfileExecutionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ProfileExecutionID"
+    },
+    "ID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ID"
+    },
+    "UUID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/UUID"
+    },
+    "ContractFolderID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/ContractFolderID"
+    },
+    "IssueDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueDate"
+    },
+    "IssueTime": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/IssueTime"
+    },
+    "Note": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/Note"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "VersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/VersionID"
+    },
+    "PreviousVersionID": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/PreviousVersionID"
+    },
+    "RequestedPublicationDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/RequestedPublicationDate"
+    },
+    "PlannedDate": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/PlannedDate"
+    },
+    "RegulatoryDomain": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/RegulatoryDomain"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/RegulatoryDomain"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "NoticeTypeCode": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/NoticeTypeCode"
+    },
+    "NoticeLanguageCode": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonBasicComponents-2#/$defs/NoticeLanguageCode"
+    },
+    "AdditionalNoticeLanguage": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/LanguageType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/LanguageType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "DocumentReference": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/DocumentReferenceType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "Signature": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/SignatureType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "ContractingParty": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ContractingPartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ContractingPartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "OriginatorCustomerParty": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/CustomerPartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/CustomerPartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "BeneficiaryParty": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "ReceiverParty": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/PartyType"
+    },
+    "TenderingTerms": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/TenderingTermsType"
+    },
+    "TenderingProcess": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/TenderingProcessType"
+    },
+    "ProcurementProject": {
+      "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ProcurementProjectType"
+    },
+    "ProcurementProjectLot": {
+      "oneOf": [
+        {
+          "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ProcurementProjectLotType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://docs.oasis-open.org/ubl/2/json/schemas/CommonAggregateComponents-2#/$defs/ProcurementProjectLotType"
+          },
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "UBLEntity",
+    "IssueDate",
+    "ContractingParty"
+  ],
+  "additionalProperties": false,
+  "minProperties": 1,
+  "title": "Prior Information Notice. Details"
+}
