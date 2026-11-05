@@ -50,7 +50,7 @@
     <legalnotice role="related">
       <title>Related work</title>
       <para>This document is related to:</para>
-      <para>Universal Business Language Version 2.5. Edited by Kenneth Bengtsson. 11 February 2026. Committee Specification Draft 03. https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html. Latest stage: https://docs.oasis-open.org/ubl/UBL-2.5.html.</para>
+      <para>Universal Business Language Version 2.5. Edited by Kenneth Bengtsson. 12 August 2026. OASIS Standard. https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html. Latest stage: https://docs.oasis-open.org/ubl/UBL-2.5.html.</para>
     </legalnotice>
     <abstract>
       <para>&abstract-text;</para>
@@ -723,7 +723,7 @@ https://docs.oasis-open.org/ubl/json/jws/enveloped]]></programlisting>
       </bibliomixed>
       <bibliomixed id="BIB-UBL">
         <abbrev>UBL</abbrev>
-        Universal Business Language Version 2.5, Committee Specification Draft 03, February 2026. [Online]. Available: <ulink url="https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html">https://docs.oasis-open.org/ubl/csd03-UBL-2.5/UBL-2.5.html</ulink>
+        Universal Business Language Version 2.5, OASIS Standard, August 2026. [Online]. Available: <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html">https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html</ulink>
       </bibliomixed>
       <bibliomixed id="BIB-RFC8259">
         <abbrev>RFC8259</abbrev>

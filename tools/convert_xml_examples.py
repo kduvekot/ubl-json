@@ -44,7 +44,8 @@ log = logging.getLogger(__name__)
 SCHEMAS_DIR = Path("json/schemas")
 EXAMPLES_DIR = Path("json/examples")
 GC_DIR = Path(__file__).resolve().parent.parent / "gc"
-# XML examples are fetched from oasis-tcs/ubl (branch ubl-2.5, path raw/xml/)
+# XML examples are fetched from oasis-tcs/ubl (branch ubl-2.5-os, path raw/xml/;
+# identical to the os-UBL-2.5/xml/ publication)
 # at CI time. For local runs, clone the repo or pass --xml-dir explicitly.
 DEFAULT_XML_DIR = Path("xml/UBL-2.5")
 

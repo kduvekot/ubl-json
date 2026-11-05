@@ -71,7 +71,7 @@ jobs:
       - name: Fetch XML examples from UBL repo
         run: |
           git clone --depth 1 --filter=blob:none --sparse \
-            --branch ubl-2.5 https://github.com/oasis-tcs/ubl.git /tmp/ubl
+            --branch ubl-2.5-os https://github.com/oasis-tcs/ubl.git /tmp/ubl
           cd /tmp/ubl && git sparse-checkout set raw/xml
 
       - name: Convert XML examples
@@ -251,7 +251,7 @@ jobs:
       - name: Fetch XML examples from UBL repo
         run: |
           git clone --depth 1 --filter=blob:none --sparse \
-            --branch ubl-2.5 https://github.com/oasis-tcs/ubl.git /tmp/ubl
+            --branch ubl-2.5-os https://github.com/oasis-tcs/ubl.git /tmp/ubl
           cd /tmp/ubl && git sparse-checkout set raw/xml
 
       - name: Convert XML examples
